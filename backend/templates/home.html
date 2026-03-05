@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LLCAR Control Panel</title>
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #000 0%, #050510 50%, #0a0a0a 100%);
+    color: #00FFFF;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.container { text-align: center; }
+.header {
+    margin-bottom: 60px;
+    padding: 30px;
+    background: rgba(0, 255, 255, 0.05);
+    border: 2px solid #00FFFF;
+    border-radius: 15px;
+    box-shadow: 0 0 30px rgba(0, 255, 255, 0.3);
+}
+.header h1 {
+    font-size: 3em;
+    text-shadow: 0 0 20px #00FFFF, 0 0 40px #00FFFF;
+    margin-bottom: 10px;
+}
+.header p { color: #00CCCC; font-size: 1.2em; }
+.choices {
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.choice {
+    display: block;
+    width: 320px;
+    padding: 40px 30px;
+    background: rgba(0, 255, 255, 0.05);
+    border: 2px solid #00FFFF;
+    border-radius: 15px;
+    text-decoration: none;
+    color: #00FFFF;
+    transition: all 0.3s;
+    cursor: pointer;
+}
+.choice:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 40px rgba(0, 255, 255, 0.5);
+    background: rgba(0, 255, 255, 0.12);
+}
+.choice-icon { font-size: 3.5em; margin-bottom: 16px; }
+.choice-title {
+    font-size: 1.6em;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-shadow: 0 0 10px #00FFFF;
+}
+.choice-desc { color: #00CCCC; font-size: 0.95em; line-height: 1.5; }
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <h1>LLCAR</h1>
+        <p>Long Life Car Manuals — Control Panel</p>
+    </div>
+    <div class="choices">
+        <a href="/downloads" class="choice">
+            <div class="choice-icon">📥</div>
+            <div class="choice-title">Загрузчик</div>
+            <div class="choice-desc">Telegram, Web, Torrent<br>Скачивание файлов, управление источниками,<br>файловый браузер, настройки</div>
+        </a>
+        <a href="/scraping" class="choice">
+            <div class="choice-icon">📰</div>
+            <div class="choice-title">Скрапинг</div>
+            <div class="choice-desc">15 источников, 289 статей<br>Просмотр, редактирование, Telegram,<br>добавление URL, импорт в KB</div>
+        </a>
+    </div>
+</div>
+</body>
+</html>

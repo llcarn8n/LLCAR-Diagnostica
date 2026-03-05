@@ -247,9 +247,12 @@ def init_telegram_downloader():
 # ═══════════════════════════════════════════════════════════════════════════
 
 @app.route('/')
-def index():
-    return render_template_string(HTML_TEMPLATE)
+def home():
+    return render_template('home.html')
 
+@app.route('/downloads')
+def downloads_page():
+    return render_template('panel.html')
 
 @app.route('/scraping')
 def scraping_page():
@@ -2967,10 +2970,13 @@ SCRAPERS_DIR = Path(__file__).parent / 'scrapers'
 SCRAPERS_DB = Path(__file__).parent.parent / 'knowledge-base' / 'kb.db'
 
 ALL_SCRAPERS = [
-    "lixiang", "autohome", "ru", "drom", "drom_reviews",
-    "drive2", "liforum", "dongchedi", "carnewschina",
-    "wikipedia", "electrek", "ru_auto", "autoreview", "news",
-    "getcar", "autochina_blog", "ev_forums", "autonews",
+    "telegram_lixiangautorussia",
+    "autoreview_ru", "carnewschina_en", "drom_reviews", "drom",
+    "autochina_blog", "carscoops_en", "liautocn_news",
+    "getcar_ru", "kitaec", "electrek_en", "wikipedia_en",
+    "autonews_ru", "insideevs", "topelectricsuv",
+    # Empty sources (blocked/geo-restricted):
+    "autohome", "dongchedi", "drive2", "liforum", "ev_forums",
 ]
 
 _scraper_runs = {}
@@ -3799,23 +3805,17 @@ def telegram_channel_info(channel):
 # ═══════════════════════════════════════════════════════════════════════════
 
 if __name__ == '__main__':
+    import io, sys
+    sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', errors='replace')
+    sys.stderr = io.TextIOWrapper(sys.stderr.buffer, encoding='utf-8', errors='replace')
+
     print()
     print('=' * 70)
-    print('    ⚡ LLCAR WEB CONTROL PANEL v3 — ПОЛНЫЙ ФУНКЦИОНАЛ')
+    print('    LLCAR WEB CONTROL PANEL v3')
     print('=' * 70)
     print()
-    print('    Возможности:')
-    print('    📡 Управление 4 типами источников')
-    print('    🔍 Просмотр файлов в Telegram-каналах')
-    print('    📁 Файловый браузер скачанных файлов')
-    print('    ⚙️  Настройка фильтров и параметров')
-    print('    📊 Статистика по типам и размерам')
-    print('    🔍 Проверка целостности файлов')
-    print('    📜 Просмотр и скачивание логов')
-    print('    🖥️  Информация о системе')
-    print()
-    print('    🌐 Откройте: http://localhost:5000')
-    print('    ⏹️  Ctrl+C для остановки')
+    print('    http://localhost:5000')
+    print('    Ctrl+C to stop')
     print('=' * 70)
     print()
 

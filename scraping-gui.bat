@@ -1,23 +1,26 @@
 @echo off
 chcp 65001 >nul 2>&1
-title LLCAR Scraping GUI
+set PYTHONIOENCODING=utf-8
+title LLCAR Control Panel
 
 echo ========================================
-echo    LLCAR Scraping - Web Interface
+echo       LLCAR Control Panel
 echo ========================================
 echo.
 
 cd /d "%~dp0backend"
 
-echo Starting web server on http://localhost:5000 ...
+echo  Starting on http://localhost:5000 ...
 echo.
-echo   Main page:    http://localhost:5000
-echo   Scraping GUI: http://localhost:5000/scraping
+echo   Home:      http://localhost:5000
+echo   Downloads: http://localhost:5000/downloads
+echo   Scraping:  http://localhost:5000/scraping
 echo.
-echo Press Ctrl+C to stop.
+echo  Both can run simultaneously.
+echo  Press Ctrl+C to stop.
 echo ========================================
 echo.
 
-start "" http://localhost:5000/scraping
+start "" http://localhost:5000
 
 python web_control.py

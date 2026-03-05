@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>LLCAR - Скрапинг статей</title>
+<title>LLCAR - Control Panel</title>
 <style>
 :root {
   --bg: #0d1117; --bg2: #161b22; --bg3: #21262d;
@@ -183,8 +183,9 @@ function renderSidebar() {
   }
 
   h += `</div>
-    <div class="sidebar__footer">
-      <a href="/">Downloads panel</a>
+    <div class="sidebar__footer" style="margin-top:auto;padding:12px 20px;border-top:1px solid var(--border)">
+      <a href="/downloads" style="color:var(--text2);text-decoration:none;font-size:12px;display:block;padding:6px 0">📥 Загрузчик</a>
+      <a href="/" style="color:var(--text2);text-decoration:none;font-size:12px;display:block;padding:6px 0">🏠 Главная</a>
     </div>`;
   sb.innerHTML = h;
 }
@@ -847,6 +848,7 @@ function startTgPoll() {
     } catch (e) {}
   }, 3000);
 }
+
 
 // ── Helpers ──
 function esc(s) { if (!s) return ''; const d = document.createElement('div'); d.textContent = s; return d.innerHTML; }
