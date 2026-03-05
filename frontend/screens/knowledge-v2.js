@@ -1025,12 +1025,24 @@ async function _renderArticleDetail(resultsEl, entry) {
     `;
   }
 
-  // Глоссарий-теги
-  if (entry.glossary_terms?.length > 0) {
-    const tags = _renderGlossaryTags(entry.glossary_terms, color);
+  // Глоссарий-теги (из glossary_terms или fallback по layer)
+  {
+    let compTerms = entry.glossary_terms?.length > 0 ? entry.glossary_terms : [];
+    // Fallback: если нет glossary_terms, показываем компоненты из layer
+    if (compTerms.length === 0 && entry.layer && _glossaryData?.components) {
+      const layerComps = [];
+      for (const [gid, names] of Object.entries(_glossaryData.components)) {
+        const parts = gid.split('@');
+        if (parts[1] === entry.layer || (!parts[1] && entry.layer)) {
+          layerComps.push(gid);
+        }
+      }
+      compTerms = layerComps.slice(0, 12);
+    }
+    const tags = _renderGlossaryTags(compTerms, color);
     if (tags) {
       html += `
-        <div class="kbv2-section-title">${t('kbv2.components', 'Компоненты')}</div>
+        <div class="kbv2-section-title">${t('kbv2.components', 'Связанные компоненты')}</div>
         <div class="kbv2-tags-wrap">${tags}</div>
       `;
     }
@@ -1060,6 +1072,7 @@ async function _renderArticleDetail(resultsEl, entry) {
   _bindBackButton(resultsEl);
   _bindDTCChips(resultsEl);
   _bindGlossaryTerms(resultsEl);
+  _bindCompTagsV2(resultsEl);
 
   // 3D кнопка
   resultsEl.querySelectorAll('.kbv2-3d-btn').forEach(btn => {
@@ -1508,8 +1521,8 @@ async function _renderPartDetail(resultsEl, partNumber, partName) {
   let html = `
     ${_renderBackButton()}
 
-    ${imgSrc ? `<div style="margin:8px 0;border-radius:10px;overflow:hidden;border:1px solid var(--border-default);background:#f5f5f5;text-align:center;">
-      <img class="kbv2-part-detail-img" src="${imgSrc}" alt="Диаграмма каталога" style="max-width:100%;display:inline-block;cursor:pointer;" onerror="console.warn('[KB-V2] Image load failed:', this.src); this.alt='Диаграмма недоступна'; this.style.padding='20px'; this.style.color='#999';" />
+    ${imgSrc ? `<div style="margin:12px 0;border-radius:12px;overflow:hidden;border:1px solid var(--border-default);background:var(--bg-secondary);text-align:center;padding:8px;min-height:200px;">
+      <img class="kbv2-part-detail-img" src="${imgSrc}" alt="Диаграмма каталога" style="width:100%;max-height:500px;object-fit:contain;display:inline-block;cursor:pointer;border-radius:8px;" onerror="console.warn('[KB-V2] Image load failed:', this.src); this.alt='Диаграмма недоступна'; this.style.padding='20px'; this.style.color='#999';" />
     </div>` : '<div style="text-align:center;padding:16px;color:var(--text-tertiary);font-size:12px;">Диаграмма каталога недоступна</div>'}
 
     <div style="background:var(--bg-secondary);border-radius:12px;padding:16px;margin:8px 0;">
@@ -1596,20 +1609,146 @@ function _renderLoadingSpinner() {
   </div>`;
 }
 
+// Whitelist RU-перевод для тегов (аналогично Expert mode)
+const _GLOSSARY_RU_V2 = {
+  'brake': 'Тормоз', 'brake pedal': 'Педаль тормоза', 'brake system': 'Тормозная система',
+  'steering wheel': 'Рулевое колесо', 'seat belt': 'Ремень безопасности', 'safety belt': 'Ремень безопасности',
+  'airbag': 'Подушка безопасности', 'sensor': 'Датчик', 'side mirror': 'Боковое зеркало',
+  'rear view mirror': 'Зеркало заднего вида', 'windshield': 'Лобовое стекло', 'windshield windscreen': 'Лобовое стекло',
+  'ambient lighting': 'Подсветка салона', 'charging port': 'Зарядный порт',
+  'range extender': 'Расширитель запаса хода', 'range extender rex': 'Расширитель запаса хода (REX)',
+  'traction battery hv battery': 'Тяговая батарея (HV)', 'smart key': 'Смарт-ключ',
+  'smart key key fob': 'Смарт-ключ / брелок', 'smart key proximity key keyless entry fob': 'Бесключевой доступ',
+  'lane keep assist lka': 'Удержание в полосе (LKA)', 'lane keep assist': 'Удержание в полосе',
+  'turn signal indicator': 'Указатель поворота', 'turn signal': 'Указатель поворота',
+  'hud head up display': 'Проекционный дисплей (HUD)', 'low beam dipped beam': 'Ближний свет',
+  'air conditioning system': 'Система кондиционирования', 'obstacle': 'Препятствие',
+  'pedal': 'Педаль', 'speed': 'Скорость', 'velocity': 'Скорость',
+  'automatic gearbox informal': 'АКПП',
+  'accumulator': 'Аккумулятор', 'voltage': 'Напряжение', 'battery': 'Батарея',
+  'tire': 'Шина', 'tyre': 'Шина', 'wheel': 'Колесо', 'suspension': 'Подвеска',
+  'engine': 'Двигатель', 'motor': 'Мотор', 'coolant': 'Охлаждающая жидкость',
+  'radiator': 'Радиатор', 'headlight': 'Фара', 'taillight': 'Задний фонарь',
+  'door': 'Дверь', 'window': 'Стекло', 'roof': 'Крыша', 'trunk': 'Багажник',
+  'horn': 'Звуковой сигнал', 'wiper': 'Стеклоочиститель', 'mirror': 'Зеркало',
+  'camera': 'Камера', 'radar': 'Радар', 'lidar': 'Лидар',
+  'fuse': 'Предохранитель', 'relay': 'Реле', 'connector': 'Разъём',
+};
+
 function _renderGlossaryTags(terms, color) {
   if (!terms || terms.length === 0) return '';
   const seen = new Set();
-  return terms.filter(tag => {
-    const key = tag.split('@')[0].replace(/_/g, ' ').toLowerCase().trim();
-    if (seen.has(key)) return false;
-    seen.add(key);
-    return true;
-  }).slice(0, 10).map(tag => {
-    const raw = tag.split('@')[0].replace(/_/g, ' ');
-    // Используем i18n для перевода если есть
-    const label = _i18n?.getComponentName?.(tag) || raw;
-    return `<span class="kbv2-tag" style="color:${color};background:${color}15;border-color:${color}40;">${label}</span>`;
-  }).join('');
+  const rendered = [];
+  for (const tag of terms) {
+    const raw = tag.split('@')[0].replace(/_/g, ' ').toLowerCase().trim();
+    const label = _GLOSSARY_RU_V2[raw];
+    if (!label) continue; // whitelist only — skip unknown terms
+    if (seen.has(label)) continue;
+    seen.add(label);
+    rendered.push(`<span class="kbv2-tag kbv2-comp-link" data-term="${raw}" style="cursor:pointer;color:${color};background:${color}15;border-color:${color}40;">${label}</span>`);
+  }
+  return rendered.join('');
+}
+
+// Маппинг glossary term → система каталога запчастей
+const _TERM_TO_SYSTEM_V2 = {
+  'brake': 'Service Brake System', 'brake pedal': 'Service Brake System', 'brake system': 'Service Brake System',
+  'steering wheel': 'Steering System',
+  'seat belt': 'Passive Safety System', 'safety belt': 'Passive Safety System', 'airbag': 'Passive Safety System',
+  'sensor': 'Autonomous Driving System', 'camera': 'Autonomous Driving System', 'radar': 'Autonomous Driving System', 'lidar': 'Autonomous Driving System',
+  'side mirror': 'Exterior Trim System', 'mirror': 'Exterior Trim System',
+  'windshield': 'Body Structure',
+  'ambient lighting': 'Lighting System', 'headlight': 'Lighting System', 'taillight': 'Lighting System', 'turn signal': 'Lighting System',
+  'charging port': 'Power Battery System', 'accumulator': 'Power Battery System', 'battery': 'Power Battery System', 'voltage': 'Power Battery System', 'traction battery hv battery': 'Power Battery System',
+  'range extender': 'Engine Assembly', 'engine': 'Engine Assembly', 'motor': 'Power Drive System', 'coolant': 'Engine Assembly', 'radiator': 'Engine Assembly',
+  'smart key': 'Smart Cabin / Infotainment', 'hud head up display': 'Smart Cabin / Infotainment',
+  'lane keep assist': 'Autonomous Driving System',
+  'air conditioning system': 'HVAC & Thermal Management',
+  'suspension': 'Front Suspension', 'tire': 'Front Suspension', 'wheel': 'Front Suspension',
+  'door': 'Closures (Doors, Hood, Tailgate)', 'window': 'Closures (Doors, Hood, Tailgate)', 'trunk': 'Closures (Doors, Hood, Tailgate)', 'roof': 'Body Structure',
+  'horn': 'Power & Signal Distribution', 'wiper': 'Exterior Trim System',
+  'fuse': 'Power & Signal Distribution', 'relay': 'Power & Signal Distribution', 'connector': 'Power & Signal Distribution',
+  'pedal': 'Service Brake System',
+};
+
+/** Привязать клик по тегам компонентов → диаграмма системы или поиск статей */
+function _bindCompTagsV2(container) {
+  container?.querySelectorAll('.kbv2-comp-link[data-term]').forEach(el => {
+    el.addEventListener('click', async (ev) => {
+      ev.stopPropagation();
+      const term = el.dataset.term;
+      if (!term) return;
+      const system = _TERM_TO_SYSTEM_V2[term];
+      if (system) {
+        // Переход к диаграмме системы
+        _activeTab = 'parts';
+        _navStack.push({ type: 'article' });
+        const resultsEl = _container?.querySelector('#kbv2-results');
+        if (!resultsEl) return;
+        resultsEl.innerHTML = _renderLoadingSpinner();
+        const resp = await _kb.searchParts('', { system, limit: 200 });
+        const allParts = resp.results || [];
+        const sysTitle = SYSTEM_NAME_RU[system] || system;
+
+        const groups = {};
+        for (const part of allParts) {
+          const key = part.diagram_image || part.source_image || '__no_image__';
+          if (!groups[key]) groups[key] = [];
+          groups[key].push(part);
+        }
+        const sortedGroups = Object.entries(groups).sort((a, b) =>
+          (a[1][0]?.page_idx ?? 9999) - (b[1][0]?.page_idx ?? 9999));
+
+        let html = `${_renderBackButton()}
+          <div class="kbv2-section-title">${sysTitle}</div>
+          <div style="font-size:11px;color:var(--text-secondary);margin-bottom:8px;">
+            ${sortedGroups.length} диаграмм, ${allParts.length} деталей
+          </div>`;
+
+        for (const [imgKey, parts] of sortedGroups) {
+          const imgSrc = imgKey !== '__no_image__' ? PARTS_IMG_BASE + '/' + imgKey : '';
+          if (imgSrc) {
+            html += `<div style="margin:8px 0 0;border-radius:10px 10px 0 0;border:1px solid var(--border-default);border-bottom:none;background:#f5f5f5;text-align:center;">
+              <img class="kbv2-diagram-img" src="${imgSrc}" style="max-width:100%;height:auto;display:inline-block;border-radius:10px 10px 0 0;cursor:pointer;" onerror="this.parentElement.style.display='none'" />
+            </div>`;
+          }
+          html += `<div style="margin:0 0 16px;border-radius:${imgSrc ? '0 0 10px 10px' : '10px'};border:1px solid var(--border-default);${imgSrc ? 'border-top:none;' : ''}background:var(--bg-secondary);padding:8px;">`;
+          for (const part of parts) {
+            const name = part.part_name_ru || part.part_name_en || part.part_name_zh || part.part_number;
+            html += `<div class="kbv2-part-item" data-part="${part.part_number}">
+              ${part.hotspot_id ? `<span class="kbv2-part-item__hotspot">#${part.hotspot_id}</span>` : ''}
+              <span class="kbv2-part-item__number">${part.part_number}</span>
+              <span class="kbv2-part-item__name">${name}</span>
+            </div>`;
+          }
+          html += `</div>`;
+        }
+
+        resultsEl.innerHTML = html;
+        _bindBackButton(resultsEl);
+        resultsEl.querySelectorAll('.kbv2-diagram-img').forEach(img => {
+          img.addEventListener('click', () => window.open(img.src, '_blank'));
+        });
+        resultsEl.querySelectorAll('.kbv2-part-item').forEach(el2 => {
+          el2.addEventListener('click', () => {
+            const pn = el2.dataset.part;
+            const pName = el2.querySelector('.kbv2-part-item__name')?.textContent || '';
+            _navStack.push({ type: 'parts-system', system });
+            _renderPartDetail(resultsEl, pn, pName);
+          });
+        });
+      } else {
+        // Fallback: текстовый поиск по русскому названию
+        const ruLabel = el.textContent.trim();
+        if (ruLabel) {
+          _searchQuery = ruLabel;
+          const input = _container?.querySelector('#kbv2-search');
+          if (input) input.value = ruLabel;
+          _renderContent();
+        }
+      }
+    });
+  });
 }
 
 // ── Извлечение осмысленного заголовка ──

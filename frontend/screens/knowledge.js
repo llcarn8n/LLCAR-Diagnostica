@@ -1000,11 +1000,11 @@ async function renderPartDetail(resultsEl, partNumber, nameZh, parentSystem) {
       <span style="font-size:14px;font-weight:600;color:var(--text-primary);">Деталь компонента</span>
     </div>
 
-    ${diagramSrc ? `<div style="margin:8px 0;border-radius:10px;overflow:hidden;border:1px solid var(--border-default);background:#f5f5f5;text-align:center;">
-        <img src="${diagramSrc}" alt="Диаграмма каталога" style="max-width:100%;display:inline-block;cursor:pointer;" id="kb-part-img" onerror="this.parentElement.style.display='none'" />
+    ${diagramSrc ? `<div style="margin:12px 0;border-radius:12px;overflow:hidden;border:1px solid var(--border-default);background:var(--bg-secondary);text-align:center;padding:8px;min-height:200px;">
+        <img src="${diagramSrc}" alt="Диаграмма каталога" style="width:100%;max-height:500px;object-fit:contain;display:inline-block;cursor:pointer;border-radius:8px;" id="kb-part-img" onerror="this.parentElement.style.display='none'" />
       </div>` : ''}
-    ${!diagramSrc && sourceSrc ? `<div style="margin:8px 0;border-radius:10px;overflow:hidden;border:1px solid var(--border-default);background:#f5f5f5;text-align:center;">
-        <img src="${sourceSrc}" alt="Таблица каталога" style="max-width:100%;display:inline-block;cursor:pointer;" id="kb-part-img" onerror="this.parentElement.style.display='none'" />
+    ${!diagramSrc && sourceSrc ? `<div style="margin:12px 0;border-radius:12px;overflow:hidden;border:1px solid var(--border-default);background:var(--bg-secondary);text-align:center;padding:8px;min-height:200px;">
+        <img src="${sourceSrc}" alt="Таблица каталога" style="width:100%;max-height:500px;object-fit:contain;display:inline-block;cursor:pointer;border-radius:8px;" id="kb-part-img" onerror="this.parentElement.style.display='none'" />
       </div>` : ''}
 
     <div style="background:var(--bg-secondary);border-radius:12px;padding:16px;margin:8px 0;">
@@ -1430,6 +1430,7 @@ function bindResultEvents(resultsEl) {
       if (entry) renderArticleDetail(entry);
     });
   });
+  _bindCompTags(resultsEl);
 }
 
 async function findEntryById(id) {
@@ -1488,9 +1489,60 @@ function _renderGlossaryTags(terms, color) {
     if (!label) continue; // skip unknown terms — no English in UI
     if (seen.has(label)) continue; // dedup by translated label
     seen.add(label);
-    rendered.push(`<span style="font-size:11px;padding:2px 8px;border-radius:10px;background:${color}20;color:${color};border:1px solid ${color}40;white-space:nowrap;">${label}</span>`);
+    rendered.push(`<span class="kb-comp-tag" data-gid="${tag}" style="cursor:pointer;font-size:11px;padding:2px 8px;border-radius:10px;background:${color}20;color:${color};border:1px solid ${color}40;white-space:nowrap;">${label}</span>`);
   }
   return rendered.join('');
+}
+
+// Маппинг glossary term → система каталога запчастей (для перехода к диаграммам)
+const _TERM_TO_SYSTEM = {
+  'brake': 'Service Brake System', 'brake pedal': 'Service Brake System', 'brake system': 'Service Brake System',
+  'steering wheel': 'Steering System',
+  'seat belt': 'Passive Safety System', 'safety belt': 'Passive Safety System', 'airbag': 'Passive Safety System',
+  'sensor': 'Autonomous Driving System', 'camera': 'Autonomous Driving System', 'radar': 'Autonomous Driving System', 'lidar': 'Autonomous Driving System',
+  'side mirror': 'Exterior Trim System', 'rear view mirror': 'Exterior Trim System', 'mirror': 'Exterior Trim System',
+  'windshield': 'Body Structure', 'windshield windscreen': 'Body Structure',
+  'ambient lighting': 'Lighting System', 'headlight': 'Lighting System', 'taillight': 'Lighting System', 'low beam dipped beam': 'Lighting System', 'turn signal': 'Lighting System', 'turn signal indicator': 'Lighting System',
+  'charging port': 'Power Battery System', 'traction battery hv battery': 'Power Battery System', 'accumulator': 'Power Battery System', 'battery': 'Power Battery System', 'voltage': 'Power Battery System',
+  'range extender': 'Engine Assembly', 'range extender rex': 'Engine Assembly', 'engine': 'Engine Assembly', 'motor': 'Power Drive System', 'coolant': 'Engine Assembly', 'radiator': 'Engine Assembly',
+  'smart key': 'Smart Cabin / Infotainment', 'smart key key fob': 'Smart Cabin / Infotainment', 'smart key proximity key keyless entry fob': 'Smart Cabin / Infotainment', 'hud head up display': 'Smart Cabin / Infotainment',
+  'lane keep assist lka': 'Autonomous Driving System', 'lane keep assist': 'Autonomous Driving System',
+  'air conditioning system': 'HVAC & Thermal Management',
+  'pedal': 'Service Brake System', 'suspension': 'Front Suspension',
+  'tire': 'Front Suspension', 'tyre': 'Front Suspension', 'wheel': 'Front Suspension',
+  'door': 'Closures (Doors, Hood, Tailgate)', 'window': 'Closures (Doors, Hood, Tailgate)', 'trunk': 'Closures (Doors, Hood, Tailgate)', 'roof': 'Body Structure',
+  'horn': 'Power & Signal Distribution', 'wiper': 'Exterior Trim System',
+  'fuse': 'Power & Signal Distribution', 'relay': 'Power & Signal Distribution', 'connector': 'Power & Signal Distribution',
+  'automatic gearbox informal': 'Power Drive System',
+};
+
+/** Bind click handlers on glossary component tags → open component view with diagram */
+function _bindCompTags(container) {
+  container?.querySelectorAll('.kb-comp-tag[data-gid]').forEach(el => {
+    el.addEventListener('click', (ev) => {
+      ev.stopPropagation();
+      const gid = el.dataset.gid;
+      if (!gid) return;
+      const raw = gid.split('@')[0].replace(/_/g, ' ').toLowerCase().trim();
+      const system = _TERM_TO_SYSTEM[raw];
+      if (system) {
+        // Переход к диаграмме системы каталога запчастей
+        const resultsEl = _container?.querySelector('#kb-results');
+        if (resultsEl) renderSubsystemsView(resultsEl, system);
+      } else {
+        // Fallback: текстовый поиск
+        const ruLabel = _GLOSSARY_RU[raw] || raw;
+        activeCategory = 'all';
+        searchQuery = ruLabel;
+        const input = _container?.querySelector('#kb-search-input');
+        if (input) input.value = ruLabel;
+        selectedComponentTags = [];
+        selectedComponentData = null;
+        updateTagFilter();
+        renderContent();
+      }
+    });
+  });
 }
 
 // ═══════════════════════════════════════════════════════════
@@ -1530,8 +1582,17 @@ function renderArticleDetail(entry) {
     ? `<span style="font-size:11px;color:#F9A825;background:rgba(249,168,37,0.12);padding:2px 8px;border-radius:10px;">${srcLang.toUpperCase()}\u2192${userLang.toUpperCase()} ${entry._translated ? 'Перевод' : 'Оригинал'}</span>`
     : '';
 
-  // Теги glossary_terms (перевод + дедупликация)
-  const tags = _renderGlossaryTags(entry.glossary_terms, color);
+  // Теги glossary_terms (перевод + дедупликация) + fallback по layer
+  let _compTerms = entry.glossary_terms?.length > 0 ? entry.glossary_terms : [];
+  if (_compTerms.length === 0 && entry.layer) {
+    // Fallback: подбираем компоненты по layer из _GLOSSARY_RU
+    const layerTerms = [];
+    for (const key of Object.keys(_GLOSSARY_RU)) {
+      layerTerms.push(`${key.replace(/ /g, '_')}@${entry.layer}`);
+    }
+    _compTerms = layerTerms.slice(0, 15);
+  }
+  const tags = _renderGlossaryTags(_compTerms, color);
 
   // DTC коды
   const dtcHtml = (entry.dtc_codes?.length > 0) ? `
@@ -1638,6 +1699,9 @@ function renderArticleDetail(entry) {
       await renderResults();
     });
   });
+
+  // Bind component tags in article detail
+  _bindCompTags(resultsEl);
 }
 
 /** Загрузить и показать связанные статьи + ссылки на компоненты */
@@ -1648,10 +1712,17 @@ async function _loadRelatedArticles(entry, resultsEl) {
   let html = `<span style="font-size:13px;font-weight:600;color:var(--text-secondary);">Связанные статьи</span>`;
 
   // 1. Ссылки на компоненты (parts) — по glossary_terms (только переведённые)
-  if (entry.glossary_terms?.length > 0) {
+  let _relTerms = entry.glossary_terms?.length > 0 ? entry.glossary_terms : [];
+  if (_relTerms.length === 0 && entry.layer) {
+    for (const key of Object.keys(_GLOSSARY_RU)) {
+      _relTerms.push(`${key.replace(/ /g, '_')}@${entry.layer}`);
+    }
+    _relTerms = _relTerms.slice(0, 10);
+  }
+  if (_relTerms.length > 0) {
     const seen = new Set();
     let partCount = 0;
-    for (const term of entry.glossary_terms) {
+    for (const term of _relTerms) {
       if (partCount >= 4) break;
       const raw = term.split('@')[0].replace(/_/g, ' ').toLowerCase().trim();
       const label = _GLOSSARY_RU[raw];
@@ -1742,8 +1813,14 @@ function updateTagFilter() {
   if (selectedComponentTags.length > 0) {
     filterEl.style.display = '';
     const names = selectedComponentTags.map(gid => {
-      if (_i18n) return _i18n.getComponentName(gid);
-      return gid.split('@')[0].replace(/_/g, ' ');
+      const raw = gid.split('@')[0].replace(/_/g, ' ').toLowerCase().trim();
+      const ruLabel = _GLOSSARY_RU[raw];
+      if (ruLabel) return ruLabel;
+      if (_i18n) {
+        const i18nName = _i18n.getComponentName(gid);
+        if (i18nName && i18nName !== gid) return i18nName;
+      }
+      return raw;
     });
     labelEl.textContent = names.join(', ');
   } else {
@@ -1759,14 +1836,12 @@ function _onComponentSelect(e) {
   const detail = e.detail || e;
   if (detail.glossaryId) {
     selectedComponentTags = [detail.glossaryId];
-    if (detail.component?.isAnnotation) {
-      selectedComponentData = {
-        glossaryId: detail.glossaryId,
-        dtcCodes: detail.component.dtcCodes || [],
-        category: detail.component.category || '',
-        layer: detail.component.layer || '',
-      };
-    }
+    selectedComponentData = {
+      glossaryId: detail.glossaryId,
+      dtcCodes: detail.component?.dtcCodes || [],
+      category: detail.component?.category || '',
+      layer: detail.component?.layer || detail.glossaryId.split('@')[1] || '',
+    };
   } else if (detail.tags) {
     selectedComponentTags = detail.tags;
   }

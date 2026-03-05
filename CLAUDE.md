@@ -476,6 +476,74 @@ Key technical decisions:
 - `screens/knowledge.js`: "Parts" category tab, parts stats overview, parts search
 - `screens/digital-twin.js`: shows part numbers in info bar when clicking 3D meshes
 
+### Article ↔ Component Integration (2026-03-06)
+
+**Проблема**: Статьи в KB не имели рабочих связей с компонентами. Теги glossary отображались на английском, не были кликабельными, и при нажатии не вели к диаграммам запчастей.
+
+**Что реализовано:**
+
+#### 1. API: `/glossary/search` — расширенный ответ (`api/server.py`)
+- Добавлены вызовы `fetch_translations()` и `fetch_glossary_terms()` для каждого чанка
+- Ответ теперь включает: `content`, `source`, `page_start`, `glossary_terms`, `translations`
+- Раньше возвращались только метаданные (title, brand, model, layer) — теперь полные данные
+
+#### 2. Русские теги компонентов — whitelist-подход (оба режима)
+
+**Expert (`knowledge.js`):**
+- Добавлен словарь `_GLOSSARY_RU` (~50 EN→RU терминов): `brake` → `Тормозная система`, `engine` → `Двигатель`, `battery` → `Аккумулятор` и т.д.
+- `_renderGlossaryTags()`: теги теперь с `class="kb-comp-tag" data-gid="${tag}"` и `cursor:pointer`
+- Теги отображаются ТОЛЬКО если есть русский перевод в whitelist (неизвестные EN-термины скрываются)
+
+**Beginner (`knowledge-v2.js`):**
+- Аналогичный словарь `_GLOSSARY_RU_V2` (~50 терминов)
+- Теги с `class="kbv2-comp-link" data-term="${term}"` и `cursor:pointer`
+
+#### 3. Кликабельные теги → навигация к диаграммам запчастей
+
+**Expert (`knowledge.js`):**
+- Добавлен маппинг `_TERM_TO_SYSTEM` (~40 записей): glossary term → система каталога запчастей
+  - Пример: `brake` → `Service Brake System`, `engine` → `Engine Assembly`, `motor` → `Power Drive System`
+- Функция `_bindCompTags(container)`: обработчик кликов на тегах
+  - Если термин есть в `_TERM_TO_SYSTEM` → вызывает `renderSubsystemsView(resultsEl, system)` — показывает диаграммы системы с изображениями
+  - Иначе → fallback: текстовый поиск по русскому названию (`activeCategory = 'all'`, `searchQuery = ruLabel`)
+- Привязка в `bindResultEvents()` и `renderArticleDetail()`
+
+**Beginner (`knowledge-v2.js`):**
+- Аналогичный маппинг `_TERM_TO_SYSTEM_V2`
+- Функция `_bindCompTagsV2(container)`: при клике на тег
+  - Если система найдена → переход в `_activeTab = 'parts'`, загрузка `_kb.searchParts('', {system, limit: 200})`, рендер диаграмм с группировкой по `diagram_image`
+  - Иначе → текстовый поиск по `el.textContent.trim()` (русский label)
+
+#### 4. Fallback компонентов для статей без glossary_terms
+
+Большинство чанков из `/search` имеют пустой `glossary_terms` (нет записей в `chunk_glossary`).
+
+- `renderArticleDetail()`: если `entry.glossary_terms` пуст — генерирует fallback теги из ключей `_GLOSSARY_RU` по `entry.layer`
+- `_loadRelatedArticles()`: аналогичный fallback для блока "Связанные статьи"
+
+#### 5. Увеличенная рамка диаграмм в детали запчасти
+
+**Проблема**: Диаграмма в `renderPartDetail()` была маленькой и плохо видна на тёмной теме.
+
+**Оба режима** (`knowledge.js` + `knowledge-v2.js`):
+- Контейнер: `margin:12px`, `padding:8px`, `min-height:200px`, `border-radius:12px`
+- Изображение: `width:100%`, `max-height:500px`, `object-fit:contain`, `border-radius:8px`
+- Фон: `var(--bg-secondary)` вместо `#f5f5f5` (адаптивный для тёмной темы)
+
+#### 6. Исправления в Expert-режиме
+
+- `_onComponentSelect()`: убран gate `isAnnotation` — теперь ВСЕГДА заполняется `selectedComponentData` при выборе компонента
+- `updateTagFilter()`: приоритет русского перевода из `_GLOSSARY_RU` перед `_i18n.getComponentName()` (избежание EN-меток в UI)
+
+#### Файлы затронуты:
+| Файл | Изменения |
+|------|-----------|
+| `api/server.py` | +7 строк: `fetch_translations`, `fetch_glossary_terms`, новые поля в ответе `/glossary/search` |
+| `frontend/screens/knowledge.js` | +113 строк: `_GLOSSARY_RU`, `_TERM_TO_SYSTEM`, `_bindCompTags()`, fallback теги, увеличенная рамка диаграмм |
+| `frontend/screens/knowledge-v2.js` | +173 строки: `_GLOSSARY_RU_V2`, `_TERM_TO_SYSTEM_V2`, `_bindCompTagsV2()`, fallback теги, увеличенная рамка |
+| `backend/IMPLEMENTATION_PLAN.md` | Удалён (нерелевантный файл) |
+| `start-app.bat` | Новый: скрипт быстрого запуска |
+
 ### Parts OCR history
 | Step | Action | Result |
 |------|--------|--------|

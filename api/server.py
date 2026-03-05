@@ -1762,6 +1762,8 @@ async def glossary_search(req: GlossarySearchRequest) -> dict:
 
         chunk_map = fetch_chunks_by_ids(conn, chunk_ids)
         dtc_map   = fetch_dtc_codes(conn, chunk_ids)
+        trans_map = fetch_translations(conn, chunk_ids)
+        gloss_map = fetch_glossary_terms(conn, chunk_ids)
 
         results = []
         for chunk_id in chunk_ids:
@@ -1771,13 +1773,18 @@ async def glossary_search(req: GlossarySearchRequest) -> dict:
             results.append({
                 "chunk_id":      chunk["id"],
                 "title":         chunk["title"],
+                "content":       chunk["content"],
+                "source":        chunk["source"],
                 "brand":         chunk["brand"],
                 "model":         chunk["model"],
                 "layer":         chunk["layer"],
                 "content_type":  chunk["content_type"],
                 "source_language": chunk["source_language"],
+                "page_start":    chunk["page_start"],
                 "glossary_ids":  glossary_links.get(chunk_id, []),
+                "glossary_terms": gloss_map.get(chunk_id, []),
                 "dtc_codes":     dtc_map.get(chunk_id, []),
+                "translations":  trans_map.get(chunk_id, []),
                 "has_procedures": bool(chunk["has_procedures"]),
                 "has_warnings":  bool(chunk["has_warnings"]),
             })
