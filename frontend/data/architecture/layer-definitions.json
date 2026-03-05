@@ -1,0 +1,291 @@
+{
+  "meta": {
+    "title": "LLCAR Diagnostica — 8-Layer System Definitions",
+    "version": "1.0",
+    "description": "Defines the 8 visualization layers for the 3D diagnostic viewer. Each layer groups related automotive components and has a unique color, icon, and multilingual display name.",
+    "total_layers": 8,
+    "total_components": 1422,
+    "source": "automotive-glossary-3d-components.json v3.1-3d",
+    "created": "2026-02-27"
+  },
+  "naming_convention": {
+    "format": "{component_snake_case}@{layer_id}",
+    "separator": "@",
+    "component_rules": [
+      "English name only, snake_case",
+      "Use first variant before '/' (e.g., 'bonnet / hood' -> 'bonnet')",
+      "Remove parenthetical abbreviations (e.g., '(AT)' -> '')",
+      "Remove special characters except alphanumeric and spaces",
+      "Collapse whitespace to underscore",
+      "All lowercase"
+    ],
+    "examples": [
+      "intake_manifold@engine",
+      "front_left_brake_caliper@brakes",
+      "traction_battery@ev",
+      "front_camera@sensors",
+      "blower_motor@hvac",
+      "door_handle@interior",
+      "front_bumper@body",
+      "differential@drivetrain"
+    ]
+  },
+  "layers": {
+    "body": {
+      "order": 1,
+      "full_id": "body_frame",
+      "color": "#4FC3F7",
+      "color_name": "Light Blue",
+      "opacity": 0.85,
+      "icon": "car-body",
+      "component_count": 151,
+      "label": {
+        "en": "Body & Frame",
+        "ru": "Силовой кузов",
+        "zh": "车身与车架",
+        "ar": "الهيكل والإطار",
+        "es": "Carrocería y bastidor"
+      },
+      "description": {
+        "en": "Structural body panels, frame, bumpers, fenders, roof, pillars, glazing, wipers, mirrors, and exterior lighting",
+        "ru": "Панели кузова, рама, бамперы, крылья, крыша, стойки, остекление, стеклоочистители, зеркала и наружное освещение"
+      },
+      "subsystems": [
+        "frame_structure",
+        "exterior_panels",
+        "glazing",
+        "wipers_washers",
+        "exterior_lighting",
+        "mirrors"
+      ]
+    },
+    "engine": {
+      "order": 2,
+      "full_id": "engine_fuel_exhaust",
+      "color": "#FF7043",
+      "color_name": "Deep Orange",
+      "opacity": 0.85,
+      "icon": "engine",
+      "component_count": 317,
+      "label": {
+        "en": "Engine, Fuel, Air & Exhaust",
+        "ru": "Двигатель, топливо, воздух и выхлоп",
+        "zh": "发动机、燃油、进气与排气",
+        "ar": "المحرك والوقود والهواء والعادم",
+        "es": "Motor, combustible, aire y escape"
+      },
+      "description": {
+        "en": "Internal combustion engine, fuel system, air intake, exhaust, turbo/supercharger, cooling, lubrication, ignition, and emission controls",
+        "ru": "ДВС, топливная система, впуск, выхлоп, турбо/компрессор, охлаждение, смазка, зажигание и контроль выбросов"
+      },
+      "subsystems": [
+        "engine_block",
+        "valve_train",
+        "fuel_system",
+        "air_intake",
+        "exhaust_system",
+        "turbo_supercharger",
+        "cooling_system",
+        "lubrication",
+        "ignition",
+        "emission_control"
+      ]
+    },
+    "drivetrain": {
+      "order": 3,
+      "full_id": "drivetrain_suspension",
+      "color": "#AB47BC",
+      "color_name": "Purple",
+      "opacity": 0.85,
+      "icon": "transmission",
+      "component_count": 296,
+      "label": {
+        "en": "Drivetrain & Suspension",
+        "ru": "Привод и подвеска",
+        "zh": "传动系统与悬架",
+        "ar": "نظام الدفع والتعليق",
+        "es": "Tren motriz y suspensión"
+      },
+      "description": {
+        "en": "Transmission, clutch, driveshaft, differential, CV joints, suspension arms, springs, dampers, wheels, tires",
+        "ru": "КПП, сцепление, карданный вал, дифференциал, ШРУСы, рычаги подвески, пружины, амортизаторы, колёса, шины"
+      },
+      "subsystems": [
+        "transmission",
+        "clutch",
+        "driveshaft_axles",
+        "differential",
+        "suspension_front",
+        "suspension_rear",
+        "wheels_tires"
+      ]
+    },
+    "ev": {
+      "order": 4,
+      "full_id": "ev_electrical",
+      "color": "#66BB6A",
+      "color_name": "Green",
+      "opacity": 0.85,
+      "icon": "battery-charging",
+      "component_count": 183,
+      "label": {
+        "en": "EV Electrical: Charging, Inverters, Motors, Regen",
+        "ru": "Электрика: зарядка, инверторы, электромоторы, рекуперация",
+        "zh": "电气系统：充电、逆变器、电机、能量回收",
+        "ar": "الكهربائي: الشحن، العواكس، المحركات، الاسترداد",
+        "es": "Sistema eléctrico: carga, inversores, motores, regeneración"
+      },
+      "description": {
+        "en": "HV battery pack, BMS, charging ports/connectors, inverter, DC-DC converter, electric motors, starter/alternator, 12V battery, wiring, fuses, relays, lighting electronics, ECUs",
+        "ru": "Тяговая батарея, БМС, порты зарядки, инвертор, DC-DC преобразователь, электромоторы, стартер/генератор, АКБ 12В, проводка, предохранители, реле, электроника освещения, ЭБУ"
+      },
+      "subsystems": [
+        "hv_battery",
+        "charging",
+        "inverter_converter",
+        "electric_motors",
+        "12v_system",
+        "wiring_fuses",
+        "ecus_modules",
+        "lighting_electronics"
+      ]
+    },
+    "brakes": {
+      "order": 5,
+      "full_id": "steering_brakes",
+      "color": "#EF5350",
+      "color_name": "Red",
+      "opacity": 0.85,
+      "icon": "steering-wheel",
+      "component_count": 136,
+      "label": {
+        "en": "Steering & Braking System",
+        "ru": "Рулевое управление и тормозная система",
+        "zh": "转向与制动系统",
+        "ar": "نظام التوجيه والفرامل",
+        "es": "Dirección y sistema de frenos"
+      },
+      "description": {
+        "en": "Steering column, rack, power steering, brake calipers, discs, drums, pads, ABS/ESC, parking brake, brake lines",
+        "ru": "Рулевая колонка, рейка, ГУР/ЭУР, суппорты, диски, барабаны, колодки, АБС/ESC, ручной тормоз, тормозные магистрали"
+      },
+      "subsystems": [
+        "steering_column",
+        "steering_rack",
+        "power_steering",
+        "disc_brakes",
+        "drum_brakes",
+        "brake_hydraulics",
+        "abs_esc",
+        "parking_brake"
+      ]
+    },
+    "sensors": {
+      "order": 6,
+      "full_id": "sensors_adas",
+      "color": "#FFA726",
+      "color_name": "Orange",
+      "opacity": 0.85,
+      "icon": "radar",
+      "component_count": 92,
+      "label": {
+        "en": "Sensors & ADAS",
+        "ru": "Датчики и системы помощи водителю (ADAS)",
+        "zh": "传感器与高级驾驶辅助",
+        "ar": "المستشعرات وأنظمة مساعدة السائق",
+        "es": "Sensores y ADAS"
+      },
+      "description": {
+        "en": "Cameras, radars, LiDAR, ultrasonic sensors, IMU, GPS, airbags, seatbelts, crash sensors, occupant detection",
+        "ru": "Камеры, радары, LiDAR, ультразвуковые датчики, IMU, GPS, подушки безопасности, ремни, датчики удара, определение пассажиров"
+      },
+      "subsystems": [
+        "cameras",
+        "radar",
+        "lidar",
+        "ultrasonic",
+        "imu_gps",
+        "airbags_srs",
+        "seatbelts"
+      ]
+    },
+    "hvac": {
+      "order": 7,
+      "full_id": "hvac_thermal",
+      "color": "#26C6DA",
+      "color_name": "Cyan",
+      "opacity": 0.85,
+      "icon": "thermometer",
+      "component_count": 99,
+      "label": {
+        "en": "HVAC & Thermal Management",
+        "ru": "Климат-контроль и терморегулирование",
+        "zh": "空调与热管理",
+        "ar": "التكييف والإدارة الحرارية",
+        "es": "Climatización y gestión térmica"
+      },
+      "description": {
+        "en": "A/C compressor, condenser, evaporator, heater core, blower, cabin filter, heat pump, battery thermal management, coolant circuits",
+        "ru": "Компрессор кондиционера, конденсатор, испаритель, радиатор печки, вентилятор, салонный фильтр, тепловой насос, терморегулирование батареи, контуры охлаждения"
+      },
+      "subsystems": [
+        "ac_system",
+        "heating",
+        "ventilation",
+        "battery_thermal",
+        "motor_thermal",
+        "coolant_circuits"
+      ]
+    },
+    "interior": {
+      "order": 8,
+      "full_id": "doors_trunk_interior",
+      "color": "#8D6E63",
+      "color_name": "Brown",
+      "opacity": 0.85,
+      "icon": "car-door",
+      "component_count": 148,
+      "label": {
+        "en": "Doors, Trunk & Interior",
+        "ru": "Двери, багажник и салон",
+        "zh": "车门、后备箱与内饰",
+        "ar": "الأبواب والصندوق والمقصورة",
+        "es": "Puertas, maletero e interior"
+      },
+      "description": {
+        "en": "Doors, latches, locks, trunk, seats, dashboard, infotainment, interior lighting, trim, steering wheel controls, pedals",
+        "ru": "Двери, защёлки, замки, багажник, сиденья, приборная панель, мультимедиа, внутреннее освещение, обивка, кнопки руля, педали"
+      },
+      "subsystems": [
+        "doors_latches",
+        "trunk",
+        "seats",
+        "dashboard",
+        "infotainment",
+        "interior_lighting",
+        "trim_upholstery",
+        "pedals_controls"
+      ]
+    }
+  },
+  "layer_id_mapping": {
+    "body_frame": "body",
+    "engine_fuel_exhaust": "engine",
+    "drivetrain_suspension": "drivetrain",
+    "ev_electrical": "ev",
+    "steering_brakes": "brakes",
+    "sensors_adas": "sensors",
+    "hvac_thermal": "hvac",
+    "doors_trunk_interior": "interior"
+  },
+  "color_palette_summary": {
+    "body": "#4FC3F7",
+    "engine": "#FF7043",
+    "drivetrain": "#AB47BC",
+    "ev": "#66BB6A",
+    "brakes": "#EF5350",
+    "sensors": "#FFA726",
+    "hvac": "#26C6DA",
+    "interior": "#8D6E63"
+  }
+}

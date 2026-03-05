@@ -1,0 +1,16 @@
+# LLCAR Diagnostica — KB API v2 Dependencies
+# Core
+fastapi>=0.110
+uvicorn[standard]>=0.27
+pydantic>=2.6
+
+# DB
+lancedb>=0.5
+# SQLite is stdlib — no extra package needed
+
+# Embeddings (optional, for /embed endpoint — requires GPU)
+# FlagEmbedding>=1.2         # BGE-M3 ColBERT
+# torch>=2.1                 # loaded from scripts/build_embeddings.py at runtime
+
+# Utilities
+numpy>=1.26

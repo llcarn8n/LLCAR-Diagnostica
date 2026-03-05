@@ -1,0 +1,36 @@
+# Python
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+
+# Node
+node_modules/
+
+# Heavy data (kept locally)
+knowledge-base/kb.db
+knowledge-base/kb.db.*
+knowledge-base/lancedb/
+mineru-output/
+images
+
+# Claude local settings (may contain tokens)
+.claude/settings.local.json
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+Thumbs.db
+.DS_Store
+
+# Debug temp files
+_debug_*.txt
+
+# Temp
+*.log
+rescrape_dry.json

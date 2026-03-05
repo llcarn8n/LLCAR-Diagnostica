@@ -1,0 +1,1032 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LLCAR — Scraping Manager</title>
+  <style>
+    :root {
+      --bg: #0d1117; --bg2: #161b22; --bg3: #21262d; --bg4: #30363d;
+      --border: #30363d; --text: #e6edf3; --text2: #8b949e; --text3: #484f58;
+      --accent: #58a6ff; --green: #3fb950; --orange: #d29922; --red: #f85149;
+      --purple: #bc8cff;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { background: var(--bg); color: var(--text); font-family: -apple-system, 'Segoe UI', sans-serif; font-size: 14px; min-height: 100vh; }
+
+    /* Layout */
+    .app { display: flex; height: 100vh; }
+    .sidebar { width: 260px; background: var(--bg2); border-right: 1px solid var(--border); display: flex; flex-direction: column; flex-shrink: 0; }
+    .main { flex: 1; display: flex; flex-direction: column; overflow: hidden; }
+    .main-header { padding: 16px 24px; border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 12px; }
+    .main-body { flex: 1; overflow-y: auto; padding: 20px 24px; }
+
+    /* Sidebar */
+    .sidebar-header { padding: 16px; border-bottom: 1px solid var(--border); }
+    .sidebar-header h1 { font-size: 16px; font-weight: 600; margin-bottom: 4px; }
+    .sidebar-header p { font-size: 11px; color: var(--text2); }
+    .sidebar-nav { flex: 1; overflow-y: auto; padding: 8px; }
+    .nav-section { margin-bottom: 16px; }
+    .nav-section__title { font-size: 11px; font-weight: 600; color: var(--text3); text-transform: uppercase; letter-spacing: 0.5px; padding: 4px 8px; }
+    .nav-item { display: flex; align-items: center; gap: 8px; padding: 7px 10px; border-radius: 6px; cursor: pointer; font-size: 13px; color: var(--text2); transition: all 0.15s; border: none; background: none; width: 100%; text-align: left; }
+    .nav-item:hover { background: var(--bg3); color: var(--text); }
+    .nav-item--active { background: var(--bg3); color: var(--accent); }
+    .nav-item__badge { margin-left: auto; font-size: 11px; background: var(--bg4); padding: 1px 6px; border-radius: 10px; min-width: 22px; text-align: center; }
+    .nav-item__dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+    .dot--green { background: var(--green); }
+    .dot--gray { background: var(--text3); }
+    .dot--running { background: var(--accent); animation: blink 1s infinite; }
+    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.3} }
+
+    .sidebar-footer { padding: 12px; border-top: 1px solid var(--border); }
+
+    /* Buttons */
+    .btn { border: none; border-radius: 6px; padding: 7px 14px; font-size: 13px; cursor: pointer; font-weight: 500; transition: all 0.15s; display: inline-flex; align-items: center; gap: 6px; }
+    .btn--primary { background: var(--accent); color: #fff; }
+    .btn--primary:hover { filter: brightness(1.15); }
+    .btn--green { background: #238636; color: #fff; }
+    .btn--green:hover { background: #2ea043; }
+    .btn--outline { background: none; color: var(--text); border: 1px solid var(--border); }
+    .btn--outline:hover { border-color: var(--text2); }
+    .btn--danger { background: none; color: var(--red); border: 1px solid rgba(248,81,73,0.3); }
+    .btn--danger:hover { background: rgba(248,81,73,0.1); }
+    .btn--sm { padding: 4px 10px; font-size: 12px; }
+    .btn--full { width: 100%; justify-content: center; }
+    .btn:disabled { opacity: 0.4; cursor: not-allowed; }
+
+    /* Stats bar */
+    .stats-bar { display: flex; gap: 1px; background: var(--border); border-radius: 8px; overflow: hidden; margin-bottom: 20px; }
+    .stats-bar__item { flex: 1; background: var(--bg2); padding: 14px 16px; text-align: center; }
+    .stats-bar__val { font-size: 22px; font-weight: 700; }
+    .stats-bar__val--accent { color: var(--accent); }
+    .stats-bar__val--green { color: var(--green); }
+    .stats-bar__val--orange { color: var(--orange); }
+    .stats-bar__lbl { font-size: 11px; color: var(--text2); margin-top: 2px; }
+
+    /* Source detail */
+    .source-header { margin-bottom: 20px; }
+    .source-header h2 { font-size: 20px; font-weight: 600; margin-bottom: 4px; }
+    .source-meta { display: flex; gap: 12px; font-size: 12px; color: var(--text2); }
+    .source-meta span { display: flex; align-items: center; gap: 4px; }
+
+    .info-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; margin-bottom: 20px; }
+    .info-card { background: var(--bg2); border: 1px solid var(--border); border-radius: 8px; padding: 12px; }
+    .info-card__label { font-size: 11px; color: var(--text2); margin-bottom: 4px; }
+    .info-card__value { font-size: 18px; font-weight: 600; }
+
+    /* Content list */
+    .content-toolbar { display: flex; gap: 8px; align-items: center; margin-bottom: 14px; flex-wrap: wrap; }
+    .select { background: var(--bg3); color: var(--text); border: 1px solid var(--border); border-radius: 6px; padding: 6px 10px; font-size: 12px; }
+    .content-count { font-size: 12px; color: var(--text2); margin-left: auto; }
+
+    .article { background: var(--bg2); border: 1px solid var(--border); border-radius: 8px; margin-bottom: 8px; overflow: hidden; }
+    .article--expanded .article__body { display: block; }
+    .article__head { padding: 12px 16px; cursor: pointer; display: flex; gap: 10px; align-items: flex-start; }
+    .article__head:hover { background: var(--bg3); }
+    .article__indicator { width: 4px; min-height: 40px; border-radius: 2px; flex-shrink: 0; margin-top: 2px; }
+    .article__info { flex: 1; min-width: 0; }
+    .article__tags { display: flex; gap: 4px; margin-bottom: 4px; flex-wrap: wrap; }
+    .tag { font-size: 10px; padding: 1px 6px; border-radius: 3px; font-weight: 500; }
+    .tag--class { background: rgba(88,166,255,0.15); color: var(--accent); }
+    .tag--lang { background: var(--bg4); color: var(--text2); }
+    .tag--kb { background: rgba(63,185,80,0.15); color: var(--green); }
+    .tag--dtc { background: rgba(188,140,255,0.15); color: var(--purple); }
+    .article__title { font-size: 13px; font-weight: 600; line-height: 1.3; margin-bottom: 3px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .article__snippet { font-size: 12px; color: var(--text2); line-height: 1.3; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+    .article__right { display: flex; flex-direction: column; align-items: flex-end; gap: 4px; flex-shrink: 0; }
+    .article__rel { font-size: 12px; font-weight: 600; }
+    .article__len { font-size: 10px; color: var(--text3); }
+    .article__body { display: none; padding: 0 16px 16px; border-top: 1px solid var(--border); margin-top: 0; }
+    .article__content { font-size: 13px; line-height: 1.6; color: var(--text2); white-space: pre-wrap; max-height: 400px; overflow-y: auto; margin: 12px 0; padding: 12px; background: var(--bg); border-radius: 6px; }
+    .article__actions { display: flex; gap: 8px; align-items: center; }
+    .article__url { font-size: 11px; color: var(--accent); text-decoration: none; flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .article__url:hover { text-decoration: underline; }
+
+    /* Add source form */
+    .form-group { margin-bottom: 14px; }
+    .form-group label { display: block; font-size: 12px; font-weight: 500; margin-bottom: 5px; color: var(--text2); }
+    .input { width: 100%; background: var(--bg); color: var(--text); border: 1px solid var(--border); border-radius: 6px; padding: 8px 12px; font-size: 13px; }
+    .input:focus { outline: none; border-color: var(--accent); }
+    textarea.input { min-height: 100px; resize: vertical; font-family: monospace; }
+    .form-hint { font-size: 11px; color: var(--text3); margin-top: 4px; }
+
+    /* Pagination */
+    .pager { display: flex; justify-content: center; align-items: center; gap: 8px; margin-top: 16px; }
+
+    /* States */
+    .empty { text-align: center; padding: 48px 24px; color: var(--text2); }
+    .empty__icon { font-size: 36px; margin-bottom: 12px; }
+    .empty__title { font-size: 16px; font-weight: 600; color: var(--text); margin-bottom: 4px; }
+
+    /* Notification */
+    .notif { position: fixed; bottom: 20px; right: 20px; padding: 10px 18px; border-radius: 8px; font-size: 13px; z-index: 9999; display: none; max-width: 380px; box-shadow: 0 4px 12px rgba(0,0,0,0.4); }
+    .notif--ok { background: #238636; color: #fff; }
+    .notif--err { background: #da3633; color: #fff; }
+
+    /* Progress */
+    .progress-bar { height: 3px; background: var(--bg4); border-radius: 2px; overflow: hidden; }
+    .progress-bar__fill { height: 100%; background: var(--accent); transition: width 0.3s; }
+  </style>
+</head>
+<body>
+
+<div class="app">
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <div class="sidebar-header">
+      <h1>Scraping Manager</h1>
+      <p>Li Auto Knowledge Base</p>
+    </div>
+    <div class="sidebar-nav" id="sidebar-nav">
+      <div class="nav-section">
+        <div class="nav-section__title">Overview</div>
+        <button class="nav-item nav-item--active" onclick="showOverview()" id="nav-overview">
+          <span>Dashboard</span>
+        </button>
+        <button class="nav-item" onclick="showAddSource()" id="nav-add">
+          <span>+ Add source</span>
+        </button>
+      </div>
+      <div class="nav-section">
+        <div class="nav-section__title">Sources</div>
+        <div id="nav-sources"></div>
+      </div>
+    </div>
+    <div class="sidebar-footer">
+      <button class="btn btn--green btn--full" onclick="runAll()">Run all scrapers</button>
+    </div>
+  </div>
+
+  <!-- Main -->
+  <div class="main">
+    <div class="main-header" id="main-header">
+      <h2 id="page-title">Dashboard</h2>
+      <div style="flex:1"></div>
+      <button class="btn btn--outline btn--sm" onclick="refresh()">Refresh</button>
+      <button class="btn btn--primary btn--sm" onclick="importKB()">Import to KB</button>
+    </div>
+    <div class="main-body" id="main-body"></div>
+  </div>
+</div>
+
+<div class="notif" id="notif"></div>
+
+<script>
+const API = 'http://localhost:8000';
+let allScrapers = [];
+let currentView = 'overview'; // overview | source:name | add | content:name
+let contentPage = 1;
+let contentSort = 'newest';
+let contentFilter = ''; // '' = all, '0' = pending, '1' = imported
+let expandedArticle = null;
+let polls = {};
+
+// ── Boot ──
+loadData();
+
+async function loadData() {
+  try {
+    const r = await fetch(API + '/scrapers/list');
+    if (!r.ok) throw new Error('API returned ' + r.status);
+    const d = await r.json();
+    allScrapers = d.scrapers || [];
+    renderSidebar();
+    if (currentView === 'overview') showOverview();
+    else if (currentView.startsWith('source:')) showSource(currentView.split(':')[1]);
+    else if (currentView.startsWith('content:')) showContent(currentView.split(':')[1]);
+  } catch (e) {
+    document.getElementById('main-body').innerHTML = `
+      <div class="empty">
+        <div class="empty__icon">!</div>
+        <div class="empty__title">API not available</div>
+        <p>Cannot connect to ${esc(API)}</p>
+        <p style="margin-top:8px;font-size:12px">Start the server:<br><code>SKIP_PPLX_EMBED=1 uvicorn api.server:app --port 8000</code></p>
+      </div>`;
+  }
+}
+
+function refresh() { loadData(); }
+
+// ── Sidebar ──
+function renderSidebar() {
+  const el = document.getElementById('nav-sources');
+  const active = allScrapers.filter(s => s.total > 0);
+  const inactive = allScrapers.filter(s => s.total === 0);
+
+  let h = '';
+  for (const sc of [...active, ...inactive]) {
+    const isActive = sc.total > 0;
+    const isCurrent = currentView === 'source:' + sc.name || currentView === 'content:' + sc.name;
+    const dotClass = sc.status === 'running' ? 'dot--running' : isActive ? 'dot--green' : 'dot--gray';
+    h += `<button class="nav-item ${isCurrent ? 'nav-item--active' : ''}" onclick="showSource('${sc.name}')">
+      <span class="nav-item__dot ${dotClass}"></span>
+      <span>${sc.name}</span>
+      ${sc.total > 0 ? `<span class="nav-item__badge">${sc.total}</span>` : ''}
+    </button>`;
+  }
+  el.innerHTML = h;
+
+  // Update overview/add active state
+  document.getElementById('nav-overview').className = 'nav-item' + (currentView === 'overview' ? ' nav-item--active' : '');
+  document.getElementById('nav-add').className = 'nav-item' + (currentView === 'add' ? ' nav-item--active' : '');
+}
+
+// ── Overview ──
+function showOverview() {
+  currentView = 'overview';
+  renderSidebar();
+  document.getElementById('page-title').textContent = 'Dashboard';
+
+  const tot = allScrapers.reduce((s, x) => s + x.total, 0);
+  const imp = allScrapers.reduce((s, x) => s + x.imported, 0);
+  const active = allScrapers.filter(s => s.total > 0);
+
+  let h = `
+    <div class="stats-bar">
+      <div class="stats-bar__item"><div class="stats-bar__val stats-bar__val--accent">${tot}</div><div class="stats-bar__lbl">Total scraped</div></div>
+      <div class="stats-bar__item"><div class="stats-bar__val stats-bar__val--green">${imp}</div><div class="stats-bar__lbl">In Knowledge Base</div></div>
+      <div class="stats-bar__item"><div class="stats-bar__val stats-bar__val--orange">${tot - imp}</div><div class="stats-bar__lbl">Pending import</div></div>
+      <div class="stats-bar__item"><div class="stats-bar__val">${active.length}<span style="color:var(--text3)">/${allScrapers.length}</span></div><div class="stats-bar__lbl">Active sources</div></div>
+    </div>`;
+
+  if (active.length === 0) {
+    h += `<div class="empty">
+      <div class="empty__icon">&#128269;</div>
+      <div class="empty__title">No content yet</div>
+      <p>Run scrapers to collect articles about Li Auto</p>
+    </div>`;
+  } else {
+    h += '<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px">';
+    for (const sc of active.sort((a, b) => b.total - a.total)) {
+      const relPct = Math.round((sc.avg_relevance || 0) * 100);
+      const relColor = relPct > 70 ? 'var(--green)' : relPct > 40 ? 'var(--orange)' : 'var(--red)';
+      const dt = sc.last_scraped ? new Date(sc.last_scraped).toLocaleDateString('ru-RU') : '';
+      h += `<div class="info-card" style="cursor:pointer" onclick="showSource('${sc.name}')">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
+          <span style="font-weight:600">${sc.name}</span>
+          <span class="tag tag--lang">${sc.lang.toUpperCase()}</span>
+        </div>
+        <div style="display:flex;gap:16px;font-size:12px;color:var(--text2)">
+          <span><b style="color:var(--text);font-size:16px">${sc.total}</b> items</span>
+          <span><b style="color:${relColor}">${relPct}%</b> rel.</span>
+          <span>${sc.imported}/${sc.total} in KB</span>
+        </div>
+        ${dt ? `<div style="font-size:11px;color:var(--text3);margin-top:6px">Last: ${dt}</div>` : ''}
+      </div>`;
+    }
+    h += '</div>';
+  }
+
+  document.getElementById('main-body').innerHTML = h;
+}
+
+// ── Source detail ──
+function showSource(name) {
+  currentView = 'source:' + name;
+  renderSidebar();
+  const sc = allScrapers.find(s => s.name === name);
+  document.getElementById('page-title').textContent = name;
+
+  const relPct = Math.round((sc?.avg_relevance || 0) * 100);
+  const relColor = relPct > 70 ? 'var(--green)' : relPct > 40 ? 'var(--orange)' : 'var(--red)';
+  const stClass = sc?.status === 'running' ? 'dot--running' : sc?.total > 0 ? 'dot--green' : 'dot--gray';
+  const stText = { running:'Running...', done:'Done', error:'Error', timeout:'Timeout' }[sc?.status] || 'Idle';
+
+  let h = `
+    <div class="source-header">
+      <h2 style="display:flex;align-items:center;gap:8px">
+        <span class="nav-item__dot ${stClass}" style="width:10px;height:10px"></span>
+        ${name}
+        <span class="tag tag--lang">${(sc?.lang || '?').toUpperCase()}</span>
+      </h2>
+      <div class="source-meta" style="margin-top:6px">
+        <span>Status: <b>${stText}</b></span>
+        ${sc?.last_scraped ? `<span>Last run: ${new Date(sc.last_scraped).toLocaleString('ru-RU')}</span>` : ''}
+      </div>
+    </div>
+
+    <div class="info-grid">
+      <div class="info-card">
+        <div class="info-card__label">Total items</div>
+        <div class="info-card__value">${sc?.total || 0}</div>
+      </div>
+      <div class="info-card">
+        <div class="info-card__label">In KB</div>
+        <div class="info-card__value" style="color:var(--green)">${sc?.imported || 0}</div>
+      </div>
+      <div class="info-card">
+        <div class="info-card__label">Pending</div>
+        <div class="info-card__value" style="color:var(--orange)">${(sc?.total || 0) - (sc?.imported || 0)}</div>
+      </div>
+      <div class="info-card">
+        <div class="info-card__label">Avg relevance</div>
+        <div class="info-card__value" style="color:${relColor}">${relPct}%</div>
+      </div>
+      <div class="info-card">
+        <div class="info-card__label">Avg length</div>
+        <div class="info-card__value">${sc?.avg_length > 0 ? (sc.avg_length / 1000).toFixed(1) + 'K' : '—'}</div>
+      </div>
+    </div>
+
+    <div style="display:flex;gap:8px;margin-bottom:20px">
+      <button class="btn btn--primary" onclick="runScraper('${name}')" ${sc?.status === 'running' ? 'disabled' : ''}>
+        ${sc?.status === 'running' ? 'Running...' : 'Run scraper'}
+      </button>
+      <button class="btn btn--outline" onclick="showContent('${name}')">
+        View articles (${sc?.total || 0})
+      </button>
+    </div>
+
+    <div style="padding:16px;background:var(--bg2);border:1px solid var(--border);border-radius:8px;margin-bottom:16px">
+      <div style="font-size:13px;font-weight:600;margin-bottom:10px">Scrape single URL</div>
+      <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap">
+        <input class="input" id="scrape-url-${name}" placeholder="https://..." style="flex:1;min-width:200px"
+          onkeydown="if(event.key==='Enter')scrapeURL('${name}')" />
+        <select class="select" id="scrape-lang-${name}" style="width:70px">
+          <option value="auto">Auto</option>
+          <option value="en">EN</option>
+          <option value="ru">RU</option>
+          <option value="zh">ZH</option>
+        </select>
+        <select class="select" id="scrape-method-${name}" style="width:140px" title="Extraction method">
+          <option value="auto">Auto (best)</option>
+          <option value="bs4_article">BS4 site-specific</option>
+          <option value="trafilatura">Trafilatura</option>
+          <option value="trafilatura_precision">Trafil. precise</option>
+          <option value="bs4">BS4 generic</option>
+          <option value="regex">Regex (raw)</option>
+        </select>
+        <button class="btn btn--green btn--sm" onclick="scrapeURL('${name}')">Scrape</button>
+        <button class="btn btn--outline btn--sm" onclick="previewExtract('${name}')" title="Compare all extraction methods">Compare</button>
+      </div>
+      <div id="scrape-result-${name}" style="margin-top:8px"></div>
+    </div>`;
+
+  if (!sc?.total) {
+    h += `<div class="empty">
+      <div class="empty__icon">&#128196;</div>
+      <div class="empty__title">No articles yet</div>
+      <p>Click "Run scraper" to start collecting articles</p>
+    </div>`;
+  }
+
+  // Keyword search section
+  h += `
+    <div style="margin-top:20px;padding:16px;background:var(--bg2);border:1px solid var(--border);border-radius:8px">
+      <div style="font-size:13px;font-weight:600;margin-bottom:10px">Search articles by keywords</div>
+      <div style="display:flex;gap:8px;align-items:center">
+        <input class="input" id="discover-kw-${name}" placeholder="e.g. li l9 battery range test" style="flex:1"
+          onkeydown="if(event.key==='Enter')discoverURLs('${name}')" />
+        <button class="btn btn--primary btn--sm" onclick="discoverURLs('${name}')">Search</button>
+      </div>
+      <div style="font-size:11px;color:var(--text3);margin-top:4px">Crawls the source site by tag/search/category pages with your keywords</div>
+      <div id="discover-results-${name}" style="margin-top:10px"></div>
+    </div>`;
+
+  // Seed URLs + Add URL section
+  h += `<div id="source-urls-${name}" style="margin-top:16px"><div class="empty" style="padding:12px">Loading source URLs...</div></div>`;
+
+  document.getElementById('main-body').innerHTML = h;
+
+  // Load source URLs async
+  fetch(API + '/scrapers/sources').then(r => r.json()).then(data => {
+    const info = data[name];
+    const urlsEl = document.getElementById('source-urls-' + name);
+    if (!urlsEl || !info) return;
+
+    let uh = `<div style="padding:16px;background:var(--bg2);border:1px solid var(--border);border-radius:8px">
+      <div style="font-size:13px;font-weight:600;margin-bottom:10px">
+        Source URLs ${info.file ? `(from ${info.file})` : ''}
+        ${info.domain ? `<span style="font-size:11px;color:var(--text3);margin-left:8px">${info.domain}</span>` : ''}
+      </div>`;
+
+    if (info.seed_urls.length) {
+      for (const u of info.seed_urls) {
+        uh += `<div style="font-size:12px;margin-bottom:4px;display:flex;align-items:center;gap:6px">
+          <span style="color:var(--text3)">•</span>
+          <a href="${u}" target="_blank" class="article__url" style="font-size:12px;flex:1">${esc(u)}</a>
+        </div>`;
+      }
+    } else {
+      uh += `<div style="font-size:12px;color:var(--text3)">No URLs found in scraper file</div>`;
+    }
+
+    // Add URL form
+    uh += `
+      <div style="margin-top:12px;padding-top:12px;border-top:1px solid var(--border);display:flex;gap:8px;align-items:center">
+        <input class="input" id="add-url-input-${name}" placeholder="https://..." style="flex:1;font-size:12px"
+          onkeydown="if(event.key==='Enter')addURLToSource('${name}')" />
+        <button class="btn btn--green btn--sm" onclick="addURLToSource('${name}')">Add URL</button>
+      </div>
+      <div style="font-size:11px;color:var(--text3);margin-top:4px">URL will be added to SEED_URLS in the scraper Python file</div>`;
+
+    uh += '</div>';
+    urlsEl.innerHTML = uh;
+  }).catch(() => {});
+}
+
+// ── Content browser ──
+async function showContent(source) {
+  currentView = 'content:' + (source || '');
+  renderSidebar();
+  document.getElementById('page-title').textContent = source ? source + ' — Articles' : 'All articles';
+
+  const el = document.getElementById('main-body');
+  el.innerHTML = '<div class="empty">Loading...</div>';
+
+  const p = new URLSearchParams({ page: contentPage, per_page: 20, sort: contentSort });
+  if (source) p.set('source', source);
+  if (contentFilter) p.set('imported', contentFilter);
+
+  try {
+    const r = await fetch(API + '/scrapers/content?' + p);
+    const data = await r.json();
+    renderArticles(data, source);
+  } catch (e) {
+    el.innerHTML = '<div class="empty">Error: ' + esc(e.message) + '</div>';
+  }
+}
+
+function renderArticles(data, source) {
+  const el = document.getElementById('main-body');
+  let h = `<div class="content-toolbar">
+    <select class="select" onchange="contentSort=this.value;contentPage=1;showContent('${source||''}')">
+      <option value="newest" ${contentSort==='newest'?'selected':''}>Newest first</option>
+      <option value="relevance" ${contentSort==='relevance'?'selected':''}>Best relevance</option>
+      <option value="length" ${contentSort==='length'?'selected':''}>Longest first</option>
+    </select>
+    <select class="select" onchange="contentFilter=this.value;contentPage=1;showContent('${source||''}')">
+      <option value="" ${contentFilter===''?'selected':''}>All</option>
+      <option value="0" ${contentFilter==='0'?'selected':''}>Pending</option>
+      <option value="1" ${contentFilter==='1'?'selected':''}>In KB</option>
+    </select>
+    <span class="content-count">${data.total} articles</span>
+    <button class="btn btn--outline btn--sm" onclick="rescrapeAll('${source||''}')" title="Re-fetch and re-extract ALL articles with best method">Re-scrape all</button>
+    <button class="btn btn--outline btn--sm" onclick="showSource('${source}')">Back</button>
+  </div>`;
+
+  for (const it of data.items) {
+    const relPct = Math.round((it.relevance || 0) * 100);
+    const relColor = relPct > 70 ? 'var(--green)' : relPct > 40 ? 'var(--orange)' : 'var(--red)';
+    const indColor = it.imported ? 'var(--green)' : 'var(--orange)';
+    const isExpanded = expandedArticle === it.id;
+
+    h += `<div class="article ${isExpanded ? 'article--expanded' : ''}" id="art-${it.id}">
+      <div class="article__head" onclick="toggleArticle(${it.id}, '${source||''}')">
+        <div class="article__indicator" style="background:${indColor}"></div>
+        <div class="article__info">
+          <div class="article__tags">
+            <span class="tag tag--class">${it.content_class || '?'}</span>
+            <span class="tag tag--lang">${it.lang}</span>
+            ${it.imported ? '<span class="tag tag--kb">IN KB</span>' : ''}
+            ${it.dtc_codes ? '<span class="tag tag--dtc">DTC</span>' : ''}
+          </div>
+          <div class="article__title">${esc(it.title || 'No title')}</div>
+          <div class="article__snippet">${esc(it.preview || '')}</div>
+        </div>
+        <div class="article__right">
+          <span class="article__rel" style="color:${relColor}">${relPct}%</span>
+          <span class="article__len">${(it.content_length/1000).toFixed(1)}K</span>
+        </div>
+      </div>
+      <div class="article__body" id="art-body-${it.id}">
+        <div class="article__content" id="art-content-${it.id}">${isExpanded ? esc(it.preview) : ''}</div>
+        <div class="article__actions">
+          <a class="article__url" href="${it.url}" target="_blank">${esc(it.url || '')}</a>
+          <button class="btn btn--danger btn--sm" onclick="deleteItem(${it.id},'${source||''}')">Delete</button>
+        </div>
+      </div>
+    </div>`;
+  }
+
+  if (data.pages > 1) {
+    h += '<div class="pager">';
+    if (data.page > 1) h += `<button class="btn btn--outline btn--sm" onclick="contentPage=${data.page-1};showContent('${source||''}')">Prev</button>`;
+    h += `<span style="font-size:12px;color:var(--text2)">Page ${data.page} / ${data.pages}</span>`;
+    if (data.page < data.pages) h += `<button class="btn btn--outline btn--sm" onclick="contentPage=${data.page+1};showContent('${source||''}')">Next</button>`;
+    h += '</div>';
+  }
+
+  if (data.items.length === 0) {
+    h += '<div class="empty"><div class="empty__title">No articles</div></div>';
+  }
+
+  el.innerHTML = h;
+}
+
+async function toggleArticle(id, source) {
+  if (expandedArticle === id) { expandedArticle = null; showContent(source); return; }
+  expandedArticle = id;
+  // Load full content via dedicated endpoint
+  try {
+    const r = await fetch(API + '/scrapers/content/' + id + '/full');
+    const item = await r.json();
+    const body = document.getElementById('art-body-' + id);
+    const art = document.getElementById('art-' + id);
+    if (body && item.content) {
+      body.innerHTML = `
+        <div style="margin:12px 0">
+          <label style="font-size:11px;color:var(--text2)">Title (editable):</label>
+          <input class="input" id="edit-title-${id}" value="${escAttr(item.title || '')}" style="margin-bottom:8px" />
+          <label style="font-size:11px;color:var(--text2)">Category:</label>
+          <select class="select" id="edit-class-${id}" style="margin-bottom:8px">
+            ${['owner_review','troubleshooting','maintenance','specs','description','guide','news'].map(c =>
+              `<option value="${c}" ${c === item.content_class ? 'selected' : ''}>${c}</option>`
+            ).join('')}
+          </select>
+          <label style="font-size:11px;color:var(--text2)">Content (editable — clean noise before importing):</label>
+          <textarea class="input" id="edit-content-${id}" style="min-height:250px;font-size:12px;line-height:1.5">${esc(item.content)}</textarea>
+          <div style="font-size:11px;color:var(--text3);margin-top:4px">${item.content.length} chars</div>
+        </div>
+        <div class="article__actions" style="flex-wrap:wrap">
+          <a class="article__url" href="${item.url}" target="_blank">${esc(item.url || '')}</a>
+          <div style="display:flex;gap:6px;align-items:center;flex-wrap:wrap">
+            <select class="select" id="rescrape-method-${id}" style="width:130px;font-size:11px;padding:3px 6px">
+              <option value="auto">Auto (best)</option>
+              <option value="bs4_article">BS4 site-specific</option>
+              <option value="trafilatura">Trafilatura</option>
+              <option value="trafilatura_precision">Trafil. precise</option>
+              <option value="bs4">BS4 generic</option>
+              <option value="regex">Regex (raw)</option>
+            </select>
+            <button class="btn btn--outline btn--sm" onclick="rescrapeItem(${id},'${source}')" title="Re-fetch URL and re-extract content">Re-scrape</button>
+            <button class="btn btn--green btn--sm" onclick="saveItem(${id},'${source}')">Save changes</button>
+            <button class="btn btn--danger btn--sm" onclick="deleteItem(${id},'${source}')">Delete</button>
+          </div>
+        </div>`;
+      body.style.display = 'block';
+      if (art) art.classList.add('article--expanded');
+    }
+  } catch (e) { notify('Error loading: ' + e.message, true); }
+}
+
+async function rescrapeItem(id, source) {
+  const methodSel = document.getElementById('rescrape-method-' + id);
+  const method = methodSel?.value || 'auto';
+  notify('Re-scraping with ' + method + '...');
+  try {
+    const r = await fetch(API + '/scrapers/rescrape/' + id, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ method })
+    });
+    const d = await r.json();
+    if (!r.ok) { notify('Error: ' + (d.detail || r.status), true); return; }
+    notify(`Re-scraped [${d.method_used}]: ${(d.content_length/1000).toFixed(1)}K chars`);
+    // Reload the article
+    expandedArticle = id;
+    toggleArticle(id, source);
+    setTimeout(() => toggleArticle(id, source), 200);
+  } catch (e) { notify('Error: ' + e.message, true); }
+}
+
+async function saveItem(id, source) {
+  const title = document.getElementById('edit-title-' + id)?.value;
+  const content = document.getElementById('edit-content-' + id)?.value;
+  const content_class = document.getElementById('edit-class-' + id)?.value;
+  try {
+    const r = await fetch(API + '/scrapers/content/' + id, {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ title, content, content_class })
+    });
+    if (r.ok) { notify('Saved!'); } else { const d = await r.json(); notify('Error: ' + d.detail, true); }
+  } catch (e) { notify('Error: ' + e.message, true); }
+}
+
+// ── Add source ──
+function showAddSource() {
+  currentView = 'add';
+  renderSidebar();
+  document.getElementById('page-title').textContent = 'Add new source';
+
+  document.getElementById('main-body').innerHTML = `
+    <div style="max-width:600px">
+      <p style="color:var(--text2);margin-bottom:16px">
+        Add a new website source for scraping Li Auto articles. The scraper will be created as a Python file in <code>scripts/scrapers/</code>.
+      </p>
+
+      <div class="form-group">
+        <label>Source name (latin, no spaces)</label>
+        <input class="input" id="add-name" placeholder="e.g. motor1_com" />
+        <div class="form-hint">Used as filename and source_name in database</div>
+      </div>
+
+      <div class="form-group">
+        <label>Language</label>
+        <select class="input" id="add-lang">
+          <option value="ru">Russian (RU)</option>
+          <option value="en">English (EN)</option>
+          <option value="zh">Chinese (ZH)</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>Seed URLs (one per line)</label>
+        <textarea class="input" id="add-urls" placeholder="https://example.com/search?q=li+auto&#10;https://example.com/article/li-l9-review/"></textarea>
+        <div class="form-hint">Search pages and/or direct article URLs. Search pages will be crawled for article links.</div>
+      </div>
+
+      <div class="form-group">
+        <label>URL filter keywords (comma-separated)</label>
+        <input class="input" id="add-keywords" placeholder="li-, lixiang, li_auto, mega" />
+        <div class="form-hint">Only URLs containing these keywords will be scraped</div>
+      </div>
+
+      <div class="form-group">
+        <label>Content CSS selectors (comma-separated)</label>
+        <input class="input" id="add-selectors" value=".entry-content p, .post-content p, article p" />
+        <div class="form-hint">CSS selectors to extract article text</div>
+      </div>
+
+      <button class="btn btn--green" onclick="createSource()">Create scraper</button>
+      <span style="font-size:12px;color:var(--text2);margin-left:12px">Creates a Python file and registers it</span>
+    </div>`;
+}
+
+async function createSource() {
+  const name = document.getElementById('add-name').value.trim();
+  const lang = document.getElementById('add-lang').value;
+  const urls = document.getElementById('add-urls').value.trim().split('\n').filter(Boolean);
+  const keywords = document.getElementById('add-keywords').value.trim();
+  const selectors = document.getElementById('add-selectors').value.trim();
+
+  if (!name || !urls.length) { notify('Fill in name and at least one URL', true); return; }
+  if (!/^[a-z0-9_]+$/.test(name)) { notify('Name must be latin lowercase + underscores', true); return; }
+
+  try {
+    const r = await fetch(API + '/scrapers/create', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ name, lang, urls, keywords, selectors })
+    });
+    if (r.ok) {
+      notify('Scraper "' + name + '" created!');
+      loadData();
+      showOverview();
+    } else {
+      const d = await r.json();
+      notify('Error: ' + (d.detail || r.status), true);
+    }
+  } catch (e) {
+    notify('Error: ' + e.message, true);
+  }
+}
+
+// ── Navigate to article ──
+function goToArticle(source, id) {
+  expandedArticle = id;
+  contentPage = 1;
+  contentSort = 'newest';
+  contentFilter = '';
+  // Refresh sidebar counts, then show content
+  fetch(API + '/scrapers/list').then(r => r.json()).then(d => {
+    allScrapers = d.scrapers || [];
+    renderSidebar();
+    showContent(source);
+  }).catch(() => showContent(source));
+}
+
+// ── Scrape single URL ──
+async function scrapeURL(source) {
+  const urlInput = document.getElementById('scrape-url-' + source);
+  const langSel = document.getElementById('scrape-lang-' + source);
+  const methodSel = document.getElementById('scrape-method-' + source);
+  const resultEl = document.getElementById('scrape-result-' + source);
+  const url = urlInput?.value.trim();
+  const lang = langSel?.value || 'auto';
+  const method = methodSel?.value || 'auto';
+
+  if (!url || !url.startsWith('http')) { notify('Enter a valid URL', true); return; }
+
+  resultEl.innerHTML = '<div style="color:var(--accent);font-size:12px">Scraping...</div>';
+
+  try {
+    const r = await fetch(API + '/scrapers/scrape-url', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ url, source, lang, method })
+    });
+    const d = await r.json();
+
+    if (d.status === 'duplicate') {
+      notify('Already in DB — opening article');
+      goToArticle(source, d.id);
+      return;
+    }
+    if (!r.ok) {
+      resultEl.innerHTML = `<div style="color:var(--red);font-size:12px">Error: ${esc(d.detail || d.error || r.status)}</div>`;
+      return;
+    }
+
+    urlInput.value = '';
+    notify(`Scraped [${d.method_used}]: ${d.title?.slice(0,40)} — ${(d.content_length/1000).toFixed(1)}K chars`);
+    goToArticle(source, d.id);
+  } catch (e) {
+    resultEl.innerHTML = `<div style="color:var(--red);font-size:12px">Error: ${esc(e.message)}</div>`;
+  }
+}
+
+// ── Preview/Compare extraction methods ──
+async function previewExtract(source) {
+  const urlInput = document.getElementById('scrape-url-' + source);
+  const resultEl = document.getElementById('scrape-result-' + source);
+  const url = urlInput?.value.trim();
+  if (!url || !url.startsWith('http')) { notify('Enter a URL to compare methods', true); return; }
+
+  resultEl.innerHTML = '<div style="color:var(--accent);font-size:12px">Comparing extraction methods...</div>';
+
+  try {
+    const r = await fetch(API + '/scrapers/preview-extract', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ url })
+    });
+    const d = await r.json();
+    if (!d.previews) { resultEl.innerHTML = '<div style="color:var(--red)">Error</div>'; return; }
+
+    let h = '<div style="margin-top:8px">';
+    h += '<div style="font-size:12px;font-weight:600;margin-bottom:8px;color:var(--accent)">Extraction comparison:</div>';
+    for (const p of d.previews) {
+      const len = p.content_length || 0;
+      const lenK = (len/1000).toFixed(1);
+      const color = p.error ? 'var(--red)' : len > 500 ? 'var(--green)' : len > 0 ? 'var(--orange)' : 'var(--text3)';
+      h += `<div style="padding:8px;background:var(--bg);border:1px solid var(--border);border-radius:6px;margin-bottom:6px">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px">
+          <span style="font-weight:600;font-size:12px">${esc(p.method_used || p.method)}</span>
+          <span style="font-size:12px;color:${color}">${p.error ? 'ERROR' : lenK + 'K chars'}</span>
+        </div>
+        ${p.title ? `<div style="font-size:11px;color:var(--text2);margin-bottom:4px">Title: ${esc(p.title.slice(0,80))}</div>` : ''}
+        ${p.error
+          ? `<div style="font-size:11px;color:var(--red)">${esc(p.error)}</div>`
+          : `<div style="font-size:11px;color:var(--text3);max-height:80px;overflow:hidden;white-space:pre-wrap">${esc(p.preview_start?.slice(0,200) || '')}</div>`
+        }
+        ${!p.error && len > 200 ? `<button class="btn btn--primary btn--sm" style="margin-top:6px;padding:2px 8px;font-size:11px" onclick="scrapeWithMethod('${source}','${escAttr(url)}','${p.method_used || p.method}')">Use this method</button>` : ''}
+      </div>`;
+    }
+    h += '</div>';
+    resultEl.innerHTML = h;
+  } catch (e) {
+    resultEl.innerHTML = `<div style="color:var(--red);font-size:12px">Error: ${esc(e.message)}</div>`;
+  }
+}
+
+async function scrapeWithMethod(source, url, method) {
+  try {
+    const r = await fetch(API + '/scrapers/scrape-url', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ url, source, lang: 'auto', method })
+    });
+    const d = await r.json();
+    if (d.status === 'duplicate') { notify('Already in DB'); goToArticle(source, d.id); return; }
+    if (!r.ok) { notify('Error: ' + (d.detail || r.status), true); return; }
+    notify(`Scraped [${d.method_used}]: ${d.title?.slice(0,40)} — ${(d.content_length/1000).toFixed(1)}K`);
+    goToArticle(source, d.id);
+  } catch (e) { notify('Error: ' + e.message, true); }
+}
+
+// ── Add URL to source ──
+async function addURLToSource(name) {
+  const input = document.getElementById('add-url-input-' + name);
+  const url = input?.value.trim();
+  if (!url || !url.startsWith('http')) { notify('Enter a valid URL starting with http', true); return; }
+  try {
+    const r = await fetch(API + '/scrapers/sources/' + name + '/add-url', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ url })
+    });
+    if (r.ok) {
+      const d = await r.json();
+      notify('URL added to ' + d.file);
+      input.value = '';
+      showSource(name); // Refresh to show new URL
+    } else {
+      const d = await r.json();
+      notify('Error: ' + (d.detail || r.status), true);
+    }
+  } catch (e) { notify('Error: ' + e.message, true); }
+}
+
+// ── Discover URLs by keywords ──
+async function discoverURLs(name) {
+  const input = document.getElementById('discover-kw-' + name);
+  const resultsEl = document.getElementById('discover-results-' + name);
+  const keywords = input?.value.trim();
+  if (!keywords) { notify('Enter search keywords', true); return; }
+
+  resultsEl.innerHTML = '<div style="color:var(--text2);font-size:12px">Searching...</div>';
+
+  try {
+    const r = await fetch(API + '/scrapers/sources/' + name + '/discover', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ keywords })
+    });
+    const d = await r.json();
+
+    if (!d.results || d.results.length === 0) {
+      resultsEl.innerHTML = `<div style="color:var(--text3);font-size:12px">No results found. Crawled: ${(d.crawled_pages||[]).length} pages on <b>${esc(d.domain)}</b></div>`;
+      return;
+    }
+
+    let h = `<div style="font-size:11px;color:var(--text2);margin-bottom:8px">
+      Found <b>${d.total}</b> URLs on <b>${esc(d.domain)}</b>
+      <span style="color:var(--text3)">(crawled ${(d.crawled_pages||[]).length} pages)</span>
+    </div>`;
+    for (const item of d.results) {
+      const u = item.url || item;
+      const already = item.already_scraped;
+      h += `<div style="font-size:12px;margin-bottom:6px;display:flex;align-items:center;gap:8px;padding:4px 0">
+        ${already ? '<span class="tag tag--kb" style="flex-shrink:0">IN DB</span>' : '<span style="width:36px"></span>'}
+        <a href="${escAttr(u)}" target="_blank" class="article__url" style="font-size:12px;flex:1">${esc(u)}</a>
+        ${already
+          ? '<span style="font-size:11px;color:var(--text3)">Already scraped</span>'
+          : `<button class="btn btn--primary btn--sm" style="padding:2px 8px;font-size:11px" onclick="scrapeDiscoveredURL('${name}','${escAttr(u)}',this)">Scrape</button>
+             <button class="btn btn--outline btn--sm" style="padding:2px 8px;font-size:11px" onclick="addDiscoveredURL('${name}','${escAttr(u)}')">+ Add</button>`
+        }
+      </div>`;
+    }
+    resultsEl.innerHTML = h;
+  } catch (e) {
+    resultsEl.innerHTML = `<div style="color:var(--red);font-size:12px">Error: ${esc(e.message)}</div>`;
+  }
+}
+
+async function scrapeDiscoveredURL(name, url, btn) {
+  btn.textContent = '...';
+  btn.disabled = true;
+  try {
+    const r = await fetch(API + '/scrapers/scrape-url', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ url, source: name, lang: 'auto' })
+    });
+    const d = await r.json();
+    if (d.status === 'duplicate') {
+      btn.textContent = 'In DB';
+      btn.style.color = 'var(--orange)';
+      notify('Already in DB');
+    } else if (r.ok) {
+      notify(d.title?.slice(0,40) + '... ' + (d.content_length/1000).toFixed(1) + 'K');
+      goToArticle(name, d.id);
+    } else {
+      btn.textContent = 'Err';
+      btn.style.color = 'var(--red)';
+      notify('Error: ' + (d.detail || r.status), true);
+    }
+  } catch (e) {
+    btn.textContent = 'Err';
+    notify(e.message, true);
+  }
+}
+
+async function addDiscoveredURL(name, url) {
+  try {
+    const r = await fetch(API + '/scrapers/sources/' + name + '/add-url', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ url })
+    });
+    if (r.ok) {
+      notify('URL added!');
+      // Visually mark button as done
+      event.target.textContent = 'Added';
+      event.target.disabled = true;
+      event.target.style.opacity = '0.5';
+    } else {
+      const d = await r.json();
+      notify('Error: ' + (d.detail || r.status), true);
+    }
+  } catch (e) { notify('Error: ' + e.message, true); }
+}
+
+// ── Actions ──
+async function runScraper(name) {
+  try {
+    const r = await fetch(API + '/scrapers/run/' + name, { method: 'POST' });
+    const d = await r.json();
+    if (d.status === 'already_running') { notify(name + ' already running'); return; }
+    notify(name + ': started');
+    startPoll(name);
+    loadData();
+  } catch (e) { notify('Error: ' + e.message, true); }
+}
+
+function runAll() {
+  allScrapers.forEach(s => {
+    if (s.total > 0 || ['getcar', 'autochina_blog', 'drom_reviews', 'autonews', 'ev_forums', 'wikipedia', 'electrek', 'autoreview'].includes(s.name)) {
+      // Only run known-working scrapers
+    }
+  });
+  runScraper('all');
+}
+
+function startPoll(name) {
+  if (polls[name]) return;
+  polls[name] = setInterval(async () => {
+    try {
+      const r = await fetch(API + '/scrapers/status/' + name);
+      const st = await r.json();
+      if (st.status !== 'running') {
+        clearInterval(polls[name]); delete polls[name];
+        const isErr = st.status === 'error' || st.status === 'timeout';
+        notify(name + ': ' + st.status + (st.error ? ' — ' + st.error.slice(0, 80) : ''), isErr);
+        loadData();
+      }
+    } catch (e) {}
+  }, 3000);
+}
+
+async function importKB() {
+  notify('Importing...');
+  try {
+    const r = await fetch(API + '/scrapers/import', { method: 'POST' });
+    const d = await r.json();
+    notify('Done! ' + d.imported + ' in KB, ' + d.pending + ' pending');
+    loadData();
+  } catch (e) { notify('Import error: ' + e.message, true); }
+}
+
+async function deleteItem(id, source) {
+  if (!confirm('Delete this article?')) return;
+  try {
+    await fetch(API + '/scrapers/content/' + id, { method: 'DELETE' });
+    expandedArticle = null;
+    showContent(source);
+    notify('Deleted');
+  } catch (e) { notify('Error: ' + e.message, true); }
+}
+
+async function rescrapeAll(source) {
+  const label = source || 'ALL sources';
+  if (!confirm(`Re-scrape ${label}? This will re-fetch and re-extract all articles.`)) return;
+
+  const el = document.getElementById('main-body');
+  el.innerHTML = '<div class="empty"><div style="color:var(--accent)">Re-scraping all articles...</div><div id="rescrape-progress" style="margin-top:12px;font-size:12px;color:var(--text2)"></div></div>';
+
+  try {
+    const r = await fetch(API + '/scrapers/rescrape-all', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ source: source || '', method: 'auto' })
+    });
+    const d = await r.json();
+
+    let h = `<div style="padding:20px">
+      <h3 style="margin-bottom:12px">Re-scrape results</h3>
+      <div style="display:flex;gap:16px;margin-bottom:16px">
+        <div style="padding:12px;background:var(--bg2);border-radius:8px;text-align:center">
+          <div style="font-size:24px;font-weight:700;color:var(--green)">${d.updated}</div>
+          <div style="font-size:11px;color:var(--text2)">Updated</div>
+        </div>
+        <div style="padding:12px;background:var(--bg2);border-radius:8px;text-align:center">
+          <div style="font-size:24px;font-weight:700;color:var(--red)">${d.failed}</div>
+          <div style="font-size:11px;color:var(--text2)">Failed</div>
+        </div>
+        <div style="padding:12px;background:var(--bg2);border-radius:8px;text-align:center">
+          <div style="font-size:24px;font-weight:700;color:var(--text3)">${d.skipped}</div>
+          <div style="font-size:11px;color:var(--text2)">Skipped</div>
+        </div>
+      </div>
+      <div style="max-height:400px;overflow-y:auto">`;
+
+    for (const item of (d.details || [])) {
+      const color = item.status === 'updated' ? 'var(--green)' : item.status === 'error' ? 'var(--red)' : 'var(--text3)';
+      const change = item.old_len && item.new_len
+        ? `${(item.old_len/1000).toFixed(1)}K → ${(item.new_len/1000).toFixed(1)}K`
+        : '';
+      h += `<div style="font-size:12px;padding:4px 0;border-bottom:1px solid var(--border);display:flex;gap:8px">
+        <span style="color:${color};width:60px">${item.status}</span>
+        <span style="width:40px">id:${item.id}</span>
+        <span style="flex:1">${esc(item.title || item.error || '')}</span>
+        <span style="color:var(--text3);font-size:11px">${change} ${item.method || ''}</span>
+      </div>`;
+    }
+
+    h += `</div>
+      <button class="btn btn--primary" style="margin-top:16px" onclick="showContent('${source||''}')">Back to articles</button>
+    </div>`;
+    el.innerHTML = h;
+    notify(`Re-scraped: ${d.updated} updated, ${d.failed} failed`);
+  } catch (e) {
+    el.innerHTML = '<div class="empty">Error: ' + esc(e.message) + '</div>';
+    notify('Error: ' + e.message, true);
+  }
+}
+
+// ── Helpers ──
+function esc(s) { if (!s) return ''; const d = document.createElement('div'); d.textContent = s; return d.innerHTML; }
+function escAttr(s) { if (!s) return ''; return s.replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/'/g,'&#39;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+function notify(msg, err) {
+  const n = document.getElementById('notif');
+  n.textContent = msg;
+  n.className = 'notif ' + (err ? 'notif--err' : 'notif--ok');
+  n.style.display = 'block';
+  clearTimeout(n._t);
+  n._t = setTimeout(() => n.style.display = 'none', 4000);
+}
+</script>
+</body>
+</html>

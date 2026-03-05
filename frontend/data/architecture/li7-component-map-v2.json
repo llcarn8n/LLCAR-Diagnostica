@@ -1,0 +1,6973 @@
+{
+  "vehicle": "Li Auto L7 (2024)",
+  "source_glb": "Li7_unified.glb",
+  "coordinate_system": "Y-up",
+  "statistics": {
+    "total_nodes": 359,
+    "total_meshes": 300,
+    "total_materials": 109,
+    "total_textures": 0,
+    "file_size_mb": 3
+  },
+  "schema_version": "2.0",
+  "layer_system": "8-layer",
+  "remapping_source": "layer-definitions.json v1.0",
+  "systemColors": {
+    "body": {
+      "normal": "#4FC3F7",
+      "warning": "#FFAA00",
+      "critical": "#FF0000"
+    },
+    "engine": {
+      "normal": "#FF7043",
+      "warning": "#FFAA00",
+      "critical": "#FF0000"
+    },
+    "drivetrain": {
+      "normal": "#AB47BC",
+      "warning": "#FFAA00",
+      "critical": "#FF0000"
+    },
+    "ev": {
+      "normal": "#66BB6A",
+      "warning": "#FFAA00",
+      "critical": "#FF0000"
+    },
+    "brakes": {
+      "normal": "#EF5350",
+      "warning": "#FFAA00",
+      "critical": "#FF0000"
+    },
+    "sensors": {
+      "normal": "#FFA726",
+      "warning": "#FFAA00",
+      "critical": "#FF0000"
+    },
+    "hvac": {
+      "normal": "#26C6DA",
+      "warning": "#FFAA00",
+      "critical": "#FF0000"
+    },
+    "interior": {
+      "normal": "#8D6E63",
+      "warning": "#FFAA00",
+      "critical": "#FF0000"
+    }
+  },
+  "systems": {
+    "body": {
+      "systemId": "body",
+      "label": {
+        "en": "Body & Frame",
+        "ru": "Силовой кузов",
+        "zh": "车身与车架",
+        "ar": "الهيكل والإطار",
+        "es": "Carrocería y bastidor"
+      },
+      "color": "#4FC3F7",
+      "component_ids": [
+        "Номерной знак задний#2",
+        "Номерной знак передний#2",
+        "Рамка номера#2",
+        "Защита днища#2",
+        "Крышка днища#2",
+        "Стекло багажника#2",
+        "Крышка багажника#2",
+        "Накладка люка#2",
+        "Крыша#2",
+        "Надпись \"+\"#2",
+        "Надпись \"D\"#2",
+        "Капот#2",
+        "Дверная карта ПП#2",
+        "Дверная карта ПЛ#2",
+        "Ручка двери ЗП#2",
+        "Ручка двери ЗЛ#2",
+        "Ручка двери ПП#2",
+        "Ручка двери ПЛ#2",
+        "Стекло двери ЗП#2",
+        "Стекло двери ЗЛ#2",
+        "Стекло двери ПП#2",
+        "Стекло двери ПЛ#2",
+        "Дверь задняя правая#2",
+        "Дверь задняя левая#2",
+        "Дверь передняя правая#2",
+        "Дверь передняя левая#2",
+        "Надпись хром#2",
+        "Надпись чёрная#2",
+        "Лобовое стекло#2 — Стекло",
+        "Лобовое стекло#2 — Тонировка",
+        "Лобовое стекло#2 — Маркировка",
+        "Днище#2 — Теплозащита",
+        "Стекло люка#2 — Стекло",
+        "Стекло люка#2 — Тонировка",
+        "Люк#2 — Стекло",
+        "Люк#2 — Тонировка",
+        "Боковое стекло правое#2 — Стекло",
+        "Боковое стекло правое#2 — Тонировка",
+        "Боковое стекло левое#2 — Стекло",
+        "Боковое стекло левое#2 — Тонировка",
+        "Сиденья задние#2 — Обшивка",
+        "Сиденья задние#2 — Отделка",
+        "Сиденья задние#2 — Звёздное небо",
+        "Радиатор#2 — Каркас",
+        "Четвертные панели#2 — Панель",
+        "Четвертные панели#2 — Накладка",
+        "Четвертные панели#2 — Декоративная накладка",
+        "Четвертные панели#2 — Подсветка",
+        "Зеркало правое#2 — Панель",
+        "Зеркало правое#2 — Молдинг",
+        "Зеркало правое#2 — Обшивка",
+        "Зеркало правое#2 — Хром молдинг",
+        "Зеркало правое#2 — Зеркальный элемент",
+        "Зеркало правое#2 — Повторитель П",
+        "Зеркало левое#2 — Панель",
+        "Зеркало левое#2 — Молдинг",
+        "Зеркало левое#2 — Обшивка",
+        "Зеркало левое#2 — Хром молдинг",
+        "Зеркало левое#2 — Зеркальный элемент",
+        "Зеркало левое#2 — Повторитель Л",
+        "Стекло фары правой#2 — Фара",
+        "Стекло фары правой#2 — Модуль дальнего",
+        "Стекло фары правой#2 — Модуль ближнего",
+        "Стекло фары правой#2 — Секция поворотника П",
+        "Стекло фары левой#2 — Фара",
+        "Стекло фары левой#2 — Модуль дальнего",
+        "Стекло фары левой#2 — Модуль ближнего",
+        "Стекло фары левой#2 — Секция поворотника Л",
+        "Фара правая#2 — Модуль дальнего",
+        "Фара правая#2 — Модуль ближнего",
+        "Фара правая#2 — Секция поворотника П",
+        "Фара правая#2 — Линза ближнего",
+        "Фара правая#2 — Корпус фары",
+        "Фара правая#2 — Поворотник П",
+        "Фара левая#2 — Модуль дальнего",
+        "Фара левая#2 — Модуль ближнего",
+        "Фара левая#2 — Секция поворотника Л",
+        "Фара левая#2 — Линза ближнего",
+        "Фара левая#2 — Корпус фары",
+        "Фара левая#2 — Поворотник Л",
+        "Крыло правое#2 — Панель",
+        "Крыло правое#2 — Арка крыла",
+        "Крыло правое#2 — Хром накладка",
+        "Крыло левое#2 — Панель",
+        "Крыло левое#2 — Арка крыла",
+        "Крыло левое#2 — Хром накладка",
+        "Бампер задний (часть)#2 — Молдинг",
+        "Бампер задний (часть)#2 — Зеркальный элемент",
+        "Бампер задний (часть)#2 — Отражатель",
+        "Бампер задний#2 — Панель",
+        "Бампер задний#2 — Молдинг",
+        "Бампер передний#2 — Панель",
+        "Бампер передний#2 — Молдинг",
+        "Бампер передний#2 — Декоративная накладка",
+        "Бампер передний#2 — Отделка",
+        "Кузов#2 — Панель",
+        "Кузов#2 — Накладка",
+        "Кузов#2 — Порог",
+        "Кузов#2 — Хром молдинг",
+        "Кузов#2 — Декоративная накладка",
+        "Кузов#2 — Дневные ходовые огни",
+        "Кузов#2 — Фонарь задний",
+        "Кузов#2 — Подсветка",
+        "Кузов#2 — Каркас",
+        "Кузов#2 — Подкрылок",
+        "Кузов#2 — Воздуховод",
+        "Кузов#2 — ДХО",
+        "Кузов#2 — ДХО задний",
+        "Кузов#2 — Поворотник большой Л",
+        "Кузов#2 — Поворотник большой П",
+        "Кузов#2 — Заглушка фонаря",
+        "Кузов#2 — Поворотник задний П",
+        "Кузов#2 — Поворотник задний Л",
+        "Кузов#2 — Задний фонарь Л",
+        "Кузов#2 — Задний фонарь П",
+        "Кузов#2 — Уплотнитель",
+        "Кузов#2 — Шильдик",
+        "Кузов#2 — Декор синий",
+        "Кузов#2 — Декоративный элемент",
+        "Кузов#2 — Кронштейн",
+        "Кузов#2 — Ходовой огонь",
+        "Кузов (интерьер) 2#2 — Отделка",
+        "Кузов (интерьер)#2 — Накладка",
+        "Кузов (интерьер)#2 — Обшивка",
+        "Кузов (интерьер)#2 — Сетка динамика",
+        "Кузов (интерьер)#2 — Отделка",
+        "Кузов (интерьер)#2 — Резиновая накладка",
+        "Кузов (интерьер)#2 — Плафон",
+        "Кузов (интерьер)#2 — Плафон левый",
+        "Кузов (интерьер)#2 — Плафон правый"
+      ]
+    },
+    "engine": {
+      "systemId": "engine",
+      "label": {
+        "en": "Engine, Fuel, Air & Exhaust",
+        "ru": "Двигатель, топливо, воздух и выхлоп",
+        "zh": "发动机、燃油、进气与排气",
+        "ar": "المحرك والوقود والهواء والعادم",
+        "es": "Motor, combustible, aire y escape"
+      },
+      "color": "#FF7043",
+      "component_ids": [
+        "Впускной коллектор I4#2",
+        "Топливный бак#2",
+        "Выхлоп I4 1.5 бензин#2",
+        "Выхлопная труба#2",
+        "Выхлопная система#2",
+        "Двигатель I4#2",
+        "Крепление э/мотора#2",
+        "Лючок бака#2 — Панель",
+        "Лючок бака#2 — Накладка",
+        "Индикаторы приборов 2#2 — Инд. масло",
+        "Индикаторы приборов#2 — Инд. топливо",
+        "Кузов#2 — Лючок бака"
+      ]
+    },
+    "drivetrain": {
+      "systemId": "drivetrain",
+      "label": {
+        "en": "Drivetrain & Suspension",
+        "ru": "Привод и подвеска",
+        "zh": "传动系统与悬架",
+        "ar": "نظام الدفع والتعليق",
+        "es": "Tren motriz y suspensión"
+      },
+      "color": "#AB47BC",
+      "component_ids": [
+        "Шина ПЛ",
+        "Шина ПП",
+        "Шина ЗЛ",
+        "Шина ЗП",
+        "Полуось задняя#2",
+        "Пневмоподвеска#2",
+        "Верхний рычаг З (шир.)#2",
+        "Верхний рычаг задний#2",
+        "Стабилизатор З (шир.)#2",
+        "Стабилизатор задний#2",
+        "Стабилизатор П (шир.)#2",
+        "Стабилизатор передний#2",
+        "Подрамник задний (шир.)#2",
+        "Подрамник задний#2",
+        "Подрамник передний#2",
+        "Стойка передняя#2",
+        "Пружина задняя (шир.)#2",
+        "Пружина задняя#2",
+        "Амортизатор З (шир.)#2",
+        "Амортизатор задний#2",
+        "Нижний рычаг З (шир.)#2",
+        "Нижний рычаг задний#2",
+        "Нижний рычаг ПБ (шир.)#2",
+        "Нижний рычаг ПБ#2",
+        "Нижний рычаг ПА (шир.)#2",
+        "Ступица задняя#2",
+        "Ступица передняя#2",
+        "Полуось передняя#2",
+        "Колесо ПЛ — Обшивка",
+        "Колесо ПЛ — Отделка",
+        "Колесо ПЛ — Резиновая накладка",
+        "Колесо ПП — Обшивка",
+        "Колесо ПП — Отделка",
+        "Колесо ПП — Резиновая накладка",
+        "Колесо ЗЛ — Обшивка",
+        "Колесо ЗЛ — Отделка",
+        "Колесо ЗЛ — Резиновая накладка",
+        "Колесо ЗП — Обшивка",
+        "Колесо ЗП — Отделка",
+        "Колесо ЗП — Резиновая накладка",
+        "Днище#2 — Привод",
+        "Стойка передняя (шир.)#2 — Накладка",
+        "Стойка передняя (шир.)#2 — Рычаг"
+      ]
+    },
+    "ev": {
+      "systemId": "ev",
+      "label": {
+        "en": "EV Electrical: Charging, Inverters, Motors, Regen",
+        "ru": "Электрика: зарядка, инверторы, электромоторы, рекуперация",
+        "zh": "电气系统：充电、逆变器、电机、能量回收",
+        "ar": "الكهربائي: الشحن، العواكس، المحركات، الاسترداد",
+        "es": "Sistema eléctrico: carga, inversores, motores, regeneración"
+      },
+      "color": "#66BB6A",
+      "component_ids": [
+        "Проводка э/мотора#2",
+        "Проводка батареи#2",
+        "Электромотор задний#2",
+        "Электромотор передний#2",
+        "Батарея ВН#2",
+        "Лючок зарядки#2 — Панель",
+        "Лючок зарядки#2 — Накладка"
+      ]
+    },
+    "brakes": {
+      "systemId": "brakes",
+      "label": {
+        "en": "Steering & Braking System",
+        "ru": "Рулевое управление и тормозная система",
+        "zh": "转向与制动系统",
+        "ar": "نظام التوجيه والفرامل",
+        "es": "Dirección y sistema de frenos"
+      },
+      "color": "#EF5350",
+      "component_ids": [
+        "Тормоз ПЛ",
+        "Тормоз ПП",
+        "Тормоз ЗЛ",
+        "Тормоз ЗП",
+        "Подрулевой лепесток П#2",
+        "Подрулевой лепесток Л#2",
+        "Рулевая тяга З (шир.)#2",
+        "Рулевая тяга задняя#2",
+        "Рулевая тяга П (шир.)#2",
+        "Рулевая тяга передняя#2",
+        "Рулевой механизм#2",
+        "Педаль тормоза#2",
+        "Подрулевой переключатель#2 — Накладка",
+        "Подрулевой переключатель#2 — Обшивка",
+        "Подрулевой переключатель#2 — Кнопки руля",
+        "Индикаторы приборов 2#2 — Инд. ABS"
+      ]
+    },
+    "sensors": {
+      "systemId": "sensors",
+      "label": {
+        "en": "Sensors & ADAS",
+        "ru": "Датчики и системы помощи водителю (ADAS)",
+        "zh": "传感器与高级驾驶辅助",
+        "ar": "المستشعرات وأنظمة مساعدة السائق",
+        "es": "Sensores y ADAS"
+      },
+      "color": "#FFA726",
+      "component_ids": [
+        "Блок управления#2"
+      ]
+    },
+    "hvac": {
+      "systemId": "hvac",
+      "label": {
+        "en": "HVAC & Thermal Management",
+        "ru": "Климат-контроль и терморегулирование",
+        "zh": "空调与热管理",
+        "ar": "التكييف والإدارة الحرارية",
+        "es": "Climatización y gestión térmica"
+      },
+      "color": "#26C6DA",
+      "component_ids": [
+        "Охлаждение батареи#2",
+        "Радиатор#2 — Отделка"
+      ]
+    },
+    "interior": {
+      "systemId": "interior",
+      "label": {
+        "en": "Doors, Trunk & Interior",
+        "ru": "Двери, багажник и салон",
+        "zh": "车门、后备箱与内饰",
+        "ar": "الأبواب والصندوق والمقصورة",
+        "es": "Puertas, maletero e interior"
+      },
+      "color": "#8D6E63",
+      "component_ids": [
+        "Козырёк правый#2",
+        "Козырёк левый#2",
+        "Ароматизатор#2",
+        "Руль (экран)#2",
+        "Экран приборов#2",
+        "Педаль газа#2",
+        "Сиденье (доп.)#2",
+        "Монитор#2 — Отделка",
+        "Монитор#2 — Монитор",
+        "Бардачок#2 — Обшивка",
+        "Бардачок#2 — Кожаная вставка",
+        "Руль (альт.)#2 — Приборная панель",
+        "Руль (альт.)#2 — Обшивка",
+        "Руль (альт.)#2 — Отделка",
+        "Руль (альт.)#2 — Спидометр",
+        "Руль (альт.)#2 — Дисплей руля",
+        "Руль (альт.)#2 — Накладка руля",
+        "Руль#2 — Приборная панель",
+        "Руль#2 — Обшивка",
+        "Руль#2 — Отделка",
+        "Руль#2 — Спидометр",
+        "Руль#2 — Дисплей руля",
+        "Руль#2 — Накладка руля",
+        "Сиденья задние#2 — Кожаная вставка",
+        "Сиденья задние#2 — Обивка сиденья",
+        "Сиденья задние#2 — Кнопки задние",
+        "Сиденья задние#2 — Подголовник",
+        "Сиденья задние#2 — Обивка",
+        "Подушка сиденья правая#2 — Кожаная вставка",
+        "Подушка сиденья правая#2 — Подголовник",
+        "Подушка сиденья левая#2 — Кожаная вставка",
+        "Подушка сиденья левая#2 — Подголовник",
+        "Сиденье ПП (часть)#2 — Обшивка",
+        "Сиденье ПП (часть)#2 — Кожаная вставка",
+        "Сиденье ПП (часть)#2 — Обивка сиденья",
+        "Сиденье ПП (часть)#2 — Вставка",
+        "Сиденье ПП#2 — Обшивка",
+        "Сиденье ПП#2 — Кожаная вставка",
+        "Сиденье ПП#2 — Отделка",
+        "Сиденье ПП#2 — Обивка сиденья",
+        "Сиденье ПП#2 — Вставка",
+        "Сиденье ПП#2 — Кнопки задние",
+        "Сиденье ПП#2 — Звёздное небо",
+        "Сиденье ПЛ (часть)#2 — Обшивка",
+        "Сиденье ПЛ (часть)#2 — Кожаная вставка",
+        "Сиденье ПЛ (часть)#2 — Обивка сиденья",
+        "Сиденье ПЛ#2 — Обшивка",
+        "Сиденье ПЛ#2 — Кожаная вставка",
+        "Сиденье ПЛ#2 — Отделка",
+        "Сиденье ПЛ#2 — Обивка сиденья",
+        "Сиденье ПЛ#2 — Кнопки задние",
+        "Сиденье ПЛ#2 — Звёздное небо",
+        "Центральный экран#2 — Рамка экрана",
+        "Центральный экран#2 — Доп. дисплей",
+        "Центральный экран#2 — Мультимедиа",
+        "Зеркало салонное#2 — Отделка",
+        "Зеркало салонное#2 — Зеркальный элемент",
+        "Индикаторы приборов 2#2 — Инд. давление",
+        "Индикаторы приборов 2#2 — Инд. ПТФ",
+        "Индикаторы приборов 2#2 — Инд. температура",
+        "Индикаторы приборов 2#2 — Инд. задний ПТФ",
+        "Индикаторы приборов#2 — Инд. поворотник Л",
+        "Индикаторы приборов#2 — Инд. поворотник П",
+        "Индикаторы приборов#2 — Инд. Check Engine",
+        "Индикаторы приборов#2 — Инд. ручник",
+        "Индикаторы приборов#2 — Инд. дальний свет",
+        "Индикаторы приборов#2 — Инд. ближний свет",
+        "Индикаторы приборов#2 — Инд. ESC",
+        "Индикаторы приборов#2 — Инд. TCS",
+        "Приборная панель (экраны)#2 — Спидометр",
+        "Приборная панель (экраны)#2 — HUD проекция",
+        "Приборная панель (экраны)#2 — Дисплей",
+        "Приборная панель#2 — Накладка",
+        "Приборная панель#2 — Обшивка",
+        "Приборная панель#2 — Кожаная вставка",
+        "Приборная панель#2 — Отделка",
+        "Приборная панель#2 — Кнопки задние",
+        "Приборная панель#2 — Резиновая накладка",
+        "Приборная панель#2 — Кнопки руля",
+        "Бампер задний#2 — Кнопки",
+        "Кузов (интерьер) 2#2 — Ковролин",
+        "Кузов (интерьер)#2 — Кожаная вставка",
+        "Кузов (интерьер)#2 — Кнопки",
+        "Кузов (интерьер)#2 — Ковролин",
+        "Кузов (интерьер)#2 — Обивка",
+        "Кузов (интерьер)#2 — Потолок",
+        "Кузов (интерьер)#2 — Кнопка аварийки"
+      ]
+    }
+  },
+  "components": {
+    "Шина ПЛ": {
+      "meshName": "Шина ПЛ",
+      "system": "wheels",
+      "displayName": "Шина ПЛ",
+      "dtcCodes": [],
+      "manualSections": [
+        "1-30",
+        "1-38"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 3,
+      "specs": {
+        "size": "265/45 R21",
+        "type": "Silent Tires"
+      },
+      "layer": "drivetrain",
+      "glossary_id": "tire_tyre@drivetrain"
+    },
+    "Шина ПП": {
+      "meshName": "Шина ПП",
+      "system": "wheels",
+      "displayName": "Шина ПП",
+      "dtcCodes": [],
+      "manualSections": [
+        "1-30",
+        "1-38"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 3,
+      "specs": {
+        "size": "265/45 R21",
+        "type": "Silent Tires"
+      },
+      "layer": "drivetrain",
+      "glossary_id": "tire_tyre@drivetrain"
+    },
+    "Шина ЗЛ": {
+      "meshName": "Шина ЗЛ",
+      "system": "wheels",
+      "displayName": "Шина ЗЛ",
+      "dtcCodes": [],
+      "manualSections": [
+        "1-30",
+        "1-38"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 3,
+      "specs": {
+        "size": "265/45 R21",
+        "type": "Silent Tires"
+      },
+      "layer": "drivetrain",
+      "glossary_id": "tire_tyre@drivetrain"
+    },
+    "Шина ЗП": {
+      "meshName": "Шина ЗП",
+      "system": "wheels",
+      "displayName": "Шина ЗП",
+      "dtcCodes": [],
+      "manualSections": [
+        "1-30",
+        "1-38"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 3,
+      "specs": {
+        "size": "265/45 R21",
+        "type": "Silent Tires"
+      },
+      "layer": "drivetrain",
+      "glossary_id": "tire_tyre@drivetrain"
+    },
+    "Тормоз ПЛ": {
+      "meshName": "Тормоз ПЛ",
+      "system": "chassis",
+      "displayName": "Тормоз ПЛ",
+      "dtcCodes": [
+        "C0035",
+        "C0036",
+        "C0037",
+        "C0038",
+        "C0040"
+      ],
+      "manualSections": [
+        "1-34"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 0,
+      "specs": {
+        "type": "Вентилируемые дисковые тормоза"
+      },
+      "layer": "brakes",
+      "glossary_id": "brake_caliper@brakes"
+    },
+    "Тормоз ПП": {
+      "meshName": "Тормоз ПП",
+      "system": "chassis",
+      "displayName": "Тормоз ПП",
+      "dtcCodes": [
+        "C0035",
+        "C0036",
+        "C0037",
+        "C0038",
+        "C0041"
+      ],
+      "manualSections": [
+        "1-34"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 0,
+      "specs": {
+        "type": "Вентилируемые дисковые тормоза"
+      },
+      "layer": "brakes",
+      "glossary_id": "brake_caliper@brakes"
+    },
+    "Тормоз ЗЛ": {
+      "meshName": "Тормоз ЗЛ",
+      "system": "chassis",
+      "displayName": "Тормоз ЗЛ",
+      "dtcCodes": [
+        "C0035",
+        "C0036",
+        "C0037",
+        "C0038",
+        "C0042"
+      ],
+      "manualSections": [
+        "1-34"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 0,
+      "specs": {
+        "type": "Вентилируемые дисковые тормоза"
+      },
+      "layer": "brakes",
+      "glossary_id": "brake_caliper@brakes"
+    },
+    "Тормоз ЗП": {
+      "meshName": "Тормоз ЗП",
+      "system": "chassis",
+      "displayName": "Тормоз ЗП",
+      "dtcCodes": [
+        "C0035",
+        "C0036",
+        "C0037",
+        "C0038",
+        "C0043"
+      ],
+      "manualSections": [
+        "1-34"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 0,
+      "specs": {
+        "type": "Вентилируемые дисковые тормоза"
+      },
+      "layer": "brakes",
+      "glossary_id": "brake_caliper@brakes"
+    },
+    "Полуось задняя#2": {
+      "meshName": "Полуось задняя#2",
+      "system": "chassis",
+      "displayName": "Полуось задняя",
+      "dtcCodes": [
+        "C0550"
+      ],
+      "manualSections": [
+        "1-30",
+        "1-34"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 0,
+      "layer": "drivetrain",
+      "glossary_id": "half_shaft_cv_axle@drivetrain"
+    },
+    "Номерной знак задний#2": {
+      "meshName": "Номерной знак задний#2",
+      "system": "exterior",
+      "displayName": "Номерной знак задний",
+      "dtcCodes": [
+        "B1501",
+        "B1502"
+      ],
+      "manualSections": [
+        "1-10"
+      ],
+      "selectable": true,
+      "xray_transparent": true,
+      "layer_num": 7,
+      "layer": "body",
+      "glossary_id": "licence_plate@body"
+    },
+    "Номерной знак передний#2": {
+      "meshName": "Номерной знак передний#2",
+      "system": "exterior",
+      "displayName": "Номерной знак передний",
+      "dtcCodes": [
+        "B1501",
+        "B1502"
+      ],
+      "manualSections": [
+        "1-10"
+      ],
+      "selectable": true,
+      "xray_transparent": true,
+      "layer_num": 7,
+      "layer": "body",
+      "glossary_id": "licence_plate@body"
+    },
+    "Подрулевой лепесток П#2": {
+      "meshName": "Подрулевой лепесток П#2",
+      "system": "interior",
+      "displayName": "Подрулевой лепесток П",
+      "dtcCodes": [
+        "C0500"
+      ],
+      "manualSections": [
+        "1-20",
+        "1-21"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 4,
+      "layer": "brakes",
+      "glossary_id": "paddle_shifter@brakes"
+    },
+    "Подрулевой лепесток Л#2": {
+      "meshName": "Подрулевой лепесток Л#2",
+      "system": "interior",
+      "displayName": "Подрулевой лепесток Л",
+      "dtcCodes": [
+        "C0500"
+      ],
+      "manualSections": [
+        "1-20",
+        "1-21"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 4,
+      "layer": "brakes",
+      "glossary_id": "paddle_shifter@brakes"
+    },
+    "Рамка номера#2": {
+      "meshName": "Рамка номера#2",
+      "system": "exterior",
+      "displayName": "Рамка номера",
+      "dtcCodes": [
+        "B1501",
+        "B1502"
+      ],
+      "manualSections": [
+        "1-10"
+      ],
+      "selectable": true,
+      "xray_transparent": true,
+      "layer_num": 7,
+      "layer": "body",
+      "glossary_id": "licence_plate_bracket@body"
+    },
+    "Козырёк правый#2": {
+      "meshName": "Козырёк правый#2",
+      "system": "interior",
+      "displayName": "Козырёк правый",
+      "dtcCodes": [
+        "B1450",
+        "B1460"
+      ],
+      "manualSections": [
+        "1-27"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 4,
+      "layer": "interior",
+      "glossary_id": "sun_visor@interior"
+    },
+    "Козырёк левый#2": {
+      "meshName": "Козырёк левый#2",
+      "system": "interior",
+      "displayName": "Козырёк левый",
+      "dtcCodes": [
+        "B1450",
+        "B1460"
+      ],
+      "manualSections": [
+        "1-27"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 4,
+      "layer": "interior",
+      "glossary_id": "sun_visor@interior"
+    },
+    "Пневмоподвеска#2": {
+      "meshName": "Пневмоподвеска#2",
+      "system": "chassis",
+      "displayName": "Пневмоподвеска",
+      "dtcCodes": [
+        "C0500",
+        "C0550"
+      ],
+      "manualSections": [
+        "1-34"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 0,
+      "specs": {
+        "type": "Magic Carpet Air Suspension Max",
+        "dual_chamber": true,
+        "offroad_raise_mm": 40,
+        "warranty": "8 лет или 160 000 км"
+      },
+      "layer": "drivetrain",
+      "glossary_id": "air_suspension@drivetrain"
+    },
+    "Проводка э/мотора#2": {
+      "meshName": "Проводка э/мотора#2",
+      "system": "energy",
+      "displayName": "Проводка э/мотора",
+      "dtcCodes": [
+        "P0A09",
+        "P0AA6"
+      ],
+      "manualSections": [
+        "1-13"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 2,
+      "layer": "ev",
+      "glossary_id": "high_voltage_wiring@ev"
+    },
+    "Проводка батареи#2": {
+      "meshName": "Проводка батареи#2",
+      "system": "energy",
+      "displayName": "Проводка батареи",
+      "dtcCodes": [
+        "P0A09",
+        "P0A7F",
+        "P0A80",
+        "P0AA6",
+        "P3000"
+      ],
+      "manualSections": [
+        "1-35"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 2,
+      "specs": {
+        "capacity": "52.3 кВт·ч",
+        "type": "Тернарная литиевая",
+        "dc_charge_time": "25 мин (20%-80%)",
+        "warranty": "8 лет или 160 000 км"
+      },
+      "layer": "ev",
+      "glossary_id": "high_voltage_wiring@ev"
+    },
+    "Ароматизатор#2": {
+      "meshName": "Ароматизатор#2",
+      "system": "interior",
+      "displayName": "Ароматизатор",
+      "dtcCodes": [
+        "B1450",
+        "B1460"
+      ],
+      "manualSections": [
+        "1-24"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 4,
+      "layer": "interior",
+      "glossary_id": "air_freshener@interior"
+    },
+    "Верхний рычаг З (шир.)#2": {
+      "meshName": "Верхний рычаг З (шир.)#2",
+      "system": "chassis",
+      "displayName": "Верхний рычаг З (шир.)",
+      "dtcCodes": [
+        "C0550"
+      ],
+      "manualSections": [
+        "1-30",
+        "1-34"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 0,
+      "layer": "drivetrain",
+      "glossary_id": "rear_left_control_arm@drivetrain"
+    },
+    "Верхний рычаг задний#2": {
+      "meshName": "Верхний рычаг задний#2",
+      "system": "chassis",
+      "displayName": "Верхний рычаг задний",
+      "dtcCodes": [
+        "C0550"
+      ],
+      "manualSections": [
+        "1-30",
+        "1-34"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 0,
+      "specs": {
+        "type": "Пятирычажная задняя подвеска"
+      },
+      "layer": "drivetrain",
+      "glossary_id": "rear_right_control_arm@drivetrain"
+    },
+    "Защита днища#2": {
+      "meshName": "Защита днища#2",
+      "system": "body",
+      "displayName": "Защита днища",
+      "dtcCodes": [
+        "B1011",
+        "B1012"
+      ],
+      "manualSections": [
+        "1-19",
+        "1-38"
+      ],
+      "selectable": true,
+      "xray_transparent": true,
+      "layer_num": 8,
+      "layer": "body",
+      "glossary_id": "underbody_cover@body"
+    },
+    "Крышка днища#2": {
+      "meshName": "Крышка днища#2",
+      "system": "body",
+      "displayName": "Крышка днища",
+      "dtcCodes": [
+        "B1011",
+        "B1012"
+      ],
+      "manualSections": [
+        "1-19",
+        "1-38"
+      ],
+      "selectable": true,
+      "xray_transparent": true,
+      "layer_num": 8,
+      "layer": "body",
+      "glossary_id": "underbody_cover@body"
+    },
+    "Рулевая тяга З (шир.)#2": {
+      "meshName": "Рулевая тяга З (шир.)#2",
+      "system": "chassis",
+      "displayName": "Рулевая тяга З (шир.)",
+      "dtcCodes": [
+        "C0500"
+      ],
+      "manualSections": [
+        "1-30",
+        "1-34"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 0,
+      "layer": "brakes",
+      "glossary_id": "tie_rod@brakes"
+    },
+    "Рулевая тяга задняя#2": {
+      "meshName": "Рулевая тяга задняя#2",
+      "system": "chassis",
+      "displayName": "Рулевая тяга задняя",
+      "dtcCodes": [
+        "C0500"
+      ],
+      "manualSections": [
+        "1-30",
+        "1-34"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 0,
+      "layer": "brakes",
+      "glossary_id": "tie_rod@brakes"
+    },
+    "Рулевая тяга П (шир.)#2": {
+      "meshName": "Рулевая тяга П (шир.)#2",
+      "system": "chassis",
+      "displayName": "Рулевая тяга П (шир.)",
+      "dtcCodes": [
+        "C0500"
+      ],
+      "manualSections": [
+        "1-30",
+        "1-34"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 0,
+      "layer": "brakes",
+      "glossary_id": "tie_rod@brakes"
+    },
+    "Рулевая тяга передняя#2": {
+      "meshName": "Рулевая тяга передняя#2",
+      "system": "chassis",
+      "displayName": "Рулевая тяга передняя",
+      "dtcCodes": [
+        "C0500"
+      ],
+      "manualSections": [
+        "1-30",
+        "1-34"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 0,
+      "layer": "brakes",
+      "glossary_id": "tie_rod@brakes"
+    },
+    "Стекло багажника#2": {
+      "meshName": "Стекло багажника#2",
+      "system": "glass",
+      "displayName": "Стекло багажника",
+      "dtcCodes": [
+        "B1019",
+        "B1020"
+      ],
+      "manualSections": [
+        "1-19",
+        "1-23"
+      ],
+      "selectable": true,
+      "xray_transparent": true,
+      "layer_num": 6,
+      "layer": "body",
+      "glossary_id": "rear_window@body"
+    },
+    "Крышка багажника#2": {
+      "meshName": "Крышка багажника#2",
+      "system": "body",
+      "displayName": "Крышка багажника",
+      "dtcCodes": [
+        "B1019",
+        "B1020"
+      ],
+      "manualSections": [
+        "1-19"
+      ],
+      "selectable": true,
+      "xray_transparent": true,
+      "layer_num": 8,
+      "layer": "body",
+      "glossary_id": "trunk_lid@body"
+    },
+    "Стабилизатор З (шир.)#2": {
+      "meshName": "Стабилизатор З (шир.)#2",
+      "system": "chassis",
+      "displayName": "Стабилизатор З (шир.)",
+      "dtcCodes": [
+        "C0550"
+      ],
+      "manualSections": [
+        "1-30",
+        "1-34"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 0,
+      "layer": "drivetrain",
+      "glossary_id": "stabilizer_bar_anti_roll_bar@drivetrain"
+    },
+    "Стабилизатор задний#2": {
+      "meshName": "Стабилизатор задний#2",
+      "system": "chassis",
+      "displayName": "Стабилизатор задний",
+      "dtcCodes": [
+        "C0550"
+      ],
+      "manualSections": [
+        "1-30",
+        "1-34"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 0,
+      "layer": "drivetrain",
+      "glossary_id": "rear_anti_roll_bar@drivetrain"
+    },
+    "Стабилизатор П (шир.)#2": {
+      "meshName": "Стабилизатор П (шир.)#2",
+      "system": "chassis",
+      "displayName": "Стабилизатор П (шир.)",
+      "dtcCodes": [
+        "C0550"
+      ],
+      "manualSections": [
+        "1-30",
+        "1-34"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 0,
+      "layer": "drivetrain",
+      "glossary_id": "stabilizer_bar_anti_roll_bar@drivetrain"
+    },
+    "Стабилизатор передний#2": {
+      "meshName": "Стабилизатор передний#2",
+      "system": "chassis",
+      "displayName": "Стабилизатор передний",
+      "dtcCodes": [
+        "C0550"
+      ],
+      "manualSections": [
+        "1-30",
+        "1-34"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 0,
+      "layer": "drivetrain",
+      "glossary_id": "front_anti_roll_bar@drivetrain"
+    },
+    "Накладка люка#2": {
+      "meshName": "Накладка люка#2",
+      "system": "body",
+      "displayName": "Накладка люка",
+      "dtcCodes": [
+        "B1011",
+        "B1012"
+      ],
+      "manualSections": [
+        "1-23"
+      ],
+      "selectable": true,
+      "xray_transparent": true,
+      "layer_num": 8,
+      "layer": "body",
+      "glossary_id": "sunroof_panel@body"
+    },
+    "Подрамник задний (шир.)#2": {
+      "meshName": "Подрамник задний (шир.)#2",
+      "system": "chassis",
+      "displayName": "Подрамник задний (шир.)",
+      "dtcCodes": [
+        "C0550"
+      ],
+      "manualSections": [
+        "1-30",
+        "1-34"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 0,
+      "layer": "drivetrain",
+      "glossary_id": "subframe@drivetrain"
+    },
+    "Подрамник задний#2": {
+      "meshName": "Подрамник задний#2",
+      "system": "chassis",
+      "displayName": "Подрамник задний",
+      "dtcCodes": [
+        "C0550"
+      ],
+      "manualSections": [
+        "1-30",
+        "1-34"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 0,
+      "layer": "drivetrain",
+      "glossary_id": "subframe@drivetrain"
+    },
+    "Подрамник передний#2": {
+      "meshName": "Подрамник передний#2",
+      "system": "chassis",
+      "displayName": "Подрамник передний",
+      "dtcCodes": [
+        "C0550"
+      ],
+      "manualSections": [
+        "1-30",
+        "1-34"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 0,
+      "layer": "drivetrain",
+      "glossary_id": "subframe@drivetrain"
+    },
+    "Стойка передняя#2": {
+      "meshName": "Стойка передняя#2",
+      "system": "chassis",
+      "displayName": "Стойка передняя",
+      "dtcCodes": [
+        "C0035",
+        "C0036"
+      ],
+      "manualSections": [
+        "1-30",
+        "1-34"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 0,
+      "layer": "drivetrain",
+      "glossary_id": "strut@drivetrain"
+    },
+    "Рулевой механизм#2": {
+      "meshName": "Рулевой механизм#2",
+      "system": "chassis",
+      "displayName": "Рулевой механизм",
+      "dtcCodes": [
+        "C0500"
+      ],
+      "manualSections": [
+        "1-30",
+        "1-34"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 0,
+      "specs": {
+        "type": "Переменное усилие EPS"
+      },
+      "layer": "brakes",
+      "glossary_id": "steering_box@brakes"
+    },
+    "Руль (экран)#2": {
+      "meshName": "Руль (экран)#2",
+      "system": "interior",
+      "displayName": "Руль (экран)",
+      "dtcCodes": [
+        "C0500"
+      ],
+      "manualSections": [
+        "1-16",
+        "1-21"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 4,
+      "layer": "interior",
+      "glossary_id": "steering_wheel@interior"
+    },
+    "Пружина задняя (шир.)#2": {
+      "meshName": "Пружина задняя (шир.)#2",
+      "system": "chassis",
+      "displayName": "Пружина задняя (шир.)",
+      "dtcCodes": [
+        "C0550"
+      ],
+      "manualSections": [
+        "1-30",
+        "1-34"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 0,
+      "specs": {
+        "type": "Пятирычажная задняя подвеска"
+      },
+      "layer": "drivetrain",
+      "glossary_id": "coil_spring@drivetrain"
+    },
+    "Пружина задняя#2": {
+      "meshName": "Пружина задняя#2",
+      "system": "chassis",
+      "displayName": "Пружина задняя",
+      "dtcCodes": [
+        "C0550"
+      ],
+      "manualSections": [
+        "1-30",
+        "1-34"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 0,
+      "specs": {
+        "type": "Пятирычажная задняя подвеска"
+      },
+      "layer": "drivetrain",
+      "glossary_id": "coil_spring@drivetrain"
+    },
+    "Амортизатор З (шир.)#2": {
+      "meshName": "Амортизатор З (шир.)#2",
+      "system": "chassis",
+      "displayName": "Амортизатор З (шир.)",
+      "dtcCodes": [
+        "C0550"
+      ],
+      "manualSections": [
+        "1-30",
+        "1-34"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 0,
+      "layer": "drivetrain",
+      "glossary_id": "shock_absorber_damper@drivetrain"
+    },
+    "Амортизатор задний#2": {
+      "meshName": "Амортизатор задний#2",
+      "system": "chassis",
+      "displayName": "Амортизатор задний",
+      "dtcCodes": [
+        "C0550"
+      ],
+      "manualSections": [
+        "1-30",
+        "1-34"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 0,
+      "layer": "drivetrain",
+      "glossary_id": "shock_absorber_damper@drivetrain"
+    },
+    "Экран приборов#2": {
+      "meshName": "Экран приборов#2",
+      "system": "interior",
+      "displayName": "Экран приборов",
+      "dtcCodes": [
+        "B1450",
+        "B1460"
+      ],
+      "manualSections": [
+        "1-16"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 4,
+      "layer": "interior",
+      "glossary_id": "instrument_cluster@interior"
+    },
+    "Крыша#2": {
+      "meshName": "Крыша#2",
+      "system": "body",
+      "displayName": "Крыша",
+      "dtcCodes": [
+        "B1011",
+        "B1012"
+      ],
+      "manualSections": [
+        "1-19",
+        "1-38"
+      ],
+      "selectable": true,
+      "xray_transparent": true,
+      "layer_num": 8,
+      "layer": "body",
+      "glossary_id": "roof@body"
+    },
+    "Нижний рычаг З (шир.)#2": {
+      "meshName": "Нижний рычаг З (шир.)#2",
+      "system": "chassis",
+      "displayName": "Нижний рычаг З (шир.)",
+      "dtcCodes": [
+        "C0550"
+      ],
+      "manualSections": [
+        "1-30",
+        "1-34"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 0,
+      "layer": "drivetrain",
+      "glossary_id": "rear_left_control_arm@drivetrain"
+    },
+    "Нижний рычаг задний#2": {
+      "meshName": "Нижний рычаг задний#2",
+      "system": "chassis",
+      "displayName": "Нижний рычаг задний",
+      "dtcCodes": [
+        "C0550"
+      ],
+      "manualSections": [
+        "1-30",
+        "1-34"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 0,
+      "specs": {
+        "type": "Пятирычажная задняя подвеска"
+      },
+      "layer": "drivetrain",
+      "glossary_id": "rear_left_control_arm@drivetrain"
+    },
+    "Нижний рычаг ПБ (шир.)#2": {
+      "meshName": "Нижний рычаг ПБ (шир.)#2",
+      "system": "chassis",
+      "displayName": "Нижний рычаг ПБ (шир.)",
+      "dtcCodes": [
+        "C0550"
+      ],
+      "manualSections": [
+        "1-30",
+        "1-34"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 0,
+      "layer": "drivetrain",
+      "glossary_id": "front_right_control_arm@drivetrain"
+    },
+    "Нижний рычаг ПБ#2": {
+      "meshName": "Нижний рычаг ПБ#2",
+      "system": "chassis",
+      "displayName": "Нижний рычаг ПБ",
+      "dtcCodes": [
+        "C0550"
+      ],
+      "manualSections": [
+        "1-30",
+        "1-34"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 0,
+      "layer": "drivetrain",
+      "glossary_id": "front_right_control_arm@drivetrain"
+    },
+    "Нижний рычаг ПА (шир.)#2": {
+      "meshName": "Нижний рычаг ПА (шир.)#2",
+      "system": "chassis",
+      "displayName": "Нижний рычаг ПА (шир.)",
+      "dtcCodes": [
+        "C0550"
+      ],
+      "manualSections": [
+        "1-30",
+        "1-34"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 0,
+      "layer": "drivetrain",
+      "glossary_id": "front_left_control_arm@drivetrain"
+    },
+    "Надпись \"+\"#2": {
+      "meshName": "Надпись \"+\"#2",
+      "system": "exterior",
+      "displayName": "Надпись \"+\"",
+      "dtcCodes": [
+        "B1501",
+        "B1502"
+      ],
+      "manualSections": [
+        "1-10"
+      ],
+      "selectable": true,
+      "xray_transparent": true,
+      "layer_num": 7,
+      "layer": "body",
+      "glossary_id": "emblem@body"
+    },
+    "Надпись \"D\"#2": {
+      "meshName": "Надпись \"D\"#2",
+      "system": "exterior",
+      "displayName": "Надпись \"D\"",
+      "dtcCodes": [
+        "B1501",
+        "B1502"
+      ],
+      "manualSections": [
+        "1-10"
+      ],
+      "selectable": true,
+      "xray_transparent": true,
+      "layer_num": 7,
+      "layer": "body",
+      "glossary_id": "emblem@body"
+    },
+    "Впускной коллектор I4#2": {
+      "meshName": "Впускной коллектор I4#2",
+      "system": "powertrain",
+      "displayName": "Впускной коллектор I4",
+      "dtcCodes": [
+        "P0171"
+      ],
+      "manualSections": [
+        "1-13",
+        "1-30"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 1,
+      "layer": "engine",
+      "glossary_id": "intake_manifold@engine"
+    },
+    "Ступица задняя#2": {
+      "meshName": "Ступица задняя#2",
+      "system": "chassis",
+      "displayName": "Ступица задняя",
+      "dtcCodes": [
+        "C0035",
+        "C0036"
+      ],
+      "manualSections": [
+        "1-30",
+        "1-34"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 0,
+      "layer": "drivetrain",
+      "glossary_id": "wheel_hub_hub@drivetrain"
+    },
+    "Ступица передняя#2": {
+      "meshName": "Ступица передняя#2",
+      "system": "chassis",
+      "displayName": "Ступица передняя",
+      "dtcCodes": [
+        "C0035",
+        "C0036"
+      ],
+      "manualSections": [
+        "1-30",
+        "1-34"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 0,
+      "layer": "drivetrain",
+      "glossary_id": "wheel_hub_hub@drivetrain"
+    },
+    "Капот#2": {
+      "meshName": "Капот#2",
+      "system": "body",
+      "displayName": "Капот",
+      "dtcCodes": [
+        "B1011"
+      ],
+      "manualSections": [
+        "1-38"
+      ],
+      "selectable": true,
+      "xray_transparent": true,
+      "layer_num": 8,
+      "layer": "body",
+      "glossary_id": "bonnet_hood@body"
+    },
+    "Полуось передняя#2": {
+      "meshName": "Полуось передняя#2",
+      "system": "chassis",
+      "displayName": "Полуось передняя",
+      "dtcCodes": [
+        "C0550"
+      ],
+      "manualSections": [
+        "1-30",
+        "1-34"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 0,
+      "layer": "drivetrain",
+      "glossary_id": "half_shaft_cv_axle@drivetrain"
+    },
+    "Педаль газа#2": {
+      "meshName": "Педаль газа#2",
+      "system": "interior",
+      "displayName": "Педаль газа",
+      "dtcCodes": [
+        "B1450",
+        "B1460"
+      ],
+      "manualSections": [
+        "1-20",
+        "1-21"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 4,
+      "layer": "interior",
+      "glossary_id": "accelerator_pedal_gas_pedal@interior"
+    },
+    "Топливный бак#2": {
+      "meshName": "Топливный бак#2",
+      "system": "powertrain",
+      "displayName": "Топливный бак",
+      "dtcCodes": [
+        "P0171",
+        "P0300"
+      ],
+      "manualSections": [
+        "1-13",
+        "1-30"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 1,
+      "layer": "engine",
+      "glossary_id": "fuel_tank@engine"
+    },
+    "Выхлоп I4 1.5 бензин#2": {
+      "meshName": "Выхлоп I4 1.5 бензин#2",
+      "system": "powertrain",
+      "displayName": "Выхлоп I4 1.5 бензин",
+      "dtcCodes": [
+        "P0420",
+        "P0430"
+      ],
+      "manualSections": [
+        "1-11"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 1,
+      "layer": "engine",
+      "glossary_id": "exhaust_manifold@engine"
+    },
+    "Выхлопная труба#2": {
+      "meshName": "Выхлопная труба#2",
+      "system": "powertrain",
+      "displayName": "Выхлопная труба",
+      "dtcCodes": [
+        "P0420",
+        "P0430"
+      ],
+      "manualSections": [
+        "1-11"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 1,
+      "layer": "engine",
+      "glossary_id": "exhaust_pipe_tailpipe@engine"
+    },
+    "Выхлопная система#2": {
+      "meshName": "Выхлопная система#2",
+      "system": "powertrain",
+      "displayName": "Выхлопная система",
+      "dtcCodes": [
+        "P0420",
+        "P0430"
+      ],
+      "manualSections": [
+        "1-11"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 1,
+      "layer": "engine",
+      "glossary_id": "exhaust_system@engine"
+    },
+    "Двигатель I4#2": {
+      "meshName": "Двигатель I4#2",
+      "system": "powertrain",
+      "displayName": "Двигатель I4",
+      "dtcCodes": [
+        "P0171",
+        "P0300",
+        "P0A0F"
+      ],
+      "manualSections": [
+        "1-13"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 1,
+      "specs": {
+        "type": "1.5T I4 Range Extender",
+        "fuel": "АИ-95",
+        "fuel_tank_l": 65
+      },
+      "layer": "engine",
+      "glossary_id": "engine@engine"
+    },
+    "Крепление э/мотора#2": {
+      "meshName": "Крепление э/мотора#2",
+      "system": "powertrain",
+      "displayName": "Крепление э/мотора",
+      "dtcCodes": [
+        "P0171",
+        "P0300"
+      ],
+      "manualSections": [
+        "1-13"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 1,
+      "layer": "engine",
+      "glossary_id": "engine_mount@engine"
+    },
+    "Электромотор задний#2": {
+      "meshName": "Электромотор задний#2",
+      "system": "powertrain",
+      "displayName": "Электромотор задний",
+      "dtcCodes": [
+        "P0A1A"
+      ],
+      "manualSections": [
+        "1-13"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 1,
+      "specs": {
+        "type": "3-in-1 задний привод",
+        "power_kw": 200,
+        "torque_nm": 400
+      },
+      "layer": "ev",
+      "glossary_id": "rear_electric_motor@ev"
+    },
+    "Электромотор передний#2": {
+      "meshName": "Электромотор передний#2",
+      "system": "powertrain",
+      "displayName": "Электромотор передний",
+      "dtcCodes": [
+        "P0A1A"
+      ],
+      "manualSections": [
+        "1-13"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 1,
+      "specs": {
+        "type": "5-in-1 передний привод",
+        "power_kw": 130,
+        "torque_nm": 220
+      },
+      "layer": "ev",
+      "glossary_id": "front_electric_motor@ev"
+    },
+    "Блок управления#2": {
+      "meshName": "Блок управления#2",
+      "system": "electronics",
+      "displayName": "Блок управления",
+      "dtcCodes": [
+        "U0100",
+        "U0155"
+      ],
+      "manualSections": [
+        "1-16",
+        "1-33"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 9,
+      "layer": "sensors",
+      "glossary_id": "motor_control_unit@sensors"
+    },
+    "Дверная карта ПП#2": {
+      "meshName": "Дверная карта ПП#2",
+      "system": "body",
+      "displayName": "Дверная карта ПП",
+      "dtcCodes": [
+        "B1011",
+        "B1012"
+      ],
+      "manualSections": [
+        "1-19",
+        "1-38"
+      ],
+      "selectable": true,
+      "xray_transparent": true,
+      "layer_num": 8,
+      "layer": "body",
+      "glossary_id": "door_trim_panel@body"
+    },
+    "Дверная карта ПЛ#2": {
+      "meshName": "Дверная карта ПЛ#2",
+      "system": "body",
+      "displayName": "Дверная карта ПЛ",
+      "dtcCodes": [
+        "B1011",
+        "B1012"
+      ],
+      "manualSections": [
+        "1-19",
+        "1-38"
+      ],
+      "selectable": true,
+      "xray_transparent": true,
+      "layer_num": 8,
+      "layer": "body",
+      "glossary_id": "door_trim_panel@body"
+    },
+    "Ручка двери ЗП#2": {
+      "meshName": "Ручка двери ЗП#2",
+      "system": "body",
+      "displayName": "Ручка двери ЗП",
+      "dtcCodes": [
+        "B1011",
+        "B1012"
+      ],
+      "manualSections": [
+        "1-19",
+        "1-38"
+      ],
+      "selectable": true,
+      "xray_transparent": true,
+      "layer_num": 8,
+      "layer": "body",
+      "glossary_id": "door_handle@body"
+    },
+    "Ручка двери ЗЛ#2": {
+      "meshName": "Ручка двери ЗЛ#2",
+      "system": "body",
+      "displayName": "Ручка двери ЗЛ",
+      "dtcCodes": [
+        "B1011",
+        "B1012"
+      ],
+      "manualSections": [
+        "1-19",
+        "1-38"
+      ],
+      "selectable": true,
+      "xray_transparent": true,
+      "layer_num": 8,
+      "layer": "body",
+      "glossary_id": "door_handle@body"
+    },
+    "Ручка двери ПП#2": {
+      "meshName": "Ручка двери ПП#2",
+      "system": "body",
+      "displayName": "Ручка двери ПП",
+      "dtcCodes": [
+        "B1011",
+        "B1012"
+      ],
+      "manualSections": [
+        "1-19",
+        "1-38"
+      ],
+      "selectable": true,
+      "xray_transparent": true,
+      "layer_num": 8,
+      "layer": "body",
+      "glossary_id": "door_handle@body"
+    },
+    "Ручка двери ПЛ#2": {
+      "meshName": "Ручка двери ПЛ#2",
+      "system": "body",
+      "displayName": "Ручка двери ПЛ",
+      "dtcCodes": [
+        "B1011",
+        "B1012"
+      ],
+      "manualSections": [
+        "1-19",
+        "1-38"
+      ],
+      "selectable": true,
+      "xray_transparent": true,
+      "layer_num": 8,
+      "layer": "body",
+      "glossary_id": "door_handle@body"
+    },
+    "Стекло двери ЗП#2": {
+      "meshName": "Стекло двери ЗП#2",
+      "system": "glass",
+      "displayName": "Стекло двери ЗП",
+      "dtcCodes": [],
+      "manualSections": [
+        "1-23"
+      ],
+      "selectable": true,
+      "xray_transparent": true,
+      "layer_num": 6,
+      "layer": "body",
+      "glossary_id": "door_glass@body"
+    },
+    "Стекло двери ЗЛ#2": {
+      "meshName": "Стекло двери ЗЛ#2",
+      "system": "glass",
+      "displayName": "Стекло двери ЗЛ",
+      "dtcCodes": [],
+      "manualSections": [
+        "1-23"
+      ],
+      "selectable": true,
+      "xray_transparent": true,
+      "layer_num": 6,
+      "layer": "body",
+      "glossary_id": "door_glass@body"
+    },
+    "Стекло двери ПП#2": {
+      "meshName": "Стекло двери ПП#2",
+      "system": "glass",
+      "displayName": "Стекло двери ПП",
+      "dtcCodes": [],
+      "manualSections": [
+        "1-23"
+      ],
+      "selectable": true,
+      "xray_transparent": true,
+      "layer_num": 6,
+      "layer": "body",
+      "glossary_id": "door_glass@body"
+    },
+    "Стекло двери ПЛ#2": {
+      "meshName": "Стекло двери ПЛ#2",
+      "system": "glass",
+      "displayName": "Стекло двери ПЛ",
+      "dtcCodes": [],
+      "manualSections": [
+        "1-23"
+      ],
+      "selectable": true,
+      "xray_transparent": true,
+      "layer_num": 6,
+      "layer": "body",
+      "glossary_id": "door_glass@body"
+    },
+    "Дверь задняя правая#2": {
+      "meshName": "Дверь задняя правая#2",
+      "system": "body",
+      "displayName": "Дверь задняя правая",
+      "dtcCodes": [
+        "B1014"
+      ],
+      "manualSections": [
+        "1-19"
+      ],
+      "selectable": true,
+      "xray_transparent": true,
+      "layer_num": 8,
+      "layer": "body",
+      "glossary_id": "rear_door@body"
+    },
+    "Дверь задняя левая#2": {
+      "meshName": "Дверь задняя левая#2",
+      "system": "body",
+      "displayName": "Дверь задняя левая",
+      "dtcCodes": [
+        "B1013"
+      ],
+      "manualSections": [
+        "1-19"
+      ],
+      "selectable": true,
+      "xray_transparent": true,
+      "layer_num": 8,
+      "layer": "body",
+      "glossary_id": "rear_door@body"
+    },
+    "Дверь передняя правая#2": {
+      "meshName": "Дверь передняя правая#2",
+      "system": "body",
+      "displayName": "Дверь передняя правая",
+      "dtcCodes": [
+        "B1012"
+      ],
+      "manualSections": [
+        "1-19"
+      ],
+      "selectable": true,
+      "xray_transparent": true,
+      "layer_num": 8,
+      "layer": "body",
+      "glossary_id": "front_door@body"
+    },
+    "Дверь передняя левая#2": {
+      "meshName": "Дверь передняя левая#2",
+      "system": "body",
+      "displayName": "Дверь передняя левая",
+      "dtcCodes": [
+        "B1011"
+      ],
+      "manualSections": [
+        "1-19"
+      ],
+      "selectable": true,
+      "xray_transparent": true,
+      "layer_num": 8,
+      "layer": "body",
+      "glossary_id": "front_door@body"
+    },
+    "Педаль тормоза#2": {
+      "meshName": "Педаль тормоза#2",
+      "system": "chassis",
+      "displayName": "Педаль тормоза",
+      "dtcCodes": [
+        "C0035",
+        "C0036",
+        "C0037",
+        "C0038"
+      ],
+      "manualSections": [
+        "1-34"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 0,
+      "specs": {
+        "type": "Вентилируемые дисковые тормоза"
+      },
+      "layer": "brakes",
+      "glossary_id": "brake_pedal@brakes"
+    },
+    "Охлаждение батареи#2": {
+      "meshName": "Охлаждение батареи#2",
+      "system": "energy",
+      "displayName": "Охлаждение батареи",
+      "dtcCodes": [
+        "P0A7F",
+        "P0A80",
+        "P0AA6",
+        "P3000"
+      ],
+      "manualSections": [
+        "1-35"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 2,
+      "specs": {
+        "capacity": "52.3 кВт·ч",
+        "type": "Тернарная литиевая",
+        "dc_charge_time": "25 мин (20%-80%)",
+        "warranty": "8 лет или 160 000 км"
+      },
+      "layer": "hvac",
+      "glossary_id": "battery_thermal_management_system_btms@hvac"
+    },
+    "Батарея ВН#2": {
+      "meshName": "Батарея ВН#2",
+      "system": "energy",
+      "displayName": "Батарея ВН",
+      "dtcCodes": [
+        "P0A7F",
+        "P0A80",
+        "P0AA6",
+        "P3000"
+      ],
+      "manualSections": [
+        "1-35"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 2,
+      "specs": {
+        "capacity": "52.3 кВт·ч",
+        "type": "Тернарная литиевая",
+        "dc_charge_time": "25 мин (20%-80%)",
+        "warranty": "8 лет или 160 000 км"
+      },
+      "layer": "ev",
+      "glossary_id": "traction_battery_hv_battery@ev"
+    },
+    "Надпись хром#2": {
+      "meshName": "Надпись хром#2",
+      "system": "exterior",
+      "displayName": "Надпись хром",
+      "dtcCodes": [
+        "B1501",
+        "B1502"
+      ],
+      "manualSections": [
+        "1-10"
+      ],
+      "selectable": true,
+      "xray_transparent": true,
+      "layer_num": 7,
+      "layer": "body",
+      "glossary_id": "emblem@body"
+    },
+    "Надпись чёрная#2": {
+      "meshName": "Надпись чёрная#2",
+      "system": "exterior",
+      "displayName": "Надпись чёрная",
+      "dtcCodes": [
+        "B1501",
+        "B1502"
+      ],
+      "manualSections": [
+        "1-10"
+      ],
+      "selectable": true,
+      "xray_transparent": true,
+      "layer_num": 7,
+      "layer": "body",
+      "glossary_id": "emblem@body"
+    },
+    "Сиденье (доп.)#2": {
+      "meshName": "Сиденье (доп.)#2",
+      "system": "interior",
+      "displayName": "Сиденье (доп.)",
+      "dtcCodes": [
+        "B1450",
+        "B1460"
+      ],
+      "manualSections": [
+        "1-20"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 4,
+      "layer": "interior",
+      "glossary_id": "rear_seat@interior"
+    },
+    "Колесо ПЛ — Обшивка": {
+      "meshName": "Колесо ПЛ — Обшивка",
+      "system": "wheels",
+      "displayName": "Колесо ПЛ — Обшивка",
+      "dtcCodes": [],
+      "manualSections": [
+        "1-30",
+        "1-38"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 3,
+      "parentNode": "Колесо ПЛ",
+      "specs": {
+        "size": "21\"",
+        "options": "Silver-Grey / Black-Grey"
+      },
+      "layer": "drivetrain",
+      "glossary_id": "wheel@drivetrain"
+    },
+    "Колесо ПЛ — Отделка": {
+      "meshName": "Колесо ПЛ — Отделка",
+      "system": "wheels",
+      "displayName": "Колесо ПЛ — Отделка",
+      "dtcCodes": [],
+      "manualSections": [
+        "1-30",
+        "1-38"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 3,
+      "parentNode": "Колесо ПЛ",
+      "specs": {
+        "size": "21\"",
+        "options": "Silver-Grey / Black-Grey"
+      },
+      "layer": "drivetrain",
+      "glossary_id": "wheel@drivetrain"
+    },
+    "Колесо ПЛ — Резиновая накладка": {
+      "meshName": "Колесо ПЛ — Резиновая накладка",
+      "system": "wheels",
+      "displayName": "Колесо ПЛ — Резиновая накладка",
+      "dtcCodes": [],
+      "manualSections": [
+        "1-30",
+        "1-38"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 3,
+      "parentNode": "Колесо ПЛ",
+      "specs": {
+        "size": "21\"",
+        "options": "Silver-Grey / Black-Grey"
+      },
+      "layer": "drivetrain",
+      "glossary_id": "wheel@drivetrain"
+    },
+    "Колесо ПП — Обшивка": {
+      "meshName": "Колесо ПП — Обшивка",
+      "system": "wheels",
+      "displayName": "Колесо ПП — Обшивка",
+      "dtcCodes": [],
+      "manualSections": [
+        "1-30",
+        "1-38"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 3,
+      "parentNode": "Колесо ПП",
+      "specs": {
+        "size": "21\"",
+        "options": "Silver-Grey / Black-Grey"
+      },
+      "layer": "drivetrain",
+      "glossary_id": "wheel@drivetrain"
+    },
+    "Колесо ПП — Отделка": {
+      "meshName": "Колесо ПП — Отделка",
+      "system": "wheels",
+      "displayName": "Колесо ПП — Отделка",
+      "dtcCodes": [],
+      "manualSections": [
+        "1-30",
+        "1-38"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 3,
+      "parentNode": "Колесо ПП",
+      "specs": {
+        "size": "21\"",
+        "options": "Silver-Grey / Black-Grey"
+      },
+      "layer": "drivetrain",
+      "glossary_id": "wheel@drivetrain"
+    },
+    "Колесо ПП — Резиновая накладка": {
+      "meshName": "Колесо ПП — Резиновая накладка",
+      "system": "wheels",
+      "displayName": "Колесо ПП — Резиновая накладка",
+      "dtcCodes": [],
+      "manualSections": [
+        "1-30",
+        "1-38"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 3,
+      "parentNode": "Колесо ПП",
+      "specs": {
+        "size": "21\"",
+        "options": "Silver-Grey / Black-Grey"
+      },
+      "layer": "drivetrain",
+      "glossary_id": "wheel@drivetrain"
+    },
+    "Колесо ЗЛ — Обшивка": {
+      "meshName": "Колесо ЗЛ — Обшивка",
+      "system": "wheels",
+      "displayName": "Колесо ЗЛ — Обшивка",
+      "dtcCodes": [],
+      "manualSections": [
+        "1-30",
+        "1-38"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 3,
+      "parentNode": "Колесо ЗЛ",
+      "specs": {
+        "size": "21\"",
+        "options": "Silver-Grey / Black-Grey"
+      },
+      "layer": "drivetrain",
+      "glossary_id": "wheel@drivetrain"
+    },
+    "Колесо ЗЛ — Отделка": {
+      "meshName": "Колесо ЗЛ — Отделка",
+      "system": "wheels",
+      "displayName": "Колесо ЗЛ — Отделка",
+      "dtcCodes": [],
+      "manualSections": [
+        "1-30",
+        "1-38"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 3,
+      "parentNode": "Колесо ЗЛ",
+      "specs": {
+        "size": "21\"",
+        "options": "Silver-Grey / Black-Grey"
+      },
+      "layer": "drivetrain",
+      "glossary_id": "wheel@drivetrain"
+    },
+    "Колесо ЗЛ — Резиновая накладка": {
+      "meshName": "Колесо ЗЛ — Резиновая накладка",
+      "system": "wheels",
+      "displayName": "Колесо ЗЛ — Резиновая накладка",
+      "dtcCodes": [],
+      "manualSections": [
+        "1-30",
+        "1-38"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 3,
+      "parentNode": "Колесо ЗЛ",
+      "specs": {
+        "size": "21\"",
+        "options": "Silver-Grey / Black-Grey"
+      },
+      "layer": "drivetrain",
+      "glossary_id": "wheel@drivetrain"
+    },
+    "Колесо ЗП — Обшивка": {
+      "meshName": "Колесо ЗП — Обшивка",
+      "system": "wheels",
+      "displayName": "Колесо ЗП — Обшивка",
+      "dtcCodes": [],
+      "manualSections": [
+        "1-30",
+        "1-38"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 3,
+      "parentNode": "Колесо ЗП",
+      "specs": {
+        "size": "21\"",
+        "options": "Silver-Grey / Black-Grey"
+      },
+      "layer": "drivetrain",
+      "glossary_id": "wheel@drivetrain"
+    },
+    "Колесо ЗП — Отделка": {
+      "meshName": "Колесо ЗП — Отделка",
+      "system": "wheels",
+      "displayName": "Колесо ЗП — Отделка",
+      "dtcCodes": [],
+      "manualSections": [
+        "1-30",
+        "1-38"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 3,
+      "parentNode": "Колесо ЗП",
+      "specs": {
+        "size": "21\"",
+        "options": "Silver-Grey / Black-Grey"
+      },
+      "layer": "drivetrain",
+      "glossary_id": "wheel@drivetrain"
+    },
+    "Колесо ЗП — Резиновая накладка": {
+      "meshName": "Колесо ЗП — Резиновая накладка",
+      "system": "wheels",
+      "displayName": "Колесо ЗП — Резиновая накладка",
+      "dtcCodes": [],
+      "manualSections": [
+        "1-30",
+        "1-38"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 3,
+      "parentNode": "Колесо ЗП",
+      "specs": {
+        "size": "21\"",
+        "options": "Silver-Grey / Black-Grey"
+      },
+      "layer": "drivetrain",
+      "glossary_id": "wheel@drivetrain"
+    },
+    "Монитор#2 — Отделка": {
+      "meshName": "Монитор#2 — Отделка",
+      "system": "interior",
+      "displayName": "Монитор#2 — Отделка",
+      "dtcCodes": [
+        "B1450",
+        "B1460"
+      ],
+      "manualSections": [
+        "1-16"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 4,
+      "parentNode": "Монитор#2",
+      "layer": "interior",
+      "glossary_id": "infotainment_screen_multimedia_display@interior"
+    },
+    "Монитор#2 — Монитор": {
+      "meshName": "Монитор#2 — Монитор",
+      "system": "interior",
+      "displayName": "Монитор#2 — Монитор",
+      "dtcCodes": [
+        "B1450",
+        "B1460"
+      ],
+      "manualSections": [
+        "1-16"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 4,
+      "parentNode": "Монитор#2",
+      "layer": "interior",
+      "glossary_id": "infotainment_screen_multimedia_display@interior"
+    },
+    "Лючок зарядки#2 — Панель": {
+      "meshName": "Лючок зарядки#2 — Панель",
+      "system": "energy",
+      "displayName": "Лючок зарядки#2 — Панель",
+      "dtcCodes": [
+        "P0A80",
+        "P3000"
+      ],
+      "manualSections": [
+        "1-35"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 2,
+      "parentNode": "Лючок зарядки#2",
+      "layer": "ev",
+      "glossary_id": "charge_port_door@ev"
+    },
+    "Лючок зарядки#2 — Накладка": {
+      "meshName": "Лючок зарядки#2 — Накладка",
+      "system": "energy",
+      "displayName": "Лючок зарядки#2 — Накладка",
+      "dtcCodes": [
+        "P0A80",
+        "P3000"
+      ],
+      "manualSections": [
+        "1-35"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 2,
+      "parentNode": "Лючок зарядки#2",
+      "layer": "ev",
+      "glossary_id": "charge_port_door@ev"
+    },
+    "Лючок бака#2 — Панель": {
+      "meshName": "Лючок бака#2 — Панель",
+      "system": "powertrain",
+      "displayName": "Лючок бака#2 — Панель",
+      "dtcCodes": [
+        "P0171",
+        "P0300"
+      ],
+      "manualSections": [
+        "1-13",
+        "1-30"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 1,
+      "parentNode": "Лючок бака#2",
+      "layer": "engine",
+      "glossary_id": "fuel_filler_cap@engine"
+    },
+    "Лючок бака#2 — Накладка": {
+      "meshName": "Лючок бака#2 — Накладка",
+      "system": "powertrain",
+      "displayName": "Лючок бака#2 — Накладка",
+      "dtcCodes": [
+        "P0171",
+        "P0300"
+      ],
+      "manualSections": [
+        "1-13",
+        "1-30"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 1,
+      "parentNode": "Лючок бака#2",
+      "layer": "engine",
+      "glossary_id": "fuel_filler_cap@engine"
+    },
+    "Бардачок#2 — Обшивка": {
+      "meshName": "Бардачок#2 — Обшивка",
+      "system": "interior",
+      "displayName": "Бардачок#2 — Обшивка",
+      "dtcCodes": [
+        "B1450",
+        "B1460"
+      ],
+      "manualSections": [
+        "1-20",
+        "1-21"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 4,
+      "parentNode": "Бардачок#2",
+      "layer": "interior",
+      "glossary_id": "glove_box_glove_compartment@interior"
+    },
+    "Бардачок#2 — Кожаная вставка": {
+      "meshName": "Бардачок#2 — Кожаная вставка",
+      "system": "interior",
+      "displayName": "Бардачок#2 — Кожаная вставка",
+      "dtcCodes": [
+        "B1450",
+        "B1460"
+      ],
+      "manualSections": [
+        "1-20",
+        "1-21"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 4,
+      "parentNode": "Бардачок#2",
+      "layer": "interior",
+      "glossary_id": "glove_box_glove_compartment@interior"
+    },
+    "Лобовое стекло#2 — Стекло": {
+      "meshName": "Лобовое стекло#2 — Стекло",
+      "system": "glass",
+      "displayName": "Лобовое стекло#2 — Стекло",
+      "dtcCodes": [],
+      "manualSections": [
+        "1-23"
+      ],
+      "selectable": true,
+      "xray_transparent": true,
+      "layer_num": 6,
+      "parentNode": "Лобовое стекло#2",
+      "layer": "body",
+      "glossary_id": "windscreen_windshield@body"
+    },
+    "Лобовое стекло#2 — Тонировка": {
+      "meshName": "Лобовое стекло#2 — Тонировка",
+      "system": "glass",
+      "displayName": "Лобовое стекло#2 — Тонировка",
+      "dtcCodes": [],
+      "manualSections": [
+        "1-23"
+      ],
+      "selectable": true,
+      "xray_transparent": true,
+      "layer_num": 6,
+      "parentNode": "Лобовое стекло#2",
+      "layer": "body",
+      "glossary_id": "windscreen_windshield@body"
+    },
+    "Лобовое стекло#2 — Маркировка": {
+      "meshName": "Лобовое стекло#2 — Маркировка",
+      "system": "glass",
+      "displayName": "Лобовое стекло#2 — Маркировка",
+      "dtcCodes": [],
+      "manualSections": [
+        "1-23"
+      ],
+      "selectable": true,
+      "xray_transparent": true,
+      "layer_num": 6,
+      "parentNode": "Лобовое стекло#2",
+      "layer": "body",
+      "glossary_id": "windscreen_windshield@body"
+    },
+    "Днище#2 — Привод": {
+      "meshName": "Днище#2 — Привод",
+      "system": "body",
+      "displayName": "Днище#2 — Привод",
+      "dtcCodes": [
+        "B1011",
+        "B1012"
+      ],
+      "manualSections": [
+        "1-19",
+        "1-38"
+      ],
+      "selectable": true,
+      "xray_transparent": true,
+      "layer_num": 8,
+      "parentNode": "Днище#2",
+      "layer": "drivetrain",
+      "glossary_id": "floor_pan@drivetrain"
+    },
+    "Днище#2 — Теплозащита": {
+      "meshName": "Днище#2 — Теплозащита",
+      "system": "body",
+      "displayName": "Днище#2 — Теплозащита",
+      "dtcCodes": [
+        "B1011",
+        "B1012"
+      ],
+      "manualSections": [
+        "1-19",
+        "1-38"
+      ],
+      "selectable": true,
+      "xray_transparent": true,
+      "layer_num": 8,
+      "parentNode": "Днище#2",
+      "layer": "body",
+      "glossary_id": "floor_pan@body"
+    },
+    "Стекло люка#2 — Стекло": {
+      "meshName": "Стекло люка#2 — Стекло",
+      "system": "glass",
+      "displayName": "Стекло люка#2 — Стекло",
+      "dtcCodes": [],
+      "manualSections": [
+        "1-23"
+      ],
+      "selectable": true,
+      "xray_transparent": true,
+      "layer_num": 6,
+      "parentNode": "Стекло люка#2",
+      "layer": "body",
+      "glossary_id": "sunroof_glass@body"
+    },
+    "Стекло люка#2 — Тонировка": {
+      "meshName": "Стекло люка#2 — Тонировка",
+      "system": "glass",
+      "displayName": "Стекло люка#2 — Тонировка",
+      "dtcCodes": [],
+      "manualSections": [
+        "1-23"
+      ],
+      "selectable": true,
+      "xray_transparent": true,
+      "layer_num": 6,
+      "parentNode": "Стекло люка#2",
+      "layer": "body",
+      "glossary_id": "sunroof_glass@body"
+    },
+    "Люк#2 — Стекло": {
+      "meshName": "Люк#2 — Стекло",
+      "system": "glass",
+      "displayName": "Люк#2 — Стекло",
+      "dtcCodes": [],
+      "manualSections": [
+        "1-23"
+      ],
+      "selectable": true,
+      "xray_transparent": true,
+      "layer_num": 6,
+      "parentNode": "Люк#2",
+      "layer": "body",
+      "glossary_id": "sunroof_panel@body"
+    },
+    "Люк#2 — Тонировка": {
+      "meshName": "Люк#2 — Тонировка",
+      "system": "glass",
+      "displayName": "Люк#2 — Тонировка",
+      "dtcCodes": [],
+      "manualSections": [
+        "1-23"
+      ],
+      "selectable": true,
+      "xray_transparent": true,
+      "layer_num": 6,
+      "parentNode": "Люк#2",
+      "layer": "body",
+      "glossary_id": "sunroof_panel@body"
+    },
+    "Стойка передняя (шир.)#2 — Накладка": {
+      "meshName": "Стойка передняя (шир.)#2 — Накладка",
+      "system": "chassis",
+      "displayName": "Стойка передняя (шир.)#2 — Накладка",
+      "dtcCodes": [
+        "C0035",
+        "C0036"
+      ],
+      "manualSections": [
+        "1-30",
+        "1-34"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 0,
+      "parentNode": "Стойка передняя (шир.)#2",
+      "layer": "drivetrain",
+      "glossary_id": "strut@drivetrain"
+    },
+    "Стойка передняя (шир.)#2 — Рычаг": {
+      "meshName": "Стойка передняя (шир.)#2 — Рычаг",
+      "system": "chassis",
+      "displayName": "Стойка передняя (шир.)#2 — Рычаг",
+      "dtcCodes": [
+        "C0550"
+      ],
+      "manualSections": [
+        "1-30",
+        "1-34"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 0,
+      "parentNode": "Стойка передняя (шир.)#2",
+      "layer": "drivetrain",
+      "glossary_id": "strut@drivetrain"
+    },
+    "Руль (альт.)#2 — Приборная панель": {
+      "meshName": "Руль (альт.)#2 — Приборная панель",
+      "system": "interior",
+      "displayName": "Руль (альт.)#2 — Приборная панель",
+      "dtcCodes": [
+        "C0500",
+        "U0100"
+      ],
+      "manualSections": [
+        "1-16",
+        "1-21"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 4,
+      "parentNode": "Руль (альт.)#2",
+      "layer": "interior",
+      "glossary_id": "steering_wheel@interior"
+    },
+    "Руль (альт.)#2 — Обшивка": {
+      "meshName": "Руль (альт.)#2 — Обшивка",
+      "system": "interior",
+      "displayName": "Руль (альт.)#2 — Обшивка",
+      "dtcCodes": [
+        "C0500"
+      ],
+      "manualSections": [
+        "1-21"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 4,
+      "parentNode": "Руль (альт.)#2",
+      "layer": "interior",
+      "glossary_id": "steering_wheel@interior"
+    },
+    "Руль (альт.)#2 — Отделка": {
+      "meshName": "Руль (альт.)#2 — Отделка",
+      "system": "interior",
+      "displayName": "Руль (альт.)#2 — Отделка",
+      "dtcCodes": [
+        "C0500"
+      ],
+      "manualSections": [
+        "1-21"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 4,
+      "parentNode": "Руль (альт.)#2",
+      "layer": "interior",
+      "glossary_id": "steering_wheel@interior"
+    },
+    "Руль (альт.)#2 — Спидометр": {
+      "meshName": "Руль (альт.)#2 — Спидометр",
+      "system": "interior",
+      "displayName": "Руль (альт.)#2 — Спидометр",
+      "dtcCodes": [
+        "C0500"
+      ],
+      "manualSections": [
+        "1-21"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 4,
+      "parentNode": "Руль (альт.)#2",
+      "layer": "interior",
+      "glossary_id": "steering_wheel@interior"
+    },
+    "Руль (альт.)#2 — Дисплей руля": {
+      "meshName": "Руль (альт.)#2 — Дисплей руля",
+      "system": "interior",
+      "displayName": "Руль (альт.)#2 — Дисплей руля",
+      "dtcCodes": [
+        "C0500"
+      ],
+      "manualSections": [
+        "1-21"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 4,
+      "parentNode": "Руль (альт.)#2",
+      "layer": "interior",
+      "glossary_id": "steering_wheel@interior"
+    },
+    "Руль (альт.)#2 — Накладка руля": {
+      "meshName": "Руль (альт.)#2 — Накладка руля",
+      "system": "interior",
+      "displayName": "Руль (альт.)#2 — Накладка руля",
+      "dtcCodes": [
+        "C0500"
+      ],
+      "manualSections": [
+        "1-21"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 4,
+      "parentNode": "Руль (альт.)#2",
+      "layer": "interior",
+      "glossary_id": "steering_wheel@interior"
+    },
+    "Руль#2 — Приборная панель": {
+      "meshName": "Руль#2 — Приборная панель",
+      "system": "interior",
+      "displayName": "Руль#2 — Приборная панель",
+      "dtcCodes": [
+        "C0500",
+        "U0100"
+      ],
+      "manualSections": [
+        "1-16",
+        "1-21"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 4,
+      "parentNode": "Руль#2",
+      "layer": "interior",
+      "glossary_id": "steering_wheel@interior"
+    },
+    "Руль#2 — Обшивка": {
+      "meshName": "Руль#2 — Обшивка",
+      "system": "interior",
+      "displayName": "Руль#2 — Обшивка",
+      "dtcCodes": [
+        "C0500"
+      ],
+      "manualSections": [
+        "1-21"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 4,
+      "parentNode": "Руль#2",
+      "layer": "interior",
+      "glossary_id": "steering_wheel@interior"
+    },
+    "Руль#2 — Отделка": {
+      "meshName": "Руль#2 — Отделка",
+      "system": "interior",
+      "displayName": "Руль#2 — Отделка",
+      "dtcCodes": [
+        "C0500"
+      ],
+      "manualSections": [
+        "1-21"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 4,
+      "parentNode": "Руль#2",
+      "layer": "interior",
+      "glossary_id": "steering_wheel@interior"
+    },
+    "Руль#2 — Спидометр": {
+      "meshName": "Руль#2 — Спидометр",
+      "system": "interior",
+      "displayName": "Руль#2 — Спидометр",
+      "dtcCodes": [
+        "C0500"
+      ],
+      "manualSections": [
+        "1-21"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 4,
+      "parentNode": "Руль#2",
+      "layer": "interior",
+      "glossary_id": "steering_wheel@interior"
+    },
+    "Руль#2 — Дисплей руля": {
+      "meshName": "Руль#2 — Дисплей руля",
+      "system": "interior",
+      "displayName": "Руль#2 — Дисплей руля",
+      "dtcCodes": [
+        "C0500"
+      ],
+      "manualSections": [
+        "1-21"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 4,
+      "parentNode": "Руль#2",
+      "layer": "interior",
+      "glossary_id": "steering_wheel@interior"
+    },
+    "Руль#2 — Накладка руля": {
+      "meshName": "Руль#2 — Накладка руля",
+      "system": "interior",
+      "displayName": "Руль#2 — Накладка руля",
+      "dtcCodes": [
+        "C0500"
+      ],
+      "manualSections": [
+        "1-21"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 4,
+      "parentNode": "Руль#2",
+      "layer": "interior",
+      "glossary_id": "steering_wheel@interior"
+    },
+    "Подрулевой переключатель#2 — Накладка": {
+      "meshName": "Подрулевой переключатель#2 — Накладка",
+      "system": "interior",
+      "displayName": "Подрулевой переключатель#2 — Накладка",
+      "dtcCodes": [
+        "C0500"
+      ],
+      "manualSections": [
+        "1-20",
+        "1-21"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 4,
+      "parentNode": "Подрулевой переключатель#2",
+      "layer": "brakes",
+      "glossary_id": "column_switch@brakes"
+    },
+    "Подрулевой переключатель#2 — Обшивка": {
+      "meshName": "Подрулевой переключатель#2 — Обшивка",
+      "system": "interior",
+      "displayName": "Подрулевой переключатель#2 — Обшивка",
+      "dtcCodes": [
+        "C0500"
+      ],
+      "manualSections": [
+        "1-20",
+        "1-21"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 4,
+      "parentNode": "Подрулевой переключатель#2",
+      "layer": "brakes",
+      "glossary_id": "column_switch@brakes"
+    },
+    "Подрулевой переключатель#2 — Кнопки руля": {
+      "meshName": "Подрулевой переключатель#2 — Кнопки руля",
+      "system": "interior",
+      "displayName": "Подрулевой переключатель#2 — Кнопки руля",
+      "dtcCodes": [
+        "C0500"
+      ],
+      "manualSections": [
+        "1-20",
+        "1-21"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 4,
+      "parentNode": "Подрулевой переключатель#2",
+      "layer": "brakes",
+      "glossary_id": "column_switch@brakes"
+    },
+    "Боковое стекло правое#2 — Стекло": {
+      "meshName": "Боковое стекло правое#2 — Стекло",
+      "system": "glass",
+      "displayName": "Боковое стекло правое#2 — Стекло",
+      "dtcCodes": [],
+      "manualSections": [
+        "1-23"
+      ],
+      "selectable": true,
+      "xray_transparent": true,
+      "layer_num": 6,
+      "parentNode": "Боковое стекло правое#2",
+      "layer": "body",
+      "glossary_id": "side_window@body"
+    },
+    "Боковое стекло правое#2 — Тонировка": {
+      "meshName": "Боковое стекло правое#2 — Тонировка",
+      "system": "glass",
+      "displayName": "Боковое стекло правое#2 — Тонировка",
+      "dtcCodes": [],
+      "manualSections": [
+        "1-23"
+      ],
+      "selectable": true,
+      "xray_transparent": true,
+      "layer_num": 6,
+      "parentNode": "Боковое стекло правое#2",
+      "layer": "body",
+      "glossary_id": "side_window@body"
+    },
+    "Боковое стекло левое#2 — Стекло": {
+      "meshName": "Боковое стекло левое#2 — Стекло",
+      "system": "glass",
+      "displayName": "Боковое стекло левое#2 — Стекло",
+      "dtcCodes": [],
+      "manualSections": [
+        "1-23"
+      ],
+      "selectable": true,
+      "xray_transparent": true,
+      "layer_num": 6,
+      "parentNode": "Боковое стекло левое#2",
+      "layer": "body",
+      "glossary_id": "side_window@body"
+    },
+    "Боковое стекло левое#2 — Тонировка": {
+      "meshName": "Боковое стекло левое#2 — Тонировка",
+      "system": "glass",
+      "displayName": "Боковое стекло левое#2 — Тонировка",
+      "dtcCodes": [],
+      "manualSections": [
+        "1-23"
+      ],
+      "selectable": true,
+      "xray_transparent": true,
+      "layer_num": 6,
+      "parentNode": "Боковое стекло левое#2",
+      "layer": "body",
+      "glossary_id": "side_window@body"
+    },
+    "Сиденья задние#2 — Обшивка": {
+      "meshName": "Сиденья задние#2 — Обшивка",
+      "system": "body",
+      "displayName": "Сиденья задние#2 — Обшивка",
+      "dtcCodes": [
+        "B1011",
+        "B1012"
+      ],
+      "manualSections": [
+        "1-19",
+        "1-38"
+      ],
+      "selectable": true,
+      "xray_transparent": true,
+      "layer_num": 8,
+      "parentNode": "Сиденья задние#2",
+      "layer": "body",
+      "glossary_id": "rear_seat@body"
+    },
+    "Сиденья задние#2 — Кожаная вставка": {
+      "meshName": "Сиденья задние#2 — Кожаная вставка",
+      "system": "interior",
+      "displayName": "Сиденья задние#2 — Кожаная вставка",
+      "dtcCodes": [
+        "B1450",
+        "B1460"
+      ],
+      "manualSections": [
+        "1-20",
+        "1-21"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 4,
+      "parentNode": "Сиденья задние#2",
+      "layer": "interior",
+      "glossary_id": "rear_seat@interior"
+    },
+    "Сиденья задние#2 — Отделка": {
+      "meshName": "Сиденья задние#2 — Отделка",
+      "system": "body",
+      "displayName": "Сиденья задние#2 — Отделка",
+      "dtcCodes": [
+        "B1011",
+        "B1012"
+      ],
+      "manualSections": [
+        "1-19",
+        "1-38"
+      ],
+      "selectable": true,
+      "xray_transparent": true,
+      "layer_num": 8,
+      "parentNode": "Сиденья задние#2",
+      "layer": "body",
+      "glossary_id": "rear_seat@body"
+    },
+    "Сиденья задние#2 — Обивка сиденья": {
+      "meshName": "Сиденья задние#2 — Обивка сиденья",
+      "system": "interior",
+      "displayName": "Сиденья задние#2 — Обивка сиденья",
+      "dtcCodes": [
+        "B1450",
+        "B1460"
+      ],
+      "manualSections": [
+        "1-20",
+        "1-21"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 4,
+      "parentNode": "Сиденья задние#2",
+      "layer": "interior",
+      "glossary_id": "rear_seat@interior"
+    },
+    "Сиденья задние#2 — Кнопки задние": {
+      "meshName": "Сиденья задние#2 — Кнопки задние",
+      "system": "interior",
+      "displayName": "Сиденья задние#2 — Кнопки задние",
+      "dtcCodes": [
+        "B1450",
+        "B1460"
+      ],
+      "manualSections": [
+        "1-20",
+        "1-21"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 4,
+      "parentNode": "Сиденья задние#2",
+      "layer": "interior",
+      "glossary_id": "rear_seat@interior"
+    },
+    "Сиденья задние#2 — Звёздное небо": {
+      "meshName": "Сиденья задние#2 — Звёздное небо",
+      "system": "body",
+      "displayName": "Сиденья задние#2 — Звёздное небо",
+      "dtcCodes": [
+        "B1011",
+        "B1012"
+      ],
+      "manualSections": [
+        "1-19",
+        "1-38"
+      ],
+      "selectable": true,
+      "xray_transparent": true,
+      "layer_num": 8,
+      "parentNode": "Сиденья задние#2",
+      "layer": "body",
+      "glossary_id": "rear_seat@body"
+    },
+    "Сиденья задние#2 — Подголовник": {
+      "meshName": "Сиденья задние#2 — Подголовник",
+      "system": "interior",
+      "displayName": "Сиденья задние#2 — Подголовник",
+      "dtcCodes": [
+        "B1450",
+        "B1460"
+      ],
+      "manualSections": [
+        "1-20",
+        "1-21"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 4,
+      "parentNode": "Сиденья задние#2",
+      "layer": "interior",
+      "glossary_id": "rear_seat@interior"
+    },
+    "Сиденья задние#2 — Обивка": {
+      "meshName": "Сиденья задние#2 — Обивка",
+      "system": "interior",
+      "displayName": "Сиденья задние#2 — Обивка",
+      "dtcCodes": [
+        "B1450",
+        "B1460"
+      ],
+      "manualSections": [
+        "1-20",
+        "1-21"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 4,
+      "parentNode": "Сиденья задние#2",
+      "layer": "interior",
+      "glossary_id": "rear_seat@interior"
+    },
+    "Подушка сиденья правая#2 — Кожаная вставка": {
+      "meshName": "Подушка сиденья правая#2 — Кожаная вставка",
+      "system": "interior",
+      "displayName": "Подушка сиденья правая#2 — Кожаная вставка",
+      "dtcCodes": [
+        "B1450",
+        "B1460"
+      ],
+      "manualSections": [
+        "1-20",
+        "1-21"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 4,
+      "parentNode": "Подушка сиденья правая#2",
+      "layer": "interior",
+      "glossary_id": "seat_cushion_seat_base@interior"
+    },
+    "Подушка сиденья правая#2 — Подголовник": {
+      "meshName": "Подушка сиденья правая#2 — Подголовник",
+      "system": "interior",
+      "displayName": "Подушка сиденья правая#2 — Подголовник",
+      "dtcCodes": [
+        "B1450",
+        "B1460"
+      ],
+      "manualSections": [
+        "1-20",
+        "1-21"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 4,
+      "parentNode": "Подушка сиденья правая#2",
+      "layer": "interior",
+      "glossary_id": "seat_cushion_seat_base@interior"
+    },
+    "Подушка сиденья левая#2 — Кожаная вставка": {
+      "meshName": "Подушка сиденья левая#2 — Кожаная вставка",
+      "system": "interior",
+      "displayName": "Подушка сиденья левая#2 — Кожаная вставка",
+      "dtcCodes": [
+        "B1450",
+        "B1460"
+      ],
+      "manualSections": [
+        "1-20",
+        "1-21"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 4,
+      "parentNode": "Подушка сиденья левая#2",
+      "layer": "interior",
+      "glossary_id": "seat_cushion_seat_base@interior"
+    },
+    "Подушка сиденья левая#2 — Подголовник": {
+      "meshName": "Подушка сиденья левая#2 — Подголовник",
+      "system": "interior",
+      "displayName": "Подушка сиденья левая#2 — Подголовник",
+      "dtcCodes": [
+        "B1450",
+        "B1460"
+      ],
+      "manualSections": [
+        "1-20",
+        "1-21"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 4,
+      "parentNode": "Подушка сиденья левая#2",
+      "layer": "interior",
+      "glossary_id": "seat_cushion_seat_base@interior"
+    },
+    "Сиденье ПП (часть)#2 — Обшивка": {
+      "meshName": "Сиденье ПП (часть)#2 — Обшивка",
+      "system": "interior",
+      "displayName": "Сиденье ПП (часть)#2 — Обшивка",
+      "dtcCodes": [
+        "B1460"
+      ],
+      "manualSections": [
+        "1-20"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 4,
+      "parentNode": "Сиденье ПП (часть)#2",
+      "layer": "interior",
+      "glossary_id": "front_seat@interior"
+    },
+    "Сиденье ПП (часть)#2 — Кожаная вставка": {
+      "meshName": "Сиденье ПП (часть)#2 — Кожаная вставка",
+      "system": "interior",
+      "displayName": "Сиденье ПП (часть)#2 — Кожаная вставка",
+      "dtcCodes": [
+        "B1460"
+      ],
+      "manualSections": [
+        "1-20"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 4,
+      "parentNode": "Сиденье ПП (часть)#2",
+      "layer": "interior",
+      "glossary_id": "front_seat@interior"
+    },
+    "Сиденье ПП (часть)#2 — Обивка сиденья": {
+      "meshName": "Сиденье ПП (часть)#2 — Обивка сиденья",
+      "system": "interior",
+      "displayName": "Сиденье ПП (часть)#2 — Обивка сиденья",
+      "dtcCodes": [
+        "B1460"
+      ],
+      "manualSections": [
+        "1-20"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 4,
+      "parentNode": "Сиденье ПП (часть)#2",
+      "layer": "interior",
+      "glossary_id": "front_seat@interior"
+    },
+    "Сиденье ПП (часть)#2 — Вставка": {
+      "meshName": "Сиденье ПП (часть)#2 — Вставка",
+      "system": "interior",
+      "displayName": "Сиденье ПП (часть)#2 — Вставка",
+      "dtcCodes": [
+        "B1460"
+      ],
+      "manualSections": [
+        "1-20"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 4,
+      "parentNode": "Сиденье ПП (часть)#2",
+      "layer": "interior",
+      "glossary_id": "front_seat@interior"
+    },
+    "Сиденье ПП#2 — Обшивка": {
+      "meshName": "Сиденье ПП#2 — Обшивка",
+      "system": "interior",
+      "displayName": "Сиденье ПП#2 — Обшивка",
+      "dtcCodes": [
+        "B1460"
+      ],
+      "manualSections": [
+        "1-20"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 4,
+      "parentNode": "Сиденье ПП#2",
+      "layer": "interior",
+      "glossary_id": "front_seat@interior"
+    },
+    "Сиденье ПП#2 — Кожаная вставка": {
+      "meshName": "Сиденье ПП#2 — Кожаная вставка",
+      "system": "interior",
+      "displayName": "Сиденье ПП#2 — Кожаная вставка",
+      "dtcCodes": [
+        "B1460"
+      ],
+      "manualSections": [
+        "1-20"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 4,
+      "parentNode": "Сиденье ПП#2",
+      "layer": "interior",
+      "glossary_id": "front_seat@interior"
+    },
+    "Сиденье ПП#2 — Отделка": {
+      "meshName": "Сиденье ПП#2 — Отделка",
+      "system": "interior",
+      "displayName": "Сиденье ПП#2 — Отделка",
+      "dtcCodes": [
+        "B1460"
+      ],
+      "manualSections": [
+        "1-20"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 4,
+      "parentNode": "Сиденье ПП#2",
+      "layer": "interior",
+      "glossary_id": "front_seat@interior"
+    },
+    "Сиденье ПП#2 — Обивка сиденья": {
+      "meshName": "Сиденье ПП#2 — Обивка сиденья",
+      "system": "interior",
+      "displayName": "Сиденье ПП#2 — Обивка сиденья",
+      "dtcCodes": [
+        "B1460"
+      ],
+      "manualSections": [
+        "1-20"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 4,
+      "parentNode": "Сиденье ПП#2",
+      "layer": "interior",
+      "glossary_id": "front_seat@interior"
+    },
+    "Сиденье ПП#2 — Вставка": {
+      "meshName": "Сиденье ПП#2 — Вставка",
+      "system": "interior",
+      "displayName": "Сиденье ПП#2 — Вставка",
+      "dtcCodes": [
+        "B1460"
+      ],
+      "manualSections": [
+        "1-20"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 4,
+      "parentNode": "Сиденье ПП#2",
+      "layer": "interior",
+      "glossary_id": "front_seat@interior"
+    },
+    "Сиденье ПП#2 — Кнопки задние": {
+      "meshName": "Сиденье ПП#2 — Кнопки задние",
+      "system": "interior",
+      "displayName": "Сиденье ПП#2 — Кнопки задние",
+      "dtcCodes": [
+        "B1460"
+      ],
+      "manualSections": [
+        "1-20"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 4,
+      "parentNode": "Сиденье ПП#2",
+      "layer": "interior",
+      "glossary_id": "front_seat@interior"
+    },
+    "Сиденье ПП#2 — Звёздное небо": {
+      "meshName": "Сиденье ПП#2 — Звёздное небо",
+      "system": "interior",
+      "displayName": "Сиденье ПП#2 — Звёздное небо",
+      "dtcCodes": [
+        "B1460"
+      ],
+      "manualSections": [
+        "1-20"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 4,
+      "parentNode": "Сиденье ПП#2",
+      "layer": "interior",
+      "glossary_id": "front_seat@interior"
+    },
+    "Сиденье ПЛ (часть)#2 — Обшивка": {
+      "meshName": "Сиденье ПЛ (часть)#2 — Обшивка",
+      "system": "interior",
+      "displayName": "Сиденье ПЛ (часть)#2 — Обшивка",
+      "dtcCodes": [
+        "B1450"
+      ],
+      "manualSections": [
+        "1-20"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 4,
+      "parentNode": "Сиденье ПЛ (часть)#2",
+      "layer": "interior",
+      "glossary_id": "front_seat@interior"
+    },
+    "Сиденье ПЛ (часть)#2 — Кожаная вставка": {
+      "meshName": "Сиденье ПЛ (часть)#2 — Кожаная вставка",
+      "system": "interior",
+      "displayName": "Сиденье ПЛ (часть)#2 — Кожаная вставка",
+      "dtcCodes": [
+        "B1450"
+      ],
+      "manualSections": [
+        "1-20"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 4,
+      "parentNode": "Сиденье ПЛ (часть)#2",
+      "layer": "interior",
+      "glossary_id": "front_seat@interior"
+    },
+    "Сиденье ПЛ (часть)#2 — Обивка сиденья": {
+      "meshName": "Сиденье ПЛ (часть)#2 — Обивка сиденья",
+      "system": "interior",
+      "displayName": "Сиденье ПЛ (часть)#2 — Обивка сиденья",
+      "dtcCodes": [
+        "B1450"
+      ],
+      "manualSections": [
+        "1-20"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 4,
+      "parentNode": "Сиденье ПЛ (часть)#2",
+      "layer": "interior",
+      "glossary_id": "front_seat@interior"
+    },
+    "Сиденье ПЛ#2 — Обшивка": {
+      "meshName": "Сиденье ПЛ#2 — Обшивка",
+      "system": "interior",
+      "displayName": "Сиденье ПЛ#2 — Обшивка",
+      "dtcCodes": [
+        "B1450"
+      ],
+      "manualSections": [
+        "1-20"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 4,
+      "parentNode": "Сиденье ПЛ#2",
+      "layer": "interior",
+      "glossary_id": "front_seat@interior"
+    },
+    "Сиденье ПЛ#2 — Кожаная вставка": {
+      "meshName": "Сиденье ПЛ#2 — Кожаная вставка",
+      "system": "interior",
+      "displayName": "Сиденье ПЛ#2 — Кожаная вставка",
+      "dtcCodes": [
+        "B1450"
+      ],
+      "manualSections": [
+        "1-20"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 4,
+      "parentNode": "Сиденье ПЛ#2",
+      "layer": "interior",
+      "glossary_id": "front_seat@interior"
+    },
+    "Сиденье ПЛ#2 — Отделка": {
+      "meshName": "Сиденье ПЛ#2 — Отделка",
+      "system": "interior",
+      "displayName": "Сиденье ПЛ#2 — Отделка",
+      "dtcCodes": [
+        "B1450"
+      ],
+      "manualSections": [
+        "1-20"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 4,
+      "parentNode": "Сиденье ПЛ#2",
+      "layer": "interior",
+      "glossary_id": "front_seat@interior"
+    },
+    "Сиденье ПЛ#2 — Обивка сиденья": {
+      "meshName": "Сиденье ПЛ#2 — Обивка сиденья",
+      "system": "interior",
+      "displayName": "Сиденье ПЛ#2 — Обивка сиденья",
+      "dtcCodes": [
+        "B1450"
+      ],
+      "manualSections": [
+        "1-20"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 4,
+      "parentNode": "Сиденье ПЛ#2",
+      "layer": "interior",
+      "glossary_id": "front_seat@interior"
+    },
+    "Сиденье ПЛ#2 — Кнопки задние": {
+      "meshName": "Сиденье ПЛ#2 — Кнопки задние",
+      "system": "interior",
+      "displayName": "Сиденье ПЛ#2 — Кнопки задние",
+      "dtcCodes": [
+        "B1450"
+      ],
+      "manualSections": [
+        "1-20"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 4,
+      "parentNode": "Сиденье ПЛ#2",
+      "layer": "interior",
+      "glossary_id": "front_seat@interior"
+    },
+    "Сиденье ПЛ#2 — Звёздное небо": {
+      "meshName": "Сиденье ПЛ#2 — Звёздное небо",
+      "system": "interior",
+      "displayName": "Сиденье ПЛ#2 — Звёздное небо",
+      "dtcCodes": [
+        "B1450"
+      ],
+      "manualSections": [
+        "1-20"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 4,
+      "parentNode": "Сиденье ПЛ#2",
+      "layer": "interior",
+      "glossary_id": "front_seat@interior"
+    },
+    "Центральный экран#2 — Рамка экрана": {
+      "meshName": "Центральный экран#2 — Рамка экрана",
+      "system": "interior",
+      "displayName": "Центральный экран#2 — Рамка экрана",
+      "dtcCodes": [
+        "B1450",
+        "B1460"
+      ],
+      "manualSections": [
+        "1-16"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 4,
+      "parentNode": "Центральный экран#2",
+      "layer": "interior",
+      "glossary_id": "infotainment_screen_multimedia_display@interior"
+    },
+    "Центральный экран#2 — Доп. дисплей": {
+      "meshName": "Центральный экран#2 — Доп. дисплей",
+      "system": "interior",
+      "displayName": "Центральный экран#2 — Доп. дисплей",
+      "dtcCodes": [
+        "B1450",
+        "B1460"
+      ],
+      "manualSections": [
+        "1-16"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 4,
+      "parentNode": "Центральный экран#2",
+      "layer": "interior",
+      "glossary_id": "infotainment_screen_multimedia_display@interior"
+    },
+    "Центральный экран#2 — Мультимедиа": {
+      "meshName": "Центральный экран#2 — Мультимедиа",
+      "system": "interior",
+      "displayName": "Центральный экран#2 — Мультимедиа",
+      "dtcCodes": [
+        "B1450",
+        "B1460"
+      ],
+      "manualSections": [
+        "1-16"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 4,
+      "parentNode": "Центральный экран#2",
+      "layer": "interior",
+      "glossary_id": "infotainment_screen_multimedia_display@interior"
+    },
+    "Радиатор#2 — Отделка": {
+      "meshName": "Радиатор#2 — Отделка",
+      "system": "energy",
+      "displayName": "Радиатор#2 — Отделка",
+      "dtcCodes": [
+        "P0A7F"
+      ],
+      "manualSections": [
+        "1-35"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 2,
+      "parentNode": "Радиатор#2",
+      "layer": "hvac",
+      "glossary_id": "radiator@hvac"
+    },
+    "Радиатор#2 — Каркас": {
+      "meshName": "Радиатор#2 — Каркас",
+      "system": "body",
+      "displayName": "Радиатор#2 — Каркас",
+      "dtcCodes": [
+        "P0A7F"
+      ],
+      "manualSections": [
+        "1-19",
+        "1-38"
+      ],
+      "selectable": true,
+      "xray_transparent": true,
+      "layer_num": 8,
+      "parentNode": "Радиатор#2",
+      "layer": "body",
+      "glossary_id": "radiator@body"
+    },
+    "Четвертные панели#2 — Панель": {
+      "meshName": "Четвертные панели#2 — Панель",
+      "system": "body",
+      "displayName": "Четвертные панели#2 — Панель",
+      "dtcCodes": [
+        "B1011",
+        "B1012"
+      ],
+      "manualSections": [
+        "1-19",
+        "1-38"
+      ],
+      "selectable": true,
+      "xray_transparent": true,
+      "layer_num": 8,
+      "parentNode": "Четвертные панели#2",
+      "layer": "body",
+      "glossary_id": "quarter_panel@body"
+    },
+    "Четвертные панели#2 — Накладка": {
+      "meshName": "Четвертные панели#2 — Накладка",
+      "system": "body",
+      "displayName": "Четвертные панели#2 — Накладка",
+      "dtcCodes": [
+        "B1011",
+        "B1012"
+      ],
+      "manualSections": [
+        "1-19",
+        "1-38"
+      ],
+      "selectable": true,
+      "xray_transparent": true,
+      "layer_num": 8,
+      "parentNode": "Четвертные панели#2",
+      "layer": "body",
+      "glossary_id": "quarter_panel@body"
+    },
+    "Четвертные панели#2 — Декоративная накладка": {
+      "meshName": "Четвертные панели#2 — Декоративная накладка",
+      "system": "body",
+      "displayName": "Четвертные панели#2 — Декоративная накладка",
+      "dtcCodes": [
+        "B1011",
+        "B1012"
+      ],
+      "manualSections": [
+        "1-19",
+        "1-38"
+      ],
+      "selectable": true,
+      "xray_transparent": true,
+      "layer_num": 8,
+      "parentNode": "Четвертные панели#2",
+      "layer": "body",
+      "glossary_id": "quarter_panel@body"
+    },
+    "Четвертные панели#2 — Подсветка": {
+      "meshName": "Четвертные панели#2 — Подсветка",
+      "system": "lighting",
+      "displayName": "Четвертные панели#2 — Подсветка",
+      "dtcCodes": [
+        "B1250",
+        "B1251"
+      ],
+      "manualSections": [
+        "1-32"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 5,
+      "parentNode": "Четвертные панели#2",
+      "layer": "body",
+      "glossary_id": "quarter_panel@body"
+    },
+    "Зеркало правое#2 — Панель": {
+      "meshName": "Зеркало правое#2 — Панель",
+      "system": "exterior",
+      "displayName": "Зеркало правое#2 — Панель",
+      "dtcCodes": [
+        "B1502"
+      ],
+      "manualSections": [
+        "1-21"
+      ],
+      "selectable": true,
+      "xray_transparent": true,
+      "layer_num": 7,
+      "parentNode": "Зеркало правое#2",
+      "layer": "body",
+      "glossary_id": "wing_mirror_door_mirror_side_mirror@body"
+    },
+    "Зеркало правое#2 — Молдинг": {
+      "meshName": "Зеркало правое#2 — Молдинг",
+      "system": "body",
+      "displayName": "Зеркало правое#2 — Молдинг",
+      "dtcCodes": [
+        "B1502"
+      ],
+      "manualSections": [
+        "1-21"
+      ],
+      "selectable": true,
+      "xray_transparent": true,
+      "layer_num": 8,
+      "parentNode": "Зеркало правое#2",
+      "layer": "body",
+      "glossary_id": "wing_mirror_door_mirror_side_mirror@body"
+    },
+    "Зеркало правое#2 — Обшивка": {
+      "meshName": "Зеркало правое#2 — Обшивка",
+      "system": "exterior",
+      "displayName": "Зеркало правое#2 — Обшивка",
+      "dtcCodes": [
+        "B1502"
+      ],
+      "manualSections": [
+        "1-21"
+      ],
+      "selectable": true,
+      "xray_transparent": true,
+      "layer_num": 7,
+      "parentNode": "Зеркало правое#2",
+      "layer": "body",
+      "glossary_id": "wing_mirror_door_mirror_side_mirror@body"
+    },
+    "Зеркало правое#2 — Хром молдинг": {
+      "meshName": "Зеркало правое#2 — Хром молдинг",
+      "system": "body",
+      "displayName": "Зеркало правое#2 — Хром молдинг",
+      "dtcCodes": [
+        "B1502"
+      ],
+      "manualSections": [
+        "1-21"
+      ],
+      "selectable": true,
+      "xray_transparent": true,
+      "layer_num": 8,
+      "parentNode": "Зеркало правое#2",
+      "layer": "body",
+      "glossary_id": "wing_mirror_door_mirror_side_mirror@body"
+    },
+    "Зеркало правое#2 — Зеркальный элемент": {
+      "meshName": "Зеркало правое#2 — Зеркальный элемент",
+      "system": "exterior",
+      "displayName": "Зеркало правое#2 — Зеркальный элемент",
+      "dtcCodes": [
+        "B1502"
+      ],
+      "manualSections": [
+        "1-21"
+      ],
+      "selectable": true,
+      "xray_transparent": true,
+      "layer_num": 7,
+      "parentNode": "Зеркало правое#2",
+      "layer": "body",
+      "glossary_id": "wing_mirror_door_mirror_side_mirror@body"
+    },
+    "Зеркало правое#2 — Повторитель П": {
+      "meshName": "Зеркало правое#2 — Повторитель П",
+      "system": "lighting",
+      "displayName": "Зеркало правое#2 — Повторитель П",
+      "dtcCodes": [
+        "B1260",
+        "B1502"
+      ],
+      "manualSections": [
+        "1-21"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 5,
+      "parentNode": "Зеркало правое#2",
+      "layer": "body",
+      "glossary_id": "wing_mirror_door_mirror_side_mirror@body"
+    },
+    "Зеркало левое#2 — Панель": {
+      "meshName": "Зеркало левое#2 — Панель",
+      "system": "exterior",
+      "displayName": "Зеркало левое#2 — Панель",
+      "dtcCodes": [
+        "B1501"
+      ],
+      "manualSections": [
+        "1-21"
+      ],
+      "selectable": true,
+      "xray_transparent": true,
+      "layer_num": 7,
+      "parentNode": "Зеркало левое#2",
+      "layer": "body",
+      "glossary_id": "wing_mirror_door_mirror_side_mirror@body"
+    },
+    "Зеркало левое#2 — Молдинг": {
+      "meshName": "Зеркало левое#2 — Молдинг",
+      "system": "body",
+      "displayName": "Зеркало левое#2 — Молдинг",
+      "dtcCodes": [
+        "B1501"
+      ],
+      "manualSections": [
+        "1-21"
+      ],
+      "selectable": true,
+      "xray_transparent": true,
+      "layer_num": 8,
+      "parentNode": "Зеркало левое#2",
+      "layer": "body",
+      "glossary_id": "wing_mirror_door_mirror_side_mirror@body"
+    },
+    "Зеркало левое#2 — Обшивка": {
+      "meshName": "Зеркало левое#2 — Обшивка",
+      "system": "exterior",
+      "displayName": "Зеркало левое#2 — Обшивка",
+      "dtcCodes": [
+        "B1501"
+      ],
+      "manualSections": [
+        "1-21"
+      ],
+      "selectable": true,
+      "xray_transparent": true,
+      "layer_num": 7,
+      "parentNode": "Зеркало левое#2",
+      "layer": "body",
+      "glossary_id": "wing_mirror_door_mirror_side_mirror@body"
+    },
+    "Зеркало левое#2 — Хром молдинг": {
+      "meshName": "Зеркало левое#2 — Хром молдинг",
+      "system": "body",
+      "displayName": "Зеркало левое#2 — Хром молдинг",
+      "dtcCodes": [
+        "B1501"
+      ],
+      "manualSections": [
+        "1-21"
+      ],
+      "selectable": true,
+      "xray_transparent": true,
+      "layer_num": 8,
+      "parentNode": "Зеркало левое#2",
+      "layer": "body",
+      "glossary_id": "wing_mirror_door_mirror_side_mirror@body"
+    },
+    "Зеркало левое#2 — Зеркальный элемент": {
+      "meshName": "Зеркало левое#2 — Зеркальный элемент",
+      "system": "exterior",
+      "displayName": "Зеркало левое#2 — Зеркальный элемент",
+      "dtcCodes": [
+        "B1501"
+      ],
+      "manualSections": [
+        "1-21"
+      ],
+      "selectable": true,
+      "xray_transparent": true,
+      "layer_num": 7,
+      "parentNode": "Зеркало левое#2",
+      "layer": "body",
+      "glossary_id": "wing_mirror_door_mirror_side_mirror@body"
+    },
+    "Зеркало левое#2 — Повторитель Л": {
+      "meshName": "Зеркало левое#2 — Повторитель Л",
+      "system": "lighting",
+      "displayName": "Зеркало левое#2 — Повторитель Л",
+      "dtcCodes": [
+        "B1260",
+        "B1501"
+      ],
+      "manualSections": [
+        "1-21"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 5,
+      "parentNode": "Зеркало левое#2",
+      "layer": "body",
+      "glossary_id": "wing_mirror_door_mirror_side_mirror@body"
+    },
+    "Зеркало салонное#2 — Отделка": {
+      "meshName": "Зеркало салонное#2 — Отделка",
+      "system": "interior",
+      "displayName": "Зеркало салонное#2 — Отделка",
+      "dtcCodes": [
+        "B1450",
+        "B1460"
+      ],
+      "manualSections": [
+        "1-21"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 4,
+      "parentNode": "Зеркало салонное#2",
+      "layer": "interior",
+      "glossary_id": "interior_rearview_mirror@interior"
+    },
+    "Зеркало салонное#2 — Зеркальный элемент": {
+      "meshName": "Зеркало салонное#2 — Зеркальный элемент",
+      "system": "interior",
+      "displayName": "Зеркало салонное#2 — Зеркальный элемент",
+      "dtcCodes": [
+        "B1450",
+        "B1460"
+      ],
+      "manualSections": [
+        "1-21"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 4,
+      "parentNode": "Зеркало салонное#2",
+      "layer": "interior",
+      "glossary_id": "interior_rearview_mirror@interior"
+    },
+    "Стекло фары правой#2 — Фара": {
+      "meshName": "Стекло фары правой#2 — Фара",
+      "system": "lighting",
+      "displayName": "Стекло фары правой#2 — Фара",
+      "dtcCodes": [
+        "B1250",
+        "B1251"
+      ],
+      "manualSections": [
+        "1-23",
+        "1-32"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 5,
+      "parentNode": "Стекло фары правой#2",
+      "layer": "body",
+      "glossary_id": "headlight_lens@body"
+    },
+    "Стекло фары правой#2 — Модуль дальнего": {
+      "meshName": "Стекло фары правой#2 — Модуль дальнего",
+      "system": "lighting",
+      "displayName": "Стекло фары правой#2 — Модуль дальнего",
+      "dtcCodes": [
+        "B1250",
+        "B1251"
+      ],
+      "manualSections": [
+        "1-23",
+        "1-32"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 5,
+      "parentNode": "Стекло фары правой#2",
+      "layer": "body",
+      "glossary_id": "headlight_lens@body"
+    },
+    "Стекло фары правой#2 — Модуль ближнего": {
+      "meshName": "Стекло фары правой#2 — Модуль ближнего",
+      "system": "lighting",
+      "displayName": "Стекло фары правой#2 — Модуль ближнего",
+      "dtcCodes": [
+        "B1250",
+        "B1251"
+      ],
+      "manualSections": [
+        "1-23",
+        "1-32"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 5,
+      "parentNode": "Стекло фары правой#2",
+      "layer": "body",
+      "glossary_id": "headlight_lens@body"
+    },
+    "Стекло фары правой#2 — Секция поворотника П": {
+      "meshName": "Стекло фары правой#2 — Секция поворотника П",
+      "system": "lighting",
+      "displayName": "Стекло фары правой#2 — Секция поворотника П",
+      "dtcCodes": [
+        "B1260"
+      ],
+      "manualSections": [
+        "1-23",
+        "1-32"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 5,
+      "parentNode": "Стекло фары правой#2",
+      "layer": "body",
+      "glossary_id": "headlight_lens@body"
+    },
+    "Стекло фары левой#2 — Фара": {
+      "meshName": "Стекло фары левой#2 — Фара",
+      "system": "lighting",
+      "displayName": "Стекло фары левой#2 — Фара",
+      "dtcCodes": [
+        "B1250",
+        "B1251"
+      ],
+      "manualSections": [
+        "1-23",
+        "1-32"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 5,
+      "parentNode": "Стекло фары левой#2",
+      "layer": "body",
+      "glossary_id": "headlight_lens@body"
+    },
+    "Стекло фары левой#2 — Модуль дальнего": {
+      "meshName": "Стекло фары левой#2 — Модуль дальнего",
+      "system": "lighting",
+      "displayName": "Стекло фары левой#2 — Модуль дальнего",
+      "dtcCodes": [
+        "B1250",
+        "B1251"
+      ],
+      "manualSections": [
+        "1-23",
+        "1-32"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 5,
+      "parentNode": "Стекло фары левой#2",
+      "layer": "body",
+      "glossary_id": "headlight_lens@body"
+    },
+    "Стекло фары левой#2 — Модуль ближнего": {
+      "meshName": "Стекло фары левой#2 — Модуль ближнего",
+      "system": "lighting",
+      "displayName": "Стекло фары левой#2 — Модуль ближнего",
+      "dtcCodes": [
+        "B1250",
+        "B1251"
+      ],
+      "manualSections": [
+        "1-23",
+        "1-32"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 5,
+      "parentNode": "Стекло фары левой#2",
+      "layer": "body",
+      "glossary_id": "headlight_lens@body"
+    },
+    "Стекло фары левой#2 — Секция поворотника Л": {
+      "meshName": "Стекло фары левой#2 — Секция поворотника Л",
+      "system": "lighting",
+      "displayName": "Стекло фары левой#2 — Секция поворотника Л",
+      "dtcCodes": [
+        "B1260"
+      ],
+      "manualSections": [
+        "1-23",
+        "1-32"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 5,
+      "parentNode": "Стекло фары левой#2",
+      "layer": "body",
+      "glossary_id": "headlight_lens@body"
+    },
+    "Фара правая#2 — Модуль дальнего": {
+      "meshName": "Фара правая#2 — Модуль дальнего",
+      "system": "lighting",
+      "displayName": "Фара правая#2 — Модуль дальнего",
+      "dtcCodes": [
+        "B1251"
+      ],
+      "manualSections": [
+        "1-32"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 5,
+      "parentNode": "Фара правая#2",
+      "layer": "body",
+      "glossary_id": "headlight@body"
+    },
+    "Фара правая#2 — Модуль ближнего": {
+      "meshName": "Фара правая#2 — Модуль ближнего",
+      "system": "lighting",
+      "displayName": "Фара правая#2 — Модуль ближнего",
+      "dtcCodes": [
+        "B1251"
+      ],
+      "manualSections": [
+        "1-32"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 5,
+      "parentNode": "Фара правая#2",
+      "layer": "body",
+      "glossary_id": "headlight@body"
+    },
+    "Фара правая#2 — Секция поворотника П": {
+      "meshName": "Фара правая#2 — Секция поворотника П",
+      "system": "lighting",
+      "displayName": "Фара правая#2 — Секция поворотника П",
+      "dtcCodes": [
+        "B1251",
+        "B1260"
+      ],
+      "manualSections": [
+        "1-32"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 5,
+      "parentNode": "Фара правая#2",
+      "layer": "body",
+      "glossary_id": "headlight@body"
+    },
+    "Фара правая#2 — Линза ближнего": {
+      "meshName": "Фара правая#2 — Линза ближнего",
+      "system": "lighting",
+      "displayName": "Фара правая#2 — Линза ближнего",
+      "dtcCodes": [
+        "B1251"
+      ],
+      "manualSections": [
+        "1-32"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 5,
+      "parentNode": "Фара правая#2",
+      "layer": "body",
+      "glossary_id": "headlight@body"
+    },
+    "Фара правая#2 — Корпус фары": {
+      "meshName": "Фара правая#2 — Корпус фары",
+      "system": "lighting",
+      "displayName": "Фара правая#2 — Корпус фары",
+      "dtcCodes": [
+        "B1251"
+      ],
+      "manualSections": [
+        "1-32"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 5,
+      "parentNode": "Фара правая#2",
+      "layer": "body",
+      "glossary_id": "headlight@body"
+    },
+    "Фара правая#2 — Поворотник П": {
+      "meshName": "Фара правая#2 — Поворотник П",
+      "system": "lighting",
+      "displayName": "Фара правая#2 — Поворотник П",
+      "dtcCodes": [
+        "B1251",
+        "B1260"
+      ],
+      "manualSections": [
+        "1-32"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 5,
+      "parentNode": "Фара правая#2",
+      "layer": "body",
+      "glossary_id": "headlight@body"
+    },
+    "Фара левая#2 — Модуль дальнего": {
+      "meshName": "Фара левая#2 — Модуль дальнего",
+      "system": "lighting",
+      "displayName": "Фара левая#2 — Модуль дальнего",
+      "dtcCodes": [
+        "B1250"
+      ],
+      "manualSections": [
+        "1-32"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 5,
+      "parentNode": "Фара левая#2",
+      "layer": "body",
+      "glossary_id": "headlight@body"
+    },
+    "Фара левая#2 — Модуль ближнего": {
+      "meshName": "Фара левая#2 — Модуль ближнего",
+      "system": "lighting",
+      "displayName": "Фара левая#2 — Модуль ближнего",
+      "dtcCodes": [
+        "B1250"
+      ],
+      "manualSections": [
+        "1-32"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 5,
+      "parentNode": "Фара левая#2",
+      "layer": "body",
+      "glossary_id": "headlight@body"
+    },
+    "Фара левая#2 — Секция поворотника Л": {
+      "meshName": "Фара левая#2 — Секция поворотника Л",
+      "system": "lighting",
+      "displayName": "Фара левая#2 — Секция поворотника Л",
+      "dtcCodes": [
+        "B1250",
+        "B1260"
+      ],
+      "manualSections": [
+        "1-32"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 5,
+      "parentNode": "Фара левая#2",
+      "layer": "body",
+      "glossary_id": "headlight@body"
+    },
+    "Фара левая#2 — Линза ближнего": {
+      "meshName": "Фара левая#2 — Линза ближнего",
+      "system": "lighting",
+      "displayName": "Фара левая#2 — Линза ближнего",
+      "dtcCodes": [
+        "B1250"
+      ],
+      "manualSections": [
+        "1-32"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 5,
+      "parentNode": "Фара левая#2",
+      "layer": "body",
+      "glossary_id": "headlight@body"
+    },
+    "Фара левая#2 — Корпус фары": {
+      "meshName": "Фара левая#2 — Корпус фары",
+      "system": "lighting",
+      "displayName": "Фара левая#2 — Корпус фары",
+      "dtcCodes": [
+        "B1250"
+      ],
+      "manualSections": [
+        "1-32"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 5,
+      "parentNode": "Фара левая#2",
+      "layer": "body",
+      "glossary_id": "headlight@body"
+    },
+    "Фара левая#2 — Поворотник Л": {
+      "meshName": "Фара левая#2 — Поворотник Л",
+      "system": "lighting",
+      "displayName": "Фара левая#2 — Поворотник Л",
+      "dtcCodes": [
+        "B1250",
+        "B1260"
+      ],
+      "manualSections": [
+        "1-32"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 5,
+      "parentNode": "Фара левая#2",
+      "layer": "body",
+      "glossary_id": "headlight@body"
+    },
+    "Крыло правое#2 — Панель": {
+      "meshName": "Крыло правое#2 — Панель",
+      "system": "body",
+      "displayName": "Крыло правое#2 — Панель",
+      "dtcCodes": [
+        "B1011",
+        "B1012"
+      ],
+      "manualSections": [
+        "1-19",
+        "1-38"
+      ],
+      "selectable": true,
+      "xray_transparent": true,
+      "layer_num": 8,
+      "parentNode": "Крыло правое#2",
+      "layer": "body",
+      "glossary_id": "fender_wing@body"
+    },
+    "Крыло правое#2 — Арка крыла": {
+      "meshName": "Крыло правое#2 — Арка крыла",
+      "system": "body",
+      "displayName": "Крыло правое#2 — Арка крыла",
+      "dtcCodes": [
+        "B1011",
+        "B1012"
+      ],
+      "manualSections": [
+        "1-19",
+        "1-38"
+      ],
+      "selectable": true,
+      "xray_transparent": true,
+      "layer_num": 8,
+      "parentNode": "Крыло правое#2",
+      "layer": "body",
+      "glossary_id": "fender_wing@body"
+    },
+    "Крыло правое#2 — Хром накладка": {
+      "meshName": "Крыло правое#2 — Хром накладка",
+      "system": "body",
+      "displayName": "Крыло правое#2 — Хром накладка",
+      "dtcCodes": [
+        "B1011",
+        "B1012"
+      ],
+      "manualSections": [
+        "1-19",
+        "1-38"
+      ],
+      "selectable": true,
+      "xray_transparent": true,
+      "layer_num": 8,
+      "parentNode": "Крыло правое#2",
+      "layer": "body",
+      "glossary_id": "fender_wing@body"
+    },
+    "Крыло левое#2 — Панель": {
+      "meshName": "Крыло левое#2 — Панель",
+      "system": "body",
+      "displayName": "Крыло левое#2 — Панель",
+      "dtcCodes": [
+        "B1011",
+        "B1012"
+      ],
+      "manualSections": [
+        "1-19",
+        "1-38"
+      ],
+      "selectable": true,
+      "xray_transparent": true,
+      "layer_num": 8,
+      "parentNode": "Крыло левое#2",
+      "layer": "body",
+      "glossary_id": "fender_wing@body"
+    },
+    "Крыло левое#2 — Арка крыла": {
+      "meshName": "Крыло левое#2 — Арка крыла",
+      "system": "body",
+      "displayName": "Крыло левое#2 — Арка крыла",
+      "dtcCodes": [
+        "B1011",
+        "B1012"
+      ],
+      "manualSections": [
+        "1-19",
+        "1-38"
+      ],
+      "selectable": true,
+      "xray_transparent": true,
+      "layer_num": 8,
+      "parentNode": "Крыло левое#2",
+      "layer": "body",
+      "glossary_id": "fender_wing@body"
+    },
+    "Крыло левое#2 — Хром накладка": {
+      "meshName": "Крыло левое#2 — Хром накладка",
+      "system": "body",
+      "displayName": "Крыло левое#2 — Хром накладка",
+      "dtcCodes": [
+        "B1011",
+        "B1012"
+      ],
+      "manualSections": [
+        "1-19",
+        "1-38"
+      ],
+      "selectable": true,
+      "xray_transparent": true,
+      "layer_num": 8,
+      "parentNode": "Крыло левое#2",
+      "layer": "body",
+      "glossary_id": "fender_wing@body"
+    },
+    "Индикаторы приборов 2#2 — Инд. давление": {
+      "meshName": "Индикаторы приборов 2#2 — Инд. давление",
+      "system": "interior",
+      "displayName": "Индикаторы приборов 2#2 — Инд. давление",
+      "dtcCodes": [
+        "B1450",
+        "B1460"
+      ],
+      "manualSections": [
+        "1-20",
+        "1-21"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 4,
+      "parentNode": "Индикаторы приборов 2#2",
+      "layer": "interior",
+      "glossary_id": "instrument_cluster@interior"
+    },
+    "Индикаторы приборов 2#2 — Инд. ABS": {
+      "meshName": "Индикаторы приборов 2#2 — Инд. ABS",
+      "system": "interior",
+      "displayName": "Индикаторы приборов 2#2 — Инд. ABS",
+      "dtcCodes": [
+        "B1450",
+        "B1460"
+      ],
+      "manualSections": [
+        "1-20",
+        "1-21"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 4,
+      "parentNode": "Индикаторы приборов 2#2",
+      "layer": "brakes",
+      "glossary_id": "instrument_cluster@brakes"
+    },
+    "Индикаторы приборов 2#2 — Инд. ПТФ": {
+      "meshName": "Индикаторы приборов 2#2 — Инд. ПТФ",
+      "system": "interior",
+      "displayName": "Индикаторы приборов 2#2 — Инд. ПТФ",
+      "dtcCodes": [
+        "B1450",
+        "B1460"
+      ],
+      "manualSections": [
+        "1-20",
+        "1-21"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 4,
+      "parentNode": "Индикаторы приборов 2#2",
+      "layer": "interior",
+      "glossary_id": "instrument_cluster@interior"
+    },
+    "Индикаторы приборов 2#2 — Инд. масло": {
+      "meshName": "Индикаторы приборов 2#2 — Инд. масло",
+      "system": "interior",
+      "displayName": "Индикаторы приборов 2#2 — Инд. масло",
+      "dtcCodes": [
+        "B1450",
+        "B1460"
+      ],
+      "manualSections": [
+        "1-20",
+        "1-21"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 4,
+      "parentNode": "Индикаторы приборов 2#2",
+      "layer": "engine",
+      "glossary_id": "instrument_cluster@engine"
+    },
+    "Индикаторы приборов 2#2 — Инд. температура": {
+      "meshName": "Индикаторы приборов 2#2 — Инд. температура",
+      "system": "interior",
+      "displayName": "Индикаторы приборов 2#2 — Инд. температура",
+      "dtcCodes": [
+        "B1450",
+        "B1460"
+      ],
+      "manualSections": [
+        "1-20",
+        "1-21"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 4,
+      "parentNode": "Индикаторы приборов 2#2",
+      "layer": "interior",
+      "glossary_id": "instrument_cluster@interior"
+    },
+    "Индикаторы приборов 2#2 — Инд. задний ПТФ": {
+      "meshName": "Индикаторы приборов 2#2 — Инд. задний ПТФ",
+      "system": "interior",
+      "displayName": "Индикаторы приборов 2#2 — Инд. задний ПТФ",
+      "dtcCodes": [
+        "B1450",
+        "B1460"
+      ],
+      "manualSections": [
+        "1-20",
+        "1-21"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 4,
+      "parentNode": "Индикаторы приборов 2#2",
+      "layer": "interior",
+      "glossary_id": "instrument_cluster@interior"
+    },
+    "Индикаторы приборов#2 — Инд. поворотник Л": {
+      "meshName": "Индикаторы приборов#2 — Инд. поворотник Л",
+      "system": "interior",
+      "displayName": "Индикаторы приборов#2 — Инд. поворотник Л",
+      "dtcCodes": [
+        "B1260"
+      ],
+      "manualSections": [
+        "1-20",
+        "1-21"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 4,
+      "parentNode": "Индикаторы приборов#2",
+      "layer": "interior",
+      "glossary_id": "instrument_cluster@interior"
+    },
+    "Индикаторы приборов#2 — Инд. поворотник П": {
+      "meshName": "Индикаторы приборов#2 — Инд. поворотник П",
+      "system": "interior",
+      "displayName": "Индикаторы приборов#2 — Инд. поворотник П",
+      "dtcCodes": [
+        "B1260"
+      ],
+      "manualSections": [
+        "1-20",
+        "1-21"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 4,
+      "parentNode": "Индикаторы приборов#2",
+      "layer": "interior",
+      "glossary_id": "instrument_cluster@interior"
+    },
+    "Индикаторы приборов#2 — Инд. Check Engine": {
+      "meshName": "Индикаторы приборов#2 — Инд. Check Engine",
+      "system": "interior",
+      "displayName": "Индикаторы приборов#2 — Инд. Check Engine",
+      "dtcCodes": [
+        "P0171",
+        "P0300",
+        "P0A0F"
+      ],
+      "manualSections": [
+        "1-13"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 4,
+      "parentNode": "Индикаторы приборов#2",
+      "specs": {
+        "type": "1.5T I4 Range Extender",
+        "fuel": "АИ-95",
+        "fuel_tank_l": 65
+      },
+      "layer": "interior",
+      "glossary_id": "instrument_cluster@interior"
+    },
+    "Индикаторы приборов#2 — Инд. ручник": {
+      "meshName": "Индикаторы приборов#2 — Инд. ручник",
+      "system": "interior",
+      "displayName": "Индикаторы приборов#2 — Инд. ручник",
+      "dtcCodes": [
+        "B1450",
+        "B1460"
+      ],
+      "manualSections": [
+        "1-20",
+        "1-21"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 4,
+      "parentNode": "Индикаторы приборов#2",
+      "layer": "interior",
+      "glossary_id": "instrument_cluster@interior"
+    },
+    "Индикаторы приборов#2 — Инд. топливо": {
+      "meshName": "Индикаторы приборов#2 — Инд. топливо",
+      "system": "interior",
+      "displayName": "Индикаторы приборов#2 — Инд. топливо",
+      "dtcCodes": [
+        "B1450",
+        "B1460"
+      ],
+      "manualSections": [
+        "1-20",
+        "1-21"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 4,
+      "parentNode": "Индикаторы приборов#2",
+      "layer": "engine",
+      "glossary_id": "instrument_cluster@engine"
+    },
+    "Индикаторы приборов#2 — Инд. дальний свет": {
+      "meshName": "Индикаторы приборов#2 — Инд. дальний свет",
+      "system": "interior",
+      "displayName": "Индикаторы приборов#2 — Инд. дальний свет",
+      "dtcCodes": [
+        "B1450",
+        "B1460"
+      ],
+      "manualSections": [
+        "1-20",
+        "1-21"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 4,
+      "parentNode": "Индикаторы приборов#2",
+      "layer": "interior",
+      "glossary_id": "instrument_cluster@interior"
+    },
+    "Индикаторы приборов#2 — Инд. ближний свет": {
+      "meshName": "Индикаторы приборов#2 — Инд. ближний свет",
+      "system": "interior",
+      "displayName": "Индикаторы приборов#2 — Инд. ближний свет",
+      "dtcCodes": [
+        "B1450",
+        "B1460"
+      ],
+      "manualSections": [
+        "1-20",
+        "1-21"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 4,
+      "parentNode": "Индикаторы приборов#2",
+      "layer": "interior",
+      "glossary_id": "instrument_cluster@interior"
+    },
+    "Индикаторы приборов#2 — Инд. ESC": {
+      "meshName": "Индикаторы приборов#2 — Инд. ESC",
+      "system": "interior",
+      "displayName": "Индикаторы приборов#2 — Инд. ESC",
+      "dtcCodes": [
+        "B1450",
+        "B1460"
+      ],
+      "manualSections": [
+        "1-20",
+        "1-21"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 4,
+      "parentNode": "Индикаторы приборов#2",
+      "layer": "interior",
+      "glossary_id": "instrument_cluster@interior"
+    },
+    "Индикаторы приборов#2 — Инд. TCS": {
+      "meshName": "Индикаторы приборов#2 — Инд. TCS",
+      "system": "interior",
+      "displayName": "Индикаторы приборов#2 — Инд. TCS",
+      "dtcCodes": [
+        "B1450",
+        "B1460"
+      ],
+      "manualSections": [
+        "1-20",
+        "1-21"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 4,
+      "parentNode": "Индикаторы приборов#2",
+      "layer": "interior",
+      "glossary_id": "instrument_cluster@interior"
+    },
+    "Приборная панель (экраны)#2 — Спидометр": {
+      "meshName": "Приборная панель (экраны)#2 — Спидометр",
+      "system": "interior",
+      "displayName": "Приборная панель (экраны)#2 — Спидометр",
+      "dtcCodes": [
+        "U0100"
+      ],
+      "manualSections": [
+        "1-16"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 4,
+      "parentNode": "Приборная панель (экраны)#2",
+      "layer": "interior",
+      "glossary_id": "instrument_cluster@interior"
+    },
+    "Приборная панель (экраны)#2 — HUD проекция": {
+      "meshName": "Приборная панель (экраны)#2 — HUD проекция",
+      "system": "interior",
+      "displayName": "Приборная панель (экраны)#2 — HUD проекция",
+      "dtcCodes": [
+        "U0100"
+      ],
+      "manualSections": [
+        "1-16"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 4,
+      "parentNode": "Приборная панель (экраны)#2",
+      "layer": "interior",
+      "glossary_id": "instrument_cluster@interior"
+    },
+    "Приборная панель (экраны)#2 — Дисплей": {
+      "meshName": "Приборная панель (экраны)#2 — Дисплей",
+      "system": "interior",
+      "displayName": "Приборная панель (экраны)#2 — Дисплей",
+      "dtcCodes": [
+        "U0100"
+      ],
+      "manualSections": [
+        "1-16"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 4,
+      "parentNode": "Приборная панель (экраны)#2",
+      "layer": "interior",
+      "glossary_id": "instrument_cluster@interior"
+    },
+    "Приборная панель#2 — Накладка": {
+      "meshName": "Приборная панель#2 — Накладка",
+      "system": "interior",
+      "displayName": "Приборная панель#2 — Накладка",
+      "dtcCodes": [
+        "U0100"
+      ],
+      "manualSections": [
+        "1-16"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 4,
+      "parentNode": "Приборная панель#2",
+      "layer": "interior",
+      "glossary_id": "dashboard_instrument_panel_fascia@interior"
+    },
+    "Приборная панель#2 — Обшивка": {
+      "meshName": "Приборная панель#2 — Обшивка",
+      "system": "interior",
+      "displayName": "Приборная панель#2 — Обшивка",
+      "dtcCodes": [
+        "U0100"
+      ],
+      "manualSections": [
+        "1-16"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 4,
+      "parentNode": "Приборная панель#2",
+      "layer": "interior",
+      "glossary_id": "dashboard_instrument_panel_fascia@interior"
+    },
+    "Приборная панель#2 — Кожаная вставка": {
+      "meshName": "Приборная панель#2 — Кожаная вставка",
+      "system": "interior",
+      "displayName": "Приборная панель#2 — Кожаная вставка",
+      "dtcCodes": [
+        "U0100"
+      ],
+      "manualSections": [
+        "1-16"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 4,
+      "parentNode": "Приборная панель#2",
+      "layer": "interior",
+      "glossary_id": "dashboard_instrument_panel_fascia@interior"
+    },
+    "Приборная панель#2 — Отделка": {
+      "meshName": "Приборная панель#2 — Отделка",
+      "system": "interior",
+      "displayName": "Приборная панель#2 — Отделка",
+      "dtcCodes": [
+        "U0100"
+      ],
+      "manualSections": [
+        "1-16"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 4,
+      "parentNode": "Приборная панель#2",
+      "layer": "interior",
+      "glossary_id": "dashboard_instrument_panel_fascia@interior"
+    },
+    "Приборная панель#2 — Кнопки задние": {
+      "meshName": "Приборная панель#2 — Кнопки задние",
+      "system": "interior",
+      "displayName": "Приборная панель#2 — Кнопки задние",
+      "dtcCodes": [
+        "U0100"
+      ],
+      "manualSections": [
+        "1-16"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 4,
+      "parentNode": "Приборная панель#2",
+      "layer": "interior",
+      "glossary_id": "dashboard_instrument_panel_fascia@interior"
+    },
+    "Приборная панель#2 — Резиновая накладка": {
+      "meshName": "Приборная панель#2 — Резиновая накладка",
+      "system": "interior",
+      "displayName": "Приборная панель#2 — Резиновая накладка",
+      "dtcCodes": [
+        "U0100"
+      ],
+      "manualSections": [
+        "1-16"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 4,
+      "parentNode": "Приборная панель#2",
+      "layer": "interior",
+      "glossary_id": "dashboard_instrument_panel_fascia@interior"
+    },
+    "Приборная панель#2 — Кнопки руля": {
+      "meshName": "Приборная панель#2 — Кнопки руля",
+      "system": "interior",
+      "displayName": "Приборная панель#2 — Кнопки руля",
+      "dtcCodes": [
+        "U0100"
+      ],
+      "manualSections": [
+        "1-16"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 4,
+      "parentNode": "Приборная панель#2",
+      "layer": "interior",
+      "glossary_id": "dashboard_instrument_panel_fascia@interior"
+    },
+    "Бампер задний (часть)#2 — Молдинг": {
+      "meshName": "Бампер задний (часть)#2 — Молдинг",
+      "system": "body",
+      "displayName": "Бампер задний (часть)#2 — Молдинг",
+      "dtcCodes": [
+        "B1011",
+        "B1012"
+      ],
+      "manualSections": [
+        "1-19",
+        "1-38"
+      ],
+      "selectable": true,
+      "xray_transparent": true,
+      "layer_num": 8,
+      "parentNode": "Бампер задний (часть)#2",
+      "layer": "body",
+      "glossary_id": "rear_bumper@body"
+    },
+    "Бампер задний (часть)#2 — Зеркальный элемент": {
+      "meshName": "Бампер задний (часть)#2 — Зеркальный элемент",
+      "system": "body",
+      "displayName": "Бампер задний (часть)#2 — Зеркальный элемент",
+      "dtcCodes": [
+        "B1011",
+        "B1012"
+      ],
+      "manualSections": [
+        "1-19",
+        "1-38"
+      ],
+      "selectable": true,
+      "xray_transparent": true,
+      "layer_num": 8,
+      "parentNode": "Бампер задний (часть)#2",
+      "layer": "body",
+      "glossary_id": "rear_bumper@body"
+    },
+    "Бампер задний (часть)#2 — Отражатель": {
+      "meshName": "Бампер задний (часть)#2 — Отражатель",
+      "system": "body",
+      "displayName": "Бампер задний (часть)#2 — Отражатель",
+      "dtcCodes": [
+        "B1011",
+        "B1012"
+      ],
+      "manualSections": [
+        "1-19",
+        "1-38"
+      ],
+      "selectable": true,
+      "xray_transparent": true,
+      "layer_num": 8,
+      "parentNode": "Бампер задний (часть)#2",
+      "layer": "body",
+      "glossary_id": "rear_bumper@body"
+    },
+    "Бампер задний#2 — Панель": {
+      "meshName": "Бампер задний#2 — Панель",
+      "system": "body",
+      "displayName": "Бампер задний#2 — Панель",
+      "dtcCodes": [
+        "B1011",
+        "B1012"
+      ],
+      "manualSections": [
+        "1-19",
+        "1-38"
+      ],
+      "selectable": true,
+      "xray_transparent": true,
+      "layer_num": 8,
+      "parentNode": "Бампер задний#2",
+      "layer": "body",
+      "glossary_id": "rear_bumper@body"
+    },
+    "Бампер задний#2 — Молдинг": {
+      "meshName": "Бампер задний#2 — Молдинг",
+      "system": "body",
+      "displayName": "Бампер задний#2 — Молдинг",
+      "dtcCodes": [
+        "B1011",
+        "B1012"
+      ],
+      "manualSections": [
+        "1-19",
+        "1-38"
+      ],
+      "selectable": true,
+      "xray_transparent": true,
+      "layer_num": 8,
+      "parentNode": "Бампер задний#2",
+      "layer": "body",
+      "glossary_id": "rear_bumper@body"
+    },
+    "Бампер задний#2 — Кнопки": {
+      "meshName": "Бампер задний#2 — Кнопки",
+      "system": "interior",
+      "displayName": "Бампер задний#2 — Кнопки",
+      "dtcCodes": [
+        "B1450",
+        "B1460"
+      ],
+      "manualSections": [
+        "1-20",
+        "1-21"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 4,
+      "parentNode": "Бампер задний#2",
+      "layer": "interior",
+      "glossary_id": "rear_bumper@interior"
+    },
+    "Бампер передний#2 — Панель": {
+      "meshName": "Бампер передний#2 — Панель",
+      "system": "body",
+      "displayName": "Бампер передний#2 — Панель",
+      "dtcCodes": [
+        "B1011",
+        "B1012"
+      ],
+      "manualSections": [
+        "1-19",
+        "1-38"
+      ],
+      "selectable": true,
+      "xray_transparent": true,
+      "layer_num": 8,
+      "parentNode": "Бампер передний#2",
+      "layer": "body",
+      "glossary_id": "front_bumper@body"
+    },
+    "Бампер передний#2 — Молдинг": {
+      "meshName": "Бампер передний#2 — Молдинг",
+      "system": "body",
+      "displayName": "Бампер передний#2 — Молдинг",
+      "dtcCodes": [
+        "B1011",
+        "B1012"
+      ],
+      "manualSections": [
+        "1-19",
+        "1-38"
+      ],
+      "selectable": true,
+      "xray_transparent": true,
+      "layer_num": 8,
+      "parentNode": "Бампер передний#2",
+      "layer": "body",
+      "glossary_id": "front_bumper@body"
+    },
+    "Бампер передний#2 — Декоративная накладка": {
+      "meshName": "Бампер передний#2 — Декоративная накладка",
+      "system": "body",
+      "displayName": "Бампер передний#2 — Декоративная накладка",
+      "dtcCodes": [
+        "B1011",
+        "B1012"
+      ],
+      "manualSections": [
+        "1-19",
+        "1-38"
+      ],
+      "selectable": true,
+      "xray_transparent": true,
+      "layer_num": 8,
+      "parentNode": "Бампер передний#2",
+      "layer": "body",
+      "glossary_id": "front_bumper@body"
+    },
+    "Бампер передний#2 — Отделка": {
+      "meshName": "Бампер передний#2 — Отделка",
+      "system": "body",
+      "displayName": "Бампер передний#2 — Отделка",
+      "dtcCodes": [
+        "B1011",
+        "B1012"
+      ],
+      "manualSections": [
+        "1-19",
+        "1-38"
+      ],
+      "selectable": true,
+      "xray_transparent": true,
+      "layer_num": 8,
+      "parentNode": "Бампер передний#2",
+      "layer": "body",
+      "glossary_id": "front_bumper@body"
+    },
+    "Кузов#2 — Панель": {
+      "meshName": "Кузов#2 — Панель",
+      "system": "body",
+      "displayName": "Кузов#2 — Панель",
+      "dtcCodes": [
+        "B1011",
+        "B1012"
+      ],
+      "manualSections": [
+        "1-19",
+        "1-38"
+      ],
+      "selectable": true,
+      "xray_transparent": true,
+      "layer_num": 8,
+      "parentNode": "Кузов#2",
+      "layer": "body",
+      "glossary_id": "body_shell@body"
+    },
+    "Кузов#2 — Накладка": {
+      "meshName": "Кузов#2 — Накладка",
+      "system": "body",
+      "displayName": "Кузов#2 — Накладка",
+      "dtcCodes": [
+        "B1011",
+        "B1012"
+      ],
+      "manualSections": [
+        "1-19",
+        "1-38"
+      ],
+      "selectable": true,
+      "xray_transparent": true,
+      "layer_num": 8,
+      "parentNode": "Кузов#2",
+      "layer": "body",
+      "glossary_id": "body_shell@body"
+    },
+    "Кузов#2 — Порог": {
+      "meshName": "Кузов#2 — Порог",
+      "system": "body",
+      "displayName": "Кузов#2 — Порог",
+      "dtcCodes": [
+        "B1011",
+        "B1012"
+      ],
+      "manualSections": [
+        "1-19",
+        "1-38"
+      ],
+      "selectable": true,
+      "xray_transparent": true,
+      "layer_num": 8,
+      "parentNode": "Кузов#2",
+      "layer": "body",
+      "glossary_id": "body_shell@body"
+    },
+    "Кузов#2 — Хром молдинг": {
+      "meshName": "Кузов#2 — Хром молдинг",
+      "system": "body",
+      "displayName": "Кузов#2 — Хром молдинг",
+      "dtcCodes": [
+        "B1011",
+        "B1012"
+      ],
+      "manualSections": [
+        "1-19",
+        "1-38"
+      ],
+      "selectable": true,
+      "xray_transparent": true,
+      "layer_num": 8,
+      "parentNode": "Кузов#2",
+      "layer": "body",
+      "glossary_id": "body_shell@body"
+    },
+    "Кузов#2 — Декоративная накладка": {
+      "meshName": "Кузов#2 — Декоративная накладка",
+      "system": "body",
+      "displayName": "Кузов#2 — Декоративная накладка",
+      "dtcCodes": [
+        "B1011",
+        "B1012"
+      ],
+      "manualSections": [
+        "1-19",
+        "1-38"
+      ],
+      "selectable": true,
+      "xray_transparent": true,
+      "layer_num": 8,
+      "parentNode": "Кузов#2",
+      "layer": "body",
+      "glossary_id": "body_shell@body"
+    },
+    "Кузов#2 — Дневные ходовые огни": {
+      "meshName": "Кузов#2 — Дневные ходовые огни",
+      "system": "lighting",
+      "displayName": "Кузов#2 — Дневные ходовые огни",
+      "dtcCodes": [
+        "B1260"
+      ],
+      "manualSections": [
+        "1-32"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 5,
+      "parentNode": "Кузов#2",
+      "layer": "body",
+      "glossary_id": "body_shell@body"
+    },
+    "Кузов#2 — Фонарь задний": {
+      "meshName": "Кузов#2 — Фонарь задний",
+      "system": "lighting",
+      "displayName": "Кузов#2 — Фонарь задний",
+      "dtcCodes": [
+        "B1250",
+        "B1251"
+      ],
+      "manualSections": [
+        "1-32"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 5,
+      "parentNode": "Кузов#2",
+      "layer": "body",
+      "glossary_id": "body_shell@body"
+    },
+    "Кузов#2 — Подсветка": {
+      "meshName": "Кузов#2 — Подсветка",
+      "system": "lighting",
+      "displayName": "Кузов#2 — Подсветка",
+      "dtcCodes": [
+        "B1250",
+        "B1251"
+      ],
+      "manualSections": [
+        "1-32"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 5,
+      "parentNode": "Кузов#2",
+      "layer": "body",
+      "glossary_id": "body_shell@body"
+    },
+    "Кузов#2 — Каркас": {
+      "meshName": "Кузов#2 — Каркас",
+      "system": "body",
+      "displayName": "Кузов#2 — Каркас",
+      "dtcCodes": [
+        "B1011",
+        "B1012"
+      ],
+      "manualSections": [
+        "1-19",
+        "1-38"
+      ],
+      "selectable": true,
+      "xray_transparent": true,
+      "layer_num": 8,
+      "parentNode": "Кузов#2",
+      "layer": "body",
+      "glossary_id": "body_shell@body"
+    },
+    "Кузов#2 — Подкрылок": {
+      "meshName": "Кузов#2 — Подкрылок",
+      "system": "body",
+      "displayName": "Кузов#2 — Подкрылок",
+      "dtcCodes": [
+        "B1011",
+        "B1012"
+      ],
+      "manualSections": [
+        "1-19",
+        "1-38"
+      ],
+      "selectable": true,
+      "xray_transparent": true,
+      "layer_num": 8,
+      "parentNode": "Кузов#2",
+      "layer": "body",
+      "glossary_id": "body_shell@body"
+    },
+    "Кузов#2 — Воздуховод": {
+      "meshName": "Кузов#2 — Воздуховод",
+      "system": "body",
+      "displayName": "Кузов#2 — Воздуховод",
+      "dtcCodes": [
+        "B1011",
+        "B1012"
+      ],
+      "manualSections": [
+        "1-19",
+        "1-38"
+      ],
+      "selectable": true,
+      "xray_transparent": true,
+      "layer_num": 8,
+      "parentNode": "Кузов#2",
+      "layer": "body",
+      "glossary_id": "body_shell@body"
+    },
+    "Кузов#2 — ДХО": {
+      "meshName": "Кузов#2 — ДХО",
+      "system": "lighting",
+      "displayName": "Кузов#2 — ДХО",
+      "dtcCodes": [
+        "B1260"
+      ],
+      "manualSections": [
+        "1-32"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 5,
+      "parentNode": "Кузов#2",
+      "layer": "body",
+      "glossary_id": "body_shell@body"
+    },
+    "Кузов#2 — ДХО задний": {
+      "meshName": "Кузов#2 — ДХО задний",
+      "system": "lighting",
+      "displayName": "Кузов#2 — ДХО задний",
+      "dtcCodes": [
+        "B1260"
+      ],
+      "manualSections": [
+        "1-32"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 5,
+      "parentNode": "Кузов#2",
+      "layer": "body",
+      "glossary_id": "body_shell@body"
+    },
+    "Кузов#2 — Поворотник большой Л": {
+      "meshName": "Кузов#2 — Поворотник большой Л",
+      "system": "lighting",
+      "displayName": "Кузов#2 — Поворотник большой Л",
+      "dtcCodes": [
+        "B1260"
+      ],
+      "manualSections": [
+        "1-32"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 5,
+      "parentNode": "Кузов#2",
+      "layer": "body",
+      "glossary_id": "body_shell@body"
+    },
+    "Кузов#2 — Поворотник большой П": {
+      "meshName": "Кузов#2 — Поворотник большой П",
+      "system": "lighting",
+      "displayName": "Кузов#2 — Поворотник большой П",
+      "dtcCodes": [
+        "B1260"
+      ],
+      "manualSections": [
+        "1-32"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 5,
+      "parentNode": "Кузов#2",
+      "layer": "body",
+      "glossary_id": "body_shell@body"
+    },
+    "Кузов#2 — Заглушка фонаря": {
+      "meshName": "Кузов#2 — Заглушка фонаря",
+      "system": "lighting",
+      "displayName": "Кузов#2 — Заглушка фонаря",
+      "dtcCodes": [
+        "B1250",
+        "B1251"
+      ],
+      "manualSections": [
+        "1-32"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 5,
+      "parentNode": "Кузов#2",
+      "layer": "body",
+      "glossary_id": "body_shell@body"
+    },
+    "Кузов#2 — Поворотник задний П": {
+      "meshName": "Кузов#2 — Поворотник задний П",
+      "system": "lighting",
+      "displayName": "Кузов#2 — Поворотник задний П",
+      "dtcCodes": [
+        "B1260"
+      ],
+      "manualSections": [
+        "1-32"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 5,
+      "parentNode": "Кузов#2",
+      "layer": "body",
+      "glossary_id": "body_shell@body"
+    },
+    "Кузов#2 — Поворотник задний Л": {
+      "meshName": "Кузов#2 — Поворотник задний Л",
+      "system": "lighting",
+      "displayName": "Кузов#2 — Поворотник задний Л",
+      "dtcCodes": [
+        "B1260"
+      ],
+      "manualSections": [
+        "1-32"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 5,
+      "parentNode": "Кузов#2",
+      "layer": "body",
+      "glossary_id": "body_shell@body"
+    },
+    "Кузов#2 — Задний фонарь Л": {
+      "meshName": "Кузов#2 — Задний фонарь Л",
+      "system": "lighting",
+      "displayName": "Кузов#2 — Задний фонарь Л",
+      "dtcCodes": [
+        "B1250",
+        "B1251"
+      ],
+      "manualSections": [
+        "1-32"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 5,
+      "parentNode": "Кузов#2",
+      "layer": "body",
+      "glossary_id": "body_shell@body"
+    },
+    "Кузов#2 — Задний фонарь П": {
+      "meshName": "Кузов#2 — Задний фонарь П",
+      "system": "lighting",
+      "displayName": "Кузов#2 — Задний фонарь П",
+      "dtcCodes": [
+        "B1250",
+        "B1251"
+      ],
+      "manualSections": [
+        "1-32"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 5,
+      "parentNode": "Кузов#2",
+      "layer": "body",
+      "glossary_id": "body_shell@body"
+    },
+    "Кузов#2 — Уплотнитель": {
+      "meshName": "Кузов#2 — Уплотнитель",
+      "system": "body",
+      "displayName": "Кузов#2 — Уплотнитель",
+      "dtcCodes": [
+        "B1011",
+        "B1012"
+      ],
+      "manualSections": [
+        "1-19",
+        "1-38"
+      ],
+      "selectable": true,
+      "xray_transparent": true,
+      "layer_num": 8,
+      "parentNode": "Кузов#2",
+      "layer": "body",
+      "glossary_id": "body_shell@body"
+    },
+    "Кузов#2 — Лючок бака": {
+      "meshName": "Кузов#2 — Лючок бака",
+      "system": "powertrain",
+      "displayName": "Кузов#2 — Лючок бака",
+      "dtcCodes": [
+        "P0171",
+        "P0300"
+      ],
+      "manualSections": [
+        "1-13",
+        "1-30"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 1,
+      "parentNode": "Кузов#2",
+      "layer": "engine",
+      "glossary_id": "body_shell@engine"
+    },
+    "Кузов#2 — Шильдик": {
+      "meshName": "Кузов#2 — Шильдик",
+      "system": "body",
+      "displayName": "Кузов#2 — Шильдик",
+      "dtcCodes": [
+        "B1011",
+        "B1012"
+      ],
+      "manualSections": [
+        "1-19",
+        "1-38"
+      ],
+      "selectable": true,
+      "xray_transparent": true,
+      "layer_num": 8,
+      "parentNode": "Кузов#2",
+      "layer": "body",
+      "glossary_id": "body_shell@body"
+    },
+    "Кузов#2 — Декор синий": {
+      "meshName": "Кузов#2 — Декор синий",
+      "system": "body",
+      "displayName": "Кузов#2 — Декор синий",
+      "dtcCodes": [
+        "B1011",
+        "B1012"
+      ],
+      "manualSections": [
+        "1-19",
+        "1-38"
+      ],
+      "selectable": true,
+      "xray_transparent": true,
+      "layer_num": 8,
+      "parentNode": "Кузов#2",
+      "layer": "body",
+      "glossary_id": "body_shell@body"
+    },
+    "Кузов#2 — Декоративный элемент": {
+      "meshName": "Кузов#2 — Декоративный элемент",
+      "system": "body",
+      "displayName": "Кузов#2 — Декоративный элемент",
+      "dtcCodes": [
+        "B1011",
+        "B1012"
+      ],
+      "manualSections": [
+        "1-19",
+        "1-38"
+      ],
+      "selectable": true,
+      "xray_transparent": true,
+      "layer_num": 8,
+      "parentNode": "Кузов#2",
+      "layer": "body",
+      "glossary_id": "body_shell@body"
+    },
+    "Кузов#2 — Кронштейн": {
+      "meshName": "Кузов#2 — Кронштейн",
+      "system": "body",
+      "displayName": "Кузов#2 — Кронштейн",
+      "dtcCodes": [
+        "B1011",
+        "B1012"
+      ],
+      "manualSections": [
+        "1-19",
+        "1-38"
+      ],
+      "selectable": true,
+      "xray_transparent": true,
+      "layer_num": 8,
+      "parentNode": "Кузов#2",
+      "layer": "body",
+      "glossary_id": "body_shell@body"
+    },
+    "Кузов#2 — Ходовой огонь": {
+      "meshName": "Кузов#2 — Ходовой огонь",
+      "system": "lighting",
+      "displayName": "Кузов#2 — Ходовой огонь",
+      "dtcCodes": [
+        "B1260"
+      ],
+      "manualSections": [
+        "1-32"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 5,
+      "parentNode": "Кузов#2",
+      "layer": "body",
+      "glossary_id": "body_shell@body"
+    },
+    "Кузов (интерьер) 2#2 — Отделка": {
+      "meshName": "Кузов (интерьер) 2#2 — Отделка",
+      "system": "body",
+      "displayName": "Кузов (интерьер) 2#2 — Отделка",
+      "dtcCodes": [
+        "B1011",
+        "B1012"
+      ],
+      "manualSections": [
+        "1-19",
+        "1-38"
+      ],
+      "selectable": true,
+      "xray_transparent": true,
+      "layer_num": 8,
+      "parentNode": "Кузов (интерьер) 2#2",
+      "layer": "body",
+      "glossary_id": "interior_trim@body"
+    },
+    "Кузов (интерьер) 2#2 — Ковролин": {
+      "meshName": "Кузов (интерьер) 2#2 — Ковролин",
+      "system": "interior",
+      "displayName": "Кузов (интерьер) 2#2 — Ковролин",
+      "dtcCodes": [
+        "B1450",
+        "B1460"
+      ],
+      "manualSections": [
+        "1-20",
+        "1-21"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 4,
+      "parentNode": "Кузов (интерьер) 2#2",
+      "layer": "interior",
+      "glossary_id": "interior_trim@interior"
+    },
+    "Кузов (интерьер)#2 — Накладка": {
+      "meshName": "Кузов (интерьер)#2 — Накладка",
+      "system": "body",
+      "displayName": "Кузов (интерьер)#2 — Накладка",
+      "dtcCodes": [
+        "B1011",
+        "B1012"
+      ],
+      "manualSections": [
+        "1-19",
+        "1-38"
+      ],
+      "selectable": true,
+      "xray_transparent": true,
+      "layer_num": 8,
+      "parentNode": "Кузов (интерьер)#2",
+      "layer": "body",
+      "glossary_id": "interior_trim@body"
+    },
+    "Кузов (интерьер)#2 — Обшивка": {
+      "meshName": "Кузов (интерьер)#2 — Обшивка",
+      "system": "body",
+      "displayName": "Кузов (интерьер)#2 — Обшивка",
+      "dtcCodes": [
+        "B1011",
+        "B1012"
+      ],
+      "manualSections": [
+        "1-19",
+        "1-38"
+      ],
+      "selectable": true,
+      "xray_transparent": true,
+      "layer_num": 8,
+      "parentNode": "Кузов (интерьер)#2",
+      "layer": "body",
+      "glossary_id": "interior_trim@body"
+    },
+    "Кузов (интерьер)#2 — Кожаная вставка": {
+      "meshName": "Кузов (интерьер)#2 — Кожаная вставка",
+      "system": "interior",
+      "displayName": "Кузов (интерьер)#2 — Кожаная вставка",
+      "dtcCodes": [
+        "B1450",
+        "B1460"
+      ],
+      "manualSections": [
+        "1-20",
+        "1-21"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 4,
+      "parentNode": "Кузов (интерьер)#2",
+      "layer": "interior",
+      "glossary_id": "interior_trim@interior"
+    },
+    "Кузов (интерьер)#2 — Сетка динамика": {
+      "meshName": "Кузов (интерьер)#2 — Сетка динамика",
+      "system": "body",
+      "displayName": "Кузов (интерьер)#2 — Сетка динамика",
+      "dtcCodes": [
+        "B1011",
+        "B1012"
+      ],
+      "manualSections": [
+        "1-19",
+        "1-38"
+      ],
+      "selectable": true,
+      "xray_transparent": true,
+      "layer_num": 8,
+      "parentNode": "Кузов (интерьер)#2",
+      "layer": "body",
+      "glossary_id": "interior_trim@body"
+    },
+    "Кузов (интерьер)#2 — Отделка": {
+      "meshName": "Кузов (интерьер)#2 — Отделка",
+      "system": "body",
+      "displayName": "Кузов (интерьер)#2 — Отделка",
+      "dtcCodes": [
+        "B1011",
+        "B1012"
+      ],
+      "manualSections": [
+        "1-19",
+        "1-38"
+      ],
+      "selectable": true,
+      "xray_transparent": true,
+      "layer_num": 8,
+      "parentNode": "Кузов (интерьер)#2",
+      "layer": "body",
+      "glossary_id": "interior_trim@body"
+    },
+    "Кузов (интерьер)#2 — Кнопки": {
+      "meshName": "Кузов (интерьер)#2 — Кнопки",
+      "system": "interior",
+      "displayName": "Кузов (интерьер)#2 — Кнопки",
+      "dtcCodes": [
+        "B1450",
+        "B1460"
+      ],
+      "manualSections": [
+        "1-20",
+        "1-21"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 4,
+      "parentNode": "Кузов (интерьер)#2",
+      "layer": "interior",
+      "glossary_id": "interior_trim@interior"
+    },
+    "Кузов (интерьер)#2 — Резиновая накладка": {
+      "meshName": "Кузов (интерьер)#2 — Резиновая накладка",
+      "system": "body",
+      "displayName": "Кузов (интерьер)#2 — Резиновая накладка",
+      "dtcCodes": [
+        "B1011",
+        "B1012"
+      ],
+      "manualSections": [
+        "1-19",
+        "1-38"
+      ],
+      "selectable": true,
+      "xray_transparent": true,
+      "layer_num": 8,
+      "parentNode": "Кузов (интерьер)#2",
+      "layer": "body",
+      "glossary_id": "interior_trim@body"
+    },
+    "Кузов (интерьер)#2 — Ковролин": {
+      "meshName": "Кузов (интерьер)#2 — Ковролин",
+      "system": "interior",
+      "displayName": "Кузов (интерьер)#2 — Ковролин",
+      "dtcCodes": [
+        "B1450",
+        "B1460"
+      ],
+      "manualSections": [
+        "1-20",
+        "1-21"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 4,
+      "parentNode": "Кузов (интерьер)#2",
+      "layer": "interior",
+      "glossary_id": "interior_trim@interior"
+    },
+    "Кузов (интерьер)#2 — Обивка": {
+      "meshName": "Кузов (интерьер)#2 — Обивка",
+      "system": "interior",
+      "displayName": "Кузов (интерьер)#2 — Обивка",
+      "dtcCodes": [
+        "B1450",
+        "B1460"
+      ],
+      "manualSections": [
+        "1-20",
+        "1-21"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 4,
+      "parentNode": "Кузов (интерьер)#2",
+      "layer": "interior",
+      "glossary_id": "interior_trim@interior"
+    },
+    "Кузов (интерьер)#2 — Потолок": {
+      "meshName": "Кузов (интерьер)#2 — Потолок",
+      "system": "interior",
+      "displayName": "Кузов (интерьер)#2 — Потолок",
+      "dtcCodes": [
+        "B1450",
+        "B1460"
+      ],
+      "manualSections": [
+        "1-20",
+        "1-21"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 4,
+      "parentNode": "Кузов (интерьер)#2",
+      "layer": "interior",
+      "glossary_id": "interior_trim@interior"
+    },
+    "Кузов (интерьер)#2 — Плафон": {
+      "meshName": "Кузов (интерьер)#2 — Плафон",
+      "system": "lighting",
+      "displayName": "Кузов (интерьер)#2 — Плафон",
+      "dtcCodes": [
+        "B1250",
+        "B1251"
+      ],
+      "manualSections": [
+        "1-32"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 5,
+      "parentNode": "Кузов (интерьер)#2",
+      "layer": "body",
+      "glossary_id": "interior_trim@body"
+    },
+    "Кузов (интерьер)#2 — Плафон левый": {
+      "meshName": "Кузов (интерьер)#2 — Плафон левый",
+      "system": "lighting",
+      "displayName": "Кузов (интерьер)#2 — Плафон левый",
+      "dtcCodes": [
+        "B1250",
+        "B1251"
+      ],
+      "manualSections": [
+        "1-32"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 5,
+      "parentNode": "Кузов (интерьер)#2",
+      "layer": "body",
+      "glossary_id": "interior_trim@body"
+    },
+    "Кузов (интерьер)#2 — Плафон правый": {
+      "meshName": "Кузов (интерьер)#2 — Плафон правый",
+      "system": "lighting",
+      "displayName": "Кузов (интерьер)#2 — Плафон правый",
+      "dtcCodes": [
+        "B1250",
+        "B1251"
+      ],
+      "manualSections": [
+        "1-32"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 5,
+      "parentNode": "Кузов (интерьер)#2",
+      "layer": "body",
+      "glossary_id": "interior_trim@body"
+    },
+    "Кузов (интерьер)#2 — Кнопка аварийки": {
+      "meshName": "Кузов (интерьер)#2 — Кнопка аварийки",
+      "system": "interior",
+      "displayName": "Кузов (интерьер)#2 — Кнопка аварийки",
+      "dtcCodes": [
+        "B1450",
+        "B1460"
+      ],
+      "manualSections": [
+        "1-20",
+        "1-21"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 4,
+      "parentNode": "Кузов (интерьер)#2",
+      "layer": "interior",
+      "glossary_id": "interior_trim@interior"
+    }
+  },
+  "dtcIndex": {
+    "B1011": {
+      "code": "B1011",
+      "description_ru": "Неисправность системы передней левой двери",
+      "description_en": "Door FL System",
+      "severity": "info",
+      "possibleCauses": [
+        "Неисправность концевика",
+        "Проблема электропривода замка"
+      ],
+      "procedures": [
+        "Проверка концевика двери",
+        "Проверка электропривода замка"
+      ],
+      "manualSections": [
+        "1-19"
+      ],
+      "components": [
+        "Защита днища#2",
+        "Крышка днища#2",
+        "Накладка люка#2",
+        "Крыша#2",
+        "Капот#2",
+        "Дверная карта ПП#2",
+        "Дверная карта ПЛ#2",
+        "Ручка двери ЗП#2",
+        "Ручка двери ЗЛ#2",
+        "Ручка двери ПП#2",
+        "Ручка двери ПЛ#2",
+        "Дверь передняя левая#2",
+        "Днище#2 — Привод",
+        "Днище#2 — Теплозащита",
+        "Сиденья задние#2 — Обшивка",
+        "Сиденья задние#2 — Отделка",
+        "Сиденья задние#2 — Звёздное небо",
+        "Четвертные панели#2 — Панель",
+        "Четвертные панели#2 — Накладка",
+        "Четвертные панели#2 — Декоративная накладка",
+        "Крыло правое#2 — Панель",
+        "Крыло правое#2 — Арка крыла",
+        "Крыло правое#2 — Хром накладка",
+        "Крыло левое#2 — Панель",
+        "Крыло левое#2 — Арка крыла",
+        "Крыло левое#2 — Хром накладка",
+        "Бампер задний (часть)#2 — Молдинг",
+        "Бампер задний (часть)#2 — Зеркальный элемент",
+        "Бампер задний (часть)#2 — Отражатель",
+        "Бампер задний#2 — Панель",
+        "Бампер задний#2 — Молдинг",
+        "Бампер передний#2 — Панель",
+        "Бампер передний#2 — Молдинг",
+        "Бампер передний#2 — Декоративная накладка",
+        "Бампер передний#2 — Отделка",
+        "Кузов#2 — Панель",
+        "Кузов#2 — Накладка",
+        "Кузов#2 — Порог",
+        "Кузов#2 — Хром молдинг",
+        "Кузов#2 — Декоративная накладка",
+        "Кузов#2 — Каркас",
+        "Кузов#2 — Подкрылок",
+        "Кузов#2 — Воздуховод",
+        "Кузов#2 — Уплотнитель",
+        "Кузов#2 — Шильдик",
+        "Кузов#2 — Декор синий",
+        "Кузов#2 — Декоративный элемент",
+        "Кузов#2 — Кронштейн",
+        "Кузов (интерьер) 2#2 — Отделка",
+        "Кузов (интерьер)#2 — Накладка",
+        "Кузов (интерьер)#2 — Обшивка",
+        "Кузов (интерьер)#2 — Сетка динамика",
+        "Кузов (интерьер)#2 — Отделка",
+        "Кузов (интерьер)#2 — Резиновая накладка"
+      ]
+    },
+    "B1012": {
+      "code": "B1012",
+      "description_ru": "Неисправность системы передней правой двери",
+      "description_en": "Door FR System",
+      "severity": "info",
+      "possibleCauses": [
+        "Неисправность концевика"
+      ],
+      "procedures": [
+        "Проверка концевика двери"
+      ],
+      "manualSections": [
+        "1-19"
+      ],
+      "components": [
+        "Защита днища#2",
+        "Крышка днища#2",
+        "Накладка люка#2",
+        "Крыша#2",
+        "Дверная карта ПП#2",
+        "Дверная карта ПЛ#2",
+        "Ручка двери ЗП#2",
+        "Ручка двери ЗЛ#2",
+        "Ручка двери ПП#2",
+        "Ручка двери ПЛ#2",
+        "Дверь передняя правая#2",
+        "Днище#2 — Привод",
+        "Днище#2 — Теплозащита",
+        "Сиденья задние#2 — Обшивка",
+        "Сиденья задние#2 — Отделка",
+        "Сиденья задние#2 — Звёздное небо",
+        "Четвертные панели#2 — Панель",
+        "Четвертные панели#2 — Накладка",
+        "Четвертные панели#2 — Декоративная накладка",
+        "Крыло правое#2 — Панель",
+        "Крыло правое#2 — Арка крыла",
+        "Крыло правое#2 — Хром накладка",
+        "Крыло левое#2 — Панель",
+        "Крыло левое#2 — Арка крыла",
+        "Крыло левое#2 — Хром накладка",
+        "Бампер задний (часть)#2 — Молдинг",
+        "Бампер задний (часть)#2 — Зеркальный элемент",
+        "Бампер задний (часть)#2 — Отражатель",
+        "Бампер задний#2 — Панель",
+        "Бампер задний#2 — Молдинг",
+        "Бампер передний#2 — Панель",
+        "Бампер передний#2 — Молдинг",
+        "Бампер передний#2 — Декоративная накладка",
+        "Бампер передний#2 — Отделка",
+        "Кузов#2 — Панель",
+        "Кузов#2 — Накладка",
+        "Кузов#2 — Порог",
+        "Кузов#2 — Хром молдинг",
+        "Кузов#2 — Декоративная накладка",
+        "Кузов#2 — Каркас",
+        "Кузов#2 — Подкрылок",
+        "Кузов#2 — Воздуховод",
+        "Кузов#2 — Уплотнитель",
+        "Кузов#2 — Шильдик",
+        "Кузов#2 — Декор синий",
+        "Кузов#2 — Декоративный элемент",
+        "Кузов#2 — Кронштейн",
+        "Кузов (интерьер) 2#2 — Отделка",
+        "Кузов (интерьер)#2 — Накладка",
+        "Кузов (интерьер)#2 — Обшивка",
+        "Кузов (интерьер)#2 — Сетка динамика",
+        "Кузов (интерьер)#2 — Отделка",
+        "Кузов (интерьер)#2 — Резиновая накладка"
+      ]
+    },
+    "B1013": {
+      "code": "B1013",
+      "description_ru": "Неисправность системы задней левой двери",
+      "description_en": "Door RL System",
+      "severity": "info",
+      "possibleCauses": [
+        "Неисправность концевика"
+      ],
+      "procedures": [
+        "Проверка концевика двери"
+      ],
+      "manualSections": [
+        "1-19"
+      ],
+      "components": [
+        "Дверь задняя левая#2"
+      ]
+    },
+    "B1014": {
+      "code": "B1014",
+      "description_ru": "Неисправность системы задней правой двери",
+      "description_en": "Door RR System",
+      "severity": "info",
+      "possibleCauses": [
+        "Неисправность концевика"
+      ],
+      "procedures": [
+        "Проверка концевика двери"
+      ],
+      "manualSections": [
+        "1-19"
+      ],
+      "components": [
+        "Дверь задняя правая#2"
+      ]
+    },
+    "B1019": {
+      "code": "B1019",
+      "description_ru": "Неисправность электропривода крышки багажника",
+      "description_en": "Tailgate Motor Circuit",
+      "severity": "info",
+      "possibleCauses": [
+        "Неисправность электропривода",
+        "Заклинивание механизма"
+      ],
+      "procedures": [
+        "Проверка электропривода",
+        "Смазка механизма"
+      ],
+      "manualSections": [
+        "1-19"
+      ],
+      "components": [
+        "Стекло багажника#2",
+        "Крышка багажника#2"
+      ]
+    },
+    "B1020": {
+      "code": "B1020",
+      "description_ru": "Неисправность замка крышки багажника",
+      "description_en": "Tailgate Lock Circuit",
+      "severity": "info",
+      "possibleCauses": [
+        "Неисправность замка"
+      ],
+      "procedures": [
+        "Проверка замка багажника"
+      ],
+      "manualSections": [
+        "1-19"
+      ],
+      "components": [
+        "Стекло багажника#2",
+        "Крышка багажника#2"
+      ]
+    },
+    "B1250": {
+      "code": "B1250",
+      "description_ru": "Неисправность левой фары",
+      "description_en": "Headlight Left Circuit",
+      "severity": "warning",
+      "possibleCauses": [
+        "Перегорание лампы/LED",
+        "Обрыв цепи",
+        "Неисправность блока управления фарами"
+      ],
+      "procedures": [
+        "Проверка LED-модуля",
+        "Проверка проводки",
+        "Проверка блока управления"
+      ],
+      "manualSections": [
+        "1-32"
+      ],
+      "components": [
+        "Четвертные панели#2 — Подсветка",
+        "Стекло фары правой#2 — Фара",
+        "Стекло фары правой#2 — Модуль дальнего",
+        "Стекло фары правой#2 — Модуль ближнего",
+        "Стекло фары левой#2 — Фара",
+        "Стекло фары левой#2 — Модуль дальнего",
+        "Стекло фары левой#2 — Модуль ближнего",
+        "Фара левая#2 — Модуль дальнего",
+        "Фара левая#2 — Модуль ближнего",
+        "Фара левая#2 — Секция поворотника Л",
+        "Фара левая#2 — Линза ближнего",
+        "Фара левая#2 — Корпус фары",
+        "Фара левая#2 — Поворотник Л",
+        "Кузов#2 — Фонарь задний",
+        "Кузов#2 — Подсветка",
+        "Кузов#2 — Заглушка фонаря",
+        "Кузов#2 — Задний фонарь Л",
+        "Кузов#2 — Задний фонарь П",
+        "Кузов (интерьер)#2 — Плафон",
+        "Кузов (интерьер)#2 — Плафон левый",
+        "Кузов (интерьер)#2 — Плафон правый"
+      ]
+    },
+    "B1251": {
+      "code": "B1251",
+      "description_ru": "Неисправность правой фары",
+      "description_en": "Headlight Right Circuit",
+      "severity": "warning",
+      "possibleCauses": [
+        "Перегорание лампы/LED",
+        "Обрыв цепи"
+      ],
+      "procedures": [
+        "Проверка LED-модуля",
+        "Проверка проводки"
+      ],
+      "manualSections": [
+        "1-32"
+      ],
+      "components": [
+        "Четвертные панели#2 — Подсветка",
+        "Стекло фары правой#2 — Фара",
+        "Стекло фары правой#2 — Модуль дальнего",
+        "Стекло фары правой#2 — Модуль ближнего",
+        "Стекло фары левой#2 — Фара",
+        "Стекло фары левой#2 — Модуль дальнего",
+        "Стекло фары левой#2 — Модуль ближнего",
+        "Фара правая#2 — Модуль дальнего",
+        "Фара правая#2 — Модуль ближнего",
+        "Фара правая#2 — Секция поворотника П",
+        "Фара правая#2 — Линза ближнего",
+        "Фара правая#2 — Корпус фары",
+        "Фара правая#2 — Поворотник П",
+        "Кузов#2 — Фонарь задний",
+        "Кузов#2 — Подсветка",
+        "Кузов#2 — Заглушка фонаря",
+        "Кузов#2 — Задний фонарь Л",
+        "Кузов#2 — Задний фонарь П",
+        "Кузов (интерьер)#2 — Плафон",
+        "Кузов (интерьер)#2 — Плафон левый",
+        "Кузов (интерьер)#2 — Плафон правый"
+      ]
+    },
+    "B1260": {
+      "code": "B1260",
+      "description_ru": "Неисправность заднего фонаря",
+      "description_en": "Taillight Circuit",
+      "severity": "warning",
+      "possibleCauses": [
+        "Перегорание LED",
+        "Обрыв цепи"
+      ],
+      "procedures": [
+        "Проверка LED-модуля заднего фонаря"
+      ],
+      "manualSections": [
+        "1-32"
+      ],
+      "components": [
+        "Зеркало правое#2 — Повторитель П",
+        "Зеркало левое#2 — Повторитель Л",
+        "Стекло фары правой#2 — Секция поворотника П",
+        "Стекло фары левой#2 — Секция поворотника Л",
+        "Фара правая#2 — Секция поворотника П",
+        "Фара правая#2 — Поворотник П",
+        "Фара левая#2 — Секция поворотника Л",
+        "Фара левая#2 — Поворотник Л",
+        "Индикаторы приборов#2 — Инд. поворотник Л",
+        "Индикаторы приборов#2 — Инд. поворотник П",
+        "Кузов#2 — Дневные ходовые огни",
+        "Кузов#2 — ДХО",
+        "Кузов#2 — ДХО задний",
+        "Кузов#2 — Поворотник большой Л",
+        "Кузов#2 — Поворотник большой П",
+        "Кузов#2 — Поворотник задний П",
+        "Кузов#2 — Поворотник задний Л",
+        "Кузов#2 — Ходовой огонь"
+      ]
+    },
+    "B1450": {
+      "code": "B1450",
+      "description_ru": "Неисправность сиденья водителя",
+      "description_en": "Driver Seat System",
+      "severity": "info",
+      "possibleCauses": [
+        "Неисправность электропривода",
+        "Ошибка датчика положения"
+      ],
+      "procedures": [
+        "Проверка электроприводов сиденья",
+        "Проверка датчиков"
+      ],
+      "manualSections": [
+        "1-20"
+      ],
+      "components": [
+        "Козырёк правый#2",
+        "Козырёк левый#2",
+        "Ароматизатор#2",
+        "Экран приборов#2",
+        "Педаль газа#2",
+        "Сиденье (доп.)#2",
+        "Монитор#2 — Отделка",
+        "Монитор#2 — Монитор",
+        "Бардачок#2 — Обшивка",
+        "Бардачок#2 — Кожаная вставка",
+        "Сиденья задние#2 — Кожаная вставка",
+        "Сиденья задние#2 — Обивка сиденья",
+        "Сиденья задние#2 — Кнопки задние",
+        "Сиденья задние#2 — Подголовник",
+        "Сиденья задние#2 — Обивка",
+        "Подушка сиденья правая#2 — Кожаная вставка",
+        "Подушка сиденья правая#2 — Подголовник",
+        "Подушка сиденья левая#2 — Кожаная вставка",
+        "Подушка сиденья левая#2 — Подголовник",
+        "Сиденье ПЛ (часть)#2 — Обшивка",
+        "Сиденье ПЛ (часть)#2 — Кожаная вставка",
+        "Сиденье ПЛ (часть)#2 — Обивка сиденья",
+        "Сиденье ПЛ#2 — Обшивка",
+        "Сиденье ПЛ#2 — Кожаная вставка",
+        "Сиденье ПЛ#2 — Отделка",
+        "Сиденье ПЛ#2 — Обивка сиденья",
+        "Сиденье ПЛ#2 — Кнопки задние",
+        "Сиденье ПЛ#2 — Звёздное небо",
+        "Центральный экран#2 — Рамка экрана",
+        "Центральный экран#2 — Доп. дисплей",
+        "Центральный экран#2 — Мультимедиа",
+        "Зеркало салонное#2 — Отделка",
+        "Зеркало салонное#2 — Зеркальный элемент",
+        "Индикаторы приборов 2#2 — Инд. давление",
+        "Индикаторы приборов 2#2 — Инд. ABS",
+        "Индикаторы приборов 2#2 — Инд. ПТФ",
+        "Индикаторы приборов 2#2 — Инд. масло",
+        "Индикаторы приборов 2#2 — Инд. температура",
+        "Индикаторы приборов 2#2 — Инд. задний ПТФ",
+        "Индикаторы приборов#2 — Инд. ручник",
+        "Индикаторы приборов#2 — Инд. топливо",
+        "Индикаторы приборов#2 — Инд. дальний свет",
+        "Индикаторы приборов#2 — Инд. ближний свет",
+        "Индикаторы приборов#2 — Инд. ESC",
+        "Индикаторы приборов#2 — Инд. TCS",
+        "Бампер задний#2 — Кнопки",
+        "Кузов (интерьер) 2#2 — Ковролин",
+        "Кузов (интерьер)#2 — Кожаная вставка",
+        "Кузов (интерьер)#2 — Кнопки",
+        "Кузов (интерьер)#2 — Ковролин",
+        "Кузов (интерьер)#2 — Обивка",
+        "Кузов (интерьер)#2 — Потолок",
+        "Кузов (интерьер)#2 — Кнопка аварийки"
+      ]
+    },
+    "B1460": {
+      "code": "B1460",
+      "description_ru": "Неисправность сиденья пассажира",
+      "description_en": "Passenger Seat System",
+      "severity": "info",
+      "possibleCauses": [
+        "Неисправность электропривода"
+      ],
+      "procedures": [
+        "Проверка электроприводов сиденья"
+      ],
+      "manualSections": [
+        "1-20"
+      ],
+      "components": [
+        "Козырёк правый#2",
+        "Козырёк левый#2",
+        "Ароматизатор#2",
+        "Экран приборов#2",
+        "Педаль газа#2",
+        "Сиденье (доп.)#2",
+        "Монитор#2 — Отделка",
+        "Монитор#2 — Монитор",
+        "Бардачок#2 — Обшивка",
+        "Бардачок#2 — Кожаная вставка",
+        "Сиденья задние#2 — Кожаная вставка",
+        "Сиденья задние#2 — Обивка сиденья",
+        "Сиденья задние#2 — Кнопки задние",
+        "Сиденья задние#2 — Подголовник",
+        "Сиденья задние#2 — Обивка",
+        "Подушка сиденья правая#2 — Кожаная вставка",
+        "Подушка сиденья правая#2 — Подголовник",
+        "Подушка сиденья левая#2 — Кожаная вставка",
+        "Подушка сиденья левая#2 — Подголовник",
+        "Сиденье ПП (часть)#2 — Обшивка",
+        "Сиденье ПП (часть)#2 — Кожаная вставка",
+        "Сиденье ПП (часть)#2 — Обивка сиденья",
+        "Сиденье ПП (часть)#2 — Вставка",
+        "Сиденье ПП#2 — Обшивка",
+        "Сиденье ПП#2 — Кожаная вставка",
+        "Сиденье ПП#2 — Отделка",
+        "Сиденье ПП#2 — Обивка сиденья",
+        "Сиденье ПП#2 — Вставка",
+        "Сиденье ПП#2 — Кнопки задние",
+        "Сиденье ПП#2 — Звёздное небо",
+        "Центральный экран#2 — Рамка экрана",
+        "Центральный экран#2 — Доп. дисплей",
+        "Центральный экран#2 — Мультимедиа",
+        "Зеркало салонное#2 — Отделка",
+        "Зеркало салонное#2 — Зеркальный элемент",
+        "Индикаторы приборов 2#2 — Инд. давление",
+        "Индикаторы приборов 2#2 — Инд. ABS",
+        "Индикаторы приборов 2#2 — Инд. ПТФ",
+        "Индикаторы приборов 2#2 — Инд. масло",
+        "Индикаторы приборов 2#2 — Инд. температура",
+        "Индикаторы приборов 2#2 — Инд. задний ПТФ",
+        "Индикаторы приборов#2 — Инд. ручник",
+        "Индикаторы приборов#2 — Инд. топливо",
+        "Индикаторы приборов#2 — Инд. дальний свет",
+        "Индикаторы приборов#2 — Инд. ближний свет",
+        "Индикаторы приборов#2 — Инд. ESC",
+        "Индикаторы приборов#2 — Инд. TCS",
+        "Бампер задний#2 — Кнопки",
+        "Кузов (интерьер) 2#2 — Ковролин",
+        "Кузов (интерьер)#2 — Кожаная вставка",
+        "Кузов (интерьер)#2 — Кнопки",
+        "Кузов (интерьер)#2 — Ковролин",
+        "Кузов (интерьер)#2 — Обивка",
+        "Кузов (интерьер)#2 — Потолок",
+        "Кузов (интерьер)#2 — Кнопка аварийки"
+      ]
+    },
+    "B1501": {
+      "code": "B1501",
+      "description_ru": "Неисправность левого зеркала",
+      "description_en": "Left Mirror System",
+      "severity": "info",
+      "possibleCauses": [
+        "Неисправность электропривода складывания",
+        "Ошибка обогрева"
+      ],
+      "procedures": [
+        "Проверка электропривода",
+        "Проверка обогрева"
+      ],
+      "manualSections": [
+        "1-21"
+      ],
+      "components": [
+        "Номерной знак задний#2",
+        "Номерной знак передний#2",
+        "Рамка номера#2",
+        "Надпись \"+\"#2",
+        "Надпись \"D\"#2",
+        "Надпись хром#2",
+        "Надпись чёрная#2",
+        "Зеркало левое#2 — Панель",
+        "Зеркало левое#2 — Молдинг",
+        "Зеркало левое#2 — Обшивка",
+        "Зеркало левое#2 — Хром молдинг",
+        "Зеркало левое#2 — Зеркальный элемент",
+        "Зеркало левое#2 — Повторитель Л"
+      ]
+    },
+    "B1502": {
+      "code": "B1502",
+      "description_ru": "Неисправность правого зеркала",
+      "description_en": "Right Mirror System",
+      "severity": "info",
+      "possibleCauses": [
+        "Неисправность электропривода складывания"
+      ],
+      "procedures": [
+        "Проверка электропривода"
+      ],
+      "manualSections": [
+        "1-21"
+      ],
+      "components": [
+        "Номерной знак задний#2",
+        "Номерной знак передний#2",
+        "Рамка номера#2",
+        "Надпись \"+\"#2",
+        "Надпись \"D\"#2",
+        "Надпись хром#2",
+        "Надпись чёрная#2",
+        "Зеркало правое#2 — Панель",
+        "Зеркало правое#2 — Молдинг",
+        "Зеркало правое#2 — Обшивка",
+        "Зеркало правое#2 — Хром молдинг",
+        "Зеркало правое#2 — Зеркальный элемент",
+        "Зеркало правое#2 — Повторитель П"
+      ]
+    },
+    "C0035": {
+      "code": "C0035",
+      "description_ru": "Ошибка датчика скорости колеса ПЛ",
+      "description_en": "Wheel Speed Sensor FL Circuit",
+      "severity": "warning",
+      "possibleCauses": [
+        "Неисправность датчика ABS",
+        "Повреждение задающего кольца",
+        "Обрыв проводки"
+      ],
+      "procedures": [
+        "Проверка датчика ABS ПЛ",
+        "Осмотр задающего кольца",
+        "Проверка проводки"
+      ],
+      "manualSections": [
+        "1-34"
+      ],
+      "components": [
+        "Тормоз ПЛ",
+        "Тормоз ПП",
+        "Тормоз ЗЛ",
+        "Тормоз ЗП",
+        "Стойка передняя#2",
+        "Ступица задняя#2",
+        "Ступица передняя#2",
+        "Педаль тормоза#2",
+        "Стойка передняя (шир.)#2 — Накладка"
+      ]
+    },
+    "C0036": {
+      "code": "C0036",
+      "description_ru": "Ошибка датчика скорости колеса ПП",
+      "description_en": "Wheel Speed Sensor FR Circuit",
+      "severity": "warning",
+      "possibleCauses": [
+        "Неисправность датчика ABS",
+        "Повреждение задающего кольца"
+      ],
+      "procedures": [
+        "Проверка датчика ABS ПП"
+      ],
+      "manualSections": [
+        "1-34"
+      ],
+      "components": [
+        "Тормоз ПЛ",
+        "Тормоз ПП",
+        "Тормоз ЗЛ",
+        "Тормоз ЗП",
+        "Стойка передняя#2",
+        "Ступица задняя#2",
+        "Ступица передняя#2",
+        "Педаль тормоза#2",
+        "Стойка передняя (шир.)#2 — Накладка"
+      ]
+    },
+    "C0037": {
+      "code": "C0037",
+      "description_ru": "Ошибка датчика скорости колеса ЗЛ",
+      "description_en": "Wheel Speed Sensor RL Circuit",
+      "severity": "warning",
+      "possibleCauses": [
+        "Неисправность датчика ABS",
+        "Повреждение задающего кольца"
+      ],
+      "procedures": [
+        "Проверка датчика ABS ЗЛ"
+      ],
+      "manualSections": [
+        "1-34"
+      ],
+      "components": [
+        "Тормоз ПЛ",
+        "Тормоз ПП",
+        "Тормоз ЗЛ",
+        "Тормоз ЗП",
+        "Педаль тормоза#2"
+      ]
+    },
+    "C0038": {
+      "code": "C0038",
+      "description_ru": "Ошибка датчика скорости колеса ЗП",
+      "description_en": "Wheel Speed Sensor RR Circuit",
+      "severity": "warning",
+      "possibleCauses": [
+        "Неисправность датчика ABS",
+        "Повреждение задающего кольца"
+      ],
+      "procedures": [
+        "Проверка датчика ABS ЗП"
+      ],
+      "manualSections": [
+        "1-34"
+      ],
+      "components": [
+        "Тормоз ПЛ",
+        "Тормоз ПП",
+        "Тормоз ЗЛ",
+        "Тормоз ЗП",
+        "Педаль тормоза#2"
+      ]
+    },
+    "C0040": {
+      "code": "C0040",
+      "description_ru": "Ошибка датчика скорости колеса ПЛ (диапазон)",
+      "description_en": "Wheel Speed Sensor FL Range/Performance",
+      "severity": "warning",
+      "possibleCauses": [
+        "Загрязнение датчика",
+        "Люфт ступичного подшипника"
+      ],
+      "procedures": [
+        "Очистка датчика",
+        "Проверка ступичного подшипника"
+      ],
+      "manualSections": [
+        "1-34"
+      ],
+      "components": [
+        "Тормоз ПЛ"
+      ]
+    },
+    "C0041": {
+      "code": "C0041",
+      "description_ru": "Ошибка датчика скорости колеса ПП (диапазон)",
+      "description_en": "Wheel Speed Sensor FR Range/Performance",
+      "severity": "warning",
+      "possibleCauses": [
+        "Загрязнение датчика"
+      ],
+      "procedures": [
+        "Очистка датчика"
+      ],
+      "manualSections": [
+        "1-34"
+      ],
+      "components": [
+        "Тормоз ПП"
+      ]
+    },
+    "C0042": {
+      "code": "C0042",
+      "description_ru": "Ошибка датчика скорости колеса ЗЛ (диапазон)",
+      "description_en": "Wheel Speed Sensor RL Range/Performance",
+      "severity": "warning",
+      "possibleCauses": [
+        "Загрязнение датчика"
+      ],
+      "procedures": [
+        "Очистка датчика"
+      ],
+      "manualSections": [
+        "1-34"
+      ],
+      "components": [
+        "Тормоз ЗЛ"
+      ]
+    },
+    "C0043": {
+      "code": "C0043",
+      "description_ru": "Ошибка датчика скорости колеса ЗП (диапазон)",
+      "description_en": "Wheel Speed Sensor RR Range/Performance",
+      "severity": "warning",
+      "possibleCauses": [
+        "Загрязнение датчика"
+      ],
+      "procedures": [
+        "Очистка датчика"
+      ],
+      "manualSections": [
+        "1-34"
+      ],
+      "components": [
+        "Тормоз ЗП"
+      ]
+    },
+    "C0500": {
+      "code": "C0500",
+      "description_ru": "Неисправность рулевого управления",
+      "description_en": "Steering System Malfunction",
+      "severity": "critical",
+      "possibleCauses": [
+        "Неисправность ЭУР",
+        "Ошибка датчика угла поворота"
+      ],
+      "procedures": [
+        "Диагностика ЭУР",
+        "Проверка датчика угла поворота руля"
+      ],
+      "manualSections": [
+        "1-21"
+      ],
+      "components": [
+        "Подрулевой лепесток П#2",
+        "Подрулевой лепесток Л#2",
+        "Пневмоподвеска#2",
+        "Рулевая тяга З (шир.)#2",
+        "Рулевая тяга задняя#2",
+        "Рулевая тяга П (шир.)#2",
+        "Рулевая тяга передняя#2",
+        "Рулевой механизм#2",
+        "Руль (экран)#2",
+        "Руль (альт.)#2 — Приборная панель",
+        "Руль (альт.)#2 — Обшивка",
+        "Руль (альт.)#2 — Отделка",
+        "Руль (альт.)#2 — Спидометр",
+        "Руль (альт.)#2 — Дисплей руля",
+        "Руль (альт.)#2 — Накладка руля",
+        "Руль#2 — Приборная панель",
+        "Руль#2 — Обшивка",
+        "Руль#2 — Отделка",
+        "Руль#2 — Спидометр",
+        "Руль#2 — Дисплей руля",
+        "Руль#2 — Накладка руля",
+        "Подрулевой переключатель#2 — Накладка",
+        "Подрулевой переключатель#2 — Обшивка",
+        "Подрулевой переключатель#2 — Кнопки руля"
+      ]
+    },
+    "C0550": {
+      "code": "C0550",
+      "description_ru": "Неисправность блока управления шасси",
+      "description_en": "ECU Malfunction (Chassis)",
+      "severity": "critical",
+      "possibleCauses": [
+        "Ошибка ЭБУ подвески",
+        "Сбой программного обеспечения"
+      ],
+      "procedures": [
+        "Перезагрузка ЭБУ",
+        "Обновление ПО",
+        "Замена ЭБУ при необходимости"
+      ],
+      "manualSections": [
+        "1-34"
+      ],
+      "components": [
+        "Полуось задняя#2",
+        "Пневмоподвеска#2",
+        "Верхний рычаг З (шир.)#2",
+        "Верхний рычаг задний#2",
+        "Стабилизатор З (шир.)#2",
+        "Стабилизатор задний#2",
+        "Стабилизатор П (шир.)#2",
+        "Стабилизатор передний#2",
+        "Подрамник задний (шир.)#2",
+        "Подрамник задний#2",
+        "Подрамник передний#2",
+        "Пружина задняя (шир.)#2",
+        "Пружина задняя#2",
+        "Амортизатор З (шир.)#2",
+        "Амортизатор задний#2",
+        "Нижний рычаг З (шир.)#2",
+        "Нижний рычаг задний#2",
+        "Нижний рычаг ПБ (шир.)#2",
+        "Нижний рычаг ПБ#2",
+        "Нижний рычаг ПА (шир.)#2",
+        "Полуось передняя#2",
+        "Стойка передняя (шир.)#2 — Рычаг"
+      ]
+    },
+    "P0171": {
+      "code": "P0171",
+      "description_ru": "Бедная топливная смесь",
+      "description_en": "System Too Lean",
+      "severity": "warning",
+      "possibleCauses": [
+        "Утечка воздуха",
+        "Неисправность MAF-датчика",
+        "Низкое давление топлива"
+      ],
+      "procedures": [
+        "Проверка герметичности впуска",
+        "Проверка MAF-датчика",
+        "Проверка давления топлива"
+      ],
+      "manualSections": [
+        "1-13"
+      ],
+      "components": [
+        "Впускной коллектор I4#2",
+        "Топливный бак#2",
+        "Двигатель I4#2",
+        "Крепление э/мотора#2",
+        "Лючок бака#2 — Панель",
+        "Лючок бака#2 — Накладка",
+        "Индикаторы приборов#2 — Инд. Check Engine",
+        "Кузов#2 — Лючок бака"
+      ]
+    },
+    "P0300": {
+      "code": "P0300",
+      "description_ru": "Множественные пропуски зажигания",
+      "description_en": "Random/Multiple Cylinder Misfire",
+      "severity": "warning",
+      "possibleCauses": [
+        "Неисправность свечей зажигания",
+        "Проблемы топливной системы",
+        "Утечка вакуума"
+      ],
+      "procedures": [
+        "Проверка свечей зажигания",
+        "Проверка форсунок",
+        "Проверка компрессии"
+      ],
+      "manualSections": [
+        "1-13"
+      ],
+      "components": [
+        "Топливный бак#2",
+        "Двигатель I4#2",
+        "Крепление э/мотора#2",
+        "Лючок бака#2 — Панель",
+        "Лючок бака#2 — Накладка",
+        "Индикаторы приборов#2 — Инд. Check Engine",
+        "Кузов#2 — Лючок бака"
+      ]
+    },
+    "P0420": {
+      "code": "P0420",
+      "description_ru": "Низкая эффективность каталитического нейтрализатора",
+      "description_en": "Catalyst System Efficiency Below Threshold",
+      "severity": "warning",
+      "possibleCauses": [
+        "Износ катализатора",
+        "Неисправность лямбда-зонда"
+      ],
+      "procedures": [
+        "Проверка лямбда-зондов",
+        "Замена катализатора при необходимости"
+      ],
+      "manualSections": [
+        "1-11"
+      ],
+      "components": [
+        "Выхлоп I4 1.5 бензин#2",
+        "Выхлопная труба#2",
+        "Выхлопная система#2"
+      ]
+    },
+    "P0430": {
+      "code": "P0430",
+      "description_ru": "Низкая эффективность каталитического нейтрализатора (банк 2)",
+      "description_en": "Catalyst System Efficiency Below Threshold (Bank 2)",
+      "severity": "warning",
+      "possibleCauses": [
+        "Износ катализатора",
+        "Неисправность лямбда-зонда"
+      ],
+      "procedures": [
+        "Проверка лямбда-зондов",
+        "Замена катализатора при необходимости"
+      ],
+      "manualSections": [
+        "1-11"
+      ],
+      "components": [
+        "Выхлоп I4 1.5 бензин#2",
+        "Выхлопная труба#2",
+        "Выхлопная система#2"
+      ]
+    },
+    "P0A09": {
+      "code": "P0A09",
+      "description_ru": "Неисправность DC/DC преобразователя",
+      "description_en": "DC/DC Converter Status Circuit",
+      "severity": "warning",
+      "possibleCauses": [
+        "Перегрузка преобразователя",
+        "Неисправность контура управления"
+      ],
+      "procedures": [
+        "Проверка напряжения выхода DC/DC",
+        "Проверка цепей управления"
+      ],
+      "manualSections": [
+        "1-35"
+      ],
+      "components": [
+        "Проводка э/мотора#2",
+        "Проводка батареи#2"
+      ]
+    },
+    "P0A0F": {
+      "code": "P0A0F",
+      "description_ru": "Ошибка запуска двигателя",
+      "description_en": "Engine Failed to Start",
+      "severity": "critical",
+      "possibleCauses": [
+        "Разряд 12В аккумулятора",
+        "Неисправность стартера",
+        "Блокировка иммобилайзера"
+      ],
+      "procedures": [
+        "Проверка заряда 12В АКБ",
+        "Диагностика стартера",
+        "Проверка иммобилайзера"
+      ],
+      "manualSections": [
+        "1-13"
+      ],
+      "components": [
+        "Двигатель I4#2",
+        "Индикаторы приборов#2 — Инд. Check Engine"
+      ]
+    },
+    "P0A1A": {
+      "code": "P0A1A",
+      "description_ru": "Ошибка датчика скорости э/мотора",
+      "description_en": "Motor/Generator Speed Sensor",
+      "severity": "warning",
+      "possibleCauses": [
+        "Неисправность датчика",
+        "Обрыв проводки",
+        "Ошибка контроллера"
+      ],
+      "procedures": [
+        "Проверка датчика скорости",
+        "Проверка проводки э/мотора"
+      ],
+      "manualSections": [
+        "1-13"
+      ],
+      "components": [
+        "Электромотор задний#2",
+        "Электромотор передний#2"
+      ]
+    },
+    "P0A7F": {
+      "code": "P0A7F",
+      "description_ru": "Износ тяговой батареи",
+      "description_en": "Hybrid Battery Pack Deterioration",
+      "severity": "warning",
+      "possibleCauses": [
+        "Естественный износ",
+        "Неправильная зарядка",
+        "Высокие температуры"
+      ],
+      "procedures": [
+        "Проверка ёмкости батареи",
+        "Контроль температурного режима"
+      ],
+      "manualSections": [
+        "1-35"
+      ],
+      "components": [
+        "Проводка батареи#2",
+        "Охлаждение батареи#2",
+        "Батарея ВН#2",
+        "Радиатор#2 — Отделка",
+        "Радиатор#2 — Каркас"
+      ]
+    },
+    "P0A80": {
+      "code": "P0A80",
+      "description_ru": "Замена тяговой батареи",
+      "description_en": "Replace Hybrid Battery Pack",
+      "severity": "critical",
+      "possibleCauses": [
+        "Деградация ячеек батареи",
+        "Внутреннее замыкание",
+        "Перегрев"
+      ],
+      "procedures": [
+        "Диагностика состояния ячеек",
+        "Проверка системы охлаждения батареи"
+      ],
+      "manualSections": [
+        "1-35"
+      ],
+      "components": [
+        "Проводка батареи#2",
+        "Охлаждение батареи#2",
+        "Батарея ВН#2",
+        "Лючок зарядки#2 — Панель",
+        "Лючок зарядки#2 — Накладка"
+      ]
+    },
+    "P0AA6": {
+      "code": "P0AA6",
+      "description_ru": "Нарушение изоляции ВВ системы",
+      "description_en": "Hybrid Battery Voltage System Isolation Fault",
+      "severity": "critical",
+      "possibleCauses": [
+        "Повреждение изоляции кабеля",
+        "Попадание влаги",
+        "Механическое повреждение"
+      ],
+      "procedures": [
+        "Проверка сопротивления изоляции",
+        "Осмотр ВВ проводки"
+      ],
+      "manualSections": [
+        "1-35"
+      ],
+      "components": [
+        "Проводка э/мотора#2",
+        "Проводка батареи#2",
+        "Охлаждение батареи#2",
+        "Батарея ВН#2"
+      ]
+    },
+    "P3000": {
+      "code": "P3000",
+      "description_ru": "Неисправность системы тяговой батареи",
+      "description_en": "Hybrid Battery System",
+      "severity": "critical",
+      "possibleCauses": [
+        "Ошибка BMS",
+        "Ошибка связи с батареей",
+        "Неисправность ячейки"
+      ],
+      "procedures": [
+        "Считывание кодов BMS",
+        "Проверка высоковольтных соединений"
+      ],
+      "manualSections": [
+        "1-35"
+      ],
+      "components": [
+        "Проводка батареи#2",
+        "Охлаждение батареи#2",
+        "Батарея ВН#2",
+        "Лючок зарядки#2 — Панель",
+        "Лючок зарядки#2 — Накладка"
+      ]
+    },
+    "U0100": {
+      "code": "U0100",
+      "description_ru": "Потеря связи с ECM/PCM",
+      "description_en": "Lost Communication with ECM/PCM",
+      "severity": "critical",
+      "possibleCauses": [
+        "Обрыв CAN-шины",
+        "Неисправность ECM",
+        "Повреждение проводки"
+      ],
+      "procedures": [
+        "Проверка CAN-шины",
+        "Проверка разъёмов ECM"
+      ],
+      "manualSections": [
+        "1-16"
+      ],
+      "components": [
+        "Блок управления#2",
+        "Руль (альт.)#2 — Приборная панель",
+        "Руль#2 — Приборная панель",
+        "Приборная панель (экраны)#2 — Спидометр",
+        "Приборная панель (экраны)#2 — HUD проекция",
+        "Приборная панель (экраны)#2 — Дисплей",
+        "Приборная панель#2 — Накладка",
+        "Приборная панель#2 — Обшивка",
+        "Приборная панель#2 — Кожаная вставка",
+        "Приборная панель#2 — Отделка",
+        "Приборная панель#2 — Кнопки задние",
+        "Приборная панель#2 — Резиновая накладка",
+        "Приборная панель#2 — Кнопки руля"
+      ]
+    },
+    "U0155": {
+      "code": "U0155",
+      "description_ru": "Потеря связи с модулем фар",
+      "description_en": "Lost Communication with Headlight Module",
+      "severity": "warning",
+      "possibleCauses": [
+        "Обрыв CAN-шины к модулю фар"
+      ],
+      "procedures": [
+        "Проверка проводки к модулю фар"
+      ],
+      "manualSections": [
+        "1-32"
+      ],
+      "components": [
+        "Блок управления#2"
+      ]
+    }
+  }
+}

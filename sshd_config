@@ -1,0 +1,8 @@
+Port 22
+PasswordAuthentication yes
+PubkeyAuthentication yes
+AuthorizedKeysFile .ssh/authorized_keys
+Subsystem sftp sftp-server.exe
+Match Group administrators
+    AuthorizedKeysFile PROGRAMDATA/ssh/administrators_authorized_keys
+    PasswordAuthentication yes

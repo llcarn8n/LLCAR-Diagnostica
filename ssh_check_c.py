@@ -1,0 +1,25 @@
+import paramiko, sys
+sys.stdout.reconfigure(encoding='utf-8')
+
+ssh = paramiko.SSHClient()
+ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
+ssh.connect('192.168.50.2', username='baza', password='Llcar2024!',
+            timeout=10, allow_agent=False, look_for_keys=False)
+
+cmds = [
+    'dir C:\\Users\\BAZA /w',
+    'dir C:\\Users\\BAZA\\Desktop /w',
+    'if exist D:\\LLCAR-Transfer\\scripts dir D:\\LLCAR-Transfer\\scripts /w',
+    'if exist D:\\LLCAR-Transfer\\knowledge-base dir D:\\LLCAR-Transfer\\knowledge-base /w',
+    'if exist D:\\LLCAR-Transfer\\mineru-output dir /s /b D:\\LLCAR-Transfer\\mineru-output\\*.jpg 2>&1 | find /c ".jpg"',
+]
+for cmd in cmds:
+    stdin, stdout, stderr = ssh.exec_command(cmd, timeout=15)
+    out = stdout.read().decode('utf-8', errors='replace').strip()
+    err = stderr.read().decode('utf-8', errors='replace').strip()
+    print(f'=== {cmd} ===')
+    if out: print(out)
+    if err: print(f'ERR: {err}')
+    print()
+
+ssh.close()

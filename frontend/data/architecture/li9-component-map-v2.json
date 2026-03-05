@@ -1,0 +1,4388 @@
+{
+  "vehicle": "Li Auto L9 (2024)",
+  "source_glb": "Li9_unified.glb",
+  "coordinate_system": "Y-up",
+  "statistics": {
+    "total_nodes": 158,
+    "total_meshes": 142,
+    "total_materials": 73,
+    "total_textures": 28,
+    "file_size_mb": 8.6
+  },
+  "schema_version": "2.0",
+  "layer_system": "8-layer",
+  "remapping_source": "layer-definitions.json v1.0",
+  "systemColors": {
+    "body": {
+      "normal": "#4FC3F7",
+      "warning": "#FFAA00",
+      "critical": "#FF0000"
+    },
+    "engine": {
+      "normal": "#FF7043",
+      "warning": "#FFAA00",
+      "critical": "#FF0000"
+    },
+    "drivetrain": {
+      "normal": "#AB47BC",
+      "warning": "#FFAA00",
+      "critical": "#FF0000"
+    },
+    "ev": {
+      "normal": "#66BB6A",
+      "warning": "#FFAA00",
+      "critical": "#FF0000"
+    },
+    "brakes": {
+      "normal": "#EF5350",
+      "warning": "#FFAA00",
+      "critical": "#FF0000"
+    },
+    "sensors": {
+      "normal": "#FFA726",
+      "warning": "#FFAA00",
+      "critical": "#FF0000"
+    },
+    "hvac": {
+      "normal": "#26C6DA",
+      "warning": "#FFAA00",
+      "critical": "#FF0000"
+    },
+    "interior": {
+      "normal": "#8D6E63",
+      "warning": "#FFAA00",
+      "critical": "#FF0000"
+    }
+  },
+  "systems": {
+    "body": {
+      "systemId": "body",
+      "label": {
+        "en": "Body & Frame",
+        "ru": "Силовой кузов",
+        "zh": "车身与车架",
+        "ar": "الهيكل والإطار",
+        "es": "Carrocería y bastidor"
+      },
+      "color": "#4FC3F7",
+      "component_ids": [
+        "nissangtr_chiferki",
+        "li9_krilia",
+        "li9_bumperbar_F",
+        "li9_reinforcement_F",
+        "li9_underbody_cladding",
+        "li9_heatshield",
+        "li9_tubs",
+        "li9_dno",
+        "li9_lettering_854",
+        "li9_taillightglass_R",
+        "li9_headlightglass",
+        "li9_headlight",
+        "li9_mirror_R",
+        "li9_mirror_L",
+        "chassis.006",
+        "bodyshell.005",
+        "li9_taillightglass_L",
+        "li9_bumper_R_a",
+        "bodyshell.009",
+        "li9_bumper_F_b",
+        "li9_fender_R",
+        "li9_fender_L",
+        "li9_hood",
+        "ycd1.001",
+        "ycd1",
+        "li9_tailgateglass",
+        "li9_windshield",
+        "li9_doorglass_RR",
+        "li9_sideglass_R",
+        "li9_doorglass_FR",
+        "li9_doorglass_RL",
+        "li9_sideglass_L",
+        "li9_doorglass_FL",
+        "li9_taillight_euro_L",
+        "Surfacefg",
+        "landstalker2_grill_b_ng.012",
+        "landstalker2_grill_b_ng.011",
+        "landstalker2_grill_b_ng.010",
+        "landstalker2_grill_b_ng.009",
+        "landstalker2_grill_b_ng.002",
+        "landstalker2_grill_b_ng.001",
+        "landstalker2_grill_b_ng",
+        "li9_taillight_euro_R",
+        "extra_4.004",
+        "li9_door_RR",
+        "li9_door_FR",
+        "door_pside_f.007",
+        "door_pside_f.005",
+        "li9_door_RL",
+        "door_dside_r",
+        "li9_door_FL",
+        "chassis.017",
+        "chassis.013",
+        "chassis.011",
+        "chassis.010",
+        "chassis.009",
+        "chassis.008",
+        "chassis.005",
+        "li9_tailgatelightglass",
+        "li9_tailgatelight",
+        "li9_tailgate",
+        "bodyshell.003",
+        "bodyshell.001",
+        "li9_body",
+        "body4.011",
+        "body4.010",
+        "body4.009",
+        "body4.008",
+        "body4.006",
+        "body4.005",
+        "body4.003",
+        "body4",
+        "body3.003",
+        "body3.002",
+        "body2.003",
+        "body2.001"
+      ]
+    },
+    "engine": {
+      "systemId": "engine",
+      "label": {
+        "en": "Engine, Fuel, Air & Exhaust",
+        "ru": "Двигатель, топливо, воздух и выхлоп",
+        "zh": "发动机、燃油、进气与排气",
+        "ar": "المحرك والوقود والهواء والعادم",
+        "es": "Motor, combustible, aire y escape"
+      },
+      "color": "#FF7043",
+      "component_ids": [
+        "li9_engine_v8",
+        "li9_transmission",
+        "li9_fueltank",
+        "li9_exhaust_R",
+        "li9_exhaust_L_b",
+        "li9_exhaust_L",
+        "li9_emotor_mount",
+        "li9_Дроссельная_заслонка"
+      ]
+    },
+    "drivetrain": {
+      "systemId": "drivetrain",
+      "label": {
+        "en": "Drivetrain & Suspension",
+        "ru": "Привод и подвеска",
+        "zh": "传动系统与悬架",
+        "ar": "نظام الدفع والتعليق",
+        "es": "Tren motriz y suspensión"
+      },
+      "color": "#AB47BC",
+      "component_ids": [
+        "x5mf95racing_diff_F",
+        "li9_upperarm_R",
+        "li9_transfercase",
+        "li9_swaybar_R",
+        "li9_swaybar_F",
+        "li9_subframe_R",
+        "li9_subframe_F",
+        "li9_strut_F",
+        "li9_spring_R",
+        "li9_shock_R",
+        "li9_lowerarm_R",
+        "li9_lowerarm_F_b",
+        "li9_lowerarm_F_a",
+        "li9_hub_R",
+        "li9_hub_F",
+        "li9_halfshaft_R",
+        "li9_halfshaft_F",
+        "li9_driveshaft_F",
+        "li9_driveshaft",
+        "li9_diff",
+        "li9_diff_F",
+        "li9_prorabot_2",
+        "li9_wheel",
+        "_wheel_lf_.005",
+        "hub_lf",
+        "_wheel_lf_.004",
+        "_wheel_lf_.003",
+        "li9_wheel_FR",
+        "li9_wheel_RL",
+        "li9_wheel_RR",
+        "_wheel_lf_.005_FR",
+        "_wheel_lf_.005_RL",
+        "_wheel_lf_.005_RR",
+        "_wheel_lf_.004_FR",
+        "_wheel_lf_.004_RL",
+        "_wheel_lf_.004_RR",
+        "_wheel_lf_.003_FR",
+        "_wheel_lf_.003_RL",
+        "_wheel_lf_.003_RR",
+        "hub_lf_FR",
+        "hub_lf_RL",
+        "hub_lf_RR",
+        "li9_air_suspension"
+      ]
+    },
+    "ev": {
+      "systemId": "ev",
+      "label": {
+        "en": "EV Electrical: Charging, Inverters, Motors, Regen",
+        "ru": "Электрика: зарядка, инверторы, электромоторы, рекуперация",
+        "zh": "电气系统：充电、逆变器、电机、能量回收",
+        "ar": "الكهربائي: الشحن، العواكس، المحركات، الاسترداد",
+        "es": "Sistema eléctrico: carga, inversores, motores, regeneración"
+      },
+      "color": "#66BB6A",
+      "component_ids": [
+        "li9_battery",
+        "li9_emotor_f",
+        "li9_emotor_r",
+        "li9_wiring_battery",
+        "li9_wiring_emotor"
+      ]
+    },
+    "brakes": {
+      "systemId": "brakes",
+      "label": {
+        "en": "Steering & Braking System",
+        "ru": "Рулевое управление и тормозная система",
+        "zh": "转向与制动系统",
+        "ar": "نظام التوجيه والفرامل",
+        "es": "Dirección y sistema de frenos"
+      },
+      "color": "#EF5350",
+      "component_ids": [
+        "li9_tierod_R",
+        "li9_tierod_F",
+        "li9_steeringbox",
+        "li9_steer",
+        "li9_brake_FL",
+        "li9_brake_FR",
+        "li9_brake_RL",
+        "li9_brake_RR"
+      ]
+    },
+    "sensors": {
+      "systemId": "sensors",
+      "label": {
+        "en": "Sensors & ADAS",
+        "ru": "Датчики и системы помощи водителю (ADAS)",
+        "zh": "传感器与高级驾驶辅助",
+        "ar": "المستشعرات وأنظمة مساعدة السائق",
+        "es": "Sensores y ADAS"
+      },
+      "color": "#FFA726",
+      "component_ids": [
+        "li9_xcu",
+        "li9_hu"
+      ]
+    },
+    "hvac": {
+      "systemId": "hvac",
+      "label": {
+        "en": "HVAC & Thermal Management",
+        "ru": "Климат-контроль и терморегулирование",
+        "zh": "空调与热管理",
+        "ar": "التكييف والإدارة الحرارية",
+        "es": "Climatización y gestión térmica"
+      },
+      "color": "#26C6DA",
+      "component_ids": [
+        "li9_radiator",
+        "li9_battery_cooling"
+      ]
+    },
+    "interior": {
+      "systemId": "interior",
+      "label": {
+        "en": "Doors, Trunk & Interior",
+        "ru": "Двери, багажник и салон",
+        "zh": "车门、后备箱与内饰",
+        "ar": "الأبواب والصندوق والمقصورة",
+        "es": "Puertas, maletero e interior"
+      },
+      "color": "#8D6E63",
+      "component_ids": [
+        "li9_seat_FR",
+        "li9_seat_FL",
+        "seat2.005",
+        "seat2.003",
+        "li9_seats_R",
+        "seat1",
+        "li9_doorpanel_RR",
+        "li9_doorpanel_FR",
+        "li9_doorpanel_RL",
+        "li9_doorpanel_FL",
+        "li9_dash",
+        "li9_salon",
+        "li9_center_screen"
+      ]
+    }
+  },
+  "components": {
+    "nissangtr_chiferki": {
+      "meshName": "nissangtr_chiferki",
+      "system": "body",
+      "displayName": "Накладки кузова",
+      "dtcCodes": [
+        "B1011",
+        "B1012"
+      ],
+      "manualSections": [
+        "1-19",
+        "1-38"
+      ],
+      "selectable": true,
+      "xray_transparent": true,
+      "layer_num": 8,
+      "parentNode": "Li9",
+      "layer": "body",
+      "glossary_id": "body_trim_moulding@body"
+    },
+    "li9_krilia": {
+      "meshName": "li9_krilia",
+      "system": "body",
+      "displayName": "Подкрылки",
+      "dtcCodes": [
+        "B1011",
+        "B1012"
+      ],
+      "manualSections": [
+        "1-19",
+        "1-38"
+      ],
+      "selectable": true,
+      "xray_transparent": true,
+      "layer_num": 8,
+      "parentNode": "Li9",
+      "layer": "body",
+      "glossary_id": "fender_liner@body"
+    },
+    "li9_bumperbar_F": {
+      "meshName": "li9_bumperbar_F",
+      "system": "body",
+      "displayName": "Усилитель бампера передний",
+      "dtcCodes": [
+        "B1011",
+        "B1012"
+      ],
+      "manualSections": [
+        "1-19",
+        "1-38"
+      ],
+      "selectable": true,
+      "xray_transparent": true,
+      "layer_num": 8,
+      "parentNode": "Li9",
+      "layer": "body",
+      "glossary_id": "bumper_reinforcement@body"
+    },
+    "li9_radiator": {
+      "meshName": "li9_radiator",
+      "system": "energy",
+      "displayName": "Радиатор",
+      "dtcCodes": [
+        "P0A7F"
+      ],
+      "manualSections": [
+        "1-35"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 2,
+      "parentNode": "Li9",
+      "layer": "hvac",
+      "glossary_id": "radiator@hvac"
+    },
+    "li9_reinforcement_F": {
+      "meshName": "li9_reinforcement_F",
+      "system": "body",
+      "displayName": "Усиление передней части",
+      "dtcCodes": [
+        "B1011",
+        "B1012"
+      ],
+      "manualSections": [
+        "1-19",
+        "1-38"
+      ],
+      "selectable": true,
+      "xray_transparent": true,
+      "layer_num": 8,
+      "parentNode": "Li9",
+      "layer": "body",
+      "glossary_id": "bumper_reinforcement@body"
+    },
+    "x5mf95racing_diff_F": {
+      "meshName": "x5mf95racing_diff_F",
+      "system": "chassis",
+      "displayName": "Передний дифференциал",
+      "dtcCodes": [
+        "C0550"
+      ],
+      "manualSections": [
+        "1-30",
+        "1-34"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 0,
+      "parentNode": "Li9",
+      "layer": "drivetrain",
+      "glossary_id": "differential@drivetrain"
+    },
+    "li9_engine_v8": {
+      "meshName": "li9_engine_v8",
+      "system": "powertrain",
+      "displayName": "Двигатель (увеличитель запаса хода)",
+      "dtcCodes": [
+        "P0171",
+        "P0300",
+        "P0A0F"
+      ],
+      "manualSections": [
+        "1-13"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 1,
+      "parentNode": "Li9",
+      "specs": {
+        "type": "1.5T I4 Range Extender",
+        "fuel": "АИ-95",
+        "fuel_tank_l": 65
+      },
+      "layer": "engine",
+      "glossary_id": "range_extender@engine"
+    },
+    "li9_transmission": {
+      "meshName": "li9_transmission",
+      "system": "powertrain",
+      "displayName": "Трансмиссия",
+      "dtcCodes": [
+        "P0700",
+        "P0715"
+      ],
+      "manualSections": [
+        "1-13",
+        "1-30"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 1,
+      "parentNode": "Li9",
+      "layer": "engine",
+      "glossary_id": "transmission_drivetrain_powertrain@engine"
+    },
+    "li9_upperarm_R": {
+      "meshName": "li9_upperarm_R",
+      "system": "chassis",
+      "displayName": "Верхний рычаг задний",
+      "dtcCodes": [
+        "C0550"
+      ],
+      "manualSections": [
+        "1-30",
+        "1-34"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 0,
+      "parentNode": "li9_diff_F",
+      "layer": "drivetrain",
+      "glossary_id": "rear_right_control_arm@drivetrain"
+    },
+    "li9_underbody_cladding": {
+      "meshName": "li9_underbody_cladding",
+      "system": "body",
+      "displayName": "Защита днища",
+      "dtcCodes": [
+        "B1011",
+        "B1012"
+      ],
+      "manualSections": [
+        "1-19",
+        "1-38"
+      ],
+      "selectable": true,
+      "xray_transparent": true,
+      "layer_num": 8,
+      "parentNode": "li9_diff_F",
+      "layer": "body",
+      "glossary_id": "underbody_cover@body"
+    },
+    "li9_transfercase": {
+      "meshName": "li9_transfercase",
+      "system": "chassis",
+      "displayName": "Раздаточная коробка",
+      "dtcCodes": [
+        "P0841"
+      ],
+      "manualSections": [
+        "1-30",
+        "1-34"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 0,
+      "parentNode": "li9_diff_F",
+      "layer": "drivetrain",
+      "glossary_id": "transfer_case@drivetrain"
+    },
+    "li9_tierod_R": {
+      "meshName": "li9_tierod_R",
+      "system": "chassis",
+      "displayName": "Рулевая тяга задняя",
+      "dtcCodes": [
+        "C0500"
+      ],
+      "manualSections": [
+        "1-30",
+        "1-34"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 0,
+      "parentNode": "li9_diff_F",
+      "layer": "brakes",
+      "glossary_id": "tie_rod@brakes"
+    },
+    "li9_tierod_F": {
+      "meshName": "li9_tierod_F",
+      "system": "chassis",
+      "displayName": "Рулевая тяга передняя",
+      "dtcCodes": [
+        "C0500"
+      ],
+      "manualSections": [
+        "1-30",
+        "1-34"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 0,
+      "parentNode": "li9_diff_F",
+      "layer": "brakes",
+      "glossary_id": "tie_rod@brakes"
+    },
+    "li9_swaybar_R": {
+      "meshName": "li9_swaybar_R",
+      "system": "chassis",
+      "displayName": "Стабилизатор задний",
+      "dtcCodes": [
+        "C0550"
+      ],
+      "manualSections": [
+        "1-30",
+        "1-34"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 0,
+      "parentNode": "li9_diff_F",
+      "layer": "drivetrain",
+      "glossary_id": "rear_anti_roll_bar@drivetrain"
+    },
+    "li9_swaybar_F": {
+      "meshName": "li9_swaybar_F",
+      "system": "chassis",
+      "displayName": "Стабилизатор передний",
+      "dtcCodes": [
+        "C0550"
+      ],
+      "manualSections": [
+        "1-30",
+        "1-34"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 0,
+      "parentNode": "li9_diff_F",
+      "layer": "drivetrain",
+      "glossary_id": "front_anti_roll_bar@drivetrain"
+    },
+    "li9_subframe_R": {
+      "meshName": "li9_subframe_R",
+      "system": "chassis",
+      "displayName": "Подрамник задний",
+      "dtcCodes": [
+        "C0550"
+      ],
+      "manualSections": [
+        "1-30",
+        "1-34"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 0,
+      "parentNode": "li9_diff_F",
+      "layer": "drivetrain",
+      "glossary_id": "subframe@drivetrain"
+    },
+    "li9_subframe_F": {
+      "meshName": "li9_subframe_F",
+      "system": "chassis",
+      "displayName": "Подрамник передний",
+      "dtcCodes": [
+        "C0550"
+      ],
+      "manualSections": [
+        "1-30",
+        "1-34"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 0,
+      "parentNode": "li9_diff_F",
+      "layer": "drivetrain",
+      "glossary_id": "subframe@drivetrain"
+    },
+    "li9_strut_F": {
+      "meshName": "li9_strut_F",
+      "system": "chassis",
+      "displayName": "Стойка передняя",
+      "dtcCodes": [
+        "C0035",
+        "C0036"
+      ],
+      "manualSections": [
+        "1-30",
+        "1-34"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 0,
+      "parentNode": "li9_diff_F",
+      "specs": {
+        "type": "Двухрычажная передняя подвеска"
+      },
+      "layer": "drivetrain",
+      "glossary_id": "strut@drivetrain"
+    },
+    "li9_steeringbox": {
+      "meshName": "li9_steeringbox",
+      "system": "chassis",
+      "displayName": "Рулевой механизм",
+      "dtcCodes": [
+        "C0500"
+      ],
+      "manualSections": [
+        "1-21"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 0,
+      "parentNode": "li9_diff_F",
+      "specs": {
+        "type": "Переменное усилие EPS"
+      },
+      "layer": "brakes",
+      "glossary_id": "steering_box@brakes"
+    },
+    "li9_spring_R": {
+      "meshName": "li9_spring_R",
+      "system": "chassis",
+      "displayName": "Пружина задняя",
+      "dtcCodes": [
+        "C0550"
+      ],
+      "manualSections": [
+        "1-30",
+        "1-34"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 0,
+      "parentNode": "li9_diff_F",
+      "layer": "drivetrain",
+      "glossary_id": "coil_spring@drivetrain"
+    },
+    "li9_shock_R": {
+      "meshName": "li9_shock_R",
+      "system": "chassis",
+      "displayName": "Амортизатор задний",
+      "dtcCodes": [
+        "C0550"
+      ],
+      "manualSections": [
+        "1-30",
+        "1-34"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 0,
+      "parentNode": "li9_diff_F",
+      "layer": "drivetrain",
+      "glossary_id": "shock_absorber_damper@drivetrain"
+    },
+    "li9_lowerarm_R": {
+      "meshName": "li9_lowerarm_R",
+      "system": "chassis",
+      "displayName": "Нижний рычаг задний",
+      "dtcCodes": [
+        "C0550"
+      ],
+      "manualSections": [
+        "1-30",
+        "1-34"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 0,
+      "parentNode": "li9_diff_F",
+      "layer": "drivetrain",
+      "glossary_id": "rear_left_control_arm@drivetrain"
+    },
+    "li9_lowerarm_F_b": {
+      "meshName": "li9_lowerarm_F_b",
+      "system": "chassis",
+      "displayName": "Нижний рычаг передний Б",
+      "dtcCodes": [
+        "C0550"
+      ],
+      "manualSections": [
+        "1-30",
+        "1-34"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 0,
+      "parentNode": "li9_diff_F",
+      "layer": "drivetrain",
+      "glossary_id": "front_right_control_arm@drivetrain"
+    },
+    "li9_lowerarm_F_a": {
+      "meshName": "li9_lowerarm_F_a",
+      "system": "chassis",
+      "displayName": "Нижний рычаг передний А",
+      "dtcCodes": [
+        "C0550"
+      ],
+      "manualSections": [
+        "1-30",
+        "1-34"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 0,
+      "parentNode": "li9_diff_F",
+      "layer": "drivetrain",
+      "glossary_id": "front_left_control_arm@drivetrain"
+    },
+    "li9_hub_R": {
+      "meshName": "li9_hub_R",
+      "system": "chassis",
+      "displayName": "Ступица задняя",
+      "dtcCodes": [
+        "C0035",
+        "C0036"
+      ],
+      "manualSections": [
+        "1-30",
+        "1-34"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 0,
+      "parentNode": "li9_diff_F",
+      "layer": "drivetrain",
+      "glossary_id": "wheel_hub_hub@drivetrain"
+    },
+    "li9_hub_F": {
+      "meshName": "li9_hub_F",
+      "system": "chassis",
+      "displayName": "Ступица передняя",
+      "dtcCodes": [
+        "C0035",
+        "C0036"
+      ],
+      "manualSections": [
+        "1-30",
+        "1-34"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 0,
+      "parentNode": "li9_diff_F",
+      "layer": "drivetrain",
+      "glossary_id": "wheel_hub_hub@drivetrain"
+    },
+    "li9_heatshield": {
+      "meshName": "li9_heatshield",
+      "system": "body",
+      "displayName": "Теплозащита",
+      "dtcCodes": [
+        "B1011",
+        "B1012"
+      ],
+      "manualSections": [
+        "1-19",
+        "1-38"
+      ],
+      "selectable": true,
+      "xray_transparent": true,
+      "layer_num": 8,
+      "parentNode": "li9_diff_F",
+      "layer": "body",
+      "glossary_id": "heat_shield@body"
+    },
+    "li9_halfshaft_R": {
+      "meshName": "li9_halfshaft_R",
+      "system": "chassis",
+      "displayName": "Полуось задняя",
+      "dtcCodes": [
+        "C0550"
+      ],
+      "manualSections": [
+        "1-30",
+        "1-34"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 0,
+      "parentNode": "li9_diff_F",
+      "layer": "drivetrain",
+      "glossary_id": "half_shaft_cv_axle@drivetrain"
+    },
+    "li9_halfshaft_F": {
+      "meshName": "li9_halfshaft_F",
+      "system": "chassis",
+      "displayName": "Полуось передняя",
+      "dtcCodes": [
+        "C0550"
+      ],
+      "manualSections": [
+        "1-30",
+        "1-34"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 0,
+      "parentNode": "li9_diff_F",
+      "layer": "drivetrain",
+      "glossary_id": "half_shaft_cv_axle@drivetrain"
+    },
+    "li9_fueltank": {
+      "meshName": "li9_fueltank",
+      "system": "powertrain",
+      "displayName": "Топливный бак",
+      "dtcCodes": [
+        "P0171",
+        "P0300"
+      ],
+      "manualSections": [
+        "1-13",
+        "1-30"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 1,
+      "parentNode": "li9_diff_F",
+      "layer": "engine",
+      "glossary_id": "fuel_tank@engine"
+    },
+    "li9_exhaust_R": {
+      "meshName": "li9_exhaust_R",
+      "system": "powertrain",
+      "displayName": "Выхлопная система правая",
+      "dtcCodes": [
+        "P0420",
+        "P0430"
+      ],
+      "manualSections": [
+        "1-11"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 1,
+      "parentNode": "li9_diff_F",
+      "layer": "engine",
+      "glossary_id": "exhaust_system@engine"
+    },
+    "li9_exhaust_L_b": {
+      "meshName": "li9_exhaust_L_b",
+      "system": "powertrain",
+      "displayName": "Выхлопная система левая Б",
+      "dtcCodes": [
+        "P0420",
+        "P0430"
+      ],
+      "manualSections": [
+        "1-11"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 1,
+      "parentNode": "li9_diff_F",
+      "layer": "engine",
+      "glossary_id": "exhaust_system@engine"
+    },
+    "li9_exhaust_L": {
+      "meshName": "li9_exhaust_L",
+      "system": "powertrain",
+      "displayName": "Выхлопная система левая",
+      "dtcCodes": [
+        "P0420",
+        "P0430"
+      ],
+      "manualSections": [
+        "1-11"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 1,
+      "parentNode": "li9_diff_F",
+      "layer": "engine",
+      "glossary_id": "exhaust_system@engine"
+    },
+    "li9_driveshaft_F": {
+      "meshName": "li9_driveshaft_F",
+      "system": "chassis",
+      "displayName": "Передний кардан",
+      "dtcCodes": [
+        "P0500"
+      ],
+      "manualSections": [
+        "1-30",
+        "1-34"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 0,
+      "parentNode": "li9_diff_F",
+      "layer": "drivetrain",
+      "glossary_id": "propeller_shaft@drivetrain"
+    },
+    "li9_driveshaft": {
+      "meshName": "li9_driveshaft",
+      "system": "chassis",
+      "displayName": "Задний кардан",
+      "dtcCodes": [
+        "P0500"
+      ],
+      "manualSections": [
+        "1-30",
+        "1-34"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 0,
+      "parentNode": "li9_diff_F",
+      "layer": "drivetrain",
+      "glossary_id": "propeller_shaft@drivetrain"
+    },
+    "li9_diff": {
+      "meshName": "li9_diff",
+      "system": "chassis",
+      "displayName": "Задний дифференциал",
+      "dtcCodes": [
+        "C0550"
+      ],
+      "manualSections": [
+        "1-30",
+        "1-34"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 0,
+      "parentNode": "li9_diff_F",
+      "layer": "drivetrain",
+      "glossary_id": "differential@drivetrain"
+    },
+    "li9_diff_F": {
+      "meshName": "li9_diff_F",
+      "system": "chassis",
+      "displayName": "Передний дифференциал (группа)",
+      "dtcCodes": [
+        "C0550"
+      ],
+      "manualSections": [
+        "1-30",
+        "1-34"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 0,
+      "parentNode": "Li9",
+      "childMeshes": [
+        "li9_upperarm_R",
+        "li9_underbody_cladding",
+        "li9_transfercase",
+        "li9_tierod_R",
+        "li9_tierod_F",
+        "li9_swaybar_R",
+        "li9_swaybar_F",
+        "li9_subframe_R",
+        "li9_subframe_F",
+        "li9_strut_F",
+        "li9_steeringbox",
+        "li9_spring_R",
+        "li9_shock_R",
+        "li9_lowerarm_R",
+        "li9_lowerarm_F_b",
+        "li9_lowerarm_F_a",
+        "li9_hub_R",
+        "li9_hub_F",
+        "li9_heatshield",
+        "li9_halfshaft_R",
+        "li9_halfshaft_F",
+        "li9_fueltank",
+        "li9_exhaust_R",
+        "li9_exhaust_L_b",
+        "li9_exhaust_L",
+        "li9_driveshaft_F",
+        "li9_driveshaft",
+        "li9_diff"
+      ],
+      "layer": "drivetrain",
+      "glossary_id": "differential@drivetrain"
+    },
+    "li9_prorabot_2": {
+      "meshName": "li9_prorabot_2",
+      "system": "body",
+      "displayName": "Подрамник (элемент)",
+      "dtcCodes": [
+        "B1011",
+        "B1012"
+      ],
+      "manualSections": [
+        "1-19",
+        "1-38"
+      ],
+      "selectable": true,
+      "xray_transparent": true,
+      "layer_num": 8,
+      "parentNode": "Li9",
+      "layer": "drivetrain",
+      "glossary_id": "subframe@drivetrain"
+    },
+    "li9_tubs": {
+      "meshName": "li9_tubs",
+      "system": "body",
+      "displayName": "Колёсные арки",
+      "dtcCodes": [
+        "B1011",
+        "B1012"
+      ],
+      "manualSections": [
+        "1-19",
+        "1-38"
+      ],
+      "selectable": true,
+      "xray_transparent": true,
+      "layer_num": 8,
+      "parentNode": "Li9",
+      "layer": "body",
+      "glossary_id": "wheel_arch_liner@body"
+    },
+    "li9_dno": {
+      "meshName": "li9_dno",
+      "system": "body",
+      "displayName": "Днище",
+      "dtcCodes": [
+        "B1011",
+        "B1012"
+      ],
+      "manualSections": [
+        "1-19",
+        "1-38"
+      ],
+      "selectable": true,
+      "xray_transparent": true,
+      "layer_num": 8,
+      "parentNode": "Li9",
+      "layer": "body",
+      "glossary_id": "floor_pan@body"
+    },
+    "li9_lettering_854": {
+      "meshName": "li9_lettering_854",
+      "system": "exterior",
+      "displayName": "Надпись модели",
+      "dtcCodes": [
+        "B1501",
+        "B1502"
+      ],
+      "manualSections": [
+        "1-10"
+      ],
+      "selectable": true,
+      "xray_transparent": true,
+      "layer_num": 7,
+      "parentNode": "Li9",
+      "layer": "body",
+      "glossary_id": "emblem@body"
+    },
+    "li9_seat_FR": {
+      "meshName": "li9_seat_FR",
+      "system": "interior",
+      "displayName": "Сиденье переднее правое",
+      "dtcCodes": [
+        "B1460"
+      ],
+      "manualSections": [
+        "1-20"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 4,
+      "parentNode": "Li9",
+      "layer": "interior",
+      "glossary_id": "front_seat@interior"
+    },
+    "li9_taillightglass_R": {
+      "meshName": "li9_taillightglass_R",
+      "system": "lighting",
+      "displayName": "Стекло заднего фонаря правого",
+      "dtcCodes": [
+        "B1260",
+        "B1261",
+        "B1262",
+        "B1263"
+      ],
+      "manualSections": [
+        "1-23"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 5,
+      "parentNode": "Li9",
+      "layer": "body",
+      "glossary_id": "tail_light_lens@body"
+    },
+    "li9_headlightglass": {
+      "meshName": "li9_headlightglass",
+      "system": "lighting",
+      "displayName": "Стекло фары",
+      "dtcCodes": [
+        "B1250"
+      ],
+      "manualSections": [
+        "1-23",
+        "1-32"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 5,
+      "parentNode": "Li9",
+      "layer": "body",
+      "glossary_id": "headlight_lens@body"
+    },
+    "li9_headlight": {
+      "meshName": "li9_headlight",
+      "system": "lighting",
+      "displayName": "Фара",
+      "dtcCodes": [
+        "B1250"
+      ],
+      "manualSections": [
+        "1-32"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 5,
+      "parentNode": "Li9",
+      "layer": "body",
+      "glossary_id": "headlight@body"
+    },
+    "li9_mirror_R": {
+      "meshName": "li9_mirror_R",
+      "system": "exterior",
+      "displayName": "Зеркало правое",
+      "dtcCodes": [
+        "B1502"
+      ],
+      "manualSections": [
+        "1-21"
+      ],
+      "selectable": true,
+      "xray_transparent": true,
+      "layer_num": 7,
+      "parentNode": "Li9",
+      "layer": "body",
+      "glossary_id": "wing_mirror_door_mirror_side_mirror@body"
+    },
+    "li9_mirror_L": {
+      "meshName": "li9_mirror_L",
+      "system": "exterior",
+      "displayName": "Зеркало левое",
+      "dtcCodes": [
+        "B1501"
+      ],
+      "manualSections": [
+        "1-21"
+      ],
+      "selectable": true,
+      "xray_transparent": true,
+      "layer_num": 7,
+      "parentNode": "Li9",
+      "layer": "body",
+      "glossary_id": "wing_mirror_door_mirror_side_mirror@body"
+    },
+    "li9_wheel": {
+      "meshName": "li9_wheel",
+      "system": "wheels",
+      "displayName": "Колесо ПЛ",
+      "dtcCodes": [],
+      "manualSections": [
+        "1-30",
+        "1-38"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 3,
+      "parentNode": "Li9",
+      "specs": {
+        "size": "21\"",
+        "options": "Silver-Grey / Black-Grey"
+      },
+      "layer": "drivetrain",
+      "glossary_id": "wheel@drivetrain"
+    },
+    "chassis.006": {
+      "meshName": "chassis.006",
+      "system": "body",
+      "displayName": "Элемент шасси",
+      "dtcCodes": [
+        "B1011",
+        "B1012"
+      ],
+      "manualSections": [
+        "1-19",
+        "1-38"
+      ],
+      "selectable": true,
+      "xray_transparent": true,
+      "layer_num": 8,
+      "parentNode": "Li9",
+      "layer": "body",
+      "glossary_id": "subframe@body"
+    },
+    "bodyshell.005": {
+      "meshName": "bodyshell.005",
+      "system": "body",
+      "displayName": "Элемент кузова",
+      "dtcCodes": [
+        "B1011",
+        "B1012"
+      ],
+      "manualSections": [
+        "1-19",
+        "1-38"
+      ],
+      "selectable": true,
+      "xray_transparent": true,
+      "layer_num": 8,
+      "parentNode": "Li9",
+      "layer": "body",
+      "glossary_id": "body_shell@body"
+    },
+    "li9_taillightglass_L": {
+      "meshName": "li9_taillightglass_L",
+      "system": "lighting",
+      "displayName": "Стекло заднего фонаря левого",
+      "dtcCodes": [
+        "B1260",
+        "B1262"
+      ],
+      "manualSections": [
+        "1-23"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 5,
+      "parentNode": "Li9",
+      "layer": "body",
+      "glossary_id": "tail_light_lens@body"
+    },
+    "li9_bumper_R_a": {
+      "meshName": "li9_bumper_R_a",
+      "system": "body",
+      "displayName": "Бампер задний",
+      "dtcCodes": [
+        "B1011",
+        "B1012"
+      ],
+      "manualSections": [
+        "1-19",
+        "1-38"
+      ],
+      "selectable": true,
+      "xray_transparent": true,
+      "layer_num": 8,
+      "parentNode": "Li9",
+      "layer": "body",
+      "glossary_id": "rear_bumper@body"
+    },
+    "bodyshell.009": {
+      "meshName": "bodyshell.009",
+      "system": "body",
+      "displayName": "Элемент кузова (задняя часть)",
+      "dtcCodes": [
+        "B1011",
+        "B1012"
+      ],
+      "manualSections": [
+        "1-19",
+        "1-38"
+      ],
+      "selectable": true,
+      "xray_transparent": true,
+      "layer_num": 8,
+      "parentNode": "Li9",
+      "layer": "body",
+      "glossary_id": "body_shell@body"
+    },
+    "li9_bumper_F_b": {
+      "meshName": "li9_bumper_F_b",
+      "system": "body",
+      "displayName": "Бампер передний",
+      "dtcCodes": [
+        "B1011",
+        "B1012"
+      ],
+      "manualSections": [
+        "1-19",
+        "1-38"
+      ],
+      "selectable": true,
+      "xray_transparent": true,
+      "layer_num": 8,
+      "parentNode": "Li9",
+      "layer": "body",
+      "glossary_id": "front_bumper@body"
+    },
+    "li9_fender_R": {
+      "meshName": "li9_fender_R",
+      "system": "body",
+      "displayName": "Крыло правое",
+      "dtcCodes": [
+        "B1011",
+        "B1012"
+      ],
+      "manualSections": [
+        "1-19",
+        "1-38"
+      ],
+      "selectable": true,
+      "xray_transparent": true,
+      "layer_num": 8,
+      "parentNode": "Li9",
+      "layer": "body",
+      "glossary_id": "fender_wing@body"
+    },
+    "li9_fender_L": {
+      "meshName": "li9_fender_L",
+      "system": "body",
+      "displayName": "Крыло левое",
+      "dtcCodes": [
+        "B1011",
+        "B1012"
+      ],
+      "manualSections": [
+        "1-19",
+        "1-38"
+      ],
+      "selectable": true,
+      "xray_transparent": true,
+      "layer_num": 8,
+      "parentNode": "Li9",
+      "layer": "body",
+      "glossary_id": "fender_wing@body"
+    },
+    "li9_seat_FL": {
+      "meshName": "li9_seat_FL",
+      "system": "interior",
+      "displayName": "Сиденье переднее левое",
+      "dtcCodes": [
+        "B1450"
+      ],
+      "manualSections": [
+        "1-20"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 4,
+      "parentNode": "Li9",
+      "layer": "interior",
+      "glossary_id": "front_seat@interior"
+    },
+    "li9_hood": {
+      "meshName": "li9_hood",
+      "system": "body",
+      "displayName": "Капот",
+      "dtcCodes": [
+        "B1011"
+      ],
+      "manualSections": [
+        "1-38"
+      ],
+      "selectable": true,
+      "xray_transparent": true,
+      "layer_num": 8,
+      "parentNode": "Li9",
+      "layer": "body",
+      "glossary_id": "bonnet_hood@body"
+    },
+    "_wheel_lf_.005": {
+      "meshName": "_wheel_lf_.005",
+      "system": "wheels",
+      "displayName": "Диск колеса ПЛ",
+      "dtcCodes": [],
+      "manualSections": [
+        "1-30",
+        "1-38"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 3,
+      "parentNode": "Li9",
+      "specs": {
+        "size": "21\"",
+        "options": "Silver-Grey / Black-Grey"
+      },
+      "layer": "drivetrain",
+      "glossary_id": "wheel@drivetrain"
+    },
+    "ycd1.001": {
+      "meshName": "ycd1.001",
+      "system": "body",
+      "displayName": "Задняя панель (элемент)",
+      "dtcCodes": [
+        "B1011",
+        "B1012"
+      ],
+      "manualSections": [
+        "1-19",
+        "1-38"
+      ],
+      "selectable": true,
+      "xray_transparent": true,
+      "layer_num": 8,
+      "parentNode": "Li9",
+      "layer": "body",
+      "glossary_id": "body_shell@body"
+    },
+    "ycd1": {
+      "meshName": "ycd1",
+      "system": "body",
+      "displayName": "Задняя панель",
+      "dtcCodes": [
+        "B1011",
+        "B1012"
+      ],
+      "manualSections": [
+        "1-19",
+        "1-38"
+      ],
+      "selectable": true,
+      "xray_transparent": true,
+      "layer_num": 8,
+      "parentNode": "Li9",
+      "layer": "body",
+      "glossary_id": "body_shell@body"
+    },
+    "li9_tailgateglass": {
+      "meshName": "li9_tailgateglass",
+      "system": "glass",
+      "displayName": "Стекло крышки багажника",
+      "dtcCodes": [
+        "B1019",
+        "B1020"
+      ],
+      "manualSections": [
+        "1-19",
+        "1-23"
+      ],
+      "selectable": true,
+      "xray_transparent": true,
+      "layer_num": 6,
+      "parentNode": "Li9",
+      "layer": "body",
+      "glossary_id": "rear_window@body"
+    },
+    "li9_windshield": {
+      "meshName": "li9_windshield",
+      "system": "glass",
+      "displayName": "Лобовое стекло",
+      "dtcCodes": [],
+      "manualSections": [
+        "1-23"
+      ],
+      "selectable": true,
+      "xray_transparent": true,
+      "layer_num": 6,
+      "parentNode": "Li9",
+      "layer": "body",
+      "glossary_id": "windscreen_windshield@body"
+    },
+    "li9_doorglass_RR": {
+      "meshName": "li9_doorglass_RR",
+      "system": "glass",
+      "displayName": "Стекло двери ЗП",
+      "dtcCodes": [
+        "B1014"
+      ],
+      "manualSections": [
+        "1-19",
+        "1-23"
+      ],
+      "selectable": true,
+      "xray_transparent": true,
+      "layer_num": 6,
+      "parentNode": "Li9",
+      "layer": "body",
+      "glossary_id": "door_glass@body"
+    },
+    "li9_sideglass_R": {
+      "meshName": "li9_sideglass_R",
+      "system": "glass",
+      "displayName": "Боковое стекло правое",
+      "dtcCodes": [],
+      "manualSections": [
+        "1-23"
+      ],
+      "selectable": true,
+      "xray_transparent": true,
+      "layer_num": 6,
+      "parentNode": "Li9",
+      "layer": "body",
+      "glossary_id": "side_window@body"
+    },
+    "li9_doorglass_FR": {
+      "meshName": "li9_doorglass_FR",
+      "system": "glass",
+      "displayName": "Стекло двери ПП",
+      "dtcCodes": [
+        "B1012"
+      ],
+      "manualSections": [
+        "1-19",
+        "1-23"
+      ],
+      "selectable": true,
+      "xray_transparent": true,
+      "layer_num": 6,
+      "parentNode": "Li9",
+      "layer": "body",
+      "glossary_id": "door_glass@body"
+    },
+    "li9_doorglass_RL": {
+      "meshName": "li9_doorglass_RL",
+      "system": "glass",
+      "displayName": "Стекло двери ЗЛ",
+      "dtcCodes": [
+        "B1013"
+      ],
+      "manualSections": [
+        "1-19",
+        "1-23"
+      ],
+      "selectable": true,
+      "xray_transparent": true,
+      "layer_num": 6,
+      "parentNode": "Li9",
+      "layer": "body",
+      "glossary_id": "door_glass@body"
+    },
+    "li9_sideglass_L": {
+      "meshName": "li9_sideglass_L",
+      "system": "glass",
+      "displayName": "Боковое стекло левое",
+      "dtcCodes": [],
+      "manualSections": [
+        "1-23"
+      ],
+      "selectable": true,
+      "xray_transparent": true,
+      "layer_num": 6,
+      "parentNode": "Li9",
+      "layer": "body",
+      "glossary_id": "side_window@body"
+    },
+    "li9_doorglass_FL": {
+      "meshName": "li9_doorglass_FL",
+      "system": "glass",
+      "displayName": "Стекло двери ПЛ",
+      "dtcCodes": [
+        "B1011"
+      ],
+      "manualSections": [
+        "1-19",
+        "1-23"
+      ],
+      "selectable": true,
+      "xray_transparent": true,
+      "layer_num": 6,
+      "parentNode": "Li9",
+      "layer": "body",
+      "glossary_id": "door_glass@body"
+    },
+    "li9_taillight_euro_L": {
+      "meshName": "li9_taillight_euro_L",
+      "system": "lighting",
+      "displayName": "Задний фонарь левый",
+      "dtcCodes": [
+        "B1260",
+        "B1261",
+        "B1262",
+        "B1263"
+      ],
+      "manualSections": [
+        "1-32"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 5,
+      "parentNode": "Li9",
+      "layer": "body",
+      "glossary_id": "taillight@body"
+    },
+    "Surfacefg": {
+      "meshName": "Surfacefg",
+      "system": "body",
+      "displayName": "Поверхность кузова",
+      "dtcCodes": [
+        "B1011",
+        "B1012"
+      ],
+      "manualSections": [
+        "1-19",
+        "1-38"
+      ],
+      "selectable": true,
+      "xray_transparent": true,
+      "layer_num": 8,
+      "parentNode": "Li9",
+      "layer": "body",
+      "glossary_id": "body_shell@body"
+    },
+    "li9_steer": {
+      "meshName": "li9_steer",
+      "system": "interior",
+      "displayName": "Рулевое колесо",
+      "dtcCodes": [
+        "C0500"
+      ],
+      "manualSections": [
+        "1-21"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 4,
+      "parentNode": "Li9",
+      "layer": "brakes",
+      "glossary_id": "steering_wheel@brakes"
+    },
+    "seat2.005": {
+      "meshName": "seat2.005",
+      "system": "interior",
+      "displayName": "Сиденье заднее (элемент)",
+      "dtcCodes": [
+        "B1450",
+        "B1460"
+      ],
+      "manualSections": [
+        "1-20"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 4,
+      "parentNode": "Li9",
+      "layer": "interior",
+      "glossary_id": "seat@interior"
+    },
+    "seat2.003": {
+      "meshName": "seat2.003",
+      "system": "interior",
+      "displayName": "Сиденье заднее (элемент 2)",
+      "dtcCodes": [
+        "B1450",
+        "B1460"
+      ],
+      "manualSections": [
+        "1-20"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 4,
+      "parentNode": "Li9",
+      "layer": "interior",
+      "glossary_id": "seat@interior"
+    },
+    "li9_seats_R": {
+      "meshName": "li9_seats_R",
+      "system": "interior",
+      "displayName": "Задние сиденья",
+      "dtcCodes": [
+        "B1450",
+        "B1460"
+      ],
+      "manualSections": [
+        "1-20"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 4,
+      "parentNode": "Li9",
+      "layer": "interior",
+      "glossary_id": "rear_seat@interior"
+    },
+    "seat1": {
+      "meshName": "seat1",
+      "system": "interior",
+      "displayName": "Сиденье (элемент)",
+      "dtcCodes": [
+        "B1450",
+        "B1460"
+      ],
+      "manualSections": [
+        "1-20"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 4,
+      "parentNode": "Li9",
+      "layer": "interior",
+      "glossary_id": "front_seat@interior"
+    },
+    "landstalker2_grill_b_ng.012": {
+      "meshName": "landstalker2_grill_b_ng.012",
+      "system": "exterior",
+      "displayName": "Решётка радиатора (часть 1)",
+      "dtcCodes": [
+        "B1501",
+        "B1502"
+      ],
+      "manualSections": [
+        "1-10"
+      ],
+      "selectable": true,
+      "xray_transparent": true,
+      "layer_num": 7,
+      "parentNode": "Li9",
+      "layer": "body",
+      "glossary_id": "grille@body"
+    },
+    "landstalker2_grill_b_ng.011": {
+      "meshName": "landstalker2_grill_b_ng.011",
+      "system": "exterior",
+      "displayName": "Решётка радиатора (часть 2)",
+      "dtcCodes": [
+        "B1501",
+        "B1502"
+      ],
+      "manualSections": [
+        "1-10"
+      ],
+      "selectable": true,
+      "xray_transparent": true,
+      "layer_num": 7,
+      "parentNode": "Li9",
+      "layer": "body",
+      "glossary_id": "grille@body"
+    },
+    "landstalker2_grill_b_ng.010": {
+      "meshName": "landstalker2_grill_b_ng.010",
+      "system": "exterior",
+      "displayName": "Решётка радиатора (часть 3)",
+      "dtcCodes": [
+        "B1501",
+        "B1502"
+      ],
+      "manualSections": [
+        "1-10"
+      ],
+      "selectable": true,
+      "xray_transparent": true,
+      "layer_num": 7,
+      "parentNode": "Li9",
+      "layer": "body",
+      "glossary_id": "grille@body"
+    },
+    "landstalker2_grill_b_ng.009": {
+      "meshName": "landstalker2_grill_b_ng.009",
+      "system": "exterior",
+      "displayName": "Решётка радиатора (часть 4)",
+      "dtcCodes": [
+        "B1501",
+        "B1502"
+      ],
+      "manualSections": [
+        "1-10"
+      ],
+      "selectable": true,
+      "xray_transparent": true,
+      "layer_num": 7,
+      "parentNode": "Li9",
+      "layer": "body",
+      "glossary_id": "grille@body"
+    },
+    "landstalker2_grill_b_ng.002": {
+      "meshName": "landstalker2_grill_b_ng.002",
+      "system": "exterior",
+      "displayName": "Решётка радиатора (часть 5)",
+      "dtcCodes": [
+        "B1501",
+        "B1502"
+      ],
+      "manualSections": [
+        "1-10"
+      ],
+      "selectable": true,
+      "xray_transparent": true,
+      "layer_num": 7,
+      "parentNode": "Li9",
+      "layer": "body",
+      "glossary_id": "grille@body"
+    },
+    "landstalker2_grill_b_ng.001": {
+      "meshName": "landstalker2_grill_b_ng.001",
+      "system": "exterior",
+      "displayName": "Решётка радиатора (часть 6)",
+      "dtcCodes": [
+        "B1501",
+        "B1502"
+      ],
+      "manualSections": [
+        "1-10"
+      ],
+      "selectable": true,
+      "xray_transparent": true,
+      "layer_num": 7,
+      "parentNode": "Li9",
+      "layer": "body",
+      "glossary_id": "grille@body"
+    },
+    "landstalker2_grill_b_ng": {
+      "meshName": "landstalker2_grill_b_ng",
+      "system": "exterior",
+      "displayName": "Решётка радиатора",
+      "dtcCodes": [
+        "B1501",
+        "B1502"
+      ],
+      "manualSections": [
+        "1-10"
+      ],
+      "selectable": true,
+      "xray_transparent": true,
+      "layer_num": 7,
+      "parentNode": "Li9",
+      "layer": "body",
+      "glossary_id": "grille@body"
+    },
+    "li9_taillight_euro_R": {
+      "meshName": "li9_taillight_euro_R",
+      "system": "lighting",
+      "displayName": "Задний фонарь правый",
+      "dtcCodes": [
+        "B1261",
+        "B1263"
+      ],
+      "manualSections": [
+        "1-32"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 5,
+      "parentNode": "Li9",
+      "layer": "body",
+      "glossary_id": "taillight@body"
+    },
+    "hub_lf": {
+      "meshName": "hub_lf",
+      "system": "wheels",
+      "displayName": "Ступица ПЛ",
+      "dtcCodes": [
+        "C0035",
+        "C0036"
+      ],
+      "manualSections": [
+        "1-30",
+        "1-38"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 3,
+      "parentNode": "Li9",
+      "layer": "drivetrain",
+      "glossary_id": "wheel_hub@drivetrain"
+    },
+    "extra_4.004": {
+      "meshName": "extra_4.004",
+      "system": "body",
+      "displayName": "Дополнительный элемент",
+      "dtcCodes": [
+        "B1011",
+        "B1012"
+      ],
+      "manualSections": [
+        "1-19",
+        "1-38"
+      ],
+      "selectable": true,
+      "xray_transparent": true,
+      "layer_num": 8,
+      "parentNode": "Li9",
+      "layer": "body",
+      "glossary_id": "body_trim_moulding@body"
+    },
+    "li9_door_RR": {
+      "meshName": "li9_door_RR",
+      "system": "body",
+      "displayName": "Дверь задняя правая",
+      "dtcCodes": [
+        "B1014"
+      ],
+      "manualSections": [
+        "1-19"
+      ],
+      "selectable": true,
+      "xray_transparent": true,
+      "layer_num": 8,
+      "parentNode": "Li9",
+      "layer": "body",
+      "glossary_id": "rear_door@body"
+    },
+    "li9_doorpanel_RR": {
+      "meshName": "li9_doorpanel_RR",
+      "system": "interior",
+      "displayName": "Дверная карта ЗП",
+      "dtcCodes": [
+        "B1014"
+      ],
+      "manualSections": [
+        "1-19"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 4,
+      "parentNode": "Li9",
+      "layer": "interior",
+      "glossary_id": "door_trim_panel@interior"
+    },
+    "li9_door_FR": {
+      "meshName": "li9_door_FR",
+      "system": "body",
+      "displayName": "Дверь передняя правая",
+      "dtcCodes": [
+        "B1012"
+      ],
+      "manualSections": [
+        "1-19"
+      ],
+      "selectable": true,
+      "xray_transparent": true,
+      "layer_num": 8,
+      "parentNode": "Li9",
+      "layer": "body",
+      "glossary_id": "front_door@body"
+    },
+    "door_pside_f.007": {
+      "meshName": "door_pside_f.007",
+      "system": "body",
+      "displayName": "Панель двери ПП (элемент)",
+      "dtcCodes": [
+        "B1011",
+        "B1012"
+      ],
+      "manualSections": [
+        "1-19"
+      ],
+      "selectable": true,
+      "xray_transparent": true,
+      "layer_num": 8,
+      "parentNode": "Li9",
+      "layer": "body",
+      "glossary_id": "door_trim_panel@body"
+    },
+    "door_pside_f.005": {
+      "meshName": "door_pside_f.005",
+      "system": "body",
+      "displayName": "Панель двери ПП (элемент 2)",
+      "dtcCodes": [
+        "B1011",
+        "B1012"
+      ],
+      "manualSections": [
+        "1-19"
+      ],
+      "selectable": true,
+      "xray_transparent": true,
+      "layer_num": 8,
+      "parentNode": "Li9",
+      "layer": "body",
+      "glossary_id": "door_trim_panel@body"
+    },
+    "li9_doorpanel_FR": {
+      "meshName": "li9_doorpanel_FR",
+      "system": "interior",
+      "displayName": "Дверная карта ПП",
+      "dtcCodes": [
+        "B1012"
+      ],
+      "manualSections": [
+        "1-19"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 4,
+      "parentNode": "Li9",
+      "layer": "interior",
+      "glossary_id": "door_trim_panel@interior"
+    },
+    "li9_door_RL": {
+      "meshName": "li9_door_RL",
+      "system": "body",
+      "displayName": "Дверь задняя левая",
+      "dtcCodes": [
+        "B1013"
+      ],
+      "manualSections": [
+        "1-19"
+      ],
+      "selectable": true,
+      "xray_transparent": true,
+      "layer_num": 8,
+      "parentNode": "Li9",
+      "layer": "body",
+      "glossary_id": "rear_door@body"
+    },
+    "li9_doorpanel_RL": {
+      "meshName": "li9_doorpanel_RL",
+      "system": "interior",
+      "displayName": "Дверная карта ЗЛ",
+      "dtcCodes": [
+        "B1013"
+      ],
+      "manualSections": [
+        "1-19"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 4,
+      "parentNode": "Li9",
+      "layer": "interior",
+      "glossary_id": "door_trim_panel@interior"
+    },
+    "door_dside_r": {
+      "meshName": "door_dside_r",
+      "system": "body",
+      "displayName": "Панель двери ЗЛ",
+      "dtcCodes": [
+        "B1011",
+        "B1012"
+      ],
+      "manualSections": [
+        "1-19"
+      ],
+      "selectable": true,
+      "xray_transparent": true,
+      "layer_num": 8,
+      "parentNode": "Li9",
+      "layer": "body",
+      "glossary_id": "door_trim_panel@body"
+    },
+    "li9_doorpanel_FL": {
+      "meshName": "li9_doorpanel_FL",
+      "system": "interior",
+      "displayName": "Дверная карта ПЛ",
+      "dtcCodes": [
+        "B1011"
+      ],
+      "manualSections": [
+        "1-19"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 4,
+      "parentNode": "Li9",
+      "layer": "interior",
+      "glossary_id": "door_trim_panel@interior"
+    },
+    "li9_door_FL": {
+      "meshName": "li9_door_FL",
+      "system": "body",
+      "displayName": "Дверь передняя левая",
+      "dtcCodes": [
+        "B1011"
+      ],
+      "manualSections": [
+        "1-19"
+      ],
+      "selectable": true,
+      "xray_transparent": true,
+      "layer_num": 8,
+      "parentNode": "Li9",
+      "layer": "body",
+      "glossary_id": "front_door@body"
+    },
+    "chassis.017": {
+      "meshName": "chassis.017",
+      "system": "body",
+      "displayName": "Элемент шасси (передний)",
+      "dtcCodes": [
+        "B1011",
+        "B1012"
+      ],
+      "manualSections": [
+        "1-19",
+        "1-38"
+      ],
+      "selectable": true,
+      "xray_transparent": true,
+      "layer_num": 8,
+      "parentNode": "Li9",
+      "layer": "body",
+      "glossary_id": "subframe@body"
+    },
+    "li9_dash": {
+      "meshName": "li9_dash",
+      "system": "interior",
+      "displayName": "Приборная панель",
+      "dtcCodes": [
+        "B1450",
+        "B1460"
+      ],
+      "manualSections": [
+        "1-16"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 4,
+      "parentNode": "Li9",
+      "layer": "interior",
+      "glossary_id": "dashboard_instrument_panel_fascia@interior"
+    },
+    "chassis.013": {
+      "meshName": "chassis.013",
+      "system": "body",
+      "displayName": "Элемент шасси (средний)",
+      "dtcCodes": [
+        "B1011",
+        "B1012"
+      ],
+      "manualSections": [
+        "1-19",
+        "1-38"
+      ],
+      "selectable": true,
+      "xray_transparent": true,
+      "layer_num": 8,
+      "parentNode": "Li9",
+      "layer": "body",
+      "glossary_id": "subframe@body"
+    },
+    "chassis.011": {
+      "meshName": "chassis.011",
+      "system": "body",
+      "displayName": "Элемент шасси (задний)",
+      "dtcCodes": [
+        "B1011",
+        "B1012"
+      ],
+      "manualSections": [
+        "1-19",
+        "1-38"
+      ],
+      "selectable": true,
+      "xray_transparent": true,
+      "layer_num": 8,
+      "parentNode": "Li9",
+      "layer": "body",
+      "glossary_id": "subframe@body"
+    },
+    "chassis.010": {
+      "meshName": "chassis.010",
+      "system": "body",
+      "displayName": "Элемент шасси (боковой)",
+      "dtcCodes": [
+        "B1011",
+        "B1012"
+      ],
+      "manualSections": [
+        "1-19",
+        "1-38"
+      ],
+      "selectable": true,
+      "xray_transparent": true,
+      "layer_num": 8,
+      "parentNode": "Li9",
+      "layer": "body",
+      "glossary_id": "subframe@body"
+    },
+    "chassis.009": {
+      "meshName": "chassis.009",
+      "system": "body",
+      "displayName": "Элемент шасси (нижний)",
+      "dtcCodes": [
+        "B1011",
+        "B1012"
+      ],
+      "manualSections": [
+        "1-19",
+        "1-38"
+      ],
+      "selectable": true,
+      "xray_transparent": true,
+      "layer_num": 8,
+      "parentNode": "Li9",
+      "layer": "body",
+      "glossary_id": "subframe@body"
+    },
+    "chassis.008": {
+      "meshName": "chassis.008",
+      "system": "body",
+      "displayName": "Элемент шасси (поперечный)",
+      "dtcCodes": [
+        "B1011",
+        "B1012"
+      ],
+      "manualSections": [
+        "1-19",
+        "1-38"
+      ],
+      "selectable": true,
+      "xray_transparent": true,
+      "layer_num": 8,
+      "parentNode": "Li9",
+      "layer": "body",
+      "glossary_id": "subframe@body"
+    },
+    "chassis.005": {
+      "meshName": "chassis.005",
+      "system": "body",
+      "displayName": "Элемент шасси (основной)",
+      "dtcCodes": [
+        "B1011",
+        "B1012"
+      ],
+      "manualSections": [
+        "1-19",
+        "1-38"
+      ],
+      "selectable": true,
+      "xray_transparent": true,
+      "layer_num": 8,
+      "parentNode": "Li9",
+      "layer": "body",
+      "glossary_id": "subframe@body"
+    },
+    "li9_salon": {
+      "meshName": "li9_salon",
+      "system": "interior",
+      "displayName": "Салон",
+      "dtcCodes": [
+        "B1450",
+        "B1460"
+      ],
+      "manualSections": [
+        "1-20",
+        "1-21"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 4,
+      "parentNode": "Li9",
+      "layer": "interior",
+      "glossary_id": "interior_trim@interior"
+    },
+    "li9_tailgatelightglass": {
+      "meshName": "li9_tailgatelightglass",
+      "system": "glass",
+      "displayName": "Стекло фонаря багажника",
+      "dtcCodes": [
+        "B1019",
+        "B1020"
+      ],
+      "manualSections": [
+        "1-19",
+        "1-23"
+      ],
+      "selectable": true,
+      "xray_transparent": true,
+      "layer_num": 6,
+      "parentNode": "Li9",
+      "layer": "body",
+      "glossary_id": "tail_light_lens@body"
+    },
+    "li9_tailgatelight": {
+      "meshName": "li9_tailgatelight",
+      "system": "body",
+      "displayName": "Фонарь крышки багажника",
+      "dtcCodes": [
+        "B1019",
+        "B1020"
+      ],
+      "manualSections": [
+        "1-19"
+      ],
+      "selectable": true,
+      "xray_transparent": true,
+      "layer_num": 8,
+      "parentNode": "Li9",
+      "layer": "body",
+      "glossary_id": "boot_trunk@body"
+    },
+    "li9_tailgate": {
+      "meshName": "li9_tailgate",
+      "system": "body",
+      "displayName": "Крышка багажника",
+      "dtcCodes": [
+        "B1019",
+        "B1020"
+      ],
+      "manualSections": [
+        "1-19"
+      ],
+      "selectable": true,
+      "xray_transparent": true,
+      "layer_num": 8,
+      "parentNode": "Li9",
+      "layer": "body",
+      "glossary_id": "trunk_lid@body"
+    },
+    "bodyshell.003": {
+      "meshName": "bodyshell.003",
+      "system": "body",
+      "displayName": "Элемент кузова (боковой)",
+      "dtcCodes": [
+        "B1011",
+        "B1012"
+      ],
+      "manualSections": [
+        "1-19",
+        "1-38"
+      ],
+      "selectable": true,
+      "xray_transparent": true,
+      "layer_num": 8,
+      "parentNode": "Li9",
+      "layer": "body",
+      "glossary_id": "body_shell@body"
+    },
+    "bodyshell.001": {
+      "meshName": "bodyshell.001",
+      "system": "body",
+      "displayName": "Элемент кузова (нижний)",
+      "dtcCodes": [
+        "B1011",
+        "B1012"
+      ],
+      "manualSections": [
+        "1-19",
+        "1-38"
+      ],
+      "selectable": true,
+      "xray_transparent": true,
+      "layer_num": 8,
+      "parentNode": "Li9",
+      "layer": "body",
+      "glossary_id": "body_shell@body"
+    },
+    "li9_body": {
+      "meshName": "li9_body",
+      "system": "body",
+      "displayName": "Кузов",
+      "dtcCodes": [
+        "B1011",
+        "B1012"
+      ],
+      "manualSections": [
+        "1-19",
+        "1-38"
+      ],
+      "selectable": true,
+      "xray_transparent": true,
+      "layer_num": 8,
+      "parentNode": "Li9",
+      "layer": "body",
+      "glossary_id": "body_shell@body"
+    },
+    "body4.011": {
+      "meshName": "body4.011",
+      "system": "body",
+      "displayName": "Элемент кузова (крыша)",
+      "dtcCodes": [
+        "B1011",
+        "B1012"
+      ],
+      "manualSections": [
+        "1-19",
+        "1-38"
+      ],
+      "selectable": true,
+      "xray_transparent": true,
+      "layer_num": 8,
+      "parentNode": "Li9",
+      "layer": "body",
+      "glossary_id": "roof@body"
+    },
+    "body4.010": {
+      "meshName": "body4.010",
+      "system": "body",
+      "displayName": "Элемент кузова (задний)",
+      "dtcCodes": [
+        "B1011",
+        "B1012"
+      ],
+      "manualSections": [
+        "1-19",
+        "1-38"
+      ],
+      "selectable": true,
+      "xray_transparent": true,
+      "layer_num": 8,
+      "parentNode": "Li9",
+      "layer": "body",
+      "glossary_id": "body_shell@body"
+    },
+    "body4.009": {
+      "meshName": "body4.009",
+      "system": "body",
+      "displayName": "Элемент кузова (боковой П)",
+      "dtcCodes": [
+        "B1011",
+        "B1012"
+      ],
+      "manualSections": [
+        "1-19",
+        "1-38"
+      ],
+      "selectable": true,
+      "xray_transparent": true,
+      "layer_num": 8,
+      "parentNode": "Li9",
+      "layer": "body",
+      "glossary_id": "body_shell@body"
+    },
+    "body4.008": {
+      "meshName": "body4.008",
+      "system": "body",
+      "displayName": "Элемент кузова (боковой Л)",
+      "dtcCodes": [
+        "B1011",
+        "B1012"
+      ],
+      "manualSections": [
+        "1-19",
+        "1-38"
+      ],
+      "selectable": true,
+      "xray_transparent": true,
+      "layer_num": 8,
+      "parentNode": "Li9",
+      "layer": "body",
+      "glossary_id": "body_shell@body"
+    },
+    "body4.006": {
+      "meshName": "body4.006",
+      "system": "body",
+      "displayName": "Элемент кузова (стойки)",
+      "dtcCodes": [
+        "B1011",
+        "B1012"
+      ],
+      "manualSections": [
+        "1-19",
+        "1-38"
+      ],
+      "selectable": true,
+      "xray_transparent": true,
+      "layer_num": 8,
+      "parentNode": "Li9",
+      "layer": "body",
+      "glossary_id": "body_shell@body"
+    },
+    "body4.005": {
+      "meshName": "body4.005",
+      "system": "body",
+      "displayName": "Элемент кузова (пороги)",
+      "dtcCodes": [
+        "B1011",
+        "B1012"
+      ],
+      "manualSections": [
+        "1-19",
+        "1-38"
+      ],
+      "selectable": true,
+      "xray_transparent": true,
+      "layer_num": 8,
+      "parentNode": "Li9",
+      "layer": "body",
+      "glossary_id": "sill_rocker_panel@body"
+    },
+    "body4.003": {
+      "meshName": "body4.003",
+      "system": "body",
+      "displayName": "Элемент кузова (передний)",
+      "dtcCodes": [
+        "B1011",
+        "B1012"
+      ],
+      "manualSections": [
+        "1-19",
+        "1-38"
+      ],
+      "selectable": true,
+      "xray_transparent": true,
+      "layer_num": 8,
+      "parentNode": "Li9",
+      "layer": "body",
+      "glossary_id": "body_shell@body"
+    },
+    "body4": {
+      "meshName": "body4",
+      "system": "body",
+      "displayName": "Элемент кузова (основной)",
+      "dtcCodes": [
+        "B1011",
+        "B1012"
+      ],
+      "manualSections": [
+        "1-19",
+        "1-38"
+      ],
+      "selectable": true,
+      "xray_transparent": true,
+      "layer_num": 8,
+      "parentNode": "Li9",
+      "layer": "body",
+      "glossary_id": "body_shell@body"
+    },
+    "body3.003": {
+      "meshName": "body3.003",
+      "system": "body",
+      "displayName": "Элемент кузова (арка)",
+      "dtcCodes": [
+        "B1011",
+        "B1012"
+      ],
+      "manualSections": [
+        "1-19",
+        "1-38"
+      ],
+      "selectable": true,
+      "xray_transparent": true,
+      "layer_num": 8,
+      "parentNode": "Li9",
+      "layer": "body",
+      "glossary_id": "wheel_arch_liner@body"
+    },
+    "body3.002": {
+      "meshName": "body3.002",
+      "system": "body",
+      "displayName": "Элемент кузова (рамка)",
+      "dtcCodes": [
+        "B1011",
+        "B1012"
+      ],
+      "manualSections": [
+        "1-19",
+        "1-38"
+      ],
+      "selectable": true,
+      "xray_transparent": true,
+      "layer_num": 8,
+      "parentNode": "Li9",
+      "layer": "body",
+      "glossary_id": "body_shell@body"
+    },
+    "body2.003": {
+      "meshName": "body2.003",
+      "system": "body",
+      "displayName": "Элемент кузова (молдинг)",
+      "dtcCodes": [
+        "B1011",
+        "B1012"
+      ],
+      "manualSections": [
+        "1-19",
+        "1-38"
+      ],
+      "selectable": true,
+      "xray_transparent": true,
+      "layer_num": 8,
+      "parentNode": "Li9",
+      "layer": "body",
+      "glossary_id": "body_trim_moulding@body"
+    },
+    "body2.001": {
+      "meshName": "body2.001",
+      "system": "body",
+      "displayName": "Элемент кузова (накладка)",
+      "dtcCodes": [
+        "B1011",
+        "B1012"
+      ],
+      "manualSections": [
+        "1-19",
+        "1-38"
+      ],
+      "selectable": true,
+      "xray_transparent": true,
+      "layer_num": 8,
+      "parentNode": "Li9",
+      "layer": "body",
+      "glossary_id": "body_trim_moulding@body"
+    },
+    "_wheel_lf_.004": {
+      "meshName": "_wheel_lf_.004",
+      "system": "wheels",
+      "displayName": "Элемент колеса ПЛ",
+      "dtcCodes": [],
+      "manualSections": [
+        "1-30",
+        "1-38"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 3,
+      "parentNode": "Li9",
+      "specs": {
+        "size": "21\"",
+        "options": "Silver-Grey / Black-Grey"
+      },
+      "layer": "drivetrain",
+      "glossary_id": "wheel@drivetrain"
+    },
+    "_wheel_lf_.003": {
+      "meshName": "_wheel_lf_.003",
+      "system": "wheels",
+      "displayName": "Элемент колеса ПЛ (3)",
+      "dtcCodes": [],
+      "manualSections": [
+        "1-30",
+        "1-38"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 3,
+      "parentNode": "Li9",
+      "specs": {
+        "size": "21\"",
+        "options": "Silver-Grey / Black-Grey"
+      },
+      "layer": "drivetrain",
+      "glossary_id": "wheel@drivetrain"
+    },
+    "li9_wheel_FR": {
+      "meshName": "li9_wheel_FR",
+      "system": "wheels",
+      "displayName": "Колесо ПП",
+      "dtcCodes": [],
+      "manualSections": [
+        "1-30",
+        "1-38"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 3,
+      "parentNode": "Li9",
+      "specs": {
+        "size": "21\"",
+        "options": "Silver-Grey / Black-Grey"
+      },
+      "layer": "drivetrain",
+      "glossary_id": "wheel@drivetrain"
+    },
+    "li9_wheel_RL": {
+      "meshName": "li9_wheel_RL",
+      "system": "wheels",
+      "displayName": "Колесо ЗЛ",
+      "dtcCodes": [],
+      "manualSections": [
+        "1-30",
+        "1-38"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 3,
+      "parentNode": "Li9",
+      "specs": {
+        "size": "21\"",
+        "options": "Silver-Grey / Black-Grey"
+      },
+      "layer": "drivetrain",
+      "glossary_id": "wheel@drivetrain"
+    },
+    "li9_wheel_RR": {
+      "meshName": "li9_wheel_RR",
+      "system": "wheels",
+      "displayName": "Колесо ЗП",
+      "dtcCodes": [],
+      "manualSections": [
+        "1-30",
+        "1-38"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 3,
+      "parentNode": "Li9",
+      "specs": {
+        "size": "21\"",
+        "options": "Silver-Grey / Black-Grey"
+      },
+      "layer": "drivetrain",
+      "glossary_id": "wheel@drivetrain"
+    },
+    "_wheel_lf_.005_FR": {
+      "meshName": "_wheel_lf_.005_FR",
+      "system": "wheels",
+      "displayName": "Диск колеса ПП",
+      "dtcCodes": [],
+      "manualSections": [
+        "1-30",
+        "1-38"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 3,
+      "parentNode": "Li9",
+      "specs": {
+        "size": "21\"",
+        "options": "Silver-Grey / Black-Grey"
+      },
+      "layer": "drivetrain",
+      "glossary_id": "wheel@drivetrain"
+    },
+    "_wheel_lf_.005_RL": {
+      "meshName": "_wheel_lf_.005_RL",
+      "system": "wheels",
+      "displayName": "Диск колеса ЗЛ",
+      "dtcCodes": [],
+      "manualSections": [
+        "1-30",
+        "1-38"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 3,
+      "parentNode": "Li9",
+      "specs": {
+        "size": "21\"",
+        "options": "Silver-Grey / Black-Grey"
+      },
+      "layer": "drivetrain",
+      "glossary_id": "wheel@drivetrain"
+    },
+    "_wheel_lf_.005_RR": {
+      "meshName": "_wheel_lf_.005_RR",
+      "system": "wheels",
+      "displayName": "Диск колеса ЗП",
+      "dtcCodes": [],
+      "manualSections": [
+        "1-30",
+        "1-38"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 3,
+      "parentNode": "Li9",
+      "specs": {
+        "size": "21\"",
+        "options": "Silver-Grey / Black-Grey"
+      },
+      "layer": "drivetrain",
+      "glossary_id": "wheel@drivetrain"
+    },
+    "_wheel_lf_.004_FR": {
+      "meshName": "_wheel_lf_.004_FR",
+      "system": "wheels",
+      "displayName": "Элемент колеса ПП",
+      "dtcCodes": [],
+      "manualSections": [
+        "1-30",
+        "1-38"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 3,
+      "parentNode": "Li9",
+      "specs": {
+        "size": "21\"",
+        "options": "Silver-Grey / Black-Grey"
+      },
+      "layer": "drivetrain",
+      "glossary_id": "wheel@drivetrain"
+    },
+    "_wheel_lf_.004_RL": {
+      "meshName": "_wheel_lf_.004_RL",
+      "system": "wheels",
+      "displayName": "Элемент колеса ЗЛ",
+      "dtcCodes": [],
+      "manualSections": [
+        "1-30",
+        "1-38"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 3,
+      "parentNode": "Li9",
+      "specs": {
+        "size": "21\"",
+        "options": "Silver-Grey / Black-Grey"
+      },
+      "layer": "drivetrain",
+      "glossary_id": "wheel@drivetrain"
+    },
+    "_wheel_lf_.004_RR": {
+      "meshName": "_wheel_lf_.004_RR",
+      "system": "wheels",
+      "displayName": "Элемент колеса ЗП",
+      "dtcCodes": [],
+      "manualSections": [
+        "1-30",
+        "1-38"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 3,
+      "parentNode": "Li9",
+      "specs": {
+        "size": "21\"",
+        "options": "Silver-Grey / Black-Grey"
+      },
+      "layer": "drivetrain",
+      "glossary_id": "wheel@drivetrain"
+    },
+    "_wheel_lf_.003_FR": {
+      "meshName": "_wheel_lf_.003_FR",
+      "system": "wheels",
+      "displayName": "Элемент колеса ПП (3)",
+      "dtcCodes": [],
+      "manualSections": [
+        "1-30",
+        "1-38"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 3,
+      "parentNode": "Li9",
+      "specs": {
+        "size": "21\"",
+        "options": "Silver-Grey / Black-Grey"
+      },
+      "layer": "drivetrain",
+      "glossary_id": "wheel@drivetrain"
+    },
+    "_wheel_lf_.003_RL": {
+      "meshName": "_wheel_lf_.003_RL",
+      "system": "wheels",
+      "displayName": "Элемент колеса ЗЛ (3)",
+      "dtcCodes": [],
+      "manualSections": [
+        "1-30",
+        "1-38"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 3,
+      "parentNode": "Li9",
+      "specs": {
+        "size": "21\"",
+        "options": "Silver-Grey / Black-Grey"
+      },
+      "layer": "drivetrain",
+      "glossary_id": "wheel@drivetrain"
+    },
+    "_wheel_lf_.003_RR": {
+      "meshName": "_wheel_lf_.003_RR",
+      "system": "wheels",
+      "displayName": "Элемент колеса ЗП (3)",
+      "dtcCodes": [],
+      "manualSections": [
+        "1-30",
+        "1-38"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 3,
+      "parentNode": "Li9",
+      "specs": {
+        "size": "21\"",
+        "options": "Silver-Grey / Black-Grey"
+      },
+      "layer": "drivetrain",
+      "glossary_id": "wheel@drivetrain"
+    },
+    "hub_lf_FR": {
+      "meshName": "hub_lf_FR",
+      "system": "wheels",
+      "displayName": "Ступица ПП",
+      "dtcCodes": [
+        "C0035",
+        "C0036"
+      ],
+      "manualSections": [
+        "1-30",
+        "1-38"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 3,
+      "parentNode": "Li9",
+      "layer": "drivetrain",
+      "glossary_id": "wheel_hub@drivetrain"
+    },
+    "hub_lf_RL": {
+      "meshName": "hub_lf_RL",
+      "system": "wheels",
+      "displayName": "Ступица ЗЛ",
+      "dtcCodes": [
+        "C0035",
+        "C0036"
+      ],
+      "manualSections": [
+        "1-30",
+        "1-38"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 3,
+      "parentNode": "Li9",
+      "layer": "drivetrain",
+      "glossary_id": "wheel_hub@drivetrain"
+    },
+    "hub_lf_RR": {
+      "meshName": "hub_lf_RR",
+      "system": "wheels",
+      "displayName": "Ступица ЗП",
+      "dtcCodes": [
+        "C0035",
+        "C0036"
+      ],
+      "manualSections": [
+        "1-30",
+        "1-38"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 3,
+      "parentNode": "Li9",
+      "layer": "drivetrain",
+      "glossary_id": "wheel_hub@drivetrain"
+    },
+    "li9_brake_FL": {
+      "meshName": "li9_brake_FL",
+      "system": "chassis",
+      "displayName": "Тормоз ПЛ",
+      "dtcCodes": [
+        "C0035",
+        "C0036",
+        "C0037",
+        "C0038",
+        "C0040"
+      ],
+      "manualSections": [
+        "1-34"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 0,
+      "specs": {
+        "type": "Вентилируемые дисковые тормоза"
+      },
+      "layer": "brakes",
+      "glossary_id": "brake_caliper@brakes"
+    },
+    "li9_brake_FR": {
+      "meshName": "li9_brake_FR",
+      "system": "chassis",
+      "displayName": "Тормоз ПП",
+      "dtcCodes": [
+        "C0035",
+        "C0036",
+        "C0037",
+        "C0038",
+        "C0041"
+      ],
+      "manualSections": [
+        "1-34"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 0,
+      "specs": {
+        "type": "Вентилируемые дисковые тормоза"
+      },
+      "layer": "brakes",
+      "glossary_id": "brake_caliper@brakes"
+    },
+    "li9_brake_RL": {
+      "meshName": "li9_brake_RL",
+      "system": "chassis",
+      "displayName": "Тормоз ЗЛ",
+      "dtcCodes": [
+        "C0035",
+        "C0036",
+        "C0037",
+        "C0038",
+        "C0042"
+      ],
+      "manualSections": [
+        "1-34"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 0,
+      "specs": {
+        "type": "Вентилируемые дисковые тормоза"
+      },
+      "layer": "brakes",
+      "glossary_id": "brake_caliper@brakes"
+    },
+    "li9_brake_RR": {
+      "meshName": "li9_brake_RR",
+      "system": "chassis",
+      "displayName": "Тормоз ЗП",
+      "dtcCodes": [
+        "C0035",
+        "C0036",
+        "C0037",
+        "C0038",
+        "C0043"
+      ],
+      "manualSections": [
+        "1-34"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 0,
+      "specs": {
+        "type": "Вентилируемые дисковые тормоза"
+      },
+      "layer": "brakes",
+      "glossary_id": "brake_caliper@brakes"
+    },
+    "li9_battery": {
+      "meshName": "li9_battery",
+      "system": "energy",
+      "displayName": "Батарея ВН",
+      "dtcCodes": [
+        "P0A7F",
+        "P0A80",
+        "P0AA6",
+        "P3000"
+      ],
+      "manualSections": [
+        "1-35"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 2,
+      "specs": {
+        "capacity": "52.3 кВт·ч",
+        "type": "Тернарная литиевая",
+        "dc_charge_time": "25 мин (20%-80%)",
+        "warranty": "8 лет или 160 000 км"
+      },
+      "layer": "ev",
+      "glossary_id": "traction_battery_hv_battery@ev"
+    },
+    "li9_emotor_f": {
+      "meshName": "li9_emotor_f",
+      "system": "powertrain",
+      "displayName": "Электромотор передний",
+      "dtcCodes": [
+        "P0A1A"
+      ],
+      "manualSections": [
+        "1-13"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 1,
+      "specs": {
+        "type": "5-in-1 передний привод",
+        "power_kw": 130,
+        "torque_nm": 220
+      },
+      "layer": "ev",
+      "glossary_id": "front_electric_motor@ev"
+    },
+    "li9_emotor_r": {
+      "meshName": "li9_emotor_r",
+      "system": "powertrain",
+      "displayName": "Электромотор задний",
+      "dtcCodes": [
+        "P0A1A"
+      ],
+      "manualSections": [
+        "1-13"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 1,
+      "specs": {
+        "type": "3-in-1 задний привод",
+        "power_kw": 200,
+        "torque_nm": 400
+      },
+      "layer": "ev",
+      "glossary_id": "rear_electric_motor@ev"
+    },
+    "li9_wiring_battery": {
+      "meshName": "li9_wiring_battery",
+      "system": "energy",
+      "displayName": "Проводка батареи",
+      "dtcCodes": [
+        "P0A09",
+        "P0A7F",
+        "P0A80",
+        "P0AA6",
+        "P3000"
+      ],
+      "manualSections": [
+        "1-35"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 2,
+      "specs": {
+        "capacity": "52.3 кВт·ч",
+        "type": "Тернарная литиевая",
+        "dc_charge_time": "25 мин (20%-80%)",
+        "warranty": "8 лет или 160 000 км"
+      },
+      "layer": "ev",
+      "glossary_id": "high_voltage_wiring@ev"
+    },
+    "li9_wiring_emotor": {
+      "meshName": "li9_wiring_emotor",
+      "system": "energy",
+      "displayName": "Проводка э/мотора",
+      "dtcCodes": [
+        "P0A09",
+        "P0AA6"
+      ],
+      "manualSections": [
+        "1-13"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 2,
+      "layer": "ev",
+      "glossary_id": "high_voltage_wiring@ev"
+    },
+    "li9_battery_cooling": {
+      "meshName": "li9_battery_cooling",
+      "system": "energy",
+      "displayName": "Охлаждение батареи",
+      "dtcCodes": [
+        "P0A7F",
+        "P0A80",
+        "P0AA6",
+        "P3000"
+      ],
+      "manualSections": [
+        "1-35"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 2,
+      "specs": {
+        "capacity": "52.3 кВт·ч",
+        "type": "Тернарная литиевая",
+        "dc_charge_time": "25 мин (20%-80%)",
+        "warranty": "8 лет или 160 000 км"
+      },
+      "layer": "hvac",
+      "glossary_id": "battery_thermal_management_system_btms@hvac"
+    },
+    "li9_emotor_mount": {
+      "meshName": "li9_emotor_mount",
+      "system": "powertrain",
+      "displayName": "Крепление э/мотора",
+      "dtcCodes": [
+        "P0171",
+        "P0300"
+      ],
+      "manualSections": [
+        "1-13"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 1,
+      "layer": "engine",
+      "glossary_id": "engine_mount@engine"
+    },
+    "li9_air_suspension": {
+      "meshName": "li9_air_suspension",
+      "system": "chassis",
+      "displayName": "Пневмоподвеска",
+      "dtcCodes": [
+        "C0500",
+        "C0550"
+      ],
+      "manualSections": [
+        "1-34"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 0,
+      "specs": {
+        "type": "Magic Carpet Air Suspension Max",
+        "dual_chamber": true,
+        "offroad_raise_mm": 40,
+        "warranty": "8 лет или 160 000 км"
+      },
+      "layer": "drivetrain",
+      "glossary_id": "air_suspension@drivetrain"
+    },
+    "li9_center_screen": {
+      "meshName": "li9_center_screen",
+      "system": "interior",
+      "displayName": "Центральный экран",
+      "dtcCodes": [
+        "U0100"
+      ],
+      "manualSections": [
+        "1-20",
+        "1-21"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 4,
+      "specs": {
+        "size": "15.7\" 3K OLED",
+        "chip": "Qualcomm Snapdragon 8295P"
+      },
+      "layer": "interior",
+      "glossary_id": "infotainment_screen_multimedia_display@interior"
+    },
+    "li9_xcu": {
+      "meshName": "li9_xcu",
+      "system": "electronics",
+      "displayName": "Блок управления XCU",
+      "dtcCodes": [
+        "U0100",
+        "U0155"
+      ],
+      "manualSections": [
+        "1-16",
+        "1-33"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 9,
+      "layer": "sensors",
+      "glossary_id": "motor_control_unit@sensors"
+    },
+    "li9_hu": {
+      "meshName": "li9_hu",
+      "system": "electronics",
+      "displayName": "Головное устройство",
+      "dtcCodes": [
+        "U0100",
+        "U0155"
+      ],
+      "manualSections": [
+        "1-16",
+        "1-33"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 9,
+      "layer": "sensors",
+      "glossary_id": "head_unit@sensors"
+    },
+    "li9_Дроссельная_заслонка": {
+      "meshName": "li9_Дроссельная_заслонка",
+      "system": "powertrain",
+      "displayName": "Дроссельная заслонка",
+      "dtcCodes": [
+        "P0121",
+        "P0122"
+      ],
+      "manualSections": [
+        "1-13",
+        "1-30"
+      ],
+      "selectable": true,
+      "xray_transparent": false,
+      "layer_num": 1,
+      "layer": "engine",
+      "glossary_id": "throttle_body@engine"
+    }
+  },
+  "dtcIndex": {
+    "B1011": {
+      "code": "B1011",
+      "description_ru": "Неисправность системы передней левой двери",
+      "description_en": "Door FL System",
+      "severity": "info",
+      "possibleCauses": [
+        "Неисправность концевика",
+        "Проблема электропривода замка"
+      ],
+      "procedures": [
+        "Проверка концевика двери",
+        "Проверка электропривода замка"
+      ],
+      "manualSections": [
+        "1-19"
+      ],
+      "components": [
+        "nissangtr_chiferki",
+        "li9_krilia",
+        "li9_bumperbar_F",
+        "li9_reinforcement_F",
+        "li9_underbody_cladding",
+        "li9_heatshield",
+        "li9_prorabot_2",
+        "li9_tubs",
+        "li9_dno",
+        "chassis.006",
+        "bodyshell.005",
+        "li9_bumper_R_a",
+        "bodyshell.009",
+        "li9_bumper_F_b",
+        "li9_fender_R",
+        "li9_fender_L",
+        "li9_hood",
+        "ycd1.001",
+        "ycd1",
+        "li9_doorglass_FL",
+        "Surfacefg",
+        "extra_4.004",
+        "door_pside_f.007",
+        "door_pside_f.005",
+        "door_dside_r",
+        "li9_doorpanel_FL",
+        "li9_door_FL",
+        "chassis.017",
+        "chassis.013",
+        "chassis.011",
+        "chassis.010",
+        "chassis.009",
+        "chassis.008",
+        "chassis.005",
+        "bodyshell.003",
+        "bodyshell.001",
+        "li9_body",
+        "body4.011",
+        "body4.010",
+        "body4.009",
+        "body4.008",
+        "body4.006",
+        "body4.005",
+        "body4.003",
+        "body4",
+        "body3.003",
+        "body3.002",
+        "body2.003",
+        "body2.001"
+      ]
+    },
+    "B1012": {
+      "code": "B1012",
+      "description_ru": "Неисправность системы передней правой двери",
+      "description_en": "Door FR System",
+      "severity": "info",
+      "possibleCauses": [
+        "Неисправность концевика"
+      ],
+      "procedures": [
+        "Проверка концевика двери"
+      ],
+      "manualSections": [
+        "1-19"
+      ],
+      "components": [
+        "nissangtr_chiferki",
+        "li9_krilia",
+        "li9_bumperbar_F",
+        "li9_reinforcement_F",
+        "li9_underbody_cladding",
+        "li9_heatshield",
+        "li9_prorabot_2",
+        "li9_tubs",
+        "li9_dno",
+        "chassis.006",
+        "bodyshell.005",
+        "li9_bumper_R_a",
+        "bodyshell.009",
+        "li9_bumper_F_b",
+        "li9_fender_R",
+        "li9_fender_L",
+        "ycd1.001",
+        "ycd1",
+        "li9_doorglass_FR",
+        "Surfacefg",
+        "extra_4.004",
+        "li9_door_FR",
+        "door_pside_f.007",
+        "door_pside_f.005",
+        "li9_doorpanel_FR",
+        "door_dside_r",
+        "chassis.017",
+        "chassis.013",
+        "chassis.011",
+        "chassis.010",
+        "chassis.009",
+        "chassis.008",
+        "chassis.005",
+        "bodyshell.003",
+        "bodyshell.001",
+        "li9_body",
+        "body4.011",
+        "body4.010",
+        "body4.009",
+        "body4.008",
+        "body4.006",
+        "body4.005",
+        "body4.003",
+        "body4",
+        "body3.003",
+        "body3.002",
+        "body2.003",
+        "body2.001"
+      ]
+    },
+    "B1013": {
+      "code": "B1013",
+      "description_ru": "Неисправность системы задней левой двери",
+      "description_en": "Door RL System",
+      "severity": "info",
+      "possibleCauses": [
+        "Неисправность концевика"
+      ],
+      "procedures": [
+        "Проверка концевика двери"
+      ],
+      "manualSections": [
+        "1-19"
+      ],
+      "components": [
+        "li9_doorglass_RL",
+        "li9_door_RL",
+        "li9_doorpanel_RL"
+      ]
+    },
+    "B1014": {
+      "code": "B1014",
+      "description_ru": "Неисправность системы задней правой двери",
+      "description_en": "Door RR System",
+      "severity": "info",
+      "possibleCauses": [
+        "Неисправность концевика"
+      ],
+      "procedures": [
+        "Проверка концевика двери"
+      ],
+      "manualSections": [
+        "1-19"
+      ],
+      "components": [
+        "li9_doorglass_RR",
+        "li9_door_RR",
+        "li9_doorpanel_RR"
+      ]
+    },
+    "B1019": {
+      "code": "B1019",
+      "description_ru": "Неисправность электропривода крышки багажника",
+      "description_en": "Tailgate Motor Circuit",
+      "severity": "info",
+      "possibleCauses": [
+        "Неисправность электропривода",
+        "Заклинивание механизма"
+      ],
+      "procedures": [
+        "Проверка электропривода",
+        "Смазка механизма"
+      ],
+      "manualSections": [
+        "1-19"
+      ],
+      "components": [
+        "li9_tailgateglass",
+        "li9_tailgatelightglass",
+        "li9_tailgatelight",
+        "li9_tailgate"
+      ]
+    },
+    "B1020": {
+      "code": "B1020",
+      "description_ru": "Неисправность замка крышки багажника",
+      "description_en": "Tailgate Lock Circuit",
+      "severity": "info",
+      "possibleCauses": [
+        "Неисправность замка"
+      ],
+      "procedures": [
+        "Проверка замка багажника"
+      ],
+      "manualSections": [
+        "1-19"
+      ],
+      "components": [
+        "li9_tailgateglass",
+        "li9_tailgatelightglass",
+        "li9_tailgatelight",
+        "li9_tailgate"
+      ]
+    },
+    "B1250": {
+      "code": "B1250",
+      "description_ru": "Неисправность левой фары",
+      "description_en": "Headlight Left Circuit",
+      "severity": "warning",
+      "possibleCauses": [
+        "Перегорание лампы/LED",
+        "Обрыв цепи",
+        "Неисправность блока управления фарами"
+      ],
+      "procedures": [
+        "Проверка LED-модуля",
+        "Проверка проводки",
+        "Проверка блока управления"
+      ],
+      "manualSections": [
+        "1-32"
+      ],
+      "components": [
+        "li9_headlightglass",
+        "li9_headlight"
+      ]
+    },
+    "B1260": {
+      "code": "B1260",
+      "description_ru": "Неисправность заднего фонаря",
+      "description_en": "Taillight Circuit",
+      "severity": "warning",
+      "possibleCauses": [
+        "Перегорание LED",
+        "Обрыв цепи"
+      ],
+      "procedures": [
+        "Проверка LED-модуля заднего фонаря"
+      ],
+      "manualSections": [
+        "1-32"
+      ],
+      "components": [
+        "li9_taillightglass_R",
+        "li9_taillightglass_L",
+        "li9_taillight_euro_L"
+      ]
+    },
+    "B1261": {
+      "code": "B1261",
+      "description_ru": "Неисправность правого заднего фонаря",
+      "description_en": "Taillight Right Circuit",
+      "severity": "warning",
+      "possibleCauses": [
+        "Перегорание LED"
+      ],
+      "procedures": [
+        "Проверка правого заднего фонаря"
+      ],
+      "manualSections": [
+        "1-32"
+      ],
+      "components": [
+        "li9_taillightglass_R",
+        "li9_taillight_euro_L",
+        "li9_taillight_euro_R"
+      ]
+    },
+    "B1262": {
+      "code": "B1262",
+      "description_ru": "Неисправность левого заднего фонаря (внутр.)",
+      "description_en": "Taillight Inner Left Circuit",
+      "severity": "warning",
+      "possibleCauses": [
+        "Перегорание LED"
+      ],
+      "procedures": [
+        "Проверка внутреннего левого фонаря"
+      ],
+      "manualSections": [
+        "1-32"
+      ],
+      "components": [
+        "li9_taillightglass_R",
+        "li9_taillightglass_L",
+        "li9_taillight_euro_L"
+      ]
+    },
+    "B1263": {
+      "code": "B1263",
+      "description_ru": "Неисправность правого заднего фонаря (внутр.)",
+      "description_en": "Taillight Inner Right Circuit",
+      "severity": "warning",
+      "possibleCauses": [
+        "Перегорание LED"
+      ],
+      "procedures": [
+        "Проверка внутреннего правого фонаря"
+      ],
+      "manualSections": [
+        "1-32"
+      ],
+      "components": [
+        "li9_taillightglass_R",
+        "li9_taillight_euro_L",
+        "li9_taillight_euro_R"
+      ]
+    },
+    "B1450": {
+      "code": "B1450",
+      "description_ru": "Неисправность сиденья водителя",
+      "description_en": "Driver Seat System",
+      "severity": "info",
+      "possibleCauses": [
+        "Неисправность электропривода",
+        "Ошибка датчика положения"
+      ],
+      "procedures": [
+        "Проверка электроприводов сиденья",
+        "Проверка датчиков"
+      ],
+      "manualSections": [
+        "1-20"
+      ],
+      "components": [
+        "li9_seat_FL",
+        "seat2.005",
+        "seat2.003",
+        "li9_seats_R",
+        "seat1",
+        "li9_dash",
+        "li9_salon"
+      ]
+    },
+    "B1460": {
+      "code": "B1460",
+      "description_ru": "Неисправность сиденья пассажира",
+      "description_en": "Passenger Seat System",
+      "severity": "info",
+      "possibleCauses": [
+        "Неисправность электропривода"
+      ],
+      "procedures": [
+        "Проверка электроприводов сиденья"
+      ],
+      "manualSections": [
+        "1-20"
+      ],
+      "components": [
+        "li9_seat_FR",
+        "seat2.005",
+        "seat2.003",
+        "li9_seats_R",
+        "seat1",
+        "li9_dash",
+        "li9_salon"
+      ]
+    },
+    "B1501": {
+      "code": "B1501",
+      "description_ru": "Неисправность левого зеркала",
+      "description_en": "Left Mirror System",
+      "severity": "info",
+      "possibleCauses": [
+        "Неисправность электропривода складывания",
+        "Ошибка обогрева"
+      ],
+      "procedures": [
+        "Проверка электропривода",
+        "Проверка обогрева"
+      ],
+      "manualSections": [
+        "1-21"
+      ],
+      "components": [
+        "li9_lettering_854",
+        "li9_mirror_L",
+        "landstalker2_grill_b_ng.012",
+        "landstalker2_grill_b_ng.011",
+        "landstalker2_grill_b_ng.010",
+        "landstalker2_grill_b_ng.009",
+        "landstalker2_grill_b_ng.002",
+        "landstalker2_grill_b_ng.001",
+        "landstalker2_grill_b_ng"
+      ]
+    },
+    "B1502": {
+      "code": "B1502",
+      "description_ru": "Неисправность правого зеркала",
+      "description_en": "Right Mirror System",
+      "severity": "info",
+      "possibleCauses": [
+        "Неисправность электропривода складывания"
+      ],
+      "procedures": [
+        "Проверка электропривода"
+      ],
+      "manualSections": [
+        "1-21"
+      ],
+      "components": [
+        "li9_lettering_854",
+        "li9_mirror_R",
+        "landstalker2_grill_b_ng.012",
+        "landstalker2_grill_b_ng.011",
+        "landstalker2_grill_b_ng.010",
+        "landstalker2_grill_b_ng.009",
+        "landstalker2_grill_b_ng.002",
+        "landstalker2_grill_b_ng.001",
+        "landstalker2_grill_b_ng"
+      ]
+    },
+    "C0035": {
+      "code": "C0035",
+      "description_ru": "Ошибка датчика скорости колеса ПЛ",
+      "description_en": "Wheel Speed Sensor FL Circuit",
+      "severity": "warning",
+      "possibleCauses": [
+        "Неисправность датчика ABS",
+        "Повреждение задающего кольца",
+        "Обрыв проводки"
+      ],
+      "procedures": [
+        "Проверка датчика ABS ПЛ",
+        "Осмотр задающего кольца",
+        "Проверка проводки"
+      ],
+      "manualSections": [
+        "1-34"
+      ],
+      "components": [
+        "li9_strut_F",
+        "li9_hub_R",
+        "li9_hub_F",
+        "hub_lf",
+        "hub_lf_FR",
+        "hub_lf_RL",
+        "hub_lf_RR",
+        "li9_brake_FL",
+        "li9_brake_FR",
+        "li9_brake_RL",
+        "li9_brake_RR"
+      ]
+    },
+    "C0036": {
+      "code": "C0036",
+      "description_ru": "Ошибка датчика скорости колеса ПП",
+      "description_en": "Wheel Speed Sensor FR Circuit",
+      "severity": "warning",
+      "possibleCauses": [
+        "Неисправность датчика ABS",
+        "Повреждение задающего кольца"
+      ],
+      "procedures": [
+        "Проверка датчика ABS ПП"
+      ],
+      "manualSections": [
+        "1-34"
+      ],
+      "components": [
+        "li9_strut_F",
+        "li9_hub_R",
+        "li9_hub_F",
+        "hub_lf",
+        "hub_lf_FR",
+        "hub_lf_RL",
+        "hub_lf_RR",
+        "li9_brake_FL",
+        "li9_brake_FR",
+        "li9_brake_RL",
+        "li9_brake_RR"
+      ]
+    },
+    "C0037": {
+      "code": "C0037",
+      "description_ru": "Ошибка датчика скорости колеса ЗЛ",
+      "description_en": "Wheel Speed Sensor RL Circuit",
+      "severity": "warning",
+      "possibleCauses": [
+        "Неисправность датчика ABS",
+        "Повреждение задающего кольца"
+      ],
+      "procedures": [
+        "Проверка датчика ABS ЗЛ"
+      ],
+      "manualSections": [
+        "1-34"
+      ],
+      "components": [
+        "li9_brake_FL",
+        "li9_brake_FR",
+        "li9_brake_RL",
+        "li9_brake_RR"
+      ]
+    },
+    "C0038": {
+      "code": "C0038",
+      "description_ru": "Ошибка датчика скорости колеса ЗП",
+      "description_en": "Wheel Speed Sensor RR Circuit",
+      "severity": "warning",
+      "possibleCauses": [
+        "Неисправность датчика ABS",
+        "Повреждение задающего кольца"
+      ],
+      "procedures": [
+        "Проверка датчика ABS ЗП"
+      ],
+      "manualSections": [
+        "1-34"
+      ],
+      "components": [
+        "li9_brake_FL",
+        "li9_brake_FR",
+        "li9_brake_RL",
+        "li9_brake_RR"
+      ]
+    },
+    "C0040": {
+      "code": "C0040",
+      "description_ru": "Ошибка датчика скорости колеса ПЛ (диапазон)",
+      "description_en": "Wheel Speed Sensor FL Range/Performance",
+      "severity": "warning",
+      "possibleCauses": [
+        "Загрязнение датчика",
+        "Люфт ступичного подшипника"
+      ],
+      "procedures": [
+        "Очистка датчика",
+        "Проверка ступичного подшипника"
+      ],
+      "manualSections": [
+        "1-34"
+      ],
+      "components": [
+        "li9_brake_FL"
+      ]
+    },
+    "C0041": {
+      "code": "C0041",
+      "description_ru": "Ошибка датчика скорости колеса ПП (диапазон)",
+      "description_en": "Wheel Speed Sensor FR Range/Performance",
+      "severity": "warning",
+      "possibleCauses": [
+        "Загрязнение датчика"
+      ],
+      "procedures": [
+        "Очистка датчика"
+      ],
+      "manualSections": [
+        "1-34"
+      ],
+      "components": [
+        "li9_brake_FR"
+      ]
+    },
+    "C0042": {
+      "code": "C0042",
+      "description_ru": "Ошибка датчика скорости колеса ЗЛ (диапазон)",
+      "description_en": "Wheel Speed Sensor RL Range/Performance",
+      "severity": "warning",
+      "possibleCauses": [
+        "Загрязнение датчика"
+      ],
+      "procedures": [
+        "Очистка датчика"
+      ],
+      "manualSections": [
+        "1-34"
+      ],
+      "components": [
+        "li9_brake_RL"
+      ]
+    },
+    "C0043": {
+      "code": "C0043",
+      "description_ru": "Ошибка датчика скорости колеса ЗП (диапазон)",
+      "description_en": "Wheel Speed Sensor RR Range/Performance",
+      "severity": "warning",
+      "possibleCauses": [
+        "Загрязнение датчика"
+      ],
+      "procedures": [
+        "Очистка датчика"
+      ],
+      "manualSections": [
+        "1-34"
+      ],
+      "components": [
+        "li9_brake_RR"
+      ]
+    },
+    "C0500": {
+      "code": "C0500",
+      "description_ru": "Неисправность рулевого управления",
+      "description_en": "Steering System Malfunction",
+      "severity": "critical",
+      "possibleCauses": [
+        "Неисправность ЭУР",
+        "Ошибка датчика угла поворота"
+      ],
+      "procedures": [
+        "Диагностика ЭУР",
+        "Проверка датчика угла поворота руля"
+      ],
+      "manualSections": [
+        "1-21"
+      ],
+      "components": [
+        "li9_tierod_R",
+        "li9_tierod_F",
+        "li9_steeringbox",
+        "li9_steer",
+        "li9_air_suspension"
+      ]
+    },
+    "C0550": {
+      "code": "C0550",
+      "description_ru": "Неисправность блока управления шасси",
+      "description_en": "ECU Malfunction (Chassis)",
+      "severity": "critical",
+      "possibleCauses": [
+        "Ошибка ЭБУ подвески",
+        "Сбой программного обеспечения"
+      ],
+      "procedures": [
+        "Перезагрузка ЭБУ",
+        "Обновление ПО",
+        "Замена ЭБУ при необходимости"
+      ],
+      "manualSections": [
+        "1-34"
+      ],
+      "components": [
+        "x5mf95racing_diff_F",
+        "li9_upperarm_R",
+        "li9_swaybar_R",
+        "li9_swaybar_F",
+        "li9_subframe_R",
+        "li9_subframe_F",
+        "li9_spring_R",
+        "li9_shock_R",
+        "li9_lowerarm_R",
+        "li9_lowerarm_F_b",
+        "li9_lowerarm_F_a",
+        "li9_halfshaft_R",
+        "li9_halfshaft_F",
+        "li9_diff",
+        "li9_diff_F",
+        "li9_air_suspension"
+      ]
+    },
+    "P0121": {
+      "code": "P0121",
+      "description_ru": "Ошибка датчика дроссельной заслонки",
+      "description_en": "Throttle Position Sensor Range/Performance",
+      "severity": "warning",
+      "possibleCauses": [
+        "Неисправность ДПДЗ",
+        "Загрязнение заслонки"
+      ],
+      "procedures": [
+        "Проверка ДПДЗ",
+        "Чистка дроссельной заслонки"
+      ],
+      "manualSections": [
+        "1-13"
+      ],
+      "components": [
+        "li9_Дроссельная_заслонка"
+      ]
+    },
+    "P0122": {
+      "code": "P0122",
+      "description_ru": "Низкое напряжение ДПДЗ",
+      "description_en": "Throttle Position Sensor Circuit Low",
+      "severity": "warning",
+      "possibleCauses": [
+        "Обрыв цепи",
+        "Короткое замыкание"
+      ],
+      "procedures": [
+        "Проверка проводки ДПДЗ",
+        "Замена датчика"
+      ],
+      "manualSections": [
+        "1-13"
+      ],
+      "components": [
+        "li9_Дроссельная_заслонка"
+      ]
+    },
+    "P0171": {
+      "code": "P0171",
+      "description_ru": "Бедная топливная смесь",
+      "description_en": "System Too Lean",
+      "severity": "warning",
+      "possibleCauses": [
+        "Утечка воздуха",
+        "Неисправность MAF-датчика",
+        "Низкое давление топлива"
+      ],
+      "procedures": [
+        "Проверка герметичности впуска",
+        "Проверка MAF-датчика",
+        "Проверка давления топлива"
+      ],
+      "manualSections": [
+        "1-13"
+      ],
+      "components": [
+        "li9_engine_v8",
+        "li9_fueltank",
+        "li9_emotor_mount"
+      ]
+    },
+    "P0300": {
+      "code": "P0300",
+      "description_ru": "Множественные пропуски зажигания",
+      "description_en": "Random/Multiple Cylinder Misfire",
+      "severity": "warning",
+      "possibleCauses": [
+        "Неисправность свечей зажигания",
+        "Проблемы топливной системы",
+        "Утечка вакуума"
+      ],
+      "procedures": [
+        "Проверка свечей зажигания",
+        "Проверка форсунок",
+        "Проверка компрессии"
+      ],
+      "manualSections": [
+        "1-13"
+      ],
+      "components": [
+        "li9_engine_v8",
+        "li9_fueltank",
+        "li9_emotor_mount"
+      ]
+    },
+    "P0420": {
+      "code": "P0420",
+      "description_ru": "Низкая эффективность каталитического нейтрализатора",
+      "description_en": "Catalyst System Efficiency Below Threshold",
+      "severity": "warning",
+      "possibleCauses": [
+        "Износ катализатора",
+        "Неисправность лямбда-зонда"
+      ],
+      "procedures": [
+        "Проверка лямбда-зондов",
+        "Замена катализатора при необходимости"
+      ],
+      "manualSections": [
+        "1-11"
+      ],
+      "components": [
+        "li9_exhaust_R",
+        "li9_exhaust_L_b",
+        "li9_exhaust_L"
+      ]
+    },
+    "P0430": {
+      "code": "P0430",
+      "description_ru": "Низкая эффективность каталитического нейтрализатора (банк 2)",
+      "description_en": "Catalyst System Efficiency Below Threshold (Bank 2)",
+      "severity": "warning",
+      "possibleCauses": [
+        "Износ катализатора",
+        "Неисправность лямбда-зонда"
+      ],
+      "procedures": [
+        "Проверка лямбда-зондов",
+        "Замена катализатора при необходимости"
+      ],
+      "manualSections": [
+        "1-11"
+      ],
+      "components": [
+        "li9_exhaust_R",
+        "li9_exhaust_L_b",
+        "li9_exhaust_L"
+      ]
+    },
+    "P0500": {
+      "code": "P0500",
+      "description_ru": "Ошибка датчика скорости автомобиля",
+      "description_en": "Vehicle Speed Sensor",
+      "severity": "warning",
+      "possibleCauses": [
+        "Неисправность датчика скорости",
+        "Повреждение проводки"
+      ],
+      "procedures": [
+        "Проверка датчика VSS",
+        "Проверка проводки"
+      ],
+      "manualSections": [
+        "1-30"
+      ],
+      "components": [
+        "li9_driveshaft_F",
+        "li9_driveshaft"
+      ]
+    },
+    "P0700": {
+      "code": "P0700",
+      "description_ru": "Неисправность системы трансмиссии",
+      "description_en": "Transmission Control System Malfunction",
+      "severity": "warning",
+      "possibleCauses": [
+        "Ошибка TCM",
+        "Проблемы проводки"
+      ],
+      "procedures": [
+        "Считывание кодов TCM",
+        "Проверка проводки трансмиссии"
+      ],
+      "manualSections": [
+        "1-30"
+      ],
+      "components": [
+        "li9_transmission"
+      ]
+    },
+    "P0715": {
+      "code": "P0715",
+      "description_ru": "Ошибка датчика входного вала трансмиссии",
+      "description_en": "Input/Turbine Speed Sensor Circuit",
+      "severity": "warning",
+      "possibleCauses": [
+        "Неисправность датчика",
+        "Проблемы проводки"
+      ],
+      "procedures": [
+        "Проверка датчика",
+        "Проверка разъёмов"
+      ],
+      "manualSections": [
+        "1-30"
+      ],
+      "components": [
+        "li9_transmission"
+      ]
+    },
+    "P0841": {
+      "code": "P0841",
+      "description_ru": "Ошибка давления в раздаточной коробке",
+      "description_en": "Transmission Fluid Pressure Sensor/Switch",
+      "severity": "warning",
+      "possibleCauses": [
+        "Неисправность датчика давления",
+        "Низкий уровень жидкости"
+      ],
+      "procedures": [
+        "Проверка уровня ATF",
+        "Проверка датчика давления"
+      ],
+      "manualSections": [
+        "1-30"
+      ],
+      "components": [
+        "li9_transfercase"
+      ]
+    },
+    "P0A09": {
+      "code": "P0A09",
+      "description_ru": "Неисправность DC/DC преобразователя",
+      "description_en": "DC/DC Converter Status Circuit",
+      "severity": "warning",
+      "possibleCauses": [
+        "Перегрузка преобразователя",
+        "Неисправность контура управления"
+      ],
+      "procedures": [
+        "Проверка напряжения выхода DC/DC",
+        "Проверка цепей управления"
+      ],
+      "manualSections": [
+        "1-35"
+      ],
+      "components": [
+        "li9_wiring_battery",
+        "li9_wiring_emotor"
+      ]
+    },
+    "P0A0F": {
+      "code": "P0A0F",
+      "description_ru": "Ошибка запуска двигателя",
+      "description_en": "Engine Failed to Start",
+      "severity": "critical",
+      "possibleCauses": [
+        "Разряд 12В аккумулятора",
+        "Неисправность стартера",
+        "Блокировка иммобилайзера"
+      ],
+      "procedures": [
+        "Проверка заряда 12В АКБ",
+        "Диагностика стартера",
+        "Проверка иммобилайзера"
+      ],
+      "manualSections": [
+        "1-13"
+      ],
+      "components": [
+        "li9_engine_v8"
+      ]
+    },
+    "P0A1A": {
+      "code": "P0A1A",
+      "description_ru": "Ошибка датчика скорости э/мотора",
+      "description_en": "Motor/Generator Speed Sensor",
+      "severity": "warning",
+      "possibleCauses": [
+        "Неисправность датчика",
+        "Обрыв проводки",
+        "Ошибка контроллера"
+      ],
+      "procedures": [
+        "Проверка датчика скорости",
+        "Проверка проводки э/мотора"
+      ],
+      "manualSections": [
+        "1-13"
+      ],
+      "components": [
+        "li9_emotor_f",
+        "li9_emotor_r"
+      ]
+    },
+    "P0A7F": {
+      "code": "P0A7F",
+      "description_ru": "Износ тяговой батареи",
+      "description_en": "Hybrid Battery Pack Deterioration",
+      "severity": "warning",
+      "possibleCauses": [
+        "Естественный износ",
+        "Неправильная зарядка",
+        "Высокие температуры"
+      ],
+      "procedures": [
+        "Проверка ёмкости батареи",
+        "Контроль температурного режима"
+      ],
+      "manualSections": [
+        "1-35"
+      ],
+      "components": [
+        "li9_radiator",
+        "li9_battery",
+        "li9_wiring_battery",
+        "li9_battery_cooling"
+      ]
+    },
+    "P0A80": {
+      "code": "P0A80",
+      "description_ru": "Замена тяговой батареи",
+      "description_en": "Replace Hybrid Battery Pack",
+      "severity": "critical",
+      "possibleCauses": [
+        "Деградация ячеек батареи",
+        "Внутреннее замыкание",
+        "Перегрев"
+      ],
+      "procedures": [
+        "Диагностика состояния ячеек",
+        "Проверка системы охлаждения батареи"
+      ],
+      "manualSections": [
+        "1-35"
+      ],
+      "components": [
+        "li9_battery",
+        "li9_wiring_battery",
+        "li9_battery_cooling"
+      ]
+    },
+    "P0AA6": {
+      "code": "P0AA6",
+      "description_ru": "Нарушение изоляции ВВ системы",
+      "description_en": "Hybrid Battery Voltage System Isolation Fault",
+      "severity": "critical",
+      "possibleCauses": [
+        "Повреждение изоляции кабеля",
+        "Попадание влаги",
+        "Механическое повреждение"
+      ],
+      "procedures": [
+        "Проверка сопротивления изоляции",
+        "Осмотр ВВ проводки"
+      ],
+      "manualSections": [
+        "1-35"
+      ],
+      "components": [
+        "li9_battery",
+        "li9_wiring_battery",
+        "li9_wiring_emotor",
+        "li9_battery_cooling"
+      ]
+    },
+    "P3000": {
+      "code": "P3000",
+      "description_ru": "Неисправность системы тяговой батареи",
+      "description_en": "Hybrid Battery System",
+      "severity": "critical",
+      "possibleCauses": [
+        "Ошибка BMS",
+        "Ошибка связи с батареей",
+        "Неисправность ячейки"
+      ],
+      "procedures": [
+        "Считывание кодов BMS",
+        "Проверка высоковольтных соединений"
+      ],
+      "manualSections": [
+        "1-35"
+      ],
+      "components": [
+        "li9_battery",
+        "li9_wiring_battery",
+        "li9_battery_cooling"
+      ]
+    },
+    "U0100": {
+      "code": "U0100",
+      "description_ru": "Потеря связи с ECM/PCM",
+      "description_en": "Lost Communication with ECM/PCM",
+      "severity": "critical",
+      "possibleCauses": [
+        "Обрыв CAN-шины",
+        "Неисправность ECM",
+        "Повреждение проводки"
+      ],
+      "procedures": [
+        "Проверка CAN-шины",
+        "Проверка разъёмов ECM"
+      ],
+      "manualSections": [
+        "1-16"
+      ],
+      "components": [
+        "li9_center_screen",
+        "li9_xcu",
+        "li9_hu"
+      ]
+    },
+    "U0155": {
+      "code": "U0155",
+      "description_ru": "Потеря связи с модулем фар",
+      "description_en": "Lost Communication with Headlight Module",
+      "severity": "warning",
+      "possibleCauses": [
+        "Обрыв CAN-шины к модулю фар"
+      ],
+      "procedures": [
+        "Проверка проводки к модулю фар"
+      ],
+      "manualSections": [
+        "1-32"
+      ],
+      "components": [
+        "li9_xcu",
+        "li9_hu"
+      ]
+    }
+  }
+}

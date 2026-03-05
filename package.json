@@ -1,0 +1,130 @@
+{
+  "name": "llcar-3d",
+  "version": "2.0.0",
+  "description": "LLCAR 3D - Long Life Car - Professional 3D Tools",
+  "main": "electron-main.js",
+  "scripts": {
+    "start": "npx http-server -p 8080 -o",
+    "dev": "npx http-server -p 8080",
+    "electron": "electron .",
+    "build": "electron-builder --win --x64",
+    "build:portable": "electron-builder --win portable --x64"
+  },
+  "keywords": [
+    "threejs",
+    "3d",
+    "webgl",
+    "javascript",
+    "examples",
+    "gallery",
+    "electron"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@tensorflow/tfjs": "^4.22.0",
+    "serve-handler": "^6.1.6"
+  },
+  "devDependencies": {
+    "electron": "^40.4.1",
+    "electron-builder": "^26.7.0",
+    "http-server": "^14.1.1",
+    "png-to-ico": "^3.0.1",
+    "sharp": "^0.34.5",
+    "three": "^0.182.0"
+  },
+  "build": {
+    "appId": "com.llcar.3d",
+    "productName": "LLCAR 3D",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "electron-main.js",
+      "preload.js",
+      "package.json",
+      "index.html",
+      "examples/**/*",
+      "css/**/*",
+      "js/**/*",
+      "libs/**/*",
+      "assets/**/*",
+      "build/**/*"
+    ],
+    "fileAssociations": [
+      {
+        "ext": "glb",
+        "name": "GLB 3D Model",
+        "role": "Viewer"
+      },
+      {
+        "ext": "gltf",
+        "name": "GLTF 3D Model",
+        "role": "Viewer"
+      },
+      {
+        "ext": "fbx",
+        "name": "FBX 3D Model",
+        "role": "Viewer"
+      },
+      {
+        "ext": "obj",
+        "name": "OBJ 3D Model",
+        "role": "Viewer"
+      },
+      {
+        "ext": "stl",
+        "name": "STL 3D Model",
+        "role": "Viewer"
+      },
+      {
+        "ext": "ply",
+        "name": "PLY 3D Model",
+        "role": "Viewer"
+      },
+      {
+        "ext": "3ds",
+        "name": "3DS 3D Model",
+        "role": "Viewer"
+      },
+      {
+        "ext": "dae",
+        "name": "DAE 3D Model",
+        "role": "Viewer"
+      }
+    ],
+    "win": {
+      "icon": "build/icon.ico",
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        },
+        {
+          "target": "portable",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "signAndEditExecutable": false,
+      "verifyUpdateCodeSignature": false,
+      "requestedExecutionLevel": "asInvoker"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "LLCAR 3D",
+      "perMachine": false,
+      "runAfterFinish": true
+    },
+    "portable": {
+      "artifactName": "LLCAR-3D-Portable.exe",
+      "requestExecutionLevel": "user"
+    }
+  }
+}

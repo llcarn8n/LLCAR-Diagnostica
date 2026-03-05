@@ -1,0 +1,603 @@
+/* ===================================
+   Three.js Examples - Dark Theme
+   Shared styles for all example pages
+   =================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* CSS Custom Properties */
+:root {
+    --ex-bg: #0e0e14;
+    --ex-panel: rgba(18, 18, 26, 0.92);
+    --ex-panel-border: rgba(255, 255, 255, 0.06);
+    --ex-panel-hover: rgba(255, 255, 255, 0.08);
+    --ex-text: #e0e0e8;
+    --ex-text-secondary: #8888a0;
+    --ex-text-muted: #555568;
+    --ex-accent: #6c5ce7;
+    --ex-accent-light: #a29bfe;
+    --ex-success: #00b894;
+    --ex-warning: #fdcb6e;
+    --ex-danger: #e17055;
+    --ex-input-bg: rgba(255, 255, 255, 0.05);
+    --ex-input-border: rgba(255, 255, 255, 0.1);
+    --ex-input-focus: rgba(108, 92, 231, 0.4);
+    --ex-radius: 12px;
+    --ex-radius-sm: 8px;
+    --ex-transition: 0.2s ease;
+}
+
+/* Reset for examples */
+body {
+    margin: 0;
+    overflow: hidden;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: var(--ex-bg);
+    color: var(--ex-text);
+    -webkit-font-smoothing: antialiased;
+}
+
+#canvas-container {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+}
+
+/* ===================================
+   Breadcrumb Navigation (replaces back-btn)
+   =================================== */
+.back-btn {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--ex-panel);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid var(--ex-panel-border);
+    padding: 10px 18px;
+    border-radius: var(--ex-radius-sm);
+    text-decoration: none;
+    color: var(--ex-text-secondary);
+    font-weight: 500;
+    font-size: 13px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+    transition: all var(--ex-transition);
+    z-index: 1000;
+}
+
+.back-btn:hover {
+    color: var(--ex-text);
+    background: var(--ex-panel-hover);
+    border-color: rgba(255, 255, 255, 0.12);
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* ===================================
+   Control Panel - Dark Glassmorphism
+   =================================== */
+.controls {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    background: var(--ex-panel);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid var(--ex-panel-border);
+    padding: 0;
+    border-radius: var(--ex-radius);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+    min-width: 260px;
+    max-width: 340px;
+    z-index: 100;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+/* Panel Header (collapsible toggle) */
+.controls h2 {
+    margin: 0;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--ex-text);
+    padding: 16px 18px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--ex-panel-border);
+    user-select: none;
+    letter-spacing: -0.2px;
+}
+
+.controls h2::after {
+    content: '';
+    width: 8px;
+    height: 8px;
+    border-right: 2px solid var(--ex-text-muted);
+    border-bottom: 2px solid var(--ex-text-muted);
+    transform: rotate(45deg);
+    transition: transform var(--ex-transition);
+    flex-shrink: 0;
+    margin-left: 12px;
+}
+
+.controls.collapsed h2::after {
+    transform: rotate(-135deg);
+}
+
+/* Panel Body */
+.controls-body {
+    padding: 16px 18px;
+    max-height: 70vh;
+    overflow-y: auto;
+    transition: max-height 0.3s ease, padding 0.3s ease, opacity 0.3s ease;
+}
+
+.controls.collapsed .controls-body {
+    max-height: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    opacity: 0;
+    overflow: hidden;
+}
+
+/* Scrollbar for panels */
+.controls-body::-webkit-scrollbar {
+    width: 4px;
+}
+
+.controls-body::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.controls-body::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 2px;
+}
+
+.controls-body::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Sub-headings inside controls */
+.controls h3 {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--ex-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    margin: 20px 0 10px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid var(--ex-panel-border);
+}
+
+.controls h3:first-child {
+    margin-top: 0;
+}
+
+/* ===================================
+   Labels
+   =================================== */
+.controls label {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 12px 0 6px;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--ex-text-secondary);
+}
+
+/* ===================================
+   Inputs & Selects - Dark Theme
+   =================================== */
+.controls input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 4px;
+    background: var(--ex-input-bg);
+    border: none;
+    border-radius: 2px;
+    margin: 8px 0 14px;
+    outline: none;
+    cursor: pointer;
+}
+
+.controls input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--ex-accent);
+    border: 2px solid var(--ex-panel);
+    box-shadow: 0 0 6px rgba(108, 92, 231, 0.4);
+    cursor: pointer;
+    transition: transform var(--ex-transition);
+}
+
+.controls input[type="range"]::-webkit-slider-thumb:hover {
+    transform: scale(1.2);
+}
+
+.controls input[type="range"]::-moz-range-thumb {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--ex-accent);
+    border: 2px solid var(--ex-panel);
+    box-shadow: 0 0 6px rgba(108, 92, 231, 0.4);
+    cursor: pointer;
+}
+
+.controls input[type="color"] {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 32px;
+    padding: 2px;
+    background: var(--ex-input-bg);
+    border: 1px solid var(--ex-input-border);
+    border-radius: var(--ex-radius-sm);
+    cursor: pointer;
+    margin: 4px 0 10px;
+}
+
+.controls input[type="color"]::-webkit-color-swatch-wrapper {
+    padding: 2px;
+}
+
+.controls input[type="color"]::-webkit-color-swatch {
+    border: none;
+    border-radius: 4px;
+}
+
+.controls select {
+    width: 100%;
+    padding: 10px 12px;
+    margin: 4px 0 10px;
+    background: var(--ex-input-bg);
+    border: 1px solid var(--ex-input-border);
+    border-radius: var(--ex-radius-sm);
+    color: var(--ex-text);
+    font-size: 13px;
+    font-family: inherit;
+    cursor: pointer;
+    outline: none;
+    transition: border-color var(--ex-transition);
+    -webkit-appearance: none;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg width='10' height='6' viewBox='0 0 10 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%238888a0' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    padding-right: 32px;
+}
+
+.controls select:focus {
+    border-color: var(--ex-accent);
+    box-shadow: 0 0 0 3px var(--ex-input-focus);
+}
+
+.controls select option {
+    background: #1a1a28;
+    color: var(--ex-text);
+}
+
+.controls input[type="text"],
+.controls input[type="number"] {
+    width: 100%;
+    padding: 10px 12px;
+    margin: 4px 0 10px;
+    background: var(--ex-input-bg);
+    border: 1px solid var(--ex-input-border);
+    border-radius: var(--ex-radius-sm);
+    color: var(--ex-text);
+    font-size: 13px;
+    font-family: inherit;
+    outline: none;
+    transition: border-color var(--ex-transition);
+}
+
+.controls input[type="text"]:focus,
+.controls input[type="number"]:focus {
+    border-color: var(--ex-accent);
+    box-shadow: 0 0 0 3px var(--ex-input-focus);
+}
+
+/* ===================================
+   Buttons - Dark Theme
+   =================================== */
+.controls button {
+    width: 100%;
+    padding: 10px 14px;
+    margin: 5px 0;
+    border: none;
+    border-radius: var(--ex-radius-sm);
+    font-size: 13px;
+    font-weight: 500;
+    font-family: inherit;
+    cursor: pointer;
+    transition: all var(--ex-transition);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+}
+
+.controls button.primary {
+    background: var(--ex-accent);
+    color: white;
+    box-shadow: 0 2px 8px rgba(108, 92, 231, 0.3);
+}
+
+.controls button.primary:hover {
+    background: #5b4bd5;
+    box-shadow: 0 4px 16px rgba(108, 92, 231, 0.4);
+    transform: translateY(-1px);
+}
+
+.controls button.primary:active {
+    transform: translateY(0);
+}
+
+.controls button.secondary {
+    background: var(--ex-input-bg);
+    color: var(--ex-text-secondary);
+    border: 1px solid var(--ex-input-border);
+}
+
+.controls button.secondary:hover {
+    background: var(--ex-panel-hover);
+    color: var(--ex-text);
+    border-color: rgba(255, 255, 255, 0.15);
+}
+
+.controls button:disabled {
+    opacity: 0.35;
+    cursor: not-allowed;
+    transform: none !important;
+}
+
+/* File input hidden */
+.controls input[type="file"] {
+    display: none;
+}
+
+/* ===================================
+   File Info Badge
+   =================================== */
+.file-info {
+    margin: 8px 0;
+    padding: 8px 12px;
+    background: var(--ex-input-bg);
+    border: 1px solid var(--ex-panel-border);
+    border-radius: var(--ex-radius-sm);
+    font-size: 11px;
+    word-break: break-all;
+    color: var(--ex-text-muted);
+    line-height: 1.5;
+}
+
+/* ===================================
+   Info Panel - Bottom Left
+   =================================== */
+.info {
+    position: absolute;
+    bottom: 16px;
+    left: 16px;
+    background: var(--ex-panel);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid var(--ex-panel-border);
+    padding: 14px 18px;
+    border-radius: var(--ex-radius);
+    color: var(--ex-text-secondary);
+    font-size: 12px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+    max-width: 280px;
+    z-index: 50;
+}
+
+.info strong {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--ex-accent-light);
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.info ul {
+    margin: 0;
+    padding-left: 16px;
+    line-height: 1.8;
+}
+
+.info li {
+    margin: 2px 0;
+    color: var(--ex-text-secondary);
+}
+
+/* ===================================
+   Loading Indicator
+   =================================== */
+.loading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: var(--ex-panel);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid var(--ex-panel-border);
+    padding: 24px 40px;
+    border-radius: var(--ex-radius);
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--ex-text);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+    display: none;
+    z-index: 200;
+}
+
+.loading.active {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.loading::before {
+    content: '';
+    width: 18px;
+    height: 18px;
+    border: 2px solid var(--ex-panel-border);
+    border-top-color: var(--ex-accent);
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Backward-compatible: examples using id="loading" with display:block toggle */
+#loading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: var(--ex-panel);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid var(--ex-panel-border);
+    padding: 24px 40px;
+    border-radius: var(--ex-radius);
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--ex-text);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+    z-index: 200;
+}
+
+/* ===================================
+   Stats Badge
+   =================================== */
+.stats {
+    position: absolute;
+    top: 16px;
+    right: 100px;
+    background: var(--ex-panel);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid var(--ex-panel-border);
+    padding: 8px 14px;
+    border-radius: var(--ex-radius-sm);
+    font-size: 11px;
+    color: var(--ex-text-secondary);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+    z-index: 50;
+}
+
+.stats-value {
+    font-weight: 600;
+    color: var(--ex-accent-light);
+}
+
+/* ===================================
+   Tooltip
+   =================================== */
+[data-tooltip] {
+    position: relative;
+}
+
+[data-tooltip]:hover::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: calc(100% + 8px);
+    left: 50%;
+    transform: translateX(-50%);
+    background: #1a1a28;
+    color: var(--ex-text);
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 500;
+    white-space: nowrap;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+    border: 1px solid var(--ex-panel-border);
+    z-index: 1000;
+    pointer-events: none;
+    animation: tooltipFadeIn 0.15s ease;
+}
+
+@keyframes tooltipFadeIn {
+    from { opacity: 0; transform: translateX(-50%) translateY(4px); }
+    to { opacity: 1; transform: translateX(-50%) translateY(0); }
+}
+
+/* ===================================
+   Responsive
+   =================================== */
+@media (max-width: 768px) {
+    .controls {
+        top: auto;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        max-width: none;
+        min-width: auto;
+        border-radius: var(--ex-radius) var(--ex-radius) 0 0;
+        max-height: 50vh;
+    }
+
+    /* Collapsed by default on mobile */
+    .controls.mobile-collapsed .controls-body {
+        max-height: 0;
+        padding-top: 0;
+        padding-bottom: 0;
+        opacity: 0;
+        overflow: hidden;
+    }
+
+    .controls-body {
+        max-height: 40vh;
+    }
+
+    .info {
+        display: none;
+    }
+
+    .back-btn {
+        top: 10px;
+        right: 10px;
+        padding: 8px 14px;
+        font-size: 12px;
+    }
+
+    .stats {
+        top: 10px;
+        right: 80px;
+    }
+}
+
+@media (max-width: 480px) {
+    .controls h2 {
+        font-size: 14px;
+        padding: 14px 16px;
+    }
+
+    .controls-body {
+        padding: 14px 16px;
+    }
+
+    .controls button {
+        padding: 10px 12px;
+        font-size: 12px;
+    }
+}

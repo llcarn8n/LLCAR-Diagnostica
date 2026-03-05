@@ -1,0 +1,42 @@
+{
+  "meta": {
+    "version": "2.0",
+    "description": "Maps 13 KB layers to 5 diagnostic groups + 8 viz layers to 5 groups",
+    "kb_layers": 13,
+    "groups": 5
+  },
+  "mapping": {
+    "ev": "electric",
+    "battery": "electric",
+    "engine": "fuel",
+    "drivetrain": "fuel",
+    "chassis": "suspension",
+    "brakes": "suspension",
+    "body": "cabin",
+    "interior": "cabin",
+    "hvac": "cabin",
+    "infotainment": "tech",
+    "adas": "tech",
+    "sensors": "tech",
+    "lighting": "tech",
+    "parts": null,
+    "web_scraped": null
+  },
+  "reverse": {
+    "electric": ["ev", "battery"],
+    "fuel": ["engine", "drivetrain"],
+    "suspension": ["chassis", "brakes"],
+    "cabin": ["body", "interior", "hvac"],
+    "tech": ["infotainment", "adas", "sensors", "lighting"]
+  },
+  "viz_to_group": {
+    "ev": "electric",
+    "engine": "fuel",
+    "drivetrain": "fuel",
+    "brakes": "suspension",
+    "body": "cabin",
+    "interior": "cabin",
+    "hvac": "cabin",
+    "sensors": "tech"
+  }
+}

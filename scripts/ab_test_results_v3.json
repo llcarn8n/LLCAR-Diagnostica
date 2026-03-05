@@ -1,0 +1,888 @@
+{
+  "metadata": {
+    "timestamp": "2026-02-28T17:23:06",
+    "device": "cuda:1",
+    "models_tested": [
+      "utrobin",
+      "nllb",
+      "madlad"
+    ],
+    "models_failed": [],
+    "glossary_terms_loaded": 2643,
+    "sacrebleu_available": true
+  },
+  "summary": {
+    "RU→EN": [
+      {
+        "model": "Utrobin M2M",
+        "bleu": 63.29,
+        "term_match_pct": 35.4,
+        "avg_time_s": 0.3606
+      },
+      {
+        "model": "NLLB-600M",
+        "bleu": 51.58,
+        "term_match_pct": 35.4,
+        "avg_time_s": 0.2062
+      },
+      {
+        "model": "MADLAD-3B",
+        "bleu": 0.18,
+        "term_match_pct": 0.0,
+        "avg_time_s": 2.4156
+      }
+    ],
+    "EN→RU": [
+      {
+        "model": "Utrobin M2M",
+        "bleu": 34.11,
+        "term_match_pct": 8.8,
+        "avg_time_s": 0.3942
+      },
+      {
+        "model": "NLLB-600M",
+        "bleu": 21.21,
+        "term_match_pct": 6.2,
+        "avg_time_s": 0.2647
+      },
+      {
+        "model": "MADLAD-3B",
+        "bleu": 0.22,
+        "term_match_pct": 0.0,
+        "avg_time_s": 3.9998
+      }
+    ],
+    "ZH→RU": [
+      {
+        "model": "Utrobin M2M",
+        "bleu": 30.47,
+        "term_match_pct": 2.5,
+        "avg_time_s": 0.3399
+      },
+      {
+        "model": "NLLB-600M",
+        "bleu": 25.91,
+        "term_match_pct": 4.2,
+        "avg_time_s": 0.2798
+      },
+      {
+        "model": "MADLAD-3B",
+        "bleu": 0.11,
+        "term_match_pct": 0.0,
+        "avg_time_s": 7.6344
+      }
+    ]
+  },
+  "detailed_results": [
+    {
+      "model_key": "utrobin",
+      "model_display": "Utrobin M2M",
+      "hf_id": "utrobinmv/m2m_translate_en_ru_zh_large_4096",
+      "device": "cuda:1",
+      "load_time_s": 29.08,
+      "directions": {
+        "RU→EN": {
+          "bleu": 63.29,
+          "term_match": 0.3542,
+          "avg_time_s": 0.3606,
+          "sentences": [
+            {
+              "id": 1,
+              "source": "Замените тормозную жидкость каждые 2 года или 40000 км пробега.",
+              "reference": "Replace brake fluid every 2 years or 40,000 km of mileage.",
+              "hypothesis": "Replace the brake fluid every 2 years or 40,000 km.",
+              "time_s": 0.6652,
+              "term_match": 0.5
+            },
+            {
+              "id": 2,
+              "source": "Момент затяжки болтов крепления суппорта: 35 Нм.",
+              "reference": "Caliper mounting bolt torque: 35 Nm.",
+              "hypothesis": "Pull bolt torque: 35 Nm.",
+              "time_s": 0.2514,
+              "term_match": 0.0
+            },
+            {
+              "id": 3,
+              "source": "Проверьте уровень масла в двигателе при холодном двигателе.",
+              "reference": "Check engine oil level with the engine cold.",
+              "hypothesis": "Check the oil level in the engine with a refrigerated engine.",
+              "time_s": 0.3228,
+              "term_match": 0.0
+            },
+            {
+              "id": 4,
+              "source": "Датчик массового расхода воздуха расположен после воздушного фильтра.",
+              "reference": "The mass air flow sensor is located after the air filter.",
+              "hypothesis": "A mass airflow sensor is located after the air filter.",
+              "time_s": 0.2864,
+              "term_match": 1.0
+            },
+            {
+              "id": 5,
+              "source": "При появлении кода ошибки P0420 проверьте каталитический нейтрализатор.",
+              "reference": "When error code P0420 appears, check the catalytic converter.",
+              "hypothesis": "If the error code P0420 appears, check the catalytic converter.",
+              "time_s": 0.3628,
+              "term_match": 1.0
+            },
+            {
+              "id": 6,
+              "source": "Рекомендуемое давление в шинах: 2.3 бар (передние), 2.5 бар (задние).",
+              "reference": "Recommended tire pressure: 2.3 bar (front), 2.5 bar (rear).",
+              "hypothesis": "Recommended tire pressure: 2.3 bar (front), 2,5 bar (rear).",
+              "time_s": 0.4532,
+              "term_match": 0.0
+            },
+            {
+              "id": 7,
+              "source": "Турбокомпрессор охлаждается маслом и антифризом.",
+              "reference": "The turbocharger is cooled by oil and coolant.",
+              "hypothesis": "The turbocharger is cooled with oil and antifreeze.",
+              "time_s": 0.2867,
+              "term_match": 0.0
+            },
+            {
+              "id": 8,
+              "source": "Снимите декоративную крышку двигателя, потянув её вверх.",
+              "reference": "Remove the engine decorative cover by pulling it upward.",
+              "hypothesis": "Remove the decorative hood of the engine by pulling it up.",
+              "time_s": 0.3065,
+              "term_match": null
+            },
+            {
+              "id": 9,
+              "source": "Блок управления двигателем (ECU) расположен под приборной панелью.",
+              "reference": "The engine control unit (ECU) is located under the dashboard.",
+              "hypothesis": "The engine control unit (ECU) is located under the dashboard.",
+              "time_s": 0.3082,
+              "term_match": 0.3333
+            },
+            {
+              "id": 10,
+              "source": "Замена ремня ГРМ требуется каждые 90000 км.",
+              "reference": "Timing belt replacement is required every 90,000 km.",
+              "hypothesis": "Replacement of the belt is required every 90,000 km.",
+              "time_s": 0.3632,
+              "term_match": null
+            }
+          ]
+        },
+        "EN→RU": {
+          "bleu": 34.11,
+          "term_match": 0.0883,
+          "avg_time_s": 0.3942,
+          "sentences": [
+            {
+              "id": 1,
+              "source": "The high-voltage battery pack requires inspection every 12 months.",
+              "reference": "Высоковольтная аккумуляторная батарея требует проверки каждые 12 месяцев.",
+              "hypothesis": "Высоковольтный аккумулятор требует проверки каждые 12 месяцев.",
+              "time_s": 0.2722,
+              "term_match": 0.1
+            },
+            {
+              "id": 2,
+              "source": "WARNING: Do not open the inverter cover while the vehicle is powered on.",
+              "reference": "ВНИМАНИЕ: Не открывайте крышку инвертора при включённом питании автомобиля.",
+              "hypothesis": "Предупреждение: Не открывайте крышку инвертора, пока автомобиль включен.",
+              "time_s": 0.3818,
+              "term_match": 0.2222
+            },
+            {
+              "id": 3,
+              "source": "DTC P0300 indicates random/multiple cylinder misfire detected.",
+              "reference": "Код ошибки P0300 указывает на обнаружение случайных/множественных пропусков зажигания.",
+              "hypothesis": "ДТК Р0300 указывает случайный/множественный обнаруженный неисправность цилиндра.",
+              "time_s": 0.4772,
+              "term_match": 0.0
+            },
+            {
+              "id": 4,
+              "source": "Apply 0W-20 synthetic motor oil. Capacity: 4.5 liters.",
+              "reference": "Используйте синтетическое моторное масло 0W-20. Объём: 4,5 литра.",
+              "hypothesis": "Нанесите синтетическое моторное масло 0В-20. Производительность: 4,5 литра.",
+              "time_s": 0.4955,
+              "term_match": 0.0
+            },
+            {
+              "id": 5,
+              "source": "The regenerative braking system recovers kinetic energy during deceleration.",
+              "reference": "Система рекуперативного торможения преобразует кинетическую энергию при замедлении.",
+              "hypothesis": "Регенеративная тормозная система восстанавливает кинетическую энергию во время замедления.",
+              "time_s": 0.38,
+              "term_match": 0.1111
+            },
+            {
+              "id": 6,
+              "source": "Inspect the brake pads for wear. Minimum thickness: 2 mm.",
+              "reference": "Проверьте тормозные колодки на износ. Минимальная толщина: 2 мм.",
+              "hypothesis": "Проверьте тормозные колодки на износ. Минимальная толщина: 2 мм.",
+              "time_s": 0.3948,
+              "term_match": 0.25
+            },
+            {
+              "id": 7,
+              "source": "The coolant temperature sensor sends data to the ECU via CAN bus.",
+              "reference": "Датчик температуры охлаждающей жидкости передаёт данные в ЭБУ по шине CAN.",
+              "hypothesis": "Датчик температуры охлаждающей жидкости отправляет данные в ЭБУ через шину.",
+              "time_s": 0.383,
+              "term_match": 0.2
+            },
+            {
+              "id": 8,
+              "source": "Disconnect the negative battery terminal before performing electrical work.",
+              "reference": "Отсоедините отрицательную клемму аккумулятора перед выполнением электрических работ.",
+              "hypothesis": "Отсоедините отрицательный клемм аккумулятора перед выполнением электромонтажных работ.",
+              "time_s": 0.3435,
+              "term_match": 0.0
+            },
+            {
+              "id": 9,
+              "source": "The differential oil should be changed every 60,000 km.",
+              "reference": "Масло в дифференциале следует менять каждые 60000 км.",
+              "hypothesis": "Дифференциальная нефть должна меняться каждые 60 тысяч километров.",
+              "time_s": 0.3627,
+              "term_match": 0.0
+            },
+            {
+              "id": 10,
+              "source": "ABS module failure may cause the stability control warning light to illuminate.",
+              "reference": "Неисправность блока ABS может привести к загоранию индикатора системы стабилизации.",
+              "hypothesis": "Неисправность модуля АБС может привести к освещению предупреждающего огня управления устойчивостью.",
+              "time_s": 0.4511,
+              "term_match": 0.0
+            }
+          ]
+        },
+        "ZH→RU": {
+          "bleu": 30.47,
+          "term_match": 0.025,
+          "avg_time_s": 0.3399,
+          "sentences": [
+            {
+              "id": 1,
+              "source": "更换制动液时，请使用DOT4标准制动液。",
+              "reference": "При замене тормозной жидкости используйте тормозную жидкость стандарта DOT4.",
+              "hypothesis": "При замене тормозной жидкости используйте стандартную тормозную жидкость DOT4.",
+              "time_s": 0.3427,
+              "term_match": 0.0
+            },
+            {
+              "id": 2,
+              "source": "发动机冷却液温度过高时，请立即停车检查。",
+              "reference": "При слишком высокой температуре охлаждающей жидкости двигателя немедленно остановитесь для проверки.",
+              "hypothesis": "Если температура охлаждающей жидкости в двигателе слишком высока, немедленно остановитесь для проверки.",
+              "time_s": 0.3828,
+              "term_match": 0.0
+            },
+            {
+              "id": 3,
+              "source": "前大灯高度调节范围为0至3档。",
+              "reference": "Диапазон регулировки высоты передних фар составляет от 0 до 3 уровней.",
+              "hypothesis": "Размеры регулировки высоты переднего фонаря варьируются от 0 до 3.",
+              "time_s": 0.3471,
+              "term_match": 0.0
+            },
+            {
+              "id": 4,
+              "source": "请定期检查轮胎磨损情况和胎压。",
+              "reference": "Регулярно проверяйте состояние износа шин и давление в них.",
+              "hypothesis": "Регулярно проверяйте износ шин и давление в шинах.",
+              "time_s": 0.3258,
+              "term_match": 0.25
+            },
+            {
+              "id": 5,
+              "source": "高压电池组位于车辆底部。",
+              "reference": "Высоковольтная батарея расположена в нижней части автомобиля.",
+              "hypothesis": "Высоковольтные аккумуляторы расположены в нижней части автомобиля.",
+              "time_s": 0.2399,
+              "term_match": 0.0
+            },
+            {
+              "id": 6,
+              "source": "空调滤芯建议每12个月或20000公里更换一次。",
+              "reference": "Фильтр кондиционера рекомендуется менять каждые 12 месяцев или 20000 км.",
+              "hypothesis": "Фильтры кондиционеров рекомендуется менять каждые 12 месяцев или 20 тыс. км.",
+              "time_s": 0.435,
+              "term_match": 0.0
+            },
+            {
+              "id": 7,
+              "source": "车辆启动前，请确保所有车门已关闭。",
+              "reference": "Перед запуском автомобиля убедитесь, что все двери закрыты.",
+              "hypothesis": "Пожалуйста, перед запуском убедитесь, что все двери заперты.",
+              "time_s": 0.2912,
+              "term_match": 0.0
+            },
+            {
+              "id": 8,
+              "source": "电动助力转向系统故障时，方向盘会变重。",
+              "reference": "При неисправности электроусилителя руля рулевое колесо становится тяжёлым.",
+              "hypothesis": "Электрическая рулевая педаль может стать тяжелой при неисправности системы.",
+              "time_s": 0.3274,
+              "term_match": 0.0
+            },
+            {
+              "id": 9,
+              "source": "增程器在电量低于30%时自动启动。",
+              "reference": "Генератор-расширитель запаса хода автоматически запускается при заряде ниже 30%.",
+              "hypothesis": "Удлинитель автоматически включается, когда потребляемая мощность составляет менее 30%.",
+              "time_s": 0.3434,
+              "term_match": 0.0
+            },
+            {
+              "id": 10,
+              "source": "请使用原厂推荐的0W-20全合成机油。",
+              "reference": "Используйте рекомендованное заводом полностью синтетическое масло 0W-20.",
+              "hypothesis": "Используйте все синтетические масла, рекомендованные заводом 0W-20.",
+              "time_s": 0.3637,
+              "term_match": 0.0
+            }
+          ]
+        }
+      }
+    },
+    {
+      "model_key": "nllb",
+      "model_display": "NLLB-600M",
+      "hf_id": "facebook/nllb-200-distilled-600M",
+      "device": "cuda:1",
+      "load_time_s": 7.28,
+      "directions": {
+        "RU→EN": {
+          "bleu": 51.58,
+          "term_match": 0.3542,
+          "avg_time_s": 0.2062,
+          "sentences": [
+            {
+              "id": 1,
+              "source": "Замените тормозную жидкость каждые 2 года или 40000 км пробега.",
+              "reference": "Replace brake fluid every 2 years or 40,000 km of mileage.",
+              "hypothesis": "Replace the brake fluid every 2 years or 40,000 km.",
+              "time_s": 0.2209,
+              "term_match": 0.5
+            },
+            {
+              "id": 2,
+              "source": "Момент затяжки болтов крепления суппорта: 35 Нм.",
+              "reference": "Caliper mounting bolt torque: 35 Nm.",
+              "hypothesis": "The torque of the bolts attaching the support port: 35 Nm.",
+              "time_s": 0.2296,
+              "term_match": 0.0
+            },
+            {
+              "id": 3,
+              "source": "Проверьте уровень масла в двигателе при холодном двигателе.",
+              "reference": "Check engine oil level with the engine cold.",
+              "hypothesis": "Check the oil level in the engine when the engine is cold.",
+              "time_s": 0.1866,
+              "term_match": 0.0
+            },
+            {
+              "id": 4,
+              "source": "Датчик массового расхода воздуха расположен после воздушного фильтра.",
+              "reference": "The mass air flow sensor is located after the air filter.",
+              "hypothesis": "The air mass consumption sensor is located behind the air filter.",
+              "time_s": 0.1726,
+              "term_match": 1.0
+            },
+            {
+              "id": 5,
+              "source": "При появлении кода ошибки P0420 проверьте каталитический нейтрализатор.",
+              "reference": "When error code P0420 appears, check the catalytic converter.",
+              "hypothesis": "If the P0420 error code appears, check the catalytic converter.",
+              "time_s": 0.2153,
+              "term_match": 1.0
+            },
+            {
+              "id": 6,
+              "source": "Рекомендуемое давление в шинах: 2.3 бар (передние), 2.5 бар (задние).",
+              "reference": "Recommended tire pressure: 2.3 bar (front), 2.5 bar (rear).",
+              "hypothesis": "Recommended tire pressure: 2.3 bar (front), 2.5 bar (rear).",
+              "time_s": 0.2258,
+              "term_match": 0.0
+            },
+            {
+              "id": 7,
+              "source": "Турбокомпрессор охлаждается маслом и антифризом.",
+              "reference": "The turbocharger is cooled by oil and coolant.",
+              "hypothesis": "The turbocharger is cooled with oil and antifreeze.",
+              "time_s": 0.2129,
+              "term_match": 0.0
+            },
+            {
+              "id": 8,
+              "source": "Снимите декоративную крышку двигателя, потянув её вверх.",
+              "reference": "Remove the engine decorative cover by pulling it upward.",
+              "hypothesis": "Remove the decorative engine lid by pulling it upwards.",
+              "time_s": 0.1937,
+              "term_match": null
+            },
+            {
+              "id": 9,
+              "source": "Блок управления двигателем (ECU) расположен под приборной панелью.",
+              "reference": "The engine control unit (ECU) is located under the dashboard.",
+              "hypothesis": "The engine control unit (ECU) is located under the dashboard.",
+              "time_s": 0.2131,
+              "term_match": 0.3333
+            },
+            {
+              "id": 10,
+              "source": "Замена ремня ГРМ требуется каждые 90000 км.",
+              "reference": "Timing belt replacement is required every 90,000 km.",
+              "hypothesis": "The GRM belt needs to be replaced every 90,000 kilometers.",
+              "time_s": 0.1915,
+              "term_match": null
+            }
+          ]
+        },
+        "EN→RU": {
+          "bleu": 21.21,
+          "term_match": 0.0622,
+          "avg_time_s": 0.2647,
+          "sentences": [
+            {
+              "id": 1,
+              "source": "The high-voltage battery pack requires inspection every 12 months.",
+              "reference": "Высоковольтная аккумуляторная батарея требует проверки каждые 12 месяцев.",
+              "hypothesis": "Аккумуляторный пакет с высоким напряжением требует проверки каждые 12 месяцев.",
+              "time_s": 0.2786,
+              "term_match": 0.2
+            },
+            {
+              "id": 2,
+              "source": "WARNING: Do not open the inverter cover while the vehicle is powered on.",
+              "reference": "ВНИМАНИЕ: Не открывайте крышку инвертора при включённом питании автомобиля.",
+              "hypothesis": "Предупреждение: не открывайте крышку инвертера, пока транспортное средство включено.",
+              "time_s": 0.2585,
+              "term_match": 0.1111
+            },
+            {
+              "id": 3,
+              "source": "DTC P0300 indicates random/multiple cylinder misfire detected.",
+              "reference": "Код ошибки P0300 указывает на обнаружение случайных/множественных пропусков зажигания.",
+              "hypothesis": "DTC P0300 указывает на случайный/множественный цилиндровый неисправной огонь, обнаруженный.",
+              "time_s": 0.3647,
+              "term_match": 0.0
+            },
+            {
+              "id": 4,
+              "source": "Apply 0W-20 synthetic motor oil. Capacity: 4.5 liters.",
+              "reference": "Используйте синтетическое моторное масло 0W-20. Объём: 4,5 литра.",
+              "hypothesis": "Применяйте 0W-20 синтетическое моторное масло.",
+              "time_s": 0.1695,
+              "term_match": 0.0
+            },
+            {
+              "id": 5,
+              "source": "The regenerative braking system recovers kinetic energy during deceleration.",
+              "reference": "Система рекуперативного торможения преобразует кинетическую энергию при замедлении.",
+              "hypothesis": "Регенеративная тормозная система восстанавливает кинетическую энергию во время замедления.",
+              "time_s": 0.3228,
+              "term_match": 0.1111
+            },
+            {
+              "id": 6,
+              "source": "Inspect the brake pads for wear. Minimum thickness: 2 mm.",
+              "reference": "Проверьте тормозные колодки на износ. Минимальная толщина: 2 мм.",
+              "hypothesis": "Минимальная толщина: 2 мм.",
+              "time_s": 0.1368,
+              "term_match": 0.0
+            },
+            {
+              "id": 7,
+              "source": "The coolant temperature sensor sends data to the ECU via CAN bus.",
+              "reference": "Датчик температуры охлаждающей жидкости передаёт данные в ЭБУ по шине CAN.",
+              "hypothesis": "Датчик температуры охлаждающей жидкости отправляет данные в ECU через автобус CAN.",
+              "time_s": 0.2918,
+              "term_match": 0.2
+            },
+            {
+              "id": 8,
+              "source": "Disconnect the negative battery terminal before performing electrical work.",
+              "reference": "Отсоедините отрицательную клемму аккумулятора перед выполнением электрических работ.",
+              "hypothesis": "Прежде чем выполнять электрическую работу, отключите терминал отрицательной батареи.",
+              "time_s": 0.2879,
+              "term_match": 0.0
+            },
+            {
+              "id": 9,
+              "source": "The differential oil should be changed every 60,000 km.",
+              "reference": "Масло в дифференциале следует менять каждые 60000 км.",
+              "hypothesis": "Дифференциальное масло должно меняться каждые 60 000 км.",
+              "time_s": 0.2141,
+              "term_match": 0.0
+            },
+            {
+              "id": 10,
+              "source": "ABS module failure may cause the stability control warning light to illuminate.",
+              "reference": "Неисправность блока ABS может привести к загоранию индикатора системы стабилизации.",
+              "hypothesis": "Неспособность модуля ABS может привести к тому, что предупреждающий свет управления стабильностью зажжет.",
+              "time_s": 0.3225,
+              "term_match": 0.0
+            }
+          ]
+        },
+        "ZH→RU": {
+          "bleu": 25.91,
+          "term_match": 0.0417,
+          "avg_time_s": 0.2798,
+          "sentences": [
+            {
+              "id": 1,
+              "source": "更换制动液时，请使用DOT4标准制动液。",
+              "reference": "При замене тормозной жидкости используйте тормозную жидкость стандарта DOT4.",
+              "hypothesis": "При замене тормозной жидкости используйте стандартный тормозный жидкость DOT4.",
+              "time_s": 0.3093,
+              "term_match": 0.0
+            },
+            {
+              "id": 2,
+              "source": "发动机冷却液温度过高时，请立即停车检查。",
+              "reference": "При слишком высокой температуре охлаждающей жидкости двигателя немедленно остановитесь для проверки.",
+              "hypothesis": "Если температура двигательного охлаждающего жидкости превышает температуру, пожалуйста, немедленно проверьте припаркованность.",
+              "time_s": 0.3777,
+              "term_match": 0.1667
+            },
+            {
+              "id": 3,
+              "source": "前大灯高度调节范围为0至3档。",
+              "reference": "Диапазон регулировки высоты передних фар составляет от 0 до 3 уровней.",
+              "hypothesis": "Передняя лампа имеет диапазон регулирования высоты от 0 до 3 градусов.",
+              "time_s": 0.246,
+              "term_match": 0.0
+            },
+            {
+              "id": 4,
+              "source": "请定期检查轮胎磨损情况和胎压。",
+              "reference": "Регулярно проверяйте состояние износа шин и давление в них.",
+              "hypothesis": "Пожалуйста, регулярно проверяйте состояние износа и давления на шинах.",
+              "time_s": 0.2227,
+              "term_match": 0.25
+            },
+            {
+              "id": 5,
+              "source": "高压电池组位于车辆底部。",
+              "reference": "Высоковольтная батарея расположена в нижней части автомобиля.",
+              "hypothesis": "Аккумулятор высокого давления находится внизу автомобиля.",
+              "time_s": 0.2111,
+              "term_match": 0.0
+            },
+            {
+              "id": 6,
+              "source": "空调滤芯建议每12个月或20000公里更换一次。",
+              "reference": "Фильтр кондиционера рекомендуется менять каждые 12 месяцев или 20000 км.",
+              "hypothesis": "Рекомендуется замена кондиционера каждые 12 месяцев или 20 000 километров.",
+              "time_s": 0.2757,
+              "term_match": 0.0
+            },
+            {
+              "id": 7,
+              "source": "车辆启动前，请确保所有车门已关闭。",
+              "reference": "Перед запуском автомобиля убедитесь, что все двери закрыты.",
+              "hypothesis": "Перед запуском автомобиля убедитесь, что все двери закрыты.",
+              "time_s": 0.277,
+              "term_match": 0.0
+            },
+            {
+              "id": 8,
+              "source": "电动助力转向系统故障时，方向盘会变重。",
+              "reference": "При неисправности электроусилителя руля рулевое колесо становится тяжёлым.",
+              "hypothesis": "Когда электрический ассистент переходит к системе сбоев, рулевая колеса перегружается.",
+              "time_s": 0.3314,
+              "term_match": 0.0
+            },
+            {
+              "id": 9,
+              "source": "增程器在电量低于30%时自动启动。",
+              "reference": "Генератор-расширитель запаса хода автоматически запускается при заряде ниже 30%.",
+              "hypothesis": "Увеличитель автоматически запускается, когда мощность электричества ниже 30%.",
+              "time_s": 0.2579,
+              "term_match": 0.0
+            },
+            {
+              "id": 10,
+              "source": "请使用原厂推荐的0W-20全合成机油。",
+              "reference": "Используйте рекомендованное заводом полностью синтетическое масло 0W-20.",
+              "hypothesis": "Пожалуйста, используйте 0W-20 полностью синтетическое масло, рекомендованное оригинальным заводом.",
+              "time_s": 0.2896,
+              "term_match": 0.0
+            }
+          ]
+        }
+      }
+    },
+    {
+      "model_key": "madlad",
+      "model_display": "MADLAD-3B",
+      "hf_id": "google/madlad400-3b-mt",
+      "device": "cuda:1",
+      "load_time_s": 9.73,
+      "directions": {
+        "RU→EN": {
+          "bleu": 0.18,
+          "term_match": 0.0,
+          "avg_time_s": 2.4156,
+          "sentences": [
+            {
+              "id": 1,
+              "source": "Замените тормозную жидкость каждые 2 года или 40000 км пробега.",
+              "reference": "Replace brake fluid every 2 years or 40,000 km of mileage.",
+              "hypothesis": "https://www.facebook.com/?fref=ts",
+              "time_s": 0.8173,
+              "term_match": 0.0
+            },
+            {
+              "id": 2,
+              "source": "Момент затяжки болтов крепления суппорта: 35 Нм.",
+              "reference": "Caliper mounting bolt torque: 35 Nm.",
+              "hypothesis": "00000000000000000000000000000000000000000000000000000000000000000000000000000",
+              "time_s": 3.1789,
+              "term_match": 0.0
+            },
+            {
+              "id": 3,
+              "source": "Проверьте уровень масла в двигателе при холодном двигателе.",
+              "reference": "Check engine oil level with the engine cold.",
+              "hypothesis": ",,,,,,,,,,,,,,,,,,",
+              "time_s": 0.8104,
+              "term_match": 0.0
+            },
+            {
+              "id": 4,
+              "source": "Датчик массового расхода воздуха расположен после воздушного фильтра.",
+              "reference": "The mass air flow sensor is located after the air filter.",
+              "hypothesis": "2020.01.11 - 2020.01.12",
+              "time_s": 1.1962,
+              "term_match": 0.0
+            },
+            {
+              "id": 5,
+              "source": "При появлении кода ошибки P0420 проверьте каталитический нейтрализатор.",
+              "reference": "When error code P0420 appears, check the catalytic converter.",
+              "hypothesis": "谢谢 谢谢 谢谢 谢谢 谢谢 谢谢 谢谢 谢谢 谢谢",
+              "time_s": 1.1076,
+              "term_match": 0.0
+            },
+            {
+              "id": 6,
+              "source": "Рекомендуемое давление в шинах: 2.3 бар (передние), 2.5 бар (задние).",
+              "reference": "Recommended tire pressure: 2.3 bar (front), 2.5 bar (rear).",
+              "hypothesis": "Coevorden, 2018.",
+              "time_s": 0.458,
+              "term_match": 0.0
+            },
+            {
+              "id": 7,
+              "source": "Турбокомпрессор охлаждается маслом и антифризом.",
+              "reference": "The turbocharger is cooled by oil and coolant.",
+              "hypothesis": "2020.01.16 08:00:00 - 08:00:00 2020.01.16 08:00:00 2020.01.16 08:00:00",
+              "time_s": 2.7756,
+              "term_match": 0.0
+            },
+            {
+              "id": 8,
+              "source": "Снимите декоративную крышку двигателя, потянув её вверх.",
+              "reference": "Remove the engine decorative cover by pulling it upward.",
+              "hypothesis": "P.S.P.S.P.S.P.S.P.S.P.",
+              "time_s": 0.9188,
+              "term_match": null
+            },
+            {
+              "id": 9,
+              "source": "Блок управления двигателем (ECU) расположен под приборной панелью.",
+              "reference": "The engine control unit (ECU) is located under the dashboard.",
+              "hypothesis": "die die die die die die die die die die die die die die die die die die die die die die die die die die die die die die die die die die die die die die die die die die die die die die die die die die die die die die die die die die die die die die die die die die",
+              "time_s": 2.6207,
+              "term_match": 0.0
+            },
+            {
+              "id": 10,
+              "source": "Замена ремня ГРМ требуется каждые 90000 км.",
+              "reference": "Timing belt replacement is required every 90,000 km.",
+              "hypothesis": "2020.01.01 00:00:00 00:00:00 00:00:00 00:00:00 00:00:00 00:00:00 00:00:00 00:00:00 00:00:00 00:00:00 00:00:00 00:00:00 00:00:00 00:00:00 00:00:00 00:00:00 00:00:00 00:00:00 00:00:00 00:00:00 00:00:00 00:00:00 00:00:00 00:00:00 00:00:00 00:00:00 00:00:00",
+              "time_s": 10.2721,
+              "term_match": null
+            }
+          ]
+        },
+        "EN→RU": {
+          "bleu": 0.22,
+          "term_match": 0.0,
+          "avg_time_s": 3.9998,
+          "sentences": [
+            {
+              "id": 1,
+              "source": "The high-voltage battery pack requires inspection every 12 months.",
+              "reference": "Высоковольтная аккумуляторная батарея требует проверки каждые 12 месяцев.",
+              "hypothesis": "i i i i i i i i i i i i i i i i i i",
+              "time_s": 0.9102,
+              "term_match": 0.0
+            },
+            {
+              "id": 2,
+              "source": "WARNING: Do not open the inverter cover while the vehicle is powered on.",
+              "reference": "ВНИМАНИЕ: Не открывайте крышку инвертора при включённом питании автомобиля.",
+              "hypothesis": "e e e e e e e e e e e e e e e e e e e e e e e e e",
+              "time_s": 1.2425,
+              "term_match": 0.0
+            },
+            {
+              "id": 3,
+              "source": "DTC P0300 indicates random/multiple cylinder misfire detected.",
+              "reference": "Код ошибки P0300 указывает на обнаружение случайных/множественных пропусков зажигания.",
+              "hypothesis": "I dnăgănăgănăgănăgănăgănăgănăgănăgănăgănăgănăgănăgănăgănăgănăgănăgănăgănăgănăgănăgănăgănăgănăgănăgănăgănăgănăgănăgănăgănăgănăgănăgănăgănăgănăgănăgănăgănăgănăgănăgănăgănăgănăgănăgănăgănăgănăgănăgănăgănăgănăgănăgănăgănăgănăgănăgănăgănăgănăgănăgănăgănăgănăgănăgănăgănăgănăgănăgănăgănăgănăgănăgănăgănăgănăgănăgănăgănăgănăgănăgănăgănăgănăgănăgănăgănăgănăgănăgănăgănăgănăgănăgănăgănăgănăgănăgănăgănăgănăgănăgănăgănăgănăgănăgănăgănăgănăgănăgănăgănăgănăgănăgănăgănăgănăgănăgănăgănăgănăgănăgănăgănăgănăgănăgănăgănăgănăgănă",
+              "time_s": 21.3439,
+              "term_match": 0.0
+            },
+            {
+              "id": 4,
+              "source": "Apply 0W-20 synthetic motor oil. Capacity: 4.5 liters.",
+              "reference": "Используйте синтетическое моторное масло 0W-20. Объём: 4,5 литра.",
+              "hypothesis": "v v v v v v v v v v v v v v",
+              "time_s": 0.5996,
+              "term_match": 0.0
+            },
+            {
+              "id": 5,
+              "source": "The regenerative braking system recovers kinetic energy during deceleration.",
+              "reference": "Система рекуперативного торможения преобразует кинетическую энергию при замедлении.",
+              "hypothesis": "1996-1997-1998-1999-2000-2001-2002-2003-2004-2005-2006-2007-2008-2009-2010-2011-2012-2013-2014-2015-2016",
+              "time_s": 4.1255,
+              "term_match": 0.0
+            },
+            {
+              "id": 6,
+              "source": "Inspect the brake pads for wear. Minimum thickness: 2 mm.",
+              "reference": "Проверьте тормозные колодки на износ. Минимальная толщина: 2 мм.",
+              "hypothesis": "е н е н е н е н е н е н е н е н е н е н е н е н е н е н е н е.",
+              "time_s": 1.9668,
+              "term_match": 0.0
+            },
+            {
+              "id": 7,
+              "source": "The coolant temperature sensor sends data to the ECU via CAN bus.",
+              "reference": "Датчик температуры охлаждающей жидкости передаёт данные в ЭБУ по шине CAN.",
+              "hypothesis": "(c) 2018.",
+              "time_s": 0.4128,
+              "term_match": 0.0
+            },
+            {
+              "id": 8,
+              "source": "Disconnect the negative battery terminal before performing electrical work.",
+              "reference": "Отсоедините отрицательную клемму аккумулятора перед выполнением электрических работ.",
+              "hypothesis": "いつでもどうぞよろしくお願いしますよろしくお願いしますよろしくお願いしますよろしくお願いしますよろしくお願いしますよろしくお願いしますよろしくお願いします",
+              "time_s": 2.4753,
+              "term_match": 0.0
+            },
+            {
+              "id": 9,
+              "source": "The differential oil should be changed every 60,000 km.",
+              "reference": "Масло в дифференциале следует менять каждые 60000 км.",
+              "hypothesis": "wfi wfi wfi wfi wfi wfi wfi wfi wfi wfi wfi wfi wfi wfi wfi wfi wfi wfi wfi wfi wfi wfi wfi wfi wfi wfi wfi wfi wfi wfi wfi wfi wfi wfi wfi wfi wfi wfi wfi wfi wfi wfi wfi wfi",
+              "time_s": 3.445,
+              "term_match": 0.0
+            },
+            {
+              "id": 10,
+              "source": "ABS module failure may cause the stability control warning light to illuminate.",
+              "reference": "Неисправность блока ABS может привести к загоранию индикатора системы стабилизации.",
+              "hypothesis": "n củav củan củan củan củan củan củan củan củan củan củan củan củan củan củan củan củan củan củan củan củan củan củan củan củan củan củan củan củan củan củan củan củan củan củan củan củan củan củan củan của.",
+              "time_s": 3.4759,
+              "term_match": 0.0
+            }
+          ]
+        },
+        "ZH→RU": {
+          "bleu": 0.11,
+          "term_match": 0.0,
+          "avg_time_s": 7.6344,
+          "sentences": [
+            {
+              "id": 1,
+              "source": "更换制动液时，请使用DOT4标准制动液。",
+              "reference": "При замене тормозной жидкости используйте тормозную жидкость стандарта DOT4.",
+              "hypothesis": "ويست ت ر ت ر ت ر ر ر ر ر ر ر ر ر ر ر ر ر ر ر ر ر ر ر ر ر ر ر ر ر ر ر ر ر ر ر ر ر ر ر ر ر ر ر ر ر ر ر ر ر ر ر ر ر ر ر ر ر ر ر ر ر ر ر ر ر ر ر ر ر ر ر ر ر ر ر ر ر ر ر ر ر ر ر ر ر ر ر ر ر ر ر ر ر ر ر ر ر ر ر ر ر ر ر ر ر ر ر ر ر ر ر ر ر ر ر ر ر ر ر ر ر",
+              "time_s": 4.8771,
+              "term_match": 0.0
+            },
+            {
+              "id": 2,
+              "source": "发动机冷却液温度过高时，请立即停车检查。",
+              "reference": "При слишком высокой температуре охлаждающей жидкости двигателя немедленно остановитесь для проверки.",
+              "hypothesis": "prjrjrjrjrjrjrjrjrjrjrjrjrjrjrjrjrjrjrjrjrjrjrjrjrjrjrjrjrjrjrjrjrjrjrjrjrjrjrjrjr",
+              "time_s": 3.2803,
+              "term_match": 0.0
+            },
+            {
+              "id": 3,
+              "source": "前大灯高度调节范围为0至3档。",
+              "reference": "Диапазон регулировки высоты передних фар составляет от 0 до 3 уровней.",
+              "hypothesis": "wοetеt y wοetеt y wοetеt y wοetеt y wοetеt y wοetеt y wοetеt y wοetеt y wοetеt y wοetеt y wοetеt y wοetеt y wοetеt y wοetеt y wοetеt y wοetеt y wοetеt y wοetеt y wοetеt y wοetеt y wοetеt y wοetеt y wοetеt y wοetеt y wοetеt y wοetеt y wοetеt y wοetеt y wοetеt y wοetеt y wοetеt y wοetЕt y wοetЕt y wοetЕt y wοetЕt y wοetЕt y wοetЕt y wοetЕt y wοetЕt y wοetЕt y wοetЕt y wοetЕt y wοetЕt y wοetЕt y wοetЕt y wοetЕt y wοetЕt",
+              "time_s": 10.9893,
+              "term_match": 0.0
+            },
+            {
+              "id": 4,
+              "source": "请定期检查轮胎磨损情况和胎压。",
+              "reference": "Регулярно проверяйте состояние износа шин и давление в них.",
+              "hypothesis": "vyor uย่ะย่ะย่ะย่ะย่ะย่ะย่ะย่ะย่ะย่ะย่ะย่ะย่ะย่ะย่ะย่ะย่ะย่ะย่ะย่ะย่ะย่ะย่ะย่ะย่ะย่ะย่ะ",
+              "time_s": 3.3814,
+              "term_match": 0.0
+            },
+            {
+              "id": 5,
+              "source": "高压电池组位于车辆底部。",
+              "reference": "Высоковольтная батарея расположена в нижней части автомобиля.",
+              "hypothesis": "0101010101010101010101010101010101010101010101010101010101",
+              "time_s": 2.4079,
+              "term_match": 0.0
+            },
+            {
+              "id": 6,
+              "source": "空调滤芯建议每12个月或20000公里更换一次。",
+              "reference": "Фильтр кондиционера рекомендуется менять каждые 12 месяцев или 20000 км.",
+              "hypothesis": "wyłężęłężęłężęłężęłężęłężęłężęłężęłężęłężęłężęłężęłężęłężęłężęłężęłężęłężęłężęłężęłężęłężęłężęłężęłężęłężęłężęłężęłężęłężęłężęłężęłężęłężęłężęłężęłężęłężęłężęłężęłężęłężęłężęłężęłężęłężęłężęłężęłężęłężęłężęłężęłężęłężęłężęłężęłężęłężęłężęłężęłężęłężęłężęłężęłężęłężęłężęłężęłężęłężęłężęłężęłężęłężęłężęłężęłężęłężęłężęłężęłężęłężęłężęłężęłężęłężęłężęłężęłężęłężęłężęłężęłężęłężęłężęłężęłężęłężęłężęłężęłężęłężęłężęłężęłężęłężęłężęłężęłężęłężęłężęłężęłężęłężęłężęłężęłężęłężęłężęłężęłężęłężęłężęłężęłężęłężęłężęłęż",
+              "time_s": 20.2255,
+              "term_match": 0.0
+            },
+            {
+              "id": 7,
+              "source": "车辆启动前，请确保所有车门已关闭。",
+              "reference": "Перед запуском автомобиля убедитесь, что все двери закрыты.",
+              "hypothesis": "eir eir eir eir eir eir eir eir eir eir eir eir eir eir eir eir eir eir eir eir.",
+              "time_s": 1.637,
+              "term_match": 0.0
+            },
+            {
+              "id": 8,
+              "source": "电动助力转向系统故障时，方向盘会变重。",
+              "reference": "При неисправности электроусилителя руля рулевое колесо становится тяжёлым.",
+              "hypothesis": "ur sonjeęjsr sanyjeęjśr snyjeęjśr snyjeęjśr snyjeęjśr snyjeęjśr snyjeęjśr snyjeęjśr snyjeęjśr snyjeęjśr snyjeęjśr snyjeęjśr snyjeęjśr snyjeęjśr snyjeęjśr snyjeęjśr",
+              "time_s": 4.3628,
+              "term_match": 0.0
+            },
+            {
+              "id": 9,
+              "source": "增程器在电量低于30%时自动启动。",
+              "reference": "Генератор-расширитель запаса хода автоматически запускается при заряде ниже 30%.",
+              "hypothesis": "2017-11-18 15:00:00 2017-11-18 15:00:00 2017-11-18 15:00:00 2017-11-18 15:00:00 2017-11-18 15:00:00 2017-11-18 15:00:00",
+              "time_s": 4.6819,
+              "term_match": 0.0
+            },
+            {
+              "id": 10,
+              "source": "请使用原厂推荐的0W-20全合成机油。",
+              "reference": "Используйте рекомендованное заводом полностью синтетическое масло 0W-20.",
+              "hypothesis": "piороръте eСлетюнeСлетюунeСлетюунeСлетюунeСлетюунеСлетюунеСлетюунеСлетюунеСлетюунеСлетюунеСлетюунеСлетюунеСлетюунеСлетюунеСлетюунеСлетюунеСлетюунеСлетюунеСлетюунеСлетюунеСлетюунеСлетюунеСлетюунеСлетюунеСлетюунеСлетюунеСлетюунеСлетюунеСлетюунеСлетюунеСлетюунеСлетюунеСлетюунеСлетюунеСлетюунеСлетюунеСлетюунеСлетюунеСлетюунеСлетюунеСлетюунеСлетюунеСлетюунеСлетюунеСлетюунеСлетюунеСлетюунеСлетюунеСлетюунеСлетюунеСлетюунеСлетюунеСлетюунеСлетюунеСлетюунеСлетюунеСлетюунеСлетюунеСлетюунеСлетюунеСлетюунеСлетюунеСлетюунеСлетюунеСлетюунеСлетюунеСлетюунеСлетюунеСлетюунеСлетюунеСлетюунеСлетюунеСлетюунеСлетюунеСлетюунеСлетюунеСлетюунеСлетюунеСлетюунеСлетюунеСлетюунеСлетюунеСлетюунеСлетюунеСлетюунеСлетюунеСлетюунеСлетюунеСлетюунеСлетюунеСлетюунеСлетюунеСлетюунеСлетюунеСлетюунеСлетюунеСлетюунеСлетюунеСлетюунеСлетюунеСлетюунеС",
+              "time_s": 20.5004,
+              "term_match": 0.0
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+# LLCAR Diagnostica - Python Dependencies
+# Phase 1: PDF Extraction
+PyMuPDF>=1.24             # PDF text/table extraction (fitz)
+paddlepaddle-gpu>=3.0     # PaddleOCR backend (GPU)
+paddleocr>=2.9            # OCR for scanned Chinese documents
+
+# Phase 2: Translation
+ctranslate2>=4.0          # NMT inference runtime
+sentencepiece>=0.2        # Tokenization for NMT models
+transformers>=4.40        # Model loading (Utrobin T5, MADLAD-400)
+
+# Phase 4: DITA
+Jinja2>=3.1               # Template engine for DITA XML generation
+lxml>=5.0                 # XML validation
+
+# Phase 5: Fine-tuning (optional, requires 16+ GB VRAM)
+# peft>=0.13              # LoRA/QLoRA adapters
+# bitsandbytes>=0.45      # 4-bit quantization
+# trl>=0.12               # SFT Trainer
+# accelerate>=1.0         # Distributed training
+# datasets>=3.0           # Dataset preparation
+# sacrebleu>=2.4          # BLEU/chrF++ metrics
+
+# Phase 3: RAG (optional)
+# lightrag-hku>=1.0       # Knowledge graph RAG
+# raganything>=0.1        # Multimodal RAG

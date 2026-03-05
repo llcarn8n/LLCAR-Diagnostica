@@ -1,0 +1,754 @@
+{
+  "meta": {
+    "version": "1.0",
+    "description": "Annotation points for components without 3D mesh geometry",
+    "coordinate_system": "Y-up, model scaled to ~4 unit sphere",
+    "total_annotations": 93
+  },
+  "annotations": {
+    "adas_front_camera@sensors": {
+      "position": [0, 1.2, -0.5],
+      "anchorMesh": "Лобовое стекло",
+      "layer": "sensors",
+      "priority": "P1",
+      "category": "adas",
+      "dtcCodes": ["U0184", "U0185", "C0900"]
+    },
+    "camera_360_front@sensors": {
+      "position": [0, 0.4, -2.0],
+      "anchorMesh": "Бампер передний",
+      "layer": "sensors",
+      "priority": "P1",
+      "category": "camera",
+      "dtcCodes": ["U0184", "U0185"]
+    },
+    "camera_360_rear@sensors": {
+      "position": [0, 0.5, 2.0],
+      "anchorMesh": "Бампер задний",
+      "layer": "sensors",
+      "priority": "P1",
+      "category": "camera",
+      "dtcCodes": ["U0184", "U0185"]
+    },
+    "camera_360_left@sensors": {
+      "position": [-0.9, 0.9, -0.4],
+      "anchorMesh": "Зеркало левое",
+      "layer": "sensors",
+      "priority": "P1",
+      "category": "camera",
+      "dtcCodes": ["U0184", "U0185"]
+    },
+    "camera_360_right@sensors": {
+      "position": [0.9, 0.9, -0.4],
+      "anchorMesh": "Зеркало правое",
+      "layer": "sensors",
+      "priority": "P1",
+      "category": "camera",
+      "dtcCodes": ["U0184", "U0185"]
+    },
+    "lidar_roof@sensors": {
+      "position": [0, 1.45, -0.3],
+      "anchorMesh": "Крыша",
+      "layer": "sensors",
+      "priority": "P1",
+      "category": "adas",
+      "dtcCodes": ["U0305", "C0920"]
+    },
+    "front_mmwave_radar@sensors": {
+      "position": [0, 0.35, -2.05],
+      "anchorMesh": "Бампер передний",
+      "layer": "sensors",
+      "priority": "P1",
+      "category": "radar",
+      "dtcCodes": ["U0302", "U0303"]
+    },
+    "corner_radar_fl@sensors": {
+      "position": [-0.8, 0.35, -1.9],
+      "anchorMesh": "Бампер передний",
+      "layer": "sensors",
+      "priority": "P1",
+      "category": "radar",
+      "dtcCodes": ["U0302", "U0303"]
+    },
+    "corner_radar_fr@sensors": {
+      "position": [0.8, 0.35, -1.9],
+      "anchorMesh": "Бампер передний",
+      "layer": "sensors",
+      "priority": "P1",
+      "category": "radar",
+      "dtcCodes": ["U0302", "U0303"]
+    },
+    "corner_radar_rl@sensors": {
+      "position": [-0.8, 0.35, 1.85],
+      "anchorMesh": "Бампер задний",
+      "layer": "sensors",
+      "priority": "P1",
+      "category": "radar",
+      "dtcCodes": ["U0302", "U0303"]
+    },
+    "corner_radar_rr@sensors": {
+      "position": [0.8, 0.35, 1.85],
+      "anchorMesh": "Бампер задний",
+      "layer": "sensors",
+      "priority": "P1",
+      "category": "radar",
+      "dtcCodes": ["U0302", "U0303"]
+    },
+    "parking_sensor_array_front@sensors": {
+      "position": [0, 0.32, -2.0],
+      "anchorMesh": "Бампер передний",
+      "layer": "sensors",
+      "priority": "P1",
+      "category": "sonar",
+      "dtcCodes": ["C0611", "C0612"]
+    },
+    "parking_sensor_array_rear@sensors": {
+      "position": [0, 0.42, 2.0],
+      "anchorMesh": "Бампер задний",
+      "layer": "sensors",
+      "priority": "P1",
+      "category": "sonar",
+      "dtcCodes": ["C0611", "C0612"]
+    },
+    "dms_camera@sensors": {
+      "position": [0, 1.15, -0.45],
+      "anchorMesh": "Зеркало салонное",
+      "layer": "sensors",
+      "priority": "P1",
+      "category": "camera",
+      "dtcCodes": ["U0184", "B1D00"]
+    },
+    "crash_sensor_array@sensors": {
+      "position": [0, 0.5, -1.5],
+      "anchorMesh": "Подрамник передний",
+      "layer": "sensors",
+      "priority": "P1",
+      "category": "safety",
+      "dtcCodes": ["B0060", "B0065", "B0100", "B0102"]
+    },
+    "imu_sensor@sensors": {
+      "position": [0, 0.35, 0],
+      "anchorMesh": "Днище",
+      "layer": "sensors",
+      "priority": "P1",
+      "category": "inertial",
+      "dtcCodes": ["U0123", "C0196"]
+    },
+    "xcu_adas_controller@sensors": {
+      "position": [0, 0.65, -0.2],
+      "anchorMesh": "Приборная панель",
+      "layer": "sensors",
+      "priority": "P1",
+      "category": "controller",
+      "dtcCodes": ["U0300", "U0301", "C0900"]
+    },
+    "turbocharger_ann@engine": {
+      "position": [0.2, 0.65, -1.1],
+      "anchorMesh": "Двигатель I4",
+      "layer": "engine",
+      "priority": "P1",
+      "category": "intake",
+      "dtcCodes": ["P0299", "P0234", "P0235"]
+    },
+    "intercooler_ann@engine": {
+      "position": [0, 0.45, -1.6],
+      "anchorMesh": "Бампер передний",
+      "layer": "engine",
+      "priority": "P1",
+      "category": "intake",
+      "dtcCodes": ["P0299", "P0033"]
+    },
+    "ignition_coil_array@engine": {
+      "position": [-0.1, 0.8, -1.0],
+      "anchorMesh": "Двигатель I4",
+      "layer": "engine",
+      "priority": "P1",
+      "category": "ignition",
+      "dtcCodes": ["P0351", "P0352", "P0353", "P0354"]
+    },
+    "spark_plug_array@engine": {
+      "position": [-0.1, 0.75, -1.0],
+      "anchorMesh": "Двигатель I4",
+      "layer": "engine",
+      "priority": "P1",
+      "category": "ignition",
+      "dtcCodes": ["P0300", "P0301", "P0302", "P0303", "P0304"]
+    },
+    "fuel_injector_array@engine": {
+      "position": [0.15, 0.72, -0.95],
+      "anchorMesh": "Двигатель I4",
+      "layer": "engine",
+      "priority": "P1",
+      "category": "fuel",
+      "dtcCodes": ["P0201", "P0202", "P0203", "P0204"]
+    },
+    "hpfp@engine": {
+      "position": [0.3, 0.6, -0.85],
+      "anchorMesh": "Двигатель I4",
+      "layer": "engine",
+      "priority": "P1",
+      "category": "fuel",
+      "dtcCodes": ["P0087", "P0088", "P0190", "P0191"]
+    },
+    "catalytic_converter_ann@engine": {
+      "position": [0.1, 0.25, -0.6],
+      "anchorMesh": "Выхлопная система",
+      "layer": "engine",
+      "priority": "P1",
+      "category": "exhaust",
+      "dtcCodes": ["P0420", "P0430"]
+    },
+    "o2_sensor_upstream@engine": {
+      "position": [0.1, 0.28, -0.7],
+      "anchorMesh": "Выхлопная система",
+      "layer": "engine",
+      "priority": "P1",
+      "category": "emission",
+      "dtcCodes": ["P0130", "P0131", "P0132", "P0133"]
+    },
+    "o2_sensor_downstream@engine": {
+      "position": [0.1, 0.22, -0.4],
+      "anchorMesh": "Выхлопная система",
+      "layer": "engine",
+      "priority": "P1",
+      "category": "emission",
+      "dtcCodes": ["P0136", "P0137", "P0138", "P0139"]
+    },
+    "maf_sensor_ann@engine": {
+      "position": [-0.2, 0.7, -1.3],
+      "anchorMesh": "Впускной коллектор",
+      "layer": "engine",
+      "priority": "P1",
+      "category": "intake",
+      "dtcCodes": ["P0100", "P0101", "P0102", "P0103"]
+    },
+    "brake_disc_fl@brakes": {
+      "position": [-0.75, 0.3, -1.2],
+      "anchorMesh": "Тормоз ПЛ",
+      "layer": "brakes",
+      "priority": "P1",
+      "category": "brake-disc",
+      "dtcCodes": []
+    },
+    "brake_disc_fr@brakes": {
+      "position": [0.75, 0.3, -1.2],
+      "anchorMesh": "Тормоз ПП",
+      "layer": "brakes",
+      "priority": "P1",
+      "category": "brake-disc",
+      "dtcCodes": []
+    },
+    "brake_disc_rl@brakes": {
+      "position": [-0.75, 0.3, 1.0],
+      "anchorMesh": "Тормоз ЗЛ",
+      "layer": "brakes",
+      "priority": "P1",
+      "category": "brake-disc",
+      "dtcCodes": []
+    },
+    "brake_disc_rr@brakes": {
+      "position": [0.75, 0.3, 1.0],
+      "anchorMesh": "Тормоз ЗП",
+      "layer": "brakes",
+      "priority": "P1",
+      "category": "brake-disc",
+      "dtcCodes": []
+    },
+    "abs_esc_module@brakes": {
+      "position": [0.3, 0.5, -1.3],
+      "anchorMesh": "Двигатель I4",
+      "layer": "brakes",
+      "priority": "P1",
+      "category": "brake-control",
+      "dtcCodes": ["C0035", "C0040", "C0045", "C0050"]
+    },
+    "ibooster_ann@brakes": {
+      "position": [-0.25, 0.6, -0.6],
+      "anchorMesh": "Приборная панель",
+      "layer": "brakes",
+      "priority": "P1",
+      "category": "brake-control",
+      "dtcCodes": ["C1200", "C1201"]
+    },
+    "eps_motor@brakes": {
+      "position": [0, 0.4, -1.35],
+      "anchorMesh": "Рулевой механизм",
+      "layer": "brakes",
+      "priority": "P1",
+      "category": "steering",
+      "dtcCodes": ["C0545", "C0550"]
+    },
+    "epb_actuator@brakes": {
+      "position": [0, 0.25, 1.1],
+      "anchorMesh": "Тормоз ЗЛ",
+      "layer": "brakes",
+      "priority": "P1",
+      "category": "parking",
+      "dtcCodes": ["C1A00", "C1A01", "C1A20"]
+    },
+    "inverter_ann@ev": {
+      "position": [-0.3, 0.55, -1.2],
+      "anchorMesh": "Электромотор передний",
+      "layer": "ev",
+      "priority": "P1",
+      "category": "power-electronics",
+      "dtcCodes": ["P0A01", "P0A02"]
+    },
+    "bms_ann@ev": {
+      "position": [0, 0.15, 0],
+      "anchorMesh": "Батарея ВН",
+      "layer": "ev",
+      "priority": "P1",
+      "category": "battery-management",
+      "dtcCodes": ["P0A80", "P0AAF", "P0AFA"]
+    },
+    "dcdc_converter@ev": {
+      "position": [0.3, 0.55, -1.15],
+      "anchorMesh": "Электромотор передний",
+      "layer": "ev",
+      "priority": "P1",
+      "category": "power-electronics",
+      "dtcCodes": ["P0A09", "P0A0A", "U0292"]
+    },
+    "obc_charger@ev": {
+      "position": [-0.4, 0.2, 0.6],
+      "anchorMesh": "Батарея ВН",
+      "layer": "ev",
+      "priority": "P1",
+      "category": "charging",
+      "dtcCodes": ["P0ACA", "P0AC0"]
+    },
+    "hv_contactor@ev": {
+      "position": [0, 0.2, -0.3],
+      "anchorMesh": "Батарея ВН",
+      "layer": "ev",
+      "priority": "P1",
+      "category": "power-electronics",
+      "dtcCodes": ["P0A0D", "P0A0F", "P0AA6"]
+    },
+    "ac_compressor@hvac": {
+      "position": [-0.35, 0.45, -1.0],
+      "anchorMesh": "Двигатель I4",
+      "layer": "hvac",
+      "priority": "P1",
+      "category": "hvac",
+      "dtcCodes": ["B1422", "P0531", "P0532"]
+    },
+    "condenser_ann@hvac": {
+      "position": [0, 0.55, -1.7],
+      "anchorMesh": "Радиатор",
+      "layer": "hvac",
+      "priority": "P1",
+      "category": "hvac",
+      "dtcCodes": ["P0533", "P0534"]
+    },
+    "heat_pump@hvac": {
+      "position": [0.35, 0.5, -1.4],
+      "anchorMesh": "Радиатор",
+      "layer": "hvac",
+      "priority": "P1",
+      "category": "hvac",
+      "dtcCodes": ["B1425", "P0530", "B1480"]
+    },
+    "wheel_speed_fl@drivetrain": {
+      "position": [-0.8, 0.3, -1.2],
+      "anchorMesh": "Ступица передняя",
+      "layer": "drivetrain",
+      "priority": "P1",
+      "category": "brake-control",
+      "dtcCodes": ["C0035"]
+    },
+    "wheel_speed_fr@drivetrain": {
+      "position": [0.8, 0.3, -1.2],
+      "anchorMesh": "Ступица передняя",
+      "layer": "drivetrain",
+      "priority": "P1",
+      "category": "brake-control",
+      "dtcCodes": ["C0040"]
+    },
+    "wheel_speed_rl@drivetrain": {
+      "position": [-0.8, 0.3, 1.0],
+      "anchorMesh": "Ступица задняя",
+      "layer": "drivetrain",
+      "priority": "P1",
+      "category": "brake-control",
+      "dtcCodes": ["C0045"]
+    },
+    "wheel_speed_rr@drivetrain": {
+      "position": [0.8, 0.3, 1.0],
+      "anchorMesh": "Ступица задняя",
+      "layer": "drivetrain",
+      "priority": "P1",
+      "category": "brake-control",
+      "dtcCodes": ["C0050"]
+    },
+    "air_suspension_compressor@drivetrain": {
+      "position": [0, 0.25, 1.3],
+      "anchorMesh": "Подрамник задний",
+      "layer": "drivetrain",
+      "priority": "P1",
+      "category": "suspension",
+      "dtcCodes": ["C1700", "C1701", "C1710"]
+    },
+    "hud_projector@interior": {
+      "position": [0, 0.85, -0.5],
+      "anchorMesh": "Приборная панель",
+      "layer": "interior",
+      "priority": "P1",
+      "category": "display",
+      "dtcCodes": ["B1600"]
+    },
+    "bcm_module@interior": {
+      "position": [-0.4, 0.6, -0.35],
+      "anchorMesh": "Приборная панель",
+      "layer": "interior",
+      "priority": "P1",
+      "category": "control-module",
+      "dtcCodes": ["U0140", "U0141"]
+    },
+    "obd2_port@interior": {
+      "position": [-0.35, 0.55, -0.3],
+      "anchorMesh": "Приборная панель",
+      "layer": "interior",
+      "priority": "P1",
+      "category": "connector",
+      "dtcCodes": []
+    },
+    "oil_pump@engine": {
+      "position": [0.2, 0.45, -0.95],
+      "anchorMesh": "Двигатель I4",
+      "layer": "engine",
+      "priority": "P2",
+      "category": "pump",
+      "dtcCodes": ["P0520", "P0521", "P0522", "P0523"]
+    },
+    "coolant_pump@engine": {
+      "position": [-0.25, 0.55, -1.15],
+      "anchorMesh": "Двигатель I4",
+      "layer": "engine",
+      "priority": "P2",
+      "category": "cooling",
+      "dtcCodes": ["P2181", "P0117", "P0118"]
+    },
+    "thermostat_ann@engine": {
+      "position": [-0.15, 0.6, -1.2],
+      "anchorMesh": "Двигатель I4",
+      "layer": "engine",
+      "priority": "P2",
+      "category": "cooling",
+      "dtcCodes": ["P0125", "P0128", "P0597", "P0598"]
+    },
+    "expansion_tank@engine": {
+      "position": [-0.4, 0.85, -1.1],
+      "anchorMesh": "Двигатель I4",
+      "layer": "engine",
+      "priority": "P2",
+      "category": "cooling",
+      "dtcCodes": ["P0560", "P2560"]
+    },
+    "alternator_ann@engine": {
+      "position": [0.3, 0.5, -0.9],
+      "anchorMesh": "Двигатель I4",
+      "layer": "engine",
+      "priority": "P2",
+      "category": "electrical",
+      "dtcCodes": ["P0620", "P0621", "P0622"]
+    },
+    "12v_battery@ev": {
+      "position": [0.5, 0.75, -1.4],
+      "anchorMesh": "Кузов",
+      "layer": "ev",
+      "priority": "P2",
+      "category": "electrical",
+      "dtcCodes": ["P0562", "P0563", "U1000"]
+    },
+    "dc_charge_port@ev": {
+      "position": [-0.75, 0.6, 0.8],
+      "anchorMesh": "Крыло левое",
+      "layer": "ev",
+      "priority": "P2",
+      "category": "charging",
+      "dtcCodes": ["P0AC0", "P0ACA", "P0ACD"]
+    },
+    "hv_fuse_box@ev": {
+      "position": [0, 0.22, -0.15],
+      "anchorMesh": "Батарея ВН",
+      "layer": "ev",
+      "priority": "P2",
+      "category": "power-electronics",
+      "dtcCodes": ["P0A04", "P0A06"]
+    },
+    "steering_column@brakes": {
+      "position": [0, 0.7, -0.45],
+      "anchorMesh": "Руль",
+      "layer": "brakes",
+      "priority": "P2",
+      "category": "steering",
+      "dtcCodes": ["C0545", "C0550", "C0460"]
+    },
+    "evaporator_ann@hvac": {
+      "position": [0, 0.7, -0.5],
+      "anchorMesh": "Приборная панель",
+      "layer": "hvac",
+      "priority": "P2",
+      "category": "hvac",
+      "dtcCodes": ["B1418", "B1419", "P0535"]
+    },
+    "heater_core_ann@hvac": {
+      "position": [0.1, 0.65, -0.48],
+      "anchorMesh": "Приборная панель",
+      "layer": "hvac",
+      "priority": "P2",
+      "category": "hvac",
+      "dtcCodes": ["B1420", "B1421"]
+    },
+    "blower_fan@hvac": {
+      "position": [0.3, 0.7, -0.45],
+      "anchorMesh": "Приборная панель",
+      "layer": "hvac",
+      "priority": "P2",
+      "category": "hvac",
+      "dtcCodes": ["B1410", "B1411"]
+    },
+    "cabin_filter@hvac": {
+      "position": [-0.3, 0.75, -0.55],
+      "anchorMesh": "Лобовое стекло",
+      "layer": "hvac",
+      "priority": "P2",
+      "category": "filtration",
+      "dtcCodes": ["B1415"]
+    },
+    "coolant_circuit@hvac": {
+      "position": [0.2, 0.4, -1.5],
+      "anchorMesh": "Радиатор",
+      "layer": "hvac",
+      "priority": "P2",
+      "category": "cooling",
+      "dtcCodes": ["P0125", "P0128"]
+    },
+    "radiator_fan@hvac": {
+      "position": [0, 0.5, -1.65],
+      "anchorMesh": "Радиатор",
+      "layer": "hvac",
+      "priority": "P2",
+      "category": "cooling",
+      "dtcCodes": ["P0480", "P0481", "P0482"]
+    },
+    "windshield_wiper@body": {
+      "position": [0, 1.05, -0.55],
+      "anchorMesh": "Лобовое стекло",
+      "layer": "body",
+      "priority": "P2",
+      "category": "body-electrical",
+      "dtcCodes": ["B1450", "B1451"]
+    },
+    "door_lock_system@body": {
+      "position": [-0.85, 0.65, 0],
+      "anchorMesh": "Дверь передняя левая",
+      "layer": "body",
+      "priority": "P2",
+      "category": "body-electrical",
+      "dtcCodes": ["B1681", "B1682", "B1683"]
+    },
+    "drl_lights@body": {
+      "position": [0.5, 0.55, -1.9],
+      "anchorMesh": "Фара правая",
+      "layer": "body",
+      "priority": "P2",
+      "category": "lighting",
+      "dtcCodes": ["B1310", "B1311"]
+    },
+    "power_liftgate@body": {
+      "position": [0, 0.9, 1.95],
+      "anchorMesh": "Крышка багажника",
+      "layer": "body",
+      "priority": "P2",
+      "category": "body-electrical",
+      "dtcCodes": ["B1520", "B1521"]
+    },
+    "passenger_screen@interior": {
+      "position": [0.45, 0.8, -0.4],
+      "anchorMesh": "Приборная панель",
+      "layer": "interior",
+      "priority": "P2",
+      "category": "display",
+      "dtcCodes": ["B1601", "U0164"]
+    },
+    "rear_screen@interior": {
+      "position": [0, 1.0, 0.2],
+      "anchorMesh": "Потолок",
+      "layer": "interior",
+      "priority": "P2",
+      "category": "display",
+      "dtcCodes": ["B1602", "U0165"]
+    },
+    "window_regulator@interior": {
+      "position": [-0.85, 0.75, -0.2],
+      "anchorMesh": "Дверь передняя левая",
+      "layer": "interior",
+      "priority": "P2",
+      "category": "body-electrical",
+      "dtcCodes": ["B1500", "B1501"]
+    },
+    "seat_heater@interior": {
+      "position": [-0.3, 0.5, 0],
+      "anchorMesh": "Сиденье ПЛ",
+      "layer": "interior",
+      "priority": "P2",
+      "category": "comfort",
+      "dtcCodes": ["B1590", "B1591"]
+    },
+    "fuse_box_interior@interior": {
+      "position": [-0.5, 0.55, -0.4],
+      "anchorMesh": "Приборная панель",
+      "layer": "interior",
+      "priority": "P2",
+      "category": "electrical",
+      "dtcCodes": ["U1000", "U1001"]
+    },
+    "gps_module@sensors": {
+      "position": [0.2, 1.35, -0.1],
+      "anchorMesh": "Крыша",
+      "layer": "sensors",
+      "priority": "P2",
+      "category": "adas",
+      "dtcCodes": ["U0167", "U0168"]
+    },
+    "washer_fluid@body": {
+      "position": [-0.5, 0.75, -1.5],
+      "anchorMesh": "Кузов",
+      "layer": "body",
+      "priority": "P3",
+      "category": "body-electrical",
+      "dtcCodes": ["B1460", "B1461"]
+    },
+    "door_hinge@body": {
+      "position": [-0.85, 0.7, -0.5],
+      "anchorMesh": "Дверь передняя левая",
+      "layer": "body",
+      "priority": "P3",
+      "category": "body-electrical",
+      "dtcCodes": []
+    },
+    "door_seal@body": {
+      "position": [-0.88, 0.6, -0.1],
+      "anchorMesh": "Дверь передняя левая",
+      "layer": "body",
+      "priority": "P3",
+      "category": "body-electrical",
+      "dtcCodes": []
+    },
+    "fog_light_front@body": {
+      "position": [0.6, 0.3, -1.95],
+      "anchorMesh": "Бампер передний",
+      "layer": "body",
+      "priority": "P3",
+      "category": "lighting",
+      "dtcCodes": ["B1312", "B1313"]
+    },
+    "fog_light_rear@body": {
+      "position": [-0.5, 0.45, 1.95],
+      "anchorMesh": "Бампер задний",
+      "layer": "body",
+      "priority": "P3",
+      "category": "lighting",
+      "dtcCodes": ["B1314", "B1315"]
+    },
+    "speaker_fl@interior": {
+      "position": [-0.85, 0.55, -0.3],
+      "anchorMesh": "Дверь передняя левая",
+      "layer": "interior",
+      "priority": "P3",
+      "category": "audio",
+      "dtcCodes": ["B1900", "U0155"]
+    },
+    "speaker_fr@interior": {
+      "position": [0.85, 0.55, -0.3],
+      "anchorMesh": "Дверь передняя правая",
+      "layer": "interior",
+      "priority": "P3",
+      "category": "audio",
+      "dtcCodes": ["B1901", "U0155"]
+    },
+    "speaker_rl@interior": {
+      "position": [-0.85, 0.55, 0.5],
+      "anchorMesh": "Дверь задняя левая",
+      "layer": "interior",
+      "priority": "P3",
+      "category": "audio",
+      "dtcCodes": ["B1902", "U0155"]
+    },
+    "speaker_rr@interior": {
+      "position": [0.85, 0.55, 0.5],
+      "anchorMesh": "Дверь задняя правая",
+      "layer": "interior",
+      "priority": "P3",
+      "category": "audio",
+      "dtcCodes": ["B1903", "U0155"]
+    },
+    "seat_ventilation@interior": {
+      "position": [-0.3, 0.45, 0],
+      "anchorMesh": "Сиденье ПЛ",
+      "layer": "interior",
+      "priority": "P3",
+      "category": "comfort",
+      "dtcCodes": ["B1592", "B1593"]
+    },
+    "center_armrest@interior": {
+      "position": [0, 0.55, 0.15],
+      "anchorMesh": "Приборная панель",
+      "layer": "interior",
+      "priority": "P3",
+      "category": "comfort",
+      "dtcCodes": []
+    },
+    "rear_fridge@interior": {
+      "position": [0, 0.4, 0.8],
+      "anchorMesh": "Приборная панель",
+      "layer": "interior",
+      "priority": "P3",
+      "category": "comfort",
+      "dtcCodes": ["B1800", "B1801"]
+    },
+    "rain_sensor@sensors": {
+      "position": [0, 1.2, -0.55],
+      "anchorMesh": "Лобовое стекло",
+      "layer": "sensors",
+      "priority": "P3",
+      "category": "sensors",
+      "dtcCodes": ["B1455", "B1456"]
+    },
+    "oil_filter_ann@engine": {
+      "position": [0.25, 0.4, -0.88],
+      "anchorMesh": "Двигатель I4",
+      "layer": "engine",
+      "priority": "P3",
+      "category": "filtration",
+      "dtcCodes": ["P0524"]
+    },
+    "air_spring_fl@drivetrain": {
+      "position": [-0.75, 0.45, -1.2],
+      "anchorMesh": "Стойка передняя",
+      "layer": "drivetrain",
+      "priority": "P3",
+      "category": "suspension",
+      "dtcCodes": ["C1700", "C1711"]
+    },
+    "air_spring_fr@drivetrain": {
+      "position": [0.75, 0.45, -1.2],
+      "anchorMesh": "Стойка передняя",
+      "layer": "drivetrain",
+      "priority": "P3",
+      "category": "suspension",
+      "dtcCodes": ["C1700", "C1712"]
+    },
+    "air_spring_rl@drivetrain": {
+      "position": [-0.75, 0.4, 1.0],
+      "anchorMesh": "Амортизатор задний",
+      "layer": "drivetrain",
+      "priority": "P3",
+      "category": "suspension",
+      "dtcCodes": ["C1700", "C1713"]
+    }
+  }
+}
