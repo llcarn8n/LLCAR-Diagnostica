@@ -45,3 +45,4 @@ backend/temp_config.json
 # Temp
 *.log
 rescrape_dry.json
+backend/auth_telegram.py

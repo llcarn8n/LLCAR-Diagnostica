@@ -241,7 +241,7 @@ class _NullCSS:
 
 log = logging.getLogger(__name__)
 
-DB_PATH = Path(__file__).resolve().parent.parent / "data" / "scraped_articles.db"
+DB_PATH = Path(__file__).resolve().parent.parent.parent / "knowledge-base" / "kb.db"
 
 # ── Relevance scoring & content classification ────────────────────────────
 

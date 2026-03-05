@@ -1,0 +1,864 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LLCAR - Скрапинг статей</title>
+<style>
+:root {
+  --bg: #0d1117; --bg2: #161b22; --bg3: #21262d;
+  --border: #30363d; --border2: #484f58;
+  --text: #e6edf3; --text2: #8b949e; --text3: #6e7681;
+  --accent: #00FFFF; --accent2: #0099CC;
+  --green: #3fb950; --red: #f85149; --orange: #d29922;
+  --link: #58a6ff;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; background: var(--bg); color: var(--text); display: flex; min-height: 100vh; }
+
+/* Sidebar */
+.sidebar { width: 260px; background: var(--bg2); border-right: 1px solid var(--border); display: flex; flex-direction: column; position: fixed; top: 0; left: 0; bottom: 0; overflow-y: auto; }
+.sidebar__logo { padding: 16px 20px; font-size: 18px; font-weight: 700; color: var(--accent); border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 10px; text-shadow: 0 0 10px rgba(0,255,255,0.3); }
+.sidebar__nav { padding: 8px 0; }
+.sidebar__item { display: flex; align-items: center; justify-content: space-between; padding: 8px 20px; cursor: pointer; font-size: 13px; color: var(--text2); transition: background .15s; }
+.sidebar__item:hover { background: var(--bg3); color: var(--text); }
+.sidebar__item--active { background: rgba(0,255,255,0.08); color: var(--accent); border-left: 3px solid var(--accent); }
+.sidebar__item .badge { background: var(--bg3); border: 1px solid var(--border); border-radius: 10px; padding: 1px 7px; font-size: 11px; }
+.sidebar__item--active .badge { background: rgba(0,255,255,0.15); border-color: var(--accent2); color: var(--accent); }
+.sidebar__section { padding: 12px 20px 4px; font-size: 11px; font-weight: 600; color: var(--text3); text-transform: uppercase; letter-spacing: 0.5px; }
+.sidebar__footer { margin-top: auto; padding: 12px 20px; border-top: 1px solid var(--border); }
+.sidebar__footer a { color: var(--text2); text-decoration: none; font-size: 12px; display: block; padding: 6px 0; }
+.sidebar__footer a:hover { color: var(--accent); }
+
+/* Main */
+.main { margin-left: 260px; flex: 1; min-height: 100vh; }
+.topbar { padding: 16px 24px; border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; }
+.topbar__title { font-size: 20px; font-weight: 600; }
+.topbar__actions { display: flex; gap: 8px; }
+.body { padding: 24px; }
+
+/* Cards */
+.cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 16px; margin-bottom: 24px; }
+.card { background: var(--bg2); border: 1px solid var(--border); border-radius: 8px; padding: 16px; }
+.card__value { font-size: 28px; font-weight: 700; color: var(--accent); }
+.card__label { font-size: 12px; color: var(--text2); margin-top: 4px; }
+
+/* Table */
+.tbl { width: 100%; border-collapse: collapse; font-size: 13px; }
+.tbl th { text-align: left; padding: 8px 12px; color: var(--text2); font-weight: 600; font-size: 11px; text-transform: uppercase; border-bottom: 1px solid var(--border); }
+.tbl td { padding: 8px 12px; border-bottom: 1px solid var(--border); }
+.tbl tr:hover td { background: var(--bg2); }
+.tbl .act { color: var(--link); cursor: pointer; }
+.tbl .act:hover { text-decoration: underline; }
+
+/* Buttons & inputs */
+.btn { display: inline-flex; align-items: center; gap: 6px; padding: 6px 14px; font-size: 13px; border-radius: 6px; cursor: pointer; border: 1px solid var(--border); background: var(--bg3); color: var(--text); transition: all .15s; }
+.btn:hover { border-color: var(--border2); }
+.btn--primary { background: rgba(0,255,255,0.15); border-color: var(--accent2); color: var(--accent); }
+.btn--primary:hover { background: rgba(0,255,255,0.25); }
+.btn--green { background: rgba(63,185,80,0.15); border-color: var(--green); color: var(--green); }
+.btn--danger { background: rgba(248,81,73,0.1); border-color: var(--red); color: var(--red); }
+.btn--outline { background: transparent; }
+.btn--sm { padding: 3px 10px; font-size: 12px; }
+.input, .select { background: var(--bg); border: 1px solid var(--border); border-radius: 6px; padding: 8px 12px; color: var(--text); font-size: 13px; width: 100%; }
+.input:focus, .select:focus { outline: none; border-color: var(--accent); }
+textarea.input { resize: vertical; font-family: monospace; }
+
+/* Tags */
+.tag { display: inline-block; padding: 1px 8px; border-radius: 10px; font-size: 11px; font-weight: 500; }
+.tag--lang { background: rgba(0,255,255,0.1); color: var(--accent); }
+.tag--class { background: rgba(63,185,80,0.1); color: var(--green); }
+.tag--kb { background: rgba(63,185,80,0.2); color: var(--green); }
+.tag--dtc { background: rgba(210,153,34,0.2); color: var(--orange); }
+.tag--status { padding: 2px 8px; }
+
+/* Content */
+.content-toolbar { display: flex; align-items: center; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
+.content-toolbar .select { width: auto; min-width: 120px; }
+.content-count { font-size: 12px; color: var(--text2); margin-left: auto; }
+
+/* Article */
+.article { background: var(--bg2); border: 1px solid var(--border); border-radius: 8px; margin-bottom: 8px; overflow: hidden; }
+.article__head { display: flex; align-items: center; padding: 10px 14px; cursor: pointer; gap: 12px; }
+.article__head:hover { background: var(--bg3); }
+.article__indicator { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+.article__info { flex: 1; min-width: 0; }
+.article__tags { display: flex; gap: 4px; margin-bottom: 4px; flex-wrap: wrap; }
+.article__title { font-size: 13px; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.article__snippet { font-size: 12px; color: var(--text3); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 600px; }
+.article__right { display: flex; flex-direction: column; align-items: flex-end; gap: 2px; flex-shrink: 0; }
+.article__rel { font-size: 13px; font-weight: 700; }
+.article__len { font-size: 11px; color: var(--text3); }
+.article__body { display: none; padding: 0 14px 14px; }
+.article--expanded .article__body { display: block; }
+.article__actions { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-top: 10px; }
+.article__url { font-size: 11px; color: var(--link); text-decoration: none; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; max-width: 400px; }
+.article__url:hover { text-decoration: underline; }
+
+/* Form groups */
+.form-group { margin-bottom: 16px; }
+.form-group label { display: block; font-size: 12px; color: var(--text2); margin-bottom: 4px; font-weight: 600; }
+.form-hint { font-size: 11px; color: var(--text3); margin-top: 4px; }
+
+/* Pager */
+.pager { display: flex; align-items: center; justify-content: center; gap: 12px; margin-top: 16px; }
+
+/* Empty */
+.empty { text-align: center; padding: 60px 20px; color: var(--text3); }
+.empty__title { font-size: 18px; margin-bottom: 8px; }
+
+/* Notification */
+.notif { position: fixed; bottom: 20px; right: 20px; padding: 10px 20px; border-radius: 8px; font-size: 13px; z-index: 999; display: none; max-width: 400px; box-shadow: 0 4px 12px rgba(0,0,0,0.4); }
+.notif--ok { background: var(--bg2); border: 1px solid var(--green); color: var(--green); }
+.notif--err { background: var(--bg2); border: 1px solid var(--red); color: var(--red); }
+
+/* Source detail */
+.source-detail { display: grid; gap: 16px; }
+.source-section { background: var(--bg2); border: 1px solid var(--border); border-radius: 8px; padding: 16px; }
+.source-section h3 { font-size: 14px; margin-bottom: 12px; color: var(--text); }
+</style>
+</head>
+<body>
+
+<aside class="sidebar" id="sidebar"></aside>
+
+<div class="main">
+  <div class="topbar">
+    <div class="topbar__title" id="page-title">Dashboard</div>
+    <div class="topbar__actions">
+      <button class="btn btn--primary" onclick="runAll()">Run all</button>
+      <button class="btn btn--green" onclick="importKB()">Import to KB</button>
+    </div>
+  </div>
+  <div class="body" id="main-body"></div>
+</div>
+
+<div class="notif" id="notif"></div>
+
+<script>
+const API = '';  // relative URLs — same Flask server
+
+let allScrapers = [];
+let currentView = 'overview';
+let contentPage = 1;
+let contentSort = 'newest';
+let contentFilter = '';
+let expandedArticle = null;
+let polls = {};
+
+// ── Init ──
+loadData();
+
+async function loadData() {
+  try {
+    const r = await fetch(API + '/api/scrapers/list');
+    const d = await r.json();
+    allScrapers = d.scrapers || [];
+  } catch (e) {
+    allScrapers = [];
+  }
+  renderSidebar();
+  if (currentView === 'overview') showOverview();
+}
+
+// ── Sidebar ──
+function renderSidebar() {
+  const sb = document.getElementById('sidebar');
+  let h = `<div class="sidebar__logo">LLCAR Scrapers</div>
+    <div class="sidebar__nav">
+      <div class="sidebar__item ${currentView==='overview'?'sidebar__item--active':''}" onclick="showOverview()">Dashboard</div>
+      <div class="sidebar__item ${currentView==='add'?'sidebar__item--active':''}" onclick="showAddSource()">+ Add source</div>
+      <div class="sidebar__item ${currentView.startsWith('content:')&&!currentView.split(':')[1]?'sidebar__item--active':''}" onclick="showContent('')">All articles</div>
+      <div class="sidebar__item ${currentView==='telegram'?'sidebar__item--active':''}" onclick="showTelegram()">Telegram</div>
+      <div class="sidebar__section">Sources</div>`;
+
+  const sorted = [...allScrapers].sort((a,b) => b.total - a.total);
+  for (const s of sorted) {
+    const isActive = currentView === 'source:' + s.name ||
+                     currentView === 'content:' + s.name;
+    h += `<div class="sidebar__item ${isActive?'sidebar__item--active':''}" onclick="showSource('${s.name}')">
+      <span>${s.name}</span>
+      <span class="badge">${s.total}</span>
+    </div>`;
+  }
+
+  h += `</div>
+    <div class="sidebar__footer">
+      <a href="/">Downloads panel</a>
+    </div>`;
+  sb.innerHTML = h;
+}
+
+// ── Overview ──
+function showOverview() {
+  currentView = 'overview';
+  renderSidebar();
+  document.getElementById('page-title').textContent = 'Dashboard';
+
+  const total = allScrapers.reduce((a, s) => a + s.total, 0);
+  const inKB = allScrapers.reduce((a, s) => a + (s.imported || 0), 0);
+  const active = allScrapers.filter(s => s.total > 0).length;
+  const avgRel = allScrapers.length ? (allScrapers.reduce((a, s) => a + (s.avg_relevance || 0), 0) / allScrapers.length * 100).toFixed(0) : 0;
+
+  let h = `<div class="cards">
+    <div class="card"><div class="card__value">${total}</div><div class="card__label">Total articles</div></div>
+    <div class="card"><div class="card__value">${inKB}</div><div class="card__label">In KB</div></div>
+    <div class="card"><div class="card__value">${active}</div><div class="card__label">Active sources</div></div>
+    <div class="card"><div class="card__value">${avgRel}%</div><div class="card__label">Avg relevance</div></div>
+  </div>
+  <table class="tbl"><thead><tr>
+    <th>Source</th><th>Lang</th><th>Articles</th><th>In KB</th><th>Avg rel.</th><th>Avg len</th><th>Last scraped</th><th>Status</th><th></th>
+  </tr></thead><tbody>`;
+
+  for (const s of allScrapers) {
+    const relPct = Math.round((s.avg_relevance || 0) * 100);
+    const relColor = relPct > 70 ? 'var(--green)' : relPct > 40 ? 'var(--orange)' : 'var(--text3)';
+    const stColor = s.status === 'running' ? 'var(--accent)' : s.status === 'error' ? 'var(--red)' : 'var(--text3)';
+    h += `<tr>
+      <td class="act" onclick="showSource('${s.name}')">${s.name}</td>
+      <td><span class="tag tag--lang">${s.lang}</span></td>
+      <td>${s.total}</td>
+      <td>${s.imported || 0}</td>
+      <td style="color:${relColor}">${relPct}%</td>
+      <td>${s.avg_length ? (s.avg_length/1000).toFixed(1)+'K' : '-'}</td>
+      <td style="font-size:11px;color:var(--text3)">${s.last_scraped || '-'}</td>
+      <td><span class="tag tag--status" style="color:${stColor}">${s.status}</span></td>
+      <td><button class="btn btn--primary btn--sm" onclick="runScraper('${s.name}')">Run</button></td>
+    </tr>`;
+  }
+  h += '</tbody></table>';
+  document.getElementById('main-body').innerHTML = h;
+}
+
+// ── Source detail ──
+function showSource(name) {
+  currentView = 'source:' + name;
+  renderSidebar();
+  const s = allScrapers.find(x => x.name === name);
+  document.getElementById('page-title').textContent = name;
+
+  const el = document.getElementById('main-body');
+  let h = '<div class="source-detail">';
+
+  // Stats row
+  h += `<div style="display:flex;gap:12px;flex-wrap:wrap">
+    <div class="card" style="flex:1;min-width:120px"><div class="card__value">${s ? s.total : 0}</div><div class="card__label">Articles</div></div>
+    <div class="card" style="flex:1;min-width:120px"><div class="card__value">${s ? (s.imported||0) : 0}</div><div class="card__label">In KB</div></div>
+    <div class="card" style="flex:1;min-width:120px"><div class="card__value">${s ? Math.round((s.avg_relevance||0)*100) : 0}%</div><div class="card__label">Relevance</div></div>
+    <div class="card" style="flex:1;min-width:120px"><div class="card__value" style="font-size:16px">${s ? (s.status||'idle') : 'idle'}</div><div class="card__label">Status</div></div>
+  </div>`;
+
+  // Actions
+  h += `<div class="source-section">
+    <h3>Actions</h3>
+    <div style="display:flex;gap:8px;flex-wrap:wrap">
+      <button class="btn btn--primary" onclick="runScraper('${name}')">Run scraper</button>
+      <button class="btn btn--outline" onclick="showContent('${name}')">Browse articles</button>
+    </div>
+  </div>`;
+
+  // Scrape single URL
+  h += `<div class="source-section">
+    <h3>Scrape URL</h3>
+    <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap">
+      <input class="input" id="scrape-url-${name}" placeholder="https://..." style="flex:1;min-width:200px" />
+      <select class="select" id="scrape-lang-${name}" style="width:80px"><option value="auto">Auto</option><option value="ru">RU</option><option value="en">EN</option><option value="zh">ZH</option></select>
+      <select class="select" id="scrape-method-${name}" style="width:140px">
+        <option value="auto">Auto (best)</option>
+        <option value="bs4_article">BS4 site-specific</option>
+        <option value="trafilatura">Trafilatura</option>
+        <option value="trafilatura_precision">Trafil. precise</option>
+        <option value="bs4">BS4 generic</option>
+        <option value="regex">Regex (raw)</option>
+      </select>
+      <button class="btn btn--green" onclick="scrapeURL('${name}')">Scrape</button>
+      <button class="btn btn--outline btn--sm" onclick="previewExtract('${name}')">Compare methods</button>
+    </div>
+    <div id="scrape-result-${name}" style="margin-top:8px"></div>
+  </div>`;
+
+  // Discover URLs
+  h += `<div class="source-section">
+    <h3>Discover URLs</h3>
+    <div style="display:flex;gap:8px;align-items:center">
+      <input class="input" id="discover-kw-${name}" placeholder="keywords..." style="flex:1" />
+      <button class="btn btn--primary" onclick="discoverURLs('${name}')">Search</button>
+    </div>
+    <div id="discover-results-${name}" style="margin-top:8px"></div>
+  </div>`;
+
+  h += '</div>';
+  el.innerHTML = h;
+}
+
+// ── Content browser ──
+async function showContent(source) {
+  currentView = 'content:' + (source || '');
+  renderSidebar();
+  document.getElementById('page-title').textContent = source ? source + ' - Articles' : 'All articles';
+
+  const el = document.getElementById('main-body');
+  el.innerHTML = '<div class="empty">Loading...</div>';
+
+  const p = new URLSearchParams({ page: contentPage, per_page: 20, sort: contentSort });
+  if (source) p.set('source', source);
+  if (contentFilter) p.set('imported', contentFilter);
+
+  try {
+    const r = await fetch(API + '/api/scrapers/content?' + p);
+    const data = await r.json();
+    renderArticles(data, source);
+  } catch (e) {
+    el.innerHTML = '<div class="empty">Error: ' + esc(e.message) + '</div>';
+  }
+}
+
+function renderArticles(data, source) {
+  const el = document.getElementById('main-body');
+  let h = `<div class="content-toolbar">
+    <select class="select" onchange="contentSort=this.value;contentPage=1;showContent('${source||''}')">
+      <option value="newest" ${contentSort==='newest'?'selected':''}>Newest first</option>
+      <option value="relevance" ${contentSort==='relevance'?'selected':''}>Best relevance</option>
+      <option value="length" ${contentSort==='length'?'selected':''}>Longest first</option>
+    </select>
+    <select class="select" onchange="contentFilter=this.value;contentPage=1;showContent('${source||''}')">
+      <option value="" ${contentFilter===''?'selected':''}>All</option>
+      <option value="0" ${contentFilter==='0'?'selected':''}>Pending</option>
+      <option value="1" ${contentFilter==='1'?'selected':''}>In KB</option>
+    </select>
+    <span class="content-count">${data.total} articles</span>
+    <button class="btn btn--outline btn--sm" onclick="rescrapeAll('${source||''}')" title="Re-fetch and re-extract ALL articles">Re-scrape all</button>
+    ${source ? `<button class="btn btn--outline btn--sm" onclick="showSource('${source}')">Back</button>` : ''}
+  </div>`;
+
+  for (const it of data.items) {
+    const relPct = Math.round((it.relevance || 0) * 100);
+    const relColor = relPct > 70 ? 'var(--green)' : relPct > 40 ? 'var(--orange)' : 'var(--red)';
+    const indColor = it.imported ? 'var(--green)' : 'var(--orange)';
+    const isExpanded = expandedArticle === it.id;
+
+    h += `<div class="article ${isExpanded ? 'article--expanded' : ''}" id="art-${it.id}">
+      <div class="article__head" onclick="toggleArticle(${it.id}, '${source||''}')">
+        <div class="article__indicator" style="background:${indColor}"></div>
+        <div class="article__info">
+          <div class="article__tags">
+            <span class="tag tag--class">${it.content_class || '?'}</span>
+            <span class="tag tag--lang">${it.lang}</span>
+            ${it.imported ? '<span class="tag tag--kb">IN KB</span>' : ''}
+            ${it.dtc_codes ? '<span class="tag tag--dtc">DTC</span>' : ''}
+          </div>
+          <div class="article__title">${esc(it.title || 'No title')}</div>
+          <div class="article__snippet">${esc(it.preview || '')}</div>
+        </div>
+        <div class="article__right">
+          <span class="article__rel" style="color:${relColor}">${relPct}%</span>
+          <span class="article__len">${(it.content_length/1000).toFixed(1)}K</span>
+        </div>
+      </div>
+      <div class="article__body" id="art-body-${it.id}"></div>
+    </div>`;
+  }
+
+  if (data.pages > 1) {
+    h += '<div class="pager">';
+    if (data.page > 1) h += `<button class="btn btn--outline btn--sm" onclick="contentPage=${data.page-1};showContent('${source||''}')">Prev</button>`;
+    h += `<span style="font-size:12px;color:var(--text2)">Page ${data.page} / ${data.pages}</span>`;
+    if (data.page < data.pages) h += `<button class="btn btn--outline btn--sm" onclick="contentPage=${data.page+1};showContent('${source||''}')">Next</button>`;
+    h += '</div>';
+  }
+
+  if (data.items.length === 0) {
+    h += '<div class="empty"><div class="empty__title">No articles</div></div>';
+  }
+
+  el.innerHTML = h;
+}
+
+async function toggleArticle(id, source) {
+  if (expandedArticle === id) { expandedArticle = null; showContent(source); return; }
+  expandedArticle = id;
+  try {
+    const r = await fetch(API + '/api/scrapers/content/' + id);
+    const item = await r.json();
+    const body = document.getElementById('art-body-' + id);
+    const art = document.getElementById('art-' + id);
+    if (body && item.content) {
+      body.innerHTML = `
+        <div style="margin:12px 0">
+          <label style="font-size:11px;color:var(--text2)">Title:</label>
+          <input class="input" id="edit-title-${id}" value="${escAttr(item.title || '')}" style="margin-bottom:8px" />
+          <label style="font-size:11px;color:var(--text2)">Category:</label>
+          <select class="select" id="edit-class-${id}" style="margin-bottom:8px">
+            ${['owner_review','troubleshooting','maintenance','specs','description','guide','news'].map(c =>
+              '<option value="'+c+'" '+(c === item.content_class ? 'selected' : '')+'>'+c+'</option>'
+            ).join('')}
+          </select>
+          <label style="font-size:11px;color:var(--text2)">Content:</label>
+          <textarea class="input" id="edit-content-${id}" style="min-height:250px;font-size:12px;line-height:1.5">${esc(item.content)}</textarea>
+          <div style="font-size:11px;color:var(--text3);margin-top:4px">${item.content.length} chars</div>
+        </div>
+        <div class="article__actions" style="flex-wrap:wrap">
+          <a class="article__url" href="${escAttr(item.url)}" target="_blank">${esc(item.url || '')}</a>
+          <div style="display:flex;gap:6px;align-items:center;flex-wrap:wrap">
+            <select class="select" id="rescrape-method-${id}" style="width:130px;font-size:11px;padding:3px 6px">
+              <option value="auto">Auto (best)</option>
+              <option value="bs4_article">BS4 site-specific</option>
+              <option value="trafilatura">Trafilatura</option>
+              <option value="trafilatura_precision">Trafil. precise</option>
+              <option value="bs4">BS4 generic</option>
+              <option value="regex">Regex (raw)</option>
+            </select>
+            <button class="btn btn--outline btn--sm" onclick="rescrapeItem(${id},'${source}')">Re-scrape</button>
+            <button class="btn btn--green btn--sm" onclick="saveItem(${id},'${source}')">Save</button>
+            <button class="btn btn--danger btn--sm" onclick="deleteItem(${id},'${source}')">Delete</button>
+          </div>
+        </div>`;
+      body.style.display = 'block';
+      if (art) art.classList.add('article--expanded');
+    }
+  } catch (e) { notify('Error: ' + e.message, true); }
+}
+
+async function rescrapeItem(id, source) {
+  const method = document.getElementById('rescrape-method-' + id)?.value || 'auto';
+  notify('Re-scraping...');
+  try {
+    const r = await fetch(API + '/api/scrapers/rescrape/' + id, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ method })
+    });
+    const d = await r.json();
+    if (!r.ok) { notify('Error: ' + (d.detail || d.error || r.status), true); return; }
+    notify('Re-scraped [' + (d.method_used||'') + ']: ' + ((d.content_length||0)/1000).toFixed(1) + 'K');
+    expandedArticle = null;
+    setTimeout(() => { expandedArticle = id; showContent(source); }, 200);
+  } catch (e) { notify('Error: ' + e.message, true); }
+}
+
+async function saveItem(id, source) {
+  const title = document.getElementById('edit-title-' + id)?.value;
+  const content = document.getElementById('edit-content-' + id)?.value;
+  const content_class = document.getElementById('edit-class-' + id)?.value;
+  try {
+    const r = await fetch(API + '/api/scrapers/content/' + id, {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ title, content, content_class })
+    });
+    if (r.ok) { notify('Saved!'); } else { const d = await r.json(); notify('Error: ' + (d.detail||d.error), true); }
+  } catch (e) { notify('Error: ' + e.message, true); }
+}
+
+// ── Add source ──
+function showAddSource() {
+  currentView = 'add';
+  renderSidebar();
+  document.getElementById('page-title').textContent = 'Add new source';
+
+  document.getElementById('main-body').innerHTML = `
+    <div style="max-width:600px">
+      <p style="color:var(--text2);margin-bottom:16px">
+        Add a new website source for scraping articles. Creates a Python scraper file in <code>scrapers/</code>.
+      </p>
+      <div class="form-group">
+        <label>Source name (latin, no spaces)</label>
+        <input class="input" id="add-name" placeholder="e.g. motor1_com" />
+        <div class="form-hint">Used as filename and source_name in database</div>
+      </div>
+      <div class="form-group">
+        <label>Language</label>
+        <select class="input" id="add-lang">
+          <option value="ru">Russian (RU)</option>
+          <option value="en">English (EN)</option>
+          <option value="zh">Chinese (ZH)</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Seed URLs (one per line)</label>
+        <textarea class="input" id="add-urls" placeholder="https://example.com/search?q=li+auto"></textarea>
+        <div class="form-hint">Search pages and/or direct article URLs</div>
+      </div>
+      <div class="form-group">
+        <label>URL filter keywords (comma-separated)</label>
+        <input class="input" id="add-keywords" placeholder="li-, lixiang, li_auto" />
+      </div>
+      <div class="form-group">
+        <label>Content CSS selectors (comma-separated)</label>
+        <input class="input" id="add-selectors" value=".entry-content p, .post-content p, article p" />
+      </div>
+      <button class="btn btn--green" onclick="createSource()">Create scraper</button>
+    </div>`;
+}
+
+async function createSource() {
+  const name = document.getElementById('add-name').value.trim();
+  const lang = document.getElementById('add-lang').value;
+  const urls = document.getElementById('add-urls').value.trim().split('\n').filter(Boolean);
+  const keywords = document.getElementById('add-keywords').value.trim();
+  const selectors = document.getElementById('add-selectors').value.trim();
+  if (!name || !urls.length) { notify('Fill name and URLs', true); return; }
+  if (!/^[a-z0-9_]+$/.test(name)) { notify('Name: latin lowercase + underscores only', true); return; }
+
+  try {
+    const r = await fetch(API + '/api/scrapers/create', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ name, lang, urls, keywords, selectors })
+    });
+    if (r.ok) { notify('Scraper "' + name + '" created!'); loadData(); showOverview(); }
+    else { const d = await r.json(); notify('Error: ' + (d.detail||d.error||r.status), true); }
+  } catch (e) { notify('Error: ' + e.message, true); }
+}
+
+// ── Navigate to article ──
+function goToArticle(source, id) {
+  expandedArticle = id;
+  contentPage = 1; contentSort = 'newest'; contentFilter = '';
+  showContent(source);
+}
+
+// ── Scrape single URL ──
+async function scrapeURL(source) {
+  const url = document.getElementById('scrape-url-' + source)?.value.trim();
+  const lang = document.getElementById('scrape-lang-' + source)?.value || 'auto';
+  const method = document.getElementById('scrape-method-' + source)?.value || 'auto';
+  const resultEl = document.getElementById('scrape-result-' + source);
+  if (!url || !url.startsWith('http')) { notify('Enter a valid URL', true); return; }
+
+  resultEl.innerHTML = '<div style="color:var(--accent);font-size:12px">Scraping...</div>';
+  try {
+    const r = await fetch(API + '/api/scrapers/scrape-url', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ url, source, lang, method })
+    });
+    const d = await r.json();
+    if (d.status === 'duplicate') { notify('Already in DB'); goToArticle(source, d.id); return; }
+    if (!r.ok) { resultEl.innerHTML = '<div style="color:var(--red);font-size:12px">Error: ' + esc(d.detail||d.error||''+r.status) + '</div>'; return; }
+    document.getElementById('scrape-url-' + source).value = '';
+    notify('Scraped [' + (d.method_used||'') + ']: ' + (d.title||'').slice(0,40) + ' - ' + ((d.content_length||0)/1000).toFixed(1) + 'K');
+    goToArticle(source, d.id);
+  } catch (e) { resultEl.innerHTML = '<div style="color:var(--red);font-size:12px">Error: ' + esc(e.message) + '</div>'; }
+}
+
+// ── Preview/Compare extraction methods ──
+async function previewExtract(source) {
+  const url = document.getElementById('scrape-url-' + source)?.value.trim();
+  const resultEl = document.getElementById('scrape-result-' + source);
+  if (!url || !url.startsWith('http')) { notify('Enter a URL to compare', true); return; }
+
+  resultEl.innerHTML = '<div style="color:var(--accent);font-size:12px">Comparing...</div>';
+  try {
+    const r = await fetch(API + '/api/scrapers/preview-extract', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ url })
+    });
+    const d = await r.json();
+    if (!d.previews) { resultEl.innerHTML = '<div style="color:var(--red)">Error</div>'; return; }
+
+    let h = '<div style="margin-top:8px"><div style="font-size:12px;font-weight:600;margin-bottom:8px;color:var(--accent)">Extraction comparison:</div>';
+    for (const p of d.previews) {
+      const len = p.content_length || 0;
+      const color = p.error ? 'var(--red)' : len > 500 ? 'var(--green)' : len > 0 ? 'var(--orange)' : 'var(--text3)';
+      h += `<div style="padding:8px;background:var(--bg);border:1px solid var(--border);border-radius:6px;margin-bottom:6px">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px">
+          <span style="font-weight:600;font-size:12px">${esc(p.method_used||p.method)}</span>
+          <span style="font-size:12px;color:${color}">${p.error ? 'ERROR' : (len/1000).toFixed(1)+'K chars'}</span>
+        </div>
+        ${p.title ? '<div style="font-size:11px;color:var(--text2);margin-bottom:4px">Title: '+esc(p.title.slice(0,80))+'</div>' : ''}
+        ${p.error
+          ? '<div style="font-size:11px;color:var(--red)">'+esc(p.error)+'</div>'
+          : '<div style="font-size:11px;color:var(--text3);max-height:80px;overflow:hidden;white-space:pre-wrap">'+esc((p.preview_start||'').slice(0,200))+'</div>'
+        }
+        ${!p.error && len > 200 ? '<button class="btn btn--primary btn--sm" style="margin-top:6px;padding:2px 8px;font-size:11px" onclick="scrapeWithMethod(\''+source+'\',\''+escAttr(url)+'\',\''+esc(p.method_used||p.method)+'\')">Use this method</button>' : ''}
+      </div>`;
+    }
+    h += '</div>';
+    resultEl.innerHTML = h;
+  } catch (e) { resultEl.innerHTML = '<div style="color:var(--red);font-size:12px">Error: ' + esc(e.message) + '</div>'; }
+}
+
+async function scrapeWithMethod(source, url, method) {
+  try {
+    const r = await fetch(API + '/api/scrapers/scrape-url', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ url, source, lang: 'auto', method })
+    });
+    const d = await r.json();
+    if (d.status === 'duplicate') { notify('Already in DB'); goToArticle(source, d.id); return; }
+    if (!r.ok) { notify('Error: ' + (d.detail||r.status), true); return; }
+    notify('Scraped [' + (d.method_used||'') + ']: ' + ((d.content_length||0)/1000).toFixed(1) + 'K');
+    goToArticle(source, d.id);
+  } catch (e) { notify('Error: ' + e.message, true); }
+}
+
+// ── Discover URLs ──
+async function discoverURLs(name) {
+  const keywords = document.getElementById('discover-kw-' + name)?.value.trim();
+  const resultsEl = document.getElementById('discover-results-' + name);
+  if (!keywords) { notify('Enter keywords', true); return; }
+  resultsEl.innerHTML = '<div style="color:var(--text2);font-size:12px">Searching...</div>';
+  try {
+    const r = await fetch(API + '/api/scrapers/sources/' + name + '/discover', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ keywords })
+    });
+    const d = await r.json();
+    if (!d.results || d.results.length === 0) {
+      resultsEl.innerHTML = '<div style="color:var(--text3);font-size:12px">No results</div>';
+      return;
+    }
+    let h = '<div style="font-size:11px;color:var(--text2);margin-bottom:8px">Found <b>' + d.total + '</b> URLs</div>';
+    for (const item of d.results) {
+      const u = item.url || item;
+      h += '<div style="font-size:12px;margin-bottom:6px;display:flex;align-items:center;gap:8px">'
+        + '<a href="'+escAttr(u)+'" target="_blank" class="article__url" style="font-size:12px;flex:1">'+esc(u)+'</a>'
+        + '<button class="btn btn--primary btn--sm" style="padding:2px 8px;font-size:11px" onclick="scrapeDiscoveredURL(\''+name+'\',\''+escAttr(u)+'\',this)">Scrape</button>'
+        + '</div>';
+    }
+    resultsEl.innerHTML = h;
+  } catch (e) { resultsEl.innerHTML = '<div style="color:var(--red);font-size:12px">Error: ' + esc(e.message) + '</div>'; }
+}
+
+async function scrapeDiscoveredURL(name, url, btn) {
+  btn.textContent = '...'; btn.disabled = true;
+  try {
+    const r = await fetch(API + '/api/scrapers/scrape-url', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ url, source: name, lang: 'auto' })
+    });
+    const d = await r.json();
+    if (d.status === 'duplicate') { btn.textContent = 'In DB'; notify('Already in DB'); }
+    else if (r.ok) { notify((d.title||'').slice(0,40) + '... ' + ((d.content_length||0)/1000).toFixed(1) + 'K'); goToArticle(name, d.id); }
+    else { btn.textContent = 'Err'; btn.style.color = 'var(--red)'; notify('Error', true); }
+  } catch (e) { btn.textContent = 'Err'; notify(e.message, true); }
+}
+
+// ── Actions ──
+async function runScraper(name) {
+  try {
+    const r = await fetch(API + '/api/scrapers/run/' + name, { method: 'POST' });
+    const d = await r.json();
+    if (d.status === 'already_running') { notify(name + ' already running'); return; }
+    notify(name + ': started');
+    startPoll(name);
+    loadData();
+  } catch (e) { notify('Error: ' + e.message, true); }
+}
+
+function runAll() { runScraper('all'); }
+
+function startPoll(name) {
+  if (polls[name]) return;
+  polls[name] = setInterval(async () => {
+    try {
+      const r = await fetch(API + '/api/scrapers/status/' + name);
+      const st = await r.json();
+      if (st.status !== 'running') {
+        clearInterval(polls[name]); delete polls[name];
+        notify(name + ': ' + st.status + (st.error ? ' - ' + st.error.slice(0,80) : ''), st.status === 'error');
+        loadData();
+      }
+    } catch (e) {}
+  }, 3000);
+}
+
+async function importKB() {
+  notify('Importing...');
+  try {
+    const r = await fetch(API + '/api/scrapers/import', { method: 'POST' });
+    const d = await r.json();
+    notify('Done! ' + (d.imported||0) + ' in KB, ' + (d.pending||0) + ' pending');
+    loadData();
+  } catch (e) { notify('Error: ' + e.message, true); }
+}
+
+async function deleteItem(id, source) {
+  if (!confirm('Delete this article?')) return;
+  try {
+    await fetch(API + '/api/scrapers/content/' + id, { method: 'DELETE' });
+    expandedArticle = null;
+    showContent(source);
+    notify('Deleted');
+  } catch (e) { notify('Error: ' + e.message, true); }
+}
+
+async function rescrapeAll(source) {
+  if (!confirm('Re-scrape ' + (source || 'ALL') + '?')) return;
+  const el = document.getElementById('main-body');
+  el.innerHTML = '<div class="empty"><div style="color:var(--accent)">Re-scraping...</div></div>';
+  try {
+    const r = await fetch(API + '/api/scrapers/rescrape-all', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ source: source || '', method: 'auto' })
+    });
+    const d = await r.json();
+    let h = '<div style="padding:20px"><h3 style="margin-bottom:12px">Re-scrape results</h3>'
+      + '<div style="display:flex;gap:16px;margin-bottom:16px">'
+      + '<div class="card"><div class="card__value" style="color:var(--green)">'+(d.updated||0)+'</div><div class="card__label">Updated</div></div>'
+      + '<div class="card"><div class="card__value" style="color:var(--red)">'+(d.failed||0)+'</div><div class="card__label">Failed</div></div>'
+      + '<div class="card"><div class="card__value" style="color:var(--text3)">'+(d.skipped||0)+'</div><div class="card__label">Skipped</div></div>'
+      + '</div>'
+      + '<button class="btn btn--primary" onclick="showContent(\''+source+'\')">Back to articles</button></div>';
+    el.innerHTML = h;
+    notify('Re-scraped: ' + (d.updated||0) + ' updated, ' + (d.failed||0) + ' failed');
+  } catch (e) { el.innerHTML = '<div class="empty">Error: ' + esc(e.message) + '</div>'; notify(e.message, true); }
+}
+
+// ── Telegram ──
+let tgChannels = [];
+let tgHasCreds = false;
+let tgPollTimer = null;
+
+async function showTelegram() {
+  currentView = 'telegram';
+  renderSidebar();
+  document.getElementById('page-title').textContent = 'Telegram Scraper';
+  const el = document.getElementById('main-body');
+  el.innerHTML = '<div class="empty">Loading...</div>';
+
+  try {
+    const [chR, stR] = await Promise.all([
+      fetch(API + '/api/telegram/channels'),
+      fetch(API + '/api/telegram/status'),
+    ]);
+    const chData = await chR.json();
+    tgChannels = chData.channels || [];
+    tgHasCreds = chData.has_credentials || false;
+    const status = await stR.json();
+    renderTelegram(status);
+  } catch (e) {
+    el.innerHTML = '<div class="empty">Error: ' + esc(e.message) + '</div>';
+  }
+}
+
+function renderTelegram(status) {
+  const el = document.getElementById('main-body');
+  const isRunning = status.status === 'running';
+
+  let h = '';
+
+  // Credentials warning
+  if (!tgHasCreds) {
+    h += `<div class="card" style="margin-bottom:16px;border-color:var(--orange)">
+      <div class="card__value" style="font-size:14px;color:var(--orange)">Telegram API credentials not configured</div>
+      <div class="card__label">Set TELEGRAM_API_ID, TELEGRAM_API_HASH, TELEGRAM_PHONE in config.py</div>
+    </div>`;
+  }
+
+  // Status card
+  if (isRunning) {
+    h += `<div class="card" style="margin-bottom:16px;border-color:var(--accent)">
+      <div style="display:flex;align-items:center;gap:12px">
+        <div class="card__value" style="font-size:16px;color:var(--accent)">Scraping @${esc(status.channel)}...</div>
+      </div>
+    </div>`;
+  } else if (status.status === 'done' && status.result) {
+    const r = status.result;
+    h += `<div class="card" style="margin-bottom:16px;border-color:var(--green)">
+      <div class="card__value" style="font-size:16px;color:var(--green)">Done: ${r.saved} articles saved</div>
+      <div class="card__label">Scanned: ${r.stats?.messages_scanned || 0}, Duplicates: ${r.stats?.duplicates || 0}</div>
+    </div>`;
+  } else if (status.status === 'error') {
+    h += `<div class="card" style="margin-bottom:16px;border-color:var(--red)">
+      <div class="card__value" style="font-size:14px;color:var(--red)">Error: ${esc(status.error || 'Unknown')}</div>
+    </div>`;
+  }
+
+  // Quick scrape form
+  h += `<div class="source-section" style="margin-bottom:16px">
+    <h3>Scrape Channel</h3>
+    <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap">
+      <input class="input" id="tg-channel" placeholder="@channel_name or username" style="flex:1;min-width:200px" />
+      <input class="input" id="tg-limit" type="number" value="500" min="10" max="5000" style="width:100px" />
+      <button class="btn btn--primary" onclick="startTgScrape()" ${isRunning ? 'disabled' : ''}>
+        ${isRunning ? 'Running...' : 'Scrape'}
+      </button>
+    </div>
+    <div class="form-hint">Enter channel/group username. Limit = max messages to scan.</div>
+  </div>`;
+
+  // Channels table
+  h += `<div class="source-section">
+    <h3>Channels</h3>
+    <table class="tbl"><thead><tr>
+      <th>Channel</th><th>Articles</th><th>Last scraped</th><th></th>
+    </tr></thead><tbody>`;
+
+  for (const ch of tgChannels) {
+    h += `<tr>
+      <td>@${esc(ch.channel)}</td>
+      <td>${ch.articles || 0}</td>
+      <td style="font-size:11px;color:var(--text3)">${ch.last_scraped || '-'}</td>
+      <td>
+        <button class="btn btn--primary btn--sm" onclick="startTgScrapeChannel('${escAttr(ch.channel)}')" ${isRunning ? 'disabled' : ''}>Scrape</button>
+        ${ch.articles > 0 ? `<button class="btn btn--outline btn--sm" onclick="showContent('telegram_${escAttr(ch.channel)}')">Browse</button>` : ''}
+      </td>
+    </tr>`;
+  }
+
+  h += '</tbody></table></div>';
+  el.innerHTML = h;
+}
+
+async function startTgScrape() {
+  const channel = document.getElementById('tg-channel')?.value.trim();
+  const limit = parseInt(document.getElementById('tg-limit')?.value) || 500;
+  if (!channel) { notify('Enter channel name', true); return; }
+
+  try {
+    const r = await fetch(API + '/api/telegram/scrape', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ channel, limit })
+    });
+    const d = await r.json();
+    if (d.status === 'already_running') { notify('Already running: @' + d.channel); return; }
+    if (!r.ok) { notify('Error: ' + (d.error || r.status), true); return; }
+    notify('Started scraping @' + channel);
+    startTgPoll();
+  } catch (e) { notify('Error: ' + e.message, true); }
+}
+
+function startTgScrapeChannel(channel) {
+  document.getElementById('tg-channel').value = channel;
+  startTgScrape();
+}
+
+function startTgPoll() {
+  if (tgPollTimer) return;
+  tgPollTimer = setInterval(async () => {
+    try {
+      const r = await fetch(API + '/api/telegram/status');
+      const st = await r.json();
+      if (st.status !== 'running') {
+        clearInterval(tgPollTimer);
+        tgPollTimer = null;
+        notify('Telegram: ' + st.status + (st.result ? ' — ' + st.result.saved + ' saved' : ''), st.status === 'error');
+        if (currentView === 'telegram') showTelegram();
+        loadData(); // Refresh sidebar counts
+      }
+    } catch (e) {}
+  }, 3000);
+}
+
+// ── Helpers ──
+function esc(s) { if (!s) return ''; const d = document.createElement('div'); d.textContent = s; return d.innerHTML; }
+function escAttr(s) { if (!s) return ''; return s.replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/'/g,'&#39;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+function notify(msg, err) {
+  const n = document.getElementById('notif');
+  n.textContent = msg;
+  n.className = 'notif ' + (err ? 'notif--err' : 'notif--ok');
+  n.style.display = 'block';
+  clearTimeout(n._t);
+  n._t = setTimeout(() => n.style.display = 'none', 4000);
+}
+</script>
+</body>
+</html>

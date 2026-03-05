@@ -24,6 +24,7 @@
 import os
 import sys
 import json
+import hashlib
 import threading
 import subprocess
 import asyncio
@@ -31,7 +32,7 @@ import shutil
 from pathlib import Path
 from datetime import datetime
 from collections import defaultdict
-from flask import Flask, render_template_string, jsonify, request, send_file
+from flask import Flask, render_template, render_template_string, jsonify, request, send_file
 
 # Импортируем config
 import config
@@ -44,7 +45,7 @@ app.config['MAX_CONTENT_LENGTH'] = 100 * 1024 * 1024  # 100 МБ
 def after_request(response):
     response.headers.add('Access-Control-Allow-Origin', '*')
     response.headers.add('Access-Control-Allow-Headers', 'Content-Type')
-    response.headers.add('Access-Control-Allow-Methods', 'GET,POST,DELETE')
+    response.headers.add('Access-Control-Allow-Methods', 'GET,POST,PUT,DELETE,OPTIONS')
     return response
 
 
@@ -248,6 +249,11 @@ def init_telegram_downloader():
 @app.route('/')
 def index():
     return render_template_string(HTML_TEMPLATE)
+
+
+@app.route('/scraping')
+def scraping_page():
+    return render_template('scraping.html')
 
 
 # ---------- SOURCES ----------
@@ -2958,7 +2964,7 @@ setInterval(loadStatistics, 30000);
 import sqlite3
 
 SCRAPERS_DIR = Path(__file__).parent / 'scrapers'
-SCRAPERS_DB = Path(__file__).parent / 'data' / 'scraped_articles.db'
+SCRAPERS_DB = Path(__file__).parent.parent / 'knowledge-base' / 'kb.db'
 
 ALL_SCRAPERS = [
     "lixiang", "autohome", "ru", "drom", "drom_reviews",
@@ -3178,6 +3184,614 @@ def scrapers_import_kb():
         pending = total - imported
     return jsonify({'total': total, 'imported': imported, 'pending': pending,
                     'note': 'Use run_scrapers.py --import-kb for full KB integration'})
+
+
+# ── Scrape single URL ──
+
+def _ensure_scraped_table():
+    """Ensure scraped_content table exists (matches base_scraper.py schema)."""
+    SCRAPERS_DB.parent.mkdir(parents=True, exist_ok=True)
+    with sqlite3.connect(str(SCRAPERS_DB)) as conn:
+        conn.execute("""
+            CREATE TABLE IF NOT EXISTS scraped_content (
+                id            INTEGER PRIMARY KEY AUTOINCREMENT,
+                url_hash      TEXT NOT NULL UNIQUE,
+                url           TEXT NOT NULL,
+                source_name   TEXT NOT NULL,
+                lang          TEXT NOT NULL DEFAULT '',
+                title         TEXT,
+                content       TEXT NOT NULL DEFAULT '',
+                scraped_at    TEXT DEFAULT (datetime('now')),
+                imported      INTEGER DEFAULT 0,
+                chunk_id      TEXT,
+                relevance     REAL DEFAULT 0,
+                dtc_codes     TEXT DEFAULT '',
+                content_class TEXT DEFAULT 'news'
+            )
+        """)
+        conn.execute("CREATE INDEX IF NOT EXISTS idx_scraped_source ON scraped_content(source_name)")
+        conn.execute("CREATE INDEX IF NOT EXISTS idx_scraped_url_hash ON scraped_content(url_hash)")
+
+
+def _extract_article_from_html(html, url, method='auto'):
+    """Extract article using rescrape_all.extract_article + clean_content."""
+    try:
+        sys.path.insert(0, str(SCRAPERS_DIR))
+        from rescrape_all import extract_article, clean_content
+        result = extract_article(html, url, method)
+        if result and result.get('content'):
+            result['content'] = clean_content(result['content'])
+        return result
+    except ImportError:
+        # Fallback: basic extraction with BeautifulSoup
+        from bs4 import BeautifulSoup
+        soup = BeautifulSoup(html, 'html.parser')
+        for tag in soup.select('script, style, nav, header, footer'):
+            tag.decompose()
+        h1 = soup.select_one('h1')
+        title = h1.get_text(strip=True) if h1 else ''
+        body = soup.find('body')
+        content = body.get_text(separator='\n', strip=True) if body else ''
+        return {'title': title, 'content': content, 'method_used': 'bs4_fallback'}
+
+
+def _detect_lang(text):
+    """Simple language detection."""
+    sample = text[:500]
+    ru = sum(1 for c in sample if '\u0400' <= c <= '\u04FF')
+    zh = sum(1 for c in sample if '\u4E00' <= c <= '\u9FFF')
+    if zh > 20: return 'zh'
+    if ru > 20: return 'ru'
+    return 'en'
+
+
+@app.route('/api/scrapers/scrape-url', methods=['POST'])
+def scrapers_scrape_url():
+    """Scrape a single URL and save to DB."""
+    import httpx
+
+    data = request.get_json() or {}
+    url = data.get('url', '').strip()
+    source = data.get('source', 'manual')
+    lang = data.get('lang', 'auto')
+    method = data.get('method', 'auto')
+
+    if not url or not url.startswith('http'):
+        return jsonify({'error': 'Invalid URL'}), 400
+
+    _ensure_scraped_table()
+
+    # Check duplicate
+    with sqlite3.connect(str(SCRAPERS_DB)) as conn:
+        existing = conn.execute(
+            "SELECT id FROM scraped_content WHERE url=?", (url.split('#')[0],)
+        ).fetchone()
+        if existing:
+            return jsonify({'status': 'duplicate', 'id': existing[0]})
+
+    # Fetch
+    headers = {
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+        "Accept-Language": "en-US,en;q=0.9,ru;q=0.8",
+    }
+    try:
+        with httpx.Client(follow_redirects=True, timeout=30, headers=headers, verify=False) as client:
+            resp = client.get(url)
+            resp.raise_for_status()
+            html = resp.text
+    except Exception as e:
+        return jsonify({'error': f'Fetch failed: {str(e)[:100]}'}), 502
+
+    # Extract
+    result = _extract_article_from_html(html, url, method)
+    if not result or len(result.get('content', '')) < 50:
+        return jsonify({'error': 'Extraction returned too little content'}), 422
+
+    title = result.get('title', '')[:300]
+    content = result.get('content', '')
+    method_used = result.get('method_used', method)
+    detected_lang = lang if lang != 'auto' else _detect_lang(content)
+
+    clean_url = url.split('#')[0]
+    url_hash = hashlib.md5(clean_url.encode()).hexdigest()
+    try:
+        with sqlite3.connect(str(SCRAPERS_DB)) as conn:
+            cur = conn.execute("""
+                INSERT INTO scraped_content (url_hash, url, source_name, lang, title, content, scraped_at)
+                VALUES (?, ?, ?, ?, ?, ?, datetime('now'))
+            """, (url_hash, clean_url, source, detected_lang, title, content))
+            new_id = cur.lastrowid
+    except sqlite3.IntegrityError:
+        # url_hash UNIQUE collision — treat as duplicate
+        with sqlite3.connect(str(SCRAPERS_DB)) as conn:
+            row = conn.execute("SELECT id FROM scraped_content WHERE url_hash=?", (url_hash,)).fetchone()
+        return jsonify({'status': 'duplicate', 'id': row[0] if row else None})
+
+    return jsonify({
+        'id': new_id, 'title': title, 'content_length': len(content),
+        'method_used': method_used, 'lang': detected_lang,
+    })
+
+
+@app.route('/api/scrapers/rescrape/<int:item_id>', methods=['POST'])
+def scrapers_rescrape_item(item_id):
+    """Re-fetch and re-extract a single item."""
+    import httpx
+
+    data = request.get_json() or {}
+    method = data.get('method', 'auto')
+
+    with sqlite3.connect(str(SCRAPERS_DB)) as conn:
+        row = conn.execute("SELECT url, lang FROM scraped_content WHERE id=?", (item_id,)).fetchone()
+    if not row:
+        return jsonify({'error': 'Not found'}), 404
+
+    url, old_lang = row
+    headers = {
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+    }
+    try:
+        with httpx.Client(follow_redirects=True, timeout=30, headers=headers, verify=False) as client:
+            resp = client.get(url)
+            resp.raise_for_status()
+            html = resp.text
+    except Exception as e:
+        return jsonify({'error': f'Fetch failed: {str(e)[:100]}'}), 502
+
+    result = _extract_article_from_html(html, url, method)
+    if not result or len(result.get('content', '')) < 50:
+        return jsonify({'error': 'Re-extraction returned too little content'}), 422
+
+    title = result.get('title', '')[:300]
+    content = result.get('content', '')
+    method_used = result.get('method_used', method)
+
+    with sqlite3.connect(str(SCRAPERS_DB)) as conn:
+        conn.execute("""
+            UPDATE scraped_content SET title=?, content=?, scraped_at=datetime('now')
+            WHERE id=?
+        """, (title, content, item_id))
+
+    return jsonify({
+        'id': item_id, 'title': title, 'content_length': len(content),
+        'method_used': method_used,
+    })
+
+
+@app.route('/api/scrapers/rescrape-all', methods=['POST'])
+def scrapers_rescrape_all():
+    """Re-scrape all articles (or by source). Synchronous — may take a while."""
+    import httpx
+
+    data = request.get_json() or {}
+    source_filter = data.get('source', '')
+    method = data.get('method', 'auto')
+
+    if not SCRAPERS_DB.exists():
+        return jsonify({'error': 'No database'}), 404
+
+    with sqlite3.connect(str(SCRAPERS_DB)) as conn:
+        where = "WHERE source_name LIKE ?" if source_filter else ""
+        params = [f"%{source_filter}%"] if source_filter else []
+        rows = conn.execute(
+            f"SELECT id, url, lang, title, LENGTH(content) FROM scraped_content {where}", params
+        ).fetchall()
+
+    stats = {'updated': 0, 'failed': 0, 'skipped': 0}
+    details = []
+    headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"}
+
+    for item_id, url, old_lang, old_title, old_len in rows:
+        try:
+            with httpx.Client(follow_redirects=True, timeout=30, headers=headers, verify=False) as client:
+                resp = client.get(url)
+                resp.raise_for_status()
+                html = resp.text
+
+            result = _extract_article_from_html(html, url, method)
+            content = result.get('content', '') if result else ''
+            if len(content) < 50:
+                stats['skipped'] += 1
+                details.append({'id': item_id, 'status': 'skipped', 'title': old_title})
+                continue
+
+            title = result.get('title', '')[:300] or old_title
+            with sqlite3.connect(str(SCRAPERS_DB)) as conn:
+                conn.execute(
+                    "UPDATE scraped_content SET title=?, content=?, scraped_at=datetime('now') WHERE id=?",
+                    (title, content, item_id)
+                )
+            stats['updated'] += 1
+            details.append({
+                'id': item_id, 'status': 'updated', 'title': title,
+                'old_len': old_len or 0, 'new_len': len(content),
+                'method': result.get('method_used', method),
+            })
+        except Exception as e:
+            stats['failed'] += 1
+            details.append({'id': item_id, 'status': 'error', 'error': str(e)[:80]})
+
+    return jsonify({**stats, 'details': details})
+
+
+@app.route('/api/scrapers/preview-extract', methods=['POST'])
+def scrapers_preview_extract():
+    """Compare extraction methods on a URL without saving."""
+    import httpx
+
+    data = request.get_json() or {}
+    url = data.get('url', '').strip()
+    if not url or not url.startswith('http'):
+        return jsonify({'error': 'Invalid URL'}), 400
+
+    headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"}
+    try:
+        with httpx.Client(follow_redirects=True, timeout=30, headers=headers, verify=False) as client:
+            resp = client.get(url)
+            resp.raise_for_status()
+            html = resp.text
+    except Exception as e:
+        return jsonify({'error': f'Fetch failed: {str(e)[:100]}'}), 502
+
+    methods = ['auto', 'trafilatura', 'bs4_article', 'bs4', 'regex']
+    previews = []
+    for m in methods:
+        try:
+            result = _extract_article_from_html(html, url, m)
+            content = result.get('content', '') if result else ''
+            previews.append({
+                'method': m,
+                'method_used': result.get('method_used', m) if result else m,
+                'title': (result.get('title', '') if result else '')[:100],
+                'content_length': len(content),
+                'preview_start': content[:300],
+            })
+        except Exception as e:
+            previews.append({'method': m, 'error': str(e)[:100]})
+
+    return jsonify({'previews': previews})
+
+
+@app.route('/api/scrapers/create', methods=['POST'])
+def scrapers_create_source():
+    """Create a new scraper Python file from template."""
+    data = request.get_json() or {}
+    name = data.get('name', '').strip()
+    lang = data.get('lang', 'en')
+    urls = data.get('urls', [])
+    keywords = data.get('keywords', '')
+    selectors = data.get('selectors', '.entry-content p, article p')
+
+    if not name or not urls:
+        return jsonify({'error': 'Name and URLs required'}), 400
+
+    import re as _re
+    if not _re.match(r'^[a-z0-9_]+$', name):
+        return jsonify({'error': 'Name must be lowercase latin + underscores'}), 400
+
+    scraper_path = SCRAPERS_DIR / f'{name}.py'
+    if scraper_path.exists():
+        return jsonify({'error': f'Scraper {name} already exists'}), 409
+
+    # Generate scraper Python file from template
+    url_list = ',\n        '.join(f'"{u}"' for u in urls)
+    keyword_list = ', '.join(f'"{k.strip()}"' for k in keywords.split(',') if k.strip())
+
+    template = f'''#!/usr/bin/env python3
+"""Scraper: {name} — auto-generated"""
+import sys, os
+sys.path.insert(0, os.path.dirname(__file__))
+from base_scraper import BaseScraper
+
+class {name.title().replace("_", "")}Scraper(BaseScraper):
+    SOURCE_NAME = "{name}"
+    LANG = "{lang}"
+    SEED_URLS = [
+        {url_list}
+    ]
+    URL_KEYWORDS = [{keyword_list}]
+    CONTENT_SELECTORS = "{selectors}"
+
+    def scrape(self):
+        for url in self.SEED_URLS:
+            try:
+                page = self.static_fetch(url)
+                if not page:
+                    continue
+                links = page.css("a[href]")
+                for link in links:
+                    href = link.attrs.get("href", "")
+                    if any(kw in href.lower() for kw in self.URL_KEYWORDS):
+                        self.scrape_article(href, self.LANG)
+            except Exception as e:
+                print(f"[{{self.SOURCE_NAME}}] Error: {{e}}")
+
+    def scrape_article(self, url, lang):
+        page = self.static_fetch(url)
+        if not page:
+            return
+        content_parts = page.css(self.CONTENT_SELECTORS)
+        content = "\\n".join(el.text for el in content_parts if el.text.strip())
+        if len(content) > 100:
+            title_el = page.css_first("h1")
+            title = title_el.text.strip() if title_el else ""
+            self.save_article(url=url, title=title, content=content, lang=lang)
+
+
+if __name__ == "__main__":
+    s = {name.title().replace("_", "")}Scraper()
+    s.scrape()
+'''
+    scraper_path.write_text(template, encoding='utf-8')
+
+    if name not in ALL_SCRAPERS:
+        ALL_SCRAPERS.append(name)
+    return jsonify({'created': name, 'file': str(scraper_path)})
+
+
+@app.route('/api/scrapers/sources/<name>/discover', methods=['POST'])
+def scrapers_discover_urls(name):
+    """Discover article URLs on source's domain by crawling with keywords."""
+    import httpx
+    from urllib.parse import urlparse, urljoin
+
+    data = request.get_json() or {}
+    keywords = data.get('keywords', '').lower().split()
+
+    if not keywords:
+        return jsonify({'error': 'Keywords required'}), 400
+
+    # Find domain from existing articles or scraper file
+    domain = None
+    if SCRAPERS_DB.exists():
+        with sqlite3.connect(str(SCRAPERS_DB)) as conn:
+            row = conn.execute(
+                "SELECT url FROM scraped_content WHERE source_name=? LIMIT 1", (name,)
+            ).fetchone()
+            if row:
+                domain = urlparse(row[0]).netloc
+
+    if not domain:
+        return jsonify({'error': 'No domain found for source', 'results': []}), 200
+
+    # Crawl domain search/sitemap for matching URLs
+    headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"}
+    results = []
+    crawled = []
+
+    try:
+        from bs4 import BeautifulSoup
+        search_urls = [
+            f"https://{domain}/",
+            f"https://{domain}/sitemap.xml",
+        ]
+        for kw in keywords[:3]:
+            search_urls.append(f"https://{domain}/?s={kw}")
+            search_urls.append(f"https://{domain}/search?q={kw}")
+
+        # Pre-load existing URLs for fast dedup
+        existing_urls = set()
+        if SCRAPERS_DB.exists():
+            with sqlite3.connect(str(SCRAPERS_DB)) as conn:
+                for row in conn.execute("SELECT url FROM scraped_content"):
+                    existing_urls.add(row[0])
+
+        seen = set()
+        with httpx.Client(follow_redirects=True, timeout=15, headers=headers, verify=False) as client:
+            for surl in search_urls[:5]:
+                try:
+                    resp = client.get(surl)
+                    crawled.append(surl)
+                    if resp.status_code == 200:
+                        soup = BeautifulSoup(resp.text, 'html.parser')
+                        for a in soup.find_all('a', href=True):
+                            href = urljoin(surl, a['href']).split('#')[0]
+                            if domain in href and href not in seen:
+                                if any(kw in href.lower() for kw in keywords):
+                                    seen.add(href)
+                                    results.append({
+                                        'url': href,
+                                        'already_scraped': href in existing_urls,
+                                    })
+                except Exception:
+                    pass
+    except Exception as e:
+        return jsonify({'error': str(e)[:100], 'results': []}), 200
+
+    return jsonify({
+        'domain': domain,
+        'total': len(results),
+        'results': results[:50],
+        'crawled_pages': crawled,
+    })
+
+
+# ═══════════════════════════════════════════════════════════════════════════
+# TELEGRAM CONTENT SCRAPER
+# ═══════════════════════════════════════════════════════════════════════════
+
+_tg_scraper_status = {'status': 'idle'}
+_tg_scraper_lock = threading.Lock()
+
+
+def _run_tg_scraper_background(channel: str, limit: int):
+    """Run Telegram scraper in background thread with asyncio."""
+    import time as _time
+    started = _time.time()
+
+    with _tg_scraper_lock:
+        _tg_scraper_status.update({
+            'status': 'running', 'channel': channel,
+            'started': started, 'error': None, 'result': None,
+        })
+
+    try:
+        loop = asyncio.new_event_loop()
+        asyncio.set_event_loop(loop)
+
+        sys.path.insert(0, str(SCRAPERS_DIR))
+        from telegram_scraper import TelegramContentScraper
+
+        api_id = getattr(config, 'TELEGRAM_API_ID', None)
+        api_hash = getattr(config, 'TELEGRAM_API_HASH', None)
+        phone = getattr(config, 'TELEGRAM_PHONE', None)
+        if not api_id or not api_hash or not phone:
+            raise ValueError("Telegram credentials not configured")
+
+        scraper = TelegramContentScraper(api_id, api_hash, phone)
+
+        async def _run():
+            if not await scraper.connect():
+                return {'error': 'Connection failed'}
+            try:
+                articles = await scraper.scrape_channel(channel, limit=limit)
+                return {
+                    'saved': len(articles),
+                    'stats': scraper.stats,
+                    'articles': [
+                        {'title': a['title'][:80], 'url': a['url'],
+                         'content_class': a['content_class'],
+                         'relevance': a['relevance'],
+                         'length': len(a['content'])}
+                        for a in articles[:20]
+                    ],
+                }
+            finally:
+                await scraper.disconnect()
+
+        result = loop.run_until_complete(_run())
+        loop.close()
+
+        with _tg_scraper_lock:
+            if 'error' in result:
+                _tg_scraper_status.update({
+                    'status': 'error', 'error': result['error'],
+                    'finished': _time.time(),
+                })
+            else:
+                _tg_scraper_status.update({
+                    'status': 'done', 'result': result,
+                    'finished': _time.time(),
+                })
+
+    except Exception as e:
+        with _tg_scraper_lock:
+            _tg_scraper_status.update({
+                'status': 'error', 'error': str(e)[:200],
+                'finished': _time.time(),
+            })
+
+
+@app.route('/api/telegram/channels')
+def telegram_channels():
+    """List configured Telegram channels."""
+    channels = getattr(config, 'TELEGRAM_CHANNELS', [])
+    # Add scraping-specific channels
+    try:
+        sys.path.insert(0, str(SCRAPERS_DIR))
+        from telegram_scraper import DEFAULT_CHANNELS
+        scraper_channels = DEFAULT_CHANNELS
+    except ImportError:
+        scraper_channels = ['lixiangautorussia', 'li_auto_russia']
+
+    # Get stats per channel from DB
+    channel_stats = {}
+    if SCRAPERS_DB.exists():
+        with sqlite3.connect(str(SCRAPERS_DB)) as conn:
+            rows = conn.execute("""
+                SELECT source_name, COUNT(*), MAX(scraped_at)
+                FROM scraped_content
+                WHERE source_name LIKE 'telegram_%'
+                GROUP BY source_name
+            """).fetchall()
+            for sname, count, last in rows:
+                channel_stats[sname] = {'count': count, 'last_scraped': last}
+
+    result = []
+    seen = set()
+    for ch in scraper_channels + channels:
+        ch = ch.lstrip('@').lower()
+        if ch in seen:
+            continue
+        seen.add(ch)
+        sname = f'telegram_{ch}'
+        stats = channel_stats.get(sname, {})
+        result.append({
+            'channel': ch,
+            'articles': stats.get('count', 0),
+            'last_scraped': stats.get('last_scraped'),
+            'source_name': sname,
+        })
+
+    has_creds = bool(getattr(config, 'TELEGRAM_API_ID', None)
+                     and getattr(config, 'TELEGRAM_API_HASH', None))
+
+    return jsonify({'channels': result, 'has_credentials': has_creds})
+
+
+@app.route('/api/telegram/scrape', methods=['POST'])
+def telegram_scrape():
+    """Start scraping a Telegram channel (background)."""
+    data = request.get_json() or {}
+    channel = data.get('channel', '').strip().lstrip('@')
+    limit = min(int(data.get('limit', 500)), 5000)
+
+    if not channel:
+        return jsonify({'error': 'Channel required'}), 400
+
+    api_id = getattr(config, 'TELEGRAM_API_ID', None)
+    api_hash = getattr(config, 'TELEGRAM_API_HASH', None)
+    phone = getattr(config, 'TELEGRAM_PHONE', None)
+    if not api_id or not api_hash or not phone:
+        return jsonify({'error': 'Telegram credentials not configured in config.py (API_ID, API_HASH, PHONE)'}), 400
+
+    with _tg_scraper_lock:
+        if _tg_scraper_status.get('status') == 'running':
+            return jsonify({
+                'status': 'already_running',
+                'channel': _tg_scraper_status.get('channel'),
+            })
+
+    t = threading.Thread(
+        target=_run_tg_scraper_background,
+        args=(channel, limit),
+        daemon=True,
+    )
+    t.start()
+
+    return jsonify({'status': 'started', 'channel': channel, 'limit': limit})
+
+
+@app.route('/api/telegram/status')
+def telegram_status():
+    """Check Telegram scraper status."""
+    with _tg_scraper_lock:
+        return jsonify(dict(_tg_scraper_status))
+
+
+@app.route('/api/telegram/info/<channel>')
+def telegram_channel_info(channel):
+    """Get info about a Telegram channel (synchronous, quick)."""
+    # This would need async — return basic DB stats instead
+    channel = channel.lstrip('@').lower()
+    sname = f'telegram_{channel}'
+    stats = {}
+    if SCRAPERS_DB.exists():
+        with sqlite3.connect(str(SCRAPERS_DB)) as conn:
+            row = conn.execute("""
+                SELECT COUNT(*), MAX(scraped_at), AVG(relevance),
+                       AVG(LENGTH(content))
+                FROM scraped_content WHERE source_name=?
+            """, (sname,)).fetchone()
+            if row and row[0]:
+                stats = {
+                    'articles': row[0],
+                    'last_scraped': row[1],
+                    'avg_relevance': round(row[2] or 0, 2),
+                    'avg_length': int(row[3] or 0),
+                }
+
+    return jsonify({'channel': channel, 'source_name': sname, **stats})
 
 
 # ═══════════════════════════════════════════════════════════════════════════
