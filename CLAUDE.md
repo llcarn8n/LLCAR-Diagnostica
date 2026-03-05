@@ -359,30 +359,41 @@ Base model: `utrobinmv/m2m_translate_en_ru_zh_large_4096`
 - [x] Articles exported as MD: 18 files in knowledge-base/articles/ (301 web-scraped by source)
 - [x] DB image path fix: 2,312 chunks had absolute paths `C:/Diagnostica-KB-Package/` → fixed to relative
 
-### Web Scraping Infrastructure (scripts/scrapers/)
+### Web Control Panel GUI (backend/)
+
+**3-page architecture** (commit d9d36fe):
+- `backend/templates/home.html` — Landing page with two big buttons: Загрузчик / Скрапинг
+- `backend/templates/panel.html` — Full download manager (6 tabs: Панель, Источники, Файлы, Настройки, Логи, Система)
+- `backend/templates/scraping.html` — Full scraping GUI (Dashboard, Add source, All articles, Telegram, Sources list)
+- `backend/web_control.py` — Flask server on port 5000, routes: `/` → home, `/downloads` → panel, `/scraping` → scraping
+- `scraping-gui.bat` — One-click launcher, opens http://localhost:5000
+- Downloads and scraping can run **simultaneously** (threaded Flask)
+- All scrapers write to unified DB: `knowledge-base/kb.db` (table `scraped_content`)
+
+### Web Scraping Infrastructure (scripts/scrapers/ + backend/scrapers/)
 
 | Scraper | Source | Lang | Items | Status |
 |---------|--------|------|-------|--------|
-| carnewschina | carnewschina.com, li-mega tag | EN | 78 | OK |
-| cnevpost | cnevpost.com (4 pages pagination) | EN | 60 | OK |
-| autoreview | autoreview.ru (7 search queries) | RU | 58 | OK |
-| drom_reviews | drom.ru owner reviews L6/L7/L8/L9 (46 reviews) | RU | 48 | OK |
-| drom | drom.ru catalog L6/L7/L8/L9/MEGA | RU | 10 | OK |
-| kitaec | kitaec.ua Chinese car reviews | RU | 7 | OK |
-| carscoops | carscoops.com (paginated) | EN | 6 | OK |
-| avtotachki | avtotachki.com search | RU | 6 | OK |
-| wikipedia | Wikipedia REST API (EN/RU/ZH) | multi | 10 | OK |
+| telegram_lixiangautorussia | @lixiangautorussia Telegram group | RU | 125 | OK |
+| autoreview_ru | autoreview.ru (7 search queries) | RU | 41 | OK |
+| carnewschina_en | carnewschina.com, li-mega tag | EN | 37 | OK |
+| drom_reviews | drom.ru owner reviews L6/L7/L8/L9 | RU | 54 | OK |
+| autochina_blog | autochina blog | RU | 6 | OK |
+| carscoops_en | carscoops.com (paginated) | EN | 6 | OK |
 | liautocn_news | ir.lixiang.com press releases | EN | 5 | OK |
-| motor_ru | motor.ru search | RU | 3 | OK |
-| chinamobil | chinamobil.ru search | RU | 3 | OK |
-| electrek | electrek.co, carscoops.com | EN | 2 | OK |
-| autostat | autostat.ru search | RU | 2 | OK |
-| lixiang_com | lixiang.com | ZH | 2 | OK |
+| getcar_ru | getcar.ru | RU | 4 | OK |
+| kitaec | kitaec.ua Chinese car reviews | RU | 4 | OK |
+| electrek_en | electrek.co, carscoops.com | EN | 2 | OK |
+| wikipedia_en | Wikipedia REST API (EN/RU/ZH) | multi | 1 | OK |
+| autonews_ru | autonews.ru | RU | 1 | OK |
+| insideevs | insideevs.com | EN | 1 | OK |
+| topelectricsuv | topelectricsuv.com | EN | 1 | OK |
+| drom | drom.ru catalog L6/L7/L8/L9/MEGA | RU | 1 | OK |
 | drive2 | drive2.ru | RU | 0 | 403 blocked |
 | autohome | autohome.com.cn | ZH | 0 | geo-blocked |
 | dongchedi | dongchedi.com | ZH | 0 | geo-blocked |
 
-**Total: 11,398 chunks** (11,097 manual + 301 web-scraped)
+**Total: ~11,313 chunks** (11,024 manual + 289 scraped articles)
 
 Key technical decisions:
 - base_scraper.py uses httpx + BeautifulSoup (not scrapling) for static fetching
@@ -390,6 +401,10 @@ Key technical decisions:
 - stealth_fetch falls back: scrapling StealthyFetcher -> patchright -> httpx
 - Wikipedia uses REST API (`/api/rest_v1/page/summary/`) to avoid 403 blocks
 - All URLs stripped of #fragments before deduplication
+- Telegram scraping via Telethon with keyword search + thread aggregation
+- 6 extraction methods: auto, trafilatura, bs4_article, bs4, regex, site-specific
+- 40 garbage articles cleaned up (low relevance, broken content)
+- Unified DB: all scrapers (web + telegram) write to `knowledge-base/kb.db`
 
 ### Exported Markdown Files
 
@@ -476,15 +491,21 @@ Key technical decisions:
 - [x] Deduplicate parts table (749 dupes removed)
 - [x] Re-OCR missing parts (rounds 1+2, +91 parts)
 - [x] Render missing PDF pages (+13 parts)
+- [x] Telegram scraper: 125 quality articles from @lixiangautorussia (447 raw → 125 after cleanup)
+- [x] Unified DB: all scrapers write to `knowledge-base/kb.db` (289 total articles)
+- [x] Web Control Panel: 3-page GUI (home/downloads/scraping), scraping-gui.bat launcher
+- [x] 6 extraction methods with comparison UI (auto, trafilatura, bs4_article, bs4, regex, site-specific)
+- [x] Garbage cleanup: 40 low-relevance articles deleted
 - [ ] Coverage still 60/100 — remaining gaps are OCR-hard tables (small text, merged cells)
 - [ ] Update `server.py` query embedder to use `pplx-embed-v1-4b` directly (currently uses context model as fallback)
 - [ ] COMET-KIWI evaluation on translation cache (`scripts/compare_models.py` exists)
-- [ ] Embed 301 new web_scraped chunks into LanceDB (run build_embeddings.py)
-- [ ] Translate 301 new web_scraped chunks (run translate_kb.py)
+- [ ] Embed 289 web_scraped articles into LanceDB (run build_embeddings.py)
+- [ ] Translate 289 web_scraped articles (run translate_kb.py)
 - [ ] Expand to more vehicle brands (Phase 2 in PLAN-KB-v4.2.md)
 - [ ] Fine-tuning Round 8+ with expanded training data (24,058 pairs now)
 - [ ] Add Chinese sources via VPN/proxy (autohome, dongchedi)
 - [ ] Add drive2.ru via residential proxy (blocked by IP)
+- [ ] Telegram: get API ID/Hash for more channels, focus on groups (@lixiangautorussia 40K members)
 
 ---
 
@@ -494,14 +515,17 @@ Key technical decisions:
 # 1. Setup (first time only)
 deploy\deploy.bat
 
-# 2. Every time
+# 2. KB Search API + Frontend
 .venv\Scripts\activate
 start "API" uvicorn api.server:app --host 0.0.0.0 --port 8000
 npx http-server -p 8080
-
-# 3. Open
 start http://localhost:8080/frontend/
 
-# 4. Verify
+# 3. Scraping & Downloads GUI (separate from KB)
+scraping-gui.bat
+# Opens http://localhost:5000 — home page with Загрузчик / Скрапинг choice
+# Or: cd backend && python web_control.py
+
+# 4. Verify KB setup
 python deploy\check_deploy.py
 ```
