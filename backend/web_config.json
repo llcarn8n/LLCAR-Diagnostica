@@ -1,0 +1,6 @@
+{
+  "telegram": false,
+  "web": true,
+  "torrent": false,
+  "recheck_mode": false
+}

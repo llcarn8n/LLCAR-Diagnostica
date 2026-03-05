@@ -1,0 +1,24 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Data (local, not in git)
+data/*.db
+data/*.db-journal
+
+# Logs
+logs/*.log
+
+# Telegram session
+*.session
+
+# Downloaded files
+Автомануалы/
+
+# Temp
+temp_config.json
+custom_sources.json
+build/
+dist/
+*.spec

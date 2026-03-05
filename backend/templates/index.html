@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LLCAR - Управление загрузками</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #000000 0%, #0a0a0a 100%);
+            color: #00FFFF;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 30px;
+            background: rgba(0, 255, 255, 0.05);
+            border: 2px solid #00FFFF;
+            border-radius: 15px;
+            box-shadow: 0 0 30px rgba(0, 255, 255, 0.3);
+        }
+
+        .header h1 {
+            font-size: 3em;
+            text-shadow: 0 0 20px #00FFFF, 0 0 40px #00FFFF;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            color: #00CCCC;
+            font-size: 1.2em;
+        }
+
+        .panel {
+            background: rgba(10, 10, 10, 0.8);
+            border: 2px solid #00FFFF;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
+        }
+
+        .panel h2 {
+            color: #00FFFF;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+            text-shadow: 0 0 10px #00FFFF;
+        }
+
+        .sources {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .source-card {
+            background: rgba(0, 255, 255, 0.05);
+            border: 2px solid #00FFFF;
+            border-radius: 10px;
+            padding: 20px;
+            cursor: pointer;
+            transition: all 0.3s;
+            position: relative;
+        }
+
+        .source-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 30px rgba(0, 255, 255, 0.4);
+        }
+
+        .source-card.active {
+            background: rgba(0, 255, 255, 0.15);
+            box-shadow: 0 0 30px rgba(0, 255, 255, 0.5);
+        }
+
+        .source-card input[type="checkbox"] {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 24px;
+            height: 24px;
+            cursor: pointer;
+        }
+
+        .source-card h3 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+            color: #00FFFF;
+        }
+
+        .source-card p {
+            color: #00CCCC;
+            font-size: 0.9em;
+        }
+
+        .controls {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            flex: 1;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            border: 2px solid #00FFFF;
+            background: rgba(0, 255, 255, 0.1);
+            color: #00FFFF;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-shadow: 0 0 5px #00FFFF;
+        }
+
+        .btn:hover {
+            background: rgba(0, 255, 255, 0.2);
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+            transform: scale(1.05);
+        }
+
+        .btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .btn.stop {
+            border-color: #FF0080;
+            color: #FF0080;
+            background: rgba(255, 0, 128, 0.1);
+        }
+
+        .btn.stop:hover {
+            background: rgba(255, 0, 128, 0.2);
+            box-shadow: 0 0 20px rgba(255, 0, 128, 0.5);
+        }
+
+        .status {
+            background: rgba(0, 255, 255, 0.05);
+            border: 2px solid #00FFFF;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .status-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(0, 255, 255, 0.2);
+        }
+
+        .status-item:last-child {
+            border-bottom: none;
+        }
+
+        .status-label {
+            color: #00CCCC;
+        }
+
+        .status-value {
+            color: #00FFFF;
+            font-weight: bold;
+        }
+
+        .logs {
+            background: rgba(0, 0, 0, 0.5);
+            border: 2px solid #00FFFF;
+            border-radius: 10px;
+            padding: 20px;
+            height: 400px;
+            overflow-y: auto;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+        }
+
+        .logs::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        .logs::-webkit-scrollbar-track {
+            background: rgba(0, 0, 0, 0.3);
+        }
+
+        .logs::-webkit-scrollbar-thumb {
+            background: #00FFFF;
+            border-radius: 5px;
+        }
+
+        .log-entry {
+            padding: 5px 0;
+            color: #00CCCC;
+        }
+
+        .log-entry:hover {
+            background: rgba(0, 255, 255, 0.1);
+        }
+
+        .recheck-option {
+            margin-top: 20px;
+            padding: 15px;
+            background: rgba(0, 255, 255, 0.05);
+            border-radius: 10px;
+        }
+
+        .recheck-option label {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+            font-size: 1.1em;
+        }
+
+        .recheck-option input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+        }
+
+        @keyframes glow {
+            0%, 100% { box-shadow: 0 0 20px rgba(0, 255, 255, 0.3); }
+            50% { box-shadow: 0 0 40px rgba(0, 255, 255, 0.6); }
+        }
+
+        .running {
+            animation: glow 2s infinite;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🚗 LLCAR</h1>
+            <p>Long Life Car Manuals - Управление загрузками</p>
+        </div>
+
+        <div class="panel">
+            <h2>📥 Выбор источников</h2>
+
+            <div class="sources">
+                <div class="source-card" id="telegram-card" onclick="toggleSource('telegram')">
+                    <input type="checkbox" id="telegram" checked>
+                    <h3>📱 Telegram</h3>
+                    <p>Скачивание из Telegram-каналов с автомануалами</p>
+                </div>
+
+                <div class="source-card" id="web-card" onclick="toggleSource('web')">
+                    <input type="checkbox" id="web" checked>
+                    <h3>🌐 Web</h3>
+                    <p>Парсинг сайтов с документацией</p>
+                </div>
+
+                <div class="source-card" id="torrent-card" onclick="toggleSource('torrent')">
+                    <input type="checkbox" id="torrent" checked>
+                    <h3>🧲 Torrent</h3>
+                    <p>Загрузка через торрент-трекеры</p>
+                </div>
+            </div>
+
+            <div class="recheck-option">
+                <label>
+                    <input type="checkbox" id="recheck">
+                    🔄 Режим повторной проверки (перепроверить все файлы)
+                </label>
+            </div>
+
+            <div class="controls">
+                <button class="btn" id="start-btn" onclick="startDownload()">
+                    🚀 ЗАПУСТИТЬ ЗАГРУЗКУ
+                </button>
+                <button class="btn stop" id="stop-btn" onclick="stopDownload()" disabled>
+                    ⏹️ ОСТАНОВИТЬ
+                </button>
+            </div>
+        </div>
+
+        <div class="panel">
+            <h2>📊 Статус</h2>
+            <div class="status" id="status">
+                <div class="status-item">
+                    <span class="status-label">Статус:</span>
+                    <span class="status-value" id="status-text">Готов к запуску</span>
+                </div>
+                <div class="status-item">
+                    <span class="status-label">Текущий файл:</span>
+                    <span class="status-value" id="current-file">-</span>
+                </div>
+                <div class="status-item">
+                    <span class="status-label">Telegram:</span>
+                    <span class="status-value" id="telegram-stats">0 файлов</span>
+                </div>
+                <div class="status-item">
+                    <span class="status-label">Web:</span>
+                    <span class="status-value" id="web-stats">0 файлов</span>
+                </div>
+                <div class="status-item">
+                    <span class="status-label">Torrent:</span>
+                    <span class="status-value" id="torrent-stats">0 файлов</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="panel">
+            <h2>📜 Логи</h2>
+            <div class="logs" id="logs">
+                <div class="log-entry">Ожидание команды...</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let updateInterval;
+
+        // Загрузка конфигурации при старте
+        async function loadConfig() {
+            const response = await fetch('/api/config');
+            const config = await response.json();
+
+            document.getElementById('telegram').checked = config.telegram;
+            document.getElementById('web').checked = config.web;
+            document.getElementById('torrent').checked = config.torrent;
+            document.getElementById('recheck').checked = config.recheck_mode || false;
+
+            updateSourceCards();
+        }
+
+        function toggleSource(source) {
+            const checkbox = document.getElementById(source);
+            checkbox.checked = !checkbox.checked;
+            updateSourceCards();
+        }
+
+        function updateSourceCards() {
+            ['telegram', 'web', 'torrent'].forEach(source => {
+                const card = document.getElementById(source + '-card');
+                const checkbox = document.getElementById(source);
+                if (checkbox.checked) {
+                    card.classList.add('active');
+                } else {
+                    card.classList.remove('active');
+                }
+            });
+        }
+
+        async function startDownload() {
+            const config = {
+                telegram: document.getElementById('telegram').checked,
+                web: document.getElementById('web').checked,
+                torrent: document.getElementById('torrent').checked,
+                recheck_mode: document.getElementById('recheck').checked
+            };
+
+            const response = await fetch('/api/start', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify(config)
+            });
+
+            const result = await response.json();
+            if (result.success) {
+                document.getElementById('start-btn').disabled = true;
+                document.getElementById('stop-btn').disabled = false;
+                document.getElementById('status').classList.add('running');
+
+                // Начинаем обновлять статус
+                updateInterval = setInterval(updateStatus, 1000);
+            }
+        }
+
+        async function stopDownload() {
+            const response = await fetch('/api/stop', {method: 'POST'});
+            const result = await response.json();
+            if (result.success) {
+                document.getElementById('start-btn').disabled = false;
+                document.getElementById('stop-btn').disabled = true;
+                document.getElementById('status').classList.remove('running');
+
+                clearInterval(updateInterval);
+            }
+        }
+
+        async function updateStatus() {
+            const response = await fetch('/api/status');
+            const status = await response.json();
+
+            document.getElementById('status-text').textContent =
+                status.running ? '🟢 Загрузка идёт' : '⚪ Остановлено';
+
+            document.getElementById('current-file').textContent =
+                status.current_file || '-';
+
+            // Обновляем логи
+            const logsDiv = document.getElementById('logs');
+            logsDiv.innerHTML = status.logs.slice(-50).map(log =>
+                `<div class="log-entry">${log}</div>`
+            ).join('');
+            logsDiv.scrollTop = logsDiv.scrollHeight;
+
+            // Если загрузка завершена
+            if (!status.running && document.getElementById('stop-btn').disabled === false) {
+                document.getElementById('start-btn').disabled = false;
+                document.getElementById('stop-btn').disabled = true;
+                document.getElementById('status').classList.remove('running');
+                clearInterval(updateInterval);
+            }
+        }
+
+        // Загружаем конфигурацию при старте
+        loadConfig();
+        updateSourceCards();
+
+        // Обновляем статус каждые 2 секунды
+        setInterval(updateStatus, 2000);
+    </script>
+</body>
+</html>

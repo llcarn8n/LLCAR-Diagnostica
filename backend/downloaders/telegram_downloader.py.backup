@@ -1,0 +1,446 @@
+"""
+Скачивание из Telegram с проверкой дубликатов.
+"""
+
+import os
+import re
+import json
+import asyncio
+import logging
+from pathlib import Path
+from typing import Optional, List, Dict, Any
+from datetime import datetime
+
+from telethon import TelegramClient
+from telethon.tl.types import DocumentAttributeFilename, MessageMediaDocument
+from telethon.errors import FloodWaitError, ChannelPrivateError, UsernameNotOccupiedError
+
+logger = logging.getLogger(__name__)
+
+
+class DownloadedFilesTracker:
+    """Отслеживает скачанные файлы - ПРОВЕРКА ТОЛЬКО ПО ИМЕНИ ФАЙЛА"""
+    
+    def __init__(self, base_path: Path, scan_folder: Optional[Path] = None):
+        self.base_path = Path(base_path)
+        self.db_file = self.base_path / 'downloaded_files.json'
+        self.downloaded_names: set = set()  # Множество имён файлов (lowercase)
+        self.downloaded_data: Dict[str, Dict] = {}  # Полные данные
+        self.scan_folder = scan_folder
+        
+        self._load()
+        
+        if self.scan_folder and self.scan_folder.exists():
+            self._sync_with_disk()
+    
+    def _normalize_name(self, filename: str) -> str:
+        """Нормализует имя файла для сравнения"""
+        return filename.lower().strip()
+    
+    def _load(self):
+        """Загружает базу"""
+        if self.db_file.exists():
+            try:
+                with open(self.db_file, 'r', encoding='utf-8') as f:
+                    self.downloaded_data = json.load(f)
+                
+                # Строим множество имён для быстрой проверки
+                for key, data in self.downloaded_data.items():
+                    name = data.get('filename', key.split('|')[0])
+                    self.downloaded_names.add(self._normalize_name(name))
+                
+                logger.info(f"📂 База загружена: {len(self.downloaded_names)} уникальных файлов")
+            except Exception as e:
+                logger.warning(f"Ошибка загрузки базы: {e}")
+                self.downloaded_data = {}
+                self.downloaded_names = set()
+        else:
+            logger.info("📂 Создаём новую базу")
+    
+    def _save(self):
+        """Сохраняет базу"""
+        try:
+            self.base_path.mkdir(parents=True, exist_ok=True)
+            with open(self.db_file, 'w', encoding='utf-8') as f:
+                json.dump(self.downloaded_data, f, ensure_ascii=False, indent=2, default=str)
+        except Exception as e:
+            logger.warning(f"Ошибка сохранения базы: {e}")
+    
+    def _sync_with_disk(self):
+        """Синхронизирует базу с файлами на диске"""
+        logger.info(f"🔄 Синхронизация с диском: {self.scan_folder}")
+        
+        added = 0
+        
+        # Сканируем ВСЕ файлы рекурсивно
+        for filepath in self.scan_folder.rglob('*'):
+            if filepath.is_file():
+                filename = filepath.name
+                norm_name = self._normalize_name(filename)
+                
+                if norm_name not in self.downloaded_names:
+                    # Добавляем в базу
+                    key = f"{norm_name}|{filepath.stat().st_size}"
+                    self.downloaded_data[key] = {
+                        'filename': filename,
+                        'size': filepath.stat().st_size,
+                        'filepath': str(filepath),
+                        'date': datetime.now().isoformat(),
+                    }
+                    self.downloaded_names.add(norm_name)
+                    added += 1
+        
+        if added > 0:
+            logger.info(f"✅ Добавлено в базу с диска: {added} файлов")
+            self._save()
+        
+        logger.info(f"📂 Всего в базе: {len(self.downloaded_names)} файлов")
+    
+    def is_downloaded(self, filename: str) -> bool:
+        """Проверяет был ли файл скачан - ТОЛЬКО ПО ИМЕНИ"""
+        norm_name = self._normalize_name(filename)
+        return norm_name in self.downloaded_names
+    
+    def mark_downloaded(self, filename: str, size: int, channel: str = '', filepath: str = ''):
+        """Отмечает файл как скачанный"""
+        norm_name = self._normalize_name(filename)
+        key = f"{norm_name}|{size}"
+        
+        self.downloaded_names.add(norm_name)
+        self.downloaded_data[key] = {
+            'filename': filename,
+            'size': size,
+            'channel': channel,
+            'filepath': str(filepath),
+            'date': datetime.now().isoformat(),
+        }
+        self._save()
+    
+    def get_count(self) -> int:
+        return len(self.downloaded_names)
+
+
+class TelegramDownloader:
+    """Скачивание из Telegram-каналов"""
+    
+    def __init__(
+        self,
+        api_id: int,
+        api_hash: str,
+        phone: str,
+        download_path: Path,
+        session_name: str = 'telegram_session'
+    ):
+        self.api_id = api_id
+        self.api_hash = api_hash
+        self.phone = phone
+        self.download_path = Path(download_path)
+        self.session_name = session_name
+        self.client: Optional[TelegramClient] = None
+        
+        self.download_path.mkdir(parents=True, exist_ok=True)
+        
+        # Трекер с синхронизацией
+        base_path = self.download_path.parent
+        self.tracker = DownloadedFilesTracker(
+            base_path=base_path,
+            scan_folder=self.download_path
+        )
+        
+        self.stats = {
+            'messages_processed': 0,
+            'files_found': 0,
+            'files_downloaded': 0,
+            'files_skipped': 0,
+            'files_existed': 0,
+            'errors': 0,
+            'total_size': 0,
+        }
+    
+    async def connect(self) -> bool:
+        """Подключается к Telegram"""
+        try:
+            self._check_crypto_modules()
+            
+            self.client = TelegramClient(
+                self.session_name,
+                self.api_id,
+                self.api_hash
+            )
+            
+            await self.client.start(phone=self.phone)
+            
+            me = await self.client.get_me()
+            logger.info(f"✅ Авторизован: {me.first_name} (@{me.username or 'нет'})")
+            
+            return True
+        except Exception as e:
+            logger.error(f"❌ Ошибка подключения: {e}")
+            return False
+    
+    def _check_crypto_modules(self):
+        """Проверяет модули шифрования"""
+        logger.info("🔐 Проверка модулей...")
+        
+        try:
+            import cryptg
+            logger.info("   ✅ cryptg - быстрое шифрование")
+        except ImportError:
+            logger.warning("   ⚠️ cryptg нет - медленное шифрование")
+        
+        try:
+            import ssl
+            logger.info(f"   ✅ SSL: {ssl.OPENSSL_VERSION}")
+        except Exception as e:
+            logger.warning(f"   ⚠️ SSL: {e}")
+    
+    async def disconnect(self):
+        """Отключается"""
+        if self.client:
+            await self.client.disconnect()
+            logger.info("📴 Отключено")
+    
+    def _get_file_info(self, message) -> Optional[Dict[str, Any]]:
+        """Извлекает информацию о файле"""
+        if not message.media or not isinstance(message.media, MessageMediaDocument):
+            return None
+        
+        document = message.document
+        
+        filename = None
+        for attr in document.attributes:
+            if isinstance(attr, DocumentAttributeFilename):
+                filename = attr.file_name
+                break
+        
+        if not filename:
+            ext = self._get_extension_from_mime(document.mime_type)
+            filename = f"document_{message.id}{ext}"
+        
+        return {
+            'filename': filename,
+            'size': document.size,
+            'mime_type': document.mime_type,
+            'message_id': message.id,
+            'date': message.date,
+            'caption': message.message or '',
+        }
+    
+    def _get_extension_from_mime(self, mime_type: str) -> str:
+        """Расширение по MIME"""
+        mime_map = {
+            'application/pdf': '.pdf',
+            'application/zip': '.zip',
+            'application/x-rar-compressed': '.rar',
+            'application/vnd.rar': '.rar',
+            'application/x-7z-compressed': '.7z',
+            'application/msword': '.doc',
+            'application/vnd.openxmlformats-officedocument.wordprocessingml.document': '.docx',
+            'application/epub+zip': '.epub',
+            'image/vnd.djvu': '.djvu',
+        }
+        return mime_map.get(mime_type, '')
+    
+    def _is_valid_file(self, file_info: Dict, allowed_extensions: List[str], max_size_mb: int) -> bool:
+        """Проверка расширения и размера"""
+        _, ext = os.path.splitext(file_info['filename'].lower())
+        if ext not in [e.lower() for e in allowed_extensions]:
+            return False
+        
+        if file_info['size'] > max_size_mb * 1024 * 1024:
+            return False
+        
+        return True
+    
+    def _matches_keywords(self, text: str, include: Optional[List[str]], exclude: Optional[List[str]]) -> bool:
+        """Проверка ключевых слов"""
+        text_lower = text.lower()
+        
+        if include:
+            if not any(kw.lower() in text_lower for kw in include):
+                return False
+        
+        if exclude:
+            if any(kw.lower() in text_lower for kw in exclude):
+                return False
+        
+        return True
+    
+    def _sanitize_filename(self, filename: str) -> str:
+        """Очистка имени файла"""
+        for char in '<>:"/\\|?*\n\r\t':
+            filename = filename.replace(char, '_')
+        filename = re.sub(r'\s+', ' ', filename).strip()
+        if len(filename) > 200:
+            name, ext = os.path.splitext(filename)
+            filename = name[:200 - len(ext)] + ext
+        return filename
+    
+    def _format_size(self, size_bytes: int) -> str:
+        """Форматирование размера"""
+        for unit in ['Б', 'КБ', 'МБ', 'ГБ']:
+            if size_bytes < 1024:
+                return f"{size_bytes:.1f} {unit}"
+            size_bytes /= 1024
+        return f"{size_bytes:.1f} ТБ"
+    
+    async def download_from_channel(
+        self,
+        channel_username: str,
+        allowed_extensions: List[str],
+        max_size_mb: int = 500,
+        message_limit: Optional[int] = None,
+        keywords_include: Optional[List[str]] = None,
+        keywords_exclude: Optional[List[str]] = None,
+    ) -> List[Dict]:
+        """Скачивает файлы из канала"""
+        
+        if not self.client:
+            raise RuntimeError("Не подключен!")
+        
+        downloaded_files = []
+        
+        try:
+            # 1. Получаем канал
+            try:
+                channel = await self.client.get_entity(channel_username)
+                logger.info(f"📢 Канал: {channel.title}")
+            except UsernameNotOccupiedError:
+                logger.error(f"❌ Канал @{channel_username} не найден!")
+                return downloaded_files
+            except ChannelPrivateError:
+                logger.error(f"❌ Канал @{channel_username} приватный!")
+                return downloaded_files
+            except Exception as e:
+                logger.error(f"❌ Ошибка @{channel_username}: {e}")
+                return downloaded_files
+            
+            # 2. Папка
+            channel_folder = self.download_path / channel_username
+            channel_folder.mkdir(parents=True, exist_ok=True)
+            
+            # 3. Инфо
+            logger.info(f"📂 Папка: {channel_folder}")
+            logger.info(f"🗄️ В базе: {self.tracker.get_count()} файлов")
+            logger.info(f"🔍 Сканирование канала...")
+            
+            # 4. Перебираем сообщения
+            async for message in self.client.iter_messages(channel, limit=message_limit):
+                self.stats['messages_processed'] += 1
+                
+                if self.stats['messages_processed'] % 100 == 0:
+                    logger.info(f"   Обработано: {self.stats['messages_processed']} сообщений...")
+                
+                file_info = self._get_file_info(message)
+                if not file_info:
+                    continue
+                
+                self.stats['files_found'] += 1
+                
+                # Проверка расширения/размера
+                if not self._is_valid_file(file_info, allowed_extensions, max_size_mb):
+                    self.stats['files_skipped'] += 1
+                    continue
+                
+                # Проверка ключевых слов
+                search_text = f"{file_info['filename']} {file_info['caption']}"
+                if not self._matches_keywords(search_text, keywords_include, keywords_exclude):
+                    self.stats['files_skipped'] += 1
+                    continue
+                
+                safe_filename = self._sanitize_filename(file_info['filename'])
+                
+                # ═══════════════════════════════════════════════════════════
+                # ГЛАВНАЯ ПРОВЕРКА: УЖЕ СКАЧАН?
+                # ═══════════════════════════════════════════════════════════
+                
+                # 1. Проверяем в базе ПО ИМЕНИ
+                if self.tracker.is_downloaded(safe_filename):
+                    self.stats['files_existed'] += 1
+                    continue
+                
+                # 2. Проверяем на диске (на всякий случай)
+                filepath = channel_folder / safe_filename
+                if filepath.exists():
+                    # Файл есть на диске - добавляем в базу и пропускаем
+                    self.tracker.mark_downloaded(
+                        safe_filename, filepath.stat().st_size,
+                        channel_username, filepath
+                    )
+                    self.stats['files_existed'] += 1
+                    logger.debug(f"   Уже на диске: {safe_filename}")
+                    continue
+                
+                # ═══════════════════════════════════════════════════════════
+                # СКАЧИВАЕМ
+                # ═══════════════════════════════════════════════════════════
+                
+                try:
+                    size_str = self._format_size(file_info['size'])
+                    logger.info(f"   📄 {safe_filename} ({size_str})")
+
+                    # Оптимизированная загрузка с увеличенным буфером
+                    await self.client.download_media(
+                        message,
+                        file=str(filepath),
+                        progress_callback=None  # Можно добавить callback для прогресса
+                    )
+
+                    # Добавляем в базу
+                    self.tracker.mark_downloaded(
+                        safe_filename, file_info['size'],
+                        channel_username, filepath
+                    )
+
+                    self.stats['files_downloaded'] += 1
+                    self.stats['total_size'] += file_info['size']
+
+                    downloaded_files.append({
+                        'filepath': filepath,
+                        'filename': safe_filename,
+                        'size': file_info['size'],
+                        'caption': file_info['caption'],
+                        'date': file_info['date'],
+                        'channel': channel_username,
+                    })
+
+                    # Уменьшенная задержка для большей скорости
+                    await asyncio.sleep(0.2)
+                    
+                except FloodWaitError as e:
+                    logger.warning(f"   ⏳ Ждём {e.seconds} сек...")
+                    await asyncio.sleep(e.seconds + 1)
+                    
+                except Exception as e:
+                    logger.error(f"   ❌ Ошибка: {e}")
+                    self.stats['errors'] += 1
+            
+            # 5. Итоги
+            logger.info(f"✅ @{channel_username} готов:")
+            logger.info(f"   Сообщений: {self.stats['messages_processed']}")
+            logger.info(f"   Скачано: {len(downloaded_files)}")
+            logger.info(f"   Пропущено (есть): {self.stats['files_existed']}")
+            
+        except Exception as e:
+            logger.error(f"❌ Ошибка: {e}")
+            self.stats['errors'] += 1
+        
+        return downloaded_files
+    
+    def get_stats(self) -> Dict:
+        return {
+            **self.stats,
+            'total_size_formatted': self._format_size(self.stats['total_size']),
+            'tracked_files': self.tracker.get_count(),
+        }
+    
+    def reset_stats(self):
+        self.stats = {
+            'messages_processed': 0,
+            'files_found': 0,
+            'files_downloaded': 0,
+            'files_skipped': 0,
+            'files_existed': 0,
+            'errors': 0,
+            'total_size': 0,
+        }
