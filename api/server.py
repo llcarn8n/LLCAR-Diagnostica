@@ -501,6 +501,7 @@ def fts5_search(
         FROM chunks_fts fts
         JOIN chunks c ON c.rowid = fts.rowid
         WHERE chunks_fts MATCH ?
+        AND (c.is_current IS NULL OR c.is_current = 1)
         {where_clause}
         ORDER BY bm25(chunks_fts)
         LIMIT ?
@@ -663,6 +664,7 @@ def _fts_fallback(
         filters.append("c.content_type = ?")
         params.append(content_type)
 
+    filters.append("(c.is_current IS NULL OR c.is_current = 1)")
     sql = f"""
         SELECT DISTINCT cc.chunk_id
         FROM chunk_content cc
@@ -1042,7 +1044,7 @@ async def health() -> dict:
 
     try:
         with get_db_conn() as conn:
-            detail["chunks_total"]   = conn.execute("SELECT COUNT(*) FROM chunks").fetchone()[0]
+            detail["chunks_total"]   = conn.execute("SELECT COUNT(*) FROM chunks WHERE is_current IS NULL OR is_current = 1").fetchone()[0]
             detail["dtc_links"]      = conn.execute("SELECT COUNT(*) FROM chunk_dtc").fetchone()[0]
             detail["glossary_links"] = conn.execute("SELECT COUNT(*) FROM chunk_glossary").fetchone()[0]
             detail["colbert_rows"]   = conn.execute("SELECT COUNT(*) FROM colbert_vectors").fetchone()[0]
@@ -1077,11 +1079,11 @@ async def stats() -> dict:
     with get_db_conn() as conn:
         def _counts(col: str) -> dict[str, int]:
             rows = conn.execute(
-                f"SELECT {col}, COUNT(*) as cnt FROM chunks GROUP BY {col} ORDER BY cnt DESC"
+                f"SELECT {col}, COUNT(*) as cnt FROM chunks WHERE is_current IS NULL OR is_current = 1 GROUP BY {col} ORDER BY cnt DESC"
             ).fetchall()
             return {r[0]: r[1] for r in rows}
 
-        total = conn.execute("SELECT COUNT(*) FROM chunks").fetchone()[0]
+        total = conn.execute("SELECT COUNT(*) FROM chunks WHERE is_current IS NULL OR is_current = 1").fetchone()[0]
         colbert_count = conn.execute("SELECT COUNT(*) FROM colbert_vectors").fetchone()[0]
         fts_count = conn.execute("SELECT COUNT(*) FROM chunks_fts").fetchone()[0]
         content_count = conn.execute("SELECT COUNT(*) FROM chunk_content").fetchone()[0]
@@ -1469,6 +1471,8 @@ async def browse_articles(
             filters.append("c.content_type = ?")
             params.append(content_type)
 
+        # Exclude soft-deleted (merged) chunks
+        filters.append("(c.is_current IS NULL OR c.is_current = 1)")
         where_clause = ("WHERE " + " AND ".join(filters)) if filters else ""
 
         # Count total

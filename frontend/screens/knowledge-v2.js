@@ -348,6 +348,23 @@ function getLocalizedEntry(entry) {
         _translated: true,
       };
     }
+    // Fallback: try English if user is not EN
+    if (userLang !== 'en') {
+      const enTr = entry.translations.find(t => t.lang === 'en');
+      if (enTr) {
+        return {
+          ...entry,
+          title: enTr.title || entry.title,
+          content: enTr.content || entry.content,
+          _translated: true,
+          _fallbackLang: 'en',
+        };
+      }
+    }
+  }
+  // Mark untranslated foreign-language entries
+  if (srcLang && srcLang !== userLang) {
+    return { ...entry, _untranslated: true };
   }
   return entry;
 }
@@ -893,6 +910,12 @@ function _renderBriefCard(entry) {
   if (_persona === 'beginner') {
     title = _caringTone(title);
   }
+  // Language badge for untranslated entries
+  const langBadge = entry._untranslated
+    ? `<span style="font-size:10px;padding:1px 4px;border-radius:3px;background:rgba(255,255,255,0.1);color:var(--text-tertiary);margin-right:4px;">${(entry.source_language || '??').toUpperCase()}</span>`
+    : (entry._fallbackLang
+      ? `<span style="font-size:10px;padding:1px 4px;border-radius:3px;background:rgba(255,200,0,0.15);color:#FFA726;margin-right:4px;">${entry._fallbackLang.toUpperCase()}</span>`
+      : '');
 
   // Превью контента — фоллбэк на layer/system
   const maxPreview = _persona === 'beginner' ? 200 : 500;
@@ -941,7 +964,7 @@ function _renderBriefCard(entry) {
       <div class="kbv2-brief-card__stripe" style="background:${stripeColor};"></div>
       <div class="kbv2-brief-card__body">
         <div class="kbv2-brief-card__top">
-          ${urgDot}
+          ${urgDot}${langBadge}
           <span class="kbv2-brief-card__title">${title}</span>
         </div>
         <div class="kbv2-brief-card__preview">${preview.slice(0, 80)}</div>
