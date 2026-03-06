@@ -1,0 +1,2497 @@
+[
+  {
+    "id": "issue_c1",
+    "title_ru": "Пневмоподвеска — отказ компрессора AMK / потеря высоты",
+    "title_en": "Air Suspension — AMK Compressor Failure / Height Loss",
+    "confidence": "confirmed",
+    "models": [
+      "L7",
+      "L9"
+    ],
+    "primary_model": "L7",
+    "mileage_min": 10000,
+    "mileage_max": 15000,
+    "season": "winter",
+    "systems": [
+      "suspension"
+    ],
+    "layer": "suspension",
+    "symptoms_ru": "Автомобиль «садится», теряет клиренс. Ошибка пневмоподвески на панели. Компрессор работает, но не накачивает подушки. Влага замерзает в клапанах зимой, ржавчина на подшипниках летом.",
+    "symptoms_en": "Vehicle sags, loses ground clearance. Air suspension fault on dashboard. Compressor runs but cannot inflate airbags. Moisture freezes in valves in winter, rust forms on bearings in summer.",
+    "dtc_codes": [],
+    "root_cause_ru": "Конструктивный дефект — воздухозаборник компрессора AMK расположен под задним бампером без фильтрации. Влага, грязь и реагенты попадают напрямую. Деформация пластинчатого клапана.",
+    "root_cause_en": "Design flaw — AMK compressor air intake is located under the rear bumper without filtration. Moisture, dirt and road chemicals enter directly. Reed valve deformation.",
+    "resolution_ru": "Замена компрессора (39,000-100,000 руб). Установка фильтра Mann/Wabco (15,000-30,000 руб). Ежегодная осушка системы (10,000 руб). Замена AMK на WABCO.",
+    "resolution_en": "Compressor replacement (39,000-100,000 RUB). Install Mann/Wabco filter (15,000-30,000 RUB). Annual system desiccation (10,000 RUB). Replace AMK with WABCO unit.",
+    "repair_cost_rub_min": 39000,
+    "repair_cost_rub_max": 100000,
+    "confirming_agents": 10,
+    "source_count": 11,
+    "sources": [
+      "https://www.autonews.ru/news/683eae5d9a7947cdb92ef1cd",
+      "https://getcar.ru/en/blog/problemy-pnevmopodveski-lixiang-l9/",
+      "https://faq.liautorussia.ru/known-problems",
+      "https://kz.kursiv.media/2025-06-09/kmlz-li-auto-problems/",
+      "https://www.drive2.ru/l/700705017560044478/",
+      "https://www.drive2.ru/l/697330341496494867/",
+      "https://www.drive2.ru/l/688364373927796623/",
+      "https://lixiang-sto.ru/blog/remont-pnevmopodveski-lixiang-l7/",
+      "https://cnevpost.com/2022/07/18/li-auto-in-spotlight-for-li-l9-test-car-suspension-breakage/",
+      "https://elektroman.pro/uslugi/slesarnyy-remont/remont-pnevmopodveski/lixiang/l9/",
+      "https://av.by/news/kak_remontiryut_i_skolko_stoit_obsluzhivanie_lixiang"
+    ],
+    "is_safety_critical": false,
+    "is_winter_specific": true,
+    "has_official_fix": false,
+    "warranty_extension": null,
+    "content_type": "owner_experience",
+    "source_language": "multi",
+    "tags": [
+      "air_suspension",
+      "amk",
+      "wabco",
+      "compressor",
+      "moisture",
+      "winter",
+      "height_loss"
+    ],
+    "how_found": {
+      "search_queries": [
+        "Li Auto L9 L7 пневмоподвеска проблемы компрессор WABCO AMK",
+        "getcar.ru пневмоподвеска LiXiang L9 компрессор влага зимой",
+        "drive2.ru lixiang L7 L9 пневмоподвеска проблема зимой ремонт",
+        "drom.ru Li L7 5kopeek",
+        "Lixiang L9 L7 косяки пневмоподвеска зимой",
+        "Li Auto L9 air suspension failure compressor problem",
+        "理想L9 悬架 异响 空气悬架 故障"
+      ],
+      "platforms": [
+        "drive2.ru",
+        "drom.ru/5kopeek",
+        "getcar.ru",
+        "autonews.ru",
+        "faq.liautorussia.ru",
+        "kursiv.media",
+        "cnevpost.com",
+        "lixiang-sto.ru",
+        "av.by"
+      ],
+      "method": "WebSearch по ключевым словам на русском/английском/китайском. Парсинг бортжурналов drive2.ru, раздел 5kopeek на drom.ru, FAQ клуба liautorussia.ru, обзорные статьи getcar.ru, autonews.ru (15 проблем), сервисные отчёты lixiang-sto.ru и av.by",
+      "selectors_or_api": "drom.ru: /reviews/li/l7/5kopeek/ и /reviews/li/l9/5kopeek/ (вкладка проблем); drive2.ru: /l/{post_id}/ (бортжурнал); faq.liautorussia.ru: /known-problems; getcar.ru: /blog/ (статьи); cnevpost.com: news articles"
+    }
+  },
+  {
+    "id": "issue_c2",
+    "title_ru": "Тормоза — «ватные», деградация при нагреве, неравномерный износ",
+    "title_en": "Brakes — Spongy Feel, Heat Degradation, Uneven Wear",
+    "confidence": "confirmed",
+    "models": [
+      "L7",
+      "L9"
+    ],
+    "primary_model": "L9",
+    "mileage_min": 0,
+    "mileage_max": 15000,
+    "season": "all",
+    "systems": [
+      "brakes"
+    ],
+    "layer": "brakes",
+    "symptoms_ru": "Тормозной путь 35 м с 60 миль/ч, каждое торможение +3 м. Педаль «ватная» после нагрева. ABS-насос щёлкает. Ранние L7 — редкие ZF суппорты, колодки 40,000 руб.",
+    "symptoms_en": "Braking distance 35m from 60 mph, each successive stop adds 3m. Pedal feels spongy after heat. ABS pump clicks. Early L7 — rare ZF calipers, pads cost 40,000 RUB.",
+    "dtc_codes": [],
+    "root_cause_ru": "Однопоршневый плавающий суппорт недостаточен для 2,520 кг. Рекуперация калибрована так, что механические тормоза используются неравномерно. Три варианта тормозных систем на L7.",
+    "root_cause_en": "Single-piston floating caliper insufficient for 2,520 kg vehicle. Regenerative braking calibration causes uneven mechanical brake usage. Three different brake system variants on L7.",
+    "resolution_ru": "Замена колодок (полный комплект ~70,000 руб для ZF). Апгрейд тормозов (TEI Racing, AP Racing, Brembo). L9 Livis 2026 — электромеханические тормоза (EMB).",
+    "resolution_en": "Pad replacement (full set ~70,000 RUB for ZF). Brake upgrade (TEI Racing, AP Racing, Brembo). L9 Livis 2026 — electromechanical brakes (EMB).",
+    "repair_cost_rub_min": 40000,
+    "repair_cost_rub_max": 70000,
+    "confirming_agents": 10,
+    "source_count": 6,
+    "sources": [
+      "https://www.topgear.com/car-reviews/li-auto/l9/first-drive",
+      "https://www.drive2.ru/l/679038866056810905/",
+      "https://www.drive2.ru/l/688693127904509635/",
+      "https://110km.ru/opinion/lixiang/l9/",
+      "https://www.12365auto.com/zlts/20250718/1463194.shtml",
+      "https://zhuanlan.zhihu.com/p/570760770"
+    ],
+    "is_safety_critical": true,
+    "is_winter_specific": false,
+    "has_official_fix": false,
+    "warranty_extension": null,
+    "content_type": "owner_experience",
+    "source_language": "multi",
+    "tags": [
+      "brakes",
+      "brake_fade",
+      "caliper",
+      "zf",
+      "abs",
+      "stopping_distance",
+      "uneven_wear"
+    ],
+    "how_found": {
+      "search_queries": [
+        "Li Auto L9 L7 тормоза ватные мягкие педаль замена колодки диски отзывы",
+        "Lixiang L7 L9 тормоза колодки диски износ скрип",
+        "drive2.ru Li Auto L7 тормоза колодки расход масла ТО",
+        "Li Auto L9 Top Gear review brake stopping distance test",
+        "理想L7 L9 刹车 制动 问题 投诉 2024 2025"
+      ],
+      "platforms": [
+        "drive2.ru",
+        "drom.ru",
+        "110km.ru",
+        "topgear.com",
+        "12365auto.com",
+        "zhihu.com"
+      ],
+      "method": "WebSearch по запросам о тормозах на русском/английском/китайском. Профессиональный тест-драйв Top Gear (замер тормозного пути). Бортжурналы drive2 о замене колодок. Жалобы на 12365auto.com (车质网)",
+      "selectors_or_api": "topgear.com: /car-reviews/li-auto/l9/first-drive (тест-драйв); drive2.ru: /l/{post_id}/ (бортжурнал); 12365auto.com: /zlts/ (жалобы); 110km.ru: /opinion/lixiang/l9/"
+    }
+  },
+  {
+    "id": "issue_c3",
+    "title_ru": "OTA-обновления / мультимедиа — сбои, зависания, блокировка",
+    "title_en": "OTA Updates / Infotainment — Crashes, Freezes, Lockups",
+    "confidence": "confirmed",
+    "models": [
+      "L7",
+      "L9"
+    ],
+    "primary_model": "both",
+    "mileage_min": null,
+    "mileage_max": null,
+    "season": "all",
+    "systems": [
+      "electronics"
+    ],
+    "layer": "electronics",
+    "symptoms_ru": "Прошивка 4.6.5 — сбои у ~10% владельцев. OTA 8.0 — автопилот сбоит. Чёрный экран во время движения. Невозможность обновиться с 4.x на 7.x без дилера.",
+    "symptoms_en": "Firmware 4.6.5 — failures in ~10% of owners. OTA 8.0 — autopilot malfunctions. Black screen while driving. Unable to update from 4.x to 7.x without dealer visit.",
+    "dtc_codes": [],
+    "root_cause_ru": "Программные баги в OTA. Несовместимость с российскими SIM-картами. Рассинхронизация часов. Нет механизма отката.",
+    "root_cause_en": "Software bugs in OTA. Incompatibility with Russian SIM cards. Clock desynchronization. No rollback mechanism.",
+    "resolution_ru": "Перепрошивка в сервисе (16,500-55,000 руб). Откат на стабильную 7.3.6. Активация в Китае для серых авто.",
+    "resolution_en": "Reflash at service center (16,500-55,000 RUB). Rollback to stable 7.3.6. Activation in China for gray-market vehicles.",
+    "repair_cost_rub_min": 16500,
+    "repair_cost_rub_max": 55000,
+    "confirming_agents": 10,
+    "source_count": 6,
+    "sources": [
+      "https://www.drive2.ru/l/714032747756141707/",
+      "https://www.drive2.ru/l/706362004884950860/",
+      "https://www.drive2.ru/l/720585012423953978/",
+      "https://getcar.ru/blog/problemy-lixiang-l9-2024/",
+      "https://faq.liautorussia.ru/no_software_update",
+      "https://revocars.ru/blog/lixiang7_4.html"
+    ],
+    "is_safety_critical": true,
+    "is_winter_specific": false,
+    "has_official_fix": false,
+    "warranty_extension": null,
+    "content_type": "owner_experience",
+    "source_language": "multi",
+    "tags": [
+      "ota",
+      "firmware",
+      "infotainment",
+      "black_screen",
+      "snapdragon_8155",
+      "software"
+    ],
+    "how_found": {
+      "search_queries": [
+        "Li Auto L9 OTA обновление 4.6 баг автопилот камера сбой",
+        "Lixiang L9 OTA обновление 4.6.5 автопилот сбой экран зависание",
+        "Lixiang Li Auto ADAS автопилот проблемы ошибки",
+        "理想汽车 OTA更新 问题 车机 死机 黑屏",
+        "Li Auto OTA update bugs software problems screen freeze"
+      ],
+      "platforms": [
+        "drive2.ru",
+        "getcar.ru",
+        "faq.liautorussia.ru",
+        "163.com",
+        "autohome.com.cn"
+      ],
+      "method": "WebSearch по запросам OTA/софт. Бортжурналы drive2.ru с описанием сбоев автопилота. Аналитические статьи getcar.ru. FAQ клуба владельцев. Китайские новостные порталы (163.com) о чёрном экране",
+      "selectors_or_api": "drive2.ru: /l/{post_id}/ (бортжурнал); getcar.ru: /blog/ (статьи); faq.liautorussia.ru: /no_software_update; 163.com: /dy/article/ (новости)"
+    }
+  },
+  {
+    "id": "issue_c4",
+    "title_ru": "Лидар — повреждения, влага, калибровка",
+    "title_en": "LiDAR — Damage, Moisture Ingress, Calibration Issues",
+    "confidence": "confirmed",
+    "models": [
+      "L7",
+      "L9"
+    ],
+    "primary_model": "both",
+    "mileage_min": null,
+    "mileage_max": null,
+    "season": "winter",
+    "systems": [
+      "adas"
+    ],
+    "layer": "adas",
+    "symptoms_ru": "Лёд и камни повреждают лидар на крыше. Влага проникает внутрь корпуса. Ошибки ADAS. Дорефрешные L7 — проблема с уплотнителями.",
+    "symptoms_en": "Ice and stones damage roof-mounted LiDAR. Moisture penetrates housing. ADAS errors. Pre-refresh L7 — sealing issues.",
+    "dtc_codes": [],
+    "root_cause_ru": "Уязвимое расположение на крыше. Недостаточная герметизация корпуса лидара Hesai AT128.",
+    "root_cause_en": "Vulnerable roof-top mounting position. Insufficient sealing of Hesai AT128 LiDAR housing.",
+    "resolution_ru": "Защитная плёнка (14,000 руб с герметизацией). Замена лидара (только заказ из Китая). Калибровка ~40,000 руб.",
+    "resolution_en": "Protective film (14,000 RUB with sealing). LiDAR replacement (order from China only). Calibration ~40,000 RUB.",
+    "repair_cost_rub_min": 14000,
+    "repair_cost_rub_max": 40000,
+    "confirming_agents": 7,
+    "source_count": 5,
+    "sources": [
+      "https://www.autonews.ru/news/683eae5d9a7947cdb92ef1cd",
+      "https://www.drive2.ru/l/718609464906756662/",
+      "https://faq.liautorussia.ru/known-problems",
+      "https://st27.ru/projects/zamena-lidara-lixiang-l7-i-zashita-novogo-lidara/",
+      "https://kz.kursiv.media/2025-06-09/kmlz-li-auto-problems/"
+    ],
+    "is_safety_critical": true,
+    "is_winter_specific": false,
+    "has_official_fix": false,
+    "warranty_extension": null,
+    "content_type": "owner_experience",
+    "source_language": "multi",
+    "tags": [
+      "lidar",
+      "hesai_at128",
+      "adas",
+      "moisture",
+      "calibration",
+      "roof_sensor"
+    ],
+    "how_found": {
+      "search_queries": [
+        "Lixiang L7 L9 ADAS камера лидар зимой лёд калибровка ошибка",
+        "drive2.ru Li Auto L7 лидар замена зима",
+        "autonews.ru 15 проблем кроссоверов Lixiang",
+        "Li Auto L7 L9 lidar moisture damage winter"
+      ],
+      "platforms": [
+        "drive2.ru",
+        "autonews.ru",
+        "faq.liautorussia.ru",
+        "st27.ru",
+        "kursiv.media"
+      ],
+      "method": "WebSearch по запросам о лидаре. Статья autonews.ru «15 проблем». Бортжурнал drive2.ru о герметизации лидара. FAQ клуба. Сервисный кейс st27.ru (замена и защита)",
+      "selectors_or_api": "drive2.ru: /l/718609464906756662/ (герметизация лидара); autonews.ru: /news/ (обзорная статья); st27.ru: /projects/ (сервисные кейсы); faq.liautorussia.ru: /known-problems"
+    }
+  },
+  {
+    "id": "issue_c5",
+    "title_ru": "Потеря запаса хода зимой / деградация батареи",
+    "title_en": "Winter Range Loss / Battery Degradation",
+    "confidence": "confirmed",
+    "models": [
+      "L7",
+      "L9"
+    ],
+    "primary_model": "both",
+    "mileage_min": null,
+    "mileage_max": null,
+    "season": "winter",
+    "systems": [
+      "battery",
+      "hvac"
+    ],
+    "layer": "battery",
+    "symptoms_ru": "Потеря 30-50% запаса хода зимой (с 280 до 150-180 км). Обогрев салона потребляет 8-9 кВт. При -30°C стоящий автомобиль разряжается за ~3 часа.",
+    "symptoms_en": "30-50% range loss in winter (from 280 down to 150-180 km). Cabin heating draws 8-9 kW. At -30°C parked vehicle drains in ~3 hours.",
+    "dtc_codes": [],
+    "root_cause_ru": "Физика литий-ионных батарей при низких температурах. Быстрая зарядка холодной батареи снижает ёмкость на 10-15% за сезон.",
+    "root_cause_en": "Lithium-ion battery physics at low temperatures. Fast charging a cold battery reduces capacity by 10-15% per season.",
+    "resolution_ru": "Предпусковой подогрев (15-20 мин). Держать заряд выше 20%. Не заряжать холодную батарею. Незамерзайка -30°C.",
+    "resolution_en": "Pre-conditioning heat (15-20 min). Keep charge above 20%. Do not fast-charge a cold battery. Use -30°C washer fluid.",
+    "repair_cost_rub_min": null,
+    "repair_cost_rub_max": null,
+    "confirming_agents": 6,
+    "source_count": 5,
+    "sources": [
+      "https://www.drom.ru/reviews/li/l7/5kopeek/",
+      "https://li-auto.com/news/lisyan-v-ekspluatatsii-zimoy/",
+      "https://provolta.ru/zimnyaya-ekspluataciya",
+      "https://getcar.ru/blog/polomki-lixiang-l9-rossiya/",
+      "https://www.lixiang.com/community/detail/article/1047475.html"
+    ],
+    "is_safety_critical": false,
+    "is_winter_specific": true,
+    "has_official_fix": false,
+    "warranty_extension": null,
+    "content_type": "owner_experience",
+    "source_language": "multi",
+    "tags": [
+      "battery",
+      "range_loss",
+      "winter",
+      "catl",
+      "nmc",
+      "thermal_management",
+      "degradation"
+    ],
+    "how_found": {
+      "search_queries": [
+        "Li Auto L7 проблемы зимой батарея",
+        "drom.ru Li L7 отзыв расход зимой",
+        "Li Auto L9 battery degradation winter range real world test",
+        "Lixiang L7 L9 зима запас хода электричестве реальный расход отзыв",
+        "理想L7 L9 增程器 油耗 冬天 续航 问题"
+      ],
+      "platforms": [
+        "drom.ru",
+        "li-auto.com",
+        "getcar.ru",
+        "provolta.ru",
+        "lixiang.com",
+        "bilibili.com"
+      ],
+      "method": "WebSearch по запросам о зимней эксплуатации. Отзывы владельцев на drom.ru (раздел 5kopeek). Тесты запаса хода на Bilibili. Сообщества владельцев li-auto.com. Статьи getcar.ru",
+      "selectors_or_api": "drom.ru: /reviews/li/l7/5kopeek/ (отзывы); li-auto.com: /news/ (статьи); getcar.ru: /blog/ (аналитика); bilibili.com: видео тестов (BV1Kk4y1q7XQ)"
+    }
+  },
+  {
+    "id": "issue_c6",
+    "title_ru": "Дефицит запчастей и ограниченный сервис",
+    "title_en": "Spare Parts Shortage and Limited Service Network",
+    "confidence": "confirmed",
+    "models": [
+      "L7",
+      "L9"
+    ],
+    "primary_model": "both",
+    "mileage_min": null,
+    "mileage_max": null,
+    "season": "all",
+    "systems": [
+      "infrastructure"
+    ],
+    "layer": "infrastructure",
+    "symptoms_ru": "Ожидание запчастей 2-3 месяца из Китая. Компоненты привязаны к VIN. 2-3 сервиса на всю Россию. Диагностика 5,000-16,500 руб. 12V АКБ запрещена к экспорту из КНР.",
+    "symptoms_en": "Spare parts wait 2-3 months from China. Components VIN-locked. Only 2-3 specialized service centers in all of Russia. Diagnostics 5,000-16,500 RUB. 12V battery export-restricted from China.",
+    "dtc_codes": [],
+    "root_cause_ru": "Отсутствие официальной дилерской сети до конца 2025. Серый импорт. VIN-кодирование компонентов.",
+    "root_cause_en": "No official dealer network until late 2025. Gray market imports. VIN-coded components.",
+    "resolution_ru": "Заказ через Li Auto Club Russia (37,000 членов). Официальный дистрибутор Sinomach Auto (20+ дилеров к 2026).",
+    "resolution_en": "Order through Li Auto Club Russia (37,000 members). Official distributor Sinomach Auto (20+ dealers by 2026).",
+    "repair_cost_rub_min": 5000,
+    "repair_cost_rub_max": 16500,
+    "confirming_agents": 7,
+    "source_count": 4,
+    "sources": [
+      "https://www.drom.ru/reviews/li/l9/5kopeek/",
+      "https://getcar.ru/blog/polomki-lixiang-l9-rossiya/",
+      "https://www.autonews.ru/news/65c477e09a79475ce3d10e47",
+      "https://www.drive2.ru/b/693564789049262790/"
+    ],
+    "is_safety_critical": false,
+    "is_winter_specific": false,
+    "has_official_fix": false,
+    "warranty_extension": null,
+    "content_type": "owner_experience",
+    "source_language": "multi",
+    "tags": [
+      "spare_parts",
+      "service",
+      "vin_lock",
+      "gray_import",
+      "sinomach",
+      "dealer_network"
+    ],
+    "how_found": {
+      "search_queries": [
+        "drom.ru Li L9 5kopeek проблемы",
+        "getcar.ru поломки LiXiang L9 Россия",
+        "Li Auto L7 L9 Middle East UAE Saudi Arabia owner problems",
+        "Li Auto L9 L7 запчасти ожидание Китай сервис Россия"
+      ],
+      "platforms": [
+        "drom.ru",
+        "getcar.ru",
+        "autonews.ru",
+        "drive2.ru",
+        "cnevpost.com"
+      ],
+      "method": "WebSearch по запросам о сервисе и запчастях. Раздел 5kopeek на drom.ru (недостатки). Обзоры getcar.ru о стоимости владения. Статьи autonews.ru о дилерской сети. Английские источники cnevpost.com",
+      "selectors_or_api": "drom.ru: /reviews/li/l9/5kopeek/ (раздел недостатков); getcar.ru: /blog/polomki-lixiang-l9-rossiya/ (статья); autonews.ru: /news/ (новости о дилерах)"
+    }
+  },
+  {
+    "id": "issue_c7",
+    "title_ru": "Воздушный фильтр забивается снегом — ДВС глохнет",
+    "title_en": "Air Filter Clogs with Snow — ICE Stalls",
+    "confidence": "confirmed",
+    "models": [
+      "L7",
+      "L9"
+    ],
+    "primary_model": "both",
+    "mileage_min": null,
+    "mileage_max": null,
+    "season": "winter",
+    "systems": [
+      "engine"
+    ],
+    "layer": "engine",
+    "symptoms_ru": "Снег забивает воздушный фильтр ДВС за несколько часов в метель. Генератор не может заряжать батарею. Автомобиль обездвижен.",
+    "symptoms_en": "Snow clogs ICE air filter within hours during blizzard. Generator cannot charge battery. Vehicle becomes immobilized.",
+    "dtc_codes": [],
+    "root_cause_ru": "Воздухозаборник не защищён от снега. Для EREV критичнее — без генератора батарея разряжается полностью.",
+    "root_cause_en": "Air intake is not snow-protected. More critical for EREV — without generator the battery drains completely.",
+    "resolution_ru": "Остановка и ручная очистка фильтра. Незамерзайка -30°C.",
+    "resolution_en": "Stop and manually clean the filter. Use -30°C washer fluid.",
+    "repair_cost_rub_min": null,
+    "repair_cost_rub_max": null,
+    "confirming_agents": 6,
+    "source_count": 4,
+    "sources": [
+      "https://auto.mail.ru/article/117375-avtomobili-lixiang-okazalis-polnostyu-bezzaschitnyi-pered-russkoj-metelyu/",
+      "https://kz.kursiv.media/2026-01-27/shkv-vladelcy-lixiang-zhaluyutsya-na-ostanovku-gibridov-v-snegopad/",
+      "https://avtonovostidnya.ru/transport/406595-lixiang",
+      "https://110km.ru/art/lixiang-v-rossii-ispytanie-snegom-vyyavilo-uyazvimost-krossoverov-168363.html"
+    ],
+    "is_safety_critical": true,
+    "is_winter_specific": true,
+    "has_official_fix": false,
+    "warranty_extension": null,
+    "content_type": "owner_experience",
+    "source_language": "multi",
+    "tags": [
+      "air_filter",
+      "snow",
+      "blizzard",
+      "engine_stall",
+      "erev",
+      "immobilization",
+      "winter"
+    ],
+    "how_found": {
+      "search_queries": [
+        "Lixiang L9 воздушный фильтр снег забивается двигатель глохнет метель зима",
+        "auto.mail.ru Lixiang не готовы русской зиме",
+        "kursiv.media владельцы Lixiang жалуются остановка гибридов снегопад"
+      ],
+      "platforms": [
+        "auto.mail.ru",
+        "kursiv.media",
+        "avtonovostidnya.ru",
+        "110km.ru"
+      ],
+      "method": "WebSearch по запросам о зимних проблемах. Новостные статьи auto.mail.ru, kursiv.media, avtonovostidnya.ru о массовых жалобах владельцев на остановку гибридов в снегопад",
+      "selectors_or_api": "auto.mail.ru: /article/ (статьи); kursiv.media: /{date}/ (новости); avtonovostidnya.ru: /transport/ (транспортные новости); 110km.ru: /art/ (статьи)"
+    }
+  },
+  {
+    "id": "issue_c8",
+    "title_ru": "Регистрация в ГИБДД — массовые отказы (2025-2026)",
+    "title_en": "Vehicle Registration Refusals by Traffic Police (2025-2026)",
+    "confidence": "confirmed",
+    "models": [
+      "L6",
+      "L7",
+      "L9"
+    ],
+    "primary_model": "both",
+    "mileage_min": null,
+    "mileage_max": null,
+    "season": "all",
+    "systems": [
+      "legal"
+    ],
+    "layer": "legal",
+    "symptoms_ru": "ГИБДД отказывает в регистрации. Автомобили изымаются на экспертизу. VIN-табличка вызывает сомнения у инспекторов.",
+    "symptoms_en": "Traffic police refuse registration. Vehicles seized for expert examination. VIN plates raise suspicion among inspectors.",
+    "dtc_codes": [],
+    "root_cause_ru": "Параллельный импорт. VIN-таблички вызывают подозрения. Sinomach Auto получил ОТТС в конце 2025, но проблема сохраняется для серых авто.",
+    "root_cause_en": "Parallel imports. VIN plates raise suspicion. Sinomach Auto received type approval in late 2025, but issue persists for gray-market vehicles.",
+    "resolution_ru": "Покупка через официального дилера. Экспертиза VIN. Суд может обязать зарегистрировать.",
+    "resolution_en": "Purchase through official dealer. VIN expert examination. Court may order registration if markings comply.",
+    "repair_cost_rub_min": null,
+    "repair_cost_rub_max": null,
+    "confirming_agents": 6,
+    "source_count": 4,
+    "sources": [
+      "https://auto.mail.ru/article/118854-v-rf-idet-volna-otkazov-v-registratsii-li-auto-v-kompanii-vse-obyasnili/",
+      "https://www.autonews.ru/news/69983ab49a79474a4af55341",
+      "https://www.ixbt.com/news/2025/11/18/li-auto-l6-l7-l9.html",
+      "https://www.rbcautonews.ru/news/6998bdf29a794715c71d882e"
+    ],
+    "is_safety_critical": false,
+    "is_winter_specific": false,
+    "has_official_fix": false,
+    "warranty_extension": null,
+    "content_type": "owner_experience",
+    "source_language": "multi",
+    "tags": [
+      "registration",
+      "gibdd",
+      "vin",
+      "gray_import",
+      "legal",
+      "sinomach"
+    ],
+    "how_found": {
+      "search_queries": [
+        "Li Auto L7 L9 регистрация ГИБДД учёт Россия проблемы отказ 2025 2026",
+        "Li Auto Lixiang учет ГИБДД проблема Россия",
+        "Li Auto L7 L9 registration refusal Russia"
+      ],
+      "platforms": [
+        "auto.mail.ru",
+        "autonews.ru",
+        "ixbt.com",
+        "rbcautonews.ru"
+      ],
+      "method": "WebSearch по запросам о регистрации в ГИБДД. Новостные статьи auto.mail.ru и autonews.ru о волне отказов. Технические порталы ixbt.com о сертификации",
+      "selectors_or_api": "auto.mail.ru: /article/ (статья о волне отказов); autonews.ru: /news/ (новость о проблемах регистрации); ixbt.com: /news/ (новость о сертификации Sinomach)"
+    }
+  },
+  {
+    "id": "issue_h1",
+    "title_ru": "Нижний рычаг подвески — системный дефект 2025 года",
+    "title_en": "Lower Control Arm — Systemic 2025 Defect",
+    "confidence": "high",
+    "models": [
+      "L6",
+      "L7",
+      "L8",
+      "L9"
+    ],
+    "primary_model": "both",
+    "mileage_min": 1500,
+    "mileage_max": 5000,
+    "season": "all",
+    "systems": [
+      "suspension"
+    ],
+    "layer": "suspension",
+    "symptoms_ru": "Скрип/хруст рулевой колонки, стук шасси при поворотах и неровностях. Замена рычага не всегда решает проблему. ~400 владельцев в группе коллективной жалобы.",
+    "symptoms_en": "Steering column creak/crunch, chassis knocking on turns and bumps. Arm replacement does not always fix the issue. ~400 owners in collective complaint group.",
+    "dtc_codes": [],
+    "root_cause_ru": "Новая смазка гидравлических втулок 2025 года меняет вязкость при высоких температурах. Историческая параллель: Li ONE отзыв 2020 (10,469 авто) — та же деталь.",
+    "root_cause_en": "New 2025 hydraulic bushing grease changes viscosity at high temperatures. Historical parallel: Li ONE 2020 recall (10,469 vehicles) — same component.",
+    "resolution_ru": "Расширенная гарантия 8 лет/160,000 км на переднюю подвеску. Замена рычагов. Li Auto наказала 4 сотрудника.",
+    "resolution_en": "Extended warranty 8 years/160,000 km on front suspension. Control arm replacement. Li Auto disciplined 4 employees.",
+    "repair_cost_rub_min": null,
+    "repair_cost_rub_max": null,
+    "confirming_agents": 4,
+    "source_count": 4,
+    "sources": [
+      "https://news.sina.com.cn/minsheng/2025-09-21/doc-infrhiah2415858.shtml",
+      "https://www.12365auto.com/series/c-3432-1-1.shtml",
+      "https://cnevpost.com/2025/11/14/li-auto-fires-employees-mega-recall/",
+      "https://mp.ofweek.com/nev/a056714896507"
+    ],
+    "is_safety_critical": false,
+    "is_winter_specific": false,
+    "has_official_fix": true,
+    "warranty_extension": "8 years / 160,000 km",
+    "content_type": "owner_experience",
+    "source_language": "multi",
+    "tags": [
+      "lower_control_arm",
+      "suspension",
+      "bushing",
+      "creak",
+      "recall",
+      "2025_defect"
+    ],
+    "how_found": {
+      "search_queries": [
+        "理想汽车 下摆臂 异响 维权 2025",
+        "理想L7 质量问题 投诉 2024 2025",
+        "理想L6 共同平台 L7 问题 通病 下摆臂 悬架 2025",
+        "Li Auto L9 L7 front wheel noise 2025 quality issue employee fired",
+        "Li Auto L7 suspension noise front wheel unusual noise recall 2025"
+      ],
+      "platforms": [
+        "12365auto.com",
+        "news.sina.com.cn",
+        "sohu.com",
+        "cnevpost.com",
+        "mp.ofweek.com",
+        "news.qq.com"
+      ],
+      "method": "WebSearch по китайским запросам о нижнем рычаге. Жалобная платформа 车质网 (12365auto.com) — поиск по модели L7. Китайские новостные порталы (Sina, Sohu, QQ News) о коллективной жалобе 400 владельцев. CnEVPost на английском",
+      "selectors_or_api": "12365auto.com: /series/c-3432-1-1.shtml (жалобы по L7); news.sina.com.cn: /minsheng/ (потребительские новости); cnevpost.com: news articles; mp.ofweek.com: /nev/ (NEV новости)"
+    }
+  },
+  {
+    "id": "issue_h2",
+    "title_ru": "Дверные ручки — скрип и замерзание",
+    "title_en": "Door Handles — Squeaking and Freezing",
+    "confidence": "high",
+    "models": [
+      "L7",
+      "L9"
+    ],
+    "primary_model": "both",
+    "mileage_min": null,
+    "mileage_max": null,
+    "season": "winter",
+    "systems": [
+      "body"
+    ],
+    "layer": "body",
+    "symptoms_ru": "Выдвижные электроручки скрипят на морозе. При замерзании в открытом положении ломаются. Замена механизма ~4,000 руб.",
+    "symptoms_en": "Pop-out electric handles squeak in freezing temperatures. When frozen in extended position they break. Mechanism replacement ~4,000 RUB.",
+    "dtc_codes": [],
+    "root_cause_ru": "Выдвижной электромеханизм не рассчитан на суровый мороз и дорожные реагенты.",
+    "root_cause_en": "Pop-out electromechanical design not rated for severe frost and road chemicals.",
+    "resolution_ru": "Силиконовая смазка. Замена механизма (~4,000 руб).",
+    "resolution_en": "Silicone lubricant. Mechanism replacement (~4,000 RUB).",
+    "repair_cost_rub_min": 4000,
+    "repair_cost_rub_max": 4000,
+    "confirming_agents": 5,
+    "source_count": 3,
+    "sources": [
+      "https://www.autonews.ru/news/683eae5d9a7947cdb92ef1cd",
+      "https://faq.liautorussia.ru/known-problems",
+      "https://www.drive2.ru/l/667905486191862402/"
+    ],
+    "is_safety_critical": false,
+    "is_winter_specific": true,
+    "has_official_fix": false,
+    "warranty_extension": null,
+    "content_type": "owner_experience",
+    "source_language": "multi",
+    "tags": [
+      "door_handles",
+      "freezing",
+      "winter",
+      "electric_mechanism",
+      "squeak"
+    ],
+    "how_found": {
+      "search_queries": [
+        "autonews.ru 15 проблем кроссоверов Lixiang",
+        "cenyavto.com владелец Lixiang L7 типичные поломки",
+        "drive2.ru Li Auto L7 L9 косяки проблемы список",
+        "faq.liautorussia.ru известные проблемы Li Auto L7 L9"
+      ],
+      "platforms": [
+        "autonews.ru",
+        "faq.liautorussia.ru",
+        "drive2.ru",
+        "cenyavto.com"
+      ],
+      "method": "WebSearch по запросам о типичных проблемах. Статья autonews.ru «15 проблем» (данные от клуба владельцев). FAQ клуба liautorussia.ru. Бортжурнал drive2 о поломке ручек",
+      "selectors_or_api": "autonews.ru: /news/ (обзорная статья); faq.liautorussia.ru: /known-problems; drive2.ru: /l/667905486191862402/ (бортжурнал о ручках); cenyavto.com: статья о поломках L7"
+    }
+  },
+  {
+    "id": "issue_h3",
+    "title_ru": "Выдвижные пороги — коррозия от реагентов",
+    "title_en": "Running Boards — Corrosion from Road Chemicals",
+    "confidence": "high",
+    "models": [
+      "L7",
+      "L9"
+    ],
+    "primary_model": "both",
+    "mileage_min": null,
+    "mileage_max": null,
+    "season": "winter",
+    "systems": [
+      "body"
+    ],
+    "layer": "body",
+    "symptoms_ru": "Механизм и металл выдвижных порогов корродируют от дорожных реагентов. Заклинивание.",
+    "symptoms_en": "Running board mechanism and metal corrode from road chemicals. Jamming occurs.",
+    "dtc_codes": [],
+    "root_cause_ru": "Выдвижной механизм порогов не защищён от дорожных реагентов и солей.",
+    "root_cause_en": "Retractable running board mechanism not protected against road chemicals and salts.",
+    "resolution_ru": "Антикоррозийная обработка (6,000-15,000 руб). Установка брызговиков.",
+    "resolution_en": "Anti-corrosion treatment (6,000-15,000 RUB). Install mud flaps.",
+    "repair_cost_rub_min": 6000,
+    "repair_cost_rub_max": 15000,
+    "confirming_agents": 5,
+    "source_count": 3,
+    "sources": [
+      "https://www.autonews.ru/news/683eae5d9a7947cdb92ef1cd",
+      "https://faq.liautorussia.ru/known-problems",
+      "https://abw.by/news/experience/2025/04/24/chto-sluchilos-s-lixiang-l9-bez-antikora-za-dva-goda-rassmatrivaem-na-podemnike"
+    ],
+    "is_safety_critical": false,
+    "is_winter_specific": true,
+    "has_official_fix": false,
+    "warranty_extension": null,
+    "content_type": "owner_experience",
+    "source_language": "multi",
+    "tags": [
+      "running_boards",
+      "corrosion",
+      "road_chemicals",
+      "winter",
+      "jamming"
+    ],
+    "how_found": {
+      "search_queries": [
+        "Lixiang L9 зима реагенты коррозия пороги жалюзи бампер проблемы Россия",
+        "Li Auto Lixiang коррозия ржавчина Россия подножки",
+        "kursiv.media поломки LiXiang"
+      ],
+      "platforms": [
+        "autonews.ru",
+        "faq.liautorussia.ru",
+        "abw.by",
+        "kursiv.media",
+        "drive2.ru"
+      ],
+      "method": "WebSearch по запросам о коррозии. Статья autonews.ru «15 проблем». FAQ клуба. Обзор abw.by (L9 без антикора после 2 лет). Бортжурналы drive2.ru",
+      "selectors_or_api": "autonews.ru: /news/ (статья); faq.liautorussia.ru: /known-problems; abw.by: /news/experience/ (обзор на подъёмнике); kursiv.media: статья о поломках"
+    }
+  },
+  {
+    "id": "issue_h4",
+    "title_ru": "Расход топлива выше заявленного",
+    "title_en": "Fuel Consumption Higher than Advertised",
+    "confidence": "high",
+    "models": [
+      "L7",
+      "L9"
+    ],
+    "primary_model": "both",
+    "mileage_min": null,
+    "mileage_max": null,
+    "season": "all",
+    "systems": [
+      "engine"
+    ],
+    "layer": "engine",
+    "symptoms_ru": "Реальный расход на трассе 125 км/ч = 11 л/100 км (vs заявленные 5.9 CLTC). Город зимой 10-12 л/100 км. Максимальный пробег ~700 км (vs заявленные 1,315).",
+    "symptoms_en": "Real highway consumption at 125 km/h = 11 L/100km (vs advertised 5.9 CLTC). City winter 10-12 L/100km. Max range ~700 km (vs advertised 1,315).",
+    "dtc_codes": [],
+    "root_cause_ru": "3-цилиндровый генератор шумный и прожорливый под нагрузкой. Масса 2.5+ тонн. Холод увеличивает расход.",
+    "root_cause_en": "3-cylinder range extender is noisy and fuel-hungry under load. Vehicle weight 2.5+ tons. Cold weather increases consumption.",
+    "resolution_ru": "Использовать RON-100. Держать батарею заряженной. Город значительно экономичнее (5-7 л/100 км).",
+    "resolution_en": "Use RON-100 fuel. Keep battery charged. City driving is significantly more efficient (5-7 L/100km).",
+    "repair_cost_rub_min": null,
+    "repair_cost_rub_max": null,
+    "confirming_agents": 5,
+    "source_count": 3,
+    "sources": [
+      "https://www.drom.ru/reviews/li/l7/5kopeek/",
+      "https://getcar.ru/blog/lixiang-l9-ne-edet/",
+      "https://www.drive2.ru/l/694649732147982468/"
+    ],
+    "is_safety_critical": false,
+    "is_winter_specific": false,
+    "has_official_fix": false,
+    "warranty_extension": null,
+    "content_type": "owner_experience",
+    "source_language": "multi",
+    "tags": [
+      "fuel_consumption",
+      "range_extender",
+      "cltc",
+      "efficiency",
+      "3_cylinder"
+    ],
+    "how_found": {
+      "search_queries": [
+        "drom.ru Li L7 расход зимой",
+        "Li Auto L9 проблемы владельцев",
+        "drom.ru Li L7 5kopeek недостатки",
+        "Li Auto L9 fuel consumption real world highway test"
+      ],
+      "platforms": [
+        "drom.ru",
+        "getcar.ru",
+        "drive2.ru",
+        "progorod35.ru"
+      ],
+      "method": "WebSearch по запросам о расходе топлива. Раздел 5kopeek на drom.ru (недостатки). Аналитические статьи getcar.ru. Бортжурналы drive2 с реальными замерами",
+      "selectors_or_api": "drom.ru: /reviews/li/l7/5kopeek/ (недостатки); getcar.ru: /blog/lixiang-l9-ne-edet/ (статья о расходе); drive2.ru: /l/694649732147982468/ (бортжурнал с замерами)"
+    }
+  },
+  {
+    "id": "issue_h5",
+    "title_ru": "Подрулевой модуль — массовый отказ кнопок (L7)",
+    "title_en": "Steering Column Module — Mass Button Failure (L7)",
+    "confidence": "high",
+    "models": [
+      "L7"
+    ],
+    "primary_model": "L7",
+    "mileage_min": null,
+    "mileage_max": null,
+    "season": "all",
+    "systems": [
+      "electronics"
+    ],
+    "layer": "electronics",
+    "symptoms_ru": "Кнопки на руле перестают светиться. Потеря круиз-контроля, дворников, прочих функций руля.",
+    "symptoms_en": "Steering wheel buttons stop illuminating. Loss of cruise control, wipers, and other steering wheel functions.",
+    "dtc_codes": [],
+    "root_cause_ru": "Ошибка проводки/пайки в определённой производственной партии L7.",
+    "root_cause_en": "Wiring/soldering defect in a specific L7 production batch.",
+    "resolution_ru": "Замена модуля (заказ из Китая). Перепайка.",
+    "resolution_en": "Module replacement (order from China). Re-soldering.",
+    "repair_cost_rub_min": null,
+    "repair_cost_rub_max": null,
+    "confirming_agents": 5,
+    "source_count": 4,
+    "sources": [
+      "https://www.autonews.ru/news/683eae5d9a7947cdb92ef1cd",
+      "https://faq.liautorussia.ru/known-problems",
+      "https://kz.kursiv.media/2025-06-09/kmlz-li-auto-problems/",
+      "https://cenyavto.com/vladelecz-lixiang-l7-rasskazal-o-tipichnyh-polomkah/"
+    ],
+    "is_safety_critical": false,
+    "is_winter_specific": false,
+    "has_official_fix": false,
+    "warranty_extension": null,
+    "content_type": "owner_experience",
+    "source_language": "multi",
+    "tags": [
+      "steering_module",
+      "buttons",
+      "cruise_control",
+      "wipers",
+      "wiring",
+      "l7_batch"
+    ],
+    "how_found": {
+      "search_queries": [
+        "Li Auto L7 руль модуль кнопки подсветка отказ массовый дефект",
+        "kursiv.media поломки LiXiang 2025",
+        "faq.liautorussia.ru известные проблемы Li Auto"
+      ],
+      "platforms": [
+        "autonews.ru",
+        "faq.liautorussia.ru",
+        "kursiv.media",
+        "cenyavto.com"
+      ],
+      "method": "WebSearch по запросам о рулевом модуле L7. Статья autonews.ru «15 проблем». FAQ клуба владельцев. Статья cenyavto.com от реального владельца L7",
+      "selectors_or_api": "autonews.ru: /news/ (статья «15 проблем»); faq.liautorussia.ru: /known-problems; kursiv.media: /kmlz-li-auto-problems/ (статья); cenyavto.com: статья владельца L7"
+    }
+  },
+  {
+    "id": "issue_h6",
+    "title_ru": "Жалюзи переднего бампера забиваются снегом/льдом",
+    "title_en": "Front Bumper Active Grille Shutters Clog with Snow/Ice",
+    "confidence": "high",
+    "models": [
+      "L7",
+      "L9"
+    ],
+    "primary_model": "both",
+    "mileage_min": null,
+    "mileage_max": null,
+    "season": "winter",
+    "systems": [
+      "cooling"
+    ],
+    "layer": "cooling",
+    "symptoms_ru": "Автоматические жалюзи забиваются снегом — недостаточное охлаждение — проблемы с зарядкой на трассе. Датчик может программно отключить педаль газа во время движения.",
+    "symptoms_en": "Active grille shutters clog with snow — insufficient cooling — charging issues on highway. Sensor may programmatically disable throttle while driving.",
+    "dtc_codes": [],
+    "root_cause_ru": "Конструкция жалюзи не рассчитана на обильный снег и обледенение.",
+    "root_cause_en": "Grille shutter design not engineered for heavy snow and icing conditions.",
+    "resolution_ru": "Ручная очистка жалюзи.",
+    "resolution_en": "Manual cleaning of grille shutters.",
+    "repair_cost_rub_min": null,
+    "repair_cost_rub_max": null,
+    "confirming_agents": 5,
+    "source_count": 2,
+    "sources": [
+      "https://www.autonews.ru/news/683eae5d9a7947cdb92ef1cd",
+      "https://www.drive2.ru/l/694649732147982468/"
+    ],
+    "is_safety_critical": true,
+    "is_winter_specific": true,
+    "has_official_fix": false,
+    "warranty_extension": null,
+    "content_type": "owner_experience",
+    "source_language": "multi",
+    "tags": [
+      "grille_shutters",
+      "snow",
+      "cooling",
+      "throttle_cutoff",
+      "winter",
+      "charging"
+    ],
+    "how_found": {
+      "search_queries": [
+        "autonews.ru 15 проблем кроссоверов Lixiang Li Auto клуб владельцев",
+        "Lixiang L9 косяки список drive2 панорамная крыша лидар пороги ручки двери",
+        "kursiv.media поломки LiXiang"
+      ],
+      "platforms": [
+        "autonews.ru",
+        "drive2.ru",
+        "kursiv.media"
+      ],
+      "method": "WebSearch по запросам о зимних проблемах. Статья autonews.ru «15 проблем» (данные от клуба владельцев). Бортжурнал drive2 «Косяки Lixiang и их решение»",
+      "selectors_or_api": "autonews.ru: /news/ (обзорная статья); drive2.ru: /l/694649732147982468/ (бортжурнал); kursiv.media: статья о поломках"
+    }
+  },
+  {
+    "id": "issue_h7",
+    "title_ru": "Цепь ГРМ 1.5T — растяжение и обрыв",
+    "title_en": "1.5T Timing Chain — Stretch and Failure",
+    "confidence": "high",
+    "models": [
+      "L7",
+      "L9"
+    ],
+    "primary_model": "both",
+    "mileage_min": 200000,
+    "mileage_max": 307000,
+    "season": "all",
+    "systems": [
+      "engine"
+    ],
+    "layer": "engine",
+    "symptoms_ru": "Растяжение цепи → обрыв натяжителя → поршни бьют в головку → полное разрушение двигателя. Задокументированный отказ на 307,000 км.",
+    "symptoms_en": "Chain stretch → tensioner failure → pistons hit cylinder head → total engine destruction. Documented failure at 307,000 km.",
+    "dtc_codes": [],
+    "root_cause_ru": "Тонкая цепь Morse-типа вместо роликовой. Генератор работает на 3,500-4,000 об/мин, ускоряя износ. Масло меняют через 10-12 тыс. км, цепь не инспектируется.",
+    "root_cause_en": "Thin Morse-type chain instead of roller chain. Generator operates at 3,500-4,000 RPM accelerating wear. Oil changed every 10-12K km, chain never inspected.",
+    "resolution_ru": "Инспекция цепи каждые 100-120 тыс. км. Масло каждые 7-8 тыс. км. Бензин RON-100.",
+    "resolution_en": "Chain inspection every 100-120K km. Oil change every 7-8K km. Use RON-100 fuel.",
+    "repair_cost_rub_min": null,
+    "repair_cost_rub_max": null,
+    "confirming_agents": 5,
+    "source_count": 3,
+    "sources": [
+      "https://kz.kursiv.media/2026-02-16/rmnm-motor-lixiang-raskritikovali-iz-za-nenadezhnoy-konstrukcii-cepi-grm/",
+      "https://insideevs.com/news/775394/li-auto-l9-russia-erev/",
+      "https://carexpo.ru/2025/12/08/li-auto-l9-proshel-v-rf-367-tysyach-km-i-slomalsya-skolko-stoit-remont/"
+    ],
+    "is_safety_critical": true,
+    "is_winter_specific": false,
+    "has_official_fix": false,
+    "warranty_extension": null,
+    "content_type": "owner_experience",
+    "source_language": "multi",
+    "tags": [
+      "timing_chain",
+      "l2e15m",
+      "engine_failure",
+      "tensioner",
+      "morse_chain",
+      "high_mileage"
+    ],
+    "how_found": {
+      "search_queries": [
+        "Li Auto L9 367000 км поломка двигатель цепь ГРМ",
+        "kursiv.media мотор Lixiang цепь ГРМ порваться",
+        "Li Auto L9 307000 km high mileage what broke",
+        "Li Auto EREV range extender engine problems reliability"
+      ],
+      "platforms": [
+        "kursiv.media",
+        "insideevs.com",
+        "carexpo.ru",
+        "auto.mail.ru",
+        "av.by"
+      ],
+      "method": "WebSearch по запросам о долговечности двигателя 1.5T. Тест на миллион км (InsideEVs — Faker Autogroup). Аналитика kursiv.media о конструкции цепи. Статья carexpo.ru о стоимости ремонта",
+      "selectors_or_api": "insideevs.com: /news/ (статья о ресурсном тесте L9); kursiv.media: статья о ненадёжности цепи; carexpo.ru: статья о поломке на 367 тыс. км; auto.mail.ru: /article/ (статья)"
+    }
+  },
+  {
+    "id": "issue_h8",
+    "title_ru": "SIM-карта / телематический модуль",
+    "title_en": "SIM Card / Telematics Control Unit Issues",
+    "confidence": "high",
+    "models": [
+      "L7",
+      "L9"
+    ],
+    "primary_model": "both",
+    "mileage_min": null,
+    "mileage_max": null,
+    "season": "all",
+    "systems": [
+      "electronics"
+    ],
+    "layer": "electronics",
+    "symptoms_ru": "Потеря связи. OTA не приходит. Модуль выходит из строя при установке российской SIM. Требуется перепайка.",
+    "symptoms_en": "Loss of connectivity. OTA updates fail. Module fails when Russian SIM installed. Re-soldering required.",
+    "dtc_codes": [],
+    "root_cause_ru": "Автомобили рассчитаны на китайские SIM. SIM впаяна в TCU. Совместимость только BAND 1,3,7.",
+    "root_cause_en": "Vehicles designed for Chinese SIM cards. SIM soldered into TCU. Compatibility limited to BAND 1,3,7.",
+    "resolution_ru": "Безопасная установка SIM без пайки (метод найден). Русификация.",
+    "resolution_en": "Safe SIM installation without soldering (method developed). Russification.",
+    "repair_cost_rub_min": null,
+    "repair_cost_rub_max": null,
+    "confirming_agents": 5,
+    "source_count": 4,
+    "sources": [
+      "https://www.autonews.ru/news/683eae5d9a7947cdb92ef1cd",
+      "https://www.drive2.ru/l/706362004884950860/",
+      "https://www.drive2.ru/l/671610015743748069/",
+      "https://habr.com/ru/articles/827524/"
+    ],
+    "is_safety_critical": false,
+    "is_winter_specific": false,
+    "has_official_fix": false,
+    "warranty_extension": null,
+    "content_type": "owner_experience",
+    "source_language": "multi",
+    "tags": [
+      "sim_card",
+      "tcu",
+      "telematics",
+      "connectivity",
+      "ota",
+      "russification"
+    ],
+    "how_found": {
+      "search_queries": [
+        "Li Auto L9 мультимедиа зависает экран перепрошивка Snapdragon SIM карта",
+        "drive2.ru Li Auto L9 косяки проблемы поломки список",
+        "Li Auto L7 L9 digital key problem firmware update 4.6.5 bug"
+      ],
+      "platforms": [
+        "autonews.ru",
+        "drive2.ru",
+        "habr.com",
+        "faq.liautorussia.ru"
+      ],
+      "method": "WebSearch по запросам о SIM-карте и телематике. Бортжурналы drive2 об установке SIM и OTA-проблемах. Техническая статья habr.com о русификации. FAQ клуба",
+      "selectors_or_api": "drive2.ru: /l/706362004884950860/ (OTA), /l/671610015743748069/ (SIM); habr.com: /articles/ (техническая статья); faq.liautorussia.ru: /known-problems"
+    }
+  },
+  {
+    "id": "issue_h9",
+    "title_ru": "Шумоизоляция — недостаточная для премиума",
+    "title_en": "Noise Insulation — Insufficient for Premium Segment",
+    "confidence": "high",
+    "models": [
+      "L7",
+      "L9"
+    ],
+    "primary_model": "both",
+    "mileage_min": 0,
+    "mileage_max": null,
+    "season": "all",
+    "systems": [
+      "body",
+      "engine"
+    ],
+    "layer": "body",
+    "symptoms_ru": "Шум дороги через арки и двери. Трёхцилиндровый генератор шумит при работе. Виброшумка покрывает только 20% площади кузова.",
+    "symptoms_en": "Road noise through wheel arches and doors. 3-cylinder range extender noise during operation. Sound deadening covers only 20% of body area.",
+    "dtc_codes": [],
+    "root_cause_ru": "Экономия на заводской шумоизоляции. Трёхцилиндровый генератор по природе шумнее четырёхцилиндрового.",
+    "root_cause_en": "Factory sound deadening cost-cutting. 3-cylinder range extender inherently noisier than 4-cylinder.",
+    "resolution_ru": "Допшумоизоляция (150,000-250,000 руб). Снижение шума на 50-60%.",
+    "resolution_en": "Aftermarket sound deadening (150,000-250,000 RUB). Noise reduction of 50-60%.",
+    "repair_cost_rub_min": 150000,
+    "repair_cost_rub_max": 250000,
+    "confirming_agents": 5,
+    "source_count": 3,
+    "sources": [
+      "https://www.drom.ru/reviews/li/l7/5kopeek/",
+      "https://getcar.ru/blog/shum-lixiang-l9-prichiny/",
+      "https://www.drive2.ru/o/b/682993259626104339/"
+    ],
+    "is_safety_critical": false,
+    "is_winter_specific": false,
+    "has_official_fix": false,
+    "warranty_extension": null,
+    "content_type": "owner_experience",
+    "source_language": "multi",
+    "tags": [
+      "nvh",
+      "noise",
+      "sound_deadening",
+      "3_cylinder",
+      "road_noise",
+      "premium"
+    ],
+    "how_found": {
+      "search_queries": [
+        "drom.ru Li L7 5kopeek недостатки",
+        "getcar.ru шум Lixiang L9 причины",
+        "Li Auto L7 L9 NVH range extender engine noise vibration harshness"
+      ],
+      "platforms": [
+        "drom.ru",
+        "getcar.ru",
+        "drive2.ru"
+      ],
+      "method": "WebSearch по запросам о шумоизоляции. Раздел 5kopeek на drom.ru (типичные недостатки). Аналитическая статья getcar.ru о причинах шума. Бортжурналы drive2 о дополнительной шумоизоляции",
+      "selectors_or_api": "drom.ru: /reviews/li/l7/5kopeek/ и /reviews/li/l9/5kopeek/ (раздел недостатков); getcar.ru: /blog/shum-lixiang-l9-prichiny/ (статья); drive2.ru: /o/b/ (блог владельца)"
+    }
+  },
+  {
+    "id": "issue_h10",
+    "title_ru": "ADAS — фантомное торможение / ошибки автопилота",
+    "title_en": "ADAS — Phantom Braking / Autopilot Errors",
+    "confidence": "high",
+    "models": [
+      "L7",
+      "L9"
+    ],
+    "primary_model": "both",
+    "mileage_min": null,
+    "mileage_max": null,
+    "season": "all",
+    "systems": [
+      "adas"
+    ],
+    "layer": "adas",
+    "symptoms_ru": "AEB на трассе при 80-120 км/ч: система путает изображение на билборде с реальным объектом и экстренно тормозит. NOA не удерживает полосу. После ДТП — машина превращается в «кирпич».",
+    "symptoms_en": "AEB at 80-120 km/h: system confuses billboard image with real object and emergency brakes. NOA fails to hold lane. After accident — vehicle bricks.",
+    "dtc_codes": [],
+    "root_cause_ru": "Камеры не различают 2D-изображения от 3D-объектов. Радар неэффективен против статичных объектов. Карты не адаптированы для России.",
+    "root_cause_en": "Cameras cannot distinguish 2D images from 3D objects. Radar ineffective against stationary objects. Maps not adapted for Russia.",
+    "resolution_ru": "OTA-обновления. Отключение автовысокого света. 2025 модели — улучшенная система.",
+    "resolution_en": "OTA updates. Disable auto high beam. 2025 models — improved system.",
+    "repair_cost_rub_min": null,
+    "repair_cost_rub_max": null,
+    "confirming_agents": 4,
+    "source_count": 3,
+    "sources": [
+      "https://carnewschina.com/2023/01/27/li-l9-user-claimed-driving-assistance-system-failed-resulting-in-an-accident/",
+      "https://www.theautopian.com/suv-with-emergency-braking-mistakes-billboard-ad-for-real-car-and-slams-on-brakes/",
+      "https://www.drive2.ru/l/714032747756141707/"
+    ],
+    "is_safety_critical": true,
+    "is_winter_specific": false,
+    "has_official_fix": false,
+    "warranty_extension": null,
+    "content_type": "owner_experience",
+    "source_language": "multi",
+    "tags": [
+      "adas",
+      "phantom_braking",
+      "aeb",
+      "noa",
+      "autopilot",
+      "billboard",
+      "false_positive"
+    ],
+    "how_found": {
+      "search_queries": [
+        "理想L9 高速自动急刹",
+        "Li Auto L9 phantom brake ADAS",
+        "Li Auto L9 driving assistance ADAS accident crash NOA failure",
+        "理想汽车 智能驾驶 辅助驾驶 故障 误识别 幽灵刹车",
+        "Lixiang Li Auto ADAS автопилот проблемы ошибки ДТП Россия"
+      ],
+      "platforms": [
+        "carnewschina.com",
+        "theautopian.com",
+        "drive2.ru",
+        "news.qq.com",
+        "chinanews.com.cn"
+      ],
+      "method": "WebSearch по запросам об ADAS на русском/английском/китайском. Инциденты фантомного торможения на TheAutopian. Аварии с NOA на CarNewsChina. Китайские новости (QQ News, 中新网). Бортжурналы drive2",
+      "selectors_or_api": "carnewschina.com: статья об аварии с NOA; theautopian.com: статья о билборде; drive2.ru: /l/714032747756141707/ (OTA 8.0); news.qq.com: новостная статья; chinanews.com.cn: /cj/ (финансовые новости)"
+    }
+  },
+  {
+    "id": "issue_h11",
+    "title_ru": "Панорамная крыша — трещины",
+    "title_en": "Panoramic Roof — Cracking",
+    "confidence": "high",
+    "models": [
+      "L7",
+      "L9"
+    ],
+    "primary_model": "both",
+    "mileage_min": null,
+    "mileage_max": null,
+    "season": "all",
+    "systems": [
+      "body"
+    ],
+    "layer": "body",
+    "symptoms_ru": "Трещины на стыке панорамной крыши с лобовым стеклом от мелких камней. Лобовое стекло «аномально тонкое». Замена осложнена интегрированными камерами.",
+    "symptoms_en": "Cracks at junction of panoramic roof and windshield from small stones. Windshield is 'anomalously thin'. Replacement complicated by integrated cameras.",
+    "dtc_codes": [],
+    "root_cause_ru": "Тонкое лобовое стекло и уязвимая зона стыка крыши подвержены повреждениям от дорожного мусора.",
+    "root_cause_en": "Thin windshield and vulnerable roof junction area susceptible to road debris damage.",
+    "resolution_ru": "Замена стекла (дорого, долго). КАСКО. Защитная плёнка.",
+    "resolution_en": "Glass replacement (expensive, long wait). Comprehensive insurance (KASKO). Protective film.",
+    "repair_cost_rub_min": null,
+    "repair_cost_rub_max": null,
+    "confirming_agents": 7,
+    "source_count": 3,
+    "sources": [
+      "https://www.autonews.ru/news/683eae5d9a7947cdb92ef1cd",
+      "https://faq.liautorussia.ru/known-problems",
+      "https://autoplt.ru/vse-minusy-v-otzyvah-vladelczev-lixiang-l7/"
+    ],
+    "is_safety_critical": false,
+    "is_winter_specific": false,
+    "has_official_fix": false,
+    "warranty_extension": null,
+    "content_type": "owner_experience",
+    "source_language": "multi",
+    "tags": [
+      "panoramic_roof",
+      "windshield",
+      "cracking",
+      "glass",
+      "stone_chips"
+    ],
+    "how_found": {
+      "search_queries": [
+        "autonews.ru 15 проблем кроссоверов Lixiang Li Auto клуб владельцев",
+        "kursiv.media поломки LiXiang",
+        "autoplt.ru минусы отзывы владельцев Lixiang L7"
+      ],
+      "platforms": [
+        "autonews.ru",
+        "faq.liautorussia.ru",
+        "autoplt.ru",
+        "kursiv.media"
+      ],
+      "method": "WebSearch по запросам о панорамной крыше. Статья autonews.ru «15 проблем» (данные от клуба). FAQ клуба. Агрегатор отзывов autoplt.ru",
+      "selectors_or_api": "autonews.ru: /news/ (статья); faq.liautorussia.ru: /known-problems; autoplt.ru: /vse-minusy-v-otzyvah-vladelczev-lixiang-l7/ (агрегация отзывов)"
+    }
+  },
+  {
+    "id": "issue_h12",
+    "title_ru": "Двигатель 1.5T — масложор и дефект поршней (ранние выпуски)",
+    "title_en": "1.5T Engine — Oil Consumption and Piston Defect (Early Builds)",
+    "confidence": "high",
+    "models": [
+      "L7",
+      "L8",
+      "L9"
+    ],
+    "primary_model": "L9",
+    "mileage_min": 0,
+    "mileage_max": 30000,
+    "season": "all",
+    "systems": [
+      "engine"
+    ],
+    "layer": "engine",
+    "symptoms_ru": "Повышенный расход масла. Детонация. Разрушение поршневых перемычек.",
+    "symptoms_en": "Excessive oil consumption. Detonation. Piston land fracture.",
+    "dtc_codes": [],
+    "root_cause_ru": "Ранние поршни имели 4 маленьких дренажных отверстия вместо 8 больших — масло проходит мимо поршней. ~4 ревизии поршней выпущено.",
+    "root_cause_en": "Early pistons had 4 small drain holes instead of 8 large ones — oil bypasses pistons. ~4 piston revisions released.",
+    "resolution_ru": "Замена поршней (новая ревизия). Текущие серийные поршни исправлены.",
+    "resolution_en": "Piston replacement (new revision). Current production pistons are corrected.",
+    "repair_cost_rub_min": null,
+    "repair_cost_rub_max": null,
+    "confirming_agents": 4,
+    "source_count": 3,
+    "sources": [
+      "https://www.drive2.ru/l/681493250887921808/",
+      "https://www.drive2.ru/l/717411272110386402/",
+      "https://otoba.ru/dvigatel/lixiang/l2e15m.html"
+    ],
+    "is_safety_critical": false,
+    "is_winter_specific": false,
+    "has_official_fix": true,
+    "warranty_extension": null,
+    "content_type": "owner_experience",
+    "source_language": "multi",
+    "tags": [
+      "oil_consumption",
+      "piston",
+      "l2e15m",
+      "detonation",
+      "engine",
+      "early_build"
+    ],
+    "how_found": {
+      "search_queries": [
+        "drive2.ru Lixiang L9 вскрытие двигателя поршни масложор",
+        "Li Auto L9 engine teardown oil consumption piston",
+        "drive2.ru Li Auto L7 тормоза колодки расход масла ТО"
+      ],
+      "platforms": [
+        "drive2.ru",
+        "otoba.ru"
+      ],
+      "method": "WebSearch по запросам о вскрытии двигателя. Бортжурналы drive2.ru с фотоотчётами вскрытия ДВС L9 (поршни, масложор). Технический портал otoba.ru (спецификации L2E15M)",
+      "selectors_or_api": "drive2.ru: /l/681493250887921808/ (вскрытие ДВС L9), /l/717411272110386402/ (износ ДВС); otoba.ru: спецификации двигателя L2E15M"
+    }
+  },
+  {
+    "id": "issue_m1",
+    "title_ru": "Утечка хладагента кондиционера",
+    "title_en": "AC Refrigerant Leak",
+    "confidence": "medium",
+    "models": [
+      "L7",
+      "L8",
+      "L9"
+    ],
+    "primary_model": "L9",
+    "mileage_min": null,
+    "mileage_max": null,
+    "season": "summer",
+    "systems": [
+      "hvac",
+      "battery"
+    ],
+    "layer": "hvac",
+    "symptoms_ru": "Хладагент исчезает. Кондиционер не охлаждает. Критично: кондиционер также охлаждает ВВ батарею.",
+    "symptoms_en": "Refrigerant disappears. AC does not cool. Critical: AC also cools the HV battery.",
+    "dtc_codes": [],
+    "root_cause_ru": "Слабые трубки в районе заднего левого колеса.",
+    "root_cause_en": "Weak refrigerant lines near the rear left wheel area.",
+    "resolution_ru": "Замена трубок хладагента. Дозаправка системы.",
+    "resolution_en": "Refrigerant line replacement. System recharge.",
+    "repair_cost_rub_min": null,
+    "repair_cost_rub_max": null,
+    "confirming_agents": 2,
+    "source_count": 2,
+    "sources": [
+      "https://www.gazeta.ru/auto/news/2025/02/16/25100204.shtml",
+      "https://faq.liautorussia.ru/known-problems"
+    ],
+    "is_safety_critical": false,
+    "is_winter_specific": false,
+    "has_official_fix": false,
+    "warranty_extension": null,
+    "content_type": "owner_experience",
+    "source_language": "multi",
+    "tags": [
+      "ac",
+      "refrigerant",
+      "leak",
+      "hvac",
+      "battery_cooling"
+    ],
+    "how_found": {
+      "search_queries": [
+        "LiXiang L9 кондиционер климат тепловой насос HVAC зимой обогрев проблемы",
+        "gazeta.ru три серьезных неисправности LiXiang Россия 2025",
+        "faq.liautorussia.ru известные проблемы"
+      ],
+      "platforms": [
+        "gazeta.ru",
+        "faq.liautorussia.ru",
+        "av.by",
+        "elektroman.pro"
+      ],
+      "method": "WebSearch по запросам о кондиционере/HVAC. Новостная статья gazeta.ru о трёх серьёзных неисправностях. FAQ клуба владельцев. Сервисные предложения elektroman.pro",
+      "selectors_or_api": "gazeta.ru: /auto/news/ (новость); faq.liautorussia.ru: /known-problems; elektroman.pro: /uslugi/ (услуги ремонта)"
+    }
+  },
+  {
+    "id": "issue_m2",
+    "title_ru": "12V аккумулятор — блокировка автомобиля",
+    "title_en": "12V Battery — Complete Vehicle Lockout",
+    "confidence": "medium",
+    "models": [
+      "L7",
+      "L9"
+    ],
+    "primary_model": "both",
+    "mileage_min": null,
+    "mileage_max": null,
+    "season": "all",
+    "systems": [
+      "electronics",
+      "battery"
+    ],
+    "layer": "electronics",
+    "symptoms_ru": "При разрядке 12V АКБ автомобиль полностью блокируется. Двери не открываются. «Прикуривание» запрещено. Замена 60,000-90,000 руб (LiFePO4, привязана к VIN).",
+    "symptoms_en": "When 12V battery dies, vehicle locks out completely. Doors won't open. Jump-starting prohibited. Replacement 60,000-90,000 RUB (LiFePO4, VIN-locked).",
+    "dtc_codes": [],
+    "root_cause_ru": "LiFePO4 аккумулятор привязан к VIN. Нет механического аварийного доступа.",
+    "root_cause_en": "LiFePO4 battery VIN-locked. No mechanical emergency access method.",
+    "resolution_ru": "Замена 12V АКБ (60,000-90,000 руб). Необходим заказ из Китая.",
+    "resolution_en": "12V battery replacement (60,000-90,000 RUB). Must be ordered from China.",
+    "repair_cost_rub_min": 60000,
+    "repair_cost_rub_max": 90000,
+    "confirming_agents": 3,
+    "source_count": 2,
+    "sources": [
+      "https://www.gazeta.ru/auto/2024/01/18/18141265.shtml",
+      "https://connectservicecar.ru/problem-akb-lixiang"
+    ],
+    "is_safety_critical": true,
+    "is_winter_specific": false,
+    "has_official_fix": false,
+    "warranty_extension": null,
+    "content_type": "owner_experience",
+    "source_language": "multi",
+    "tags": [
+      "12v_battery",
+      "lifepo4",
+      "lockout",
+      "vin_lock",
+      "doors",
+      "immobilization"
+    ],
+    "how_found": {
+      "search_queries": [
+        "Li Auto L7 L9 электрика 12V аккумулятор разряд проблема не заводится",
+        "gazeta.ru Li Auto блокируются после ДТП",
+        "connectservicecar.ru проблема АКБ Lixiang"
+      ],
+      "platforms": [
+        "gazeta.ru",
+        "connectservicecar.ru"
+      ],
+      "method": "WebSearch по запросам о 12V системе. Статья gazeta.ru о блокировке после ДТП. Сервисная статья connectservicecar.ru о проблеме АКБ",
+      "selectors_or_api": "gazeta.ru: /auto/ (статья о блокировке); connectservicecar.ru: /problem-akb-lixiang (сервисная страница)"
+    }
+  },
+  {
+    "id": "issue_m3",
+    "title_ru": "Скрипы подвески после зимы (сайлентблоки)",
+    "title_en": "Suspension Squeaks After Winter (Bushings)",
+    "confidence": "medium",
+    "models": [
+      "L7",
+      "L9"
+    ],
+    "primary_model": "both",
+    "mileage_min": null,
+    "mileage_max": null,
+    "season": "spring",
+    "systems": [
+      "suspension"
+    ],
+    "layer": "suspension",
+    "symptoms_ru": "Скрипы в задней подвеске. Характерны для высохших сайлентблоков. Часто проходят к лету.",
+    "symptoms_en": "Rear suspension squeaks. Typical for dried-out bushings. Often resolve by summer.",
+    "dtc_codes": [],
+    "root_cause_ru": "Сайлентблоки высыхают после зимнего сезона с реагентами и перепадами температур.",
+    "root_cause_en": "Bushings dry out after winter season with road chemicals and temperature fluctuations.",
+    "resolution_ru": "Смазка или замена сайлентблоков. Часто проходит само к лету.",
+    "resolution_en": "Bushing lubrication or replacement. Often resolves on its own by summer.",
+    "repair_cost_rub_min": null,
+    "repair_cost_rub_max": null,
+    "confirming_agents": 3,
+    "source_count": 2,
+    "sources": [
+      "https://kz.kursiv.media/2025-06-09/kmlz-li-auto-problems/",
+      "https://av.by/news/kak_remontiryut_i_skolko_stoit_obsluzhivanie_lixiang"
+    ],
+    "is_safety_critical": false,
+    "is_winter_specific": false,
+    "has_official_fix": false,
+    "warranty_extension": null,
+    "content_type": "owner_experience",
+    "source_language": "multi",
+    "tags": [
+      "suspension",
+      "squeaks",
+      "bushings",
+      "rear_suspension",
+      "winter",
+      "seasonal"
+    ],
+    "how_found": {
+      "search_queries": [
+        "telegram китайские авто Li Auto L7 L9 подвеска стук рычаг тормоза зимой",
+        "kursiv.media поломки LiXiang",
+        "av.by ремонт обслуживание Lixiang"
+      ],
+      "platforms": [
+        "kursiv.media",
+        "av.by",
+        "drive2.ru"
+      ],
+      "method": "WebSearch по запросам о подвеске после зимы. Аналитика kursiv.media о сезонных проблемах. Сервисный отчёт av.by (Минск). Бортжурналы drive2",
+      "selectors_or_api": "kursiv.media: /kmlz-li-auto-problems/ (статья); av.by: /news/ (сервисный обзор); drive2.ru: /l/694649732147982468/ (бортжурнал)"
+    }
+  },
+  {
+    "id": "issue_m4",
+    "title_ru": "Деградация топлива в баке при редком использовании ДВС",
+    "title_en": "Fuel Degradation in Tank from Infrequent ICE Use",
+    "confidence": "medium",
+    "models": [
+      "L7",
+      "L9"
+    ],
+    "primary_model": "both",
+    "mileage_min": null,
+    "mileage_max": 30000,
+    "season": "all",
+    "systems": [
+      "engine"
+    ],
+    "layer": "engine",
+    "symptoms_ru": "Бензин стоит месяцами в EV-режиме, теряет октановое число — детонация при пробеге <30,000 км.",
+    "symptoms_en": "Fuel sits for months in EV mode, loses octane rating — detonation occurs at mileage below 30,000 km.",
+    "dtc_codes": [],
+    "root_cause_ru": "В EREV-архитектуре ДВС используется редко, топливо окисляется и теряет свойства.",
+    "root_cause_en": "In EREV architecture the ICE runs infrequently, fuel oxidizes and degrades.",
+    "resolution_ru": "Регулярно запускать генератор. Не хранить бензин дольше 2-3 месяцев.",
+    "resolution_en": "Run the range extender regularly. Do not store fuel longer than 2-3 months.",
+    "repair_cost_rub_min": null,
+    "repair_cost_rub_max": null,
+    "confirming_agents": 3,
+    "source_count": 2,
+    "sources": [
+      "https://www.drive2.ru/l/717411272110386402/",
+      "https://getcar.ru/blog/obsluzhivanie-lixiang-l9-rossiya/"
+    ],
+    "is_safety_critical": false,
+    "is_winter_specific": false,
+    "has_official_fix": false,
+    "warranty_extension": null,
+    "content_type": "owner_experience",
+    "source_language": "multi",
+    "tags": [
+      "fuel_degradation",
+      "erev",
+      "detonation",
+      "octane",
+      "stale_fuel"
+    ],
+    "how_found": {
+      "search_queries": [
+        "Li Auto L9 двигатель бензиновый генератор 1.5 поломка масло расход малый пробег",
+        "drive2.ru Lixiang L9 бензин топливо двигатель малый пробег",
+        "getcar.ru обслуживание LiXiang L9 Россия"
+      ],
+      "platforms": [
+        "drive2.ru",
+        "getcar.ru"
+      ],
+      "method": "WebSearch по запросам о деградации топлива в EREV. Бортжурнал drive2.ru о выходе ДВС из строя. Статья getcar.ru об обслуживании L9 в России",
+      "selectors_or_api": "drive2.ru: /l/717411272110386402/ (бортжурнал о поломке ДВС); getcar.ru: /blog/obsluzhivanie-lixiang-l9-rossiya/ (статья)"
+    }
+  },
+  {
+    "id": "issue_m5",
+    "title_ru": "Незамерзайка замерзает в форсунках в EV-режиме",
+    "title_en": "Washer Fluid Freezes in Nozzles in EV Mode",
+    "confidence": "medium",
+    "models": [
+      "L7",
+      "L9"
+    ],
+    "primary_model": "both",
+    "mileage_min": null,
+    "mileage_max": null,
+    "season": "winter",
+    "systems": [
+      "body"
+    ],
+    "layer": "body",
+    "symptoms_ru": "В EV-режиме нет тепла от ДВС — форсунки замерзают при температуре выше заявленного порога жидкости. Шланги могут лопнуть при -7°C.",
+    "symptoms_en": "In EV mode no engine heat — nozzles freeze above the fluid's rated temperature. Hoses may burst at -7°C.",
+    "dtc_codes": [],
+    "root_cause_ru": "Отсутствие тепла от ДВС в EV-режиме приводит к замерзанию форсунок и шлангов омывателя.",
+    "root_cause_en": "Lack of ICE heat in EV mode causes washer nozzles and hoses to freeze.",
+    "resolution_ru": "Использовать незамерзайку с запасом по температуре. Периодически включать генератор зимой.",
+    "resolution_en": "Use washer fluid rated well below ambient temperature. Periodically run range extender in winter.",
+    "repair_cost_rub_min": null,
+    "repair_cost_rub_max": null,
+    "confirming_agents": 4,
+    "source_count": 2,
+    "sources": [
+      "https://www.drive2.ru/l/694649732147982468/",
+      "https://autoplt.ru/vse-minusy-v-otzyvah-vladelczev-lixiang-l7/"
+    ],
+    "is_safety_critical": false,
+    "is_winter_specific": true,
+    "has_official_fix": false,
+    "warranty_extension": null,
+    "content_type": "owner_experience",
+    "source_language": "multi",
+    "tags": [
+      "washer_fluid",
+      "freezing",
+      "ev_mode",
+      "nozzles",
+      "winter",
+      "erev"
+    ],
+    "how_found": {
+      "search_queries": [
+        "Lixiang L9 косяки список drive2 панорамная крыша лидар пороги ручки двери",
+        "drive2.ru Li Auto L9 косяки решение",
+        "autoplt.ru минусы отзывы владельцев Lixiang L7"
+      ],
+      "platforms": [
+        "drive2.ru",
+        "autoplt.ru"
+      ],
+      "method": "WebSearch по запросам о зимних косяках. Бортжурнал drive2.ru «Косяки Lixiang и их решение». Агрегатор отзывов autoplt.ru о минусах L7",
+      "selectors_or_api": "drive2.ru: /l/694649732147982468/ (бортжурнал); autoplt.ru: /vse-minusy-v-otzyvah-vladelczev-lixiang-l7/ (агрегация)"
+    }
+  },
+  {
+    "id": "issue_m6",
+    "title_ru": "Дальний свет — некорректная работа / слабое освещение",
+    "title_en": "High Beam — Malfunction / Weak Illumination",
+    "confidence": "medium",
+    "models": [
+      "L7",
+      "L9"
+    ],
+    "primary_model": "both",
+    "mileage_min": null,
+    "mileage_max": null,
+    "season": "all",
+    "systems": [
+      "lighting"
+    ],
+    "layer": "lighting",
+    "symptoms_ru": "Автоматический дальний свет не выключается, слепит встречных. Штатный свет 443 Lux — «критически слабый» для неосвещённых российских трасс.",
+    "symptoms_en": "Auto high beam fails to switch off, blinds oncoming traffic. Stock 443 Lux output — 'critically weak' for unlit Russian highways.",
+    "dtc_codes": [],
+    "root_cause_ru": "Программная ошибка автоматического дальнего света. Оптика недостаточно мощная для российских условий.",
+    "root_cause_en": "Auto high beam software bug. Optics insufficient for Russian road conditions.",
+    "resolution_ru": "Отключение автовысокого света. Установка дополнительного освещения.",
+    "resolution_en": "Disable auto high beam. Install auxiliary lighting.",
+    "repair_cost_rub_min": null,
+    "repair_cost_rub_max": null,
+    "confirming_agents": 4,
+    "source_count": 2,
+    "sources": [
+      "https://www.drive2.ru/l/694649732147982468/",
+      "https://autoplt.ru/vse-minusy-v-otzyvah-vladelczev-lixiang-l7/"
+    ],
+    "is_safety_critical": false,
+    "is_winter_specific": false,
+    "has_official_fix": false,
+    "warranty_extension": null,
+    "content_type": "owner_experience",
+    "source_language": "multi",
+    "tags": [
+      "headlights",
+      "high_beam",
+      "auto_beam",
+      "illumination",
+      "visibility"
+    ],
+    "how_found": {
+      "search_queries": [
+        "faq.liautorussia.ru известные проблемы Li Auto L7 L9",
+        "drive2.ru Li Auto L9 косяки проблемы список",
+        "autoplt.ru минусы отзывы владельцев Lixiang L7"
+      ],
+      "platforms": [
+        "drive2.ru",
+        "autoplt.ru",
+        "faq.liautorussia.ru"
+      ],
+      "method": "WebSearch по запросам о фарах и дальнем свете. Бортжурнал drive2.ru о списке косяков. FAQ клуба. Агрегатор отзывов autoplt.ru (сравнение с Audi Matrix)",
+      "selectors_or_api": "drive2.ru: /l/694649732147982468/ (бортжурнал); autoplt.ru: /vse-minusy-v-otzyvah-vladelczev-lixiang-l7/ (минусы); faq.liautorussia.ru: /known-problems"
+    }
+  },
+  {
+    "id": "issue_m7",
+    "title_ru": "Экокожа салона — быстрый износ, пожелтение",
+    "title_en": "Interior Eco-Leather — Rapid Wear, Yellowing",
+    "confidence": "medium",
+    "models": [
+      "L7",
+      "L9"
+    ],
+    "primary_model": "both",
+    "mileage_min": null,
+    "mileage_max": 37000,
+    "season": "all",
+    "systems": [
+      "interior"
+    ],
+    "layer": "interior",
+    "symptoms_ru": "Обивка заминается и покрывается пузырями при пробеге <20,000 км. Светлая кожа желтеет к 37,000 км.",
+    "symptoms_en": "Upholstery creases and blisters at under 20,000 km. Light-colored leather yellows by 37,000 km.",
+    "dtc_codes": [],
+    "root_cause_ru": "Низкое качество экокожи, не рассчитанной на интенсивную эксплуатацию.",
+    "root_cause_en": "Low-quality eco-leather not designed for intensive use.",
+    "resolution_ru": "Перетяжка салона. Защитные покрытия.",
+    "resolution_en": "Interior re-upholstery. Protective coatings.",
+    "repair_cost_rub_min": null,
+    "repair_cost_rub_max": null,
+    "confirming_agents": 2,
+    "source_count": 2,
+    "sources": [
+      "https://lenta.ru/news/2026/02/25/nazvany-neozhidannye-problemy-krossovera-lixiang/",
+      "https://progorod35.ru/novosti-rossii/22418"
+    ],
+    "is_safety_critical": false,
+    "is_winter_specific": false,
+    "has_official_fix": false,
+    "warranty_extension": null,
+    "content_type": "owner_experience",
+    "source_language": "multi",
+    "tags": [
+      "eco_leather",
+      "interior",
+      "wear",
+      "yellowing",
+      "upholstery"
+    ],
+    "how_found": {
+      "search_queries": [
+        "lenta.ru неожиданные проблемы кроссовера Lixiang 2026",
+        "Lixiang L9 37000 км отзыв владельца",
+        "Li Auto L7 L9 interior leather yellowing wear"
+      ],
+      "platforms": [
+        "lenta.ru",
+        "progorod35.ru",
+        "kursiv.media"
+      ],
+      "method": "WebSearch по запросам об износе салона. Новостная статья lenta.ru о неожиданных проблемах. Отзыв владельца на progorod35.ru (37,000 км). Осмотр на 170 тыс. км kursiv.media",
+      "selectors_or_api": "lenta.ru: /news/ (новость); progorod35.ru: /novosti-rossii/ (отзыв владельца); kursiv.media: статья об осмотре на 170 тыс. км"
+    }
+  },
+  {
+    "id": "issue_m8",
+    "title_ru": "Русификация — неполная",
+    "title_en": "Russification — Incomplete",
+    "confidence": "medium",
+    "models": [
+      "L7",
+      "L9"
+    ],
+    "primary_model": "both",
+    "mileage_min": null,
+    "mileage_max": null,
+    "season": "all",
+    "systems": [
+      "electronics"
+    ],
+    "layer": "electronics",
+    "symptoms_ru": "Штатный интерфейс — китайский. Навигация — карты Китая. Русификация через Taptotranslate/перепрошивку. OTA 8.0 добавил русский, но не все функции переведены.",
+    "symptoms_en": "Stock interface in Chinese. Navigation uses Chinese maps. Russification via Taptotranslate/reflash. OTA 8.0 added Russian, but not all functions translated.",
+    "dtc_codes": [],
+    "root_cause_ru": "Автомобиль рассчитан на китайский рынок. Русский язык не был предусмотрен изначально.",
+    "root_cause_en": "Vehicle designed for Chinese market. Russian language was not originally planned.",
+    "resolution_ru": "Перепрошивка с русификацией. Taptotranslate. OTA 8.0+.",
+    "resolution_en": "Reflash with Russification. Taptotranslate app. OTA 8.0+.",
+    "repair_cost_rub_min": null,
+    "repair_cost_rub_max": null,
+    "confirming_agents": 3,
+    "source_count": 2,
+    "sources": [
+      "https://habr.com/ru/articles/827524/",
+      "https://elektroman.pro/blog/polnaya_rusifikatsiya_lixiang"
+    ],
+    "is_safety_critical": false,
+    "is_winter_specific": false,
+    "has_official_fix": false,
+    "warranty_extension": null,
+    "content_type": "owner_experience",
+    "source_language": "multi",
+    "tags": [
+      "russification",
+      "localization",
+      "chinese_interface",
+      "navigation",
+      "language"
+    ],
+    "how_found": {
+      "search_queries": [
+        "Li Auto L7 L9 русификация перепрошивка Taptotranslate",
+        "habr.com русификация Lixiang",
+        "elektroman.pro полная русификация Lixiang"
+      ],
+      "platforms": [
+        "habr.com",
+        "elektroman.pro"
+      ],
+      "method": "WebSearch по запросам о русификации. Техническая статья на habr.com о процессе русификации. Сервисная страница elektroman.pro",
+      "selectors_or_api": "habr.com: /ru/articles/827524/ (техническая статья); elektroman.pro: /blog/polnaya_rusifikatsiya_lixiang (сервисная страница)"
+    }
+  },
+  {
+    "id": "issue_m9",
+    "title_ru": "Масло в КПП — течь сальников",
+    "title_en": "Transmission Oil — Seal Leaks",
+    "confidence": "medium",
+    "models": [
+      "L7",
+      "L9"
+    ],
+    "primary_model": "L9",
+    "mileage_min": 4000,
+    "mileage_max": 20000,
+    "season": "all",
+    "systems": [
+      "drivetrain"
+    ],
+    "layer": "drivetrain",
+    "symptoms_ru": "Течь сальника редуктора при пробеге 20,000+ км. Подтекание масла через полуосевой сальник (L7, 4,000 км).",
+    "symptoms_en": "Reducer seal leak at 20,000+ km. Oil seepage through half-shaft seal (L7, 4,000 km).",
+    "dtc_codes": [],
+    "root_cause_ru": "Дефектные сальники редуктора и полуосей.",
+    "root_cause_en": "Defective reducer and half-shaft seals.",
+    "resolution_ru": "Замена сальников.",
+    "resolution_en": "Seal replacement.",
+    "repair_cost_rub_min": null,
+    "repair_cost_rub_max": null,
+    "confirming_agents": 2,
+    "source_count": 2,
+    "sources": [
+      "https://getcar.ru/blog/polomki-lixiang-l9-rossiya/",
+      "https://chejiahao.autohome.com.cn/info/12904378"
+    ],
+    "is_safety_critical": false,
+    "is_winter_specific": false,
+    "has_official_fix": false,
+    "warranty_extension": null,
+    "content_type": "owner_experience",
+    "source_language": "multi",
+    "tags": [
+      "transmission",
+      "seal_leak",
+      "reducer",
+      "oil_leak",
+      "half_shaft"
+    ],
+    "how_found": {
+      "search_queries": [
+        "getcar.ru поломки LiXiang L9 Россия",
+        "Li Auto L9 gearbox oil seal repair cost transmission problem",
+        "autohome 理想L9 减速器 漏油"
+      ],
+      "platforms": [
+        "getcar.ru",
+        "chejiahao.autohome.com.cn"
+      ],
+      "method": "WebSearch по запросам о трансмиссии. Статья getcar.ru о поломках L9 в России. Китайский форум autohome (chejiahao) — статья о течи сальника",
+      "selectors_or_api": "getcar.ru: /blog/polomki-lixiang-l9-rossiya/ (статья); chejiahao.autohome.com.cn: /info/ (форумная статья)"
+    }
+  },
+  {
+    "id": "issue_m10",
+    "title_ru": "AB-стойки кузова — перелом при столкновении",
+    "title_en": "A/B-Pillars — Fracture in Collisions",
+    "confidence": "medium",
+    "models": [
+      "L7",
+      "L8",
+      "L9"
+    ],
+    "primary_model": "L7",
+    "mileage_min": null,
+    "mileage_max": null,
+    "season": "all",
+    "systems": [
+      "body"
+    ],
+    "layer": "body",
+    "symptoms_ru": "В реальных ДТП (96-178 км/ч) A и B стойки ломаются. В C-NCAP — 5 звёзд (но тест на 50-64 км/ч).",
+    "symptoms_en": "In real accidents (96-178 km/h) A and B pillars fracture. C-NCAP awarded 5 stars (but tests at 50-64 km/h).",
+    "dtc_codes": [],
+    "root_cause_ru": "Стандартные краш-тесты проводятся на 50-64 км/ч. Реальные аварии на 96-178 км/ч выходят за рамки сертификации.",
+    "root_cause_en": "Standard crash tests conducted at 50-64 km/h. Real accidents at 96-178 km/h exceed certification scope.",
+    "resolution_ru": "Нет решения. Структурный вопрос конструкции кузова.",
+    "resolution_en": "No fix available. Structural body design issue.",
+    "repair_cost_rub_min": null,
+    "repair_cost_rub_max": null,
+    "confirming_agents": 3,
+    "source_count": 2,
+    "sources": [
+      "https://www.163.com/dy/article/IT0C4ROF05279C7K.html",
+      "https://zhuanlan.zhihu.com/p/673705799"
+    ],
+    "is_safety_critical": true,
+    "is_winter_specific": false,
+    "has_official_fix": false,
+    "warranty_extension": null,
+    "content_type": "owner_experience",
+    "source_language": "multi",
+    "tags": [
+      "a_pillar",
+      "b_pillar",
+      "crash_safety",
+      "structural_integrity",
+      "collision"
+    ],
+    "how_found": {
+      "search_queries": [
+        "理想汽车 315 投诉 AB柱 断裂 制动失灵",
+        "Li Auto L7 L8 A-pillar B-pillar fracture crash",
+        "理想L7 AB柱 碰撞 断裂 安全 质疑"
+      ],
+      "platforms": [
+        "163.com",
+        "zhihu.com",
+        "xcar.com.cn",
+        "ifeng.com",
+        "chinaautonews.com.cn"
+      ],
+      "method": "WebSearch по китайским запросам о структурной безопасности. Расследования к Дню прав потребителей (315) на китайских медиа. Аналитика на Zhihu. Автомобильные порталы (爱卡, 凤凰网, OFweek)",
+      "selectors_or_api": "163.com: /dy/article/ (новость); zhihu.com: /p/ (аналитическая статья); xcar.com.cn: /item/ (статья); ifeng.com: /c/ (новость)"
+    }
+  },
+  {
+    "id": "issue_m11",
+    "title_ru": "Задний редуктор — обрыв болта на трассе",
+    "title_en": "Rear Reducer — Bolt Fracture on Highway",
+    "confidence": "medium",
+    "models": [
+      "L9"
+    ],
+    "primary_model": "L9",
+    "mileage_min": 2575,
+    "mileage_max": 2575,
+    "season": "all",
+    "systems": [
+      "drivetrain"
+    ],
+    "layer": "drivetrain",
+    "symptoms_ru": "Внезапная вибрация и остановка на трассе. Болт редуктора сломался, масло вытекло. Единичный случай на 2,575 км.",
+    "symptoms_en": "Sudden vibration and highway stop. Reducer bolt fractured, oil leaked. Single case at 2,575 km.",
+    "dtc_codes": [],
+    "root_cause_ru": "Дефектный болт крепления заднего редуктора.",
+    "root_cause_en": "Defective rear reducer mounting bolt.",
+    "resolution_ru": "Замена редуктора.",
+    "resolution_en": "Reducer replacement.",
+    "repair_cost_rub_min": null,
+    "repair_cost_rub_max": null,
+    "confirming_agents": 2,
+    "source_count": 1,
+    "sources": [
+      "https://auto.rednet.cn/content/646842/99/14165398.html"
+    ],
+    "is_safety_critical": true,
+    "is_winter_specific": false,
+    "has_official_fix": false,
+    "warranty_extension": null,
+    "content_type": "owner_experience",
+    "source_language": "multi",
+    "tags": [
+      "rear_reducer",
+      "bolt_fracture",
+      "drivetrain",
+      "highway",
+      "immobilization"
+    ],
+    "how_found": {
+      "search_queries": [
+        "理想L9 后减速器 螺栓 断裂 高速 熄火 事故 2024",
+        "Li Auto L9 rear reducer bolt fracture highway"
+      ],
+      "platforms": [
+        "auto.rednet.cn",
+        "icswb.com",
+        "chejiahao.autohome.com.cn"
+      ],
+      "method": "WebSearch по китайским запросам о заднем редукторе. Региональные СМИ (红车网, 长沙晚报). Форум autohome (chejiahao) с описанием инцидента",
+      "selectors_or_api": "auto.rednet.cn: /content/ (статья); icswb.com: /h/ (новость 长沙晚报); chejiahao.autohome.com.cn: /info/ (статья)"
+    }
+  },
+  {
+    "id": "issue_m12",
+    "title_ru": "Рулевая рейка — люфт",
+    "title_en": "Steering Rack — Play/Slack",
+    "confidence": "medium",
+    "models": [
+      "L7",
+      "L9"
+    ],
+    "primary_model": "both",
+    "mileage_min": null,
+    "mileage_max": null,
+    "season": "all",
+    "systems": [
+      "suspension"
+    ],
+    "layer": "suspension",
+    "symptoms_ru": "Люфт/стук при повороте руля. Единичные случаи.",
+    "symptoms_en": "Play/knocking when turning the steering wheel. Isolated cases.",
+    "dtc_codes": [],
+    "root_cause_ru": "Износ или дефект рулевой рейки.",
+    "root_cause_en": "Steering rack wear or defect.",
+    "resolution_ru": "Замена или регулировка рулевой рейки.",
+    "resolution_en": "Steering rack replacement or adjustment.",
+    "repair_cost_rub_min": null,
+    "repair_cost_rub_max": null,
+    "confirming_agents": 3,
+    "source_count": 1,
+    "sources": [
+      "https://faq.liautorussia.ru/known-problems"
+    ],
+    "is_safety_critical": false,
+    "is_winter_specific": false,
+    "has_official_fix": false,
+    "warranty_extension": null,
+    "content_type": "owner_experience",
+    "source_language": "multi",
+    "tags": [
+      "steering_rack",
+      "play",
+      "knocking",
+      "steering"
+    ],
+    "how_found": {
+      "search_queries": [
+        "faq.liautorussia.ru известные проблемы",
+        "Li Auto L7 L9 рулевая рейка люфт стук"
+      ],
+      "platforms": [
+        "faq.liautorussia.ru"
+      ],
+      "method": "WebSearch по FAQ клуба владельцев. Раздел «Известные проблемы» на faq.liautorussia.ru",
+      "selectors_or_api": "faq.liautorussia.ru: /known-problems (страница известных проблем)"
+    }
+  },
+  {
+    "id": "issue_m13",
+    "title_ru": "Формальдегид в салоне",
+    "title_en": "Formaldehyde Off-Gassing in Cabin",
+    "confidence": "medium",
+    "models": [
+      "L7",
+      "L9"
+    ],
+    "primary_model": "L7",
+    "mileage_min": null,
+    "mileage_max": null,
+    "season": "summer",
+    "systems": [
+      "interior"
+    ],
+    "layer": "interior",
+    "symptoms_ru": "Головные боли от испарений интерьерных материалов, особенно в жару. Celanese и Li Auto совместно разрабатывают материалы с 90% меньшим выбросом.",
+    "symptoms_en": "Headaches from interior material off-gassing, especially in heat. Celanese and Li Auto jointly developing materials with 90% less emissions.",
+    "dtc_codes": [],
+    "root_cause_ru": "Интерьерные материалы выделяют формальдегид при нагреве.",
+    "root_cause_en": "Interior materials release formaldehyde when heated.",
+    "resolution_ru": "Проветривание. Ожидание улучшенных материалов от Celanese/Li Auto.",
+    "resolution_en": "Ventilation. Awaiting improved materials from Celanese/Li Auto partnership.",
+    "repair_cost_rub_min": null,
+    "repair_cost_rub_max": null,
+    "confirming_agents": 3,
+    "source_count": 2,
+    "sources": [
+      "https://autoplt.ru/vse-minusy-v-otzyvah-vladelczev-lixiang-l7/",
+      "https://www.businesswire.com/news/home/20250429090991/en/"
+    ],
+    "is_safety_critical": false,
+    "is_winter_specific": false,
+    "has_official_fix": false,
+    "warranty_extension": null,
+    "content_type": "owner_experience",
+    "source_language": "multi",
+    "tags": [
+      "formaldehyde",
+      "off_gassing",
+      "interior",
+      "health",
+      "voc",
+      "celanese"
+    ],
+    "how_found": {
+      "search_queries": [
+        "autoplt.ru минусы отзывы владельцев Lixiang L7",
+        "Li Auto formaldehyde interior off-gassing",
+        "Celanese Li Auto interior materials VOC"
+      ],
+      "platforms": [
+        "autoplt.ru",
+        "businesswire.com"
+      ],
+      "method": "WebSearch по запросам о качестве салона. Агрегатор отзывов autoplt.ru (минусы L7). Пресс-релиз Celanese (BusinessWire) о партнёрстве с Li Auto по снижению выбросов",
+      "selectors_or_api": "autoplt.ru: /vse-minusy-v-otzyvah-vladelczev-lixiang-l7/ (агрегация отзывов); businesswire.com: /news/ (пресс-релиз)"
+    }
+  },
+  {
+    "id": "issue_m14",
+    "title_ru": "Вздутие обивки сидений",
+    "title_en": "Seat Upholstery Bulging",
+    "confidence": "medium",
+    "models": [
+      "L7",
+      "L8",
+      "L9"
+    ],
+    "primary_model": "both",
+    "mileage_min": null,
+    "mileage_max": null,
+    "season": "all",
+    "systems": [
+      "interior"
+    ],
+    "layer": "interior",
+    "symptoms_ru": "Видимое вздутие обивки через несколько дней/недель. Сервис отказывает в гарантии: «нормальное явление».",
+    "symptoms_en": "Visible upholstery bulging within days/weeks. Service refuses warranty: 'normal phenomenon'.",
+    "dtc_codes": [],
+    "root_cause_ru": "Дефект крепления или материала обивки сидений.",
+    "root_cause_en": "Seat upholstery attachment or material defect.",
+    "resolution_ru": "Претензия через 12365auto.com. Перетяжка.",
+    "resolution_en": "Complaint via 12365auto.com. Re-upholstery.",
+    "repair_cost_rub_min": null,
+    "repair_cost_rub_max": null,
+    "confirming_agents": 1,
+    "source_count": 1,
+    "sources": [
+      "https://m.12365auto.com/zlts/20230531/930487.shtml"
+    ],
+    "is_safety_critical": false,
+    "is_winter_specific": false,
+    "has_official_fix": false,
+    "warranty_extension": null,
+    "content_type": "owner_experience",
+    "source_language": "multi",
+    "tags": [
+      "seat",
+      "upholstery",
+      "bulging",
+      "interior",
+      "warranty_refusal"
+    ],
+    "how_found": {
+      "search_queries": [
+        "理想L9 座椅 鼓包 起泡 投诉",
+        "12365auto.com 理想汽车 座椅 质量"
+      ],
+      "platforms": [
+        "12365auto.com"
+      ],
+      "method": "WebSearch по жалобам на 车质网 (12365auto.com). Поиск по модели и ключевому слову «座椅» (сиденья) на платформе жалоб",
+      "selectors_or_api": "12365auto.com: /zlts/ (страница жалобы по номеру)"
+    }
+  },
+  {
+    "id": "issue_l1",
+    "title_ru": "Отслоение шумоизоляции шин",
+    "title_en": "Tire Noise-Dampening Foam Delamination",
+    "confidence": "low",
+    "models": [
+      "L7",
+      "L8",
+      "L9"
+    ],
+    "primary_model": "both",
+    "mileage_min": null,
+    "mileage_max": null,
+    "season": "all",
+    "systems": [
+      "wheels"
+    ],
+    "layer": "wheels",
+    "symptoms_ru": "Шумоизоляционная пена внутри шин Michelin отслаивается — вибрация, обмотка вокруг обода.",
+    "symptoms_en": "Michelin tire inner noise-dampening foam delaminates — vibration, wrapping around rim.",
+    "dtc_codes": [],
+    "root_cause_ru": "Дефект адгезии шумоизоляционной пены в шинах Michelin (2023 выпуск).",
+    "root_cause_en": "Adhesion defect of noise-dampening foam in Michelin tires (2023 production).",
+    "resolution_ru": "Замена шин. Претензия к Michelin.",
+    "resolution_en": "Tire replacement. Claim to Michelin.",
+    "repair_cost_rub_min": null,
+    "repair_cost_rub_max": null,
+    "confirming_agents": 1,
+    "source_count": 1,
+    "sources": [
+      "https://tousu.sina.com.cn/complaint/view/17381388158"
+    ],
+    "is_safety_critical": false,
+    "is_winter_specific": false,
+    "has_official_fix": false,
+    "warranty_extension": null,
+    "content_type": "owner_experience",
+    "source_language": "multi",
+    "tags": [
+      "tires",
+      "michelin",
+      "foam",
+      "delamination",
+      "vibration"
+    ],
+    "how_found": {
+      "search_queries": [
+        "理想L9 轮胎 静音棉 脱落 米其林",
+        "tousu.sina.com.cn 理想 轮胎 静音棉"
+      ],
+      "platforms": [
+        "tousu.sina.com.cn"
+      ],
+      "method": "WebSearch по жалобам на Sina Consumer Platform (新浪投诉). Поиск по ключевым словам «理想 轮胎 静音棉» (шумоизоляция шин)",
+      "selectors_or_api": "tousu.sina.com.cn: /complaint/view/ (страница жалобы)"
+    }
+  },
+  {
+    "id": "issue_l2",
+    "title_ru": "Самовозгорание L9",
+    "title_en": "L9 Spontaneous Combustion",
+    "confidence": "low",
+    "models": [
+      "L9"
+    ],
+    "primary_model": "L9",
+    "mileage_min": null,
+    "mileage_max": null,
+    "season": "all",
+    "systems": [
+      "battery",
+      "electronics"
+    ],
+    "layer": "battery",
+    "symptoms_ru": "Единичный случай самовозгорания L9 (январь 2023, Цзинань, Китай).",
+    "symptoms_en": "Single case of L9 spontaneous combustion (January 2023, Jinan, China).",
+    "dtc_codes": [],
+    "root_cause_ru": "Причина не установлена публично. Единичный инцидент.",
+    "root_cause_en": "Cause not publicly determined. Isolated incident.",
+    "resolution_ru": "Нет общего решения. Расследование не опубликовано.",
+    "resolution_en": "No general fix. Investigation results not published.",
+    "repair_cost_rub_min": null,
+    "repair_cost_rub_max": null,
+    "confirming_agents": 1,
+    "source_count": 1,
+    "sources": [
+      "https://www.thepaper.cn/newsDetail_forward_21743185"
+    ],
+    "is_safety_critical": true,
+    "is_winter_specific": false,
+    "has_official_fix": false,
+    "warranty_extension": null,
+    "content_type": "owner_experience",
+    "source_language": "multi",
+    "tags": [
+      "fire",
+      "spontaneous_combustion",
+      "battery",
+      "safety"
+    ],
+    "how_found": {
+      "search_queries": [
+        "理想L9 自燃 起火 济南 2023",
+        "Li Auto L9 spontaneous combustion fire China"
+      ],
+      "platforms": [
+        "thepaper.cn"
+      ],
+      "method": "WebSearch по китайским запросам о самовозгорании. Новостная статья 澎湃新闻 (thepaper.cn) о единичном инциденте в Цзинане",
+      "selectors_or_api": "thepaper.cn: /newsDetail_forward/ (новость)"
+    }
+  },
+  {
+    "id": "issue_l3",
+    "title_ru": "Кондиционер — отказ компрессора летом",
+    "title_en": "AC Compressor Failure in Summer",
+    "confidence": "low",
+    "models": [
+      "L7",
+      "L9"
+    ],
+    "primary_model": "both",
+    "mileage_min": null,
+    "mileage_max": null,
+    "season": "summer",
+    "systems": [
+      "hvac"
+    ],
+    "layer": "hvac",
+    "symptoms_ru": "Отказ компрессора кондиционера в летний период.",
+    "symptoms_en": "AC compressor failure during summer.",
+    "dtc_codes": [],
+    "root_cause_ru": "Дефект компрессора кондиционера. Недостаточно данных для определения системной причины.",
+    "root_cause_en": "AC compressor defect. Insufficient data to determine systemic cause.",
+    "resolution_ru": "Замена компрессора кондиционера.",
+    "resolution_en": "AC compressor replacement.",
+    "repair_cost_rub_min": null,
+    "repair_cost_rub_max": null,
+    "confirming_agents": 1,
+    "source_count": 1,
+    "sources": [
+      "https://kz.kursiv.media/2025-06-09/kmlz-li-auto-problems/"
+    ],
+    "is_safety_critical": false,
+    "is_winter_specific": false,
+    "has_official_fix": false,
+    "warranty_extension": null,
+    "content_type": "owner_experience",
+    "source_language": "multi",
+    "tags": [
+      "ac",
+      "compressor",
+      "hvac",
+      "summer",
+      "cooling"
+    ],
+    "how_found": {
+      "search_queries": [
+        "kursiv.media поломки LiXiang",
+        "Li Auto L7 L9 AC compressor failure summer"
+      ],
+      "platforms": [
+        "kursiv.media"
+      ],
+      "method": "WebSearch по аналитическим статьям kursiv.media о поломках LiXiang. Упоминание отказа компрессора кондиционера в списке проблем",
+      "selectors_or_api": "kursiv.media: /kmlz-li-auto-problems/ (статья о поломках)"
+    }
+  },
+  {
+    "id": "issue_l4",
+    "title_ru": "Батарея CATL vs Sunwoda — контроверсия поставщиков",
+    "title_en": "CATL vs Sunwoda Battery — Supplier Controversy",
+    "confidence": "low",
+    "models": [
+      "L7",
+      "L9"
+    ],
+    "primary_model": "both",
+    "mileage_min": null,
+    "mileage_max": null,
+    "season": "all",
+    "systems": [
+      "battery"
+    ],
+    "layer": "battery",
+    "symptoms_ru": "Контроверсия по поставщикам батарей: CATL vs Sunwoda. Задокументировано для i6, имеет импликации для L7/L9.",
+    "symptoms_en": "Battery supplier controversy: CATL vs Sunwoda. Documented for i6, has implications for L7/L9.",
+    "dtc_codes": [],
+    "root_cause_ru": "Разные поставщики батарей с разным уровнем качества и характеристиками.",
+    "root_cause_en": "Different battery suppliers with varying quality levels and specifications.",
+    "resolution_ru": "Проверка поставщика батареи при покупке.",
+    "resolution_en": "Verify battery supplier when purchasing.",
+    "repair_cost_rub_min": null,
+    "repair_cost_rub_max": null,
+    "confirming_agents": 2,
+    "source_count": 1,
+    "sources": [
+      "https://cnevpost.com/2026/01/29/li-auto-still-grapples-with-battery-supply-constraints-i6-suv/"
+    ],
+    "is_safety_critical": false,
+    "is_winter_specific": false,
+    "has_official_fix": false,
+    "warranty_extension": null,
+    "content_type": "owner_experience",
+    "source_language": "multi",
+    "tags": [
+      "battery",
+      "catl",
+      "sunwoda",
+      "supplier",
+      "quality"
+    ],
+    "how_found": {
+      "search_queries": [
+        "Li Auto i6 battery CATL Sunwoda controversy discriminatory supply",
+        "Li Auto battery supplier quality Sunwoda Geely lawsuit",
+        "理想汽车 电池 供应商 宁德时代 欣旺达"
+      ],
+      "platforms": [
+        "cnevpost.com",
+        "36kr.com",
+        "carnewschina.com"
+      ],
+      "method": "WebSearch по английским и китайским запросам о поставщиках батарей. Статьи cnevpost.com и 36Kr о контроверсии с i6. Статья CarNewsChina о судебном иске Geely к Sunwoda",
+      "selectors_or_api": "cnevpost.com: новостная статья; 36kr.com: /en/p/ (аналитика); carnewschina.com: новостная статья"
+    }
+  },
+  {
+    "id": "issue_l5",
+    "title_ru": "Электрическая система питания — каскадный отказ (L7)",
+    "title_en": "Electrical Power System — Cascading Failure (L7)",
+    "confidence": "low",
+    "models": [
+      "L7"
+    ],
+    "primary_model": "L7",
+    "mileage_min": null,
+    "mileage_max": null,
+    "season": "all",
+    "systems": [
+      "electronics",
+      "battery"
+    ],
+    "layer": "electronics",
+    "symptoms_ru": "После зарядки — отказ системы питания, срабатывание подушек безопасности, необходимость эвакуатора. Первые партии L7.",
+    "symptoms_en": "After charging — power system failure, airbag deployment, tow truck required. Early L7 batches.",
+    "dtc_codes": [],
+    "root_cause_ru": "Дефект электрической системы питания в первых партиях L7.",
+    "root_cause_en": "Electrical power system defect in early L7 production batches.",
+    "resolution_ru": "Диагностика и ремонт в сервисном центре.",
+    "resolution_en": "Diagnosis and repair at service center.",
+    "repair_cost_rub_min": null,
+    "repair_cost_rub_max": null,
+    "confirming_agents": 1,
+    "source_count": 1,
+    "sources": [
+      "https://315online.com"
+    ],
+    "is_safety_critical": true,
+    "is_winter_specific": false,
+    "has_official_fix": false,
+    "warranty_extension": null,
+    "content_type": "owner_experience",
+    "source_language": "multi",
+    "tags": [
+      "electrical",
+      "power_system",
+      "airbag",
+      "cascading_failure",
+      "charging"
+    ],
+    "how_found": {
+      "search_queries": [
+        "理想L7 Ultra 空调 空气悬架 后驱 三个月 三次故障",
+        "315online.com 理想汽车 L7 质量"
+      ],
+      "platforms": [
+        "315online.com"
+      ],
+      "method": "WebSearch по жалобам на 中国质量万里行 (315online.com). Поиск историй о каскадных отказах L7 Ultra в первые месяцы",
+      "selectors_or_api": "315online.com: жалобная платформа потребителей"
+    }
+  },
+  {
+    "id": "issue_l6",
+    "title_ru": "Мягкая рулёжка / крены кузова",
+    "title_en": "Soft Steering / Body Roll",
+    "confidence": "low",
+    "models": [
+      "L7"
+    ],
+    "primary_model": "L7",
+    "mileage_min": 0,
+    "mileage_max": null,
+    "season": "all",
+    "systems": [
+      "suspension"
+    ],
+    "layer": "suspension",
+    "symptoms_ru": "Вялый руль, большие крены. Рассчитан на комфорт, не спорт. 2025 — двухкамерная пневмоподвеска (жёсткость +30%, крен -20%).",
+    "symptoms_en": "Vague steering, significant body roll. Tuned for comfort, not sport. 2025 — dual-chamber air suspension (stiffness +30%, roll -20%).",
+    "dtc_codes": [],
+    "root_cause_ru": "Настройка подвески ориентирована на комфорт, а не на спортивность. Масса 2.5+ тонн.",
+    "root_cause_en": "Suspension tuned for comfort over sportiness. Vehicle weight 2.5+ tons.",
+    "resolution_ru": "2025 модель с двухкамерной пневмоподвеской. Тюнинг подвески.",
+    "resolution_en": "2025 model with dual-chamber air suspension. Aftermarket suspension tuning.",
+    "repair_cost_rub_min": null,
+    "repair_cost_rub_max": null,
+    "confirming_agents": 1,
+    "source_count": 1,
+    "sources": [
+      "https://bada-car.com/li-l7-one-year-driving-experience-not-bragging-including-advantages-and-disadvantages/"
+    ],
+    "is_safety_critical": false,
+    "is_winter_specific": false,
+    "has_official_fix": true,
+    "warranty_extension": null,
+    "content_type": "owner_experience",
+    "source_language": "multi",
+    "tags": [
+      "steering",
+      "body_roll",
+      "comfort",
+      "suspension_tuning",
+      "handling"
+    ],
+    "how_found": {
+      "search_queries": [
+        "Li Auto L7 steering soft body roll handling complaint review",
+        "Li Auto L7 one year driving experience advantages disadvantages",
+        "Li Auto L7 suspension tuning comfort vs sport"
+      ],
+      "platforms": [
+        "bada-car.com",
+        "jinyuautos.com"
+      ],
+      "method": "WebSearch по англоязычным обзорам. Обзор bada-car.com (год владения L7) с описанием мягкого руля и кренов. Аналитика jinyuautos.com",
+      "selectors_or_api": "bada-car.com: обзор владельца L7 за год; jinyuautos.com: /blog/ (аналитическая статья)"
+    }
+  }
+]

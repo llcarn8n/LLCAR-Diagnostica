@@ -25,11 +25,19 @@ SEARCH_QUERIES = [
     "https://www.autonews.ru/search?query=li+l7",
     "https://www.autonews.ru/search?query=lixiang+проблемы",
     "https://www.autonews.ru/search?query=lixiang+обслуживание",
+    # Research-informed: specific problem areas
+    "https://www.autonews.ru/search?query=lixiang+пневмоподвеска",
+    "https://www.autonews.ru/search?query=lixiang+зимой",
+    "https://www.autonews.ru/search?query=lixiang+регистрация+ГИБДД",
+    "https://www.autonews.ru/search?query=lixiang+запчасти",
+    "https://www.autonews.ru/search?query=lixiang+отзыв+владельцев",
 ]
 
-# Known valuable article
+# Known valuable articles from research
 DIRECT_URLS = [
-    "https://www.autonews.ru/news/683eae5d9a7947cdb92ef1cd",
+    "https://www.autonews.ru/news/683eae5d9a7947cdb92ef1cd",  # 15 проблем кроссоверов Lixiang
+    "https://www.autonews.ru/news/65c477e09a79475ce3d10e47",  # дилерская сеть
+    "https://www.autonews.ru/news/69983ab49a79474a4af55341",  # ГИБДД отказы
 ]
 
 

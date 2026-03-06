@@ -23,8 +23,9 @@ from typing import Iterator
 log = logging.getLogger(__name__)
 
 # Starting points — model experience pages + known valuable threads
+# Research-informed: added specific repair logs found by 6 research agents
 SEED_URLS = [
-    # L7 experience logs (общая страница)
+    # L7 experience logs
     ("https://www.drive2.ru/experience/liauto/g657426865501256680", "Li L7 бортжурналы"),
     # L9 experience logs
     ("https://www.drive2.ru/experience/liauto/g657427415257062407", "Li L9 бортжурналы"),
@@ -38,6 +39,19 @@ SEED_URLS = [
     ("https://www.drive2.ru/r/liauto/l7/663933225558607229/logbook/", "Li L7 бортжурнал"),
     ("https://www.drive2.ru/r/liauto/l7/669696865511418474/logbook/", "Li L7 2024"),
     ("https://www.drive2.ru/r/liauto/l9/659259476506856329/logbook/", "Li L9 LiXOЙ"),
+    # Research-discovered high-value repair logs:
+    ("https://www.drive2.ru/l/700705017560044478/", "Ремонт пневмоподвески L7/L9"),
+    ("https://www.drive2.ru/l/697330341496494867/", "Решаем проблемы с пневмоподвеской"),
+    ("https://www.drive2.ru/l/688364373927796623/", "Ошибка пневмоподвески Li 7"),
+    ("https://www.drive2.ru/l/681493250887921808/", "Вскрытие двигателя L9 — масложор"),
+    ("https://www.drive2.ru/l/674845603586396382/", "Положили мотор на L9"),
+    ("https://www.drive2.ru/l/717411272110386402/", "Почему двигатель выходит из строя"),
+    ("https://www.drive2.ru/l/714032747756141707/", "OTA 7.4 проблемы прошивки"),
+    ("https://www.drive2.ru/l/706362004884950860/", "Мультимедиа зависания"),
+    ("https://www.drive2.ru/l/679038866056810905/", "Тормоза — визг и износ"),
+    ("https://www.drive2.ru/l/688693127904509635/", "ZF суппорты проблемы"),
+    ("https://www.drive2.ru/l/694649732147982468/", "Зимняя эксплуатация — все проблемы"),
+    ("https://www.drive2.ru/l/720585012423953978/", "OTA обновления — блокировка"),
 ]
 
 

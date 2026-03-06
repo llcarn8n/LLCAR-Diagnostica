@@ -87,6 +87,30 @@ def run_scraper(name: str) -> int:
     elif name == "autonews":
         from autonews_scraper import AutonewsScraper
         return AutonewsScraper(DB_PATH).run()
+    elif name == "faq_liautorussia":
+        from faq_liautorussia_scraper import FaqLiAutoRussiaScraper
+        return FaqLiAutoRussiaScraper(DB_PATH).run()
+    elif name == "kursiv_media":
+        from kursiv_media_scraper import KursivMediaScraper
+        return KursivMediaScraper(DB_PATH).run()
+    elif name == "cnevpost":
+        from cnevpost_scraper import CnevpostScraper
+        return CnevpostScraper(DB_PATH).run()
+    elif name == "lixiang_sto":
+        from lixiang_sto_scraper import LixiangStoScraper
+        return LixiangStoScraper(DB_PATH).run()
+    elif name == "110km":
+        from autoplt_scraper import AutopltScraper  # note: 110km uses same pattern
+        # Actually use dedicated scraper
+        from importlib import import_module
+        mod = import_module("110km_scraper")
+        return mod.Scraper110km(DB_PATH).run()
+    elif name == "autoplt":
+        from autoplt_scraper import AutopltScraper
+        return AutopltScraper(DB_PATH).run()
+    elif name == "12365auto":
+        from complaints_12365auto_scraper import Complaints12365AutoScraper
+        return Complaints12365AutoScraper(DB_PATH).run()
     else:
         log.error("Unknown scraper: %s", name)
         return 0
@@ -117,6 +141,8 @@ def main() -> None:
         "drive2", "liforum", "dongchedi", "carnewschina",
         "wikipedia", "electrek", "ru_auto", "autoreview", "news",
         "getcar", "autochina_blog", "ev_forums", "autonews",
+        "faq_liautorussia", "kursiv_media", "cnevpost", "lixiang_sto",
+        "110km", "autoplt", "12365auto",
     ]
     parser.add_argument(
         "--sources", nargs="+",

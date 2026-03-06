@@ -38,16 +38,24 @@ REVIEW_LISTING_PAGES = [
 ]
 
 # "5 копеек" problem pages — structured breakdowns
+# Research-informed: these are the most valuable pages for owner problems
 PROBLEM_PAGES = [
     # All problems
     ("https://www.drom.ru/reviews/li/l7/5kopeek/", "ru", "Li L7 все проблемы"),
     ("https://www.drom.ru/reviews/li/l9/5kopeek/", "ru", "Li L9 все проблемы"),
-    # Breakdowns only
+    ("https://www.drom.ru/reviews/li/l6/5kopeek/", "ru", "Li L6 все проблемы"),
+    ("https://www.drom.ru/reviews/li/l8/5kopeek/", "ru", "Li L8 все проблемы"),
+    # Breakdowns only (пневмоподвеска, тормоза, ДВС — top issues from research)
     ("https://www.drom.ru/reviews/li/l7/5kopeek/?only=breakagies", "ru", "Li L7 поломки"),
     ("https://www.drom.ru/reviews/li/l9/5kopeek/?only=breakagies", "ru", "Li L9 поломки"),
+    ("https://www.drom.ru/reviews/li/l6/5kopeek/?only=breakagies", "ru", "Li L6 поломки"),
+    ("https://www.drom.ru/reviews/li/l8/5kopeek/?only=breakagies", "ru", "Li L8 поломки"),
     # Service/maintenance
     ("https://www.drom.ru/reviews/li/l7/5kopeek/?only=to", "ru", "Li L7 ТО"),
     ("https://www.drom.ru/reviews/li/l9/5kopeek/?only=to", "ru", "Li L9 ТО"),
+    # Paginated (more pages for L7 which has 154+ reviews)
+    ("https://www.drom.ru/reviews/li/l7/5kopeek/page2/", "ru", "Li L7 проблемы стр.2"),
+    ("https://www.drom.ru/reviews/li/l9/5kopeek/page2/", "ru", "Li L9 проблемы стр.2"),
     # L6, L8
     ("https://www.drom.ru/reviews/li/l6/5kopeek/", "ru", "Li L6 проблемы"),
     ("https://www.drom.ru/reviews/li/l8/5kopeek/", "ru", "Li L8 проблемы"),

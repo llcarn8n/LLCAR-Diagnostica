@@ -25,10 +25,20 @@ SEED_URLS = [
     "https://getcar.ru/blog/polomki-lixiang-l9-rossiya/",
     "https://getcar.ru/blog/problemy-pnevmopodveski-lixiang-l9/",
     "https://getcar.ru/blog/komfort-nedostatki-lixiang-l9/",
+    # Research-informed: additional articles found
+    "https://getcar.ru/blog/obsluzhivanie-lixiang-l9-rossiya/",
+    "https://getcar.ru/blog/lixiang-l9-ne-edet/",
+    "https://getcar.ru/blog/shum-lixiang-l9-prichiny/",
+    "https://getcar.ru/blog/problemy-lixiang-l9-2024/",
+    "https://getcar.ru/en/blog/nadyozhnost-lixiang-l9-ekspluatacziya/",
+    # Search queries
     "https://getcar.ru/blog/?s=lixiang",
     "https://getcar.ru/blog/?s=li+auto",
     "https://getcar.ru/blog/?s=li+l9",
     "https://getcar.ru/blog/?s=li+l7",
+    "https://getcar.ru/blog/?s=lixiang+пневмоподвеска",
+    "https://getcar.ru/blog/?s=lixiang+тормоза",
+    "https://getcar.ru/blog/?s=lixiang+двигатель",
 ]
 
 
