@@ -345,7 +345,7 @@ Base model: `utrobinmv/m2m_translate_en_ru_zh_large_4096`
 - [x] SQLite KB: 11,097 chunks from Li L7/L9 manuals (ZH OCR via MinerU, after cleanup)
 - [x] LanceDB: content_emb + title_emb (pplx-embed-context-v1-4b, 2560d) + image_emb (CLIP)
 - [x] ColBERT vectors: BGE-M3 token vectors for all chunks
-- [x] Translations: ZH->RU/EN/AR/ES for all chunks (33,161 rows in chunk_content)
+- [x] Translations: ZH->RU/EN/AR/ES for all chunks (~47,500+ rows in chunk_content after restructure)
 - [x] Image captioning: 7,109 images captioned with Qwen2.5-VL-7B
 - [x] Fine-tuning Round 6: BLEU=13.39 (best), pushed to `Petr117/m2m-diagnostica-automotive`
 - [x] Training data: 20,900 pairs pushed to `Petr117/diagnostica-training-pairs`
@@ -553,7 +553,79 @@ Key technical decisions:
 | Re-OCR R2 | Retry zero-OCR, max_side=768 | +31 → 2,564 |
 | Rendered pages | 25 missing PDF pages via PyMuPDF | +13 → 2,577 |
 
-### Remaining / Phase 2 tasks
+### KB Restructure (2026-03-06) — PLAN-KB-RESTRUCTURE.md
+
+**Phase 1: Cleanup (laptop)**
+- [x] 1.1 chunk_quality side table — tiers 1-5 for all 12,642 chunks (`scripts/build_chunk_quality.py`)
+- [x] 1.2 Search quality boost — quality_tier multiplier in scoring formula (server.py)
+- [x] 1.3 Glossary cleanup — 70,752 → 38,384 links (-46%), noise terms removed (`scripts/clean_glossary_links.py`)
+- [x] 1.4 Parts-chunks bridge — 1,660 parts linked to 910 chunks via 12,351 links (`scripts/build_parts_chunks.py`)
+
+**Phase 2: Article Layer — DONE**
+- [x] 2.1 `articles` + `article_chunks` tables in DB (`scripts/build_articles.py`)
+- [x] 2.2 Semi-auto chunk assignment: 10 articles, 186 chunk links, 164 unique chunks
+- [x] 2.3 API `/articles` + `/article/{slug}` endpoints (server.py)
+- [x] 2.4 Frontend: `_renderSituationsView` loads from API with hardcoded fallback
+  - New `_renderApiArticleDetail(slug)` renders article with sections (steps/warnings/diagnostics/content)
+  - `knowledge-base.js`: `getArticles()`, `getArticle()` methods
+
+**Phase 3: Merge fragments (workstation GPU) — DONE**
+- [x] 3.1 Merge mineru_l7/l9_zh_owners: 5,314 → 770 merged, 2,603 soft-deleted (`scripts/merge_fragments.py`)
+  - Skips generic titles (提示/警告/注意/www.carobook.com) to prevent mixing unrelated topics
+  - Skips single-chunk groups (no merge benefit)
+- [x] 3.2 ColBERT re-encoding: 770 vectors in 52s on RTX 3090 (`scripts/reindex_colbert_st.py`)
+- [x] 3.3 Translation merge: concatenated RU/EN translations from originals for merged chunks
+- [x] 3.4 is_current filter: added to FTS5, LIKE fallback, browse, health, stats in server.py
+- [x] 3.5 M2M translation of remaining 1,289 untranslated chunks (631 RU + 658 EN) — DONE, merged to local
+
+**Current DB stats after restructure:**
+| Metric | Value |
+|--------|-------|
+| Total chunks in DB | 12,642 |
+| Active chunks | 10,039 |
+| Soft-deleted (merged originals) | 2,603 |
+| New merged chunks | 770 |
+| Translations (chunk_content) | 48,210 |
+| RU translations | 12,517 |
+| EN translations | 12,517 |
+| ZH translations | 12,570 |
+| AR translations | 5,303 |
+| ES translations | 5,303 |
+| Glossary links | 38,384 |
+| ColBERT vectors | 12,569 |
+| Parts-chunks links | 12,351 |
+| Quality tiers | 12,642 scored |
+
+**Scripts created:**
+- `scripts/build_chunk_quality.py` — populate chunk_quality table
+- `scripts/clean_glossary_links.py` — remove noise glossary links
+- `scripts/merge_fragments.py` — title-chain merge with generic title protection
+- `scripts/reindex_colbert_st.py` — ColBERT via sentence-transformers (compatible with transformers 5.x)
+- `scripts/build_parts_chunks.py` — parts↔chunks bridge table
+- `scripts/build_articles.py` — build articles + article_chunks from SITUATION_CLUSTERS
+- `scripts/_translate_missing.py` — M2M100 translation of missing chunks
+
+### Smart Cards UI (2026-03-06) — PLAN-KB-SMART-CARDS.md
+
+**Шаг 1: situation_tags** — уже существовала (learning:5976, maintenance:2584, troubleshooting:1976, emergency:1103)
+
+**Шаг 2: Умные карточки (knowledge-v2.js) — DONE**
+- [x] Бейдж типа статьи: 6 типов (⚠ Внимание, 🔍 Диагностика, 🔧 Процедура, 🚧 Предупреждение, 📋 Спецификация, 📖 Справка)
+- [x] Бейдж перевода: ZH→RU (зелёный), fallback язык (жёлтый), непереведённый (серый)
+- [x] Trust label для beginner: текстовый ("Офиц. мануал" / "Мануал (перевод)" / "Веб-источник" / "Отзыв")
+- [x] Trust dots для expert: ●●●○○ с tooltip
+- [x] CSS стили в diagnostica.css: type badges, lang badges, trust label, now-important блок
+
+**Шаг 3: Блок "Сейчас важно" — DONE**
+- [x] Сезонные карточки (зима/лето) с контекстным поисковым запросом
+- [x] DTC из localStorage (если пользователь ранее искал код ошибки)
+- [x] ТО напоминание (если пробег в localStorage и до ТО < 2000 км)
+- [x] Все карточки кликабельны → поиск или DTC-просмотр
+
+**Expert mode (knowledge.js)** — уже имел все Smart Cards элементы, изменений не потребовал
+- `scripts/_run_merge_on_workstation.py` — SSH pipeline for remote execution
+
+### Remaining / Phase 2+ tasks
 - [x] Run `ocr_parts_tables.py` to populate parts table — DONE (2,577 parts)
 - [x] Run `build_parts_bridge.py` to generate parts-bridge.json — DONE
 - [x] Deduplicate parts table (749 dupes removed)
@@ -565,12 +637,8 @@ Key technical decisions:
 - [x] 6 extraction methods with comparison UI (auto, trafilatura, bs4_article, bs4, regex, site-specific)
 - [x] Garbage cleanup: 40 low-relevance articles deleted
 - [ ] Coverage still 60/100 — remaining gaps are OCR-hard tables (small text, merged cells)
-- [ ] Update `server.py` query embedder to use `pplx-embed-v1-4b` directly (currently uses context model as fallback)
-- [ ] COMET-KIWI evaluation on translation cache (`scripts/compare_models.py` exists)
 - [ ] Embed 289 web_scraped articles into LanceDB (run build_embeddings.py)
-- [ ] Translate 289 web_scraped articles (run translate_kb.py)
 - [ ] Expand to more vehicle brands (Phase 2 in PLAN-KB-v4.2.md)
-- [ ] Fine-tuning Round 8+ with expanded training data (24,058 pairs now)
 - [ ] Add Chinese sources via VPN/proxy (autohome, dongchedi)
 - [ ] Add drive2.ru via residential proxy (blocked by IP)
 - [ ] Telegram: get API ID/Hash for more channels, focus on groups (@lixiangautorussia 40K members)

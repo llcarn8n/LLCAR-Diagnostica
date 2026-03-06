@@ -1792,6 +1792,123 @@ a {
   color: var(--text-tertiary);
 }
 
+/* ── Smart Cards: бейджи типа ── */
+.kbv2-type-badge {
+  font-size: 9px;
+  font-weight: 600;
+  padding: 1px 6px;
+  border-radius: 3px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.kbv2-type-badge--emergency {
+  background: rgba(239, 83, 80, 0.15);
+  color: #EF5350;
+}
+.kbv2-type-badge--troubleshoot {
+  background: rgba(255, 167, 38, 0.15);
+  color: #FFA726;
+}
+.kbv2-type-badge--maintenance {
+  background: rgba(66, 165, 245, 0.12);
+  color: #42A5F5;
+}
+.kbv2-type-badge--warning {
+  background: rgba(255, 167, 38, 0.12);
+  color: #FFB74D;
+}
+.kbv2-type-badge--spec {
+  background: rgba(171, 71, 188, 0.12);
+  color: #AB47BC;
+}
+.kbv2-type-badge--learning {
+  background: rgba(139, 148, 158, 0.12);
+  color: var(--text-secondary);
+}
+
+/* ── Smart Cards: бейджи перевода ── */
+.kbv2-lang-badge {
+  font-size: 9px;
+  padding: 1px 4px;
+  border-radius: 3px;
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+.kbv2-lang-badge--raw {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--text-tertiary);
+}
+.kbv2-lang-badge--fallback {
+  background: rgba(255, 200, 0, 0.15);
+  color: #FFA726;
+}
+.kbv2-lang-badge--translated {
+  background: rgba(102, 187, 106, 0.12);
+  color: #66BB6A;
+}
+
+/* ── Smart Cards: trust label (beginner) ── */
+.kbv2-trust-label {
+  font-size: 9px;
+  color: var(--text-tertiary);
+  white-space: nowrap;
+}
+
+/* ── Smart Cards: блок "Сейчас важно" ── */
+.kbv2-now-important {
+  margin-bottom: 16px;
+}
+.kbv2-now-important__title {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--accent-primary);
+  margin-bottom: 8px;
+}
+.kbv2-now-important__cards {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.kbv2-now-card {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-default);
+  border-left: 3px solid var(--accent-primary);
+  border-radius: var(--radius-lg);
+  cursor: pointer;
+  transition: border-color 0.2s;
+}
+.kbv2-now-card:active {
+  transform: scale(0.98);
+}
+.kbv2-now-card--seasonal {
+  border-left-color: #42A5F5;
+}
+.kbv2-now-card--maintenance {
+  border-left-color: #66BB6A;
+}
+.kbv2-now-card__icon {
+  font-size: 22px;
+  flex-shrink: 0;
+}
+.kbv2-now-card__text {
+  flex: 1;
+  min-width: 0;
+}
+.kbv2-now-card__label {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+.kbv2-now-card__hint {
+  font-size: 10px;
+  color: var(--text-tertiary);
+  margin-top: 1px;
+}
+
 /* ── Заголовок ситуации ── */
 .kbv2-situation-header {
   display: flex;

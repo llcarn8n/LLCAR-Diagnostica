@@ -1224,6 +1224,25 @@ async def hybrid_search(req: SearchRequest) -> SearchResponse:
         else:
             final_ranked = [(cid, score) for cid, score in fused]
 
+        # ---- Quality boost: multiply score by quality tier ----
+        _QUALITY_MULT = {1: 0.3, 2: 0.7, 3: 1.0, 4: 1.1, 5: 1.15}
+        try:
+            q_ids = [cid for cid, _ in final_ranked]
+            if q_ids:
+                ph = ",".join("?" * len(q_ids))
+                q_rows = conn.execute(
+                    f"SELECT chunk_id, quality_tier FROM chunk_quality WHERE chunk_id IN ({ph})",
+                    q_ids,
+                ).fetchall()
+                q_map = {r[0]: r[1] for r in q_rows}
+                final_ranked = [
+                    (cid, score * _QUALITY_MULT.get(q_map.get(cid, 3), 1.0))
+                    for cid, score in final_ranked
+                ]
+                final_ranked.sort(key=lambda x: x[1], reverse=True)
+        except Exception:
+            pass  # chunk_quality table may not exist
+
         # Apply pagination
         page = final_ranked[req.offset : req.offset + req.limit]
         page_ids = [cid for cid, _ in page]
@@ -1511,6 +1530,120 @@ async def browse_articles(
             )
 
     return {"total": total, "results": results, "offset": offset}
+
+
+# ===========================================================================
+# Endpoint: GET /articles — list all situational articles
+# ===========================================================================
+
+@app.get("/articles", summary="List all situational articles")
+async def list_articles(
+    category: str | None = None,
+    lang: str = "ru",
+) -> dict:
+    """Return all articles from the articles table."""
+    if not _DB_PATH.exists():
+        raise HTTPException(503, "kb.db not found")
+
+    with get_db_conn() as conn:
+        if category:
+            rows = conn.execute(
+                "SELECT * FROM articles WHERE category = ? ORDER BY sort_order",
+                (category,),
+            ).fetchall()
+        else:
+            rows = conn.execute(
+                "SELECT * FROM articles ORDER BY urgency DESC, sort_order"
+            ).fetchall()
+
+        results = []
+        for r in rows:
+            title = r[f"title_{lang}"] if f"title_{lang}" in r.keys() else r["title_ru"]
+            desc = r[f"desc_{lang}"] if f"desc_{lang}" in r.keys() else r["desc_ru"]
+            qa = r[f"quick_answer_{lang}"] if f"quick_answer_{lang}" in r.keys() else r["quick_answer_ru"]
+
+            chunk_count = conn.execute(
+                "SELECT COUNT(*) FROM article_chunks WHERE article_slug = ?",
+                (r["slug"],),
+            ).fetchone()[0]
+
+            results.append({
+                "slug": r["slug"],
+                "icon": r["icon"],
+                "urgency": r["urgency"],
+                "category": r["category"],
+                "title": title or r["title_ru"],
+                "desc": desc or r["desc_ru"],
+                "quick_answer": qa or r["quick_answer_ru"],
+                "layers": json.loads(r["layers"]) if r["layers"] else [],
+                "season": r["season"],
+                "chunk_count": chunk_count,
+            })
+
+    return {"total": len(results), "articles": results}
+
+
+@app.get("/article/{slug}", summary="Get article with composed chunks")
+async def get_article(
+    slug: str,
+    lang: str = "ru",
+    include_translations: bool = True,
+) -> dict:
+    """Retrieve a situational article with its linked chunks grouped by section."""
+    if not _DB_PATH.exists():
+        raise HTTPException(503, "kb.db not found")
+
+    with get_db_conn() as conn:
+        art = conn.execute("SELECT * FROM articles WHERE slug = ?", (slug,)).fetchone()
+        if art is None:
+            raise HTTPException(404, f"Article not found: {slug}")
+
+        # Get linked chunks
+        ac_rows = conn.execute(
+            "SELECT chunk_id, section, sort_order FROM article_chunks WHERE article_slug = ? ORDER BY sort_order",
+            (slug,),
+        ).fetchall()
+
+        chunk_ids = [r["chunk_id"] for r in ac_rows]
+        if chunk_ids:
+            chunk_map = fetch_chunks_by_ids(conn, chunk_ids)
+            dtc_map = fetch_dtc_codes(conn, chunk_ids)
+            gloss_map = fetch_glossary_terms(conn, chunk_ids)
+            trans_map = fetch_translations(conn, chunk_ids) if include_translations else None
+            sit_map = fetch_situation_tags(conn, chunk_ids)
+        else:
+            chunk_map, dtc_map, gloss_map, trans_map, sit_map = {}, {}, {}, None, {}
+
+        # Group by section
+        sections = {}
+        for ac in ac_rows:
+            section = ac["section"]
+            chunk = chunk_map.get(ac["chunk_id"])
+            if chunk is None:
+                continue
+            if section not in sections:
+                sections[section] = []
+            sections[section].append(
+                build_search_result(chunk, 0.0, dtc_map, gloss_map, trans_map, sit_map)
+            )
+
+        title = art[f"title_{lang}"] if f"title_{lang}" in art.keys() else art["title_ru"]
+        desc = art[f"desc_{lang}"] if f"desc_{lang}" in art.keys() else art["desc_ru"]
+        qa = art[f"quick_answer_{lang}"] if f"quick_answer_{lang}" in art.keys() else art["quick_answer_ru"]
+
+    return {
+        "slug": art["slug"],
+        "icon": art["icon"],
+        "urgency": art["urgency"],
+        "category": art["category"],
+        "title": title or art["title_ru"],
+        "desc": desc or art["desc_ru"],
+        "quick_answer": qa or art["quick_answer_ru"],
+        "layers": json.loads(art["layers"]) if art["layers"] else [],
+        "season": art["season"],
+        "sections": sections,
+        "total_chunks": len(chunk_ids),
+    }
 
 
 # ===========================================================================

@@ -603,23 +603,137 @@ async function _renderView() {
   }
 
   switch (_activeTab) {
-    case 'situations': _renderSituationsView(resultsEl); break;
+    case 'situations': await _renderSituationsView(resultsEl); break;
     case 'systems':    await _renderSystemsView(resultsEl); break;
     case 'dtc':        await _renderDTCView(resultsEl); break;
     case 'parts':      await _renderPartsView(resultsEl); break;
-    default:           _renderSituationsView(resultsEl);
+    default:           await _renderSituationsView(resultsEl);
   }
+}
+
+// ═══════════════════════════════════════════════════════════
+// Smart Cards: Блок "Сейчас важно"
+// ═══════════════════════════════════════════════════════════
+
+function _renderNowImportant(season) {
+  const cards = [];
+
+  // Сезонная карточка
+  if (season === 'winter') {
+    cards.push({
+      icon: '\u2744\uFE0F',
+      label: 'Зимние советы',
+      hint: 'Прогрев батареи, запуск в мороз, расход',
+      query: 'зима мороз прогрев батарея запуск',
+      cls: 'kbv2-now-card--seasonal',
+    });
+  } else if (season === 'summer') {
+    cards.push({
+      icon: '\u2600\uFE0F',
+      label: 'Летние советы',
+      hint: 'Охлаждение, кондиционер, перегрев',
+      query: 'лето охлаждение кондиционер перегрев',
+      cls: 'kbv2-now-card--seasonal',
+    });
+  }
+
+  // DTC из localStorage
+  const savedDTC = localStorage.getItem('llcar-last-dtc');
+  if (savedDTC) {
+    cards.push({
+      icon: '\u26A0\uFE0F',
+      label: `Ошибка ${savedDTC}`,
+      hint: 'Нажмите, чтобы узнать подробности',
+      dtc: savedDTC,
+      cls: '',
+    });
+  }
+
+  // ТО напоминание
+  const mileage = parseInt(localStorage.getItem('llcar-mileage') || '0', 10);
+  if (mileage > 0) {
+    const nextTO = Math.ceil(mileage / 10000) * 10000;
+    const remaining = nextTO - mileage;
+    if (remaining <= 2000) {
+      cards.push({
+        icon: '\u{1F527}',
+        label: `ТО через ${remaining} км`,
+        hint: `Следующее ТО на ${nextTO.toLocaleString()} км`,
+        query: 'плановое ТО обслуживание замена масло',
+        cls: 'kbv2-now-card--maintenance',
+      });
+    }
+  }
+
+  if (cards.length === 0) return '';
+
+  return `
+    <div class="kbv2-now-important">
+      <div class="kbv2-now-important__title">\u{1F4CC} Сейчас важно</div>
+      <div class="kbv2-now-important__cards">
+        ${cards.map((c, i) => `
+          <div class="kbv2-now-card ${c.cls}" data-now-idx="${i}" data-now-query="${c.query || ''}" data-now-dtc="${c.dtc || ''}">
+            <div class="kbv2-now-card__icon">${c.icon}</div>
+            <div class="kbv2-now-card__text">
+              <div class="kbv2-now-card__label">${c.label}</div>
+              <div class="kbv2-now-card__hint">${c.hint}</div>
+            </div>
+          </div>
+        `).join('')}
+      </div>
+    </div>
+  `;
 }
 
 // ═══════════════════════════════════════════════════════════
 // Фаза 5: Ситуационная навигация
 // ═══════════════════════════════════════════════════════════
 
-function _renderSituationsView(resultsEl) {
+async function _renderSituationsView(resultsEl) {
   const season = _currentSeason();
   const isBeginner = _persona === 'beginner';
 
+  // Попробуем загрузить из API, фолбэк на хардкод
+  let situations = SITUATION_CLUSTERS;
+  let dailyTips = DAILY_TIPS;
+  let _apiArticles = null; // сохраним для кликов
+
+  if (_kb?.isOnline) {
+    try {
+      const resp = await _kb.getArticles(null, 'ru');
+      if (resp?.articles?.length) {
+        _apiArticles = resp.articles;
+        // Разделяем на ситуации (emergency/troubleshooting/seasonal/maintenance) и daily tips
+        const mapped = resp.articles.map(a => ({
+          id: a.slug,
+          icon: a.icon || '📄',
+          urgency: a.urgency || 1,
+          title: a.title,
+          desc: a.desc,
+          quickAnswer: a.quick_answer,
+          searchQueries: [], // из API чанки уже привязаны к статье
+          layers: a.layers || [],
+          season: a.season || null,
+          category: a.category,
+          _fromApi: true,
+          _chunkCount: a.chunk_count || 0,
+        }));
+        situations = mapped.filter(a => a.category !== 'daily');
+        dailyTips = mapped.filter(a => a.category === 'daily');
+        // Добавляем дерево решений (его нет в API)
+        const tree = SITUATION_CLUSTERS.find(s => s.isDecisionTree);
+        if (tree) situations.push(tree);
+      }
+    } catch (e) {
+      console.warn('[KB v2] Articles API unavailable, using hardcoded:', e.message);
+    }
+  }
+
+  // Блок "Сейчас важно" (Smart Cards Шаг 3)
+  let nowHTML = _renderNowImportant(season);
+
   let html = `
+    ${nowHTML}
     <div class="kbv2-section-title">${t('kbv2.situations_title', 'Что случилось?')}</div>
     <div class="kbv2-section-subtitle">${isBeginner
       ? t('kbv2.situations_subtitle', 'Выберите ситуацию — мы подскажем, что делать')
@@ -627,7 +741,7 @@ function _renderSituationsView(resultsEl) {
     <div class="kbv2-situations-grid">
   `;
 
-  for (const sit of SITUATION_CLUSTERS) {
+  for (const sit of situations) {
     // Эксперт: скрыть дерево решений (он знает что делать)
     if (sit.isDecisionTree && !isBeginner) continue;
 
@@ -657,13 +771,13 @@ function _renderSituationsView(resultsEl) {
   html += `</div>`;
 
   // Ежедневные советы — только для новичков
-  if (isBeginner) {
+  if (isBeginner && dailyTips.length > 0) {
     html += `
       <div class="kbv2-section-title" style="margin-top:20px;">${t('kbv2.daily_tips_title', 'Ежедневная езда')}</div>
       <div class="kbv2-section-subtitle">${t('kbv2.daily_tips_subtitle', 'Полезные инструкции на каждый день')}</div>
       <div class="kbv2-situations-grid">
     `;
-    for (const tip of DAILY_TIPS) {
+    for (const tip of dailyTips) {
       html += `
         <div class="kbv2-situation-card kbv2-situation-card--tip"
              data-daily-tip="${tip.id}" style="--sit-color: #4A90D9;">
@@ -702,14 +816,19 @@ function _renderSituationsView(resultsEl) {
   resultsEl.innerHTML = html;
 
   // Клик по ситуации
-  resultsEl.querySelectorAll('.kbv2-situation-card').forEach(el => {
+  resultsEl.querySelectorAll('.kbv2-situation-card[data-situation]').forEach(el => {
     el.addEventListener('click', () => {
       const sitId = el.dataset.situation;
-      const sit = SITUATION_CLUSTERS.find(s => s.id === sitId);
+      // Ищем сначала в загруженных из API, затем в хардкоде
+      const sit = situations.find(s => s.id === sitId) || SITUATION_CLUSTERS.find(s => s.id === sitId);
       if (!sit) return;
       if (sit.isDecisionTree) {
         _navStack.push({ type: 'situations' });
         _renderDecisionTree(resultsEl, 'root');
+      } else if (sit._fromApi) {
+        // Для API-статей — открываем через /article/{slug}
+        _navStack.push({ type: 'situations' });
+        _renderApiArticleDetail(resultsEl, sit.id);
       } else {
         _navStack.push({ type: 'situations' });
         _renderSituationDetail(resultsEl, sit);
@@ -721,10 +840,14 @@ function _renderSituationsView(resultsEl) {
   resultsEl.querySelectorAll('.kbv2-situation-card[data-daily-tip]').forEach(el => {
     el.addEventListener('click', () => {
       const tipId = el.dataset.dailyTip;
-      const tip = DAILY_TIPS.find(t => t.id === tipId);
+      const tip = dailyTips.find(t => t.id === tipId) || DAILY_TIPS.find(t => t.id === tipId);
       if (!tip) return;
       _navStack.push({ type: 'situations' });
-      _renderSituationDetail(resultsEl, tip);
+      if (tip._fromApi) {
+        _renderApiArticleDetail(resultsEl, tip.id);
+      } else {
+        _renderSituationDetail(resultsEl, tip);
+      }
     });
   });
 
@@ -734,6 +857,24 @@ function _renderSituationsView(resultsEl) {
       const layerId = el.dataset.layer;
       _navStack.push({ type: 'situations' });
       await _renderLayerArticles(resultsEl, layerId);
+    });
+  });
+
+  // Клик по "Сейчас важно"
+  resultsEl.querySelectorAll('.kbv2-now-card').forEach(el => {
+    el.addEventListener('click', async () => {
+      const query = el.dataset.nowQuery;
+      const dtc = el.dataset.nowDtc;
+      if (dtc) {
+        _navStack.push({ type: 'situations' });
+        _activeTab = 'dtc';
+        _searchQuery = dtc;
+        await _renderView();
+      } else if (query) {
+        _navStack.push({ type: 'situations' });
+        _searchQuery = query;
+        await _renderSearchResults(resultsEl);
+      }
     });
   });
 }
@@ -808,6 +949,77 @@ async function _renderSituationDetail(resultsEl, situation) {
   _bindBackButton(resultsEl);
   _bindBriefCards(resultsEl);
   _bindDTCChips(resultsEl);
+}
+
+// ═══════════════════════════════════════════════════════════
+// Фаза 5b: Детализация API-статьи (/article/{slug})
+// ═══════════════════════════════════════════════════════════
+
+async function _renderApiArticleDetail(resultsEl, slug) {
+  resultsEl.innerHTML = _renderLoadingSpinner();
+
+  try {
+    const article = await _kb.getArticle(slug, 'ru');
+    if (!article) {
+      resultsEl.innerHTML = `${_renderBackButton()}<div class="kbv2-empty">Статья не найдена</div>`;
+      _bindBackButton(resultsEl);
+      return;
+    }
+
+    const urgColor = _urgencyColor(article.urgency || 1);
+
+    let html = `
+      ${_renderBackButton()}
+
+      <div class="kbv2-situation-header" style="--sit-color: ${urgColor};">
+        <span class="kbv2-situation-header__icon">${article.icon || '📄'}</span>
+        <div>
+          <div class="kbv2-situation-header__title">${article.title}</div>
+          ${article.urgency >= 3 ? `<div class="kbv2-urgency-badge" style="color:${urgColor};">${t('kbv2.needs_attention', 'Требует внимания')}</div>` : ''}
+        </div>
+      </div>
+
+      ${article.quick_answer ? `
+        <div class="kbv2-quick-answer">
+          <div class="kbv2-quick-answer__label">${t('kbv2.quick_answer', 'Быстрый ответ')}</div>
+          <div class="kbv2-quick-answer__text">${article.quick_answer}</div>
+        </div>
+      ` : ''}
+    `;
+
+    // Секции статьи (steps, warnings, diagnostics, content)
+    const sectionLabels = {
+      steps: t('kbv2.steps_section', 'Пошаговая инструкция'),
+      warnings: t('kbv2.warnings_section', 'Предупреждения'),
+      diagnostics: t('kbv2.diagnostics_section', 'Диагностика'),
+      content: t('kbv2.related_articles', 'Связанные статьи'),
+    };
+
+    const sections = article.sections || {};
+    for (const [sectionKey, chunks] of Object.entries(sections)) {
+      if (!chunks || chunks.length === 0) continue;
+
+      html += `<div class="kbv2-section-title">${sectionLabels[sectionKey] || sectionKey} (${chunks.length})</div>`;
+
+      for (const chunk of chunks) {
+        const entry = getLocalizedEntry(chunk);
+        html += _renderBriefCard(entry);
+      }
+    }
+
+    // Если секций нет — покажем сообщение
+    if (Object.keys(sections).length === 0) {
+      html += `<div class="kbv2-empty">${t('kbv2.no_articles', 'Статей не найдено')}</div>`;
+    }
+
+    resultsEl.innerHTML = html;
+    _bindBackButton(resultsEl);
+    _bindBriefCards(resultsEl);
+  } catch (e) {
+    console.error('[KB v2] Error loading article:', e);
+    resultsEl.innerHTML = `${_renderBackButton()}<div class="kbv2-empty">Ошибка загрузки: ${e.message}</div>`;
+    _bindBackButton(resultsEl);
+  }
 }
 
 // ═══════════════════════════════════════════════════════════
@@ -910,12 +1122,21 @@ function _renderBriefCard(entry) {
   if (_persona === 'beginner') {
     title = _caringTone(title);
   }
-  // Language badge for untranslated entries
-  const langBadge = entry._untranslated
-    ? `<span style="font-size:10px;padding:1px 4px;border-radius:3px;background:rgba(255,255,255,0.1);color:var(--text-tertiary);margin-right:4px;">${(entry.source_language || '??').toUpperCase()}</span>`
-    : (entry._fallbackLang
-      ? `<span style="font-size:10px;padding:1px 4px;border-radius:3px;background:rgba(255,200,0,0.15);color:#FFA726;margin-right:4px;">${entry._fallbackLang.toUpperCase()}</span>`
-      : '');
+
+  // Бейдж перевода (Smart Cards Шаг 2)
+  const srcLang = entry.source_language || '';
+  let langBadge = '';
+  if (entry._untranslated) {
+    langBadge = `<span class="kbv2-lang-badge kbv2-lang-badge--raw">${(srcLang || '??').toUpperCase()}</span>`;
+  } else if (entry._fallbackLang) {
+    langBadge = `<span class="kbv2-lang-badge kbv2-lang-badge--fallback">${entry._fallbackLang.toUpperCase()}</span>`;
+  } else if (srcLang && srcLang !== 'ru') {
+    langBadge = `<span class="kbv2-lang-badge kbv2-lang-badge--translated">${srcLang.toUpperCase()}\u2192RU</span>`;
+  }
+
+  // Бейдж типа статьи (Smart Cards Шаг 2)
+  const sitType = entry.situation_type || '';
+  const typeBadge = _sitTypeBadge(sitType, isEmergency, entry.has_procedures, entry.has_warnings);
 
   // Превью контента — фоллбэк на layer/system
   const maxPreview = _persona === 'beginner' ? 200 : 500;
@@ -936,7 +1157,6 @@ function _renderBriefCard(entry) {
   // Кнопка действия
   let actionLabel = t('kbv2.read_more', 'Подробнее');
   let actionClass = 'kbv2-action--default';
-  const sitType = entry.situation_type || '';
   if (sitType === 'emergency' || isEmergency) {
     actionLabel = t('kbv2.what_to_do', 'Что делать?');
     actionClass = 'kbv2-action--emergency';
@@ -948,11 +1168,12 @@ function _renderBriefCard(entry) {
     actionClass = 'kbv2-action--info';
   }
 
-  // Trust (только для эксперта)
+  // Trust — для всех (beginner: текст, expert: dots)
   const trustLevel = entry.trust_level || 2;
+  const trustLabel = _trustLabel(trustLevel);
   const trustHTML = _persona === 'expert'
-    ? `<span class="kbv2-trust-dots">${'\u25CF'.repeat(trustLevel)}${'\u25CB'.repeat(5 - trustLevel)}</span>`
-    : '';
+    ? `<span class="kbv2-trust-dots" title="${trustLabel}">${'\u25CF'.repeat(trustLevel)}${'\u25CB'.repeat(5 - trustLevel)}</span>`
+    : `<span class="kbv2-trust-label">${trustLabel}</span>`;
 
   // Score (только для эксперта)
   const scoreHTML = (_persona === 'expert' && entry.score != null)
@@ -964,7 +1185,7 @@ function _renderBriefCard(entry) {
       <div class="kbv2-brief-card__stripe" style="background:${stripeColor};"></div>
       <div class="kbv2-brief-card__body">
         <div class="kbv2-brief-card__top">
-          ${urgDot}${langBadge}
+          ${urgDot}${typeBadge}${langBadge}
           <span class="kbv2-brief-card__title">${title}</span>
         </div>
         <div class="kbv2-brief-card__preview">${preview.slice(0, 80)}</div>
@@ -975,6 +1196,41 @@ function _renderBriefCard(entry) {
       </div>
     </div>
   `;
+}
+
+// Бейдж типа статьи
+function _sitTypeBadge(sitType, isEmergency, hasProcedures, hasWarnings) {
+  if (sitType === 'emergency' || isEmergency) {
+    return '<span class="kbv2-type-badge kbv2-type-badge--emergency">\u26A0 Внимание</span>';
+  }
+  if (sitType === 'troubleshooting') {
+    return '<span class="kbv2-type-badge kbv2-type-badge--troubleshoot">\u{1F50D} Диагностика</span>';
+  }
+  if (sitType === 'maintenance' || hasProcedures) {
+    return '<span class="kbv2-type-badge kbv2-type-badge--maintenance">\u{1F527} Процедура</span>';
+  }
+  if (hasWarnings) {
+    return '<span class="kbv2-type-badge kbv2-type-badge--warning">\u{1F6A7} Предупреждение</span>';
+  }
+  if (sitType === 'specification') {
+    return '<span class="kbv2-type-badge kbv2-type-badge--spec">\u{1F4CB} Спецификация</span>';
+  }
+  if (sitType === 'learning') {
+    return '<span class="kbv2-type-badge kbv2-type-badge--learning">\u{1F4D6} Справка</span>';
+  }
+  return '';
+}
+
+// Текстовый лейбл доверия
+function _trustLabel(level) {
+  const labels = {
+    5: 'Офиц. мануал',
+    4: 'Мануал (перевод)',
+    3: 'Веб-источник',
+    2: 'Отзыв',
+    1: 'Не верифицировано',
+  };
+  return labels[level] || labels[2];
 }
 
 // ═══════════════════════════════════════════════════════════
@@ -1933,11 +2189,11 @@ function _bindBackButton(container) {
   });
 }
 
-function _goBack(resultsEl) {
+async function _goBack(resultsEl) {
   if (_navStack.length > 0) {
     const prev = _navStack.pop();
     switch (prev.type) {
-      case 'situations': _renderSituationsView(resultsEl); break;
+      case 'situations': await _renderSituationsView(resultsEl); break;
       case 'systems': _renderSystemsView(resultsEl); break;
       case 'dtc': _renderDTCView(resultsEl); break;
       case 'parts': _renderPartsView(resultsEl); break;

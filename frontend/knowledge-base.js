@@ -458,6 +458,49 @@ export class KnowledgeBase {
     }
   }
 
+  // ── Articles (situational) ─────────────────────────────────────────────────
+
+  /**
+   * Получить список ситуационных статей.
+   * @param {string} [category] - Фильтр: emergency/troubleshooting/maintenance/daily/seasonal
+   * @param {string} [lang='ru']
+   * @returns {Promise<{total, articles}>}
+   */
+  async getArticles(category, lang = 'ru') {
+    if (!this._online) return { total: 0, articles: [] };
+    const params = new URLSearchParams();
+    if (category) params.set('category', category);
+    params.set('lang', lang);
+
+    const cacheKey = `articles:${params.toString()}`;
+    const cached = this._cache.get(cacheKey);
+    if (cached) return cached;
+
+    try {
+      const data = await _get(`${this._api}/articles?${params}`, this._timeout);
+      this._cache.set(cacheKey, data);
+      return data;
+    } catch {
+      return { total: 0, articles: [] };
+    }
+  }
+
+  /**
+   * Получить статью по slug с разбивкой по секциям.
+   * @param {string} slug - e.g. 'overheat', 'brake_noise'
+   * @param {string} [lang='ru']
+   * @returns {Promise<object|null>}
+   */
+  async getArticle(slug, lang = 'ru') {
+    if (!slug || !this._online) return null;
+    const params = new URLSearchParams({ lang, include_translations: 'true' });
+    try {
+      return await _get(`${this._api}/article/${encodeURIComponent(slug)}?${params}`, this._timeout);
+    } catch {
+      return null;
+    }
+  }
+
   // ── Embed (optional, GPU required) ────────────────────────────────────────
 
   /**
