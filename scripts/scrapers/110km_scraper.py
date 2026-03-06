@@ -51,7 +51,14 @@ class Scraper110km(BaseScraper):
                 for href in page.css("a::attr(href)").getall():
                     if not href:
                         continue
-                    full = href if href.startswith("http") else f"{BASE}{href}"
+                    if href.startswith("http"):
+                        full = href
+                    elif href.startswith("//"):
+                        full = "https:" + href
+                    elif href.startswith("/"):
+                        full = BASE + href
+                    else:
+                        continue
                     if not full.startswith(BASE):
                         continue
                     # Article or review pages

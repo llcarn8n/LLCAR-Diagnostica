@@ -1,0 +1,884 @@
+[
+  {
+    "topic_id": "topic_tg_001",
+    "title_ru": "Техническое обслуживание — регламент, стоимость, рекомендации по маслам и фильтрам",
+    "title_en": "Maintenance — Schedule, Costs, Oil and Filter Recommendations",
+    "category": "owner_experience",
+    "models": ["L6", "L7", "L8", "L9"],
+    "systems": ["engine", "drivetrain"],
+    "layer": "engine",
+    "season": "all",
+    "summary_ru": "Владельцы активно обсуждают стоимость и состав ТО. Нулевое ТО (масло + фильтр) стоит ~11,575-13,000 руб (Studio 27). ТО-1 (масло, воздушный, салонный фильтр, диагностика) — 22,200 руб. Масло в ДВС 3.7л, рекомендуется 0W-30 или 5W-30 (Motul 8100, ZIC TOP, Polymerium, Mobil 1 ESP). Замена масла в редукторах по регламенту — раз в 80,000 км или 4 года (передний), задний не обслуживается. Клуб советует не торопиться с заменой масла в редукторах раньше срока. Свечи менять на 20-30 тыс. км работы ДВС.",
+    "summary_en": "Owners actively discuss maintenance costs and procedures. Zero-mileage service (oil + filter) costs ~11,575-13,000 RUB. First service (oil, air, cabin filters, diagnostics) — 22,200 RUB. Engine oil capacity 3.7L, 0W-30 or 5W-30 recommended (Motul 8100, ZIC TOP, Polymerium, Mobil 1 ESP). Reducer oil change per OEM schedule — every 80,000 km or 4 years (front only), rear is non-serviceable. Club advises against premature reducer oil changes. Spark plugs at 20-30K km of ICE operation.",
+    "key_facts": [
+      "Нулевое ТО: масло + фильтр = 11,575 руб + 230 руб кольцо + 1,100 руб защита",
+      "ТО-1: 22,200 руб (Studio 27)",
+      "ТО в неофициальных сервисах: 9,000-14,000 руб",
+      "Масло ДВС: 3.7л, вязкость 0W-30 или 5W-30",
+      "Редуктор передний: замена масла каждые 80,000 км или 4 года",
+      "Задний редуктор не обслуживается",
+      "Свечи: замена каждые 20-30 тыс. км работы ДВС"
+    ],
+    "owner_tips": [
+      "Не берите масло в коробках с надписью 'Li Auto' — скорее всего подделка",
+      "Не торопитесь менять масло в редукторах раньше срока — завод рекомендует 80 тыс. км",
+      "Лучше лить хороший продукт и менять своевременно, чем 'нано-масло' и менять редко",
+      "Щетки стеклоочистителей заменить на Bosch или Denso — родные теряют эффективность на морозе",
+      "Восстановление мастер-аккаунта у официалов стоит ~25,000 руб"
+    ],
+    "source_articles": [1, 2, 4, 7, 19, 35, 219, 264, 275, 447],
+    "source_urls": [
+      "https://t.me/lixiangautorussia/1712989",
+      "https://t.me/lixiangautorussia/1712929",
+      "https://t.me/lixiangautorussia/1715460",
+      "https://t.me/lixiangautorussia/1701007",
+      "https://t.me/lixiangautorussia/918789"
+    ],
+    "article_count": 10,
+    "confidence": "high",
+    "overlaps_research": false,
+    "research_issue_id": null,
+    "tags": ["maintenance", "oil", "filter", "TO", "service_cost", "reducer", "spark_plugs"]
+  },
+  {
+    "topic_id": "topic_tg_002",
+    "title_ru": "Сертифицированные дилеры и сервисы — цены, качество, Синомах",
+    "title_en": "Certified Dealers and Service Centers — Prices, Quality, Sinomach",
+    "category": "owner_experience",
+    "models": ["L7", "L9"],
+    "systems": ["general"],
+    "layer": "body",
+    "season": "all",
+    "summary_ru": "Горячая дискуссия о плюсах и минусах сертифицированных дилеров (Панавто, Авилон) через Синомах. Плюсы: штат механиков, рембаза, гарантия, техкарты производителя, центральный склад запчастей. Минусы: высокая цена. Серый импорт и независимые сервисы (Helper, Графит, ЕНКарс) дешевле. Важное замечание: независимые сервисы часто не делают переадаптацию лидара при замене сальника заднего электромотора, как положено по техкарте.",
+    "summary_en": "Active discussion about certified dealers (Panavto, Avilon) via Sinomach distributor. Pros: trained mechanics, warranty, OEM tech cards, growing parts warehouse. Cons: high prices. Gray import services (Helper, Graphit, ENKars) are cheaper. Key insight: independent shops often skip LiDAR re-adaptation after rear motor seal replacement — required by OEM tech card.",
+    "key_facts": [
+      "Синомах — центральный дистрибьютор, партнеры — бывшие дилеры MB/BMW",
+      "Наличие запчастей сравнимо с немцами, доставка часто быстрее",
+      "Переадаптация лидара обязательна при замене сальника заднего электромотора",
+      "Helper Service: 3 года опыта только с Lixiang, гарантия 7 месяцев"
+    ],
+    "owner_tips": [
+      "Независимые сервисы не делают переадаптацию лидара при замене сальника — это может привести к проблемам с ADAS",
+      "Восстановление мастер-аккаунта у официалов ~25,000 руб — ценник гуманный",
+      "Запчасти для ремонта нужно не только купить, но и 'внести в облако' через диагностическое оборудование"
+    ],
+    "source_articles": [6, 7, 22, 417],
+    "source_urls": [
+      "https://t.me/lixiangautorussia/1705925",
+      "https://t.me/lixiangautorussia/5701",
+      "https://t.me/lixiangautorussia/1090765",
+      "https://t.me/lixiangautorussia/1713048"
+    ],
+    "article_count": 4,
+    "confidence": "high",
+    "overlaps_research": true,
+    "research_issue_id": "issue_c6",
+    "tags": ["dealer", "sinomach", "service", "warranty", "helper", "panavto", "spare_parts"]
+  },
+  {
+    "topic_id": "topic_tg_003",
+    "title_ru": "Режим топлива / электро / гибрид — алгоритмы работы ДВС",
+    "title_en": "Fuel / Electric / Hybrid Mode — ICE Operating Algorithms",
+    "category": "owner_experience",
+    "models": ["L7", "L9"],
+    "systems": ["engine", "battery"],
+    "layer": "engine",
+    "season": "all",
+    "summary_ru": "Множество вопросов и обсуждений о том, когда и как машина сама включает/выключает ДВС. В режиме Fuel машина может не заводить мотор при высоком заряде (>80-95%). В электро режиме ДВС включается зимой при низком заряде (~15%) или для прогрева масла. Прошивка 8.0 и 8.3 изменили алгоритмы — поведение стало менее предсказуемым. Ключевое: ДВС работает только как генератор (2500-3800 об/мин), не крутит колеса. На трассе при 130+ км/ч генератор может не успевать заряжать, идет разряд батареи.",
+    "summary_en": "Extensive discussions on ICE start/stop algorithms across driving modes. In Fuel mode, ICE may not start above 80-95% charge. In Electric mode, ICE starts in winter at ~15% charge or for oil warming. Firmware 8.0/8.3 changed algorithms unpredictably. Key fact: ICE is a generator only (2500-3800 RPM), never drives wheels. At 130+ km/h on highway, generator cannot keep up — battery discharges.",
+    "key_facts": [
+      "ДВС работает в диапазоне 2500-3800 об/мин как генератор",
+      "Турбина дует максимум 0.66 бара",
+      "При скорости выше 150 км/ч генератор не поддерживает заряд, идет активный разряд",
+      "Максимальная скорость ограничена 180 км/ч",
+      "В гибридном режиме мотор заводится при заряде ниже ~80%",
+      "Холодный запуск ДВС на трассе: прогрев на 1200 об/мин, потом рабочий режим"
+    ],
+    "owner_tips": [
+      "Не переживайте за включение ДВС зимой на электро — машина сама решает когда заводить генератор",
+      "При 130 км/ч на круизе батарея заряжается (+40% за 2 часа), при 150+ — только держит уровень",
+      "При 180 км/ч — активный разряд батареи",
+      "Прошивки могут кардинально менять алгоритмы работы ДВС — будьте готовы к изменениям"
+    ],
+    "source_articles": [250, 253, 254, 260, 263, 271, 280, 282, 285, 289, 298, 308, 450],
+    "source_urls": [
+      "https://t.me/lixiangautorussia/1530022",
+      "https://t.me/lixiangautorussia/1479309",
+      "https://t.me/lixiangautorussia/1151387",
+      "https://t.me/lixiangautorussia/1108373",
+      "https://t.me/lixiangautorussia/1530029"
+    ],
+    "article_count": 13,
+    "confidence": "high",
+    "overlaps_research": true,
+    "research_issue_id": "issue_c12",
+    "tags": ["fuel_mode", "electric_mode", "hybrid", "ice_algorithm", "generator", "range_extender", "battery_charge"]
+  },
+  {
+    "topic_id": "topic_tg_004",
+    "title_ru": "Бензин — какой лить? 92, 95, 98 или 100?",
+    "title_en": "Fuel Grade — Which Gasoline to Use? 92, 95, 98 or 100?",
+    "category": "owner_experience",
+    "models": ["L7", "L9"],
+    "systems": ["engine"],
+    "layer": "engine",
+    "season": "all",
+    "summary_ru": "Жаркие споры о марке бензина. Двигатель 1.5T (BMW-наследник) имеет степень сжатия 12.5-15:1, что формально требует высокооктанового топлива. Одни считают что нужен 98/100, другие — что 95 достаточно, так как ДВС работает только как генератор на стабильных оборотах. Клуб рекомендует следовать указаниям производителя. Важно: у Lixiang мотор не крутит колеса — нагрузка ниже стандартной.",
+    "summary_en": "Heated debates about fuel grade. The 1.5T engine (BMW heritage) has 12.5-15:1 compression ratio, technically requiring premium fuel. Some argue for 98/100, others say 95 is fine since ICE operates only as a generator at stable RPMs. Club recommends following manufacturer guidelines. Key: motor is a generator only — load is below standard.",
+    "key_facts": [
+      "Степень сжатия двигателя: 12.5-15:1",
+      "Двигатель — наследник BMW N13/Prince 1.6T",
+      "ДВС не крутит колеса — нагрузка ниже стандартной",
+      "Рекомендация Helper Service: 95-98 бензин"
+    ],
+    "owner_tips": [
+      "95 бензин достаточен для генератора — он не работает под полной нагрузкой",
+      "Не слушайте тех, кто советует 100 бензин — перерасход без пользы",
+      "Следуйте рекомендациям производителя, а не форумным экспертам"
+    ],
+    "source_articles": [282, 290, 306, 310],
+    "source_urls": [
+      "https://t.me/lixiangautorussia/1509373",
+      "https://t.me/lixiangautorussia/1386728",
+      "https://t.me/lixiangautorussia/1215327",
+      "https://t.me/lixiangautorussia/1198605"
+    ],
+    "article_count": 4,
+    "confidence": "medium",
+    "overlaps_research": false,
+    "research_issue_id": null,
+    "tags": ["fuel_grade", "gasoline", "octane", "95", "98", "compression_ratio", "bmw_engine"]
+  },
+  {
+    "topic_id": "topic_tg_005",
+    "title_ru": "Пневмоподвеска — режимы, опускание при парковке, адаптация после прошивки",
+    "title_en": "Air Suspension — Modes, Parking Drop, Post-Firmware Adaptation",
+    "category": "owner_experience",
+    "models": ["L7", "L9"],
+    "systems": ["suspension"],
+    "layer": "chassis",
+    "season": "all",
+    "summary_ru": "Владельцы сообщают о проблемах с пневмоподвеской: машина опускается при парковке (раньше держала высоту), пороги не выдвигаются, регулировка высоты не работает. После застревания на диагонали подвеска может встать в нижнее положение без возможности переключения. Прошивки могут сделать подвеску излишне дубовой. Найден способ сброса: повторить процедуру адаптации подвески после обновления.",
+    "summary_en": "Owners report air suspension issues: vehicle drops when parked (previously held height), running boards not deploying, height adjustment not responding. After getting stuck diagonally, suspension may lock in lowest position. Firmware updates can make suspension overly stiff. Fix found: repeat suspension adaptation procedure after firmware update.",
+    "key_facts": [
+      "Прошивки изменяют характер работы подвески — может стать жестче",
+      "После застревания на диагонали подвеска может 'застрять' в нижнем положении",
+      "Пороги могут не выдвигаться даже в car wash mode",
+      "Двухкамерная пневмоподвеска теперь на всех версиях L7/L8 (рестайлинг)"
+    ],
+    "owner_tips": [
+      "Если подвеска стала 'дубовой' после прошивки — сделайте сброс/адаптацию подвески (может потребоваться несколько раз)",
+      "Не пытайтесь застревать на диагонали — подвеска может заблокироваться",
+      "Режим бездорожье не сохраняет высоту при выключении авто в новых прошивках"
+    ],
+    "source_articles": [220, 468, 466],
+    "source_urls": [
+      "https://t.me/lixiangautorussia/1090765",
+      "https://t.me/lixiangautorussia/1397431",
+      "https://t.me/lixiangautorussia/1704473"
+    ],
+    "article_count": 3,
+    "confidence": "high",
+    "overlaps_research": true,
+    "research_issue_id": "issue_c1",
+    "tags": ["air_suspension", "firmware", "adaptation", "height", "running_boards", "stiff_ride"]
+  },
+  {
+    "topic_id": "topic_tg_006",
+    "title_ru": "Зимняя эксплуатация — прогрев батареи, расход, антифриз, жалюзи радиатора",
+    "title_en": "Winter Operation — Battery Warming, Consumption, Antifreeze, Radiator Shutters",
+    "category": "owner_experience",
+    "models": ["L7", "L9"],
+    "systems": ["battery", "hvac", "engine"],
+    "layer": "ev",
+    "season": "winter",
+    "summary_ru": "Детальные обсуждения зимней эксплуатации. Догреватель (Heater) потребляет до 10 кВт/ч из батареи при температуре ДВС ниже 75°C. Обогрев задних рядов — до 2.7 кВт/ч. Жалюзи радиатора забиваются снегом — мотор переходит на минимальные обороты и не может заряжать батарею. Батарея при -25°C плохо заряжается и отдает. Холодный воздух может задувать в салон на поворотах зимой. Сетки на бампер могут вызвать ошибку U009387 при замерзании жалюзи.",
+    "summary_en": "Detailed winter operation discussions. Heater consumes up to 10 kW/h from battery when ICE temp is below 75C. Rear seat heating — up to 2.7 kW/h. Radiator shutters clog with snow — ICE drops to minimum RPM, cannot charge battery. Battery at -25C charges/discharges poorly. Cold air may blow into cabin during turns in winter. Aftermarket grille nets can trigger U009387 error when shutters freeze.",
+    "key_facts": [
+      "Догреватель (Heater) потребляет до 10 кВт/ч при температуре ДВС < 75°C",
+      "Обогрев задних рядов: до 2.7 кВт/ч постоянно",
+      "Жалюзи радиатора забиваются снегом — ДВС переходит на минимальные обороты",
+      "При -25°C батарея плохо заряжается и плохо отдает",
+      "Рекомендуемый антифриз: -30°C и ниже"
+    ],
+    "owner_tips": [
+      "Для прогрева батареи без разряда: запустить обдув лобового на минимум через приложение — ДВС запустится и будет греть батарею без включения догревателя",
+      "Написать таск: если T < 0°C и T_двс < 75, выключить А/С (не разряжает батарею). Включить А/С когда T_двс > 76",
+      "Написать таск: если T < 0°C и заряд < 75%, включить Fuel and Forced gen",
+      "Использовать подогрев сидений вместо догревателя — экономит батарею",
+      "На холодной батарее ехать только в R-comfort, спорт+ после прогрева выше 15°C",
+      "Снять защитные сетки с бампера зимой — они вызывают замерзание жалюзи и ошибку чек"
+    ],
+    "source_articles": [222, 260, 269, 449, 446, 456],
+    "source_urls": [
+      "https://t.me/lixiangautorussia/1711593",
+      "https://t.me/lixiangautorussia/1151387",
+      "https://t.me/lixiangautorussia/1640893",
+      "https://t.me/lixiangautorussia/174877",
+      "https://t.me/lixiangautorussia/1674572"
+    ],
+    "article_count": 6,
+    "confidence": "high",
+    "overlaps_research": true,
+    "research_issue_id": "issue_c5",
+    "tags": ["winter", "battery_warming", "heater", "radiator_shutters", "snow", "cold_start", "task_automation"]
+  },
+  {
+    "topic_id": "topic_tg_007",
+    "title_ru": "Ошибка U009387 — компрессор кондиционера / жалюзи радиатора зимой",
+    "title_en": "Error U009387 — AC Compressor / Radiator Shutters in Winter",
+    "category": "owner_experience",
+    "models": ["L9"],
+    "systems": ["hvac", "engine"],
+    "layer": "hvac",
+    "season": "winter",
+    "summary_ru": "Распространенная зимняя проблема: ошибка чек U009387-FF при температуре ниже -8°C и прогреве ДВС выше 70-80°C. Диагностика показывает 'компрессор кондиционера', но реальная причина — жалюзи радиатора. Жалюзи шумно работают, могут заклинивать от мороза. Решения: силиконовая обработка жалюзи, снятие защитных сеток с бампера. Ошибка пропадает в теплом гараже. Отдельные случаи реальной поломки компрессора кондиционера — ремонт ~1000 USD.",
+    "summary_en": "Common winter issue: check engine error U009387-FF below -8C when ICE warms above 70-80C. Diagnostics show 'AC compressor' but real cause is radiator shutters. Shutters operate noisily, can seize in frost. Fixes: silicone treatment of shutters, removing aftermarket grille nets. Error clears in warm garage. Some cases of actual AC compressor failure — repair ~1000 USD.",
+    "key_facts": [
+      "Ошибка U009387-FF появляется при T < -8°C и T_двс > 70-80°C",
+      "Реальная причина — жалюзи радиатора, не компрессор кондиционера",
+      "Силиконовая обработка жалюзи помогает временно",
+      "Ремонт компрессора кондиционера: ~1000 USD",
+      "Блок ACCM кондиционера — дефицитная запчасть"
+    ],
+    "owner_tips": [
+      "При ошибке U009387 сначала проверьте жалюзи радиатора, а не компрессор",
+      "Обработайте жалюзи силиконом перед зимой",
+      "Снимите защитные сетки с бампера — они способствуют замерзанию жалюзи",
+      "Попробуйте: выключить кондиционер, закрыть авто, руками закрыть шторки, подождать 30 минут"
+    ],
+    "source_articles": [446],
+    "source_urls": [
+      "https://t.me/lixiangautorussia/174877"
+    ],
+    "article_count": 1,
+    "confidence": "high",
+    "overlaps_research": true,
+    "research_issue_id": "issue_c14",
+    "tags": ["U009387", "check_engine", "radiator_shutters", "ac_compressor", "winter", "frost"]
+  },
+  {
+    "topic_id": "topic_tg_008",
+    "title_ru": "12V аккумулятор — разряд, блокировка, реанимация",
+    "title_en": "12V Battery — Discharge, Vehicle Lockout, Recovery",
+    "category": "owner_experience",
+    "models": ["L7", "L9"],
+    "systems": ["battery", "electrical"],
+    "layer": "ev",
+    "season": "winter",
+    "summary_ru": "Критическая тема: 12V литиевый аккумулятор нельзя прикуривать! Это может привести к глубокой защите BMS и полной блокировке авто. При полном разряде 12V машина становится 'кирпичом' — двери не откроются, экраны не включатся. Реанимация: долго держать кнопку багажника (HW>3), подключить временный 12V аккумулятор к клеммам. Высоковольтная батарея обесточена при выключенной машине — 12V питает всю электронику.",
+    "summary_en": "Critical topic: 12V lithium battery must NEVER be jump-started! This can trigger deep BMS protection and total vehicle lockout. With dead 12V, car becomes a 'brick' — doors won't open, screens won't turn on. Recovery: hold trunk button long (HW>3), connect temporary 12V battery to terminals. High-voltage battery is disconnected when car is off — 12V powers all electronics.",
+    "key_facts": [
+      "12V аккумулятор литиевый — НЕЛЬЗЯ прикуривать!",
+      "При прикуривании срабатывает защита BMS — может быть необратимо",
+      "При полном разряде 12V авто полностью блокируется",
+      "Гарантия на 12V: 3 года или 80,000 км",
+      "Высоковольтная батарея обесточена при выключенном авто",
+      "HW>3: можно зажать кнопку багажника для аварийного запуска"
+    ],
+    "owner_tips": [
+      "НИКОГДА не прикуривайте Lixiang от другого авто — используйте только совместимое зарядное",
+      "Для реанимации: подключите временный свинцовый 12V аккумулятор к клеммам, дождитесь пробуждения, подключите к зарядке",
+      "Если 12V заряжен и авто стоит долго — оно само поддержит 12V от высоковольтной батареи только во время езды",
+      "Подробности на faq.liautorussia.ru/battery"
+    ],
+    "source_articles": [151, 171, 456, 458, 459, 464, 465],
+    "source_urls": [
+      "https://t.me/lixiangautorussia/1690064",
+      "https://t.me/lixiangautorussia/1667477",
+      "https://t.me/lixiangautorussia/1675470",
+      "https://t.me/lixiangautorussia/1671201",
+      "https://t.me/lixiangautorussia/1173038"
+    ],
+    "article_count": 7,
+    "confidence": "high",
+    "overlaps_research": true,
+    "research_issue_id": "issue_c22",
+    "tags": ["12v_battery", "lockout", "bms", "jump_start", "brick", "lithium", "recovery"]
+  },
+  {
+    "topic_id": "topic_tg_009",
+    "title_ru": "Высоковольтная батарея — зарядка, деградация, LFP рекомендации",
+    "title_en": "HV Battery — Charging, Degradation, LFP Best Practices",
+    "category": "owner_experience",
+    "models": ["L6", "L7", "L9"],
+    "systems": ["battery"],
+    "layer": "ev",
+    "season": "all",
+    "summary_ru": "Обширные обсуждения правил эксплуатации батареи. LFP (L6 Pro/Max): заряжать в диапазоне 20-80% для повседневного использования, раз в 1-2 месяца заряжать до 100% для калибровки BMS. Не хранить на 0-10%. Быстрая зарядка — не более 80%. Lixiang заряжается только от одной фазы (не 3-фазная). При езде в режиме fuel батарея 'колбасится' в 90-95% — это изнашивает последние 5 ячеек быстрее остальных.",
+    "summary_en": "Extensive battery management discussions. LFP (L6 Pro/Max): charge 20-80% daily, charge to 100% monthly for BMS calibration. Don't store at 0-10%. Fast charging — up to 80%. Lixiang charges single-phase only (not 3-phase). Driving in fuel mode keeps battery oscillating at 90-95% — this wears last 5 cells faster than others, potentially causing imbalance.",
+    "key_facts": [
+      "LFP батареи: оптимальный диапазон 20-80%, полная зарядка раз в 1-2 месяца для калибровки",
+      "Быстрая зарядка — не более 80%",
+      "Lixiang заряжается только от одной фазы",
+      "Режим Fuel: батарея болтается в 90-95%, износ последних ячеек",
+      "При -21°C и 14% заряда не оставлять на ночь без подзарядки",
+      "3 месяца хранения без обслуживания батареи — потеря гарантии"
+    ],
+    "owner_tips": [
+      "LFP батарею можно заряжать до 100% — не боится полной зарядки, но не каждый день",
+      "Раз в 1-2 месяца заряжать до 100% для калибровки BMS",
+      "Не оставляйте машину с батареей на 0-10% — глубокая разрядка критична",
+      "На быстрой зарядке останавливайтесь на 80%",
+      "Зарядка с регулируемой силой тока — доступна в клубном магазине (кабели 5 и 10 м)"
+    ],
+    "source_articles": [456, 461, 462, 457],
+    "source_urls": [
+      "https://t.me/lixiangautorussia/1173038",
+      "https://t.me/lixiangautorussia/1364002",
+      "https://t.me/lixiangautorussia/1337291",
+      "https://t.me/lixiangautorussia/9"
+    ],
+    "article_count": 4,
+    "confidence": "high",
+    "overlaps_research": true,
+    "research_issue_id": "issue_c5",
+    "tags": ["lfp_battery", "charging", "bms_calibration", "degradation", "fast_charging", "single_phase"]
+  },
+  {
+    "topic_id": "topic_tg_010",
+    "title_ru": "Звуки тормозов — скрип, хлопок при трогании после остановки",
+    "title_en": "Brake Noises — Squeak, Clunk When Starting After Stop",
+    "category": "owner_experience",
+    "models": ["L7"],
+    "systems": ["brakes"],
+    "layer": "brakes",
+    "season": "all",
+    "summary_ru": "Несколько владельцев L7 2024 рестайлинг жалуются на громкий неприятный звук при трогании после полной остановки — звук 'разжатия тормозной колодки'. Проблема воспроизводится при отпускании педали тормоза и нажатии на газ. Также упоминается экстренное торможение при зажатии кнопки P — это штатная функция, не баг.",
+    "summary_en": "Multiple L7 2024 facelift owners complain about loud unpleasant sound when starting after full stop — sounds like 'brake pad release'. Reproducible when releasing brake and pressing gas. Also mentioned: emergency braking when holding P button — this is a feature, not a bug.",
+    "key_facts": [
+      "Громкий звук разжатия колодки при трогании — L7 2024 рестайлинг",
+      "Зажатие кнопки P активирует экстренное торможение — штатная функция",
+      "Рекуперация на прошивке 8.3 стала заметно сильнее"
+    ],
+    "owner_tips": [
+      "Кнопка P зажата = экстренное торможение (фича, не баг) — на случай отказа тормозов",
+      "Режим Шоссе считается самым адекватным — не душит двигатель при заносе",
+      "Рекуперацию ставьте в стандарт для предсказуемого поведения на скользкой дороге"
+    ],
+    "source_articles": [99, 101, 452, 453],
+    "source_urls": [
+      "https://t.me/lixiangautorussia/1699120",
+      "https://t.me/lixiangautorussia/1697520",
+      "https://t.me/lixiangautorussia/1702041",
+      "https://t.me/lixiangautorussia/1699415"
+    ],
+    "article_count": 4,
+    "confidence": "medium",
+    "overlaps_research": true,
+    "research_issue_id": "issue_c2",
+    "tags": ["brakes", "noise", "squeak", "brake_release", "emergency_braking", "recuperation"]
+  },
+  {
+    "topic_id": "topic_tg_011",
+    "title_ru": "Блок телематики — черные экраны, SOS-вызов, перепайка",
+    "title_en": "Telematics Unit — Black Screens, SOS Call, Re-soldering",
+    "category": "owner_experience",
+    "models": ["L7", "L9"],
+    "systems": ["infotainment", "electrical"],
+    "layer": "infotainment",
+    "season": "all",
+    "summary_ru": "Серьезная проблема: после мойки или спонтанно начинаются SOS-вызовы, затем авто полностью блокируется — черные экраны, не реагирует на ключ. Ремонт: снятие блока телематики, заказ донора, перепайка 'пары' (flash + процессор), прописка в облаке, повторный мастер-аккаунт. Дорогой ремонт. Причина у многих — неквалифицированная установка SIM-карт продавцами (пластырь, изолента, скотч на блоках). Также прикуривание при транспортировке может повредить блок.",
+    "summary_en": "Serious issue: after car wash or spontaneously, SOS calls start, then car locks out completely — black screens, no response to key. Repair: remove telematics unit, order donor, re-solder 'pair' (flash + CPU), register in cloud, re-accept master account. Expensive repair. Root cause for many: unqualified SIM card installation by sellers (tape, bandages on telematics units). Jump-starting during transport can also damage the unit.",
+    "key_facts": [
+      "SOS-вызовы могут предшествовать полной блокировке авто",
+      "Ремонт: перепайка пары flash+CPU из блока-донора",
+      "После ремонта обязательно: прописка блока, мастер-аккаунт, приложения заново",
+      "Причина: кривая установка SIM продавцами — пластырь, изолента на блоках",
+      "Прикуривание при транспортировке повреждает блок телематики"
+    ],
+    "owner_tips": [
+      "Не отдавайте машину на установку SIM или обслуживание непроверенным людям",
+      "Проверьте блок телематики при покупке б/у — нет ли следов кустарного ремонта",
+      "После перепайки блок обязательно прописать — без этого не заработает",
+      "Новые машины могут иметь проблему из-за прикуривания при транспортировке"
+    ],
+    "source_articles": [171, 432],
+    "source_urls": [
+      "https://t.me/lixiangautorussia/1667477",
+      "https://t.me/lixiangautorussia/1695725"
+    ],
+    "article_count": 2,
+    "confidence": "high",
+    "overlaps_research": true,
+    "research_issue_id": "issue_c16",
+    "tags": ["telematics", "black_screen", "sos_call", "sim_card", "master_account", "lockout"]
+  },
+  {
+    "topic_id": "topic_tg_012",
+    "title_ru": "Система охлаждения ДВС — электропомпа, антифриз, вентилятор",
+    "title_en": "ICE Cooling System — Electric Water Pump, Coolant, Fan",
+    "category": "owner_experience",
+    "models": ["L7", "L9"],
+    "systems": ["engine", "hvac"],
+    "layer": "engine",
+    "season": "all",
+    "summary_ru": "Антифриз может попасть в разъем блока управления электропомпой (моторный щит слева). Симптомы: постоянно работающий вентилятор, закрытые жалюзи, температура воздуха -50°C в инженерном меню. У некоторых помпа перестает работать → перегрев мотора. Также: металлическая скобка попала в вентилятор — вибрация и 'звуки китов', устранено удалением посторонней детали.",
+    "summary_en": "Coolant can leak into electric water pump control unit connector (left side of firewall). Symptoms: constantly running fan, closed shutters, -50C air temperature in engineering menu. In some cases pump stops — engine overheating. Also: metal clip found in cooling fan — caused vibration and 'whale sounds', fixed by removing foreign object.",
+    "key_facts": [
+      "Антифриз в разъеме электропомпы: постоянный вентилятор + закрытые жалюзи + -50°C в меню",
+      "Электропомпа на моторном щите слева (вид спереди)",
+      "Металлический предмет в вентиляторе может вызвать вибрацию"
+    ],
+    "owner_tips": [
+      "При постоянно работающем вентиляторе и закрытых жалюзи — проверьте разъем электропомпы на наличие антифриза",
+      "Посторонний предмет в вентиляторе — проверьте визуально перед дорогим ремонтом"
+    ],
+    "source_articles": [300, 448],
+    "source_urls": [
+      "https://t.me/lixiangautorussia/1302410",
+      "https://t.me/lixiangautorussia/1685974"
+    ],
+    "article_count": 2,
+    "confidence": "medium",
+    "overlaps_research": false,
+    "research_issue_id": null,
+    "tags": ["electric_pump", "coolant_leak", "fan", "vibration", "overheating", "engineering_menu"]
+  },
+  {
+    "topic_id": "topic_tg_013",
+    "title_ru": "Прошивки OTA — изменения, баги, рекуперация, подвеска",
+    "title_en": "OTA Firmware Updates — Changes, Bugs, Regeneration, Suspension",
+    "category": "owner_experience",
+    "models": ["L7", "L9"],
+    "systems": ["infotainment", "suspension", "brakes"],
+    "layer": "infotainment",
+    "season": "all",
+    "summary_ru": "Прошивки 8.0, 8.2, 8.3 активно обсуждаются. Прошивка 8.3: сильная рекуперация ('тормозит как не в себя'), изменения алгоритмов запуска ДВС. Прошивка 8.2: расход батареи стал меньше, появилось предупреждение о скользкой дороге, улучшение подвески. Русский язык: 'русский+СМА' заменен на просто 'русский'. Навигация работает отлично. В узких местах выводится изображение с камер на проекцию. Режим мойки можно включить с телефона.",
+    "summary_en": "Firmware 8.0, 8.2, 8.3 actively discussed. 8.3: aggressive regeneration ('brakes like crazy'), ICE start algorithm changes. 8.2: lower battery consumption, slippery road warning, suspension improvement. Russian language: 'Russian+CMA' replaced with plain 'Russian'. Navigation works great. Camera views projected in tight spaces. Car wash mode can be activated from phone.",
+    "key_facts": [
+      "Прошивка 8.3: рекуперация стала заметно агрессивнее",
+      "Прошивка 8.2: расход батареи меньше, подвеска лучше",
+      "Русский язык улучшился, но задний монитор и дэшборд могут быть на китайском",
+      "Прошивки могут изменить характер работы подвески"
+    ],
+    "owner_tips": [
+      "После обновления прошивки проверьте рекуперацию — может стать неожиданно сильной",
+      "Если подвеска стала жесткой после прошивки — сделайте процедуру адаптации/сброса",
+      "Новые прошивки могут менять алгоритмы ДВС — привыкайте к новому поведению",
+      "Обновление прошивок обязательно — без них машина 'тупит' как старый iPhone"
+    ],
+    "source_articles": [97, 451, 454, 466, 468],
+    "source_urls": [
+      "https://t.me/lixiangautorussia/1672860",
+      "https://t.me/lixiangautorussia/1126229",
+      "https://t.me/lixiangautorussia/1699026",
+      "https://t.me/lixiangautorussia/1704473",
+      "https://t.me/lixiangautorussia/1397431"
+    ],
+    "article_count": 5,
+    "confidence": "high",
+    "overlaps_research": true,
+    "research_issue_id": "issue_c3",
+    "tags": ["ota", "firmware", "8.3", "8.2", "recuperation", "suspension_calibration", "russian_language"]
+  },
+  {
+    "topic_id": "topic_tg_014",
+    "title_ru": "Локализация — SIM, русификация, мастер-аккаунт, приложения",
+    "title_en": "Localization — SIM, Russification, Master Account, Apps",
+    "category": "owner_experience",
+    "models": ["L6", "L7", "L9"],
+    "systems": ["infotainment"],
+    "layer": "infotainment",
+    "season": "all",
+    "summary_ru": "Машина спроектирована для китайского рынка — за пределами Китая нет подключения к сети, OTA, гарантии. Сервис в Казахстане (дилер Алматы). Локализация включает: установку SIM-слота, русификацию, оформление китайского номера, мастер-аккаунт. Клубный магазин предоставляет: навигатор, Кинопоиск, Окко, Яндекс Музыка, HUD Speed. Пользователи предупреждают: русский блокирует порт ADB, танцы с бубном.",
+    "summary_en": "Car designed for Chinese market — outside China: no network, no OTA, no warranty. Service available in Kazakhstan (Almaty dealer). Localization includes: SIM slot installation, russification, Chinese number registration, master account. Club store provides: navigator, Kinopoisk, Okko, Yandex Music, HUD Speed. Users warn: Russian blocks ADB port, requires workarounds.",
+    "key_facts": [
+      "Авто разработано только для материкового Китая",
+      "За рубежом: нет сети, OTA, гарантии, послепродажного обслуживания",
+      "Дилер в Алматы (Казахстан) — единственный офи центр за пределами Китая",
+      "Русификация блокирует ADB порт",
+      "Клубный магазин: навигация, потоковые сервисы, HUD"
+    ],
+    "owner_tips": [
+      "Сброс интервала ТО недоступен дистанционно — только в дилерском центре",
+      "Отключите кастомный русский язык перед обновлениями если нужен ADB доступ",
+      "Покупайте через 'дилера' — минимизируете проблемы с ремонтом и локализацией"
+    ],
+    "source_articles": [1, 2, 8, 22, 222],
+    "source_urls": [
+      "https://t.me/lixiangautorussia/1712989",
+      "https://t.me/lixiangautorussia/1712929",
+      "https://t.me/lixiangautorussia/1079728",
+      "https://t.me/lixiangautorussia/1090765",
+      "https://t.me/lixiangautorussia/1711593"
+    ],
+    "article_count": 5,
+    "confidence": "high",
+    "overlaps_research": true,
+    "research_issue_id": "issue_c28",
+    "tags": ["sim_card", "russification", "localization", "master_account", "adb", "apps", "china_market"]
+  },
+  {
+    "topic_id": "topic_tg_015",
+    "title_ru": "Трассовая эксплуатация — расход, скорость, расход батареи на скорости",
+    "title_en": "Highway Driving — Consumption, Speed, Battery Drain at Speed",
+    "category": "owner_experience",
+    "models": ["L6", "L7", "L9"],
+    "systems": ["engine", "battery"],
+    "layer": "engine",
+    "season": "all",
+    "summary_ru": "Детальные замеры владельцев на трассе. При 180 км/ч батарея 100→20% за 1-2 часа. При 150 км/ч — поддержание заряда. При 130 км/ч на круизе — зарядка батареи (+40% за 2 часа). Расход топлива на L6 Max при 150-160 км/ч в форсированном режиме: 12 л/100 км. Трасса 800 км с полным зарядом и скоростью 150-160 — вполне реально. Диапазон работы ДВС на трассе: 2000-3800 об/мин.",
+    "summary_en": "Detailed owner measurements on highway. At 180 km/h battery drains 100→20% in 1-2 hours. At 150 — charge holds steady. At 130 on cruise — battery charges (+40% in 2 hours). Fuel consumption L6 Max at 150-160 km/h forced mode: 12 L/100km. 800 km trip with full charge at 150-160 — feasible. ICE operating range on highway: 2000-3800 RPM.",
+    "key_facts": [
+      "180 км/ч: батарея 100→20% за 1-2 часа",
+      "150 км/ч: заряд держится на одном уровне",
+      "130 км/ч круиз: +40% заряда за 2 часа",
+      "Расход топлива при 150-160 км/ч: ~12 л/100 км (L6 Max)",
+      "Круиз работает максимум до 130 км/ч"
+    ],
+    "owner_tips": [
+      "Для дальних поездок оптимальная скорость 130-150 км/ч — генератор справляется",
+      "При скорости 200+ батарея разряжается быстро — планируйте остановки",
+      "На трассе ставьте Forced Gen для оптимального использования ДВС"
+    ],
+    "source_articles": [222, 253, 462],
+    "source_urls": [
+      "https://t.me/lixiangautorussia/1711593",
+      "https://t.me/lixiangautorussia/1530022",
+      "https://t.me/lixiangautorussia/1337291"
+    ],
+    "article_count": 3,
+    "confidence": "high",
+    "overlaps_research": true,
+    "research_issue_id": "issue_c12",
+    "tags": ["highway", "speed", "consumption", "battery_drain", "cruise_control", "range"]
+  },
+  {
+    "topic_id": "topic_tg_016",
+    "title_ru": "Вибрация и шум ДВС — нормы и проблемы",
+    "title_en": "ICE Vibration and Noise — Normal vs Problem",
+    "category": "owner_experience",
+    "models": ["L7", "L9"],
+    "systems": ["engine"],
+    "layer": "engine",
+    "season": "all",
+    "summary_ru": "Частый вопрос: нормально ли вибрирует/шумит ДВС? Вибрация при прогреве и запуске на месте — нормально. При запуске на ходу — вибрации нет. Шумнее после ТО (возможно другое масло). Завывание при подзарядке от мотора — нормально (генератор). После ТО на 15 тыс. км: звук детонации при нажатии газа, хлюпание — возможно проблема с маслом или фильтром.",
+    "summary_en": "Common question: is ICE vibration/noise normal? Vibration during warm-up and stationary start — normal. No vibration when starting while driving. Louder after service (possibly different oil). Whining during generator charging — normal. After 15K service: detonation sound on throttle, gurgling — possibly oil or filter issue.",
+    "key_facts": [
+      "Вибрация ДВС при запуске на месте — нормально",
+      "Вибрации при запуске на ходу нет — так и должно быть",
+      "Звук завывания при подзарядке — нормальная работа генератора",
+      "Двигатель может шуметь иначе после замены масла"
+    ],
+    "owner_tips": [
+      "Не прислушивайтесь к каждому звуку — просто пользуйтесь машиной, вовремя меняйте масло и фильтры",
+      "Если ДВС стал шумнее после ТО — проверьте марку залитого масла",
+      "Не делайте резких ускорений на холодном моторе (до 82°C) — двигателю нужен прогрев"
+    ],
+    "source_articles": [256, 258, 275, 308],
+    "source_urls": [
+      "https://t.me/lixiangautorussia/1427957",
+      "https://t.me/lixiangautorussia/1269809",
+      "https://t.me/lixiangautorussia/494947",
+      "https://t.me/lixiangautorussia/1204249"
+    ],
+    "article_count": 4,
+    "confidence": "medium",
+    "overlaps_research": false,
+    "research_issue_id": null,
+    "tags": ["vibration", "noise", "engine_sound", "generator_whine", "detonation"]
+  },
+  {
+    "topic_id": "topic_tg_017",
+    "title_ru": "Подвеска — скрип сайлентблоков, 20 тыс. км",
+    "title_en": "Suspension — Bushing Squeaks at 20K km",
+    "category": "owner_experience",
+    "models": ["L6"],
+    "systems": ["suspension"],
+    "layer": "chassis",
+    "season": "winter",
+    "summary_ru": "На пробеге 20 тыс. км на L6 начала скрипеть подвеска. Замена сайлентблоков устранила проблему, но через 3 месяца скрип вернулся. Предположение: зимой снег и реагенты забивают подвеску, нужна мойка.",
+    "summary_en": "At 20K km on L6, suspension started squeaking. Bushing replacement fixed it, but squeak returned after 3 months. Hypothesis: winter snow and road chemicals clog suspension, needs washing.",
+    "key_facts": [
+      "Скрип подвески на L6 после 20 тыс. км",
+      "Замена сайлентблоков помогает временно — 3 месяца",
+      "Зимой скрип возвращается — возможно из-за снега и реагентов"
+    ],
+    "owner_tips": [
+      "Мойте подвеску регулярно зимой — реагенты ускоряют износ сайлентблоков",
+      "После замены сайлентблоков скрип может вернуться через 3 месяца"
+    ],
+    "source_articles": [215],
+    "source_urls": [
+      "https://t.me/lixiangautorussia/1706627"
+    ],
+    "article_count": 1,
+    "confidence": "medium",
+    "overlaps_research": true,
+    "research_issue_id": "issue_c23",
+    "tags": ["suspension", "squeak", "bushing", "silent_block", "winter", "road_chemicals"]
+  },
+  {
+    "topic_id": "topic_tg_018",
+    "title_ru": "Запуск ДВС при заблокированной машине — секретная процедура",
+    "title_en": "Starting ICE with Locked Car — Secret Procedure",
+    "category": "owner_experience",
+    "models": ["L7", "L9"],
+    "systems": ["engine", "electrical"],
+    "layer": "engine",
+    "season": "all",
+    "summary_ru": "Владельцы нашли способ запустить ДВС для зарядки батареи при заблокированной машине: воткнуть fuel, выйти, открыть водительскую и пассажирскую дверь, не садясь нажать педаль тормоза — двигатель заведется. Также: при неработающем ключе — долго держать кнопку открытия багажника, включить топливо и нажать тормоз. Если батарейка в ключе села — заменить в первую очередь.",
+    "summary_en": "Owners found a way to start ICE for battery charging with locked car: insert fuel, exit, open driver and passenger doors, press brake without sitting — engine starts. Also: with dead key fob — hold trunk button long, switch to fuel and press brake. If key battery is dead — replace it first.",
+    "key_facts": [
+      "Процедура запуска ДВС без ключа: fuel → выйти → открыть 2 двери → нажать тормоз",
+      "Длительное нажатие кнопки багажника для аварийного доступа",
+      "Замена батарейки в ключе — первый шаг при проблемах с доступом"
+    ],
+    "owner_tips": [
+      "Всегда носите запасную батарейку для ключа",
+      "При полностью мертвом ключе: долго держать кнопку багажника → fuel → тормоз",
+      "Процедура запуска через двери работает, но долго"
+    ],
+    "source_articles": [104, 151],
+    "source_urls": [
+      "https://t.me/lixiangautorussia/1714491",
+      "https://t.me/lixiangautorussia/1690064"
+    ],
+    "article_count": 2,
+    "confidence": "high",
+    "overlaps_research": true,
+    "research_issue_id": "issue_c22",
+    "tags": ["key_fob", "dead_battery", "emergency_start", "trunk_button", "locked_car"]
+  },
+  {
+    "topic_id": "topic_tg_019",
+    "title_ru": "Вождение зимой — занос, тормозной путь, режимы езды, шипы",
+    "title_en": "Winter Driving — Skidding, Braking Distance, Driving Modes, Studded Tires",
+    "category": "owner_experience",
+    "models": ["L6", "L7", "L9"],
+    "systems": ["brakes", "suspension"],
+    "layer": "chassis",
+    "season": "winter",
+    "summary_ru": "Владельцы делятся опытом зимнего вождения. L6 ведет себя 'как заднеприводная' на скользкой дороге — заносы в поворотах. Режим 'скользкая дорога' + шипованная резина. Выбор зимней резины критичен из-за массы авто (>2.5 т). Режим Шоссе — самый адекватный: не душит двигатель при заносе. Рекуперация в стандарт — предсказуемое поведение на скользком покрытии. Тормозной путь увеличен из-за массы — растягивайте дистанцию.",
+    "summary_en": "Owners share winter driving experience. L6 behaves 'like rear-wheel-drive' on slippery roads — slides in turns. Slippery road mode + studded tires needed. Winter tire choice critical due to car weight (>2.5 tons). Highway mode — most adequate: doesn't cut engine during skid. Standard regeneration — predictable behavior on slippery surfaces. Braking distance increased due to weight — increase following distance.",
+    "key_facts": [
+      "L6 на скользкой дороге ведет себя как заднеприводная — заносы в поворотах",
+      "Масса авто >2.5 т — критично для выбора зимней резины",
+      "Режим Шоссе: не душит двигатель при заносе",
+      "Лобовое стекло не самое прочное, вопросы по панораме"
+    ],
+    "owner_tips": [
+      "Внимательно выбирайте зимнюю резину — масса авто большая",
+      "Режим Шоссе оптимален зимой — не вмешивается при заносе",
+      "Рекуперацию ставьте в стандарт для предсказуемости",
+      "Увеличивайте дистанцию из-за массы авто",
+      "Привыкните к характеру управления — машина заносится в поворотах на льду"
+    ],
+    "source_articles": [222, 452],
+    "source_urls": [
+      "https://t.me/lixiangautorussia/1711593",
+      "https://t.me/lixiangautorussia/1702041"
+    ],
+    "article_count": 2,
+    "confidence": "high",
+    "overlaps_research": true,
+    "research_issue_id": "issue_c2",
+    "tags": ["winter_driving", "skidding", "studded_tires", "braking_distance", "highway_mode", "mass"]
+  },
+  {
+    "topic_id": "topic_tg_020",
+    "title_ru": "Li L9 Livis — новая платформа, EMB тормоза, 5-нм чип",
+    "title_en": "Li L9 Livis — New Platform, EMB Brakes, 5nm Chip",
+    "category": "news",
+    "models": ["L9"],
+    "systems": ["brakes", "suspension", "infotainment"],
+    "layer": "chassis",
+    "season": "all",
+    "summary_ru": "Обсуждение новой модели L9 Livis: длина >5.3 м, колеса 22\" 285/40, активная подвеска на 800В архитектуре (каждое колесо 10,000 Н). Отказ от 48V стабилизаторов. Электронные тормоза EMB без гидравлики — нет главного цилиндра, трубок, тормозной жидкости. Собственный 5-нм чип Li Auto 2560 TOPS. Четырехколесное рулевое. Батарея 73 кВт*ч, цена от 80,000 USD.",
+    "summary_en": "Discussion of new L9 Livis: length >5.3m, 22\" 285/40 wheels, 800V active suspension (10,000N per wheel). No 48V stabilizers. EMB electronic brakes — no hydraulics, no master cylinder, no brake fluid. Proprietary 5nm Li Auto chip at 2560 TOPS. Four-wheel steering. Battery 73 kWh, price from $80,000.",
+    "key_facts": [
+      "L9 Livis: >5.3 м, колеса 22\" 285/40",
+      "Активная подвеска 800В: 10,000 Н на колесо",
+      "EMB тормоза: полностью электрические, без гидравлики",
+      "Собственный чип 2560 TOPS — самый производительный на рынке",
+      "Четырехколесное рулевое управление",
+      "Цена от 80,000 USD"
+    ],
+    "owner_tips": [],
+    "source_articles": [103, 154],
+    "source_urls": [
+      "https://t.me/lixiangautorussia/1687477",
+      "https://t.me/lixiangautorussia/1687339"
+    ],
+    "article_count": 2,
+    "confidence": "high",
+    "overlaps_research": false,
+    "research_issue_id": null,
+    "tags": ["l9_livis", "emb_brakes", "active_suspension", "800v", "5nm_chip", "four_wheel_steering"]
+  },
+  {
+    "topic_id": "topic_tg_021",
+    "title_ru": "Pro vs Max vs Ultra — чипы, батареи, комплектации",
+    "title_en": "Pro vs Max vs Ultra — Chips, Batteries, Trim Levels",
+    "category": "owner_experience",
+    "models": ["L6", "L7", "L8", "L9"],
+    "systems": ["infotainment", "battery"],
+    "layer": "infotainment",
+    "season": "all",
+    "summary_ru": "Подробное сравнение комплектаций. L9 Pro: ~400K CNY. L7/L8 Max теперь с двухкамерной пневмой и батареей 52.3 кВт*ч. Мультимедийный процессор (Snapdragon) одинаков на Pro/Max — экраны не тормозят по-разному. Чип автопилота (Nvidia Orin): Pro — 1 чип, Max — 2 чипа. Orin влияет на обработку камер и ADAS, но не на интерфейс. Max оправдан для будущих 'тяжелых' ADAS функций.",
+    "summary_en": "Detailed trim comparison. L9 Pro: ~400K CNY. L7/L8 Max now with dual-chamber air suspension and 52.3 kWh battery. Multimedia processor (Snapdragon) same on Pro/Max — screens don't differ in speed. Autopilot chip (Nvidia Orin): Pro — 1 chip, Max — 2 chips. Orin affects camera processing and ADAS, not interface. Max justified for future 'heavy' ADAS features.",
+    "key_facts": [
+      "Мультимедийный процессор Snapdragon одинаковый на Pro и Max",
+      "Nvidia Orin: Pro = 1 чип, Max = 2 чипа",
+      "Orin влияет на обработку камер и ADAS, не на скорость интерфейса",
+      "L7/L8 рестайлинг: двухкамерная пневма на всех версиях",
+      "L9 Ultra: 21.4\" экран для второго ряда, 18-точечный массаж"
+    ],
+    "owner_tips": [
+      "Max оправдан для долгосрочного владения — запас мощности для будущих ADAS",
+      "Если разница в цене Pro→Max ~28,000 CNY — Max отличный выбор",
+      "Экраны работают одинаково на Pro и Max — не переплачивайте за 'скорость интерфейса'"
+    ],
+    "source_articles": [455, 460],
+    "source_urls": [
+      "https://t.me/lixiangautorussia/1699218",
+      "https://t.me/lixiangautorussia/4"
+    ],
+    "article_count": 2,
+    "confidence": "high",
+    "overlaps_research": false,
+    "research_issue_id": null,
+    "tags": ["pro", "max", "ultra", "orin", "snapdragon", "trim_comparison", "dual_chamber"]
+  },
+  {
+    "topic_id": "topic_tg_022",
+    "title_ru": "Сравнение с конкурентами — Lynk 900 vs Li, BMW, Zeekr",
+    "title_en": "Competitor Comparison — Lynk 900 vs Li, BMW, Zeekr",
+    "category": "owner_experience",
+    "models": ["L7", "L9"],
+    "systems": ["general"],
+    "layer": "body",
+    "season": "all",
+    "summary_ru": "Владелец L7 сравнил Lynk 900: подвеска Lynk хуже (булькает на лежачих), мультимедиа значительно хуже (Android vs iOS-подобный Li), рекуперация дергает зимой на максимуме, ДВС 2.0 ревет при газе в пол. Плюс Lynk: лучше энергоэффективность. Также сравнение с BMW/Mercedes: немцы не имеют аналога, толщина усилителя стоек Li >3 мм (кузовщики отмечают). Zeekr 9X на 2 головы выше Li, но дороже.",
+    "summary_en": "L7 owner compared Lynk 900: Lynk suspension worse (bumpy on speed bumps), multimedia significantly worse (Android vs iOS-like Li), regen jerks in winter on max, 2.0 ICE roars on full throttle. Lynk advantage: better energy efficiency. Also BMW/Mercedes comparison: no German analog exists, Li pillar reinforcement >3mm thick. Zeekr 9X much better than Li but pricier.",
+    "key_facts": [
+      "Lynk 900 vs Li L7: подвеска Li комфортнее, мультимедиа Li = iPhone vs Android",
+      "Толщина усилителя стоек Li Auto >3 мм (по отзывам кузовщиков)",
+      "Zeekr 9X — лучше Li но дороже",
+      "Рекуперация Li на 8.3 'тормозит как не в себя'"
+    ],
+    "owner_tips": [
+      "Если пересаживаетесь на Li — менять Li на Li, не на Lynk",
+      "Li Auto — для китайского рынка: свет, максималка, сиденья оптимизированы для Китая"
+    ],
+    "source_articles": [274, 451, 467],
+    "source_urls": [
+      "https://t.me/lixiangautorussia/1573199",
+      "https://t.me/lixiangautorussia/1126229",
+      "https://t.me/lixiangautorussia/1702286"
+    ],
+    "article_count": 3,
+    "confidence": "medium",
+    "overlaps_research": false,
+    "research_issue_id": null,
+    "tags": ["lynk_900", "comparison", "bmw", "zeekr", "competitor", "multimedia"]
+  },
+  {
+    "topic_id": "topic_tg_023",
+    "title_ru": "Масло 'оригинал' Shell vs альтернативы — подделки и реальность",
+    "title_en": "Original Shell Oil vs Alternatives — Fakes and Reality",
+    "category": "owner_experience",
+    "models": ["L7", "L9"],
+    "systems": ["engine"],
+    "layer": "engine",
+    "season": "all",
+    "summary_ru": "Развернутая дискуссия о масле 'оригинал Li Auto' (Shell). Масло продается массово, но Shell официально не подтвердил оригинальность. Многие канистры с кривыми этикетками, непонятные QR. Клуб готовит собственное масло с характеристиками выше Shell. Важно: 'оригинальное' масло BMW делает тот же Castrol (BP). Рекомендация: лить хорошее масло и менять своевременно, а не гнаться за 'оригиналом'. Объем заправки 3.7л — анализ одной канистры ничего не дает.",
+    "summary_en": "Extended discussion about 'original Li Auto' oil (Shell). Oil sold massively but Shell hasn't officially confirmed authenticity. Many cans with crooked labels, unclear QR. Club preparing own oil with better specs than Shell. Key insight: BMW 'original' oil is made by same Castrol (BP). Recommendation: use good oil and change on time, don't chase 'originals'. Fill volume 3.7L — analyzing one can proves nothing.",
+    "key_facts": [
+      "Shell официально не подтвердил оригинальность масла 'Li Auto'",
+      "Многие канистры с кривыми этикетками — подделки?",
+      "BMW 'оригинальное' масло делает Castrol (BP)",
+      "Объем заправки ДВС: 3.7л",
+      "Клуб готовит собственное масло для Li Auto"
+    ],
+    "owner_tips": [
+      "Не покупайте масло в коробках с надписью 'Li Auto' — высокий риск подделки",
+      "Лучше лить хороший известный продукт (Motul, Mobil) и менять своевременно",
+      "Частая замена масла еще никому не навредила",
+      "Shell не дал ответ об оригинальности — это тревожный знак"
+    ],
+    "source_articles": [35, 273, 275, 296],
+    "source_urls": [
+      "https://t.me/lixiangautorussia/1677728",
+      "https://t.me/lixiangautorussia/1578733",
+      "https://t.me/lixiangautorussia/494947",
+      "https://t.me/lixiangautorussia/1318242"
+    ],
+    "article_count": 4,
+    "confidence": "high",
+    "overlaps_research": false,
+    "research_issue_id": null,
+    "tags": ["oil", "shell", "original", "fake", "polymerium", "castrol", "maintenance"]
+  },
+  {
+    "topic_id": "topic_tg_024",
+    "title_ru": "Нулевое ТО — масло в редукторах с завода, стоит ли менять рано?",
+    "title_en": "Zero-Mileage Service — Factory Reducer Oil, Worth Changing Early?",
+    "category": "owner_experience",
+    "models": ["L7", "L9"],
+    "systems": ["drivetrain"],
+    "layer": "drivetrain",
+    "season": "all",
+    "summary_ru": "Сервисы рекомендуют нулевое ТО на 5000 км с заменой масла в редукторах, утверждая что заводское масло 'плохое'. Клубная позиция: не лезть раньше времени. Регламент завода: раз в 4 года или 80 тыс. км, замена только в переднем редукторе. Задний не обслуживается. Можно сократить вдвое (30-40 тыс. км) в российском климате. Чистота масла визуально ни о чем не говорит.",
+    "summary_en": "Service centers recommend zero-mileage service at 5000 km with reducer oil change, claiming factory oil is 'bad'. Club position: don't touch early. Factory schedule: every 4 years or 80K km, front reducer only. Rear is non-serviceable. Can halve interval (30-40K km) for Russian climate. Visual oil cleanliness means nothing.",
+    "key_facts": [
+      "Регламент завода: масло в переднем редукторе — 80,000 км / 4 года",
+      "Задний редуктор не обслуживается",
+      "Сервисы предлагают замену на 5000 км — клуб не рекомендует",
+      "В российском климате допустима замена на 30-40 тыс. км"
+    ],
+    "owner_tips": [
+      "Не ведитесь на предложения сервисов менять масло в редукторах на 5000 км",
+      "Чистота масла визуально не говорит о его состоянии",
+      "Следуйте регламенту завода — 80 тыс. км или 4 года (передний)",
+      "Масло Polymerium Special LI ELECTRO 75W для редукторов"
+    ],
+    "source_articles": [432, 444, 445],
+    "source_urls": [
+      "https://t.me/lixiangautorussia/1695725",
+      "https://t.me/lixiangautorussia/1708345",
+      "https://t.me/lixiangautorussia/1708052"
+    ],
+    "article_count": 3,
+    "confidence": "high",
+    "overlaps_research": false,
+    "research_issue_id": null,
+    "tags": ["reducer", "oil_change", "zero_service", "factory_schedule", "front_reducer"]
+  },
+  {
+    "topic_id": "topic_tg_025",
+    "title_ru": "Зимний прогрев батареи — пошаговая инструкция с тасками",
+    "title_en": "Winter Battery Warming — Step-by-Step Guide with Tasks",
+    "category": "owner_experience",
+    "models": ["L7", "L9"],
+    "systems": ["battery", "hvac", "engine"],
+    "layer": "ev",
+    "season": "winter",
+    "summary_ru": "Подробная инструкция от опытного владельца по зимней эксплуатации без домашней зарядки. 5 ключевых правил: (1) на холодной батарее машина плохо заряжается/отдает; (2) при А/С и ДВС<75°C догреватель тратит до 10 кВт; (3) обогрев заднего ряда — 2.7 кВт постоянно; (4) догреватель включается всегда на холодной батарее; (5) подогрев сидений экономнее нагрева воздуха. Набор тасков автоматизации для оптимального расхода.",
+    "summary_en": "Detailed guide from experienced owner for winter use without home charging. 5 key rules: (1) cold battery charges/discharges poorly; (2) with A/C and ICE<75C, heater draws up to 10kW; (3) rear seat heating — 2.7kW constant; (4) heater activates on cold battery regardless; (5) seat heating is more efficient than air heating. Automation task set for optimal energy use.",
+    "key_facts": [
+      "Догреватель: до 10 кВт при T_двс < 75°C",
+      "Обогрев задних рядов: 2.7 кВт постоянно",
+      "Подогрев сидений экономнее нагрева воздуха",
+      "С правильными тасками — неделя без зарядки в мороз"
+    ],
+    "owner_tips": [
+      "Таск 1: T < 0°C и T_двс < 75 → выключить А/С",
+      "Таск 2: T < 0°C и T_двс > 76 → включить А/С",
+      "Таск 3: T < 0°C и заряд < 75% → включить Fuel + Forced Gen",
+      "Для прогрева батареи без разряда: обдув лобового на минимум через приложение",
+      "На холодной батарее — только R-comfort, спорт+ после прогрева >15°C",
+      "За час прогрева батареи в таком режиме — +5% заряда"
+    ],
+    "source_articles": [456],
+    "source_urls": [
+      "https://t.me/lixiangautorussia/1173038"
+    ],
+    "article_count": 1,
+    "confidence": "high",
+    "overlaps_research": true,
+    "research_issue_id": "issue_c5",
+    "tags": ["winter", "battery_warming", "tasks", "heater", "energy_saving", "automation"]
+  }
+]

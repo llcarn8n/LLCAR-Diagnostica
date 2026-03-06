@@ -1,0 +1,1061 @@
+[
+  {
+    "topic_id": "topic_new_001",
+    "title_ru": "Отзыв Li Mega — пожар батареи, коррозия охлаждающей жидкости, 11 411 машин",
+    "title_en": "Li Mega Recall — Battery Fire, Coolant Corrosion, 11,411 Units",
+    "category": "safety",
+    "models": ["MEGA"],
+    "systems": ["battery", "cooling"],
+    "layer": "battery",
+    "season": "all",
+    "summary_ru": "В октябре 2025 Li Mega загорелся на улице Шанхая. Расследование выявило коррозию алюминиевых пластин в системе охлаждения батареи из-за недостаточной антикоррозийной защиты охлаждающей жидкости. Li Auto отозвал 11 411 единиц (почти половину всех поставленных), заменяя бесплатно охлаждающую жидкость, батарею и контроллер переднего мотора. Внедрена облачная система раннего предупреждения.",
+    "summary_en": "In October 2025 a Li Mega caught fire on a Shanghai street. Investigation found corrosion of aluminum cooling plates due to insufficient coolant anti-corrosion protection. Li Auto recalled 11,411 units (nearly half of all delivered), replacing coolant, battery pack, and front motor controller free of charge. A cloud-based early warning system was deployed.",
+    "key_facts": [
+      "11,411 units recalled (Feb 18 - Dec 27, 2024 production)",
+      "Root cause: coolant corrosion of aluminum cooling plates",
+      "Free replacement of coolant + battery + front motor controller",
+      "China Renaissance estimates ~RMB 100K per vehicle replacement cost",
+      "Total profit impact ~RMB 1.14 billion",
+      "Multiple employees fired over the incident"
+    ],
+    "source_articles": [528, 529, 481],
+    "source_urls": [
+      "https://cnevpost.com/2025/10/31/li-auto-recalls-mega-mpvs-battery-risk/",
+      "https://cnevpost.com/2025/11/14/li-auto-fires-employees-mega-recall/",
+      "https://kz.kursiv.media/2025-11-01/shkv-li-auto-otzyv-li-mega-pozhar-2025"
+    ],
+    "article_count": 3,
+    "confidence": "high",
+    "overlaps_research": true,
+    "research_issue_id": "issue_l2",
+    "is_new_finding": false,
+    "tags": ["recall", "mega", "battery_fire", "coolant", "corrosion", "safety"]
+  },
+  {
+    "topic_id": "topic_new_002",
+    "title_ru": "Обвал продаж Li Auto в 2025 — 8 месяцев падения, убыток Q3, кризис i-серии",
+    "title_en": "Li Auto Sales Plunge 2025 — 8 Consecutive Months of Decline, Q3 Loss, i-Series Crisis",
+    "category": "market",
+    "models": ["L6", "L7", "L8", "L9", "MEGA"],
+    "systems": [],
+    "layer": "ev",
+    "season": "all",
+    "summary_ru": "Li Auto пережила тяжелый 2025 год: 406 343 поставки (-18.8% г/г), первый квартальный убыток за 3 года в Q3 (624 млн юаней), 8 месяцев подряд падения продаж. L-серия потеряла конкурентоспособность на фоне конкурентов с большими батареями. i-серия BEV (i8, i6) не оправдала ожиданий. В январе 2026 — лишь 27 668 поставок.",
+    "summary_en": "Li Auto had a difficult 2025: 406,343 deliveries (-18.8% YoY), first quarterly loss in 3 years in Q3 (RMB 624M), 8 consecutive months of YoY decline. L-series lost competitiveness as rivals equipped EREVs with larger batteries. i-series BEVs (i8, i6) underperformed expectations. January 2026 saw only 27,668 deliveries.",
+    "key_facts": [
+      "2025 total: 406,343 deliveries, -18.8% YoY",
+      "Q3 2025 net loss: RMB 624 million (first loss since Q4 2022)",
+      "Vehicle margin dropped from 20.9% to 15.5%",
+      "Li i8 relaunched with price cuts after poor initial reception",
+      "Li L6 consistently ~47% of total deliveries",
+      "8 consecutive months of YoY decline through January 2026"
+    ],
+    "source_articles": [531, 533, 542, 539, 517, 521, 522, 523, 557],
+    "source_urls": [
+      "https://cnevpost.com/2025/11/26/li-auto-earnings-q3-2025/",
+      "https://cnevpost.com/2025/12/01/li-auto-deliveries-nov-2025/",
+      "https://cnevpost.com/2026/02/01/li-auto-delivers-27668-cars-jan-2026/"
+    ],
+    "article_count": 9,
+    "confidence": "high",
+    "overlaps_research": false,
+    "research_issue_id": null,
+    "is_new_finding": true,
+    "tags": ["sales_decline", "quarterly_loss", "market", "competition", "i_series", "BEV"]
+  },
+  {
+    "topic_id": "topic_new_003",
+    "title_ru": "Ремонт пневмоподвески Lixiang L7 — замена AMK на Wabco, реальный сервисный опыт",
+    "title_en": "Air Suspension Repair L7 — AMK to Wabco Replacement, Real Service Experience",
+    "category": "troubleshooting",
+    "models": ["L7"],
+    "systems": ["suspension"],
+    "layer": "chassis",
+    "season": "winter",
+    "summary_ru": "Специализированный сервис lixiang-sto.ru подтвердил системный дефект компрессоров AMK на L7 2023-2024. Влага попадает в систему из-за расположения воздухозаборника. Li Auto признали просчёт и перешли на Wabco для рестайлинга. Сервис предлагает полную замену AMK на Wabco-аналог как долгосрочное решение.",
+    "summary_en": "Specialized service center lixiang-sto.ru confirmed systemic AMK compressor defect on L7 2023-2024. Moisture enters the system due to air intake placement. Li Auto acknowledged the design flaw and switched to Wabco for facelift models. Service recommends complete AMK-to-Wabco swap as long-term fix.",
+    "key_facts": [
+      "AMK compressor air intake under rear bumper — no moisture filter",
+      "Li Auto officially replaced AMK with Wabco on facelift models",
+      "L9 with Wabco compressor has no such issue",
+      "Temporary fixes (filter, re-sealing) don't provide lasting results",
+      "Full replacement is the recommended solution"
+    ],
+    "source_articles": [573, 575, 574],
+    "source_urls": [
+      "https://lixiang-sto.ru/blog/remont-pnevmopodveski-lixiang-l7/",
+      "https://lixiang-sto.ru/blog/upala-pnevma-lixiang-l7/",
+      "https://lixiang-sto.ru/blog/spisok-chastyh-neispravnostej-lixiang/"
+    ],
+    "article_count": 3,
+    "confidence": "high",
+    "overlaps_research": true,
+    "research_issue_id": "issue_c1",
+    "is_new_finding": false,
+    "tags": ["air_suspension", "amk", "wabco", "compressor", "service", "repair_procedure"]
+  },
+  {
+    "topic_id": "topic_new_004",
+    "title_ru": "Компьютерная диагностика Lixiang — оборудование LDM и облачный доступ",
+    "title_en": "Lixiang Computer Diagnostics — LDM Equipment and Cloud Access",
+    "category": "maintenance",
+    "models": ["L7", "L9"],
+    "systems": ["infotainment", "ev"],
+    "layer": "ev",
+    "season": "all",
+    "summary_ru": "Для полноценной диагностики Lixiang необходимо дилерское оборудование LDM (Lixiang Diagnostic Master) с подключением к облачным серверам в Китае. Универсальные сканеры не обеспечивают полный доступ. LDM позволяет считывать ошибки, принудительно обновлять ПО (OTA-push), прописывать блоки и разблокировать авто после ДТП.",
+    "summary_en": "Full Lixiang diagnostics requires dealer-grade LDM (Lixiang Diagnostic Master) equipment connected to Chinese cloud servers. Universal scanners lack full access. LDM enables error reading, forced OTA-push updates, module registration, and post-crash vehicle unlock.",
+    "key_facts": [
+      "LDM connects to Li Auto cloud in China",
+      "Universal scanners cannot access all systems",
+      "Can perform OTA-push forced updates",
+      "Can unlock vehicles after crash (including 2025 models)",
+      "TPMS sensor cloning requires LDM cloud access",
+      "Base diagnostic: full system scan + error analysis"
+    ],
+    "source_articles": [570, 569],
+    "source_urls": [
+      "https://lixiang-sto.ru/blog/kompiuternaia-diagnostika-lixiang/",
+      "https://lixiang-sto.ru/blog/klonirovanie-datchikov-davleniia-v-shinakh-lixiang/"
+    ],
+    "article_count": 2,
+    "confidence": "high",
+    "overlaps_research": true,
+    "research_issue_id": "issue_c6",
+    "is_new_finding": false,
+    "tags": ["diagnostics", "LDM", "cloud", "OTA", "TPMS", "service_tools"]
+  },
+  {
+    "topic_id": "topic_new_005",
+    "title_ru": "Ремонт отопителя Lixiang L7 — неисправность WPTC в EV-режиме",
+    "title_en": "Heater Repair L7 — WPTC Failure in EV Mode",
+    "category": "troubleshooting",
+    "models": ["L7"],
+    "systems": ["hvac", "battery"],
+    "layer": "hvac",
+    "season": "winter",
+    "summary_ru": "Гибриды Lixiang используют двухконтурную систему отопления: тепло ДВС или высоковольтный нагреватель WPTC. При выходе WPTC из строя салон не обогревается в EV-режиме, а батарея теряет оптимальную температуру. Диагностика показывает блок WPTC недоступным. Замена выполняется с демонтажом элементов передней панели.",
+    "summary_en": "Lixiang hybrids use dual-loop heating: ICE heat or high-voltage WPTC heater. When WPTC fails, cabin heating is lost in EV mode and battery loses optimal temperature. Diagnostics show WPTC block as unavailable. Replacement requires partial front panel disassembly.",
+    "key_facts": [
+      "WPTC = Water PTC heater, runs on HV battery power",
+      "Dual function: cabin heating + battery temperature management",
+      "Failure = no heat in EV mode + battery degradation risk",
+      "Error displayed on multimedia screen",
+      "Repair requires LDM diagnostics"
+    ],
+    "source_articles": [572],
+    "source_urls": [
+      "https://lixiang-sto.ru/blog/remont-otopitelia-lixiang/"
+    ],
+    "article_count": 1,
+    "confidence": "high",
+    "overlaps_research": false,
+    "research_issue_id": null,
+    "is_new_finding": true,
+    "tags": ["heater", "WPTC", "EV_mode", "winter", "hvac", "repair_procedure"]
+  },
+  {
+    "topic_id": "topic_new_006",
+    "title_ru": "CarMods — русификация и приложения для Lixiang (Яндекс.Навигатор, HUD)",
+    "title_en": "CarMods — Russification and Apps for Lixiang (Yandex.Navigator, HUD)",
+    "category": "technology",
+    "models": ["L7", "L9"],
+    "systems": ["infotainment"],
+    "layer": "infotainment",
+    "season": "all",
+    "summary_ru": "ПО CarMods позволяет русифицировать интерфейс Lixiang, добавить Яндекс.Навигатор с выводом на HUD, установить приложения. Работает на моделях 2023-2024 до рестайлинга. OTA 8.0 блокирует ADB, поэтому CarMods нужно установить до обновления. Рестайлинговые модели получили русский интерфейс в OTA 8.0.",
+    "summary_en": "CarMods software enables Lixiang interface russification, Yandex.Navigator with HUD output, and app installation. Works on 2023-2024 pre-facelift models. OTA 8.0 blocks ADB, so CarMods must be installed before updating. Facelift models received Russian interface in OTA 8.0.",
+    "key_facts": [
+      "CarMods = CarModApps, third-party russification solution",
+      "Supports Yandex.Navigator + HUD speed camera alerts",
+      "Works on pre-facelift 2023-2024 models",
+      "OTA 8.0 blocks ADB — install CarMods before update",
+      "Facelift models have native Russian in OTA 8.0"
+    ],
+    "source_articles": [571],
+    "source_urls": [
+      "https://lixiang-sto.ru/blog/obnovlenie-carmods-na-lixiang-l7/"
+    ],
+    "article_count": 1,
+    "confidence": "high",
+    "overlaps_research": true,
+    "research_issue_id": "issue_m8",
+    "is_new_finding": false,
+    "tags": ["russification", "carmods", "yandex", "HUD", "OTA", "infotainment"]
+  },
+  {
+    "topic_id": "topic_new_007",
+    "title_ru": "Замена передних рычагов L9 — износ сайлентблоков при 58 тыс. км",
+    "title_en": "Front Control Arm Replacement L9 — Bushing Wear at 58K km",
+    "category": "troubleshooting",
+    "models": ["L9"],
+    "systems": ["suspension"],
+    "layer": "chassis",
+    "season": "all",
+    "summary_ru": "Lixiang L9 2024 года с пробегом 58 тыс. км потребовал замену передних рычагов подвески. Двухрычажная передняя и пятирычажная задняя подвеска Magic Carpet адаптивная, но сайлентблоки рычагов изнашиваются при активной эксплуатации. Нарушается геометрия подвески, ухудшается управляемость, ускоряется износ шин.",
+    "summary_en": "A 2024 Lixiang L9 with 58K km mileage required front control arm replacement. The dual-wishbone front and five-link rear Magic Carpet suspension is adaptive, but arm bushings wear under active driving. Suspension geometry is disrupted, handling worsens, and tire wear accelerates.",
+    "key_facts": [
+      "2024 L9 at 58,000 km needed front arm replacement",
+      "Front: double-wishbone, Rear: 5-link multilink",
+      "Magic Carpet adaptive suspension with dual-chamber air springs",
+      "Bushings lose elasticity from frequent damping changes",
+      "Regular inspection recommended for early detection"
+    ],
+    "source_articles": [576],
+    "source_urls": [
+      "https://lixiang-sto.ru/blog/zamena-perednikh-rychagov-na-lixiang-l9/"
+    ],
+    "article_count": 1,
+    "confidence": "medium",
+    "overlaps_research": true,
+    "research_issue_id": "issue_h1",
+    "is_new_finding": false,
+    "tags": ["control_arm", "bushings", "suspension", "L9", "wear", "58000km"]
+  },
+  {
+    "topic_id": "topic_new_008",
+    "title_ru": "Регламент ТО Lixiang L7/L8/L9 — интервалы, масла, объёмы",
+    "title_en": "Service Schedule L7/L8/L9 — Intervals, Oils, Volumes",
+    "category": "maintenance",
+    "models": ["L7", "L8", "L9"],
+    "systems": ["engine", "drivetrain"],
+    "layer": "engine",
+    "season": "all",
+    "summary_ru": "Все модели Lixiang L-серии имеют одинаковый регламент ТО: малое (масло + фильтр) и большое (+ салонный + воздушный фильтр). ДВС L2E15M: 3.7 л масла API SP/ACEA C2 0W-30. Передний редуктор Wei Rui TZ180XS, задний мощнее. Межсервисные интервалы одинаковы для L7/L8/L9. При тяжёлых условиях — сокращённые интервалы.",
+    "summary_en": "All Lixiang L-series share identical service schedules: small service (oil + filter) and major service (+ cabin + air filter). ICE L2E15M: 3.7L oil API SP/ACEA C2 0W-30. Front reducer Wei Rui TZ180XS, rear is more powerful. Service intervals identical for L7/L8/L9. Heavy conditions require shortened intervals.",
+    "key_facts": [
+      "Engine oil: 3.7L, API SP or ACEA C2 0W-30",
+      "Front reducer: Wei Rui TZ180XS, rear 80kW vs front 65kW",
+      "Small TO: oil + filter; Big TO: + cabin filter + air filter",
+      "Factory oil brand unknown — not disclosed by manufacturer",
+      "Severe conditions shorten intervals (manufacturer won't specify by how much)"
+    ],
+    "source_articles": [594, 591],
+    "source_urls": [
+      "https://autoplt.ru/reglament-to-lixiang-l7-l8-l9/",
+      "https://autoplt.ru/maslo-v-dvigatel-i-reduktor-korobku-lixiang/"
+    ],
+    "article_count": 2,
+    "confidence": "high",
+    "overlaps_research": false,
+    "research_issue_id": null,
+    "is_new_finding": true,
+    "tags": ["service_schedule", "oil", "maintenance", "intervals", "reducer", "L2E15M"]
+  },
+  {
+    "topic_id": "topic_new_009",
+    "title_ru": "Двигатель L2E15M — лицензия BMW Prince, ресурс и слабые места",
+    "title_en": "L2E15M Engine — BMW Prince License, Lifespan and Weak Points",
+    "category": "specs",
+    "models": ["L7", "L8", "L9"],
+    "systems": ["engine"],
+    "layer": "engine",
+    "season": "all",
+    "summary_ru": "Двигатель L2E15M — 1.5л турбо, 152-154 л.с., лицензия BMW Prince (EP6/CE16). Производитель — Power Xinchen (партнёр BMW). Используется как генератор в EREV. Слабое место — цепь ГРМ типа Морзе тоньше оригинальной роликовой. При щадящем режиме гибрида цепь может прослужить дольше, но требует контроля.",
+    "summary_en": "L2E15M is a 1.5L turbo, 152-154 hp, licensed from BMW Prince (EP6/CE16). Made by Power Xinchen (BMW partner). Used as generator in EREV. Weak point: Morse-type timing chain is thinner than original roller chain. In gentle hybrid mode the chain may last longer, but requires monitoring.",
+    "key_facts": [
+      "1.5L 4-cylinder turbo, 152-154 hp, direct injection, aluminum block",
+      "Licensed BMW Prince EP6/CE16 derivative",
+      "Morse chain replaces roller chain — thinner, wear-prone",
+      "Advice: use quality oil, don't let ICE idle too long without load",
+      "Same engine across all L7/L8/L9 models"
+    ],
+    "source_articles": [590, 487],
+    "source_urls": [
+      "https://autoplt.ru/dvigateli-lixiang-l7-l8-l9/",
+      "https://kz.kursiv.media/2026-02-16/rmnm-motor-lixiang-raskritikovali-iz-za-nenadezhnoy-konstrukcii-cepi-grm"
+    ],
+    "article_count": 2,
+    "confidence": "high",
+    "overlaps_research": true,
+    "research_issue_id": "issue_h7",
+    "is_new_finding": false,
+    "tags": ["engine", "L2E15M", "BMW_Prince", "timing_chain", "morse_chain", "turbo"]
+  },
+  {
+    "topic_id": "topic_new_010",
+    "title_ru": "Тяговая батарея Lixiang — тернарный литий, характеристики, зарядка",
+    "title_en": "Lixiang Traction Battery — Ternary Lithium, Specs, Charging",
+    "category": "specs",
+    "models": ["L7", "L8", "L9"],
+    "systems": ["battery"],
+    "layer": "battery",
+    "season": "all",
+    "summary_ru": "Все L-серии используют тернарные литиевые батареи (Ternary Lithium Battery). L7: запас хода 210 км, разрядка до 3% без последствий. Два зарядных порта: быстрая (до 75 кВт, 30-40 мин) и медленная. Быстрая зарядка сокращает ресурс батареи. Адаптер CCS2→GB/T нужен для европейских станций.",
+    "summary_en": "All L-series use ternary lithium batteries. L7: 210km EV range, can discharge to 3% safely. Two charge ports: fast (up to 75kW, 30-40 min) and slow. Fast charging reduces battery lifespan. CCS2→GB/T adapter needed for European chargers.",
+    "key_facts": [
+      "Ternary lithium battery with thermal protection casing",
+      "L7 EV range: 210 km, safe discharge to 3%",
+      "Fast charge: max 75 kW, 30-40 min to full",
+      "Slow charge preserves battery life better",
+      "CCS2 to GB/T adapter for European charging",
+      "Battery in thermal-protective casing for fire safety"
+    ],
+    "source_articles": [588, 598],
+    "source_urls": [
+      "https://autoplt.ru/batareya-lixiang-l7-l8-l9/",
+      "https://autoplt.ru/zaryadka-lixiang-l7-l8-l9/"
+    ],
+    "article_count": 2,
+    "confidence": "high",
+    "overlaps_research": false,
+    "research_issue_id": null,
+    "is_new_finding": true,
+    "tags": ["battery", "ternary_lithium", "charging", "CCS2", "range", "specs"]
+  },
+  {
+    "topic_id": "topic_new_011",
+    "title_ru": "Диски и шины Lixiang L7/L8/L9 — R20/R21, кованые, характеристики",
+    "title_en": "Wheels and Tires L7/L8/L9 — R20/R21, Forged, Specifications",
+    "category": "specs",
+    "models": ["L7", "L8", "L9"],
+    "systems": ["chassis"],
+    "layer": "chassis",
+    "season": "all",
+    "summary_ru": "L7/L8: штатно R20 (два варианта цвета), опция R21 (+10,000 юаней). L9: штатно R21. Все диски кованые из авиационного алюминия T6061. Ширина 8.5 дюймов. Сторонние R22-R24 возможны, но R24 нежелательны при полной загрузке. Пневмоподвеска компенсирует увеличенный размер.",
+    "summary_en": "L7/L8: stock R20 (two colors), optional R21 (+10,000 CNY). L9: stock R21. All wheels forged from T6061 aviation aluminum. Width 8.5 inches. Aftermarket R22-R24 fit but R24 not recommended at full load. Air suspension compensates for larger sizes.",
+    "key_facts": [
+      "Stock: R20 for L7/L8, R21 for L9",
+      "Forged T6061 aviation aluminum",
+      "Width: 8.5 inches stock",
+      "R21 option: +10,000 CNY (~125K RUB)",
+      "Aftermarket up to R24 possible with air suspension"
+    ],
+    "source_articles": [589],
+    "source_urls": [
+      "https://autoplt.ru/diski-i-shiny-lixiang-l7-l8-l9/"
+    ],
+    "article_count": 1,
+    "confidence": "high",
+    "overlaps_research": false,
+    "research_issue_id": null,
+    "is_new_finding": true,
+    "tags": ["wheels", "tires", "R20", "R21", "forged", "T6061"]
+  },
+  {
+    "topic_id": "topic_new_012",
+    "title_ru": "Транспортный налог на Lixiang в России — номинальная vs максимальная мощность",
+    "title_en": "Vehicle Tax in Russia — Nominal vs Maximum Power for Lixiang",
+    "category": "owner_experience",
+    "models": ["L7", "L8", "L9"],
+    "systems": [],
+    "layer": "ev",
+    "season": "all",
+    "summary_ru": "Налоговая пытается начислить налог по максимальной мощности 449 л.с. Однако по закону электромоторы облагаются по номинальной мощности (не максимальной). Минфин и ВС РФ подтвердили это в письмах. Реальная номинальная мощность существенно ниже 449 л.с., что позволяет сильно снизить налог.",
+    "summary_en": "Russian tax authorities attempt to charge tax based on max power of 449 hp. However, by law electric motors are taxed on nominal (not peak) power. Russian Ministry of Finance and Supreme Court confirmed this. Actual nominal power is significantly below 449 hp, enabling major tax savings.",
+    "key_facts": [
+      "Max power: 449 hp (200kW front + 130kW rear motors)",
+      "Nominal power significantly lower (taxable)",
+      "Ministry of Finance + Supreme Court letters confirm nominal power basis",
+      "Tax authority attempts to add ICE power on top — illegal",
+      "SBKTS document values may vary — key for registration"
+    ],
+    "source_articles": [596],
+    "source_urls": [
+      "https://autoplt.ru/transportnyj-nalog-lixiang-l7-l8-l9/"
+    ],
+    "article_count": 1,
+    "confidence": "high",
+    "overlaps_research": false,
+    "research_issue_id": null,
+    "is_new_finding": true,
+    "tags": ["tax", "nominal_power", "russia", "registration", "legal"]
+  },
+  {
+    "topic_id": "topic_new_013",
+    "title_ru": "Сравнение L7 vs L8 vs L9 — размеры, комплектации, отличия",
+    "title_en": "Comparison L7 vs L8 vs L9 — Dimensions, Trims, Differences",
+    "category": "comparison",
+    "models": ["L7", "L8", "L9"],
+    "systems": [],
+    "layer": "body",
+    "season": "all",
+    "summary_ru": "L9 (5218 мм) > L8 (5080 мм) > L7 (5050 мм). Колесная база L9: 3105, L8/L7: 3005. Динамика одинаковая: 5.3 сек до 100 км/ч. Единая платформа REEV. L7 — 5 мест, L8/L9 — 6 мест. Комплектации Air/Pro/Max, L9 только Pro/Max. LiDAR только в Max. Все на единой силовой установке.",
+    "summary_en": "L9 (5218mm) > L8 (5080mm) > L7 (5050mm). Wheelbase L9: 3105, L8/L7: 3005. Same dynamics: 5.3s to 100km/h. Common REEV platform. L7: 5 seats, L8/L9: 6 seats. Trims Air/Pro/Max, L9 only Pro/Max. LiDAR only in Max. All share identical powertrain.",
+    "key_facts": [
+      "Same 0-100: 5.3s, max 180 km/h for all three",
+      "L7: 5-seat, L8/L9: 6-seat with captain chairs",
+      "LiDAR + 2x Nvidia Orin X only in Max versions",
+      "Pro uses Horizon Robotics Journey 5 chip",
+      "Pricing: L7 from 301,800 RMB, L9 from 409,800 RMB"
+    ],
+    "source_articles": [595, 592],
+    "source_urls": [
+      "https://autoplt.ru/sravnenie-lixiang-l7-l8-l9/",
+      "https://autoplt.ru/obzor-lixiang-l9/"
+    ],
+    "article_count": 2,
+    "confidence": "high",
+    "overlaps_research": false,
+    "research_issue_id": null,
+    "is_new_finding": true,
+    "tags": ["comparison", "L7_vs_L8_vs_L9", "specs", "dimensions", "trim_levels"]
+  },
+  {
+    "topic_id": "topic_new_014",
+    "title_ru": "Все минусы Lixiang L7 по отзывам владельцев",
+    "title_en": "All Lixiang L7 Downsides from Owner Reviews",
+    "category": "owner_experience",
+    "models": ["L7"],
+    "systems": ["infotainment", "body", "suspension"],
+    "layer": "interior",
+    "season": "all",
+    "summary_ru": "Собранные минусы L7: лёгкий «оторванный» руль, слабая ремонтопригодность (мало сервисов в России), платформа завязана на кодировке компонентов к VIN, мелкие эргономические просчёты, перебор с электронными опциями. Плюсов больше, но идеальной машину не назовет даже китаец.",
+    "summary_en": "Compiled L7 downsides: light 'disconnected' steering, limited repairability (few authorized services in Russia), platform component-to-VIN coding dependency, minor ergonomic issues, excessive electronic options. Pros outweigh cons, but even a Chinese owner wouldn't call it perfect.",
+    "key_facts": [
+      "Steering feels 'disconnected from wheels'",
+      "Very few service centers outside Moscow/SPB",
+      "All components coded to specific VIN — complicates third-party repair",
+      "Multimedia overwhelming in first firmware versions",
+      "No guarantee any Russian service can actually fix it"
+    ],
+    "source_articles": [597, 483],
+    "source_urls": [
+      "https://autoplt.ru/vse-minusy-v-otzyvah-vladelczev-lixiang-l7/",
+      "https://kz.kursiv.media/2026-01-06/rmnm-kazakhstanets-nazval-lixiang-l7-pro-novoy-camry-no-s-nim-ne-soglasilis"
+    ],
+    "article_count": 2,
+    "confidence": "high",
+    "overlaps_research": true,
+    "research_issue_id": "issue_c6",
+    "is_new_finding": false,
+    "tags": ["owner_review", "L7", "downsides", "steering", "repairability", "VIN_coding"]
+  },
+  {
+    "topic_id": "topic_new_015",
+    "title_ru": "Распространённые поломки Lixiang — данные Li Auto Russia Club",
+    "title_en": "Common Lixiang Problems — Li Auto Russia Club Data",
+    "category": "troubleshooting",
+    "models": ["L6", "L7", "L9"],
+    "systems": ["suspension", "sensors", "steering"],
+    "layer": "chassis",
+    "season": "winter",
+    "summary_ru": "Li Auto Russia Club: L9 — самый надёжный (200К км без ремонтов). L7: массовый отказ подрулевого модуля (обрыв проводки партии), проблемы пневмоподвески с AMK зимой, лидар уязвим к влаге/реагентам (замена 600К тенге). L6: скрипы задней подвески после зимы (сайлентблоки).",
+    "summary_en": "Li Auto Russia Club: L9 is most reliable (200K km without repairs). L7: mass steering column module failure (wiring defect in batch), air suspension issues with AMK in winter, LiDAR vulnerable to moisture/road chemicals (replacement 600K KZT). L6: rear suspension squeaks after winter (bushings).",
+    "key_facts": [
+      "L9 most reliable — some at 200,000 km without major repairs",
+      "L7 steering module: buttons stop lighting, car ignores commands (wiring batch defect)",
+      "L7 air suspension with AMK fails at sub-zero temps",
+      "LiDAR replacement: ~600,000 KZT; protect with film immediately",
+      "L6: rear suspension bushing squeaks after winter — resolves with warmth or replacement"
+    ],
+    "source_articles": [475],
+    "source_urls": [
+      "https://kz.kursiv.media/2025-06-09/kmlz-li-auto-problems"
+    ],
+    "article_count": 1,
+    "confidence": "high",
+    "overlaps_research": true,
+    "research_issue_id": "issue_h5",
+    "is_new_finding": false,
+    "tags": ["common_problems", "L7", "L9", "L6", "steering_module", "lidar", "bushings"]
+  },
+  {
+    "topic_id": "topic_new_016",
+    "title_ru": "Lixiang L7 — тест на дальность 1000+ км без дозаправки (Алматы — Астана)",
+    "title_en": "Lixiang L7 — Range Test 1000+ km Without Refueling (Almaty-Astana)",
+    "category": "comparison",
+    "models": ["L7"],
+    "systems": ["battery", "engine"],
+    "layer": "ev",
+    "season": "winter",
+    "summary_ru": "В тесте Kolesa KZ на маршруте Алматы — Астана (1200+ км) L7 прошёл 1000 км без дозаправки. Расход: 15.6 кВт*ч/100 км + 7.8 л/100 км бензина. Победил Rox 01, Deepal S07 и BYD Song Plus DM-i. Зимние шины, кондиционер, круиз — реальные условия.",
+    "summary_en": "In Kolesa KZ test on Almaty-Astana route (1200+ km), L7 covered 1000 km without refueling. Consumption: 15.6 kWh/100km + 7.8 L/100km petrol. Beat Rox 01, Deepal S07 and BYD Song Plus DM-i. Winter tires, AC, cruise — real-world conditions.",
+    "key_facts": [
+      "L7 range: 1000+ km without refueling (real test)",
+      "Electric consumption: 15.6 kWh/100km",
+      "Petrol consumption: 7.8 L/100km",
+      "Beat Rox 01, Deepal S07 (813 km), BYD Song Plus DM-i",
+      "Winter tires, climate on, cruise control — realistic"
+    ],
+    "source_articles": [482],
+    "source_urls": [
+      "https://kz.kursiv.media/2025-12-09/shkv-realniy-zapas-khoda-gibrid-lixiang-l7-rox-deepal-byd-song-plus"
+    ],
+    "article_count": 1,
+    "confidence": "high",
+    "overlaps_research": false,
+    "research_issue_id": null,
+    "is_new_finding": true,
+    "tags": ["range_test", "1000km", "L7", "real_world", "winter", "comparison"]
+  },
+  {
+    "topic_id": "topic_new_017",
+    "title_ru": "Lixiang L7 после 170 тыс. км — нет коррозии, минимальные расходы",
+    "title_en": "Lixiang L7 After 170K km — No Corrosion, Minimal Costs",
+    "category": "owner_experience",
+    "models": ["L7"],
+    "systems": ["body", "suspension"],
+    "layer": "body",
+    "season": "all",
+    "summary_ru": "YouTube-канал Helper Service осмотрел L7 2023 года после 170 тыс. км. Результат: нет коррозии (алюминиевые капот/крылья, оцинкованная сталь). Лидар герметичен. Батарея цела. За весь пробег — только расходники (масло, фильтры, щётки, колодки). Тормозные диски — заводские. Салон в хорошем состоянии.",
+    "summary_en": "YouTube channel Helper Service inspected a 2023 L7 after 170K km. Result: no corrosion (aluminum hood/fenders, galvanized steel). LiDAR sealed. Battery intact. Only consumables replaced (oil, filters, wipers, pads). Brake discs: factory original. Interior in good condition.",
+    "key_facts": [
+      "170,000 km, 3 years, no protective film",
+      "Zero corrosion — aluminum body panels + galvanized steel",
+      "LiDAR: sealed and functional",
+      "Battery case: no damage or degradation signs",
+      "Only consumables replaced — zero component repairs",
+      "Factory brake discs still in service"
+    ],
+    "source_articles": [489],
+    "source_urls": [
+      "https://kz.kursiv.media/2026-03-05/rmnm-lixiang-l7-proyekhal-170-tys-km-sgnil-li-krossover"
+    ],
+    "article_count": 1,
+    "confidence": "high",
+    "overlaps_research": false,
+    "research_issue_id": null,
+    "is_new_finding": true,
+    "tags": ["170000km", "corrosion_free", "long_term", "reliability", "aluminum_body"]
+  },
+  {
+    "topic_id": "topic_new_018",
+    "title_ru": "Воздушный фильтр забивается снегом — остановка двигателя-генератора в метель",
+    "title_en": "Air Filter Clogs with Snow — Engine-Generator Stalls in Blizzard",
+    "category": "troubleshooting",
+    "models": ["L7", "L9"],
+    "systems": ["engine"],
+    "layer": "engine",
+    "season": "winter",
+    "summary_ru": "В сильную метель снег забивает патрубки и воздушный фильтр ДВС-генератора. Мотор теряет мощность и перестаёт заряжать батарею. Фильтр превращается в ледяную пробку. Программного решения нет. Требуется ручная разборка и очистка. Аналогичная проблема у BMW X5/X6/X7.",
+    "summary_en": "In heavy blizzards, snow clogs the engine air intake ducts and filter. The ICE generator loses power and stops charging the battery. Filter becomes an ice plug. No software fix exists. Manual disassembly and cleaning required. Same issue affects BMW X5/X6/X7.",
+    "key_facts": [
+      "Snow enters air filter in heavy blizzard conditions",
+      "ICE stops → battery not charging → full stop risk",
+      "No OTA/software fix possible",
+      "Manual filter disassembly required roadside",
+      "Same issue on BMW X5/X6/X7 — not brand-specific",
+      "First signs: sudden power loss, charge level dropping"
+    ],
+    "source_articles": [485],
+    "source_urls": [
+      "https://kz.kursiv.media/2026-01-27/shkv-vladelcy-lixiang-zhaluyutsya-na-ostanovku-gibridov-v-snegopad"
+    ],
+    "article_count": 1,
+    "confidence": "high",
+    "overlaps_research": true,
+    "research_issue_id": "issue_c7",
+    "is_new_finding": false,
+    "tags": ["air_filter", "snow", "blizzard", "engine_stall", "winter", "ICE"]
+  },
+  {
+    "topic_id": "topic_new_019",
+    "title_ru": "Обновлённый Li L9 2026 — батарея 73 кВт*ч, 800В, чипы M100, рулевое по проводам",
+    "title_en": "Updated Li L9 2026 — 73 kWh Battery, 800V, M100 Chips, Steer-by-Wire",
+    "category": "technology",
+    "models": ["L9"],
+    "systems": ["battery", "adas", "suspension", "steering"],
+    "layer": "ev",
+    "season": "all",
+    "summary_ru": "Обновлённый L9: длина 5.3 м, батарея CATL 73 кВт*ч (было 52), EV-запас хода 400+ км, 5C зарядка. Два чипа M100 (2560 TOPS), круговой LiDAR, активная подвеска, подруливание задних колёс, рулевое по проводам, электромеханические тормоза. L9 Livis — 559 800 юаней. Запуск Q2 2026.",
+    "summary_en": "Updated L9: 5.3m length, CATL 73 kWh battery (was 52), 400+ km EV range, 5C charging. Two M100 chips (2560 TOPS), 360-degree LiDAR, active suspension, rear-wheel steering, steer-by-wire, electronic mechanical braking. L9 Livis at 559,800 CNY. Launch Q2 2026.",
+    "key_facts": [
+      "Battery: 52 kWh → 73 kWh CATL, 5C charging",
+      "EV range: 400+ km (was ~215 km)",
+      "M100 chips: 2560 TOPS total (3x Nvidia Thor-U)",
+      "360-degree LiDAR coverage",
+      "Steer-by-wire, 4-wheel steering, EMB brakes",
+      "L9 Livis ultimate: 559,800 CNY (~$80,670)",
+      "Standard L9: from 409,800 CNY"
+    ],
+    "source_articles": [543, 544, 486],
+    "source_urls": [
+      "https://cnevpost.com/2026/02/06/li-auto-files-for-l9-livis/",
+      "https://cnevpost.com/2026/02/06/li-auto-unveils-updated-l9-suv/",
+      "https://kz.kursiv.media/2026-02-06/rmnm-li-auto-l9-2026-stal-krupnee-tekhnologichnee-i-dorozhe"
+    ],
+    "article_count": 3,
+    "confidence": "high",
+    "overlaps_research": false,
+    "research_issue_id": null,
+    "is_new_finding": true,
+    "tags": ["L9_2026", "M100", "73kWh", "800V", "steer_by_wire", "update"]
+  },
+  {
+    "topic_id": "topic_new_020",
+    "title_ru": "Li Auto i6 и i8 — первые BEV-кроссоверы, слабые продажи, проблемы с батареями",
+    "title_en": "Li Auto i6 and i8 — First BEV SUVs, Weak Sales, Battery Supply Issues",
+    "category": "market",
+    "models": ["L7", "L9"],
+    "systems": ["battery"],
+    "layer": "ev",
+    "season": "all",
+    "summary_ru": "Li i8 (июль 2025) и Li i6 (сентябрь 2025) — первые электрические SUV Li Auto. i8 провалился при запуске — пришлось снижать цены через неделю. i6 получил 20 000 заказов за часы, но столкнулся с дефицитом батарей CATL. Li Auto предлагает переход на батареи Sunwoda для ускорения поставок.",
+    "summary_en": "Li i8 (July 2025) and Li i6 (September 2025) are Li Auto's first electric SUVs. i8 flopped at launch — price cuts within a week. i6 received 20,000 orders in hours but faced CATL battery supply shortage. Li Auto offers switch to Sunwoda batteries for faster delivery.",
+    "key_facts": [
+      "Li i8: launched July 29, relaunched Aug 5 with price cuts",
+      "Li i6: 20,000 firm orders within hours of launch",
+      "i6 starting price: 249,800 CNY (with 35K limited-time benefits)",
+      "CATL battery supply constrained — 4-6 week delays",
+      "Li Auto pushing Sunwoda batteries as alternative (consumers resist after Geely lawsuit)",
+      "Target: 6K i8 + 10K i6 monthly by year-end"
+    ],
+    "source_articles": [526, 527, 541, 400],
+    "source_urls": [
+      "https://cnevpost.com/2025/09/26/li-auto-20000-orders-i6/",
+      "https://cnevpost.com/2025/09/26/li-auto-launches-i6-suv/",
+      "https://cnevpost.com/2026/01/29/li-auto-still-grapples-with-battery-supply-constraints-i6-suv/"
+    ],
+    "article_count": 4,
+    "confidence": "high",
+    "overlaps_research": true,
+    "research_issue_id": "issue_l4",
+    "is_new_finding": false,
+    "tags": ["i6", "i8", "BEV", "battery_supply", "CATL", "Sunwoda", "sales"]
+  },
+  {
+    "topic_id": "topic_new_021",
+    "title_ru": "Li Auto L7 — вехи продаж: 100K, 200K, 300K единиц",
+    "title_en": "Li Auto L7 — Delivery Milestones: 100K, 200K, 300K Units",
+    "category": "market",
+    "models": ["L7"],
+    "systems": [],
+    "layer": "body",
+    "season": "all",
+    "summary_ru": "Li L7 — модель, которую чуть не отменили. Достигла 100 000 поставок за 8 мес. (ноябрь 2023), 200 000 за 16 мес. (июль 2024), 300 000 за 26 мес. (май 2025). Вносит ~23% поставок Li Auto. CEO Ли Сян хотел отменить модель в сентябре 2022, но его остановили другие руководители.",
+    "summary_en": "Li L7 was nearly canceled. Reached 100K deliveries in 8 months (Nov 2023), 200K in 16 months (Jul 2024), 300K in 26 months (May 2025). Contributes ~23% of Li Auto deliveries. CEO Li Xiang wanted to axe it in Sep 2022 but was stopped by other executives.",
+    "key_facts": [
+      "100K in 8 months, 200K in 16, 300K in 26",
+      "CEO wanted to cancel model in September 2022",
+      "Consistently ~23% of monthly Li Auto deliveries",
+      "Starting price: 301,800 CNY (2024)",
+      "Only 5-seat model in Li Auto lineup"
+    ],
+    "source_articles": [516, 520],
+    "source_urls": [
+      "https://cnevpost.com/2024/07/08/li-l7-deliveries-exceed-200000/",
+      "https://cnevpost.com/2025/05/10/li-auto-li-l7-deliveries-300000/"
+    ],
+    "article_count": 2,
+    "confidence": "high",
+    "overlaps_research": false,
+    "research_issue_id": null,
+    "is_new_finding": true,
+    "tags": ["L7", "milestones", "300000", "delivery_data", "sales_history"]
+  },
+  {
+    "topic_id": "topic_new_022",
+    "title_ru": "Производитель Li Auto — завод в Чанчжоу, история компании, партнёры",
+    "title_en": "Li Auto Manufacturer — Changzhou Factory, Company History, Partners",
+    "category": "specs",
+    "models": ["L7", "L8", "L9"],
+    "systems": [],
+    "layer": "body",
+    "season": "all",
+    "summary_ru": "Li Xiang основана в 2015 году Ли Сяном (бывший директор Xpeng). Штаб-квартира в Пекине, производство в Чанчжоу + новый завод в Пекине. Мощность: 750 000 авто/год. Партнёры: Panasonic, Bosch, BorgWarner, Valeo. IPO на NASDAQ в 2020. 3000 зарядных станций к концу 2025.",
+    "summary_en": "Li Xiang founded in 2015 by Li Xiang (ex-Xpeng executive). HQ in Beijing, production in Changzhou + new Beijing factory. Capacity: 750,000 cars/year. Partners: Panasonic, Bosch, BorgWarner, Valeo. NASDAQ IPO in 2020. 3,000 charging stations by end 2025.",
+    "key_facts": [
+      "Founded 2015, IPO on NASDAQ 2020",
+      "CEO: Li Xiang, CTO: Ma Donghui",
+      "Changzhou factory + new Beijing factory",
+      "750,000 unit/year capacity",
+      "Key partners: Panasonic, Bosch, BorgWarner, Valeo",
+      "800V REEV technology with 12-min charge for 500km"
+    ],
+    "source_articles": [593],
+    "source_urls": [
+      "https://autoplt.ru/proizvoditel-lixiang-l7-l8-l9/"
+    ],
+    "article_count": 1,
+    "confidence": "high",
+    "overlaps_research": false,
+    "research_issue_id": null,
+    "is_new_finding": true,
+    "tags": ["company_history", "changzhou", "manufacturer", "partners", "NASDAQ"]
+  },
+  {
+    "topic_id": "topic_new_023",
+    "title_ru": "Отзыв Li ONE 10 469 штук — дефект передней подвески (2020)",
+    "title_en": "Li ONE Recall 10,469 Units — Front Suspension Defect (2020)",
+    "category": "safety",
+    "models": [],
+    "systems": ["suspension"],
+    "layer": "chassis",
+    "season": "all",
+    "summary_ru": "В ноябре 2020 Li Auto отозвал 10 469 Li ONE (ноябрь 2019 - июнь 2020) из-за дефекта передней подвески. Изначально компания назвала это «бесплатным апгрейдом оборудования», что вызвало критику. Li Auto извинилась и переквалифицировала в официальный отзыв.",
+    "summary_en": "In November 2020 Li Auto recalled 10,469 Li ONE units (Nov 2019-Jun 2020) for front suspension design flaw. Company initially called it a 'free hardware upgrade', drawing criticism. Li Auto apologized and reclassified as official recall.",
+    "key_facts": [
+      "10,469 Li ONE vehicles recalled",
+      "Front suspension design safety hazard",
+      "Initially called 'hardware upgrade' — not 'recall'",
+      "Public backlash forced reclassification to recall",
+      "Li Auto issued public apology on Weibo"
+    ],
+    "source_articles": [505],
+    "source_urls": [
+      "https://cnevpost.com/2020/11/06/li-auto-recalls-10469-li-ones-after-criticism-of-previous-upgrade-move/"
+    ],
+    "article_count": 1,
+    "confidence": "high",
+    "overlaps_research": false,
+    "research_issue_id": null,
+    "is_new_finding": true,
+    "tags": ["recall", "li_one", "suspension", "2020", "safety"]
+  },
+  {
+    "topic_id": "topic_new_024",
+    "title_ru": "Li L9 тест-драйв — поломка подвески на яме (июль 2022)",
+    "title_en": "Li L9 Test Drive — Suspension Breakage on Pothole (July 2022)",
+    "category": "safety",
+    "models": ["L9"],
+    "systems": ["suspension"],
+    "layer": "chassis",
+    "season": "all",
+    "summary_ru": "В июле 2022 тестовый Li L9 в Чунцине проехал яму 20 см на 90 км/ч — подушка пневмоподвески лопнула. Li Auto объяснил: тестовые машины использовали пилотную версию демпферного кольца (в 2.5 раза слабее серийного). Инцидент широко обсуждался, ставились под сомнение объяснения.",
+    "summary_en": "In July 2022 a Li L9 test car in Chongqing hit a 20cm pothole at 90 km/h — air spring cushion ring broke. Li Auto explained: test cars used pilot version of the ring (2.5x weaker than production). Incident widely discussed, explanations questioned.",
+    "key_facts": [
+      "Test car, not production vehicle",
+      "Cushion ring from pilot stage — 2.5x weaker than production",
+      "Production version promised to handle larger impacts",
+      "Former Geely Research Institute director questioned the explanation",
+      "Incident occurred just as test drives began"
+    ],
+    "source_articles": [506],
+    "source_urls": [
+      "https://cnevpost.com/2022/07/18/li-auto-in-spotlight-for-li-l9-test-car-suspension-breakage/"
+    ],
+    "article_count": 1,
+    "confidence": "medium",
+    "overlaps_research": true,
+    "research_issue_id": "issue_c1",
+    "is_new_finding": false,
+    "tags": ["L9", "suspension", "breakage", "test_drive", "2022"]
+  },
+  {
+    "topic_id": "topic_new_025",
+    "title_ru": "Казахстан — рынок Lixiang, льготы, таможня, официальные дилеры",
+    "title_en": "Kazakhstan — Lixiang Market, Tax Exemptions, Customs, Official Dealers",
+    "category": "market",
+    "models": ["L6", "L7", "L9"],
+    "systems": [],
+    "layer": "body",
+    "season": "all",
+    "summary_ru": "Lixiang популярен в Казахстане: льготный ввоз EREV (0% пошлина + 0% НДС) до конца 2025. С 2026 года — +16% НДС. Официальные дилеры открылись в Астане и Алматы в конце 2025 (ОТТС для L6, L7, L9). Цены: L7 ~23 млн тенге, L9 ~27.8 млн тенге. Депутаты Кыргызстана закупили L7/L9 для служебного парка.",
+    "summary_en": "Lixiang is popular in Kazakhstan: EREV tax exemption (0% duty + 0% VAT) until end of 2025. From 2026: +16% VAT. Official dealers opened in Astana and Almaty in late 2025 (OTTS certification for L6, L7, L9). Prices: L7 ~23M KZT, L9 ~27.8M KZT. Kyrgyz parliament purchased L7/L9 for official fleet.",
+    "key_facts": [
+      "0% duty + 0% VAT for EREV until Dec 31, 2025",
+      "From 2026: +16% VAT minimum",
+      "Official dealers in Astana/Almaty since late 2025",
+      "OTTS certified for L6, L7, L9",
+      "Kyrgyz parliament: 70 L7/L9 for deputies",
+      "Delivery from China: 1.5-2 months, order by Sept-Oct to beat deadline"
+    ],
+    "source_articles": [479, 470, 484],
+    "source_urls": [
+      "https://kz.kursiv.media/2025-09-24/kmlz-lgotnyi-vvoz-gibridy-iz-kitaya-podorozhayut-na-milliony-posle",
+      "https://kz.kursiv.media/2025-04-03/kmlz-electromobili-lixiang",
+      "https://kz.kursiv.media/2026-01-27/rmnm-li-auto-zakryvayet-salony-v-kitaye-no-lixiang-v-kazakhstane-nabirayet-oboroty"
+    ],
+    "article_count": 3,
+    "confidence": "high",
+    "overlaps_research": false,
+    "research_issue_id": null,
+    "is_new_finding": true,
+    "tags": ["kazakhstan", "tax_exemption", "customs", "official_dealers", "EREV"]
+  },
+  {
+    "topic_id": "topic_new_026",
+    "title_ru": "Lixiang L9 — двухлетний опыт владения (60 тыс. км), сравнение с Rolls-Royce",
+    "title_en": "Lixiang L9 — Two-Year Ownership (60K km), Compared to Rolls-Royce",
+    "category": "owner_experience",
+    "models": ["L9"],
+    "systems": ["interior", "suspension", "infotainment"],
+    "layer": "interior",
+    "season": "all",
+    "summary_ru": "Блогер Miracle за 2 года и 60 тыс. км: кожа/строчка/руль в идеальном состоянии. Плавность хода сравнивает с Rolls-Royce (лучше BMW X7 и Mercedes GLS). 449 л.с., 5.4 сек до 100, запас хода 700-900 км. Мультимедиа перегружена, русификация неполная. Третий ряд с подогревом — редкость.",
+    "summary_en": "Blogger Miracle after 2 years and 60K km: leather/stitching/steering wheel in perfect condition. Ride quality compared to Rolls-Royce (better than BMW X7 and Mercedes GLS). 449 hp, 5.4s to 100, 700-900 km range. Multimedia overwhelming, russification incomplete. Heated third row seats — rare feature.",
+    "key_facts": [
+      "60,000 km, 2 years — interior pristine",
+      "Suspension comfort compared to Rolls-Royce",
+      "Multimedia overloaded — incomplete russification in early firmware",
+      "700-900 km real-world range depending on driving style",
+      "Third row: heated, auto-folding",
+      "Small trunk when third row deployed"
+    ],
+    "source_articles": [476],
+    "source_urls": [
+      "https://kz.kursiv.media/2025-06-13/zrvl-lixiang-l9-mneniye-vladeltsa"
+    ],
+    "article_count": 1,
+    "confidence": "high",
+    "overlaps_research": true,
+    "research_issue_id": "issue_m8",
+    "is_new_finding": false,
+    "tags": ["L9", "owner_review", "60000km", "comfort", "rolls_royce_comparison"]
+  },
+  {
+    "topic_id": "topic_new_027",
+    "title_ru": "Chery Fulwin T11 — конкурент L9 за 200-265 тыс. юаней",
+    "title_en": "Chery Fulwin T11 — L9 Competitor at 200-265K CNY",
+    "category": "comparison",
+    "models": ["L9"],
+    "systems": [],
+    "layer": "body",
+    "season": "all",
+    "summary_ru": "Chery начала приём заказов на Fulwin T11 — полноразмерный EREV-кроссовер (5205x1998x1800 мм, база 3120 мм). Цена: 200-265 тыс. юаней — в 1.5-2 раза дешевле L9. 6 мест, 30-дюймовый экран, 17.3-дюймовый для задних, 23 динамика, лидар. Прямой конкурент L9 по размерам и функциям.",
+    "summary_en": "Chery accepts orders for Fulwin T11 — full-size EREV crossover (5205x1998x1800mm, 3120mm wheelbase). Price: 200-265K CNY — 1.5-2x cheaper than L9. 6 seats, 30-inch display, 17.3-inch rear screen, 23 speakers, LiDAR. Direct L9 competitor by size and features.",
+    "key_facts": [
+      "Size: 5205x1998x1800mm (vs L9: 5218x1998x1800mm)",
+      "Price: 200-265K CNY (L9: 410-440K CNY)",
+      "6 seats, 30-inch main display",
+      "LiDAR + 27 sensors, Falcon 500/700 ADAS",
+      "23 Boyar Sound speakers, 3-zone climate",
+      "4 trims, 6 colors"
+    ],
+    "source_articles": [480],
+    "source_urls": [
+      "https://kz.kursiv.media/2025-10-14/rmnm-chery-predstavila-ubiytsu-lixiang-l9-polnorazmerniy-krossover-fulwin-t11"
+    ],
+    "article_count": 1,
+    "confidence": "high",
+    "overlaps_research": false,
+    "research_issue_id": null,
+    "is_new_finding": true,
+    "tags": ["fulwin_T11", "chery", "competitor", "L9", "pricing"]
+  },
+  {
+    "topic_id": "topic_new_028",
+    "title_ru": "Li Auto — AI стратегия, Livis очки, робототехника Nexus",
+    "title_en": "Li Auto — AI Strategy, Livis Glasses, Nexus Robotics",
+    "category": "technology",
+    "models": [],
+    "systems": ["adas"],
+    "layer": "ev",
+    "season": "all",
+    "summary_ru": "Li Auto трансформируется в AI-компанию. Livis — умные очки (1999 юаней, 36 г, 18.8 ч батарея, Sony IMX681, линзы Zeiss). Голосовой ассистент Lixiang Tongxue работает через Mind GPT. Проект Nexus — двухколёсные и двуногие роботы для заводов. Глава автопилота ушёл в робототехнику.",
+    "summary_en": "Li Auto is transforming into an AI company. Livis smart glasses (1,999 CNY, 36g, 18.8h battery, Sony IMX681, Zeiss lenses). Voice assistant Lixiang Tongxue runs on Mind GPT. Project Nexus: wheeled and bipedal robots for factories. Autonomous driving head moved to robotics.",
+    "key_facts": [
+      "Livis glasses: 1,999 CNY, 36g weight, Zeiss lenses",
+      "Sony IMX681 sensor, 12MP, 1440p video",
+      "Voice control of vehicle functions from glasses",
+      "Nexus: secret robotics project — wheeled robot first, mid-2026",
+      "Lang Xianpeng (former AD head) departed",
+      "CEO: '2026 is last window to become leading AI company'"
+    ],
+    "source_articles": [532, 534, 568, 551],
+    "source_urls": [
+      "https://cnevpost.com/2025/11/27/li-auto-to-launch-smart-glasses-livis-dec-3-bets-ai/",
+      "https://cnevpost.com/2025/12/03/li-auto-launches-smart-glasses-livis/",
+      "https://cnevpost.com/2026/03/06/li-auto-pivots-to-robotics-with-secret-nexus-project/"
+    ],
+    "article_count": 4,
+    "confidence": "high",
+    "overlaps_research": false,
+    "research_issue_id": null,
+    "is_new_finding": true,
+    "tags": ["AI", "livis", "glasses", "robotics", "nexus", "mind_gpt"]
+  },
+  {
+    "topic_id": "topic_new_029",
+    "title_ru": "Li Auto — реструктуризация дилерской сети, закрытие 100 салонов в Китае",
+    "title_en": "Li Auto — Dealer Network Restructuring, Closing 100 Stores in China",
+    "category": "market",
+    "models": [],
+    "systems": [],
+    "layer": "body",
+    "season": "all",
+    "summary_ru": "Li Auto закроет ~100 салонов в ТЦ в первой половине 2026 года. Переход на формат AutoPark (продажи + выдача + сервис). Новая программа Store Partner — менеджеры получают долю прибыли магазина. Расширение в города 3-4 уровня через партнёрскую модель. Подготовка к запуску обновлённого L9.",
+    "summary_en": "Li Auto will close ~100 mall stores in H1 2026. Shifting to AutoPark format (sales + delivery + service). New Store Partner Program gives managers store profit share. Expanding to tier 3-4 cities via partnership model. Preparing for updated L9 launch.",
+    "key_facts": [
+      "~100 stores closing in H1 2026 (high-rent mall locations)",
+      "AutoPark format: sales + delivery + service in one location",
+      "Store Partner Program: managers share in store profits",
+      "Not a franchise model — greater autonomy, not ownership",
+      "Expansion to tier 3-4 cities via partners",
+      "544 retail stores, 556 service centers as of Nov 2025"
+    ],
+    "source_articles": [484, 556],
+    "source_urls": [
+      "https://kz.kursiv.media/2026-01-27/rmnm-li-auto-zakryvayet-salony-v-kitaye-no-lixiang-v-kazakhstane-nabirayet-oboroty",
+      "https://cnevpost.com/2026/02/27/li-auto-rolls-out-profit-sharing-for-store-managers-revive-sales/"
+    ],
+    "article_count": 2,
+    "confidence": "high",
+    "overlaps_research": false,
+    "research_issue_id": null,
+    "is_new_finding": true,
+    "tags": ["dealer_network", "restructuring", "AutoPark", "store_closures", "retail"]
+  },
+  {
+    "topic_id": "topic_new_030",
+    "title_ru": "Голосовое управление — уязвимость китайских EV (выключение фар командой)",
+    "title_en": "Voice Control Vulnerability — Chinese EVs Headlights Off by Voice Command",
+    "category": "safety",
+    "models": [],
+    "systems": ["infotainment"],
+    "layer": "infotainment",
+    "season": "all",
+    "summary_ru": "Lynk & Co Z20: голосовая команда «выключи все лампочки для чтения» отключила фары на ходу. Автомобиль врезался в барьер. Тесты Zeekr и Deepal показали: команда «выключи все огни» обходит защиту. Проблема общая для EV без физических переключателей фар.",
+    "summary_en": "Lynk & Co Z20: voice command 'turn off all reading lights' deactivated headlights while driving. Car hit a barrier. Tests on Zeekr and Deepal showed: 'turn off all lights' bypasses safety restrictions. Industry-wide issue for EVs without physical headlight switches.",
+    "key_facts": [
+      "Lynk & Co Z20: headlights turned off by ambiguous voice command",
+      "No physical headlight switch — driver helpless",
+      "Zeekr, Deepal also vulnerable to 'turn off all lights'",
+      "Direct 'turn off headlights' blocked, but broad commands bypass",
+      "Lynk & Co pushed emergency OTA: headlights can only be manually turned off"
+    ],
+    "source_articles": [558],
+    "source_urls": [
+      "https://cnevpost.com/2026/02/27/voice-command-glitch-plunging-evs-into-darkness/"
+    ],
+    "article_count": 1,
+    "confidence": "medium",
+    "overlaps_research": false,
+    "research_issue_id": null,
+    "is_new_finding": true,
+    "tags": ["voice_control", "safety", "headlights", "no_physical_switches", "industry"]
+  },
+  {
+    "topic_id": "topic_new_031",
+    "title_ru": "Фронт-колёсный шум на 2025 L-серии — увольнения сотрудников",
+    "title_en": "Front Wheel Noise on 2025 L-Series — Employee Dismissals",
+    "category": "troubleshooting",
+    "models": ["L6", "L7", "L8", "L9"],
+    "systems": ["suspension"],
+    "layer": "chassis",
+    "season": "all",
+    "summary_ru": "Владельцы 2025 L6/L7/L8/L9 жалуются на аномальный шум передних колёс вскоре после покупки. Li Auto уволил нескольких сотрудников, ответственных за качество, в связи с этой проблемой (параллельно с увольнениями по делу Mega).",
+    "summary_en": "Owners of 2025 L6/L7/L8/L9 report abnormal front wheel noise shortly after delivery. Li Auto fired several quality-responsible employees over this issue (alongside Mega recall dismissals).",
+    "key_facts": [
+      "Affects all 2025 L-series models (L6, L7, L8, L9)",
+      "Noise appears shortly after delivery",
+      "Li Auto acknowledged by firing responsible employees",
+      "Separate from Mega recall — addressed in same internal memo",
+      "14 individuals held accountable total (both issues)"
+    ],
+    "source_articles": [529],
+    "source_urls": [
+      "https://cnevpost.com/2025/11/14/li-auto-fires-employees-mega-recall/"
+    ],
+    "article_count": 1,
+    "confidence": "high",
+    "overlaps_research": true,
+    "research_issue_id": "issue_h1",
+    "is_new_finding": false,
+    "tags": ["front_wheel_noise", "2025", "quality", "employee_dismissals", "L_series"]
+  },
+  {
+    "topic_id": "topic_new_032",
+    "title_ru": "Li Auto — выход в Европу, вступление в CCCEU, R&D в Мюнхене",
+    "title_en": "Li Auto — European Expansion, CCCEU Membership, Munich R&D",
+    "category": "market",
+    "models": [],
+    "systems": [],
+    "layer": "body",
+    "season": "all",
+    "summary_ru": "Li Auto вступил в CCCEU (Торговая палата Китая в ЕС). В январе 2025 открыл R&D-центр в Мюнхене (дизайн, полупроводники, шасси, сертификация). Вступление совпало с решением тарифного спора Китай-ЕС по EV. Li Auto готовит экспансию в Европу, но отстаёт от BYD, Nio, Xpeng.",
+    "summary_en": "Li Auto joined CCCEU (China Chamber of Commerce to EU). In January 2025 opened Munich R&D center (design, semiconductors, chassis, certification). Membership coincided with China-EU EV tariff dispute resolution. Li Auto preparing European expansion but behind BYD, Nio, Xpeng.",
+    "key_facts": [
+      "CCCEU full member since Feb 2026",
+      "Munich R&D center since Jan 2025",
+      "R&D covers: styling, power semiconductors, chassis, regulatory",
+      "China-EU EV tariff dispute settled via price undertakings",
+      "Behind BYD/Nio/Xpeng in internationalization"
+    ],
+    "source_articles": [553],
+    "source_urls": [
+      "https://cnevpost.com/2026/02/24/li-auto-joins-ccceu/"
+    ],
+    "article_count": 1,
+    "confidence": "high",
+    "overlaps_research": false,
+    "research_issue_id": null,
+    "is_new_finding": true,
+    "tags": ["europe", "CCCEU", "munich", "R&D", "expansion", "tariffs"]
+  },
+  {
+    "topic_id": "topic_new_033",
+    "title_ru": "Li Auto зарядная инфраструктура — 4 000 суперчарджеров",
+    "title_en": "Li Auto Charging Infrastructure — 4,000 Supercharging Stations",
+    "category": "technology",
+    "models": [],
+    "systems": ["ev"],
+    "layer": "ev",
+    "season": "all",
+    "summary_ru": "К февралю 2026 Li Auto достиг 4 001 суперчарджерной станции (20 027 зарядных точек). Плюс 3 419 сторонних премиум-станций (200+ кВт) и 76 937 быстрых станций третьего поколения. Рост с 3 000 за 6 месяцев. Критично для успеха i-серии BEV.",
+    "summary_en": "By February 2026, Li Auto reached 4,001 supercharging stations (20,027 charging points). Plus 3,419 third-party premium stations (200+ kW) and 76,937 third-gen fast chargers. Growth from 3,000 in 6 months. Critical for i-series BEV success.",
+    "key_facts": [
+      "4,001 own supercharging stations as of Feb 2026",
+      "20,027 charging points total",
+      "3,419 third-party premium stations (200+ kW)",
+      "76,937 third-gen fast chargers integrated",
+      "First station: April 20, 2023",
+      "Nio comparison: 4,898 charging stations + 3,729 swap stations"
+    ],
+    "source_articles": [546],
+    "source_urls": [
+      "https://cnevpost.com/2026/02/09/li-auto-reaches-4000-supercharging-stations/"
+    ],
+    "article_count": 1,
+    "confidence": "high",
+    "overlaps_research": false,
+    "research_issue_id": null,
+    "is_new_finding": true,
+    "tags": ["charging", "supercharger", "infrastructure", "4000_stations"]
+  },
+  {
+    "topic_id": "topic_new_034",
+    "title_ru": "Отзывы владельцев LiXiang на 110km.ru — L6/L7/L8/L9/One/Mega",
+    "title_en": "Owner Reviews on 110km.ru — L6/L7/L8/L9/One/Mega",
+    "category": "owner_experience",
+    "models": ["L6", "L7", "L8", "L9"],
+    "systems": ["interior", "battery", "suspension"],
+    "layer": "interior",
+    "season": "all",
+    "summary_ru": "Агрегированные отзывы владельцев на 110km.ru. L9: «флагман, альтернатива GLS/X7 за меньшие деньги, расход 8-9 л/100км». L7: «комфортный с набором функций, проблемы с электроникой решаются по гарантии». L8: «батарея меньше заявленного, расход не бюджетный». L6: «перебор с опциями». One: «как Volvo XC90, но дешевле».",
+    "summary_en": "Aggregated owner reviews on 110km.ru. L9: 'flagship, GLS/X7 alternative for less, 8-9L/100km'. L7: 'comfortable with good features, electronics issues resolved under warranty'. L8: 'battery range below advertised, service not budget-friendly'. L6: 'too many options'. One: 'like Volvo XC90 but cheaper'.",
+    "key_facts": [
+      "L9 new price: 8.5-10.2M RUB",
+      "L7 new price: 7.8-9.3M RUB",
+      "L6 new price: 5.5-8.2M RUB",
+      "Common praise: comfort, technology, design",
+      "Common complaints: service cost, incomplete russification, adaptation for Russia",
+      "Li Mega: recall for fire risk mentioned in reviews"
+    ],
+    "source_articles": [582, 583, 584, 585, 586, 587],
+    "source_urls": [
+      "https://110km.ru/opinion/lixiang/l7",
+      "https://110km.ru/opinion/lixiang/l9",
+      "https://110km.ru/opinion/lixiang/mega"
+    ],
+    "article_count": 6,
+    "confidence": "medium",
+    "overlaps_research": true,
+    "research_issue_id": "issue_c6",
+    "is_new_finding": false,
+    "tags": ["owner_reviews", "110km", "ratings", "L6", "L7", "L8", "L9", "pricing_ru"]
+  },
+  {
+    "topic_id": "topic_new_035",
+    "title_ru": "Sunwoda vs CATL — качество батарей, иск Geely, влияние на Li Auto",
+    "title_en": "Sunwoda vs CATL — Battery Quality, Geely Lawsuit, Impact on Li Auto",
+    "category": "safety",
+    "models": [],
+    "systems": ["battery"],
+    "layer": "battery",
+    "season": "all",
+    "summary_ru": "Geely/Vremt подал иск на Sunwoda на 2.31 млрд юаней за дефектные батареи (2021-2023). Zeekr отозвал 38 277 машин из-за риска теплового разгона. Sunwoda и Vremt урегулировали спор (удар по прибыли 500-800 млн юаней). Li Auto использует батареи Sunwoda в i6 — потребители сопротивляются переходу.",
+    "summary_en": "Geely/Vremt sued Sunwoda for RMB 2.31B over defective batteries (2021-2023). Zeekr recalled 38,277 vehicles for thermal runaway risk. Sunwoda and Vremt settled (RMB 500-800M profit impact). Li Auto uses Sunwoda batteries in i6 — consumers resist the switch.",
+    "key_facts": [
+      "Geely/Vremt sued Sunwoda for RMB 2.31 billion",
+      "Settled for RMB 500-800M impact on Sunwoda 2025 earnings",
+      "Zeekr 001 WE recall: 38,277 units for thermal runaway",
+      "Li i6 uses both CATL and Sunwoda batteries",
+      "Consumers refuse Sunwoda version after lawsuit news",
+      "Li Auto offers +2yr warranty extension for Sunwoda switch"
+    ],
+    "source_articles": [537, 548, 545, 541],
+    "source_urls": [
+      "https://cnevpost.com/2025/12/26/sunwoda-sued-by-geely-unit-over-battery-cell-issues/",
+      "https://cnevpost.com/2026/02/09/zeekr-recalls-38277-evs-thermal-runaway-risk-batteries/",
+      "https://cnevpost.com/2026/02/06/sunwoda-geely-vremt-settle-battery-quality-lawsuit/"
+    ],
+    "article_count": 4,
+    "confidence": "high",
+    "overlaps_research": true,
+    "research_issue_id": "issue_l4",
+    "is_new_finding": false,
+    "tags": ["sunwoda", "CATL", "battery_quality", "geely", "zeekr", "recall", "thermal_runaway"]
+  }
+]

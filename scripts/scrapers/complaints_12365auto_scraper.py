@@ -60,7 +60,14 @@ class Complaints12365AutoScraper(BaseScraper):
                         continue
                     # Complaint URLs look like /zlts/20250718/1463194.shtml
                     if "/zlts/" in href:
-                        full = href if href.startswith("http") else f"{BASE}{href}"
+                        if href.startswith("http"):
+                            full = href
+                        elif href.startswith("//"):
+                            full = "https:" + href
+                        elif href.startswith("/"):
+                            full = BASE + href
+                        else:
+                            continue
                         complaint_urls.add(full.split('#')[0])
 
                 self._sleep()

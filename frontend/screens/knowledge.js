@@ -58,6 +58,15 @@ const SOURCE_BADGES = {
   mineru_l9_zh_owners:    { icon: '\u{1F4D6}', label: 'L9 ZH' },
   mineru_l7_zh_owners:    { icon: '\u{1F4D6}', label: 'L7 ZH' },
   mineru_l9_ru:           { icon: '\u{1F4D6}', label: 'L9 RU' },
+  research_consensus:     { icon: '\u{1F50D}', label: 'Исследование' },
+  article_analysis:       { icon: '\u{1F4CA}', label: 'Анализ статей' },
+  drom_reviews:           { icon: '\u{2B50}', label: 'Drom отзывы' },
+  autochina_blog:         { icon: '\u{1F310}', label: 'AutoChina' },
+  liautocn_news:          { icon: '\u{1F4F0}', label: 'Li Auto News' },
+  getcar_ru:              { icon: '\u{1F310}', label: 'GetCar' },
+  autonews_ru:            { icon: '\u{1F4F0}', label: 'AutoNews' },
+  topelectricsuv:         { icon: '\u{1F310}', label: 'TopEV' },
+  insideevs:              { icon: '\u{1F310}', label: 'InsideEVs' },
 };
 
 // Флаги языков

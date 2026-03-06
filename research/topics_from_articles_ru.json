@@ -1,0 +1,1044 @@
+[
+  {
+    "topic_id": "topic_ru_001",
+    "title_ru": "Пневмоподвеска Li Auto — типичные проблемы, AMK vs WABCO, ремонт",
+    "title_en": "Li Auto Air Suspension — Common Problems, AMK vs WABCO, Repair",
+    "category": "troubleshooting",
+    "models": ["L7", "L9"],
+    "systems": ["suspension"],
+    "layer": "chassis",
+    "season": "winter",
+    "summary_ru": "Пневмоподвеска — проблема номер 1 по количеству упоминаний во всех источниках. Компрессор AMK (L7) засасывает влагу через незащищённый воздухозаборник под задним бампером, что приводит к деформации пластинчатого клапана и потере клиренса. WABCO (L9) надёжнее. Установка фильтра Mann/Wabco снижает риск на 30-50%. 70% поломок 2024 года связаны с подвеской и электроникой.",
+    "summary_en": "Air suspension is the #1 reported problem across all sources. The AMK compressor (L7) draws moisture through an unprotected air intake under the rear bumper, causing reed valve deformation and height loss. WABCO (L9) is more reliable. Installing a Mann/Wabco filter reduces risk by 30-50%. 70% of 2024 breakdowns are suspension + electronics related.",
+    "key_facts": [
+      "AMK компрессор — основная проблема L7, замена 39,000-100,000 руб",
+      "WABCO на L9 надёжнее, но тоже уязвим зимой",
+      "Фильтр Mann снижает износ на 30-50%, установка 15,000-30,000 руб",
+      "70% поломок 2024 — подвеска + электроника (данные Автостат)",
+      "Диагностика пневмоподвески каждые 5,000 км — 5,000-10,000 руб"
+    ],
+    "repair_cost_range": "39,000 - 100,000 руб (замена компрессора)",
+    "source_articles": [36, 37, 38, 43, 44],
+    "source_urls": [
+      "https://www.autonews.ru/news/683eae5d9a7947cdb92ef1cd",
+      "https://getcar.ru/en/blog/problemy-pnevmopodveski-lixiang-l9/",
+      "https://www.drom.ru/reviews/li/l7/5kopeek/",
+      "https://www.drom.ru/reviews/li/l9/5kopeek/"
+    ],
+    "article_count": 15,
+    "confidence": "high",
+    "tags": ["air_suspension", "amk", "wabco", "compressor", "moisture", "winter", "height_loss", "filter"],
+    "overlaps_research": true,
+    "research_issue_id": "issue_c1"
+  },
+  {
+    "topic_id": "topic_ru_002",
+    "title_ru": "Тормоза — «ватная» педаль, быстрый износ колодок, апгрейд",
+    "title_en": "Brakes — Spongy Pedal, Premature Pad Wear, Aftermarket Upgrades",
+    "category": "troubleshooting",
+    "models": ["L7", "L9"],
+    "systems": ["brakes"],
+    "layer": "brakes",
+    "season": "all",
+    "summary_ru": "Тормоза описываются как «ватные» владельцами обеих моделей. На L7 три варианта тормозных систем (включая редкие ZF суппорты). Внутренняя колодка может сточиться в ноль за 8,000 км. Большая масса (2,520-2,700 кг) и неправильная калибровка рекуперации приводят к неравномерному износу. Владельцы устанавливают TEI Racing, AP Racing, Brembo.",
+    "summary_en": "Brakes are described as 'spongy' by owners of both models. L7 has three brake system variants (including rare ZF calipers). Inner pad can wear to zero in 8,000 km. Heavy weight (2,520-2,700 kg) and improperly calibrated regen cause uneven wear. Owners install TEI Racing, AP Racing, Brembo aftermarket upgrades.",
+    "key_facts": [
+      "Тормозной путь 35 м с 60 миль/ч, каждое торможение +3 м",
+      "Полный комплект колодок ZF — ~70,000 руб",
+      "Три варианта тормозных систем на L7",
+      "L9 Livis 2026 — электромеханические тормоза (EMB)"
+    ],
+    "repair_cost_range": "40,000 - 70,000 руб",
+    "source_articles": [43, 44, 37],
+    "source_urls": [
+      "https://www.drom.ru/reviews/li/l7/5kopeek/",
+      "https://www.drom.ru/reviews/li/l9/5kopeek/",
+      "https://getcar.ru/en/blog/komfort-nedostatki-lixiang-l9/"
+    ],
+    "article_count": 8,
+    "confidence": "high",
+    "tags": ["brakes", "brake_fade", "pad_wear", "zf", "caliper", "spongy", "upgrade"],
+    "overlaps_research": true,
+    "research_issue_id": "issue_c2"
+  },
+  {
+    "topic_id": "topic_ru_003",
+    "title_ru": "OTA-обновления и мультимедиа — сбои, зависания, чёрный экран",
+    "title_en": "OTA Updates and Infotainment — Crashes, Freezes, Black Screen",
+    "category": "troubleshooting",
+    "models": ["L7", "L9"],
+    "systems": ["electronics"],
+    "layer": "infotainment",
+    "season": "all",
+    "summary_ru": "Прошивка 4.6.5 вызвала сбои у ~10% владельцев. OTA 8.0 нестабилен — автопилот «пытается убить» (цитата). Чёрный экран во время движения. Перепрошивка стоит 16,500-55,000 руб. Невозможность перехода с 4.x на 7.x без дилера. Snapdragon 8155 — два чипа, сложная диагностика. Универсальный сканер видит только двигатель Prince (BMW/PSA).",
+    "summary_en": "Firmware 4.6.5 caused failures in ~10% of owners. OTA 8.0 unstable — autopilot 'tries to kill' (owner quote). Black screen while driving. Reflash costs 16,500-55,000 RUB. Cannot upgrade from 4.x to 7.x without dealer. Snapdragon 8155 dual-chip architecture complicates diagnostics. Universal scanner only sees Prince engine (BMW/PSA).",
+    "key_facts": [
+      "Перепрошивка — 16,500-55,000 руб",
+      "Два чипа Snapdragon 8155, 24 ГБ ОЗУ, 256 ГБ накопитель",
+      "Два Nvidia Drive AGX Orin для ADAS",
+      "Универсальный сканер видит только ДВС Prince (BMW/PSA)",
+      "Если заставить сканер думать что Li — это Omoda, видны ещё подсистемы"
+    ],
+    "repair_cost_range": "16,500 - 55,000 руб",
+    "source_articles": [36, 159],
+    "source_urls": [
+      "https://www.autonews.ru/news/683eae5d9a7947cdb92ef1cd",
+      "https://autoreview.ru/articles/kak-eto-rabotaet/apropriaciya"
+    ],
+    "article_count": 10,
+    "confidence": "high",
+    "tags": ["ota", "firmware", "snapdragon", "black_screen", "freeze", "diagnostics", "orin"],
+    "overlaps_research": true,
+    "research_issue_id": "issue_c3"
+  },
+  {
+    "topic_id": "topic_ru_004",
+    "title_ru": "Зимняя эксплуатация Li Auto — комплексная подготовка",
+    "title_en": "Winter Operation of Li Auto — Comprehensive Preparation Guide",
+    "category": "maintenance",
+    "models": ["L7", "L9"],
+    "systems": ["suspension", "engine", "body", "cooling"],
+    "layer": "chassis",
+    "season": "winter",
+    "summary_ru": "Зимняя эксплуатация — ключевой блок для российских владельцев. Включает: фильтр на компрессор пневмоподвески, незамерзайка -30 (не -10!), силикон на ручки, защита лидара, очистка жалюзи, проверка 12V АКБ, антикор порогов, сокращение интервала замены масла до 7-8 тыс. км. Воздушный фильтр ДВС забивается снегом за несколько часов в метель — автомобиль может обездвижиться.",
+    "summary_en": "Winter operation is the key concern for Russian owners. Includes: filter on air suspension compressor, -30C washer fluid (not -10!), silicone on handles, lidar protection, grille shutter cleaning, 12V battery check, running board anti-corrosion, oil change interval reduction to 7-8K km. ICE air filter clogs with snow in blizzards within hours, potentially immobilizing the vehicle.",
+    "key_facts": [
+      "Незамерзайка -10 замерзает в форсунках при -3 в EV-режиме",
+      "Воздушный фильтр ДВС забивается снегом за 2-3 часа в метель",
+      "Жалюзи бампера забиваются снегом — генератор не может заряжать на трассе",
+      "Дверные ручки скрипят на морозе — силиконовая смазка решает",
+      "12V АКБ разрядка = полная блокировка авто, прикуривание запрещено"
+    ],
+    "repair_cost_range": "30,000 - 80,000 руб (полная зимняя подготовка)",
+    "source_articles": [36, 37, 38, 43, 44, 475],
+    "source_urls": [
+      "https://www.autonews.ru/news/683eae5d9a7947cdb92ef1cd",
+      "https://www.drom.ru/reviews/li/l7/5kopeek/",
+      "https://kz.kursiv.media/2025-06-09/kmlz-li-auto-problems/"
+    ],
+    "article_count": 25,
+    "confidence": "high",
+    "tags": ["winter", "preparation", "snow", "ice", "washer_fluid", "door_handles", "grille", "air_filter"],
+    "overlaps_research": true,
+    "research_issue_id": "issue_c5"
+  },
+  {
+    "topic_id": "topic_ru_005",
+    "title_ru": "Расход топлива — реальный vs заявленный, оптимизация",
+    "title_en": "Fuel Consumption — Real-World vs Advertised, Optimization",
+    "category": "owner_experience",
+    "models": ["L7", "L9"],
+    "systems": ["engine"],
+    "layer": "engine",
+    "season": "all",
+    "summary_ru": "Реальный расход на трассе при 125 км/ч — 11 л/100 км (заявлено 5.9 по CLTC). Город зимой — 10-12 л/100 км. Максимальный пробег ~700 км (заявлено 1,315). На 37,000 км расход вырастает до 12 л. AI-92 снижает пробег на 20%. Рекомендуют RON-100, держать батарею заряженной, в городе значительно экономичнее (5-7 л/100 км).",
+    "summary_en": "Real highway consumption at 125 km/h is 11 L/100km (advertised 5.9 CLTC). City winter 10-12 L/100km. Max range ~700 km (advertised 1,315). At 37K km consumption rises to 12L. AI-92 drops range by 20%. Recommended: RON-100, keep battery charged, city driving much more efficient (5-7 L/100km).",
+    "key_facts": [
+      "Трасса 125 км/ч: 11 л/100 км реально vs 5.9 CLTC",
+      "Город зимой: 10-12 л/100 км",
+      "RON-100 — рекомендуемое топливо для ресурса двигателя",
+      "Город EV-режим: 5-7 л/100 км — значительно экономичнее",
+      "При 37,000 км пробега расход растёт до 12 л/100 км"
+    ],
+    "repair_cost_range": null,
+    "source_articles": [43, 44, 38],
+    "source_urls": [
+      "https://www.drom.ru/reviews/li/l7/5kopeek/",
+      "https://www.drom.ru/reviews/li/l9/5kopeek/",
+      "https://getcar.ru/blog/lixiang-l9-ne-edet/"
+    ],
+    "article_count": 12,
+    "confidence": "high",
+    "tags": ["fuel_consumption", "range_extender", "cltc", "ron100", "efficiency", "highway"],
+    "overlaps_research": true,
+    "research_issue_id": "issue_h4"
+  },
+  {
+    "topic_id": "topic_ru_006",
+    "title_ru": "Шумоизоляция — заводская и дополнительная",
+    "title_en": "Sound Insulation — Factory and Aftermarket",
+    "category": "owner_experience",
+    "models": ["L7", "L9"],
+    "systems": ["body"],
+    "layer": "body",
+    "season": "all",
+    "summary_ru": "Шумоизоляция — один из самых частых недостатков в отзывах drom.ru. Штатная виброшумка покрывает только ~20% площади кузова. Шум дороги через арки и двери, трёхцилиндровый генератор шумит при работе. Дополнительная шумоизоляция стоит 150,000-250,000 руб, снижает шум на 50-60%. Некоторые владельцы отмечают «отличную шумоизоляцию» — мнения расходятся по комплектациям.",
+    "summary_en": "Sound insulation is one of the most frequent complaints on drom.ru reviews. Factory sound deadening covers only ~20% of body area. Road noise through arches and doors, 3-cylinder range extender is noisy. Aftermarket insulation costs 150,000-250,000 RUB, reduces noise by 50-60%. Some owners note 'excellent insulation' — opinions vary by trim level.",
+    "key_facts": [
+      "Заводская шумоизоляция покрывает ~20% площади кузова",
+      "Доп. шумоизоляция: 150,000-250,000 руб",
+      "Снижение шума после доп. шумки — 50-60%",
+      "3-цилиндровый генератор — основной источник шума"
+    ],
+    "repair_cost_range": "150,000 - 250,000 руб",
+    "source_articles": [43, 44],
+    "source_urls": [
+      "https://www.drom.ru/reviews/li/l7/5kopeek/",
+      "https://www.drom.ru/reviews/li/l9/5kopeek/",
+      "https://getcar.ru/blog/shum-lixiang-l9-prichiny/"
+    ],
+    "article_count": 10,
+    "confidence": "high",
+    "tags": ["noise", "sound_deadening", "nvh", "3_cylinder", "road_noise", "aftermarket"],
+    "overlaps_research": true,
+    "research_issue_id": "issue_h9"
+  },
+  {
+    "topic_id": "topic_ru_007",
+    "title_ru": "Регистрация в ГИБДД — отказы, экспертиза, сертификация Sinomach",
+    "title_en": "Vehicle Registration — Refusals, Expert Examination, Sinomach Certification",
+    "category": "legal",
+    "models": ["L6", "L7", "L9"],
+    "systems": ["legal"],
+    "layer": "legal",
+    "season": "all",
+    "summary_ru": "С 2025 года массовые отказы ГИБДД в регистрации серых Li Auto. VIN-таблички вызывают подозрения у инспекторов. Автомобили изымаются на экспертизу. С конца 2025 — официальная сертификация через Sinomach Auto, первые 150 авто через «Авилон». Решение: покупка через официального дилера с ОТТС.",
+    "summary_en": "Since 2025, mass registration refusals by traffic police for gray-import Li Auto vehicles. VIN plates raise suspicion. Vehicles seized for expert examination. Since late 2025 — official certification via Sinomach Auto, first 150 vehicles through Avilon dealer. Solution: purchase through official dealer with type approval.",
+    "key_facts": [
+      "Массовые отказы ГИБДД с начала 2025",
+      "Sinomach Auto получил ОТТС в конце 2025",
+      "Первый дилер — «Авилон», 150 сертифицированных авто",
+      "Серые авто — экспертиза VIN как решение",
+      "Суд может обязать ГИБДД зарегистрировать авто"
+    ],
+    "repair_cost_range": null,
+    "source_articles": [36],
+    "source_urls": [
+      "https://www.autonews.ru/news/683eae5d9a7947cdb92ef1cd",
+      "https://auto.mail.ru/article/118854-v-rf-idet-volna-otkazov-v-registratsii-li-auto-v-kompanii-vse-obyasnili/",
+      "https://www.ixbt.com/news/2025/11/18/li-auto-l6-l7-l9.html"
+    ],
+    "article_count": 6,
+    "confidence": "high",
+    "tags": ["registration", "gibdd", "vin", "sinomach", "avilon", "gray_import", "certification"],
+    "overlaps_research": true,
+    "research_issue_id": "issue_c8"
+  },
+  {
+    "topic_id": "topic_ru_008",
+    "title_ru": "Стоимость владения и ТО — реальные цены в России",
+    "title_en": "Total Cost of Ownership and Maintenance — Real Prices in Russia",
+    "category": "maintenance",
+    "models": ["L7", "L9"],
+    "systems": ["engine", "suspension", "brakes"],
+    "layer": "engine",
+    "season": "all",
+    "summary_ru": "Из статей сервисных компаний (lixiang-sto.ru) и обзоров (getcar.ru, kursiv.media) собрана информация о реальной стоимости ТО и ремонтов: масло+фильтр — 8,000-12,000 руб каждые 10,000 км, пневмоподвеска — 39-100K, тормоза — 40-70K, перепрошивка — 16-55K, антикор — 6-15K, шумоизоляция — 150-250K. Запчасти из Китая ожидание 2-3 месяца. Неофициальные сервисы доминируют.",
+    "summary_en": "From service company articles (lixiang-sto.ru) and reviews (getcar.ru, kursiv.media): oil+filter 8,000-12,000 RUB per 10K km, air suspension 39-100K, brakes 40-70K, reflash 16-55K, anti-corrosion 6-15K, sound deadening 150-250K. Parts from China take 2-3 months. Unofficial service centers dominate.",
+    "key_facts": [
+      "Масло+фильтр: 8,000-12,000 руб / 10,000 км",
+      "Запчасти из Китая: ожидание 2-3 месяца",
+      "Интервал замены масла рекомендуют сократить до 7-8 тыс. км",
+      "Жидкости редукторов: рекомендуют 40-60 тыс. км (официально 80 тыс.)",
+      "Официального диагностического сканера в России нет"
+    ],
+    "repair_cost_range": "8,000 - 250,000 руб (в зависимости от работ)",
+    "source_articles": [37, 38, 39, 40, 475, 489],
+    "source_urls": [
+      "https://getcar.ru/blog/polomki-lixiang-l9-rossiya/",
+      "https://lixiang-sto.ru/blog/remont-pnevmopodveski-lixiang-l7/",
+      "https://kz.kursiv.media/2025-06-09/kmlz-li-auto-problems/"
+    ],
+    "article_count": 18,
+    "confidence": "high",
+    "tags": ["maintenance", "service", "cost", "parts", "oil_change", "intervals", "diagnostics"],
+    "overlaps_research": true,
+    "research_issue_id": "issue_c6"
+  },
+  {
+    "topic_id": "topic_ru_009",
+    "title_ru": "Двигатель 1.5T L2E15M — ресурс, масложор, цепь ГРМ",
+    "title_en": "1.5T L2E15M Engine — Longevity, Oil Consumption, Timing Chain",
+    "category": "troubleshooting",
+    "models": ["L7", "L9"],
+    "systems": ["engine"],
+    "layer": "engine",
+    "season": "all",
+    "summary_ru": "Двигатель 1.5T основан на архитектуре Prince (BMW/PSA). Цепь ГРМ Morse-типа (тоньше роликовой) растягивается при 200,000+ км, документированное разрушение при 307,000 км. Ранние поршни с 4 маленькими дренажными отверстиями (вместо 8) вызывают масложор и детонацию. ~4 ревизии поршней. Генератор работает на 3,500-4,000 об/мин — ускоренный износ.",
+    "summary_en": "The 1.5T engine is based on Prince architecture (BMW/PSA). Morse-type timing chain (thinner than roller) stretches at 200K+ km, documented failure at 307K km. Early pistons had 4 small drain holes (instead of 8), causing oil consumption and detonation. ~4 piston revisions. Range extender operates at 3,500-4,000 RPM — accelerated wear.",
+    "key_facts": [
+      "Архитектура Prince (BMW/PSA), универсальный сканер его видит",
+      "Цепь ГРМ Morse-типа — инспекция каждые 100-120 тыс. км",
+      "Документированный отказ при 307,000 км (тест Faker Autogroup)",
+      "~4 ревизии поршней — текущие серийные исправлены",
+      "Масло менять каждые 7-8 тыс. км (не 10-12 тыс.)"
+    ],
+    "repair_cost_range": null,
+    "source_articles": [476, 487],
+    "source_urls": [
+      "https://kz.kursiv.media/2026-02-16/rmnm-motor-lixiang-raskritikovali-iz-za-nenadezhnoy-konstrukcii-cepi-grm/",
+      "https://insideevs.com/news/775394/li-auto-l9-russia-erev/",
+      "https://carexpo.ru/2025/12/08/li-auto-l9-proshel-v-rf-367-tysyach-km-i-slomalsya-skolko-stoit-remont/"
+    ],
+    "article_count": 8,
+    "confidence": "high",
+    "tags": ["engine", "l2e15m", "timing_chain", "prince", "oil_consumption", "piston", "morse_chain"],
+    "overlaps_research": true,
+    "research_issue_id": "issue_h7"
+  },
+  {
+    "topic_id": "topic_ru_010",
+    "title_ru": "Российский авторынок и Li Auto — продажи, конкуренция, доля",
+    "title_en": "Russian Auto Market and Li Auto — Sales, Competition, Market Share",
+    "category": "market",
+    "models": ["L6", "L7", "L9"],
+    "systems": [],
+    "layer": null,
+    "season": "all",
+    "summary_ru": "Li Auto вошёл в топ китайских брендов в России: L7 — лидер продаж (4,128 шт. янв-сен 2025), L6 — 2,478, L9 — 1,629. Всего ~24,000 авто за 2024 год. Китайские марки занимают 62% рынка. Утильсбор давит на цены. Параллельный импорт сокращается с 16% до 10%. Продажи упали с 2,105 (дек 2024) до 955 (янв 2025) — возможно из-за жалоб на надёжность.",
+    "summary_en": "Li Auto entered the top Chinese brands in Russia: L7 leads sales (4,128 units Jan-Sep 2025), L6 2,478, L9 1,629. ~24,000 vehicles in 2024. Chinese brands hold 62% market share. Recycling fee pressures prices. Parallel imports declined from 16% to 10%. Sales dropped from 2,105 (Dec 2024) to 955 (Jan 2025) — possibly due to reliability concerns.",
+    "key_facts": [
+      "L7 = 4,128, L6 = 2,478, L9 = 1,629 (янв-сен 2025)",
+      "~24,000 Li Auto продано в РФ в 2024",
+      "Китайские марки — 62.4% рынка в 2024",
+      "Продажи упали на 55% с дек 2024 по янв 2025",
+      "Утильсбор растёт, серый импорт сокращается"
+    ],
+    "repair_cost_range": null,
+    "source_articles": [155, 156, 157, 481, 484],
+    "source_urls": [
+      "https://autoreview.ru/articles/avtorynok/otlozhennyy-spros",
+      "https://autoreview.ru/articles/avtorynok/statistika-2023",
+      "https://autoreview.ru/articles/avtorynok/util-effekt"
+    ],
+    "article_count": 12,
+    "confidence": "high",
+    "tags": ["sales", "market", "russia", "chinese_cars", "recycling_fee", "parallel_import"],
+    "overlaps_research": false,
+    "research_issue_id": null
+  },
+  {
+    "topic_id": "topic_ru_011",
+    "title_ru": "Сравнительные тесты — Li L9 vs Zeekr 9X, Voyah, Exeed, Wey",
+    "title_en": "Comparison Tests — Li L9 vs Zeekr 9X, Voyah, Exeed, Wey",
+    "category": "specs",
+    "models": ["L7", "L9"],
+    "systems": [],
+    "layer": null,
+    "season": "all",
+    "summary_ru": "Autoreview проводит профессиональные сравнительные тесты Li Auto с конкурентами. Li L9 Ultra vs Zeekr 9X Max — тест на полигоне. Li L7 vs Wey 07 vs Seres M7 — три подзаряжаемых гибрида. Li L7 vs Voyah Free vs Volvo XC90 — электрифицированные кроссоверы. BYD Tang L vs Li L9 — прямые конкуренты. Fulwin T11 от Chery — позиционируется как «конкурент Li L9».",
+    "summary_en": "Autoreview conducts professional comparison tests of Li Auto vs competitors. Li L9 Ultra vs Zeekr 9X Max on test track. Li L7 vs Wey 07 vs Seres M7 — three PHEVs. Li L7 vs Voyah Free vs Volvo XC90 — electrified SUVs. BYD Tang L vs Li L9 — direct competitors. Fulwin T11 from Chery — positioned as 'Li L9 competitor'.",
+    "key_facts": [
+      "Li L9 Ultra vs Zeekr 9X Max — тест на полигоне Autoreview",
+      "Li L7 vs Wey 07 vs Seres M7 — три гибрида в одном классе",
+      "Li L7 vs Voyah Free vs Volvo XC90 — кросс-сегмент",
+      "Chery Fulwin T11 позиционируется как конкурент L9",
+      "Li L9 J.D. Power: 211 штрафных баллов (худший среди гибридных SUV)"
+    ],
+    "repair_cost_range": null,
+    "source_articles": [163, 166, 177, 178, 182, 183, 480],
+    "source_urls": [
+      "https://autoreview.ru/articles/kak-eto-rabotaet/apropriaciya",
+      "https://autoreview.ru/articles/kak-eto-rabotaet/elektroekspluataciya"
+    ],
+    "article_count": 9,
+    "confidence": "high",
+    "tags": ["comparison", "zeekr", "voyah", "wey", "exeed", "byd", "test", "poltergeist"],
+    "overlaps_research": false,
+    "research_issue_id": null
+  },
+  {
+    "topic_id": "topic_ru_012",
+    "title_ru": "Зарядная инфраструктура для PHEV/EV в России — GB/T совместимость",
+    "title_en": "Charging Infrastructure for PHEV/EV in Russia — GB/T Compatibility",
+    "category": "maintenance",
+    "models": ["L6", "L7", "L8", "L9"],
+    "systems": ["battery"],
+    "layer": "battery",
+    "season": "all",
+    "summary_ru": "Li Auto использует китайский стандарт GB/T для зарядки. В России 65,183 электромобиля + 73,280 гибридов (июль 2025). Зарядных станций — 1 на 7 авто (улучшение с 1:9). Федеральная программа: 121.6 млрд руб до 2030. Зарядные устройства GB/T AC 7.4 кВт от 4,500 грн (Украина). DC быстрая зарядка — ~40 мин до 80%.",
+    "summary_en": "Li Auto uses Chinese GB/T charging standard. Russia has 65,183 EVs + 73,280 hybrids (July 2025). Charging stations ratio: 1 per 7 vehicles (improved from 1:9). Federal program: 121.6 billion RUB until 2030. GB/T AC 7.4 kW chargers from 4,500 UAH (Ukraine). DC fast charging ~40 min to 80%.",
+    "key_facts": [
+      "GB/T стандарт — нужна совместимая зарядка",
+      "65,183 EV + 73,280 гибридов в РФ (июль 2025)",
+      "1 зарядная станция на 7 электромобилей",
+      "Федеральная программа: 121.6 млрд руб до 2030",
+      "DC быстрая зарядка: ~40 мин до 80%"
+    ],
+    "repair_cost_range": null,
+    "source_articles": [160, 243, 244, 245, 246],
+    "source_urls": [
+      "https://autoreview.ru/articles/kak-eto-rabotaet/elektroekspluataciya",
+      "https://kitaec.ua/vse-dlya-elektromobiley/podbor-po-avto/li/l9"
+    ],
+    "article_count": 7,
+    "confidence": "medium",
+    "tags": ["charging", "gb_t", "infrastructure", "ev", "phev", "fast_charging"],
+    "overlaps_research": false,
+    "research_issue_id": null
+  },
+  {
+    "topic_id": "topic_ru_013",
+    "title_ru": "Диагностика Li Auto — сложности, сканеры, электронная архитектура",
+    "title_en": "Li Auto Diagnostics — Challenges, Scanners, Electronic Architecture",
+    "category": "maintenance",
+    "models": ["L7", "L9"],
+    "systems": ["electronics"],
+    "layer": "electronics",
+    "season": "all",
+    "summary_ru": "Сложнейшая электронная архитектура: два Snapdragon 8155, два Nvidia Orin, 11 камер, 12 сонаров, 1-5 радаров, 1 лидар (Max). Все блоки связаны несколькими шинами данных — замена любого компонента требует прописки. Универсальный сканер видит только Prince ДВС. Trick: если представиться как Omoda, видны дополнительные подсистемы. Полноценной диагностики в России нет.",
+    "summary_en": "Complex electronic architecture: dual Snapdragon 8155, dual Nvidia Orin, 11 cameras, 12 sonars, 1-5 radars, 1 lidar (Max). All ECUs connected via multiple data buses — any component replacement requires registration. Universal scanner only sees Prince ICE. Trick: if pretending to be Omoda, additional subsystems become visible. No full diagnostics capability in Russia.",
+    "key_facts": [
+      "2x Snapdragon 8155 (24 ГБ RAM, 256 ГБ storage)",
+      "2x Nvidia Drive AGX Orin (ADAS)",
+      "11 камер, 12 сонаров, 1-5 радаров, 1 лидар",
+      "Замена 12V АКБ может убить BMS (50,000 руб)",
+      "Техдокументация существует на китайском — онлайн-переводчик помогает"
+    ],
+    "repair_cost_range": "50,000+ руб (замена BMS при некорректном прикуривании)",
+    "source_articles": [159],
+    "source_urls": [
+      "https://autoreview.ru/articles/kak-eto-rabotaet/apropriaciya"
+    ],
+    "article_count": 3,
+    "confidence": "medium",
+    "tags": ["diagnostics", "scanner", "snapdragon", "orin", "architecture", "bms", "omoda_trick"],
+    "overlaps_research": false,
+    "research_issue_id": null
+  },
+  {
+    "topic_id": "topic_ru_014",
+    "title_ru": "Лидар и ADAS — повреждения, фантомное торможение, калибровка",
+    "title_en": "LiDAR and ADAS — Damage, Phantom Braking, Calibration",
+    "category": "troubleshooting",
+    "models": ["L7", "L9"],
+    "systems": ["adas"],
+    "layer": "adas",
+    "season": "winter",
+    "summary_ru": "Лидар (Max/Ultra версии) расположен на крыше в уязвимой зоне. Зимой покрывается льдом, страдает от камней. Калибровка — от 40,000 руб в Москве. AEB на трассе при 80-120 км/ч путает изображение на билборде с реальным объектом. NOA не удерживает полосу. В 2025 рестайлинге лидар уменьшен на 55%, дальность 300 м.",
+    "summary_en": "LiDAR (Max/Ultra trims) is roof-mounted in a vulnerable position. In winter it gets covered with ice, suffers from stones. Calibration costs 40,000+ RUB in Moscow. AEB at 80-120 km/h confuses billboard images with real objects. NOA fails to hold lane. 2025 facelift lidar is 55% smaller, 300m range.",
+    "key_facts": [
+      "Калибровка лидара — от 40,000 руб",
+      "2025 рестайл: лидар на 55% меньше, энергоэффективность +55%",
+      "Фантомное торможение: AEB путает билборды с реальными объектами",
+      "NOA нестабилен — руль рыскает, не видит разметку",
+      "Защита лидара (STUDIO27) — рекомендуется"
+    ],
+    "repair_cost_range": "40,000+ руб (калибровка)",
+    "source_articles": [36, 475],
+    "source_urls": [
+      "https://www.autonews.ru/news/683eae5d9a7947cdb92ef1cd",
+      "https://kz.kursiv.media/2025-06-09/kmlz-li-auto-problems/"
+    ],
+    "article_count": 7,
+    "confidence": "high",
+    "tags": ["lidar", "adas", "phantom_braking", "aeb", "calibration", "billboard", "noa"],
+    "overlaps_research": true,
+    "research_issue_id": "issue_c4"
+  },
+  {
+    "topic_id": "topic_ru_015",
+    "title_ru": "Коррозия кузова и защита от реагентов",
+    "title_en": "Body Corrosion and Protection from Road Chemicals",
+    "category": "maintenance",
+    "models": ["L7", "L9"],
+    "systems": ["body"],
+    "layer": "body",
+    "season": "winter",
+    "summary_ru": "Выдвижные пороги подвержены коррозии от дорожных реагентов, механизм может заклинивать. Обзор abw.by показал L9 без антикора через 2 года и 50,000 км — состояние в целом хорошее, но пороги и бампер в зоне риска. Антикоррозийная обработка — 6,000-15,000 руб. Установка брызговиков рекомендуется.",
+    "summary_en": "Retractable running boards are prone to corrosion from road chemicals, mechanism can jam. Review by abw.by showed L9 without anti-corrosion after 2 years and 50K km — generally good condition, but running boards and bumper in risk zone. Anti-corrosion treatment 6,000-15,000 RUB. Mud flaps recommended.",
+    "key_facts": [
+      "Выдвижные пороги — главная зона коррозии",
+      "Антикор: 6,000-15,000 руб",
+      "L9 без антикора через 2 года/50,000 км — в целом норм (abw.by)",
+      "Брызговики снижают риск"
+    ],
+    "repair_cost_range": "6,000 - 15,000 руб",
+    "source_articles": [36],
+    "source_urls": [
+      "https://www.autonews.ru/news/683eae5d9a7947cdb92ef1cd",
+      "https://abw.by/news/experience/2025/04/24/chto-sluchilos-s-lixiang-l9-bez-antikora-za-dva-goda-rassmatrivaem-na-podemnike"
+    ],
+    "article_count": 5,
+    "confidence": "high",
+    "tags": ["corrosion", "running_boards", "road_chemicals", "anti_corrosion", "mud_flaps"],
+    "overlaps_research": true,
+    "research_issue_id": "issue_h3"
+  },
+  {
+    "topic_id": "topic_ru_016",
+    "title_ru": "Впечатления владельцев Li L6 — первый опыт, плюсы и минусы",
+    "title_en": "Owner Impressions of Li L6 — First Experience, Pros and Cons",
+    "category": "owner_experience",
+    "models": ["L6"],
+    "systems": [],
+    "layer": null,
+    "season": "all",
+    "summary_ru": "10+ переводных отзывов владельцев L6 на drom.ru (из Китая). Общее впечатление положительное: просторный салон, хорошая динамика, экран и мультимедиа, экономичность в городе. Минусы: высокий центр тяжести (раскачка на скорости), слабый звук динамиков, тормоза требуют привычки (длинный тормозной путь из-за массы), зарядка замедляется после 70-80%.",
+    "summary_en": "10+ translated owner reviews of L6 on drom.ru (from China). Overall positive impression: spacious interior, good dynamics, screens and infotainment, city economy. Cons: high center of gravity (swaying at speed), weak speaker sound, brakes need getting used to (long stopping distance due to weight), charging slows after 70-80%.",
+    "key_facts": [
+      "Запас хода CLTC: 1,390 км (212 км на электричестве)",
+      "Расход в городе: 8.9 л/100 км (бензин) + 15.8 кВтч/100 км",
+      "Быстрая зарядка: ~40 мин, медленная: ~4 часа",
+      "Минус: раскачка на высокой скорости (высокий ЦТ)",
+      "Минус: тормозной путь больше ожидаемого"
+    ],
+    "repair_cost_range": null,
+    "source_articles": [51, 52, 53, 54, 55, 56, 57, 58, 59, 60],
+    "source_urls": [
+      "https://www.drom.ru/reviews/li/l6/1449884",
+      "https://www.drom.ru/reviews/li/l6/1449885",
+      "https://www.drom.ru/reviews/li/l6/1449886"
+    ],
+    "article_count": 10,
+    "confidence": "medium",
+    "tags": ["l6", "owner_review", "first_impression", "translated", "drom"],
+    "overlaps_research": false,
+    "research_issue_id": null
+  },
+  {
+    "topic_id": "topic_ru_017",
+    "title_ru": "Впечатления владельцев Li L7 — реальные отзывы с drom.ru",
+    "title_en": "Owner Impressions of Li L7 — Real Reviews from drom.ru",
+    "category": "owner_experience",
+    "models": ["L7"],
+    "systems": [],
+    "layer": null,
+    "season": "all",
+    "summary_ru": "154 отзыва на drom.ru, рейтинг 9.3/10. Плюсы: комфорт, динамика, вместительность, технологичность, расход по городу. Минусы: подвеска шумная, слабое ЛКП, низкая ликвидность, падение цены, головные боли от ЭМИ (спорное утверждение), глючит блок управления, «ватные» тормоза, омывайка лопается зимой.",
+    "summary_en": "154 reviews on drom.ru, rating 9.3/10. Pros: comfort, dynamics, space, tech, city fuel economy. Cons: noisy suspension, weak paint, low resale value, rapid depreciation, headaches from EMF (disputed claim), control unit glitches, 'spongy' brakes, washer fluid lines burst in winter.",
+    "key_facts": [
+      "Рейтинг drom.ru: 9.3/10 (отлично!)",
+      "154 отзыва от реальных владельцев",
+      "ТОП плюсы: комфорт, динамика, салон, расход",
+      "ТОП минусы: подвеска шумит, ЛКП, ликвидность",
+      "Спорное: жалобы на головные боли от ЭМИ"
+    ],
+    "repair_cost_range": null,
+    "source_articles": [43, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72],
+    "source_urls": [
+      "https://www.drom.ru/reviews/li/l7/5kopeek/"
+    ],
+    "article_count": 14,
+    "confidence": "high",
+    "tags": ["l7", "owner_review", "drom", "pros_cons", "rating"],
+    "overlaps_research": false,
+    "research_issue_id": null
+  },
+  {
+    "topic_id": "topic_ru_018",
+    "title_ru": "Впечатления владельцев Li L9 — реальные отзывы",
+    "title_en": "Owner Impressions of Li L9 — Real Reviews",
+    "category": "owner_experience",
+    "models": ["L9"],
+    "systems": [],
+    "layer": null,
+    "season": "all",
+    "summary_ru": "Рейтинг drom.ru 9.1/10. ~88 отзывов. Плюсы: комфорт, простор, качество, визуализация ADAS, ассистент пробок. Минусы: шумоизоляция можно лучше, расход топлива, невозможность отключения стабилизации, после ДТП авто «кирпичится», автопилот «тупой», слабый головной свет, генератор не успевает заряжать при 130+ км/ч.",
+    "summary_en": "Drom.ru rating 9.1/10. ~88 reviews. Pros: comfort, space, quality, ADAS visualization, traffic jam assist. Cons: sound insulation could be better, fuel consumption, cannot disable stability control, vehicle 'bricks' after accident with airbag deployment, 'dumb' autopilot, weak headlights, range extender cannot keep up above 130 km/h.",
+    "key_facts": [
+      "Рейтинг drom.ru: 9.1/10",
+      "После ДТП с подушками безопасности — авто полная блокировка",
+      "Генератор не успевает заряжать при 130+ км/ч",
+      "Визуализация ADAS — точность распознавания >95%",
+      "Автопилот «тупой» — перестраивается в пробке без причины"
+    ],
+    "repair_cost_range": null,
+    "source_articles": [44, 49],
+    "source_urls": [
+      "https://www.drom.ru/reviews/li/l9/5kopeek/"
+    ],
+    "article_count": 8,
+    "confidence": "high",
+    "tags": ["l9", "owner_review", "drom", "airbag_brick", "autopilot", "headlights"],
+    "overlaps_research": false,
+    "research_issue_id": null
+  },
+  {
+    "topic_id": "topic_ru_019",
+    "title_ru": "SIM-карта и русификация — установка, совместимость, операторы",
+    "title_en": "SIM Card and Russification — Installation, Compatibility, Carriers",
+    "category": "maintenance",
+    "models": ["L7", "L9"],
+    "systems": ["electronics"],
+    "layer": "infotainment",
+    "season": "all",
+    "summary_ru": "SIM впаяна в телематический модуль (TCU). Ранее установка русской SIM требовала пайки — множество модулей выведено из строя. Сейчас существуют безопасные методы без пайки. Совместимость: BAND 1,3,7 (МТС/Билайн). Лимит трафика 20 ГБ/мес. Русификация — частичная, русский язык за деньги, не все функции адаптированы.",
+    "summary_en": "SIM is soldered into the Telematics Control Unit (TCU). Previously Russian SIM installation required soldering — many modules were destroyed. Now safe methods exist without soldering. Compatibility: BAND 1,3,7 (MTS/Beeline). Traffic limit 20 GB/month. Russification is partial, Russian language costs extra, not all features adapted.",
+    "key_facts": [
+      "SIM впаяна в TCU — пайка рискованна",
+      "Безопасный метод установки без пайки найден",
+      "BAND 1,3,7 — МТС и Билайн совместимы",
+      "Лимит трафика: 20 ГБ/мес",
+      "Русификация неполная, русский язык — отдельная услуга"
+    ],
+    "repair_cost_range": null,
+    "source_articles": [36],
+    "source_urls": [
+      "https://www.autonews.ru/news/683eae5d9a7947cdb92ef1cd",
+      "https://habr.com/ru/articles/827524/"
+    ],
+    "article_count": 5,
+    "confidence": "high",
+    "tags": ["sim_card", "tcu", "russification", "mts", "beeline", "soldering"],
+    "overlaps_research": true,
+    "research_issue_id": "issue_h8"
+  },
+  {
+    "topic_id": "topic_ru_020",
+    "title_ru": "Технические характеристики Li L9 — официальные и реальные",
+    "title_en": "Li L9 Technical Specifications — Official and Real-World",
+    "category": "specs",
+    "models": ["L9"],
+    "systems": ["engine", "battery", "suspension"],
+    "layer": null,
+    "season": "all",
+    "summary_ru": "L9 — полноразмерный гибридный SUV. 1.5L турбо 154 л.с. + два электромотора (130+200 кВт = 448 л.с.). Батарея CATL 52.3 кВтч, электрический запас 280 км, полный до 1,400 км. Разгон 0-100: 5.3 сек. Двухконтурная пневмоподвеска. Комплектация Ultra для России. Nappe кожа, 31.4\" экран, потолочный 21.4\" 3K дисплей, Dolby Atmos 21 динамик.",
+    "summary_en": "L9 is a full-size hybrid SUV. 1.5L turbo 154 hp + dual electric motors (130+200 kW = 448 hp). CATL 52.3 kWh battery, 280 km electric range, up to 1,400 km total. 0-100: 5.3 sec. Dual-circuit air suspension. Ultra trim for Russia. Nappa leather, 31.4\" screen, ceiling 21.4\" 3K display, Dolby Atmos 21 speakers.",
+    "key_facts": [
+      "448 л.с., 620 Нм, 0-100 за 5.3 сек",
+      "Батарея CATL 52.3 кВтч, запас 280 км EV / 1,400 км полный",
+      "Пневмоподвеска двухконтурная, подножки электрические",
+      "Nappe кожа, 31.4\" + 21.4\" экраны, Dolby Atmos",
+      "Цена в РФ: от 6,100,000 руб (новый), от 5,250,000 (б/у)"
+    ],
+    "repair_cost_range": null,
+    "source_articles": [152],
+    "source_urls": [
+      "https://www.drom.ru/catalog/li/l9/g_2025_22507/",
+      "https://www.drom.ru/catalog/li/l9/"
+    ],
+    "article_count": 3,
+    "confidence": "high",
+    "tags": ["l9", "specs", "catl", "air_suspension", "nappa", "dolby_atmos", "ultra"],
+    "overlaps_research": false,
+    "research_issue_id": null
+  },
+  {
+    "topic_id": "topic_ru_021",
+    "title_ru": "Безопасность — ДТП, блокировка после срабатывания подушек, формальдегид",
+    "title_en": "Safety — Accidents, Airbag Deployment Lockout, Formaldehyde",
+    "category": "safety",
+    "models": ["L7", "L9"],
+    "systems": ["body", "electronics"],
+    "layer": "body",
+    "season": "all",
+    "summary_ru": "После ДТП с срабатыванием подушек безопасности автомобиль полностью блокируется — «кирпичится». В России оживить такое авто пока не научились. Один владелец жалуется на постоянные головные боли от формальдегида из салонных материалов. Лобовое стекло «аномально тонкое» — может пробить жук или шмель на трассе.",
+    "summary_en": "After accident with airbag deployment, the vehicle completely locks up — becomes a 'brick'. In Russia no one has learned to revive such vehicles yet. One owner complains about constant headaches from formaldehyde off-gassing from interior materials. Windshield is 'anomalously thin' — a bug can penetrate it at highway speed.",
+    "key_facts": [
+      "После ДТП с подушками — полная блокировка авто",
+      "Разблокировка невозможна в России — нужен дилер в КНР",
+      "Жалобы на формальдегид из салонных материалов",
+      "Лобовое стекло очень тонкое — уязвимо к камням",
+      "Прикуривание 12V может убить BMS (50,000 руб)"
+    ],
+    "repair_cost_range": null,
+    "source_articles": [43, 44],
+    "source_urls": [
+      "https://www.drom.ru/reviews/li/l7/5kopeek/",
+      "https://www.drom.ru/reviews/li/l9/5kopeek/"
+    ],
+    "article_count": 5,
+    "confidence": "medium",
+    "tags": ["safety", "airbag", "brick", "formaldehyde", "windshield", "lockout"],
+    "overlaps_research": true,
+    "research_issue_id": "issue_m10"
+  },
+  {
+    "topic_id": "topic_ru_022",
+    "title_ru": "Деградация бензина в баке при редком использовании ДВС",
+    "title_en": "Fuel Degradation in Tank from Infrequent ICE Use",
+    "category": "maintenance",
+    "models": ["L7", "L9"],
+    "systems": ["engine"],
+    "layer": "engine",
+    "season": "all",
+    "summary_ru": "При частой езде в EV-режиме бензин «умирает» в баке — теряет октановое число, вызывает детонацию и ускоренный износ двигателя. Двигатель работает под постоянной нагрузкой как генератор (3,500-4,000 об/мин). Рекомендуют регулярно запускать генератор, не давать бензину застаиваться, использовать качественный бензин RON-100.",
+    "summary_en": "With frequent EV-mode driving, fuel 'dies' in the tank — loses octane rating, causes detonation and accelerated engine wear. Engine operates under constant load as generator (3,500-4,000 RPM). Recommendations: regularly run the generator, don't let fuel sit, use quality RON-100 fuel.",
+    "key_facts": [
+      "Бензин теряет октановое число при длительном хранении в баке",
+      "Детонация — основной риск застоявшегося топлива",
+      "Генератор работает на 3,500-4,000 об/мин — постоянная нагрузка",
+      "AI-92 снижает пробег на 20%",
+      "RON-100 — оптимальное топливо"
+    ],
+    "repair_cost_range": null,
+    "source_articles": [],
+    "source_urls": [
+      "https://www.drive2.ru/l/717411272110386402/"
+    ],
+    "article_count": 3,
+    "confidence": "medium",
+    "tags": ["fuel_degradation", "ev_mode", "detonation", "ron100", "octane"],
+    "overlaps_research": true,
+    "research_issue_id": "issue_m4"
+  },
+  {
+    "topic_id": "topic_ru_023",
+    "title_ru": "Новые модели Li Auto — i6, i8, MEGA, L6, обновления 2025",
+    "title_en": "New Li Auto Models — i6, i8, MEGA, L6, 2025 Updates",
+    "category": "market",
+    "models": ["L6", "L7", "L9"],
+    "systems": [],
+    "layer": null,
+    "season": "all",
+    "summary_ru": "Li Auto расширяет линейку: Li i6 — младший электрический кроссовер. Li i8 — кроссвэн, готов к выходу на рынок. Li MEGA — минивэн. L9 2025 рестайлинг — уменьшенный лидар, электромеханические тормоза (EMB) в Livis 2026. Li Auto планирует более 11 тыс. продаж ежедневно (рекорд отрасли).",
+    "summary_en": "Li Auto expands lineup: Li i6 — compact electric SUV. Li i8 — crossvan ready for market. Li MEGA — minivan. L9 2025 facelift — smaller lidar, EMB brakes in Livis 2026. Li Auto targets 11K+ daily sales (industry record).",
+    "key_facts": [
+      "Li i6 — младший электрический кроссовер",
+      "Li i8 — кроссвэн, характеристики опубликованы",
+      "L9 2025: лидар на 55% меньше, дальность 300 м",
+      "Livis 2026: электромеханические тормоза (EMB)",
+      "Li Auto рекорд: 11,000+ продаж в день"
+    ],
+    "repair_cost_range": null,
+    "source_articles": [190, 200, 201, 481, 486],
+    "source_urls": [
+      "https://autoreview.ru/articles/kak-eto-rabotaet/apropriaciya"
+    ],
+    "article_count": 7,
+    "confidence": "high",
+    "tags": ["i6", "i8", "mega", "lineup", "2025", "facelift", "emb_brakes"],
+    "overlaps_research": false,
+    "research_issue_id": null
+  },
+  {
+    "topic_id": "topic_ru_024",
+    "title_ru": "Комфорт и салон — L7/L9 как семейный автомобиль",
+    "title_en": "Comfort and Interior — L7/L9 as a Family Vehicle",
+    "category": "owner_experience",
+    "models": ["L7", "L9"],
+    "systems": ["interior"],
+    "layer": "interior",
+    "season": "all",
+    "summary_ru": "Владельцы единодушно хвалят комфорт: капитанские кресла с массажем и вентиляцией, HUD с дополненной реальностью, 3-зонный климат, холодильник, потолочный экран 21.4\" для пассажиров, Dolby Atmos 21 динамик. Минусы: экокожа быстро изнашивается (не Nappa), крошки попадают в щели, голосовой помощник «тупой». Электроподножки удобнее фиксированных.",
+    "summary_en": "Owners unanimously praise comfort: captain seats with massage and ventilation, HUD with augmented reality, 3-zone climate, fridge, 21.4\" ceiling display for passengers, Dolby Atmos 21 speakers. Cons: eco-leather wears quickly (not Nappa), crumbs get in crevices, voice assistant is 'dumb'. Electric running boards more convenient than fixed.",
+    "key_facts": [
+      "Капитанские кресла с массажем, вентиляцией, подогревом",
+      "HUD 13.3\" с дополненной реальностью",
+      "Потолочный экран 21.4\" 3K для пассажиров",
+      "Dolby Atmos 21 динамик + 4D-вибрация кресел",
+      "256-цветная интерьерная подсветка"
+    ],
+    "repair_cost_range": null,
+    "source_articles": [43, 44, 49, 51, 52, 53, 152],
+    "source_urls": [
+      "https://www.drom.ru/reviews/li/l7/5kopeek/",
+      "https://www.drom.ru/catalog/li/l9/g_2025_22507/"
+    ],
+    "article_count": 20,
+    "confidence": "high",
+    "tags": ["comfort", "interior", "captain_seats", "hud", "dolby", "massage", "family"],
+    "overlaps_research": false,
+    "research_issue_id": null
+  },
+  {
+    "topic_id": "topic_ru_025",
+    "title_ru": "Батарея зимой — потеря запаса хода, предварительный прогрев",
+    "title_en": "Battery in Winter — Range Loss, Preconditioning",
+    "category": "troubleshooting",
+    "models": ["L7", "L9"],
+    "systems": ["battery"],
+    "layer": "battery",
+    "season": "winter",
+    "summary_ru": "Батарея теряет 15-20% ёмкости на холоде. При -30 обогреватель потребляет 8-9 кВт, даже стоя заряд заканчивается за ~3 часа. Зарядка при -20 требует 30 мин прогрева. L7 (40 кВтч) — ~100 км зимой, L9 (52.3 кВтч) — ~120 км (vs 180 км летом). Рекомендации: прогрев перед поездкой, заряд выше 20%, гаражное хранение.",
+    "summary_en": "Battery loses 15-20% capacity in cold. At -30C heater draws 8-9 kW, even standing still charge lasts ~3 hours. Charging at -20C needs 30 min warmup. L7 (40 kWh) ~100 km winter, L9 (52.3 kWh) ~120 km (vs 180 km summer). Recommendations: precondition before driving, keep above 20%, garage parking.",
+    "key_facts": [
+      "L7 батарея 40 кВтч: ~100 км зимой",
+      "L9 батарея 52.3 кВтч: ~120 км зимой (180 км летом)",
+      "При -30: обогреватель 8-9 кВт, заряд на 3 часа стоянки",
+      "Зарядка при -20: нужно 30 мин прогрева перед началом",
+      "Запас хода зимой падает ~2x относительно лета"
+    ],
+    "repair_cost_range": null,
+    "source_articles": [43, 44],
+    "source_urls": [
+      "https://www.drom.ru/reviews/li/l7/5kopeek/",
+      "https://www.drom.ru/reviews/li/l9/5kopeek/"
+    ],
+    "article_count": 10,
+    "confidence": "high",
+    "tags": ["battery", "winter", "range_loss", "preconditioning", "catl", "cold"],
+    "overlaps_research": true,
+    "research_issue_id": "issue_c5"
+  },
+  {
+    "topic_id": "topic_ru_026",
+    "title_ru": "Ценообразование и утильсбор — влияние на стоимость Li Auto в РФ",
+    "title_en": "Pricing and Recycling Fee — Impact on Li Auto Cost in Russia",
+    "category": "market",
+    "models": ["L6", "L7", "L9"],
+    "systems": [],
+    "layer": null,
+    "season": "all",
+    "summary_ru": "Утильсбор — основной фактор роста цен в 2025. Повышения в октябре, ноябре, декабре вызвали ажиотажный спрос перед каждым этапом. L6 от 5,690,000 руб, L7 Pro от 6,590,000, L9 Ultra 8,590,000. Цена нового L9 выросла на 20-30% за год. Б/у L9: от 5,250,000. Альтернативный импорт подорожал, но всё ещё работает. «Серый» импорт — 156,000 авто в 2025 (не сдался под утильсбором).",
+    "summary_en": "Recycling fee is the main price growth factor in 2025. Increases in Oct/Nov/Dec caused rush demand before each stage. L6 from 5,690K RUB, L7 Pro from 6,590K, L9 Ultra 8,590K. New L9 price up 20-30% over the year. Used L9: from 5,250K. Parallel import got more expensive but still operates. 156K 'gray' imports in 2025.",
+    "key_facts": [
+      "L6: от 5,690,000 руб",
+      "L7 Pro: от 6,590,000 руб",
+      "L9 Ultra: 8,590,000 руб",
+      "Утильсбор — основной драйвер роста цен",
+      "Серый импорт: 156,000 авто в 2025 (не умер)"
+    ],
+    "repair_cost_range": null,
+    "source_articles": [155, 156, 157],
+    "source_urls": [
+      "https://autoreview.ru/articles/avtorynok/util-effekt"
+    ],
+    "article_count": 6,
+    "confidence": "high",
+    "tags": ["pricing", "recycling_fee", "gray_import", "cost", "avilon", "dealer"],
+    "overlaps_research": false,
+    "research_issue_id": null
+  },
+  {
+    "topic_id": "topic_ru_027",
+    "title_ru": "ЛКП и кузовной ремонт — слабое покрытие, высокая стоимость",
+    "title_en": "Paint Quality and Body Repair — Weak Coating, High Cost",
+    "category": "owner_experience",
+    "models": ["L7", "L9"],
+    "systems": ["body"],
+    "layer": "body",
+    "season": "all",
+    "summary_ru": "Слабое ЛКП (лакокрасочное покрытие) — частый минус в отзывах на drom.ru. Скулы быстро покрываются сколами. Низкая ликвидность на вторичном рынке — Li Auto падает в цене быстрее конкурентов. Кузовной ремонт осложнён отсутствием запчастей — ожидание 2-3 месяца из Китая.",
+    "summary_en": "Weak paint (LKP) is a frequent complaint on drom.ru reviews. Edges quickly chip. Low resale value — Li Auto depreciates faster than competitors. Body repair complicated by lack of spare parts — 2-3 months wait from China.",
+    "key_facts": [
+      "Слабое ЛКП — частый минус в отзывах",
+      "Низкая ликвидность — быстрое падение цены",
+      "Запчасти из Китая — ожидание 2-3 месяца",
+      "Кузовной ремонт затруднён интеграцией камер/датчиков"
+    ],
+    "repair_cost_range": null,
+    "source_articles": [43],
+    "source_urls": [
+      "https://www.drom.ru/reviews/li/l7/5kopeek/"
+    ],
+    "article_count": 5,
+    "confidence": "medium",
+    "tags": ["paint", "lkp", "depreciation", "resale_value", "body_repair", "parts_shortage"],
+    "overlaps_research": true,
+    "research_issue_id": "issue_c6"
+  },
+  {
+    "topic_id": "topic_ru_028",
+    "title_ru": "Электромагнитное излучение — спорные жалобы владельцев",
+    "title_en": "Electromagnetic Radiation — Disputed Owner Complaints",
+    "category": "safety",
+    "models": ["L7"],
+    "systems": ["battery", "electronics"],
+    "layer": "battery",
+    "season": "all",
+    "summary_ru": "Несколько владельцев на drom.ru жалуются на постоянные головные боли от езды на Li L7, связывая их с «сильным электромагнитным излучением» батареи и генератора. Утверждается, что «экранирование открыто, нет защитного слоя». Также упоминаются случаи самовозгорания в Дагестане, Краснодаре, Ставрополе. Эти утверждения не подтверждены независимыми источниками.",
+    "summary_en": "Several owners on drom.ru complain of constant headaches from driving Li L7, attributing them to 'strong electromagnetic radiation' from battery and generator. Claimed 'shielding is open, no protective layer'. Also mentions spontaneous combustion cases in Dagestan, Krasnodar, Stavropol. These claims are not confirmed by independent sources.",
+    "key_facts": [
+      "Несколько жалоб на головные боли от ЭМИ (не подтверждено)",
+      "Утверждения о самовозгорании (не подтверждено независимо)",
+      "Один владелец продал авто из-за головных болей",
+      "Экранирование батареи — спорная тема"
+    ],
+    "repair_cost_range": null,
+    "source_articles": [43],
+    "source_urls": [
+      "https://www.drom.ru/reviews/li/l7/5kopeek/"
+    ],
+    "article_count": 2,
+    "confidence": "low",
+    "tags": ["emf", "electromagnetic", "headaches", "spontaneous_combustion", "disputed"],
+    "overlaps_research": true,
+    "research_issue_id": "issue_l2"
+  },
+  {
+    "topic_id": "topic_ru_029",
+    "title_ru": "Li L8 — отзывы владельцев, отличия от L7/L9",
+    "title_en": "Li L8 — Owner Reviews, Differences from L7/L9",
+    "category": "owner_experience",
+    "models": ["L8"],
+    "systems": [],
+    "layer": null,
+    "season": "all",
+    "summary_ru": "Li L8 позиционируется между L7 и L9. Несколько переводных отзывов на drom.ru. Особенности: более просторный, чем L7, но дешевле L9. Те же технические проблемы (пневмоподвеска, тормоза, ОТА). Меньше данных для России, так как объём продаж ниже L7 и L9.",
+    "summary_en": "Li L8 is positioned between L7 and L9. Several translated reviews on drom.ru. Features: more spacious than L7 but cheaper than L9. Same technical issues (air suspension, brakes, OTA). Less data for Russia as sales volume is lower than L7 and L9.",
+    "key_facts": [
+      "Позиция: между L7 и L9",
+      "Те же технические проблемы",
+      "Меньший объём продаж в РФ",
+      "Переводные отзывы из Китая на drom.ru"
+    ],
+    "repair_cost_range": null,
+    "source_articles": [73, 74],
+    "source_urls": [
+      "https://www.drom.ru/reviews/li/l8/"
+    ],
+    "article_count": 4,
+    "confidence": "low",
+    "tags": ["l8", "owner_review", "positioning", "translated"],
+    "overlaps_research": false,
+    "research_issue_id": null
+  },
+  {
+    "topic_id": "topic_ru_030",
+    "title_ru": "Telegram-сообщество Li Auto — опыт 30,000+ владельцев",
+    "title_en": "Li Auto Telegram Community — Experience of 30,000+ Owners",
+    "category": "owner_experience",
+    "models": ["L6", "L7", "L9"],
+    "systems": [],
+    "layer": null,
+    "season": "all",
+    "summary_ru": "Крупнейшее русскоязычное сообщество @lixiangautorussia (30,000+ участников). 125 качественных статей извлечено из чата (из 447 сырых сообщений). Темы: зимние проблемы, пневмоподвеска, OTA-обновления, сервис, зарядка, русификация. Также: @redLichat, @liauto, @lixiang_clubru, @li_auto_belarus. Связанные сайты: liautorussia.ru, faq.liautorussia.ru.",
+    "summary_en": "Largest Russian-speaking community @lixiangautorussia (30,000+ members). 125 quality articles extracted from chat (from 447 raw messages). Topics: winter problems, air suspension, OTA updates, service, charging, russification. Also: @redLichat, @liauto, @lixiang_clubru, @li_auto_belarus. Related: liautorussia.ru, faq.liautorussia.ru.",
+    "key_facts": [
+      "@lixiangautorussia — 30,000+ участников",
+      "125 качественных статей из 447 сообщений",
+      "FAQ: faq.liautorussia.ru — бесплатная энциклопедия",
+      "5+ каналов/групп в Telegram по Li Auto",
+      "Магазин аксессуаров: @liautorussiashop"
+    ],
+    "repair_cost_range": null,
+    "source_articles": [],
+    "source_urls": [
+      "https://t.me/lixiangautorussia",
+      "https://faq.liautorussia.ru/known-problems"
+    ],
+    "article_count": 125,
+    "confidence": "high",
+    "tags": ["telegram", "community", "owners_club", "faq", "liautorussia"],
+    "overlaps_research": false,
+    "research_issue_id": null
+  },
+  {
+    "topic_id": "topic_ru_031",
+    "title_ru": "Kursiv Media — казахстанские обзоры проблем Li Auto",
+    "title_en": "Kursiv Media — Kazakh Reviews of Li Auto Problems",
+    "category": "market",
+    "models": ["L7", "L9"],
+    "systems": [],
+    "layer": null,
+    "season": "all",
+    "summary_ru": "Kursiv Media (Казахстан) публикует обзоры проблем Li Auto для рынка СНГ. 31 статья: от технических проблем (пневмоподвеска, цепь ГРМ, подрулевой модуль) до рыночной аналитики (продажи, конкуренция с BYD, Chery Fulwin T11). Ценный источник, так как рассматривает авто в контексте стран СНГ (Казахстан, Россия).",
+    "summary_en": "Kursiv Media (Kazakhstan) publishes Li Auto problem reviews for CIS market. 31 articles: from technical issues (air suspension, timing chain, steering module) to market analytics (sales, competition with BYD, Chery Fulwin T11). Valuable source as it considers vehicles in CIS context (Kazakhstan, Russia).",
+    "key_facts": [
+      "31 статья на русском из Казахстана",
+      "Покрывает как технику, так и рынок",
+      "Lixiang L7 побил BYD Song Plus, Deepal S07 в продажах",
+      "Критическая статья о конструкции цепи ГРМ",
+      "Обзор зимних проблем (снег, метель, жалюзи)"
+    ],
+    "repair_cost_range": null,
+    "source_articles": [469, 470, 471, 472, 473, 474, 475, 476, 477, 478, 479, 480, 481, 482, 483, 484, 485, 486, 487, 488, 489],
+    "source_urls": [
+      "https://kz.kursiv.media/2025-06-09/kmlz-li-auto-problems/",
+      "https://kz.kursiv.media/2026-02-16/rmnm-motor-lixiang-raskritikovali-iz-za-nenadezhnoy-konstrukcii-cepi-grm/"
+    ],
+    "article_count": 31,
+    "confidence": "high",
+    "tags": ["kursiv", "kazakhstan", "cis", "market_analysis", "problems_overview"],
+    "overlaps_research": false,
+    "research_issue_id": null
+  },
+  {
+    "topic_id": "topic_ru_032",
+    "title_ru": "Сервисные центры Li Auto — lixiang-sto.ru, опыт ремонта",
+    "title_en": "Li Auto Service Centers — lixiang-sto.ru, Repair Experience",
+    "category": "maintenance",
+    "models": ["L7", "L9"],
+    "systems": ["suspension", "engine", "electronics"],
+    "layer": null,
+    "season": "all",
+    "summary_ru": "Специализированные сервисы для Li Auto в Москве (lixiang-sto.ru) публикуют статьи о ремонте. 8 материалов покрывают: ремонт пневмоподвески L7, диагностику электроники, замену расходников. Отсутствие официального сервиса — главная проблема для владельцев. Технари используют техдокументацию на китайском с онлайн-переводчиком.",
+    "summary_en": "Specialized Li Auto service centers in Moscow (lixiang-sto.ru) publish repair articles. 8 articles cover: L7 air suspension repair, electronics diagnostics, consumable replacement. Lack of official service is the main problem for owners. Technicians use Chinese technical documentation with online translators.",
+    "key_facts": [
+      "lixiang-sto.ru — специализированный сервис в Москве",
+      "8 статей о ремонте Li Auto",
+      "Техдокументация на китайском — переводчик помогает",
+      "Официального сканера для полной диагностики нет",
+      "Автодом Электро — один из сервисов"
+    ],
+    "repair_cost_range": null,
+    "source_articles": [],
+    "source_urls": [
+      "https://lixiang-sto.ru/blog/remont-pnevmopodveski-lixiang-l7/"
+    ],
+    "article_count": 8,
+    "confidence": "medium",
+    "tags": ["service_center", "lixiang_sto", "repair", "diagnostics", "moscow"],
+    "overlaps_research": true,
+    "research_issue_id": "issue_c6"
+  },
+  {
+    "topic_id": "topic_ru_033",
+    "title_ru": "110km.ru — независимые обзоры и тест-драйвы Li Auto",
+    "title_en": "110km.ru — Independent Reviews and Test Drives of Li Auto",
+    "category": "owner_experience",
+    "models": ["L7", "L9"],
+    "systems": [],
+    "layer": null,
+    "season": "all",
+    "summary_ru": "110km.ru публикует независимые обзоры Li Auto. 7 статей с отзывами и тест-драйвами. L9 — 8 обзоров + 2 комментария, L7 — 8 обзоров + 3 комментария. Фокус на реальном опыте эксплуатации в российских условиях: зима, метель, дороги, сервис.",
+    "summary_en": "110km.ru publishes independent Li Auto reviews. 7 articles with reviews and test drives. L9 — 8 reviews + 2 comments, L7 — 8 reviews + 3 comments. Focus on real-world experience in Russian conditions: winter, blizzards, roads, service.",
+    "key_facts": [
+      "Независимые обзоры для российского рынка",
+      "L9: 8 обзоров, L7: 8 обзоров",
+      "Фокус на реальной эксплуатации в РФ"
+    ],
+    "repair_cost_range": null,
+    "source_articles": [577, 578, 579, 580, 581, 582, 583],
+    "source_urls": [
+      "https://110km.ru/opinion/lixiang/l9/",
+      "https://110km.ru/opinion/lixiang/l7/"
+    ],
+    "article_count": 7,
+    "confidence": "medium",
+    "tags": ["110km", "review", "test_drive", "independent"],
+    "overlaps_research": false,
+    "research_issue_id": null
+  },
+  {
+    "topic_id": "topic_ru_034",
+    "title_ru": "Утечка хладагента — угроза батарее летом",
+    "title_en": "Refrigerant Leak — Battery Threat in Summer",
+    "category": "troubleshooting",
+    "models": ["L7", "L8", "L9"],
+    "systems": ["hvac", "battery"],
+    "layer": "hvac",
+    "season": "summer",
+    "summary_ru": "Хладагент исчезает из системы кондиционирования. Слабое место — трубки в районе заднего левого колеса. Критично: кондиционер охлаждает не только салон, но и ВВ батарею. Без охлаждения возможен перегрев и возгорание. Ремонт климат-контроля — от 20,000 руб.",
+    "summary_en": "Refrigerant disappears from AC system. Weak point — lines near rear left wheel. Critical: AC cools not only the cabin but also the HV battery. Without cooling, overheating and fire risk. AC repair from 20,000 RUB.",
+    "key_facts": [
+      "Слабое место: трубки у заднего левого колеса",
+      "Кондиционер охлаждает ВВ батарею — критически важно",
+      "Ремонт: от 20,000 руб",
+      "Проявляется после первой зимы"
+    ],
+    "repair_cost_range": "20,000+ руб",
+    "source_articles": [],
+    "source_urls": [
+      "https://www.gazeta.ru/auto/news/2025/02/16/25100204.shtml"
+    ],
+    "article_count": 3,
+    "confidence": "medium",
+    "tags": ["refrigerant", "ac", "hvac", "battery_cooling", "leak", "summer"],
+    "overlaps_research": true,
+    "research_issue_id": "issue_m1"
+  },
+  {
+    "topic_id": "topic_ru_035",
+    "title_ru": "GetCar.ru — экспертные статьи о проблемах и обслуживании LiXiang",
+    "title_en": "GetCar.ru — Expert Articles on LiXiang Problems and Maintenance",
+    "category": "troubleshooting",
+    "models": ["L7", "L9"],
+    "systems": ["suspension", "brakes", "engine", "electronics"],
+    "layer": null,
+    "season": "all",
+    "summary_ru": "GetCar.ru — один из самых информативных источников с 4 глубокими аналитическими статьями о проблемах Li Auto: поломки в России, недостатки комфорта L9, проблемы пневмоподвески, шумоизоляция. Каждая статья 8,000-9,500 символов. Источник цитируется в консенсусных issue как один из ключевых.",
+    "summary_en": "GetCar.ru is one of the most informative sources with 4 deep analytical articles on Li Auto problems: breakdowns in Russia, L9 comfort issues, air suspension problems, noise insulation. Each article 8,000-9,500 chars. Source cited in consensus issues as one of the key references.",
+    "key_facts": [
+      "4 глубокие аналитические статьи (8-9.5K символов каждая)",
+      "Темы: поломки, комфорт, пневмоподвеска, шум",
+      "Ключевой источник для консенсусных проблем",
+      "70% поломок 2024 — подвеска + электроника (их данные)"
+    ],
+    "repair_cost_range": null,
+    "source_articles": [37, 38, 39, 40],
+    "source_urls": [
+      "https://getcar.ru/blog/polomki-lixiang-l9-rossiya/",
+      "https://getcar.ru/blog/problemy-pnevmopodveski-lixiang-l9/",
+      "https://getcar.ru/blog/shum-lixiang-l9-prichiny/",
+      "https://getcar.ru/blog/komfort-nedostatki-lixiang-l9/"
+    ],
+    "article_count": 4,
+    "confidence": "high",
+    "tags": ["getcar", "expert", "analysis", "breakdown_statistics"],
+    "overlaps_research": false,
+    "research_issue_id": null
+  }
+]
