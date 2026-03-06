@@ -1,6 +1,6 @@
 # LLCAR Diagnostica KB — Статус проекта
 
-> Дата фиксации: 2026-03-05
+> Дата фиксации: 2026-03-06
 > Проект: C:\Users\Петр\threejs-project\Final 3d\LLCAR-Transfer
 
 ---
@@ -20,8 +20,8 @@
 
 | Метрика | Значение |
 |---------|----------|
-| Чанки в KB | 11,872 (11,024 manual + 488 DTC + 264 parts + 73 web + 23 config) |
-| Переводы | 44,623 строк (ZH: 11,800 / RU: 11,122 / EN: 11,095 / ES: 5,303 / AR: 5,303) |
+| Чанки в KB | 12,729 (11,024 manual + 488 DTC + 264 parts + 420 web/scraped + 47 topics + 40 research + 23 config + остальное) |
+| Переводы | 48,384 строк (ZH: 12,570 / RU: 12,604 / EN: 12,604 / ES: 5,303 / AR: 5,303) |
 | Модели авто | L7 (6,960), L9 (4,391), L7+L9 shared (521) |
 | Слои | 15: body, interior, brakes, sensors, ev, engine, hvac, battery, drivetrain, lighting, chassis, infotainment, adas, parts, web_scraped |
 | DTC-коды | 488 привязано |
@@ -29,7 +29,8 @@
 | Изображения | 7,109 подписано + 11,426 извлечено из PDF + 10,014 привязано к чанкам |
 | ColBERT-вектора | 11,799 (BGE-M3, FP16 BLOB) |
 | Запчасти | 2,577 (22 системы, OCR + bridge к KB/3D) |
-| Скрапинг | 164 статьи, 14 источников, 15 скраперов |
+| Скрапинг | 420 статей (379 чистых + 41 garbage), 21 источник, 25 скраперов |
+| Исследование | 40 research issues (консенсус 6 агентов) + 47 unified topics (анализ 394+ статей) |
 | Тренировочные пары | 20,900+ (ZH↔EN/RU/AR/ES) |
 | Размер БД | 4.28 GB (SQLite) + 0.62 GB (LanceDB) |
 | Situation tags | 11,813 чанков с тегами (urgency, type, trust, season, events) |
@@ -108,12 +109,21 @@ LLCAR-Transfer/
 - [x] Фронтенд: таб "Parts" в knowledge.js, номера деталей в digital-twin.js
 
 ### Фаза 5: Веб-скрапинг
-- [x] 15 скраперов (httpx + BeautifulSoup, без внешних зависимостей)
-- [x] 164 чистые статьи из 14 источников (после удаления 40 мусорных)
+- [x] 25 скраперов (httpx + BeautifulSoup, без внешних зависимостей)
+- [x] 420 статей из 21 источника (379 чистых + 41 garbage отмечено)
 - [x] 6 методов извлечения: auto, trafilatura, bs4_article, bs4, regex, site-specific
 - [x] GUI управления скрапингом (scraping.html)
 - [x] Mass re-scrape через новую систему (scripts/rescrape_all.py)
 - [x] Situation tags для всех 11,813 чанков
+
+### Фаза 7: Исследование и анализ статей
+- [x] 6-агентное исследование с эксклюзивными пулами (Telegram, Drom, Drive2, EN, CN, техБД)
+- [x] 6 кросс-валидаторов (ротация): проверка фактов, отсев галлюцинаций
+- [x] Консенсус: 42 проблемы → 40 импортированы (2 галлюцинации отсеяны)
+- [x] 4 агента-аналитика: 394+ статей → 120 сырых топиков → 47 unified
+- [x] import_research.py: 40 research chunks (RU+EN, с how_found методологией)
+- [x] import_topics.py: 47 topic chunks (RU+EN, confidence scoring)
+- [x] Бейджи в knowledge.js для research_consensus и article_analysis
 
 ### Фаза 6: Экспорт
 - [x] Мануалы → 15 MD-файлов (knowledge-base/manuals/)
@@ -171,35 +181,25 @@ LLCAR-Transfer/
 
 ---
 
-## На чём остановились
+## На чём остановились (2026-03-06)
 
-### Готово к реализации (следующие шаги)
+### Текущие задачи
 
-1. **Telegram-скрапер** — готов к созданию
-   - Метод: Telegram API (Telethon/Pyrogram), пользователь предоставит API credentials
-   - Фокус на **группах** (не каналы): `@lixiangautorussia` (40K участников) и другие
-   - Каналы с web preview тоже доступны: `@chinamashina`, `@rucars`, `@carnewschina`, `@chinapev`
-   - **Ждём API ID + API Hash от пользователя**
+1. **Перевод новых чанков** — 159 чанков без ZH перевода
+   - 87 (topic+research) имеют RU+EN, нужен ZH
+   - Нужно скачать M2M модель на воркстанцию (192.168.50.2)
+   - `translate_kb.py` на воркстанции (2x RTX 3090)
 
-2. **Drive2.ru** — заблокирован (403)
-   - Прямой доступ: 403 на все методы (httpx, curl_cffi, stealth browser)
-   - Google Cache: редирект, не отдаёт контент
-   - Wayback Machine: 404
-   - Бесплатные прокси: не работают
-   - **Варианты**: платный прокси (ScraperAPI/Bright Data), ручной экспорт, Telegram-группы drive2
+2. **Embed в LanceDB** — 420+ статей + 87 topic/research НЕ в LanceDB
+   - `python scripts/build_embeddings.py` (нужен GPU для pplx-embed)
+   - Воркстанция: 2x RTX 3090
 
-3. **KB enrichment** — план готов (PLAN-KB-ENRICHMENT.md)
-   - 12 контентных пробелов (P0-P2)
-   - Нужно 200-350 новых практических чанков
-   - Зависит от drive2 и telegram скраперов
+3. **Drive2.ru** — заблокирован (403)
+   - Все методы заблокированы, нужен платный прокси
 
-4. **Embed web-scraped articles** — 164 статьи НЕ в LanceDB
-   - `python scripts/build_embeddings.py` (для web_scraped чанков)
-   - Нужен пересчёт после добавления новых статей
+4. **Telegram** — 125 статей скраплены, ждём API ID + Hash для расширения
 
-5. **KB Smart Cards UI** — план готов (PLAN-KB-SMART-CARDS.md)
-   - situation_tags.json уже сгенерирован для 11,813 чанков
-   - Нужна реализация UI: trust badges, urgency colors, "сейчас важно"
+5. **Багфиксы scrapers** — faq_liautorussia возвращает 0 (нужен JS rendering)
 
 ---
 
